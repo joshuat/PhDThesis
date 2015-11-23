@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Compile Stuff.
+pdflatex -output-directory Jank thesis.tex
+#bibtex Jank/polspec
+makeglossaries polspec
+pdflatex -output-directory Jank thesis.tex
+pdflatex -output-directory Jank thesis.tex
+
+mv Jank/thesis.pdf thesis.pdf
