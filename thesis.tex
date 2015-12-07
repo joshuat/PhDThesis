@@ -1,5 +1,8 @@
 \documentclass[11pt]{report}
 
+% This may include the bibliography in the table of contents
+\usepackage[nottoc,numbib]{tocbibind}
+
 % Glossary package for acronyms.
 \usepackage{glossaries}%[nonumberlist,nohypertypes={glossary},acronym]
 \include{acronyms}
@@ -7,6 +10,7 @@
 
 \begin{document}
 
+% Title page
 \title{Thesis}
 
 \author{Joshua Torrance}
@@ -17,5 +21,15 @@
 
 \include{chapter1/chapter1}
 
+\appendix
+\chapter{Glossary}
 \printglossary
+
+Why is nothing here?
+
+% References
+\bibliographystyle{unsrt}
+\renewcommand\bibname{References}
+\bibliography{Library}
+
 \end{document}

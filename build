@@ -2,7 +2,10 @@
 
 # Compile Stuff.
 pdflatex -output-directory Jank thesis.tex
-#bibtex Jank/polspec
+cp Library.bib Jank/
+cd Jank
+bibtex Jank/thesis
+cd ..
 #makeglossaries thesis
 pdflatex -output-directory Jank thesis.tex
 pdflatex -output-directory Jank thesis.tex
