@@ -1,5 +1,10 @@
 \documentclass[11pt]{report}
 
+% Glossary package for acronyms.
+\usepackage{glossaries}%[nonumberlist,nohypertypes={glossary},acronym]
+\include{acronyms}
+\makeglossaries
+
 \begin{document}
 
 \title{Thesis}
@@ -8,6 +13,9 @@
 
 \maketitle
 
+\tableofcontents
+
 \include{chapter1/chapter1}
 
+\printglossary
 \end{document}
