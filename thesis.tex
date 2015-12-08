@@ -1,7 +1,7 @@
 \documentclass[11pt]{report}
 
 % This may include the bibliography in the table of contents
-\usepackage[nottoc,numbib]{tocbibind}
+\usepackage[numbib]{tocbibind}
 
 % Glossary package for acronyms.
 \usepackage{glossaries}%[nonumberlist,nohypertypes={glossary},acronym]
@@ -17,8 +17,13 @@
 
 \maketitle
 
+\pagenumbering{roman}
 \tableofcontents
 
+
+% The following two lines need to be in the first chapter to get Arabic page numbers.
+%\pagenumbering{arabic}
+%\setcounter{page}{1}
 \include{chapter1/chapter1}
 
 \appendix
