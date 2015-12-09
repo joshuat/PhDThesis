@@ -30,9 +30,9 @@ A linearly polarised beam from the same source is used to measure the birefringe
 \label{figure:pol_spec_schematic}
 \end{figure}
 
-The circularly polarised pump beam induces cicular birefringence in the atomic sample by partially optically pumping the sample into one of the extreme hyperfine sublevels, $m_F=\pm F$, where $m_F$ labels the hyperfine sublevel and $F$ labels {\color{red}some quentum thingy.}
+The circularly polarised pump beam induces cicular birefringence in the atomic sample by partially optically pumping the sample into one of the extreme hyperfine sublevels, $m_F=\pm F$, where $m_F$ labels the hyperfine sublevel and $F$ labels {\color{red}some quantum thingy.}
 This partial optical pumping, referred to here as the anisotropy fo the medium, results in unequal absorption coefficients for each circular polarisation.
-The linearly polarised probe beam can be decomposed into two equal and oppositely circularly polarised components which undergo different absorption such that when recombined after passing through the atomic sample the probe beam becomes elliptically polarised with an angle different to that of the original linear polarisation.
+The linearly polarised probe beam can be decomposed into two equal and oppositely circularly polarised components which undergo different absorption due to the anisotropy, such that when recombined after passing through the atomic sample the probe beam becomes elliptically polarised with an angle different to that of the original linear polarisation.
 This process is depicted in Figure \ref{figure:pol_spec_explanation}.
 
 \begin{figure}
@@ -42,6 +42,16 @@ This process is depicted in Figure \ref{figure:pol_spec_explanation}.
 \label{figure:pol_spec_explanation}
 \end{figure}
 
+Consider the electric field of the probe beam before it enters the atomic sample at an angle $\phi$ to the $x$ axis:
+\begin{equation}
+\vec{E}=E_0\big(\cos{\phi}\,\hat{x}+\sin{\phi}\,\hat{y}\big)
+\end{equation}
+which can be expressed in terms of the circularly polarised basis vectors:
+\begin{equation}
+\vec{E} = \frac{E_0}{2}e^{-i\phi}(\hat{x}+i\hat{y}) + \frac{E_0}{2}e^{+i\phi}(\hat{x}-i\hat{y})
+\end{equation}
+
+After propagating through an atomic sample of length $L$
 
 \subsubsection{Magnetic shielding}
 \subsubsection{BS vs sneaking it past}
