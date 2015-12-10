@@ -145,49 +145,42 @@ The atomic substate populations can be calculated using \glspl*{obe}~\cite{hughe
 \subsection{High bandwidth feedback}
 \subsection{Lincoln's magic detectors?}
 \section{Experimental Setup (with details - fibres, calcite, etc.)}
-\section{Measurement Techniques}
-\subsection{Self-heterodyne}
-\subsection{Heterodyne}
-\subsection{Noise measurements}
-\subsection{Side of peak (include basic cavity theory here?)}
-\subsection{Integration}
-\subsection{Drift}
-\subsection{Bandwidth Stuff}
-
-\section{Paper CopyPasta}
-
-\subsection{Experiment}
-
+\subsection{from paper - merge}
 Two commercial Littrow configuration \glspl*{ecdl} \cite{equipment} were individually locked using \gls*{ps}. The laser beam for each was split by a \gls*{pbs} and propagated through polarization-maintaining fibers to the \gls*{ps} locking system and linewidth measurements.  The locking beams were polarized with Glan-Thompson prisms (Fig.~\ref{polspec_schematic}) to eliminate residual polarization drift in the fibers. Beam expanding telescopes were used to expand the beam to fill the apertures of the magnetic shielding, approximately 1\,cm diameter, allowing them to interact with more atoms to increase $|\Delta\alpha_0|$ and improve the \gls*{snr}.
 
 The \gls*{pbs} balanced polarimeter error signal was generated with biased photodiodes (150\,MHz bandwidth) and servo controllers (14\,MHz bandwidth).  The servo controller integration zero-gain frequency was typically between 100\,kHz and 1\,MHz. The diode modulation could be DC-coupled, with bandwidths of 40\,MHz and 10\,MHz, or AC-coupled, 100\,kHz\,\textendash\,40\,MHz and 10\,kHz\,\textendash\,10\,MHz, depending on the laser.  The laser electronics provided control of the \glspl*{ecdl} piezoelectric transducer and diode injection current, with bandwidths of 1\,kHz and 50\,kHz respectively.
-
-\subsection{Results} \label{results_section}
-
+\section{Measurement Techniques}
 We have characterized the performance of \gls*{ps} locking by measuring the noise-limited bandwidth of the error signal, the spectral linewidth of the locked lasers using high-finesse optical cavity transmission and heterodyne techniques, the frequency noise spectra of the locked lasers, and the long-term frequency stability of the locked lasers.
 
-\subsubsection{Polarization Spectroscopy Capture Range and Bandwidth}\label{bandwidth_section}
-The capture range and bandwidth of the frequency discriminator are important in determining the ultimate linewidth that can be achieved, and the ability to compensate for sudden disturbances to the laser frequency, for example due to external shock or vibration.
-We define the capture range as twice the minimum frequency difference from resonance for which the locking signal is of the correct sign for negative feedback, which can be deduced from the error signal by locating the first zero crossing to either side of the resonance. For the spectra shown in Fig.~\ref{sa_ps_spectra} this is greater than $300\rm\,MHz$, many times larger than the $16\rm\,MHz$ of \gls*{sa}, as shown in Fig.~\ref{sa_ps_spectra}.
+\subsection{Self-heterodyne}
+\subsection{Heterodyne}
+\subsubsection{from paper - merge}
+To investigate the discrepancy between the two laser linewidth measurements we used heterodyne measurements which are insensitive to amplitude noise.
+Heterodyne measurements were made by frequency shifting one of the laser beams with a double-pass \gls*{aom} and combining the two locked beams on a 50:50 beamsplitter followed by a 1\,GHz bandwidth photodetector. The beatnote spectrum was measured with a radio frequency spectrum analyzer~\cite{equipment}, see Fig.~\ref{beatnote}. Most of the optical power is within the central peak of the spectrum, with $-3\rm\,dB$ full width of $2.0\pm1.1$\,kHz determined from a Gaussian fit. The lasers are uncorrelated and if they have identical, Gaussian lineshapes then the single laser \gls*{rms} linewidth is $0.60\pm0.32$\,kHz. The shoulders in the spectrum around $\pm1.5$\,MHz correspond to the servo bump of the fully locked spectra in Fig.~\ref{fig:PSDs}.
 
-The frequency noise spectrum of the \gls*{ps} error signal is shown in  Fig.~\ref{bandwidth}, both on-resonance and with laser far detuned to determine the noise floor.  The signal and noise intersect at 83\,MHz.  Since the sign of the \gls*{ps} error signal is constant over that range (see fig.~\ref{sa_ps_spectra}), the 83\,MHz noise-limited signal bandwidth is indicative of the high bandwidth available from polarization spectroscopy.  In contrast, the \gls*{sa} signal reverses sign several times within 83\,MHz, and the effective bandwidth is limited by the $\pm 8\rm\,MHz$ capture range of \gls*{sa}.
+{\color{red} Rob to determine single laser linewidth from -3dB beatnote width}
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\linewidth]{chapter1/Figs/fig2_v1.pdf}
-    \caption{Saturated absorption spectroscopy (SA) and polarization spectroscopy (PS) spectra for the $^{85}$Rb D2 transition. The upper portion of the figure shows the absorption and error spectra for SA. The lower portion shows the components of the PS error signal ($P_{x,y}$ in Fig. \ref{polspec_schematic} and Eq. \ref{P_PS}) and the PS error signal. The shaded regions indicate the approximate capture range of the respective error signals. Zero frequency at $^{85}$Rb, $5^2S_{1/2} F=3\rightarrow5^2P_{3/2} F=4$ transition.  Absorption signals normalized to the same maximum absorption on resonance.}
-    \label{sa_ps_spectra}
+\centering
+\includegraphics[width=\linewidth]{chapter1/Figs/fig5_v1.pdf}
+\caption{Heterodyne beatnote for the two lasers locked with \gls*{ps}. The inset figure is a higher resolution measurement of the central peak with a Gaussian fit (red), $-3\rm\,dB$ width of 2.0$\pm$1.1\,kHz. Both figures are 50 shot averages with resolution bandwidths of 30\,kHz and 100\,Hz and total measurement times of approximately 0.5\,s and 2\,s respectively.}
+\label{beatnote}
 \end{figure}
 
-\begin{figure}[hbp]
-    \centering
-    \includegraphics[width=\linewidth]{chapter1/Figs/fig3_v1.pdf}
-    \caption{Polarization spectroscopy error signal frequency noise spectra. Upper trace (black): frequency spectrum of the error signal while the laser is unlocked and centered on the $^{85}$Rb 5$^\text{2}$S$_\text{1/2}$ $\rightarrow$ 5$^\text{2}$P$_\text{3/2}$ transition.  Lower trace (red): spectrum with laser far from resonance. The two lines intersect at approximately 83\,MHz.  Laser power 7.5\,mW after isolator, with pump:probe ratio 1.4.  The measurements are shown with a superposed smoothed curve (moving 20-point average).}
-    \label{bandwidth}
-\end{figure}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{c c c}
+\hline
+  & Method & RMS Linewidth (kHz) \\ \hline
+  (i) & Cavity transmission mapping  & $2.0 \pm 0.4$ \\
+  (ii) &Cavity transmission integral & $2.4 \pm 1.0$ \\
+  (iii) & Heterodyne & $0.60\pm0.32$ \\ \hline\end{tabular}
+\caption{Linewidth results. (i) Mapping the transmission signal through a cavity with a \gls*{fwhm} of 71.6\,kHz to a Lorentzian signal followed by deconvolving from the amplitude noise. (ii) The results from integrating the power-spectral density of the cavity transmission signal (Fig.~\ref{fig:PSDs}) (iii) The heterodyne beatnote (Fig.~\ref{beatnote}).}
+\label{linewidth_table}
+\end{table}
 
-\subsubsection{Frequency Noise Measurements}
-
+\subsection{Noise measurements}
+\subsubsection{From paper - merge}
 \begin{figure}[htbp]
 \centering
     \includegraphics[width=0.9\linewidth]{chapter1/Figs/fig4a_v3.pdf}
@@ -223,32 +216,33 @@ The cavity transmission spectra and linewidth measurements include contributions
 
 Assuming the measurements are uncorrelated convolutions of the frequency and amplitude noise contributions, the linewidth determined from cavity transmission mapping consists of the 1.4$\pm$0.3\,kHz amplitude noise linewidth in combination with a frequency noise linewidth of 2.0$\pm$0.7\,kHz.  The difference is likely because the mapping method does not properly include contributions from higher Fourier frequencies; that is, the ``pedestal'' of the laser spectrum which can be seen in a heterodyne measurement.
 
-\subsubsection{Heterodyne Measurements}
-To investigate the discrepancy between the two laser linewidth measurements we used heterodyne measurements which are insensitive to amplitude noise.
-Heterodyne measurements were made by frequency shifting one of the laser beams with a double-pass \gls*{aom} and combining the two locked beams on a 50:50 beamsplitter followed by a 1\,GHz bandwidth photodetector. The beatnote spectrum was measured with a radio frequency spectrum analyzer~\cite{equipment}, see Fig.~\ref{beatnote}. Most of the optical power is within the central peak of the spectrum, with $-3\rm\,dB$ full width of $2.0\pm1.1$\,kHz determined from a Gaussian fit. The lasers are uncorrelated and if they have identical, Gaussian lineshapes then the single laser \gls*{rms} linewidth is $0.60\pm0.32$\,kHz. The shoulders in the spectrum around $\pm1.5$\,MHz correspond to the servo bump of the fully locked spectra in Fig.~\ref{fig:PSDs}.
+\subsection{Side of peak (include basic cavity theory here?)}
+\subsection{Integration}
+\subsection{Drift}
+\subsection{Bandwidth Stuff}
+\subsubsection{From paper - merge}
+\label{bandwidth_section}
+The capture range and bandwidth of the frequency discriminator are important in determining the ultimate linewidth that can be achieved, and the ability to compensate for sudden disturbances to the laser frequency, for example due to external shock or vibration.
+We define the capture range as twice the minimum frequency difference from resonance for which the locking signal is of the correct sign for negative feedback, which can be deduced from the error signal by locating the first zero crossing to either side of the resonance. For the spectra shown in Fig.~\ref{sa_ps_spectra} this is greater than $300\rm\,MHz$, many times larger than the $16\rm\,MHz$ of \gls*{sa}, as shown in Fig.~\ref{sa_ps_spectra}.
 
-{\color{red} Rob to determine single laser linewidth from -3dB beatnote width}
+The frequency noise spectrum of the \gls*{ps} error signal is shown in  Fig.~\ref{bandwidth}, both on-resonance and with laser far detuned to determine the noise floor.  The signal and noise intersect at 83\,MHz.  Since the sign of the \gls*{ps} error signal is constant over that range (see fig.~\ref{sa_ps_spectra}), the 83\,MHz noise-limited signal bandwidth is indicative of the high bandwidth available from polarization spectroscopy.  In contrast, the \gls*{sa} signal reverses sign several times within 83\,MHz, and the effective bandwidth is limited by the $\pm 8\rm\,MHz$ capture range of \gls*{sa}.
 
 \begin{figure}[htbp]
-\centering
-\includegraphics[width=\linewidth]{chapter1/Figs/fig5_v1.pdf}
-\caption{Heterodyne beatnote for the two lasers locked with \gls*{ps}. The inset figure is a higher resolution measurement of the central peak with a Gaussian fit (red), $-3\rm\,dB$ width of 2.0$\pm$1.1\,kHz. Both figures are 50 shot averages with resolution bandwidths of 30\,kHz and 100\,Hz and total measurement times of approximately 0.5\,s and 2\,s respectively.}
-\label{beatnote}
+    \centering
+    \includegraphics[width=\linewidth]{chapter1/Figs/fig2_v1.pdf}
+    \caption{Saturated absorption spectroscopy (SA) and polarization spectroscopy (PS) spectra for the $^{85}$Rb D2 transition. The upper portion of the figure shows the absorption and error spectra for SA. The lower portion shows the components of the PS error signal ($P_{x,y}$ in Fig. \ref{polspec_schematic} and Eq. \ref{P_PS}) and the PS error signal. The shaded regions indicate the approximate capture range of the respective error signals. Zero frequency at $^{85}$Rb, $5^2S_{1/2} F=3\rightarrow5^2P_{3/2} F=4$ transition.  Absorption signals normalized to the same maximum absorption on resonance.}
+    \label{sa_ps_spectra}
 \end{figure}
 
-\begin{table}[htbp]
-\centering
-\begin{tabular}{c c c}
-\hline
-  & Method & RMS Linewidth (kHz) \\ \hline
-  (i) & Cavity transmission mapping  & $2.0 \pm 0.4$ \\
-  (ii) &Cavity transmission integral & $2.4 \pm 1.0$ \\
-  (iii) & Heterodyne & $0.60\pm0.32$ \\ \hline\end{tabular}
-\caption{Linewidth results. (i) Mapping the transmission signal through a cavity with a \gls*{fwhm} of 71.6\,kHz to a Lorentzian signal followed by deconvolving from the amplitude noise. (ii) The results from integrating the power-spectral density of the cavity transmission signal (Fig.~\ref{fig:PSDs}) (iii) The heterodyne beatnote (Fig.~\ref{beatnote}).}
-\label{linewidth_table}
-\end{table}
+\begin{figure}[hbp]
+    \centering
+    \includegraphics[width=\linewidth]{chapter1/Figs/fig3_v1.pdf}
+    \caption{Polarization spectroscopy error signal frequency noise spectra. Upper trace (black): frequency spectrum of the error signal while the laser is unlocked and centered on the $^{85}$Rb 5$^\text{2}$S$_\text{1/2}$ $\rightarrow$ 5$^\text{2}$P$_\text{3/2}$ transition.  Lower trace (red): spectrum with laser far from resonance. The two lines intersect at approximately 83\,MHz.  Laser power 7.5\,mW after isolator, with pump:probe ratio 1.4.  The measurements are shown with a superposed smoothed curve (moving 20-point average).}
+    \label{bandwidth}
+\end{figure}
 
-\subsubsection{Long-term Frequency Stability}
+\subsection{Long Term Stability}
+\subsubsection{from paper - merge}
 Polarization spectroscopy is inherently a DC technique, susceptible to low frequency drift ($1/f$ noise), for example drift in the laser power output as the laser alignment drifts, variations in fiber coupling efficiency, variations in the atomic vapor density due to changes in temperature or local magnetic field, or changes to the electronic gains and offsets.  To quantify the long-term stability, the beatnote between a \gls*{ps}-locked laser and a laser locked to an \gls*{sa} peak was tracked over a number of days.  The \gls*{sa} laser was AC-locked using FM demodulation; that is, with current modulation at 250\,kHz and demodulation of the detected signal.  FM modulation is inherently insensitive to many of the slow variations that can affect the lock frequency, so that variations in the beatnote frequency can be attributed to the drift in the \gls*{ps} laser. A linear fit to the beatnote data (Fig.~\ref{drift}) sets an upper limit on the frequency drift of less than 2\,kHz/h. 
 
 Others have measured drifts of 17\,kHz/h to 1\,MHz/h~\cite{yoshikawa_frequency_2003, tiwari_laser_2006} and standard deviation of 400\,kHz \cite{lee_frequency_2014}, depending on the extent to which the apparatus was isolated from ambient temperature variation. In our system the lasers are temperature stabilized and isolated from the environment with acrylic boxes, but the \gls*{ps} and \gls*{sa} components were not temperature controlled or shielded from the general laboratory environment.  Polarization and power stabilization of the laser, and temperature stabilization of the atomic vapor cell, are likely to improve the locking stability and drift.
@@ -260,8 +254,7 @@ Others have measured drifts of 17\,kHz/h to 1\,MHz/h~\cite{yoshikawa_frequency_2
 \label{drift}
 \end{figure}
 
-\subsection{Conclusion}
-
+\section{Conclusion}
 We have demonstrated laser frequency stabilization using a polarization spectroscopy reference, and reduced the linewidth of \gls*{ecdl} lasers well below 1\,kHz, much lower than previously demonstrated with this technique and previously achieved only by locking to high-finesse optical cavities. The absolute frequency drift of less than 50\,kHz per day is adequate for many laser cooling experiments.  Further improvements to drift could be achieved with simple measures such as temperature stabilization and environmental isolation. The experimental setup provides an approach with low complexity and low cost, providing wide bandwidth linewidth narrowing without radio frequency modulation while retaining an absolute atomic reference.
 
 In our experiments, the locking bandwidth is limited by the phase lag in the laser diode response to injection current variation, to around 700\,kHz.  With appropriate servo loop shaping, for example multiple phase lead stages to compensate for the diode response, it is reasonable to expect a bandwidth increase to several MHz. However, the effect on linewidth would be negligible because the \gls*{ps} signal-to-noise ratio is small in this frequency range.  Much greater improvements could be made by lowering the \gls*{ps} noise floor, which is three to four orders of magnitude higher than the noise floor of the optical cavity.  The difference is only partly due to the $100\times$ higher power in \gls*{ps}, which will increase shot and Johnson noise by $10\times$.  More...
