@@ -2,25 +2,45 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\section{Literature Review}
+\section{Literature Review $\leftarrow$ rename at some point}
 
-Laser frequency stabilisation is an essential tool for atomic physics experiments, without it experiments such as \gls{bec} and atomic clocks would not be possible.
+Laser frequency stabilisation is an essential tool for atomic physics experiments, without it experiments such as \gls{bec} and atomic clocks would not be possible~~\cite{anderson_observation_1995,ye_quantum_2008}.
 There are a large number of techniques available for laser frequency stabilisation with numerous advantages and disadvantages among them.
 
 \Gls{ps} is one such technique that will be discussed in detail here.
-\Gls{ps} was first described by Wieman and H\"anch in 1976 as: ``a sensitive method of Doppler-free spectroscopy, monitoring the nonlinear interaction of two monochromatic laser beams in an absorbing gas via changes in light polarisation."\cite{wieman_doppler-free_1976}
-A detailed discussion of physics of \gls{ps} can be found in section \ref{section:pol_spec_theory}.
+\Gls{ps} was first described by Wieman and H\"anch in 1976 as, ``We have demonstrated a sensitive new method of Doppler-free spectroscopy, monitoring the nonlinear interaction of two monochromatic laser beams in an absorbing gas via changes in light polarisation."\cite{wieman_doppler-free_1976}
+A detailed discussion of physics of \gls{ps} can be found in Section \ref{section:pol_spec_theory}.
 
-\subsection{Intro from paper - to be merged}
-Laser frequency stabilization to atomic references is essential to numerous applications including the cooling and trapping of atoms \cite{uetake_high_2008, ye_stable_2010, akamatsu_narrow_2012}, Bose-Einstein condensates \cite{anderson_observation_1995} and degenerate Fermi gases \cite{demarco_onset_1999}. Stabilization techniques that provide high-bandwidth feedback can allow narrowing of the laser spectral linewidth, which is important to applications such as atomic clocks \cite{ludlow_sr_2008}, high resolution spectroscopy \cite{rafac_sub-dekahertz_2000} and metrology \cite{metcalf_laser_1999, ye_quantum_2008, demtroder_laser_2003}.
+\subsection{Laser Frequency Stabilisation}
 
-The desirable traits of a laser frequency stabilization scheme include the ability to stabilize to an absolute atomic reference, absence of frequency or amplitude modulation, high bandwidth to achieve low spectral linewidth, low complexity and low cost. Techniques for stabilization include \gls*{sa}~\cite{maguire_theoretical_2006, haroche_theory_1972, preston_doppler-free_1996}, which can reduce \gls*{ecdl} linewidth below 100\,kHz \cite{cuneo_optically_1994, saliba_linewidths_2009}, through to elaborate experiments involving extremely high-finesse optical cavities that are able to achieve sub-hertz linewidth using the \gls*{pdh} technique \cite{ludlow_compact_2007}.  Saturated absorption spectroscopy, \gls*{davll} \cite{corwin_frequency-stabilized_1998,millett-sikking_davll_2007}, \gls*{mts} \cite{shirley_modulation_1982, mccarron_modulation_2008,xiang-hui_ultra-stable_2009} and Sagnac interferometry \cite{robins_Interferometric_2002,jundt_non-linear_2003} lock to atomic references. Optical cavity techniques such as \gls*{pdh} \cite{drever_laser_1983} may require a secondary lock to maintain absolute frequency stability. Some locking techniques are limited by the rate of evolution of the atomic states, which are constrained by the lifetime of the excited state.
-\Gls*{ps} \cite{wieman_doppler-free_1976, demtroder_laser_2003} is an alternative locking technique that probes induced birefringence in an atomic sample, which depends on the refractive index of the atomic medium.  The response bandwidth of PS is then limited by noise and technical considerations rather than by the rates at which the atomic populations evolve. \Gls*{ps} also does not require any modulation and is of comparable complexity and cost to \gls*{sa}.
+Laser frequency stabilisation describe a number of techniques that are used to reduce the temporal frequency spread of a lasers frequency.
+Typically these techniques use some reference to measure frequency deviation from a given frequency and feedback to the laser.
 
-It has been shown previously that \gls*{ps} can be used to reduce the linewidth of a distributed feedback diode from 2\,MHz to 20\,kHz \cite{torii_laser-phase_2012} and of \glspl*{ecdl} to 65\,kHz \cite{yoshikawa_frequency_2003}. Here we investigate the bandwidth and frequency noise suppression of \gls*{ps} and demonstrate sub-kilohertz linewidth, measured with a high-finesse optical cavity and heterodyne beatnote between two similar lasers.
+Origin of freq noise.
+
+How to control freq.
+
+\subsubsection{from paper - merge}
+The desirable traits of a laser frequency stabilization scheme include the ability to stabilize to an absolute atomic reference, absence of frequency or amplitude modulation, high bandwidth to achieve low spectral linewidth, low complexity and low cost.
+Techniques for stabilization include \gls*{sa}~\cite{maguire_theoretical_2006, haroche_theory_1972, preston_doppler-free_1996}, which can reduce \gls*{ecdl} linewidth below 100\,kHz \cite{cuneo_optically_1994, saliba_linewidths_2009}, through to elaborate experiments involving extremely high-finesse optical cavities that are able to achieve sub-hertz linewidth using the \gls*{pdh} technique \cite{ludlow_compact_2007}.
+Saturated absorption spectroscopy, \gls*{davll} \cite{corwin_frequency-stabilized_1998,millett-sikking_davll_2007}, \gls*{mts} \cite{shirley_modulation_1982, mccarron_modulation_2008,xiang-hui_ultra-stable_2009} and Sagnac interferometry \cite{robins_Interferometric_2002,jundt_non-linear_2003} lock to atomic references.
+Optical cavity techniques such as \gls*{pdh} \cite{drever_laser_1983} may require a secondary lock to maintain absolute frequency stability.
+Some locking techniques are limited by the rate of evolution of the atomic states, which are constrained by the lifetime of the excited state.
+
 
 \subsection{Pol Spec origin}
+
+\subsubsection{from paper}
+\Gls*{ps} \cite{wieman_doppler-free_1976, demtroder_laser_2003} is an alternative locking technique that probes induced birefringence in an atomic sample, which depends on the refractive index of the atomic medium.
+The response bandwidth of PS is then limited by noise and technical considerations rather than by the rates at which the atomic populations evolve.
+\Gls*{ps} also does not require any modulation and is of comparable complexity and cost to \gls*{sa}.
+
 \subsection{Pol Spec developements}
+
+\subsubsection{from paper}
+It has been shown previously that \gls*{ps} can be used to reduce the linewidth of a distributed feedback diode from 2\,MHz to 20\,kHz \cite{torii_laser-phase_2012} and of \glspl*{ecdl} to 65\,kHz \cite{yoshikawa_frequency_2003}.
+Here we investigate the bandwidth and frequency noise suppression of \gls*{ps} and demonstrate sub-kilohertz linewidth, measured with a high-finesse optical cavity and heterodyne beatnote between two similar lasers.
+
 \section{Comparison with other techniques}
 \subsection{Sat Abs}
 \subsection{PDH}
