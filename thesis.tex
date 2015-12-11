@@ -1,14 +1,18 @@
 \documentclass[11pt]{report}
 
+% I want back references in my bibliography.
+\usepackage[pagebackref,hidelinks]{hyperref}
+% Color for... color.
 \usepackage{color}
-% Need this for figures?
+% Need this for figures
 \usepackage{graphicx}
-
 % This may include the bibliography in the table of contents
 \usepackage[numbib]{tocbibind}
-
 % Glossary package for acronyms.
-\usepackage{glossaries}%[nonumberlist,nohypertypes={glossary},acronym]
+\usepackage[nonumberlist]{glossaries}%[nonumberlist,nohypertypes={glossary},acronym]
+\setglossarysection{subsubsection} % No page break on \printglossary
+\renewcommand{\glossarysection}[2][]{} % No glossary title.
+
 \include{acronyms}
 \makeglossaries
 
