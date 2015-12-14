@@ -151,17 +151,34 @@ $\Delta\alpha_0$ is the sum over all $m_F$ ground states of the difference betwe
 \end{align}
 The absorption coefficient for a given transition is $\alpha_{(F, m_F\rightarrow F',m_{F\pm1})}=N \sigma(\omega_L)$ where $N$ is the total number of interacting atoms, $\sigma(\omega_L)$ is the absorption cross section for the transition and $P_{F,m_F}$ refer to the populations of the various atomic states.
 
-The atomic substate populations can be calculated using \glspl*{obe}~\cite{hughes_polarization_2009} but the standard steady-state solutions provide little insight into the behavior of the error signal when $\delta$ is changing faster than the evolution of the populations. That evolution is limited to the spontaneous decay rate $\Gamma$, and hence for times $t\ll \tau=1/\Gamma$, the populations can be considered constant.  The \gls*{ps} signal is proportional to the refractive index difference given by Eq.~(\ref{result}), which describes a steep, background-free antisymmetric dispersive function, with bandwidth $1/t$ that can be much greater than $\Gamma$ (Fig.~\ref{sa_ps_spectra}).  Absorption-based frequency stabilization techniques such as \gls*{sa} rely on frequency-dependent changes to the atomic populations, rather than on the refractive index, resulting in dispersive signals over a much smaller capture range, with bandwidth limited to $\Gamma$. SA is further limited if there are closely spaced hyperfine resonances or cross-over peaks.  Laser frequency noise can extend to frequencies much greater than $\Gamma$, where polarization spectroscopy still provides strong feedback and therefore can achieve much narrower laser linewidth.
-
 \subsubsection{Magnetic shielding}
-\subsubsection{BS vs sneaking it past}
 \subsubsection{Balanced polarimeter vs the other one}
 
+When Wieman and H\"anch\cite{wieman_doppler-free_1976} originally described \gls{ps} polarisation rotation was monitored with crossed polarisers as shown in Figure \ref{figure:wieman_doppler-free_schematic}.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{chapter1/Figs/wieman_doppler-free_schematic.png}
+\caption{Figure stolen from Wieman and H\"anch paper. Should probably redraw so I'm not plagiarising. Or ask how to cite it probably or some such.}
+\end{figure}
+
 \subsection{Fast Theory}
+
+\subsubsection{from paper}
+The atomic substate populations can be calculated using \glspl*{obe}~\cite{hughes_polarization_2009} but the standard steady-state solutions provide little insight into the behavior of the error signal when $\delta$ is changing faster than the evolution of the populations. That evolution is limited to the spontaneous decay rate $\Gamma$, and hence for times $t\ll \tau=1/\Gamma$, the populations can be considered constant.  The \gls*{ps} signal is proportional to the refractive index difference given by Eq.~(\ref{result}), which describes a steep, background-free antisymmetric dispersive function, with bandwidth $1/t$ that can be much greater than $\Gamma$ (Fig.~\ref{sa_ps_spectra}).  Absorption-based frequency stabilization techniques such as \gls*{sa} rely on frequency-dependent changes to the atomic populations, rather than on the refractive index, resulting in dispersive signals over a much smaller capture range, with bandwidth limited to $\Gamma$. SA is further limited if there are closely spaced hyperfine resonances or cross-over peaks.  Laser frequency noise can extend to frequencies much greater than $\Gamma$, where polarization spectroscopy still provides strong feedback and therefore can achieve much narrower laser linewidth.
+
 \subsection{OBEs (timescale of state evolution, step in simulating)}
 \section{Developments}
 \subsection{Balanced Polarimeter}
 \subsection{Beam splitter to co-propagate}
+
+All papers thus far have ``snuck'' the pump beam through the vapour cell.
+
+Figure with ``snucked'' and beam splitter configuration.
+
+The angle of ``snucking'' has implications that there is math for...
+
+Using a NBPS instead means you have an angle of 0. The beam splitter has no effect on the polarisation as far as I can tell.
+
 \subsection{High bandwidth feedback}
 \subsection{Lincoln's magic detectors?}
 \section{Experimental Setup (with details - fibres, calcite, etc.)}
@@ -173,6 +190,21 @@ The \gls*{pbs} balanced polarimeter error signal was generated with biased photo
 We have characterized the performance of \gls*{ps} locking by measuring the noise-limited bandwidth of the error signal, the spectral linewidth of the locked lasers using high-finesse optical cavity transmission and heterodyne techniques, the frequency noise spectra of the locked lasers, and the long-term frequency stability of the locked lasers.
 
 \subsection{Self-heterodyne}
+
+Self-heterodyne is...
+
+Single delay...
+
+How much delay?
+
+Multipass delay...
+
+These are the results I got...
+
+They look good... too good.
+
+Here's why...\cite{richter_linewidth_1986}
+
 \subsection{Heterodyne}
 \subsubsection{from paper - merge}
 To investigate the discrepancy between the two laser linewidth measurements we used heterodyne measurements which are insensitive to amplitude noise.
