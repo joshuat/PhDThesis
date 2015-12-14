@@ -167,16 +167,6 @@ $\Delta\alpha_0$ is the sum over all $m_F$ ground states of the difference betwe
 The absorption coefficient for a given transition is $\alpha_{(F, m_F\rightarrow F',m_{F\pm1})}=N \sigma(\omega_L)$ where $N$ is the total number of interacting atoms, $\sigma(\omega_L)$ is the absorption cross section for the transition and $P_{F,m_F}$ refer to the populations of the various atomic states.
 
 \subsubsection{Magnetic shielding}
-\subsubsection{Balanced polarimeter vs the other one}
-
-When Wieman and H\"anch\cite{wieman_doppler-free_1976} originally described \gls{ps} polarisation rotation was monitored with crossed polarisers as shown in Figure \ref{figure:wieman_doppler-free_schematic}.
-
-\begin{figure}
-\includegraphics[width=\linewidth]{chapter1/Figs/wieman_doppler-free_schematic.png}
-\caption{Figure stolen from Wieman and H\"anch paper.
-Should probably redraw so I'm not plagiarising.
-Or ask how to cite it probably or some such.}
-\end{figure}
 
 \subsection{Fast Theory}
 
@@ -191,6 +181,42 @@ Laser frequency noise can extend to frequencies much greater than $\Gamma$, wher
 \subsection{OBEs (timescale of state evolution, step in simulating)}
 \section{Developments}
 \subsection{Balanced Polarimeter}
+When Wieman and H\"anch~\cite{wieman_doppler-free_1976} originally described \gls{ps} polarisation rotation was monitored with a nearly crossed polariser as shown in Figure \ref{figure:wieman_doppler-free_schematic}.
+The polariser is crossed such that only a small proportion of the probe beam passes through them in the absence of the pump.
+With the pump inducing anisotropy the rotation of the probe can be detected after the polarisers.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{chapter1/Figs/wieman_doppler-free_schematic.png}
+\caption{Figure stolen from Wieman and H\"anch paper.
+Should probably redraw so I'm not plagiarising.
+Or ask how to cite it probably or some such.}
+\label{figure:wieman_doppler-free_schematic}
+\end{figure}
+
+If the electric field of the probe after the sample without the pump beam is
+\begin{equation}
+\vec{E} = E_0 \cos\big(\phi\big)\,\hat{x} + E_0\sin\big(\phi\big)\,\hat{y},
+\end{equation}
+where $\phi$ is the angle of the polarisation axis of the probe with respect to the $x$-axis.
+With the pump beam inducing birefringence, causing a rotation of the probe by $\Phi$, it becomes
+\begin{equation}
+\vec{E} = E_0 \cos\big(\phi+\Phi\big)\,\hat{x} + E_0\sin\big(\phi+\Phi\big)\,\hat{y},
+\end{equation}
+
+The polariser is set at an angle of $\pi/2+\phi+d\phi$, where $d\phi$ is small.
+This means that the polariser is almost at a right angle to the probe beam when there is no pump.
+The electric field after the polariser is then
+\begin{align}
+\vec{E} = E_0 \left[\frac{1}{2}\cos\big(\Phi\big) - \frac{1}{4}\sin\big(\Phi+2d\phi\big)+\frac{3}{4}\sin\big(\Phi-2d\phi\big)\right]\hat{x} \,\,+ \notag\\
+E_0 \left[\frac{1}{2}\sin\big(\Phi\big)-\frac{1}{4}\cos\big(\Phi+2d\phi\big)+\frac{3}{4}\cos\big(\Phi-2d\phi\big)\right]\hat{y}.
+\end{align}
+
+Since both $\Phi$ and $d\phi$ are small we can use the small-angle approximations to get
+\begin{align}
+\vec{E} = E_0 \left[\frac{1}{2} +\frac{\Phi-4d\phi}{2}-\frac{\Phi^2}{4}\right]\hat{x} \,\,+ \notag\\
+E_0 \left[\frac{\Phi}{2}-\frac{1}{4}\big(1-\frac{(\Phi+2d\phi)^2}{2}\big)+\frac{3}{4}\big(1-\frac{(\Phi-2d\phi)^2}{2}\big)\right]\hat{y}.
+\end{align}
+
 \subsection{Beam splitter to co-propagate}
 
 All papers thus far have ``snuck'' the pump beam through the vapour cell.
