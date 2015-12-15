@@ -205,7 +205,7 @@ With the pump beam inducing birefringence, causing a rotation of the probe by $\
 
 The polariser is set at an angle of $\pi/2+\phi+d\phi$, where $d\phi$ is small.
 This means that the polariser is almost at a right angle to the probe beam when there is no pump.
-The electric field after the polariser is then
+If we set $\phi=0$, the electric field after the polariser is then
 \begin{align}
 \vec{E} = E_0 \left[\frac{1}{2}\cos\big(\Phi\big) - \frac{1}{4}\sin\big(\Phi+2d\phi\big)+\frac{3}{4}\sin\big(\Phi-2d\phi\big)\right]\hat{x} \,\,+ \notag\\
 E_0 \left[\frac{1}{2}\sin\big(\Phi\big)-\frac{1}{4}\cos\big(\Phi+2d\phi\big)+\frac{3}{4}\cos\big(\Phi-2d\phi\big)\right]\hat{y}.
@@ -213,9 +213,19 @@ E_0 \left[\frac{1}{2}\sin\big(\Phi\big)-\frac{1}{4}\cos\big(\Phi+2d\phi\big)+\fr
 
 Since both $\Phi$ and $d\phi$ are small we can use the small-angle approximations to get
 \begin{align}
-\vec{E} = E_0 \left[\frac{1}{2} +\frac{\Phi-4d\phi}{2}-\frac{\Phi^2}{4}\right]\hat{x} \,\,+ \notag\\
-E_0 \left[\frac{\Phi}{2}-\frac{1}{4}\big(1-\frac{(\Phi+2d\phi)^2}{2}\big)+\frac{3}{4}\big(1-\frac{(\Phi-2d\phi)^2}{2}\big)\right]\hat{y}.
+\vec{E} = &E_0 \left[\frac{1}{2} +\frac{\Phi}{2}-2d\phi-\frac{\Phi^2}{4}\right]\hat{x} \,\,+ E_0 \left[\frac{1}{2}+\frac{\Phi}{2}+2d\phi\Phi-\frac{\Phi^2}{4}-d\phi^2\right]\hat{y}.
 \end{align}
+
+The detector measures the power of the beam:
+\begin{align}
+P \propto I &= \frac{c\epsilon_0}{2}|E|^2\notag\\
+&= \frac{c\epsilon_0E_0^2}{2}\left[\left[\frac{1}{2} +\frac{\Phi}{2}-2d\phi-\frac{\Phi^2}{4}\right]^2 \,\,+ \left[\frac{1}{2}+\frac{\Phi}{2}+2d\phi\Phi-\frac{\Phi^2}{4}-d\phi^2\right]^2 \right]\notag\\
+&= \frac{c\epsilon_0E_0^2}{2}\left[\frac{1}{2}+\Phi-2d\phi\right]
+%+\Phi-2d\phi-2d\phi\Phi-\frac{\Phi^3}{2}+3d\phi^2+\frac{d\phi\Phi^2}{2}+\frac{\Phi^4}{16}+2d\phi\Phi+2d\phi\Phi^2-d\phi^2\Phi\notag\\
+%&+\frac{9d\phi^2\Phi^2}{2}-\frac{d\phi\Phi^3}{2}-4d\phi^3\Phi+\frac{\Phi^4}{16}+d\phi^4
+\label{equation:crossed_polariser_power}
+\end{align}
+In Equation \ref{equation:crossed_polariser_power} second order or higher terms have been ignored.
 
 \subsection{Beam splitter to co-propagate}
 
