@@ -193,39 +193,7 @@ Or ask how to cite it probably or some such.}
 \label{figure:wieman_doppler-free_schematic}
 \end{figure}
 
-If the electric field of the probe after the sample without the pump beam is
-\begin{equation}
-\vec{E} = E_0 \cos\big(\phi\big)\,\hat{x} + E_0\sin\big(\phi\big)\,\hat{y},
-\end{equation}
-where $\phi$ is the angle of the polarisation axis of the probe with respect to the $x$-axis.
-With the pump beam inducing birefringence, causing a rotation of the probe by $\Phi$, it becomes
-\begin{equation}
-\vec{E} = E_0 \cos\big(\phi+\Phi\big)\,\hat{x} + E_0\sin\big(\phi+\Phi\big)\,\hat{y},
-\end{equation}
-
-The polariser is set at an angle of $\pi/2+\phi+d\phi$, where $d\phi$ is small.
-This means that the polariser is almost at a right angle to the probe beam when there is no pump.
-If we set $\phi=0$, the electric field after the polariser is then
-\begin{align}
-\vec{E} = E_0 \left[\frac{1}{2}\cos\big(\Phi\big) - \frac{1}{4}\sin\big(\Phi+2d\phi\big)+\frac{3}{4}\sin\big(\Phi-2d\phi\big)\right]\hat{x} \,\,+ \notag\\
-E_0 \left[\frac{1}{2}\sin\big(\Phi\big)-\frac{1}{4}\cos\big(\Phi+2d\phi\big)+\frac{3}{4}\cos\big(\Phi-2d\phi\big)\right]\hat{y}.
-\end{align}
-
-Since both $\Phi$ and $d\phi$ are small we can use the small-angle approximations to get
-\begin{align}
-\vec{E} = &E_0 \left[\frac{1}{2} +\frac{\Phi}{2}-2d\phi-\frac{\Phi^2}{4}\right]\hat{x} \,\,+ E_0 \left[\frac{1}{2}+\frac{\Phi}{2}+2d\phi\Phi-\frac{\Phi^2}{4}-d\phi^2\right]\hat{y}.
-\end{align}
-
-The detector measures the power of the beam:
-\begin{align}
-P \propto I &= \frac{c\epsilon_0}{2}|E|^2\notag\\
-&= \frac{c\epsilon_0E_0^2}{2}\left[\left[\frac{1}{2} +\frac{\Phi}{2}-2d\phi-\frac{\Phi^2}{4}\right]^2 \,\,+ \left[\frac{1}{2}+\frac{\Phi}{2}+2d\phi\Phi-\frac{\Phi^2}{4}-d\phi^2\right]^2 \right]\notag\\
-&= \frac{c\epsilon_0E_0^2}{2}\left[\frac{1}{2}+\Phi-2d\phi\right]
-%+\Phi-2d\phi-2d\phi\Phi-\frac{\Phi^3}{2}+3d\phi^2+\frac{d\phi\Phi^2}{2}+\frac{\Phi^4}{16}+2d\phi\Phi+2d\phi\Phi^2-d\phi^2\Phi\notag\\
-%&+\frac{9d\phi^2\Phi^2}{2}-\frac{d\phi\Phi^3}{2}-4d\phi^3\Phi+\frac{\Phi^4}{16}+d\phi^4
-\label{equation:crossed_polariser_power}
-\end{align}
-In Equation \ref{equation:crossed_polariser_power} second order or higher terms have been ignored.
+Pearson et al. proposed the alternative method of using a balanced polarimeter which provides a background-free signal with peak-to-peak height more than an order of magnitude greater than with the crossed polariser method~\cite{pearman_polarization_2002}.
 
 \subsection{Beam splitter to co-propagate}
 
@@ -237,6 +205,8 @@ The angle of ``snucking'' has implications that there is math for...
 
 Using a NBPS instead means you have an angle of 0.
 The beam splitter has no effect on the polarisation as far as I can tell.
+
+Pumped spectrsocopy techniques such as \gls{ps} and \gls{sa}... spectral broadening due to angle stuff.
 
 \subsection{High bandwidth feedback}
 \subsection{Lincoln's magic detectors?}
