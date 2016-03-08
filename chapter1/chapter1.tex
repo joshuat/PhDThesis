@@ -2,17 +2,17 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-Laser frequency stabilisation is an essential tool for atomic physics experiments, without it experiments involving \glspl{bec} and atomic clocks would not be possible~\cite{anderson_observation_1995,ye_quantum_2008}.
-There are a large number of techniques available for laser frequency stabilisation each with numerous advantages and disadvantages.
+Laser frequency stabilisation is an essential tool for atomic physics experiments, without it experiments involving \glspl{bec}, atomic clocks and many more would not be possible~\cite{anderson_observation_1995,ye_quantum_2008}.
+There are a plethora of techniques available for laser frequency stabilisation each with numerous advantages and disadvantages.
 
 \Gls{ps} is one such technique that will be discussed in detail here~\cite{demtroder_laser_2003}.
 \Gls{ps} was first described by Wieman and H\"anch in 1976 as, ``...a sensitive new method of Doppler-free spectroscopy, monitoring the nonlinear interaction of two monochromatic laser beams in an absorbing gas via changes in light polarisation."~\cite{wieman_doppler-free_1976}
-This chapter provides an overview of laser frequency stabilisation, a detailed discussion of physics of \gls{ps} followed by details on the implementation of measurement of high bandwidth frequency stabilisation using \gls{ps}.
+This chapter provides an overview of laser frequency stabilisation, a detailed discussion of the physics of \gls{ps} followed by details on the implementation of measurement of high bandwidth frequency stabilisation using \gls{ps}.
 
 \section{Laser Frequency Stabilisation}
 
 Laser frequency stabilisation describes a number of techniques that are used to reduce the temporal frequency spread of a laser's frequency.
-Typically these techniques use some reference to measure frequency deviation from a given frequency and feedback to the laser using a servo system.
+Typically these techniques use some reference to measure frequency deviation from a given frequency and provide negative feedback to the laser, using a servo system, to keep it at the target frequency.
 
 The desirable traits of a laser frequency stabilization scheme include the ability to stabilize to an absolute atomic reference, absence of frequency or amplitude modulation, high bandwidth to achieve low spectral linewidth, low complexity and low cost.
 Techniques for stabilization include \gls*{sa}~\cite{maguire_theoretical_2006, haroche_theory_1972, preston_doppler-free_1996}, which can reduce \gls*{ecdl} linewidth below \unit[100]{kHz}~\cite{cuneo_optically_1994, saliba_linewidths_2009}, through to elaborate experiments involving extremely high-finesse optical cavities that are able to achieve sub-hertz linewidth using the \gls*{pdh} technique \cite{ludlow_compact_2007}.
@@ -22,9 +22,7 @@ Some locking techniques are limited by the rate of evolution of the atomic state
 \Glspl{ecdl} subjected to mechanical vibrations will experience frequency noise as the alignment of the light coupled back into the diode off the grating varies.
 Vibrations can also affect the alignment, and thus transmitted power, of laser through optical fibres, optical isolators and through apertures.
 
-\subsection{Metrics of Goodness}
-
-Is it worth having this section?
+\subsection{Feedback Methods}
 
 \subsection{Noise}
 Thermal noise can affect the alignment of optics, the efficiency and polarisation of light transmitted through fibres, atomic vapour cell opacity and the intensity and frequency of light emitted from laser diodes, not to mention mode hops.
@@ -151,7 +149,7 @@ The electric field after the sample can be approximated to {\color{red}(probably
 \vec{E} = E_0\big(\cos\left[\phi+\Phi\right]\,\hat{x}+\sin\left[\phi+\Phi\right]\,\hat{y}\big).
 \end{equation}
 
-The output of the balanced polarimeter is the difference between the intensity {\color{red}(? I or P?)} of light incident on each detector:
+The output of the balanced polarimeter is the difference between the intensity {\color{red}(P?)} of light incident on each detector:
 \begin{align}
 I_{out} = I_x - I_y &= \frac{1}{2}\epsilon_0 c \left(|E_x|^2 - |E_y|^2\right)\notag\\
 &= \frac{1}{2}\epsilon_0 c \left(\cos^2\left[\phi+\Phi\right] - \sin^2\left[\phi+\Phi\right]\right)\notag\\
