@@ -270,9 +270,11 @@ The diode modulation could be DC-coupled, with bandwidths of \unit[40]M{Hz} and 
 The laser electronics provided control of the \glspl*{ecdl} piezoelectric transducer and diode injection current, with bandwidths of \unit[1]{kHz} and \unit[50]{kHz} respectively.
 
 \chapter{Measurement Techniques}
-We have characterized the performance of \gls*{ps} locking by measuring the noise-limited bandwidth of the error signal, the spectral linewidth of the locked lasers using high-finesse optical cavity transmission and heterodyne techniques, the frequency noise spectra of the locked lasers, and the long-term frequency stability of the locked lasers.
+We have characterized the performance of \gls*{ps} frequency stabilisation using a number of methods which are detailed here. Spectral linewidth is the principle metric by which stabilisation techniques are compared...
 
-\section{Heterodyne}
+{\color{red}More detail in this intro.}
+
+\section{Heterodyne Methods}
 
 Heterodyning is a technique, invented by Canadian Reginald Feessenden in 1901, which mixes two frequencies to produce a new frequency. {\color{red} [get proper citation, this is from Wiki]} In optics the technique can be used to examine the spectral properties of two lasers.~{\color{red}[Citation?]}
 
@@ -479,7 +481,31 @@ The difference is likely because the mapping method does not properly include co
 
 \section{Side of peak (include basic cavity theory here?)}
 \section{Integration}
-\section{Drift}
+\section{Measuring Slow Frequency Drifts}
+\subsection{to merge}
+
+Polarization spectroscopy is inherently a DC technique, susceptible to low frequency drift ($1/f$ noise).
+Drift in the laser power output as the laser alignment drifts, variations in fiber coupling efficiency if fibers are used, variations in the atomic vapor density due to changes in temperature, thermal effects on the waveplates and changes to the electronic gains and offsets can all affect the lock point of PS due to the resulting intensity noise combined with the difficulty in perfectly balancing the polarimeter.
+
+The high-finesse cavity was used as a reference to quantify the long-term drift of the PS locked laser over a period of 60 hours (fig.~\ref{fig:drift}).
+Drift in the optical cavity frequency was corrected by reference to a laser AC-locked to the rubidium transition using saturated absorption.
+The standard deviation of the PS-locked laser frequency measurements was 51\,kHz, approximately half the standard deviation of the measurements in Ref.~\cite{tiwari_laser_2006} and significantly smaller than the 400\,kHz quoted in Ref.~\cite{lee_frequency_2014}.
+The frequency change between 10\,s measurements was on average 5\,Hz, with a standard deviation of 210\,Hz.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{part1/Figs/drift.pdf}
+\caption{Frequency drift of a polarization spectroscopy locked laser, in units of natural linewidth $\Gamma$ and MHz, over a 60 hour period measured every 10 seconds.
+The standard deviation of the frequency measurements was 51\,kHz.}
+\label{fig:drift}
+\end{figure}
+
+The frequency stability of PS is strongly dependent on the extent to which the apparatus is isolated from ambient temperature variations~\cite{yoshikawa_frequency_2003}.
+In our system the lasers are temperature stabilized and isolated with acrylic enclosures, and the optical cavity was temperature controlled and isolated inside a vacuum chamber, but the PS and SA components and optical components between lasers and optical cavity were not temperature controlled or shielded from the general laboratory environment.
+The locking stability and drift are expected to improve with environmental isolation of all optical components and temperature stabilization of the atomic vapor cell.
+The power into the PS setup is particularly sensitive to polarization drift in the light exiting the optical fibers.
+Although singlemode polarization maintaining fibers were used, they exhibited significant polarization drift with laboratory temperature variations, and we expect shielded free-space propagation or active power stabilization of the light into the PS setup would further improve the frequency stability.
+
 \section{Bandwidth Stuff}
 \subsection{From paper - merge}
 \label{bandwidth_section}
