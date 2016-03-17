@@ -7,7 +7,7 @@ There are a plethora of techniques available for laser frequency stabilisation e
 \Gls{ps} was first described by Wieman and H\"anch in 1976 as, ``...a sensitive new method of Doppler-free spectroscopy, monitoring the nonlinear interaction of two monochromatic laser beams in an absorbing gas via changes in light polarisation."~\cite{wieman_doppler-free_1976}
 This chapter provides an overview of laser frequency stabilisation, a detailed discussion of the physics of \gls{ps} followed by details on the implementation of measurement of high bandwidth frequency stabilisation using \gls{ps}.
 
-\chapter{Laser Frequency Stabilisation}
+\section{Laser Frequency Stabilisation}
 
 Laser frequency stabilisation describes a number of techniques that are used to reduce the temporal frequency spread of a laser's frequency.
 Typically these techniques use some reference to measure frequency deviation from a given frequency and provide negative feedback to the laser, using a servo system, to keep it at the target frequency.
@@ -42,7 +42,7 @@ Piezo response is significantly slower ranging from \unit[0]{Hz} to \unit[100]{k
 \Gls{sa} is a simple and common technique for laser frequency stabilisation~\cite{demtroder_laser_2003}.
  
 \begin{figure}
-\includegraphics[width=\linewidth]{chapter1/Figs/SatAbs.pdf}
+\includegraphics[width=\linewidth]{part1/Figs/SatAbs.pdf}
 \caption{Saturated absorption spectroscopy.}
 \label{figure:satabs}
 \end{figure}
@@ -70,7 +70,7 @@ More detail. Some maths. What linewidth can it achieve?\cite{ludlow_compact_2007
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{chapter1/Figs/pdh.jpg}
+\includegraphics[width=\linewidth]{part1/Figs/pdh.jpg}
 \caption{A beautiful \gls{pdh} schematic.}
 \end{figure}
 \subsubsection{Dichroic Atomic Vapour Laser Lock}
@@ -96,7 +96,7 @@ This is shown in Figure \ref{figure:pol_spec_schematic}.
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{chapter1/Figs/PolSpecSchematic.pdf}
+\includegraphics[width=\linewidth]{part1/Figs/PolSpecSchematic.pdf}
 \caption{A schematic of \gls{ps} with a balanced polarimeter.
 The power balance between the probe and the pump beam is controlled with the left-most $\lambda/2$ phase retarder and \gls{pbs}.
 The $\lambda/4$ retarder is adjusted to produce a circularly polarised pump beam.
@@ -112,7 +112,7 @@ This process is depicted in Figure \ref{figure:pol_spec_explanation}.
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth,angle=180]{chapter1/Figs/pol_spec_explanation_placeholder.jpg}
+\includegraphics[width=\linewidth,angle=180]{part1/Figs/pol_spec_explanation_placeholder.jpg}
 \caption{A conceptual figure for explaining the basics of pol spec.}
 \label{figure:pol_spec_explanation}
 \end{figure}
@@ -180,7 +180,7 @@ The polarization rotation is given by
 where $L$ is the length of the atomic sample, $\lambda$ is the wavelength of the light, $\Delta n = n_+ - n_-$ and $n_\pm$ are the refractive indices affecting the circularly polarized components of the probe beam $\sigma^\pm$.
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth]{chapter1/Figs/fig1.pdf}
+\includegraphics[width=\linewidth]{part1/Figs/fig1.pdf}
 \caption{Schematic of a polarization spectroscopy (PS) apparatus.
 The beam from the ECDL laser passes through an isolator before being split into two beams by a polarizing beam cube (PBS) and coupled into optical fibers.
 One fibre leads to the PS setup and the other to other measurement or experimental apparatus.
@@ -229,7 +229,7 @@ The polariser is crossed such that only a small proportion of the probe beam pas
 With the pump inducing anisotropy the rotation of the probe can be detected after the polarisers.
 
 \begin{figure}
-\includegraphics[width=\linewidth]{chapter1/Figs/wieman_doppler-free_schematic.png}
+\includegraphics[width=\linewidth]{part1/Figs/wieman_doppler-free_schematic.png}
 \caption{Figure stolen from Wieman and H\"anch paper.
 Should probably redraw so I'm not plagiarizing.
 Or ask how to cite it probably or some such.}
@@ -357,7 +357,7 @@ So the width of the signal shown on a spectrum analyser has twice the spectral w
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\linewidth]{chapter1/Figs/beatnote.jpg}
+\includegraphics[width=0.5\linewidth]{part1/Figs/beatnote.jpg}
 \caption{Depiction of simple beatnote.}
 \label{figure:simple_beatnote}
 \end{figure}
@@ -397,7 +397,7 @@ The shoulders in the spectrum around \unit[$\pm1.5$]{MHz} correspond to the serv
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth]{chapter1/Figs/fig5_v1.pdf}
+\includegraphics[width=\linewidth]{part1/Figs/fig5_v1.pdf}
 \caption{Heterodyne beatnote for the two lasers locked with \gls*{ps}.
 The inset figure is a higher resolution measurement of the central peak with a Gaussian fit (red), \unit[-3]{dB} width of \unit[2.0$\pm$1.1]{kHz}.
 Both figures are 50 shot averages with resolution bandwidths of \unit[30]{kHz} and \unit[100]{Hz} and total measurement times of approximately \unit[0.5]{s} and \unit[2]{s} respectively.}
@@ -422,9 +422,9 @@ Both figures are 50 shot averages with resolution bandwidths of \unit[30]{kHz} a
 \subsection{From paper - merge}
 \begin{figure}[htbp]
 \centering
-    \includegraphics[width=0.9\linewidth]{chapter1/Figs/fig4a_v3.pdf}
+    \includegraphics[width=0.9\linewidth]{part1/Figs/fig4a_v3.pdf}
     \label{fig:PSDs}
-    \includegraphics[width=0.9\linewidth]{chapter1/Figs/fig4b_v1.pdf}
+    \includegraphics[width=0.9\linewidth]{part1/Figs/fig4b_v1.pdf}
     \label{fig:cavity_scans}
 \caption{Frequency noise measurements.
 (a) \Gls*{psd} of polarization spectroscopy error signals for a range of laser locking regimes with laser on resonance: unlocked; piezo-only feedback; slow current and piezo feedback; piezo, slow current, and fast AC-coupled current feedback; the noise floor of the noise measurement with no light on the \gls*{ps} detectors.
@@ -492,7 +492,7 @@ In contrast, the \gls*{sa} signal reverses sign several times within \unit[83]{M
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\linewidth]{chapter1/Figs/fig2_v1.pdf}
+    \includegraphics[width=\linewidth]{part1/Figs/fig2_v1.pdf}
     \caption{Saturated absorption spectroscopy (SA) and polarization spectroscopy (PS) spectra for the $^{85}$Rb D2 transition.
 The upper portion of the figure shows the absorption and error spectra for SA.
 The lower portion shows the components of the PS error signal ($P_{x,y}$ in Fig. \ref{polspec_schematic} and Eq. \ref{P_PS}) and the PS error signal.
@@ -504,7 +504,7 @@ Absorption signals normalized to the same maximum absorption on resonance.}
 
 \begin{figure}[hbp]
     \centering
-    \includegraphics[width=\linewidth]{chapter1/Figs/fig3_v1.pdf}
+    \includegraphics[width=\linewidth]{part1/Figs/fig3_v1.pdf}
     \caption{Polarization spectroscopy error signal frequency noise spectra.
 Upper trace (black): frequency spectrum of the error signal while the laser is unlocked and centered on the $^{85}$Rb 5$^\text{2}$S$_\text{1/2}$ $\rightarrow$ 5$^\text{2}$P$_\text{3/2}$ transition.
 Lower trace (red): spectrum with laser far from resonance.
@@ -528,7 +528,7 @@ Polarization and power stabilization of the laser, and temperature stabilization
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth]{chapter1/Figs/fig6_v1.pdf}
+\includegraphics[width=\linewidth]{part1/Figs/fig6_v1.pdf}
 \caption{Measurement of frequency drift of a polarization spectroscopy locked laser over a 50 hour period.
 Upper: frequency deviation and linear fit with gradient \unitfrac[-1.7]{kHz}{h} sets an upper limit to the drift.
 The standard deviation of the frequency measurements, acquired at \unit[5]{min} intervals, was \unit[155]{kHz}.
