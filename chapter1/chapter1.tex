@@ -1,6 +1,4 @@
-\chapter{Polarisation Spectroscopy}
-
-
+\chapter{Introduction}
 
 Laser frequency stabilisation is an essential tool for atomic physics experiments, without it experiments involving \glspl{bec}, atomic clocks and many more would not be possible~\cite{anderson_observation_1995,ye_quantum_2008}.
 There are a plethora of techniques available for laser frequency stabilisation each with numerous advantages and disadvantages.
@@ -9,7 +7,7 @@ There are a plethora of techniques available for laser frequency stabilisation e
 \Gls{ps} was first described by Wieman and H\"anch in 1976 as, ``...a sensitive new method of Doppler-free spectroscopy, monitoring the nonlinear interaction of two monochromatic laser beams in an absorbing gas via changes in light polarisation."~\cite{wieman_doppler-free_1976}
 This chapter provides an overview of laser frequency stabilisation, a detailed discussion of the physics of \gls{ps} followed by details on the implementation of measurement of high bandwidth frequency stabilisation using \gls{ps}.
 
-\section{Laser Frequency Stabilisation}
+\chapter{Laser Frequency Stabilisation}
 
 Laser frequency stabilisation describes a number of techniques that are used to reduce the temporal frequency spread of a laser's frequency.
 Typically these techniques use some reference to measure frequency deviation from a given frequency and provide negative feedback to the laser, using a servo system, to keep it at the target frequency.
@@ -22,9 +20,9 @@ Some locking techniques are limited by the rate of evolution of the atomic state
 \Glspl{ecdl} subjected to mechanical vibrations will experience frequency noise as the alignment of the light coupled back into the diode off the grating varies.
 Vibrations can also affect the alignment, and thus transmitted power, of laser through optical fibres, optical isolators and through apertures.
 
-\subsection{Feedback Methods}
+\section{Feedback Methods}
 
-\subsection{Noise}
+\section{Noise}
 Thermal noise can affect the alignment of optics, the efficiency and polarisation of light transmitted through fibres, atomic vapour cell opacity and the intensity and frequency of light emitted from laser diodes, not to mention mode hops.
 
 Noise in the electronic environment can also cause frequency instability. Noise on the power supply to the laser diode affects the intensity and frequency of the light emitted.
@@ -39,8 +37,8 @@ Piezo response is significantly slower ranging from \unit[0]{Hz} to \unit[100]{k
 {\color{red}Frequency ranges of noise.}
 {\color{red}More detail? More References on noise in general.}
 
-\subsection{Stabilisation Techniques}
-\subsubsection{Saturated Absorption Spectroscopy}
+\section{Stabilisation Techniques}
+\subsection{Saturated Absorption Spectroscopy}
 \Gls{sa} is a simple and common technique for laser frequency stabilisation~\cite{demtroder_laser_2003}.
  
 \begin{figure}
@@ -49,7 +47,7 @@ Piezo response is significantly slower ranging from \unit[0]{Hz} to \unit[100]{k
 \label{figure:satabs}
 \end{figure}
 
-\subsubsection{Polarisation Spectroscopy}
+\subsection{Polarisation Spectroscopy}
 
 Summary of PS.
 
@@ -63,7 +61,7 @@ Balanced polarimeter.\cite{pearman_polarization_2002,yoshikawa_frequency_2003}
 Bi-polarisation spectroscopy.\cite{tiwari_laser_2006}
 
 
-\subsubsection{Pound Drever Hall}
+\subsection{Pound Drever Hall}
 
 The \gls{pdh} technique is the standard for laser frequency linewidth reduction.\cite{drever_laser_1983}
 \gls{pdh} uses an optical cavity as a frequency reference and an \gls{eom} to modulate the the light incident to the cavity.
@@ -80,17 +78,17 @@ More detail. Some maths. What linewidth can it achieve?\cite{ludlow_compact_2007
 
 It can achieve linewidths of....
 
-\subsubsection{Modulation Transfer Spectroscopy}
+\subsection{Modulation Transfer Spectroscopy}
 \Gls{mts}...
 
 It can achieve linewidths of...\cite{negnevitsky_wideband_2013}
 
-\subsubsection{Other Techniques}
+\subsection{Other Techniques}
 
 Any others?
 
-\section{Theoretical Description of Polarisation Spectroscopy}\label{section:pol_spec_theory}
-\subsection{Basic Theory}
+\chapter{Theoretical Description of Polarisation Spectroscopy}\label{section:pol_spec_theory}
+\section{Basic Theory}
 
 In \gls{ps} a circularly polarised pump beam from a monochromatic laser, with frequency close to an atomic resonance, induces frequency-dependent circular birefringence in a magnetically-shielded atomic gas sample.
 A linearly polarised beam from the same source is used to measure the birefringence, monitored with a balanced polarimeter consisting of a half-wave phase retarder, \gls{pbs} and two detectors.
@@ -162,7 +160,7 @@ The largest spectrum is provided when $\phi=\pi/4$ and since $\Phi$ is small $I_
 I_{out} = I_0 2\Phi = I_0 \frac{2\pi L \Delta n}{\lambda}
 \end{equation}
 
-\subsubsection{Theory from paper - to be merged}
+\subsection{Theory from paper - to be merged}
 A schematic diagram for polarization spectroscopy is shown in Fig.~\ref{polspec_schematic}.
 A circularly polarized pump beam from a monochromatic laser induces frequency-dependent circular birefringence in a magnetically-shielded atomic gas sample.
 A linearly polarized beam from the same source is used to measure the birefringence, monitored with a balanced polarimeter consisting of a half-wave phase retarder, \glsfirst*{pbs} and two detectors.
@@ -210,11 +208,11 @@ $\Delta\alpha_0$ is the sum over all $m_F$ ground states of the difference betwe
 \end{align}
 The absorption coefficient for a given transition is $\alpha_{(F, m_F\rightarrow F',m_{F\pm1})}=N \sigma(\omega_L)$ where $N$ is the total number of interacting atoms, $\sigma(\omega_L)$ is the absorption cross section for the transition and $P_{F,m_F}$ refer to the populations of the various atomic states.
 
-\subsubsection{Magnetic shielding}
+\subsection{Magnetic shielding}
 
-\subsection{Fast Theory}
+\section{Fast Theory}
 
-\subsubsection{from paper}
+\subsection{from paper}
 The atomic substate populations can be calculated using \glspl*{obe}~\cite{hughes_polarization_2009} but the standard steady-state solutions provide little insight into the behavior of the error signal when $\delta$ is changing faster than the evolution of the populations.
 That evolution is limited to the spontaneous decay rate $\Gamma$, and hence for times $t\ll \tau=1/\Gamma$, the populations can be considered constant.
 The \gls*{ps} signal is proportional to the refractive index difference given by Eq.~(\ref{result}), which describes a steep, background-free antisymmetric dispersive function, with bandwidth $1/t$ that can be much greater than $\Gamma$ (Fig.~\ref{sa_ps_spectra}).
@@ -222,9 +220,10 @@ Absorption-based frequency stabilization techniques such as \gls*{sa} rely on fr
 SA is further limited if there are closely spaced hyperfine resonances or cross-over peaks.
 Laser frequency noise can extend to frequencies much greater than $\Gamma$, where polarization spectroscopy still provides strong feedback and therefore can achieve much narrower laser linewidth.
 
-\subsection{OBEs (timescale of state evolution, step in simulating)}
-\section{Developments}
-\subsection{Balanced Polarimeter}
+\section{OBEs (timescale of state evolution, step in simulating)}
+
+\chapter{Polarisation Spectroscopy Developments}
+\section{Balanced Polarimeter}
 When Wieman and H\"anch~\cite{wieman_doppler-free_1976} originally described \gls{ps} polarisation rotation was monitored with a nearly crossed polariser as shown in Figure \ref{figure:wieman_doppler-free_schematic}.
 The polariser is crossed such that only a small proportion of the probe beam passes through them in the absence of the pump.
 With the pump inducing anisotropy the rotation of the probe can be detected after the polarisers.
@@ -239,7 +238,7 @@ Or ask how to cite it probably or some such.}
 
 Pearson et al. proposed the alternative method of using a balanced polarimeter which provides a background-free signal with peak-to-peak height more than an order of magnitude greater than with the crossed polariser method~\cite{pearman_polarization_2002}.
 
-\subsection{Beam splitter to co-propagate}
+\section{Beam splitter to co-propagate}
 
 All papers thus far have ``snuck'' the pump beam through the vapour cell.
 
@@ -252,12 +251,13 @@ The beam splitter has no effect on the polarisation as far as I can tell.
 
 Pumped spectroscopy techniques such as \gls{ps} and \gls{sa}... spectral broadening due to angle stuff.
 
-\subsection{High bandwidth feedback}
+\section{High bandwidth feedback}
 
 
-\subsection{Lincoln's magic detectors?}
-\section{Experimental Setup (with details - fibres, calcite, etc.)}
-\subsection{from paper - merge}
+\section{Lincoln's magic detectors?}
+
+\chapter{Experimental Setup (with details - fibres, calcite, etc.)}
+\section{from paper - merge}
 Two commercial Littrow configuration \glspl*{ecdl} were individually locked using \gls*{ps}.
 The laser beam for each was split by a \gls*{pbs} and propagated through polarization-maintaining fibers to the \gls*{ps} locking system and linewidth measurements.
 The locking beams were polarized with Glan-Thompson prisms (Fig.~\ref{polspec_schematic}) to eliminate residual polarization drift in the fibers.
@@ -268,14 +268,14 @@ The servo controller integration zero-gain frequency was typically between \unit
 The diode modulation could be DC-coupled, with bandwidths of \unit[40]M{Hz} and \unit[10]{MHz}, or AC-coupled, \unit[100]{kHz}\,\textendash\,\unit[40]{MHz} and \unit[10]{kHz}\,\textendash\,\unit[10]{MHz}, depending on the laser.
 The laser electronics provided control of the \glspl*{ecdl} piezoelectric transducer and diode injection current, with bandwidths of \unit[1]{kHz} and \unit[50]{kHz} respectively.
 
-\section{Measurement Techniques}
+\chapter{Measurement Techniques}
 We have characterized the performance of \gls*{ps} locking by measuring the noise-limited bandwidth of the error signal, the spectral linewidth of the locked lasers using high-finesse optical cavity transmission and heterodyne techniques, the frequency noise spectra of the locked lasers, and the long-term frequency stability of the locked lasers.
 
-\subsection{Heterodyne}
+\section{Heterodyne}
 
 Heterodyning is a technique, invented by Canadian Reginald Feessenden in 1901, which mixes two frequencies to produce a new frequency. {\color{red} [get proper citation, this is from Wiki]} In optics the technique can be used to examine the spectral properties of two lasers.~{\color{red}[Citation?]}
 
-\subsubsection{Basic Theory}
+\subsection{Basic Theory}
 In the electrical signals context heterodyning involves the `mixing' or multiplying of two sine wave signals to produce two different signals with frequencies equal to the difference and sum of the original frequencies:
 \begin{equation}
 \sin(\theta_1)\sin(\theta_2) = \frac{1}{2} \cos(\theta_1-\theta_2) - \frac{1}{2} \cos(\theta_1+\theta_2).
@@ -297,7 +297,7 @@ I(t) &= |E_1(t) + E_2(t)|^2\nonumber\\
 \end{align}
 The interference, $E_1(t)E_2(t)$, term allows heterodyning of optical signals.
 
-\subsubsection{Optical Heterodyne Methods}
+\subsection{Optical Heterodyne Methods}
 
 There are a number of linewidth measurement techniques that utilise heterodyning. The major ones are:
 \begin{itemize}
@@ -306,7 +306,7 @@ There are a number of linewidth measurement techniques that utilise heterodyning
 \item Self-heterodyne beatnote of a laser with itself.
 \end{itemize}
 
-\subsubsection{Linewidth Discrepancies}
+\subsection{Linewidth Discrepancies}
 There is an interesting discrepancy between intuition and what the literature uses to describe `linewidth'.
 Intuitively, when discussing the spectral properties of light, one would expect references to refer to the properties of the electric field since that is the entity that is interacting with atoms and other frequency references.
 However, the literature seems to exclusively refer to properties of the power of the signal from photodetectors, as shown on spectrum analysers, which differ by a factor of 2 which will be shown below.
@@ -362,7 +362,7 @@ So the width of the signal shown on a spectrum analyser has twice the spectral w
 \label{figure:simple_beatnote}
 \end{figure}
 
-\subsubsection{Self-heterodyne}
+\subsection{Self-heterodyne}
 
 Self-heterodyne is...
 
@@ -378,14 +378,14 @@ They look good... too good.
 
 Here's why...\cite{richter_linewidth_1986}
 
-\subsection{Frequency Reference}
+\section{Frequency Reference}
 \begin{itemize}
 \item Identical laser
 \item Narrow laser
 \item Three Gaussian lasers
 \end{itemize}
 
-\subsubsection{from paper - merge}
+\subsection{from paper - merge}
 To investigate the discrepancy between the two laser linewidth measurements we used heterodyne measurements which are insensitive to amplitude noise.
 Heterodyne measurements were made by frequency shifting one of the laser beams with a double-pass \gls*{aom} and combining the two locked beams on a 50:50 beamsplitter followed by a \unit[1]{GHz} bandwidth photodetector.
 The beatnote spectrum was measured with a radio frequency spectrum analyzer~\cite{equipment}, see Fig.~\ref{beatnote}.
@@ -418,8 +418,8 @@ Both figures are 50 shot averages with resolution bandwidths of \unit[30]{kHz} a
 \label{linewidth_table}
 \end{table}
 
-\subsection{Noise measurements}
-\subsubsection{From paper - merge}
+\section{Noise measurements}
+\subsection{From paper - merge}
 \begin{figure}[htbp]
 \centering
     \includegraphics[width=0.9\linewidth]{chapter1/Figs/fig4a_v3.pdf}
@@ -437,7 +437,7 @@ Cavity \gls*{fwhm} linewidth \unit[71.6]{kHz}, scan time \unit[100]{ms}, laser p
 For (a) and (c) noise below \unit[$10^4$]{Hz} was measured with a high dynamic range audio digitizer with a resolution bandwidth (RBW) of \unit[12]{Hz}; an RF spectrum analyzer was used at higher frequencies, with RBW of \unit[30]{Hz} between \unit[$10^4$]{Hz}\textendash\unit[$10^6$]{Hz} and RBW of \unit[300]{Hz} above \unit[$10^6$]{Hz}} 
 \end{figure}
 
-\subsubsection{Error Signal Noise}
+\subsection{Error Signal Noise}
 The spectrum of the \gls*{ps} error signal provides a measure of the laser frequency noise in combination with the \gls*{ps} frequency discrimination, photodetector and electronic noise and gain.
 The response of the system to different feedback parameters and the underlying noise limitations are immediately apparent.
 The frequency noise \glsfirst*{psd} of the \gls*{ps} error signal (Fig.~\ref{fig:PSDs}) was measured for different feedback configurations, using a high-dynamic-range audio digitizer (low frequency, \unit[\textless10]{kHz}) and radio-frequency spectrum analyzer (high frequency, \unit[10]{kHz} to \unit[30]{MHz}).
@@ -448,11 +448,7 @@ Increasing suppression of noise is readily apparent as the feedback bandwidth is
 From around \unit[450]{Hz} to \unit[350]{kHz} the fully locked noise spectrum is coincident with the noise floor measured by detuning the laser far from resonance, and intersects with the unlocked spectrum at \unit[700]{kHz}.
 A servo bump peaked at \unit[1.3]{MHz} is consistent with a phase lag in laser diode response to current modulation \cite{wiemanhollberg}.
 
-%{\color{red} Need to say ``so what''.   The data show feedback signal of 15 to 20\,dB above noise, over a bandwidth limited by the servo controller bandwidth of 14\,MHz. [Comment applies to Fig.2?] Useful feedback to about 700\,kHz, lower than SNR bandwidth of about 2\,MHz due to diode phase lag. }
-
-%{\color{red} Explain why bandwidth appears to be so much less than Fig.2? Actually it's not but Fig 2 shows 0.1 - 100 MHz?}
-
-\subsubsection{Cavity Transmission Noise}
+\subsection{Cavity Transmission Noise}
 The error signal spectra provide useful information for optimising the locking system to reduce the laser frequency noise spectrum.
 To measure the laser frequency noise spectrum itself we used a high-finesse optical cavity as an independent laser frequency discriminator \cite{equipment}.
 With finesse of 20942 and free spectral range of \unit[1.50]{GHz}, the optical cavity had \gls*{fwhm} linewidth of \unit[71.6]{kHz}.
@@ -480,11 +476,11 @@ As expected, the cavity transmission mapping method is more susceptible to laser
 Assuming the measurements are uncorrelated convolutions of the frequency and amplitude noise contributions, the linewidth determined from cavity transmission mapping consists of the \unit[1.4$\pm$0.3]{kHz} amplitude noise linewidth in combination with a frequency noise linewidth of \unit[2.0$\pm$0.7]{kHz}.
 The difference is likely because the mapping method does not properly include contributions from higher Fourier frequencies; that is, the ``pedestal'' of the laser spectrum which can be seen in a heterodyne measurement.
 
-\subsection{Side of peak (include basic cavity theory here?)}
-\subsection{Integration}
-\subsection{Drift}
-\subsection{Bandwidth Stuff}
-\subsubsection{From paper - merge}
+\section{Side of peak (include basic cavity theory here?)}
+\section{Integration}
+\section{Drift}
+\section{Bandwidth Stuff}
+\subsection{From paper - merge}
 \label{bandwidth_section}
 The capture range and bandwidth of the frequency discriminator are important in determining the ultimate linewidth that can be achieved, and the ability to compensate for sudden disturbances to the laser frequency, for example due to external shock or vibration.
 We define the capture range as twice the minimum frequency difference from resonance for which the locking signal is of the correct sign for negative feedback, which can be deduced from the error signal by locating the first zero crossing to either side of the resonance.
@@ -518,8 +514,8 @@ The measurements are shown with a superposed smoothed curve (moving 20-point ave
     \label{bandwidth}
 \end{figure}
 
-\subsection{Long Term Stability}
-\subsubsection{from paper - merge}
+\section{Long Term Stability}
+\subsection{from paper - merge}
 Polarization spectroscopy is inherently a DC technique, susceptible to low frequency drift ($1/f$ noise), for example drift in the laser power output as the laser alignment drifts, variations in fiber coupling efficiency, variations in the atomic vapor density due to changes in temperature or local magnetic field, or changes to the electronic gains and offsets.
 To quantify the long-term stability, the beatnote between a \gls*{ps}-locked laser and a laser locked to an \gls*{sa} peak was tracked over a number of days.
 The \gls*{sa} laser was AC-locked using FM demodulation; that is, with current modulation at \unit[250]{kHz} and demodulation of the detected signal.
@@ -540,7 +536,7 @@ Lower: temperature (dotted line) and pressure (dashed line) of the laboratory ov
 \label{drift}
 \end{figure}
 
-\section{Conclusion}
+\chapter{Conclusion}
 We have demonstrated laser frequency stabilization using a polarization spectroscopy reference, and reduced the linewidth of \gls*{ecdl} lasers well below \unit[1]{kHz}, much lower than previously demonstrated with this technique and previously achieved only by locking to high-finesse optical cavities.
 The absolute frequency drift of less than \unit[50]{kHz} per day is adequate for many laser cooling experiments.
 Further improvements to drift could be achieved with simple measures such as temperature stabilization and environmental isolation.
@@ -552,5 +548,3 @@ However, the effect on linewidth would be negligible because the \gls*{ps} signa
 Much greater improvements could be made by lowering the \gls*{ps} noise floor, which is three to four orders of magnitude higher than the noise floor of the optical cavity.
 The difference is only partly due to the $100\times$ higher power in \gls*{ps}, which will increase shot and Johnson noise by $10\times$.
  More...
- 
-\section{PDH goes somewhere}
