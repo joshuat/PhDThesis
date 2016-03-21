@@ -1,15 +1,15 @@
 \documentclass[11pt]{report}
 
+% I want multiple citations to be condenced. ie. [1, 2, 3, 4] -> [1-4]
 % I want back references in my bibliography.
-\usepackage[pagebackref,hidelinks]{hyperref}
-% The following formats the back references nicely.
-\renewcommand*{\backref}[1]{}
-\renewcommand*{\backrefalt}[4]{[{%
-    \ifcase #1 Not cited.%
-          \or Cited on page~#2.%
-          \else Cited on pages #2.%
-    \fi%
-    }]}
+\usepackage[backref = true, sorting = none, backend = bibtex, style=nature]{biblatex}
+% Phrase the back reference nicely.
+\DefineBibliographyStrings{english}{%
+  backrefpage = {cited on page},
+  backrefpages = {cited on pages},
+}
+% Links without boxes around them.
+\usepackage[hidelinks]{hyperref}
 % Color for... color.
 \usepackage{color}
 % Need this for figures
@@ -25,6 +25,9 @@
 
 \include{acronyms}
 \makeglossaries
+
+% Add the .bib file.
+\bibliography{Library}
 
 \begin{document}
 
@@ -58,8 +61,8 @@
 \printglossary
 
 % References
-\bibliographystyle{unsrt}
-\renewcommand\bibname{References}
-\bibliography{Library}
+%\bibliographystyle{unsrt}
+%\renewcommand\bibname{References}
+\printbibliography
 
 \end{document}
