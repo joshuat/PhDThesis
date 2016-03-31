@@ -10,8 +10,13 @@ This chapter provides an overview of laser frequency stabilisation, a detailed d
 \section{Laser Frequency Stabilisation}
 
 Laser frequency stabilisation describes a number of techniques that are used to reduce the temporal frequency spread of a laser's frequency.
-This can range from weak frequency stabilisation keeping a laser's centre frequency at a particular point to convoluted frequency narrowing techniques that attempt to reduce laser linewidth to sub-hertz levels.
+This can range from weak frequency stabilisation keeping the centre frequency of a laser at a particular point to convoluted frequency narrowing techniques that attempt to reduce laser linewidth to sub-hertz levels.
 Typically these techniques use some reference to measure frequency deviation from a given frequency and provide negative feedback to the laser, using a servo system, to keep it at the target frequency.
+
+The efficacy of stabilisation techniques can be described by width of the frequency distribution of the laser, called the linewidth.
+Width is usually refers to either the \gls{fwhm} or \gls{rms} width about the central frequency.
+Linewidth can describe short or long timescale measurements.
+Short measurements, usually less than a second measurement, are used to describe the linewidth of laser whereas long timescale measurement, hours or days in duration, are used to describe the drift of the laser central frequency over time.
 
 There are a number of traits that are desirable in a laser frequency stabilization scheme including the ability to stabilize to an absolute atomic reference, absence of frequency or amplitude modulation, high bandwidth to achieve low spectral linewidth, large capture range, low complexity and low cost.
 
@@ -24,7 +29,7 @@ These techniques include
 \item Sagnac interferometry~\cite{robins_Interferometric_2002, jundt_non-linear_2003},
 \item \acrfull{ps}~\cite{wieman_doppler-free_1976, lancaster_polarisation_1999, yoshikawa_frequency_2003, harris_polarization_2006, pearman_polarization_2002, tiwari_laser_2006, do_polarization_2008, torii_laser-phase_2012}
 \item \gls{pdh}~\cite{drever_laser_1983} and
-\item H\"ansch Couillaud~\cite{hansch_laser_1980}.
+\item H\"ansch Couillaud stabilisation~\cite{hansch_laser_1980}.
 \end{itemize}
 
 \section{Feedback Methods}
