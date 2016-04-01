@@ -33,26 +33,35 @@ These techniques include
 \end{itemize}
 Some of these techniques will be discussed later on in this chapter.
 
-\section{Feedback Methods}
+\section{Frequency Control and Feedback}
 
-Stabilisation techniques require some kind of feedback to the laser in order to keep it at the desired frequency.
-There are a few common ways of providing feedback to lasers, the focus here will be on diode lasers, particularly \glspl{ecdl}.
+There are a number of ways to control the output frequency of a laser and these methods can be used to supply feedback from the stabilisation technique in order to decrease the linewidth of a laser system.
+The focus here will be on the feedback systems of diode lasers, particularly \glspl{ecdl}.
 
-\subsection{Current Feedback}
+\subsection{Temperature}
+The temperature of a laser diode affects the output frequency due to the temperature dependence of the optical path length and gain curves~\cite{wieman_using_1991}.
+The two processes affect output frequency at different rates and both show an increase in wavelength with increasing temperature.
 
-Diode lasers require an electric current in order to function and this current can be used to control the output frequency of the laser.
-The front and rear facets of laser diodes are reflecting forming an optical cavity.
-The optical cavity support standing waves of particular wavelengths which serve to enhance the stimulated emission essential to lasing.
-The electrical current passing through a laser diode will cause an increase in temperature of the diode which in turn increases the size of the cavity and the supported standing wave wavelength.
-Increasing the temperature also affects the band gaps in the crystal such that an increase in temperature causes an increase in wavelength.
-Thus altering the current supply to the laser can be use to control the central output frequency of the laser.
+The temperature of laser diodes can be controlled through two methods. \Glspl{tec} can be used to directly control the temperature of the device and the injection current into the diode affects the temperature.
+
+\subsection{Injection Current}
+The injection current into the diode affects the temperature of the diode and the density of charge carriers which in turn affects the refractive index of the medium and thus the wavelength of the laser light produced.
+
+\subsection{Grating Angle}
+In external cavity diode lasers, for example Littrow configuration \glspl{ecdl} as shown in Fig.~\ref{figure:littrow}, the angle of the external grating can be used to control the output frequency.
+The grating angle affects the wavelength of the light that is reflected back into the laser diode and thus the angle can be used to select output wavelength.
+The grating angle is commonly controlled using piezoelectric actuators~\cite{hawthorn_littrow_2001}.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{part1/Figs/littrow.jpg}
+\caption{Littrow configuration for diode lasers.}
+\label{figure:littrow}
+\end{figure}
 
 {\color{red} Verify these and provide citations.}
-
 To talk about:
 \begin{itemize}
 \item Typical feedback bandwidths.
-\item Grating feedback.
 \item Fast feedback - complications (isolation from ground, phase lag...).
 \end{itemize}
 
