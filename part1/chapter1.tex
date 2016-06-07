@@ -101,19 +101,15 @@ This section contains a brief overview of a number of stabilisation techniques.
 \subsection{Saturated Absorption Spectroscopy}
 \Gls{sa} is a simple and common technique for laser frequency stabilisation which is used with a number of atomic species~\cite{demtroder_laser_2003}.
 \Gls{sa} is often used in experiments where narrow linewidths are not required due to the ease and setup and low cost.
-A schematic of \gls{sa} is shown in Figure~\ref{figure:satabs} and a absorption spectrum is shown in Figure~\ref{figure:satabsspectrum}.
+A schematic of \gls{sa} is shown in Figure~\ref{figure:satabs}.
 
-\Gls{sa} can be a DC or AC stabilization technique.
-The DC technique is more susceptible to drift and there is an frequency offset from the atomic transition whereas the AC technique requires the added complexity of modulation of the laser frequency and the linewidth is limited by modulation frequency.
-Linewidths under 150\,kHz are easily attainable with AC saturated absorption spectroscopy.
-
-{\color{red}Explain DC/AC.}
- 
 \begin{figure}
 \includegraphics[width=\linewidth]{part1/Figs/SatAbs.pdf}
 \caption{An example of a saturated absorption spectroscopy setup.}
 \label{figure:satabs}
 \end{figure}
+
+\Gls{sa} involves counter-propagating pump and probe beams from the laser source through a sample of atomic vapour with the intensity of the probe beam after the gas measured by a photodetector. Without the pump beam the absorption of the probe as a function of laser frequency would show peaks at the atomic transitions, with width equal to the linewidth of each transition, smeared out by the thermal distribution of the atoms due to thermal motion which for room temperature atoms results in a smooth curve 100s of MHz wide which obscures the hyperfine transitions. Adding the pump beam results in less absorption at each transition due to the pump exciting atoms which are then inaccessible to the probe. With counter-propagating beams `cross-over' features appear halfway between each pair of transitions. An example spectrum is shown in Figure~\ref{figure:satabsspectrum}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{part1/Figs/SatAbsSpectrum.pdf}
@@ -121,9 +117,15 @@ Linewidths under 150\,kHz are easily attainable with AC saturated absorption spe
 \label{figure:satabsspectrum}
 \end{figure}
 
+\Gls{sa} can be a DC or AC stabilization technique.
+The DC technique is more susceptible to drift and there is an frequency offset from the atomic transition whereas the AC technique requires the added complexity of modulation of the laser frequency and the linewidth is limited by modulation frequency.
+Linewidths under 150\,kHz are easily attainable with AC saturated absorption spectroscopy.
+
+{\color{red}Explain DC/AC.}
+
 \subsection{Polarisation Spectroscopy}
 
-Summary of PS.
+Polarisation spectroscopy is a technique that Summary of PS.
 
 Pol Spec developments
 
