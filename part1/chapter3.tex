@@ -8,7 +8,7 @@ We have characterized the performance of \gls*{ps} frequency stabilisation using
 Heterodyning is a technique, invented by Canadian Reginald Feessenden in 1901, which mixes two frequencies to produce a new frequency. {\color{red} [get proper citation, this is from Wiki]} In optics the technique can be used to examine the spectral properties of two lasers.~{\color{red}[Citation?]}
 
 \subsection{Basic Theory}
-In the electrical signals context heterodyning involves the `mixing' or multiplying of two sine wave signals to produce two different signals with frequencies equal to the difference and sum of the original frequencies:
+In the electrical signals context heterodyning involves the `mixing' or multiplying of two signals (e.g. two sine waves) to produce two different signals with frequencies equal to the difference and sum of the original frequencies:
 \begin{equation}
 \sin(\theta_1)\sin(\theta_2) = \frac{1}{2} \cos(\theta_1-\theta_2) - \frac{1}{2} \cos(\theta_1+\theta_2).
 \end{equation}
@@ -20,9 +20,9 @@ I(t) = \frac{c\epsilon_0}{2}|E|^2.
 
 For two copropagating lasers with electric fields $E_{1, 2}$ and angular frequencies $\omega_{1, 2}$ we can write
 \begin{equation}
-E_{1, 2}(t) = \sin(2\pi \omega_{1, 2}).
+E_{i}(t) = \sin(2\pi \omega_{i}).
 \end{equation}
-The electric field at the detector, $E_T$, is given by the sum of $E_{1,2}$, such that
+The electric field at the detector, $E_T$, is given by the sum of $E_{1}$ and $E_{2}$, and thus the intensity is given by,
 \begin{align}
 I(t) &= |E_1(t) + E_2(t)|^2\nonumber\\
 &= E_1(t)^2 + E_1(t)E_2(t) + E_2(t)^2.
