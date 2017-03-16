@@ -1,5 +1,9 @@
 \documentclass[11pt]{report}
 
+% Let's go with 1.5 linespacing for now. Hopefully 2x isn't required.
+\linespread{1.3} % 1.3= one and a half, 1.6=double
+% Margins are supposed to be at least 3cm on the left and right.
+\usepackage[inner=4.0cm,outer=3.0cm]{geometry}
 % I want multiple citations to be condenced. ie. [1, 2, 3, 4] -> [1-4]
 % I want back references in my bibliography.
 \usepackage[backref = true, sorting = none, backend = bibtex, style=nature]{biblatex}
