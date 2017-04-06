@@ -3,14 +3,58 @@
 \section{Introduction}
 
 \subsection{What is Emittance}
+ 
 
 \subsection{What Emittance is useful for}
 
-\section{Thoery}
+\section{Theory}
+
+A given ensemble of particles can be described by its density in six-dimensional phase space, $(x, p_x, y, p_x, z, p_z)$ where $(x, y, z)$ are the positions and $(p_x, p_y, p_z)$ are the momenta of each particle.
+The extent of the beam in phase space is called the \emph{emittance} of the beam.
+Each cartesian direction is usually examined separately, $(x, p_x)$, $(y, p_y)$ and $(z, p_z)$ where $z$ is the optic axis of the beam.
+
+Typically the gradients of trajectories in $x$-$z$ and $y$-$z$ are measured rather than the momenta.
+These gradients are referred to as the divergence and are defined as $x^\prime \equiv \frac{dx}{dz} = \frac{v_x}{v_z}$.
+The space of $(x, x^\prime)$ is referred to as trace-space. The \emph{emittance} can be defined as
+\begin{equation}
+\epsilon^x \equiv \frac{A^x}{\pi}
+\end{equation}
+where $A^x$ is the area occupied by the beam in trace space.
+
+The density, $\rho$, of a beam of $N$ particles in trace space can usually be described by a Gaussian:
+\begin{equation}
+\rho(x, x^\prime) = N exp\left[ \frac{-(\sigma_{22}x^2-2\sigma_{12}xx^\prime+\sigma_{11}x^{\prime2}}{2|\sigma|} \right]
+\end{equation}
+where $|\sigma|$ is the determinant of the symmetric beam matrix,
+\begin{equation}
+\sigma = \begin{pmatrix} \sigma_{11} & \sigma_{12} \\ \sigma_{21} & \sigma_{22} \end{pmatrix}
+\end{equation}
+$\sigma_{11}$ is the standard deviation of $x$, $\sigma_{22}$ the standard deviation of $x^\prime$ and $\sigma_{12}=\sigma_{21}$ indicates the coupling between $x$ and $x^\prime$. The \emph{emittance} can also be defined as
+\begin{equation}
+\epsilon^x \equiv \sqrt{|\sigma|} = \sqrt{\sigma_{11}\sigma_{22}-\sigma_{12}^2}
+\end{equation}
+
+The \emph{\gls{rms} emittance} of the ensemble can be defined as
+\begin{equation}\label{emittance}
+\epsilon \equiv \sqrt{\langle x^2\rangle \langle x^{\prime 2}\rangle - \langle x x^\prime\rangle^2}.
+\end{equation}
+
+\section{Measurement}
+
+Directly calculating the emittance of an ensemble with Eq. \ref{emittance} requires full knowledge of the position and momenta of the particles which is difficult since beam monitors tend to only measure the transverse positions of particles.
+There are a number of methods to practically calculate the emittance of a particle beam, namely pepperpots, the multiple profile method methods and the quadrupole method.
+
+\subsection{Pepperpots}
+
+\subsection{Multi-profile Method}
+The multi-profile method involves measuring the profile of the beam at a minimum of three locations along the propagation axis.
+
+
+\subsection{Quadrupole Method}
 
 \section{Simulation}
 
-\section{Measurement}
+
 
 \subsection{Pepperpots}
 
