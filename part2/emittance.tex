@@ -22,7 +22,7 @@ The space of $(x, x^\prime)$ is referred to as trace-space. The \emph{emittance}
 where $A^x$ is the area occupied by the beam in trace space.
 
 The density, $\rho$, of a beam of $N$ particles in trace space can usually be described by a Gaussian:
-\begin{equation}
+\begin{equation}\label{trace_space_density}
 \rho(x, x^\prime) = N exp\left[ \frac{-(\sigma_{22}x^2-2\sigma_{12}xx^\prime+\sigma_{11}x^{\prime2}}{2|\sigma|} \right]
 \end{equation}
 where $|\sigma|$ is the determinant of the symmetric beam matrix,
@@ -47,7 +47,30 @@ There are a number of methods to practically calculate the emittance of a partic
 \subsection{Pepperpots}
 
 \subsection{Multi-profile Method}
-The multi-profile method involves measuring the profile of the beam at a minimum of three locations along the propagation axis.
+
+If a beam can be described by $\sigma^0$ at $z_0$ and by $\sigma^1$ at $z_1$ then the transformation matrix, $\mathbf{R}_{12}$ from $z_0$ to $z_1$ is
+\begin{equation}
+\mathbf{R} = \begin{pmatrix} R_{11} & R_{12} \\ R_{21} & R_{22} \end{pmatrix}
+\end{equation}
+and
+\begin{equation}
+\sigma^1 = \mathbf{R}\sigma^0\mathbf{R}^T
+\end{equation}
+where $\mathbf{R}^T$ is the transpose of $\mathbf{R}$.
+The combined transfer matrix for a series of $z$ positions is simply the product of the individual transfer matrices.
+
+We can write:
+\begin{equation}
+\sigma_{11}^1 = R_{11}^2\sigma_{11}^0 + 2R_{11}R_{12}\sigma_{12}^0 + R_{12}^2\sigma_{22}^0
+\end{equation}
+
+Typical detectors are only able to measure the standard deviation of $x$, $\sigma_{11}$.
+With at least three measurements and known transfer matrices the other elements of $\sigma$ can be determined.
+With more than three measurements uncertainty can be reduced.
+
+
+
+The multi-profile method involves measuring the profile of the beam at at least three locations along the $z$ axis.
 
 
 \subsection{Quadrupole Method}
