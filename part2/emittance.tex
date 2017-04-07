@@ -30,7 +30,7 @@ where $|\sigma|$ is the determinant of the symmetric beam matrix,
 \sigma = \begin{pmatrix} \sigma_{11} & \sigma_{12} \\ \sigma_{21} & \sigma_{22} \end{pmatrix}
 \end{equation}
 $\sigma_{11}$ is the standard deviation of $x$, $\sigma_{22}$ the standard deviation of $x^\prime$ and $\sigma_{12}=\sigma_{21}$ indicates the coupling between $x$ and $x^\prime$. The \emph{emittance} can also be defined as
-\begin{equation}
+\begin{equation}\label{eq:emittancewithdeterminant}
 \epsilon^x \equiv \sqrt{|\sigma|} = \sqrt{\sigma_{11}\sigma_{22}-\sigma_{12}^2}
 \end{equation}
 
@@ -41,7 +41,7 @@ The \emph{\gls{rms} emittance} of the ensemble can be defined as
 
 \section{Measurement}
 
-Directly calculating the emittance of an ensemble with Eq. \ref{emittance} requires full knowledge of the position and momenta of the particles which is difficult since beam monitors tend to only measure the transverse positions of particles.
+Directly calculating the emittance of an ensemble with Eq. \ref{emittance} requires full knowledge of the position and momenta of the particles which is difficult as beam monitors tend to only measure the transverse positions of particles.
 There are a number of methods to practically calculate the emittance of a particle beam, namely pepperpots, the multiple profile method methods and the quadrupole method.
 
 \subsection{Pepperpots}
@@ -60,7 +60,7 @@ where $\mathbf{R}^T$ is the transpose of $\mathbf{R}$.
 The combined transfer matrix for a series of $z$ positions is simply the product of the individual transfer matrices.
 
 We can write:
-\begin{equation}
+\begin{equation}\label{multiprofileequation}
 \sigma_{11}^1 = R_{11}^2\sigma_{11}^0 + 2R_{11}R_{12}\sigma_{12}^0 + R_{12}^2\sigma_{22}^0
 \end{equation}
 
@@ -68,10 +68,29 @@ Typical detectors are only able to measure the standard deviation of $x$, $\sigm
 With at least three measurements and known transfer matrices the other elements of $\sigma$ can be determined.
 With more than three measurements uncertainty can be reduced.
 
+The transfer matrix for simple propagation over a distance $L$ is
+\begin{equation}
+\mathbf{R}_L = \begin{pmatrix}1 & L \\ 0 & 1\end{pmatrix}
+\end{equation}
+and then Eq.~\ref{multiprofileequation} becomes
+\begin{equation}
+\sigma_{11}^1 = \sigma_{11}^0 + 2L \sigma_{12}^0 + L_1^2\sigma_{22}^0.
+\end{equation}
 
+\begin{figure}
+\includegraphics[width=\linewidth]{part2/Figs/multiprofileexample.jpg}
+\caption{An example of a multi-profile emittance measurement. {\color{red}Add R matrices. Perhaps express $L_{01}$, $L_{02}$ and $L_{03}$ instead? Appropraitely update Eq.~\ref{eq:multiprofilesolution}}}
+\label{figure:multiprofileexample}
+\end{figure}
 
-The multi-profile method involves measuring the profile of the beam at at least three locations along the $z$ axis.
+With an initial beam, $\sigma_0$, measured at $z_1, z_2$ and $z_3$ as shown in Fig.~\ref{figure:multiprofileexample} then $\sigma_{11}^1$, $\sigma_{11}^2$, and $\sigma_{11}^3$ are know and we can write 
+\begin{align}
+\sigma_{11}^1 &= \sigma_{11}^0 +2L_{01}\sigma_{12}^0 + L_{01}^2\sigma_{22}^0 \notag\\
+\sigma_{11}^2&= \sigma_{11}^0+2(L_{01}+L_{12})\sigma_{12}^0 + (L_{01}+L_{12})^2\sigma_{22}^0 \notag\\
+\sigma_{11}^3&= \sigma_{11}^0+2(L_{01}+L_{12}+L_{23})\sigma_{12}^0 + (L_{01}+L_{12}+L_{23})^2\sigma_{22}^0 \label{eq:multiprofilesolution}
+\end{align}
 
+Which can easily be solved for $\sigma_0$ thus allowing the calculation of the emittance with Eq.~\ref{eq:emittancewithdeterminant}.
 
 \subsection{Quadrupole Method}
 
