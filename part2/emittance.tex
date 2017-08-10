@@ -1,25 +1,41 @@
 \chapter{Time-Resolved Emittance Measurements}
 
-\section{Introduction}
+Emittance is used as one of the main metrics to determine the quality of a charged particle beam.
+Beam emittance determines the `focusability' of a beam which determines the size of the probe for electron and ion microscopes and is equivalent to the coherence of for synchrotrons, \glspl{xfel} and diffraction experiments.
 
-\subsection{What is Emittance}
- 
+Time-resolved measurements of emittance provide a powerful diagnostic for improvement of charged particle beams.
+Elucidation of temporal emittance behaviour has the potential to permit better understanding of the processes involved in the creation and propagation of charged particle beam and thus could be a useful tool in improving these devices.
+Time-resolved emittance has been performed previously using a pulsed \gls{mcp}~\cite{yoshida_simple_2001} and with optical transition radiation~\cite{le_sage_time-resolved_2002}.
+This chapter presents a simple and novel method of measuring time-resolved emittance that is applicable to a wide range of charged particle sources and has the potential to be performed with a single-shot measurement.
 
-\subsection{What Emittance is useful for}
+The emittance of a \gls{caeis} is important to all of it's potential applications and the time-resolution provided by the technique described in this chapter will be a useful tool to examine the behaviour of the source and hopefully provide avenues for improvement.
 
-\section{Theory}
+This chapter examines time-resolved emittance measurements through the streaking of pepperpots; including the theory involved, various technical considerations, example measurements and implementation of this technique with the \gls{caeis} at the University of Melbourne.
+
+
+
+\section{Emittance}
 
 A given ensemble of particles can be described by its density in six-dimensional phase space, $(x, p_x, y, p_x, z, p_z)$ where $(x, y, z)$ are the positions and $(p_x, p_y, p_z)$ are the momenta of each particle.
-The extent of the beam in phase space is called the \emph{emittance} of the beam.
-Each cartesian direction is usually examined separately, $(x, p_x)$, $(y, p_y)$ and $(z, p_z)$ where $z$ is the optic axis of the beam.
+The extent of the beam in phase space is called the \emph{emittance}, $\epsilon$, of the beam.
+Each cartesian direction is examined separately, $(\epsilon_x, x, p_x)$, $(\epsilon_y, y, p_y)$ and $(\epsilon_z, z, p_z)$ where $z$ is the optic axis of the beam.
 
 Typically the gradients of trajectories in $x$-$z$ and $y$-$z$ are measured rather than the momenta.
 These gradients are referred to as the divergence and are defined as $x^\prime \equiv \frac{dx}{dz} = \frac{v_x}{v_z}$.
-The space of $(x, x^\prime)$ is referred to as trace-space. The \emph{emittance} can be defined as
+The space of $(x, x^\prime)$ is referred to as trace-space.
+An example of the trace-space occupied by a beam is shown in Fig.~\ref{figure:emittance_example}.
+The \emph{emittance} can be defined as
 \begin{equation}
 \epsilon^x \equiv \frac{A^x}{\pi}
 \end{equation}
 where $A^x$ is the area occupied by the beam in trace space.
+
+\begin{figure}
+\center
+\includegraphics{part2/Figs/EmittanceExample.pdf}
+\caption{An example of the trace-space occupied by an expanding, collimated and shrinking beam. The dotted line indicates the area occupied by the beam, the emittance.}
+\label{figure:emittance_example}
+\end{figure}
 
 The density, $\rho$, of a beam of $N$ particles in trace space can usually be described by a Gaussian:
 \begin{equation}\label{trace_space_density}
@@ -34,7 +50,7 @@ $\sigma_{11}$ is the standard deviation of $x$, $\sigma_{22}$ the standard devia
 \epsilon^x \equiv \sqrt{|\sigma|} = \sqrt{\sigma_{11}\sigma_{22}-\sigma_{12}^2}
 \end{equation}
 
-The \emph{\gls{rms} emittance} of the ensemble can be defined as
+The \emph{\gls{rms} emittance} is a more practicle measure and is defined as
 \begin{equation}\label{emittance}
 \epsilon \equiv \sqrt{\langle x^2\rangle \langle x^{\prime 2}\rangle - \langle x x^\prime\rangle^2}.
 \end{equation}
@@ -46,9 +62,39 @@ There are a number of methods to practically calculate the emittance of a partic
 
 \subsection{Pepperpots}
 
-The pepperpot method uses a beam mask consisting of an array of small holes, ideally larger in extent that the size of the beam.
-The name refers to the similarity of the beam mask to the standard container for the condiment.
+The pepperpot method uses a beam mask, consisting of an array of small holes, to obscure the beam which is then propagated and detected downstream.
+by examining the size of the spots on the detector the divergence of the beam can be estimated and thus the emittance of the beam can be calculated.
+Ideally the extent of the array should be larger than the size of the beam and the holes are as small as is practicle while maintaining sufficient flux and ensuring the spots on the detector do not overlap.
+The name refers to the similarity of the simplest beam mask to the perforated lid of a container for pepper.
 
+A useful derivation of this technique is presented in Ref.~\cite{zhang_emittance_1996} with the one dimensional result:
+
+\begin{dmath}\label{equation:pepperpot}
+\epsilon_x^2 = \left\langle x^2\right\rangle \left\langle x^{\prime2}\right\rangle - \left\langle xx^\prime\right\rangle^2\allowbreak
+\approx \frac{1}{N^2} \left\{\left[\sum_{j=1}^p{n_j\left(x_{sj}-\bar{x}\right)^2}\right] \left[ \sum_{j=1}^p{\left[n_j\sigma_{x_j^\prime}^2 + n_j\left(\bar{x_j^\prime}-\bar{x^\prime}\right)^2\right]}\right] - \left[ \sum_{j=1}^p{n_jx_{sj}\bar{x_j^\prime}-N\bar{x}\bar{x^\prime}}\right]^2\right\}
+\end{dmath}
+where;
+\begin{itemize}
+\item $N$ is the total number of particles after the beam mask,
+\item $p$ is the total number of holes in the $x$ direction,
+\item $n_j$ is the number of particles passing through the $j$-th hole and hitting the detector,
+\item $x_{sj}$ is position of the $j$-th hole,
+\item $\bar{x}$ is the mean position of the holes,
+\item $\sigma_{x_j^\prime}$ is the \gls{rms} divergence of the $j$-th beamlet,
+\item $\bar{x_j^\prime}$ is the mean divergence of the $j$-th beamlet, and
+\item $\bar{x^\prime}$ is the mean divergence of all beamlets.
+\end{itemize}
+
+An example pepperpot mask and detected beamlets are shown in Fig.~\ref{figure:pepperpot_example}.
+This equation can be implemented by appropriately rotating the detected beamlets and then performing row and column sums of the pixels followed by application of Eq.~\ref{equation:pepperpot} for $x$ and $y$.
+
+\begin{figure}
+\center
+\includegraphics[width=0.49\linewidth]{part2/Figs/example_pepperpot_mask.jpg}
+\includegraphics[width=0.49\linewidth]{part2/Figs/example_pepperpot_detector_linear.png}
+\caption{An example a pepperpot mask (left) and a corresponding set of beamlets on the detector.}
+\label{figure:pepperpot_example}
+\end{figure}
 
 \subsection{Multi-profile Method}
 
@@ -64,7 +110,7 @@ where $\mathbf{R}^T$ is the transpose of $\mathbf{R}$.
 The combined transfer matrix for a series of $z$ positions is simply the product of the individual transfer matrices.
 
 We can write:
-\begin{equation}\label{multiprofileequation}
+\begin{equation}\label{equation:multiprofile}
 \sigma_{11}^1 = R_{11}^2\sigma_{11}^0 + 2R_{11}R_{12}\sigma_{12}^0 + R_{12}^2\sigma_{22}^0
 \end{equation}
 
@@ -76,12 +122,13 @@ The transfer matrix for simple propagation over a distance $L$ is
 \begin{equation}
 \mathbf{R}_L = \begin{pmatrix}1 & L \\ 0 & 1\end{pmatrix}
 \end{equation}
-and then Eq.~\ref{multiprofileequation} becomes
+and then Eq.~\ref{equation:multiprofile} becomes
 \begin{equation}
 \sigma_{11}^1 = \sigma_{11}^0 + 2L \sigma_{12}^0 + L_1^2\sigma_{22}^0.
 \end{equation}
 
 \begin{figure}
+\center
 \includegraphics[width=\linewidth]{part2/Figs/multiprofileexample.jpg}
 \caption{An example of a multi-profile emittance measurement. {\color{red}Add R matrices. Perhaps express $L_{01}$, $L_{02}$ and $L_{03}$ instead? Appropraitely update Eq.~\ref{eq:multiprofilesolution}}}
 \label{figure:multiprofileexample}
