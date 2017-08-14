@@ -57,7 +57,7 @@ The \emph{\gls{rms} emittance} is a more practicle measure and is defined as
 
 \section{Measurement}
 
-Directly calculating the emittance of an ensemble with Eq. \ref{emittance} requires full knowledge of the position and momenta of the particles which is difficult as beam monitors tend to only measure the transverse positions of particles.
+Directly calculating the emittance of an ensemble with Equation~\ref{emittance} requires full knowledge of the position and momenta of the particles which is difficult as beam monitors tend to only measure the transverse positions of particles.
 There are a number of methods to practically calculate the emittance of a particle beam, namely pepperpots, the multiple profile method methods and the quadrupole method.
 
 \subsection{Pepperpots}
@@ -86,7 +86,7 @@ where;
 \end{itemize}
 
 An example pepperpot mask and detected beamlets are shown in Figure~\ref{figure:pepperpot_example}.
-This equation can be implemented by appropriately rotating the detected beamlets and then performing row and column sums of the pixels followed by application of Eq.~\ref{equation:pepperpot} for $x$ and $y$.
+This equation can be implemented by appropriately rotating the detected beamlets and then performing row and column sums of the pixels followed by application of Equation~\ref{equation:pepperpot} for $x$ and $y$.
 
 \begin{figure}
 \center
@@ -122,7 +122,7 @@ The transfer matrix for simple propagation over a distance $L$ is
 \begin{equation}
 \mathbf{R}_L = \begin{pmatrix}1 & L \\ 0 & 1\end{pmatrix}
 \end{equation}
-and then Eq.~\ref{equation:multiprofile} becomes
+and then Equation~\ref{equation:multiprofile} becomes
 \begin{equation}
 \sigma_{11}^1 = \sigma_{11}^0 + 2L \sigma_{12}^0 + L_1^2\sigma_{22}^0.
 \end{equation}
@@ -141,7 +141,7 @@ With an initial beam, $\sigma_0$, measured at $z_1, z_2$ and $z_3$ as shown in F
 \sigma_{11}^3&= \sigma_{11}^0+2(L_{01}+L_{12}+L_{23})\sigma_{12}^0 + (L_{01}+L_{12}+L_{23})^2\sigma_{22}^0 \label{eq:multiprofilesolution}
 \end{align}
 
-Which can easily be solved for $\sigma_0$ thus allowing the calculation of the emittance with Eq.~\ref{eq:emittancewithdeterminant}.
+Which can easily be solved for $\sigma_0$ thus allowing the calculation of the emittance with Equation~\ref{eq:emittancewithdeterminant}.
 
 \subsection{Quadrupole Method}
 
@@ -201,10 +201,33 @@ How does this match up to other charged particle sources?
 May be covered in other sections.
 
 
-\section{Samples}
-
-
 \section{Experimental Setup}
+
+A number of modifications were made to the \gls{caeis} to prepare it for the streaked emittance measurements and there were a number of restrictions on various parameters due to the precise setup of the apparatus.
+The \gls{caeis} was operated in electron mode for these measurements due to the available magnetic optics and the larger emittance expected from electrons {\color{red}(why do we expect greater emittance?)} which would reduce the likelyhood of the measurements being resolution limited.
+
+See Chapter \ref{chapter:setup} for a more detailed description of the \gls{caeis}.
+
+\subsection{Beam Optics}
+The quadrupole electron optics discussed in Section \ref{section:quadrupole} were use to reduce the astigmatism present in the electron beam as discussed in the aforementioned section. When focussing was required the Einzel lens was used.
+
+A number of permanent magnets were used to steer the beam through the various apertures and onto the detector.
+Care was taken to attempt to keep the beam on the central axis of the apparatus.
+
+
+More detail (quadrupole currents, Einzel currents, focal arrangement for various tasks)
+
+\subsection{Beam Energy}
+
+\subsection{Bellows}
+
+\subsection{Streaking}
+
+\subsubsection{Deflectors}
+
+\subsubsection{Electronics}
+
+\subsection{Samples}
 
 \section{Results}
 
