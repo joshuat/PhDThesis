@@ -267,13 +267,20 @@ The bellows provide an additional mechanism to control the resolution of the mea
 As this parameter is also adjustable with the strength of the Einzel lens the bellows were placed approximately halfway between the minimumm and maximum position where the beam alignment was still well behaved.
 
 \subsection{Streaking}
+The streaking was performed using a pair of deflectors located after the pepperpot sample and orientated such that the one-dimensional pepperpots could be streaked across the detector.
+For these measurements one deflector was grounded and the other given a time-varying voltage which was supplied in one of two ways:
+\begin{itemize}
+\item A fast ramp using a bipolar push-pull solid-state switch with a fixed transition time of \unit[10]{ns} and
+\item A slower ramp using an amplified signal generator with a transition around \unit[10]{$\mu$s} or longer.
+\end{itemize}
+An example of the voltage ramps is shown in Figure~\ref{figure:deflector_voltages}.
 
+Synchronisation with the experimental cycle was easily achieved using triggers from the pulse blaster {\color{red}(refer to description elsewhere?)} and while the pulse blaster did not have suffiecient temporal resolution to correctly trigger the fast ramp adjusting cable lengths for the trigger signal by a couple of meters provided an adequate delay.
 
-
-\begin{figure}
+\begin{figure}\label{figure:deflector_voltages}
     \center
     \input{part2/Figs/DeflectorVoltages.pgf}
-    \caption{caption}
+    \caption{The voltages applied to the deflectors for the `slow' (left) and `fast' (right) streak modes. The zero on the time axis refers to the start of the electron bunches as shown in Figure~\ref{figure:streaks}.}
 \end{figure}
 
 \subsubsection{Deflectors}
