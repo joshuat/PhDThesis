@@ -31,7 +31,10 @@ The extent of the beam in phase space is called the \emph{emittance}, $\epsilon$
 Each cartesian direction is examined separately, $(\epsilon_x, x, p_x)$, $(\epsilon_y, y, p_y)$ and $(\epsilon_z, z, p_z)$ where $z$ is the optic axis of the beam.
 
 Typically the gradients of trajectories in $x$-$z$ and $y$-$z$ are measured rather than the momenta.
-These gradients are referred to as the divergence and are defined as $x^\prime \equiv \frac{dx}{dz} = \frac{v_x}{v_z}$.
+These gradients are referred to as the divergence and are defined as
+\begin{equation}\label{equation:divergence}
+x^\prime \equiv \frac{dx}{dz} = \frac{v_x}{v_z}.
+\end{equation}
 The space of $(x, x^\prime)$ is referred to as trace-space.
 An example of the trace-space occupied by a beam is shown in Figure~\ref{figure:emittance_example}.
 The \emph{emittance} can be defined as
@@ -235,7 +238,7 @@ See Chapter~\ref{chapter:setup} for a more detailed description of the \gls{caei
 \begin{figure}
 \center
 \includegraphics{part2/Figs/EmittanceApparatusSchematic.pdf}
-\caption{A schematic of the experimental apparatus with relavent dimensions. The blue region indicates the electron beam envelope.}
+\caption{A schematic of the experimental apparatus with relavent dimensions. The blue region indicates the electron beam envelope. Note that the deflectors would be orientated into and out of the page if depicted realistically.}
 \label{figure:emittance_schematic}
 \end{figure}
 
@@ -245,19 +248,21 @@ The two-dimensional pepperpot provide another avenue to monitor the astigmatism 
 When focussing was required the Einzel lens was used.
 
 A number of permanent magnets were used to steer the beam through the various apertures and onto the detector and care was taken to attempt to keep the beam on the central axis of the apparatus.
-This was achieved by manual adjusting the positions of the magnets, which were mounted on posts external to the vacuum system, to ensure that the beam was passing through the apertures in the system and by scanning the Einzel lens to verify that the beam was passing through its centre.
+This was achieved by manually adjusting the positions of the magnets, which were mounted on posts external to the vacuum system, to ensure that the beam was passing through the apertures in the system and by scanning the Einzel lens to verify that the beam was passing through its centre.
 Due to the unstable nature of the apparatus these magnets needed to be adjusted on a day-to-day basis to maintain the beam path.
 
-
-More detail (quadrupole currents, Einzel currents, focal arrangement for various tasks)
-
 \subsection{Beam Energy}
+In many emittance measurements the beam energy would not be a free parameter however is this experiment we are able to vary the energy of our beam from a few hundred eV to around \unit[10]{keV}.
+There are a number of considerations in determining the optimal beam energy to use for pepperpot measurements such as measurement resolution, beam current and beam stability.
 
-low energy is preferable for resolution, beam alignment oo fragile, flux was lower
+The resolution of a pepperpot measurement is greater when the size of the beamlets on the detector is larger and, as shown in Equation~\ref{equation:divergence} the divergence is greater for slower beams.
+Unfortunately the slower the beam the more fragile the alignment of the beam becomes.
+While attempting to align a \unit[500][eV] beam through it system it was impossible to position the steering magnets such that an unobstructed beam made it through the system to the detector.
 
-higher energy provided a significantly more stable beam and higher flux, difference in resolution is small maybe, do some math
+A relatively high energy beam of \unit[8]{keV} was used as this provided a robust beam alignment that was resistant to the transient changes in the magnetic environment.
 
 \subsection{Bellows}
+
 
 \subsection{Streaking}
 
