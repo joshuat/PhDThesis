@@ -109,25 +109,49 @@ A useful derivation of this technique is presented in Ref.~\cite{zhang_emittance
 \end{dmath}
 where;
 \begin{itemize}
-\item $N$ is the total number of particles after the beam mask,
-\item $p$ is the total number of holes in the $x$ direction,
-\item $n_j$ is the number of particles passing through the $j$-th hole and hitting the detector,
-\item $x_{sj}$ is position of the $j$-th hole,
-\item $\bar{x}$ is the mean position of the holes,
-\item $\sigma_{x_j^\prime}$ is the \gls{rms} divergence of the $j$-th beamlet,
-\item $\bar{x_j^\prime}$ is the mean divergence of the $j$-th beamlet, and
-\item $\bar{x^\prime}$ is the mean divergence of all beamlets.
+    \item $N$ is the total number of particles after the beam mask,
+    \item $p$ is the total number of holes in the $x$ direction,
+    \item $n_j$ is the number of particles passing through the $j$-th hole and hitting the detector,
+    \item $x_{sj}$ is position of the $j$-th hole,
+    \item $\bar{x}$ is the mean position of the holes,
+    \item $\sigma_{x_j^\prime}$ is the \gls{rms} divergence of the $j$-th beamlet,
+    \item $\bar{x_j^\prime}$ is the mean divergence of the $j$-th beamlet, and
+    \item $\bar{x^\prime}$ is the mean divergence of all beamlets.
 \end{itemize}
 
 An example pepperpot mask and detected beamlets are shown in Figure~\ref{figure:pepperpot_example}.
 This equation can be implemented by appropriately rotating the detected beamlets and then performing row and column sums of the pixels followed by application of Equation~\ref{equation:pepperpot} for $x$ and $y$.
 
 \begin{figure}
-\center
-\includegraphics[width=0.49\linewidth]{part2/Figs/example_pepperpot_mask.jpg}
-\includegraphics[width=0.49\linewidth]{part2/Figs/example_pepperpot_detector_linear.png}
-\caption{An example a pepperpot mask (left) and a corresponding set of beamlets on the detector.}
-\label{figure:pepperpot_example}
+    \centering
+    \begin{subfigure}{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{part2/Figs/example_pepperpot_mask.jpg}
+    \caption{}
+    \label{figure:pepperpot_mask}
+    \end{subfigure}
+    \begin{subfigure}{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{part2/Figs/example_pepperpot_detector_linear.jpeg}
+    \caption{}
+    \label{figure:pepperpot_image}
+    \end{subfigure}
+    
+    \begin{subfigure}{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{part2/Figs/example_pepperpot_1d.jpg}
+    \caption{}
+    \label{figure:1d_pepperpot}
+    \end{subfigure}
+    \begin{subfigure}{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{part2/Figs/example_streaked_pepperpot.png}
+    \caption{}
+    \label{figure:streaked_1d_pepperpot}
+    \end{subfigure}
+    % Manual labels.....
+    \caption{(a) a pepperpot mask cut into a thing copper disk and, (b), the corresponding set of beamlets on the detector. (c) a one-dimensional pepperpot mask (held in place by a copper ring) and the corresponding streaked set of beamlets on the detector, (d).}
+    \label{figure:pepperpot_example}
 \end{figure}
 
 \subsubsection{Time Resolution with Streaking}
