@@ -324,13 +324,14 @@ For these measurements one deflector was grounded and the other given a time-var
 \end{itemize}
 An example of the voltage ramps is shown in Figure~\ref{figure:deflector_voltages}. The slow ramp was done by amplifying the output of signal generator\footnote{Rigol DG4162, able to operate up to \unit[160]{MHz}} which is highly configurable and thus cabable of a wide range of pulse lengths, limited by the speed of the amplifier to a transition time approximately \unit[10]{$\mu$s} in duration as shown in Figure~\ref{figure:deflector_voltages}.
 
-Synchronisation with the experimental cycle was easily achieved using triggers from the pulse blaster {\color{red}(refer to description elsewhere?)} and while the pulse blaster did not have suffiecient temporal resolution to correctly trigger the fast ramp adjusting cable lengths for the trigger signal by a couple of meters provided an adequate delay.
+Synchronisation with the experimental cycle was easily achieved using triggers from the pulse blaster {\color{red}(refer to description elsewhere?)} and, while the pulse blaster did not have sufficient temporal resolution to correctly trigger the fast ramp, adjusting cable lengths for the trigger signal by a couple of meters provided an adequate delay.
 
 {\color{red}slow streaking smoothing of rigol signal, ringing in fast, calibrating the images}
 \begin{figure}\label{figure:deflector_voltages}
     \center
     \input{part2/Figs/DeflectorVoltages.pgf}
     \caption{The voltages applied to the deflectors for the `slow' (left) and `fast' (right) streak modes. The zero on the time axis refers to the start of the electron bunches as shown in Figure~\ref{figure:streaks}. {\color{red} Fix figure, change line color to something consistent.}}
+    \label{figure:deflector_voltages}
 \end{figure}
 
 \subsubsection{Deflectors}
@@ -338,6 +339,28 @@ Synchronisation with the experimental cycle was easily achieved using triggers f
 {\color{red}Figure showing deflectors, photo + cross section}
 
 \subsubsection{Electronics}
+
+\subsubsection{Calibration}
+Calibration of the streak timing to the streak image was achieved with a calibration image, the voltage profile of the deflector during the streaking and assuming the streak position-time realation was linear.
+The calibration image was taken by averaging a number of images with static deflector voltages at the maximum and minimum deflector postitions in order to determine the pixel-voltage gradient, $\frac{dpixel}{dV}$.
+The averaging of images at the two deflector positions was not required but is convenient for analysis.
+Any transformations applied to the streaked pepperpot images, such as rotation and deskewing, needed to be applied to the calibration image before measuring $dpixel$.
+An example calibration image is shown in Figure~\ref{figure:example_calibration}.
+The deflector voltage profile was measured by a \unit[1][GHz] oscilloscope\footnote{Tektronix DPO4104B-L Digital Phosphor Oscilloscope} with a probe attached to the vacuum feedthrough in order to minimise lag when comparing the deflector voltage to other signals, such as timing triggers.
+The voltage gradient, $\frac{dV}{dt}$, was measured by a linear fit to the deflector voltage profile.
+It was then simple to calculate the  deflection gradient for the image
+\begin{equation}
+\frac{dpixel}{dt} = \frac{dpixel}{dV} \frac{dV}{dt}.
+\end{equation}
+
+Determining the time during the voltage sweep that corresponds to the start of the streak was more difficult but could often be achieve by examing features that indicated the end of the streak such as that shown in Figure~\ref{figure:streaked_1d_pepperpot}.
+
+\begin{figure}
+    \center
+    \includegraphics[width=0.5\linewidth]{part2/Figs/example_calibration.jpeg}
+    \caption{An example image used to calibration the timing of the streaked pepperpots.}
+    \label{figure:example_calibration}
+\end{figure}
 
 \subsection{Pepperpots}
 There were a number of iterations on the precise configuration of the one- and two-dimensional pepperpots used in these experiments.
