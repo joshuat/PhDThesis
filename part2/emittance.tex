@@ -72,7 +72,12 @@ The emittance of a beam represents the `focusability' of the beam.
 A low emittance beam can be focused to a small waist than a high emittance beam, in fact a beam with zero emittance could be focused to a point whereas any beam with non-zero emittance has a finite spot size, this is shown in Figure~\ref{figure:focusability}.
 This makes emittance an important quantity to consider in almost all beam applications but is particularly important to charged beams due to space-charge repulsion.
 
-{\color{red}Make a figure like Dene's demonstrating focusability.}
+\begin{figure}
+\center
+\includegraphics{part2/Figs/EmittanceFocasability.pdf}
+\caption{On the left is a particle beam with zero emittance, and thus can be focused to a beam waist of zero width. On the right is a beam with non-zero emittance and thus a non-zero beam waist. Below each figure are plots of the phase space at difference points in the beam.}
+\label{figure:focusability}
+\end{figure}
 
 \subsection{Emittance with a \gls{caeis}}
 \label{section:excess_energy_emittance}
@@ -129,7 +134,7 @@ This equation can be implemented by appropriately rotating the detected beamlets
 A one-dimensional pepperpot cosists of either a line of holes or a line of slits and a line of holes is a prime target for a streaking measurement.
 In this case streaking is performed with a time varying electric field which deflects the charged particles across the detector providing time-resolution.
 For a pulsed charged particle source, such as the \gls{caeis}, the streak can be performed over the duration of the bunch or over a portion of the bunch if higher resolution is required.
-There are some considerations for how fast an electric field can be swept, which will not be examined in detail here, so extremely short bunches will require more complicated systems to provide the appropriate timing and field over time~\cite{alesini_rf_2006}.
+There are some considerations for how fast an electric field can be swept, which will not be examined in detail here, so extremely short bunches will require more complicated systems, such as a rf-cavity, to provide the appropriate timing and electric field temporal-gradient~\cite{alesini_rf_2006}.
 An example of a streaked pepperpot measurement is shown in Figure {\color{red}find appropriate figure!}.
 
 \subsection{Multi-profile Method}
@@ -240,7 +245,7 @@ May be covered in other sections.
 \section{Experimental Setup}
 
 A number of modifications were made to the \gls{caeis} to prepare it for the streaked emittance measurements and there were a number of restrictions on various parameters due to the precise setup of the apparatus.
-The \gls{caeis} was operated in electron mode for these measurements due to the available magnetic optics and the larger emittance expected from electrons {\color{red}(why do we expect greater emittance?)} which would reduce the likelyhood of the measurements being resolution limited.
+The \gls{caeis} was operated in electron mode for these measurements due to the available magnetic optics and the larger emittance expected from electrons {\color{red}(why do we expect greater emittance? temp is greater)} which would reduce the likelyhood of the measurements being resolution limited.
 
 See Chapter~\ref{chapter:setup} for a more detailed description of the \gls{caeis} and Figure~\ref{figure:emittance_schematic} for a schematic of the setup used for the measurements in this chapter.
 
@@ -285,14 +290,15 @@ For these measurements one deflector was grounded and the other given a time-var
 \item A fast ramp using a bipolar push-pull solid-state switch with a fixed transition time of \unit[10]{ns} and
 \item A slower ramp using an amplified signal generator with a minimum transition of approximately \unit[10]{$\mu$s}.
 \end{itemize}
-An example of the voltage ramps is shown in Figure~\ref{figure:deflector_voltages}. THe slow ramp is done by amplifying the output of a Rigol Signal Generator {\color{red}(Put model number etc here)} which is highly configurable and thus cabable of a wide range of pulse lengths, limited by the speed of the amplifier to a transition time approximately \unit[10]{$\mu$s} in duration as shown in Figure~\ref{figure:deflector_voltages}.
+An example of the voltage ramps is shown in Figure~\ref{figure:deflector_voltages}. The slow ramp was done by amplifying the output of signal generator\footnote{Rigol DG4162, able to operate up to \unit[160]{MHz}} which is highly configurable and thus cabable of a wide range of pulse lengths, limited by the speed of the amplifier to a transition time approximately \unit[10]{$\mu$s} in duration as shown in Figure~\ref{figure:deflector_voltages}.
 
 Synchronisation with the experimental cycle was easily achieved using triggers from the pulse blaster {\color{red}(refer to description elsewhere?)} and while the pulse blaster did not have suffiecient temporal resolution to correctly trigger the fast ramp adjusting cable lengths for the trigger signal by a couple of meters provided an adequate delay.
 
+{\color{red}slow streaking smoothing of rigol signal, ringing in fast, calibrating the images}
 \begin{figure}\label{figure:deflector_voltages}
     \center
     \input{part2/Figs/DeflectorVoltages.pgf}
-    \caption{The voltages applied to the deflectors for the `slow' (left) and `fast' (right) streak modes. The zero on the time axis refers to the start of the electron bunches as shown in Figure~\ref{figure:streaks}.}
+    \caption{The voltages applied to the deflectors for the `slow' (left) and `fast' (right) streak modes. The zero on the time axis refers to the start of the electron bunches as shown in Figure~\ref{figure:streaks}. {\color{red} Fix figure, change line color to something consistent.}}
 \end{figure}
 
 \subsubsection{Deflectors}
@@ -315,9 +321,8 @@ There are a number of considerations when designing pepperpot masks;
 \end{itemize}
 
 A number of restrictions aided the selection of parameters for the pepperpots used, the maximum pepperpot extent and need to focus the beam to the pepperpot size to maximise flux dictated the approximate size of the beamlets on the detector and thus the lowest feasibly pitch.
-The pepperpots were cut from \unit[25]{$\mu m$} thick copper pinhole sample with \unit[50]{$\mu m$} diameter holes cut in the centre {\color{red}(make and model number)}.
+The pepperpots were cut\footnote{The pepperpots were cut using a Oxford Laser Systems Alpha 532 laser micromachining system.} from \unit[25]{$\mu m$} thick copper pinholes\footnote{Gilder Grids GA50-C3, \unit[50]{$\mu m$} aperture.} with \unit[50]{$\mu m$} diameter holes cut in the centre.
 The central pinholes were used as the central aperture for the pepperpot arrays and since \unit[50]{$\mu m$} apertures provide adequate flux the rest of the apertures were also cut to the same diameter to simplify analysis.
-The pepperpots were cut using a {\color{red} laser cutter model/make etc.}
 
 {\color{red}Sample holder figure.}
 
@@ -330,12 +335,12 @@ The excitation laser was a \unit[780]{nm} laser, frequency locked to {\color{red
 The spatial profile of this laser is highly controllable with a \gls{slm} allowing for arbitrary profiles to be mapped to the electron or ion bunch~\cite{mcculloch_arbitrarily_2011}.
 The highest flux is possible with a flat-top distribution, see Figure~\ref{figure:flat_top}, however if the electron beam has a simple, non-uniform spatial distribution, such as a Gaussian, then the specifics of the beam profile can be extrapolated from the pepperpot images allowing for further metrics to be calculated such as beam size and brightness as shown in Figure~\ref{figure:pepperpot_profile}.
 
-{\color{red}Figure showing flattop and gaussian profiles, and extrapolations of beam size.}
+{\color{red}Figure showing flattop and gaussian profiles, masked profile and fit for beam size.}
 
 power?
 
 \subsubsection{Ionisation Laser}
-The ionisation laser was a {\color{red}wavelength range} \unit[x-y][nm], \unit[10][nm] pulse laser which ionisates the atoms excited by the red excitation laser.
+The ionisation laser was a \unit[457-493][nm], \unit[10][ns] pulse laser\footnote{Sirah dye laser system CSTR-D-3000.} which ionisates the atoms excited by the red excitation laser.
 The wavelength can be tuned to select various ionisation pathways such as above-threshold ionisation or field ionisation.
 The pathway selected affects the duration of the bunch produced, above threshold ionisation results in short bunches with durations the same as the duration of the ionisation laser and below threshold ionisation can result in much longer bunches with durations of \unit[10s]{$\mu s$} due to electrons tunneling out after the end of the ionisation pulse.
 
