@@ -32,11 +32,10 @@
 \usepackage{breqn}
 % This allows pgf figure
 \usepackage{tikz}
-
 % I need this to use the Fig subdirectory for the pgf to work.
-% I'll need something like this if I add pgf figures with images.
-%\let\pgfimageWithoutPath\pgfimage
-%\renewcommand{\pgfimage}[2][]{\pgfimageWithoutPath[#1]{Figs/#2}}
+% When it comes to submision this will be removed.
+\let\pgfimageWithoutPath\pgfimage
+\renewcommand{\pgfimage}[2][]{\pgfimageWithoutPath[#1]{part2/Figs/#2}}
 
 
 

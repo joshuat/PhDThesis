@@ -392,9 +392,20 @@ Two of the lasers essential to the functioning are the `excitation' and `ionisat
 These lasers have a number of parameters that affect the emittance measurements.
 
 \subsubsection{Excitation Laser}
-The excitation laser was a \unit[780]{nm} laser, frequency locked to {\color{red} locked to which transition?}, which excites ground state atoms in the \gls{mot} to the {\color{red} state} to prepare the atoms for ionisation.
+The excitation laser was a \unit[780]{nm} laser, frequency locked to the Rb85 D2 F=3 to F=4 transition, which excites ground state atoms in the \gls{mot} to prepare the atoms for ionisation.
 The spatial profile of this laser is highly controllable with a \gls{slm} allowing for arbitrary profiles to be mapped to the electron or ion bunch~\cite{mcculloch_arbitrarily_2011}.
-The highest flux is possible with a flat-top distribution, see Figure~\ref{figure:flat_top}, however if the electron beam has a simple, non-uniform spatial distribution, such as a Gaussian, then the specifics of the beam profile can be extrapolated from the pepperpot images allowing for further metrics to be calculated such as beam size and brightness as shown in Figure~\ref{figure:pepperpot_profile}.
+The highest flux is possible by simply saturating the \gls{mot} however control over the electron beam profile and size is usually desirable.
+One commonly used and simple distribution is a flat-top distribution as it can provide even electron intensity across the sample under examination however electron beams generated from electrons with high excess energy are unable to maintain the distribution, see Figure~\ref{figure:flat_top}.
+
+\begin{figure}
+    \center
+    \input{part2/Figs/flattops_emittance.pgf}
+    \caption{Unobstructed, unfocused electron beams generated with a flat-top profile on the excitation laser with varying ionisation laser wavelengths, and thus excess energies. The excess energy is listed above each beam profile. Below each profile is a trace of the central row of pixels (indicated by the dashed white line). The dotted lines on the lower figures indicate the profiles of the first and last profile for comparison.}
+    \label{figure:flat_top}
+    % Data and code at 2017.05.09
+\end{figure}
+
+If the electron beam has a simple, non-uniform spatial distribution, such as a Gaussian, then the specifics of the beam profile can be extrapolated from the pepperpot images allowing for further metrics to be calculated such as beam size and total electron count, as shown in Figure~\ref{figure:pepperpot_profile}.
 
 {\color{red}Figure showing flattop and gaussian profiles, masked profile and fit for beam size.}
 
