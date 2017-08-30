@@ -82,12 +82,32 @@ This makes emittance an important quantity to consider in almost all beam applic
 \subsection{Emittance with a \gls{caeis}}
 \label{section:excess_energy_emittance}
 
-For a \gls{caes} the emittance at the source is given by~\cite{mcculloch_high-coherence_2013}
+For a \gls{caes} the radial emittance at the source is given by~\cite{mcculloch_high-coherence_2013}
 \begin{equation}\label{equation:excess_energy_emittance}
-\epsilon_r = \sigma_r \sqrt{\frac{k_B T}{m_e c^2}}
+\epsilon_r = \sigma_r \sqrt{\frac{k_B T}{m c^2}}
+\end{equation}
+where $\sigma_r$ is the \gls{rms} beam radius, $k_B$ is Boltzmann's constant, $T$ is the temperature of the source, $m$ is the particle mass and $c$ is the speed of light.
+Equation~\ref{equation:excess_energy_emittance} highlights one of the advantages of a \gls{caeis} as the low source temperature allows for low emittance bunches compared to the common thermionic sources.
+
+The temperature of the \gls{caeis} source can be calculated from the wavelength of the ionisation lasers, $\lambda_{red}$ and $\lambda_{blue}$,
+\begin{align}
+ E_{red} &= \frac{hc}{\lambda_{red}} E_{blue} &= \frac{hc}{\lambda_{blue}}.
+\end{align}
+We can define the total ionisation energy to be
+\begin{align}
+E_{total} = E_{red} + E_{blue}.
+\end{align}
+The ionisation energy for Rubidium 85, $E_I$ is \unit[4.18]{eV} so we can determine the excess energy of ionisation
+\begin{equation}
+E_{excess} = E_{total} - E_I
 \end{equation}
 
-Discuss excess energy, realation to emittance, coherence etc.
+The excess energy can be related to the temperatures of the ionised particles via
+\begin{equation}\label{equation:excess_energy_temperature}
+T = \frac{2 E_{excess}}{3 k_B}.
+\end{equation}
+Combining Equations \ref{equation:excess_energy_emittance} and \ref{equation:excess_energy_temperature} allows for the calculation of the expected emittance of bunches generated from the \gls{caeis} for above-threshold ionisation.
+Bunches generated from below-threshold pathways, such as Rydberg-excitation with field-ionisation, cannot be calculated using Equation~\ref{equation:excess_energy_emittance}.
 
 \section{Measurement}
 
@@ -270,7 +290,7 @@ May be covered in other sections.
 \section{Experimental Setup}
 
 A number of modifications were made to the \gls{caeis} to prepare it for the streaked emittance measurements and there were a number of restrictions on various parameters due to the precise setup of the apparatus.
-The \gls{caeis} was operated in electron mode for these measurements due to the available magnetic optics and the larger emittance expected from electrons as the source temperature is higher for electrons, a minimum temperature of approximately \unit[10]{K} for electrons and \unit[100]{$\mu K$} for ions~\cite{mcculloch_arbitrarily_2011}.
+The \gls{caeis} was operated in electron mode for these measurements due to the available magnetic optics and the larger emittance expected from electrons as the source temperature is higher for electrons, a minimum temperature of approximately \unit[10]{K} for electrons and \unit[100]{$\mu K$} for ions~\cite{saliba_spatial_2012}.
 Using electrons also allows some control of the bunch emittance as the excess energy can be controled with the blue ionisation laser wavelength, with ions the change in emittance would be negligible.
 
 See Chapter~\ref{chapter:setup} for a more detailed description of the \gls{caeis} and Figure~\ref{figure:emittance_schematic} for a schematic of the setup used for the measurements in this chapter.
