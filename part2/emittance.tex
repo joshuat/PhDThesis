@@ -311,14 +311,25 @@ For these measurements one deflector was grounded and the other given a time-var
 \end{itemize}
 An example of the voltage ramps is shown in Figure~\ref{figure:deflector_voltages}. The slow ramp was done by amplifying the output of signal generator\footnote{Rigol DG4162, able to operate up to \unit[160]{MHz}} which is highly configurable and thus cabable of a wide range of pulse lengths, limited by the speed of the amplifier to a transition time approximately \unit[10]{$\mu$s} in duration as shown in Figure~\ref{figure:deflector_voltages}.
 
-Synchronisation with the experimental cycle was easily achieved using triggers from the pulse blaster, see Section~\ref{section:pulse_blaster}, and, while the pulse blaster did not have sufficient temporal resolution to correctly trigger the fast ramp, adjusting cable lengths for the trigger signal by a couple of meters provided an adequate delay.
-
-{\color{red}slow streaking smoothing of rigol signal, ringing in fast, calibrating the images}
 \begin{figure}\label{figure:deflector_voltages}
     \center
     \input{part2/Figs/DeflectorVoltages.pgf}
     \caption{The voltages applied to the deflectors for the `slow' (left) and `fast' (right) streak modes. The zero on the time axis refers to the start of the electron bunches as shown in Figure~\ref{figure:streaks}. {\color{red} Fix figure, change line color to something consistent.}}
     \label{figure:deflector_voltages}
+\end{figure}
+
+Synchronisation with the experimental cycle was easily achieved using triggers from the pulse blaster, see Section~\ref{section:pulse_blaster}, and, while the pulse blaster did not have sufficient temporal resolution to correctly trigger the fast ramp, adjusting cable lengths for the trigger signal by a couple of meters provided an adequate delay.
+
+An interesting effect that limited the potential length of the usable portion of fast streaks was `ringing' in the signal, this is shown in Figure~\ref{figure:ringing}.
+Due to the ringing the range of the usable voltage sweep is somewhat truncated as any bunch with a duration longer than the sweep time will oscillate about the end point of the streak.
+Fortunately the majority of the streak is useable and bunches with durations shorted than the voltage sweep time are not affected.
+
+\begin{figure}
+    \center
+    \input{part2/Figs/VoltagesRinging.pgf}
+    \caption{An example of ringing in the fast deflector voltage sweep. On the left is the Voltage on the detector from the start of the electron bunch, notice the slow damping oscillation after the fast \unit[10]{ns} sweep. On the right is an example of a streaked emittance measurement for a relatively long bunch length, notice the oscillations corresponding to the `ringing' present in the deflector voltage located on the right side of the figure.}
+    \label{figure:ringing}
+    % Fast streak from 2017.06.11 Set 12, code in 2017.07.25, plot2.py
 \end{figure}
 
 \subsubsection{Deflectors}
