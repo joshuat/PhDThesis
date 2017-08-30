@@ -405,7 +405,10 @@ One commonly used and simple distribution is a flat-top distribution as it can p
     % Data and code at 2017.05.09
 \end{figure}
 
-If the electron beam has a simple, non-uniform spatial distribution, such as a Gaussian, then the specifics of the beam profile can be extrapolated from the pepperpot images allowing for further metrics to be calculated such as beam size and total electron count, as shown in Figure~\ref{figure:pepperpot_profile}.
+If the electron beam has a simple, non-uniform spatial distribution, such as a Gaussian, then the specifics of the beam profile can be extrapolated from the pepperpot images allowing for further metrics to be calculated such as beam size and total electron count.
+An example is shown in Figure~\ref{figure:pepperpot_profile}, the rows and columns of the pepperpot image can be summed to generate a one-dimensional set of beamlets.
+From the amplitude and standard deviation of each beamlet the total number of electrons in each beamlet can be calculated and this corressponds to the number of electrons that passed through the corresponding apertures.
+The apertures sample the full beam and a Gaussian (or other known beam profile) can be fitted to the beamlet electron counts to estimate the full beam profile and thus the beam size and full beam electron count can be determined.
 
 \begin{figure}
     \center
