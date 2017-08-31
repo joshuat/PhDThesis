@@ -459,7 +459,27 @@ Maybe move this sections to an earlier chapter to discuss registration in one lo
 The current electron flux of the \gls{caes} is not sufficient to perform the streaked emittance measurement in a single-shot and in some scenarios (such as ionisation pathways with poor coupling) the flux is so low that registration of measurements cannot be performed making those measurements impossible.
 
 At the core of the image analysis required for this measurement is the determination of the amplitude, mean and standard deviation of the peaks of the pepperpot beamlets.
-According to some brief simulations, shown in Figure~\ref{figure:gaussian_minimum}, in order to determine the mean and standard deviation of a Gaussian to 90\% accuracy requires {\color{red}finish this tomorrow....}
+In order to roughly estimate the number of electrons required in a beamlet to determine the mean and standard deviation to 95\% accuracy some simulations were run.
+These simulations randomly draw $N$ values from a normal distribution and then compare the sample's mean, $\bar{x_s}$ and standard deviation, $\sigma_s$ to those of the normal distribution, $\bar{x}$ and $\sigma$, with the error functions
+\begin{align}
+E_{\bar{x}} = \frac{\left|\bar{x} - \bar{x_s}\right|}{\sigma}\label{equation:error_mean}\\
+E_{\sigma} = \frac{\left|\sigma - \sigma_s\right|}{\sigma}.\label{equation:error_std}
+\end{align}
+The simulation is repeated multiple times for a range of values of $N$.
+While not rigorous Equations~\ref{equation:error_mean} and \ref{equation:error_std} give an estimate of the accuracy possible with a given number of electrons when determining beamlet parameters.
+The results of these simulations are shown in Figure\ref{figure:gaussian_simulation}.
+In order to reduce the value of the error functions below 0.05 then 261 electrons are required for the mean and 129 for the standard deviation.
+
+\begin{figure}
+    \center
+    \input{part2/Figs/gaussian_sim.pgf}
+    \caption{Results from a simulation of the accuracy of sample mean and standard deviation given the size of the sample. For each value of sample size the simulation are repeated 10,000 times. The red dashed line indicates an error value of 0.05 and it intersects the mean (blue) at X and the standard deviation (STD, green) at Y.}
+    \label{figure:gaussian_simulation}
+\end{figure}
+
+In order to extrapolate this estimate to the number of electron required for single-shot streaked emittance measurements....
+
+{\color{red}I'm not happy with my error function for the mean... Doing it properly looks complicated. :/}
 
 This is useful to know.
 How much flux is required to get single shot measurements?
