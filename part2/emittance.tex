@@ -312,7 +312,7 @@ For these measurements one deflector was grounded and the other given a time-var
 An example of the voltage ramps is shown in Figure~\ref{figure:deflector_voltages}. The slow ramp was done by amplifying the output of signal generator\footnote{Rigol DG4162, able to operate up to \unit[160]{MHz}} which is highly configurable and thus cabable of a wide range of pulse lengths, limited by the speed of the amplifier to a transition time approximately \unit[10]{$\mu$s} in duration as shown in Figure~\ref{figure:deflector_voltages}.
 More detail on the design of the streaking electronics can be found in Reference~{\color{red}(Cite Rory's thsis)}.
 
-\begin{figure}\label{figure:deflector_voltages}
+\begin{figure}
     \center
     \input{part2/Figs/DeflectorVoltages.pgf}
     \caption{The voltages applied to the deflectors for the `slow' (left) and `fast' (right) streak modes. The zero on the time axis refers to the start of the electron bunches as shown in Figure~\ref{figure:streaks}. {\color{red} Fix figure, change line color to something consistent.}}
@@ -444,16 +444,23 @@ The registration process can also be performed iteratively where the reference i
 This works well for high-signal image sets but does not work as well for lower signal sets such as two-dimensional pepperpots or one-dimensional pepperpot streaks.
 Lower signal data requires more care and in some cases cannot be registered.
 One of the registration errors that occurs with pepperpot data is `slipping' where the brightest beamlets in the reference image and the image being aligned are not the same and the image is thus aligned incorrectly.
-This error can be evaded by applying a limit to how far the maximum coordinates of an image can change from shot-to-shot.
-Generally the limit should be less than the distance between beamlets.
-This allows slow drift of the beam path to be dealth with while preventing `slipping'.
+This error can be evaded by applying a limit to how far the convolution maxima of an image can change from shot to shot, generally the limit should be less than the distance between beamlets.
+This allows slow drift of the beam path to be dealth with while preventing slipping.
+Any changes to the beam path between shots with a magnitude greater than the registration limit will result in slipping while the limit is applied but may be catered for if it is not enforced, as sudden jumps are rare this is rarely an issue and often causes more disruptive and blatant issues.
 
-`Slipped' and therefore failed pepperpot registrations were easy to identify since the number of beamlets was known and slipped errors results in extra beamlets appearing the the registered image.
-While registering the pepperpots the best results were provided with around 3 iterations and limits on the shot-to-shot drift less than distance between the pepperpots which could usually be determined from failed registrations.
+Slipped, and therefore failed, pepperpot registrations were easy to identify since the number of beamlets was known and slipped errors results in extra beamlets appearing the the registered image.
+While registering the pepperpots the best results were provided with around 3 iterations and limits on the shot-to-shot drift less than distance between the pepperpots.
+An example of a slipped registration is shown in Figure~\ref{figure:registration_examples}.
 
-{\color{red}Show figure with failed pepperports, straight average, single shots etc.
+\begin{figure}
+    \center
+    \input{part2/Figs/registration_examples.pgf}
+    \caption{Single-Shot is a single image from a streaked pepperpot dataset of 1000 images. Average is the simple of all 1000 images. Slipped is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation, there is an additional, faint beamlet visible at the top of the image. Registration is a sucessful registration where a shot-to-shot limit to drift of 5 pixels was enforced. Below each image is a trace of the row sums of image. All the images are independently log scaled.}
+    \label{figure:registration_examples}
+    % Data and code in 2017.07.24 plot_registration_examples.py
+\end{figure}
 
-Maybe move this sections to an earlier chapter to discuss registration in one location.}
+{\color{red} I'm still not happy with this example of slipping. I should look for a better one. I may have to engineer one.}
 
 \subsection{Flux}
 The current electron flux of the \gls{caes} is not sufficient to perform the streaked emittance measurement in a single-shot and in some scenarios (such as ionisation pathways with poor coupling) the flux is so low that registration of measurements cannot be performed making those measurements impossible.
