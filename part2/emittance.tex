@@ -462,8 +462,8 @@ At the core of the image analysis required for this measurement is the determina
 In order to roughly estimate the number of electrons required in a beamlet to determine the mean and standard deviation to 95\% accuracy some simulations were run.
 These simulations randomly draw $N$ values from a normal distribution and then compare the sample's mean, $\bar{x_s}$ and standard deviation, $\sigma_s$ to those of the normal distribution, $\bar{x}$ and $\sigma$, with the error functions
 \begin{align}
-E_{\bar{x}} = \frac{\left|\bar{x} - \bar{x_s}\right|}{\sigma}\label{equation:error_mean}\\
-E_{\sigma} = \frac{\left|\sigma - \sigma_s\right|}{\sigma}.\label{equation:error_std}
+E_{\bar{x}} &= \frac{\left|\bar{x} - \bar{x_s}\right|}{\sigma}\label{equation:error_mean}\\
+E_{\sigma} &= \frac{\left|\sigma - \sigma_s\right|}{\sigma}.\label{equation:error_std}
 \end{align}
 The simulation is repeated multiple times for a range of values of $N$.
 While not rigorous Equations~\ref{equation:error_mean} and \ref{equation:error_std} give an estimate of the accuracy possible with a given number of electrons when determining beamlet parameters.
