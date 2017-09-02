@@ -287,7 +287,7 @@ Due to the unstable nature of the apparatus these magnets needed to be adjusted 
 
 The main limiting factor to pepperpot emittance measurements using the \gls{caes} was electron flux through the pepperpot masks.
 Flux through the pepperpot masks was maximised by using the Einzel lens to focus the beam to the approximate size of the pepperpots in the pepperpot plane, thus maximsing the flux through the apertures.
-The Einzel lens voltage required for this was approximately\unit[4.8][kV] and varied slightly beam emittance, ie. high emittance beams result in a larger beam size and thus required adjusting the Einzel lens voltage by \unit[100]{V} or so.
+The Einzel lens voltage required for this was approximately \unit[4.8][kV] and varied slightly beam emittance, ie. high emittance beams result in a larger beam size and thus required adjusting the Einzel lens voltage by \unit[100]{V} or so.
 
 \subsection{Beam Energy}
 In many emittance measurements the beam energy would not be a free parameter as it will be used as a diagnostic for a specific system or scenario, however in this experiment we are able to vary the energy of our beam from a few hundred eV to around \unit[10]{keV}.
@@ -549,7 +549,7 @@ An example of a slipped registration is shown in Figure~\ref{figure:registration
 
 {\color{red} I'm still not happy with this example of slipping. I should look for a better one. I may have to engineer one.}
 
-\subsection{Flux}
+\subsection{Electron Flux}
 The current electron flux of the \gls{caes} is not sufficient to perform the streaked emittance measurement in a single-shot and in some scenarios (such as ionisation pathways with poor coupling) the flux is so low that registration of measurements cannot be performed making those measurements impossible.
 
 At the core of the image analysis required for this measurement is the determination of the amplitude, mean and standard deviation of the peaks of the pepperpot beamlets.
@@ -569,6 +569,7 @@ In order to reduce the value of the error functions below 0.05 then 253 electron
     \input{part2/Figs/gaussian_sim.pgf}
     \caption{Results from a simulation of the accuracy of sample mean and standard deviation given the size of the sample. For each value of sample size the simulation are repeated 100,000 times. The red dashed line indicates an error value of 0.05 and it intersects the mean (blue) at 253 and the standard deviation (STD, green) at 128. Error is defined in Equations~\ref{equation:error_mean} and \ref{equation:error_std}.}
     \label{figure:gaussian_simulation}
+    % Code can be found in Code/Electrons/Simulation/MinimumSignal.py
 \end{figure}
 
 Estimating the required number of particles for a single-shot streaked emittance measurement is impossible without knowing a number of the parameters involved in a particular measurement scenario.
