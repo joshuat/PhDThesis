@@ -432,10 +432,47 @@ This is discussed in Sections~\ref{section:excess_energy} and \ref{section:exces
 Equation~\ref{equation:excess_energy_emittance} gives a useful comparison and allows for verification of the accuracy of the emittance measurements.
 
 \section{Results}
+In order to demonstrate the feasibility of time-resolved emittance measurement via the streaking of pepperpot measurements a number of measurements have been made including a comparison of two dimensional pepperpot emittance measurements with theory and slow and fast streaks used to determine the time-resolved brightness of electron bunches produced by the \gls{caes}.
 
 \subsection{Analysis}
+The analysis procedure developed was based on the theory described in Reference~\ref{zhang_emittance_1996} and Equation~\ref{equation:pepperpot}.
+In order to determine the emittance from a one dimensional pepperpot measurement a number of parameters are required:
+\begin{itemize}
+    \item Size of pepperpot apertures
+    \item Position of pepperpot apertures
+    \item Size of beamlets on the detector
+    \item Position of beamlets on the detector
+    \item Total number of electrons (or camera counts) for each beamlet
+\end{itemize}
+The pepperpot parameters are known from the fabrication and the beamlet parameters can be determined from appropriately prepared two dimensional pepperpot and streaked pepperpot measurements.
 
-data processing here
+The analysis procedure is roughly as follows:
+\begin{enumerate}
+    \item Acquire images from camera
+    \item Register images (see Section~\ref{section:emittance_registration})
+    \item Average registered images
+    \item Rotate image so dominant features are aligned with the pixel rows
+    \item Deskew image so features along the second axis aligned with the columns
+    \begin{itemize}
+        \item For two dimensional pepperpots sum the rows and columns individually to produce two one-dimensional sets of beamlets
+        \item For streaked emittance measurements examine each column of pixels independently to produce a number of one-dimensional sets of beamlets.
+    \end{itemize}
+    \item For each beamlet set use peakfinding algorithms to find the location of each beamlet peak
+    \item Separate each beamlet set into individual beamlets
+    \item Determine the amplitude, mean position and \gls{rms} width of each beamlet
+    \item Transform the position and width measurements from pixel measurement to real measurements using the camera calibration
+    \item Use Equation~\ref{equation:pepperpot} to determine the emittance
+\end{enumerate}
+
+Care has been taken to ensure that the full beam profile is Gaussian and this allows for the beamlet and pepperpot parameters to be used to fit to the full beam profile allowing for calculation of the full beam width and charge for each beamlet set.
+
+\subsection{Calibrations}
+
+Camera calibration
+
+MCP calibration
+
+Source size calibration
 
 \subsection{Two-Dimensional Pepperpots}
 The frequency of the ionisation laser can to tuned to control the emittance of electron bunches as it determines the excess energy of bunches.
@@ -453,7 +490,7 @@ The results from this test can be seen in Figure~\ref{figure:emittance_vs_theory
 
 \subsection{Streaked One-Dimensional Pepperpots}\label{section:streaked_pepperpot_results}
 
-\subsection{Registration}
+\subsection{Registration}\label{section:emittance_registration}
 Due to the instability in the beam path (see Section~\ref{section:stability}) it is necessary to `register' the sets of images captured for measurements.
 The registration consisted of convolving each image with a reference image, recording the maximum value of the convolution and then aligning all the images using the convolution maxima.
 The reference image usually consists of either just the first image in the set or the average image of the entire set.
