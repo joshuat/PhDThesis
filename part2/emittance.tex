@@ -1,5 +1,7 @@
 \chapter{Time-Resolved Emittance Measurements}
 
+{\color{red}Phrase things around measuring brightness.}
+
 Emittance is used as one of the main metrics to determine the quality of a charged particle beam.
 Beam emittance determines the `focusability' of a beam which determines the size of the probe for electron and ion microscopes and is equivalent to the coherence of for synchrotrons, \glspl{xfel} and diffraction experiments.
 
@@ -24,7 +26,7 @@ Streaked diffraction experiments have the potential to reveal dynamic informatio
 This chapter examines time-resolved emittance measurements through the streaking of pepperpots; including the theory involved, various technical considerations, example measurements and implementation of this technique with the \gls{caeis} at the University of Melbourne.
 
 
-\section{Emittance}
+\section{Brightness and Emittance}
 
 A given ensemble of particles can be described by its density in six-dimensional phase space, $(x, p_x, y, p_x, z, p_z)$ where $(x, y, z)$ are the positions and $(p_x, p_y, p_z)$ are the momenta of each particle.
 The extent of the beam in phase space is called the \emph{emittance}, $\epsilon$, of the beam.
@@ -70,7 +72,16 @@ The \emph{\gls{rms} emittance} is a more practical measure and is defined as
 
 The emittance of a beam represents the `focusability' of the beam.
 A low emittance beam can be focused to a small waist than a high emittance beam, in fact a beam with zero emittance could be focused to a point whereas any beam with non-zero emittance has a finite spot size, this is shown in Figure~\ref{figure:focusability}.
-This makes emittance an important quantity to consider in almost all beam applications but is particularly important to charged beams due to space-charge repulsion.
+This makes emittance an important quantity to consider in almost all beam applications but is particularly important to charged beams due to complications produced by space-charge repulsion.
+
+The emittance of a beam is not the only factor that determines the quality of the beam.
+Emittance could be made arbitrarilty small through the use of collimating slits however the reduced particle could would reduce the usefulness of that beam for most applications.
+A more comprehensie figure of merit is the number of particles with a given emittance, known as \emph{brightness}~\cite{reiser_theory_2008};
+\begin{equation}
+B = \frac{2I}{\pi^2\epsilon_x\epsilon_y},
+\end{equation}
+where $I$ is the current of the beam and $\epsilon_{x,y}$ is the emittance as described above.
+Brightness provides a better metric of a beam's quality with the additional requirement of knowing the beam current.
 
 \begin{figure}
 \center
