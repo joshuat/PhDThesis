@@ -75,6 +75,13 @@ The emittance of a beam represents the `focusability' of the beam.
 A low emittance beam can be focused to a small waist than a high emittance beam, in fact a beam with zero emittance could be focused to a point whereas any beam with non-zero emittance has a finite spot size, this is shown in Figure~\ref{figure:focusability}.
 This makes emittance an important quantity to consider in almost all beam applications but is particularly important to charged beams due to complications produced by space-charge repulsion.
 
+\begin{figure}
+\center
+\includegraphics{part2/Figs/EmittanceFocasability.pdf}
+\caption{On the left is a particle beam with zero emittance, and thus can be focused to a beam waist of zero width. On the right is a beam with non-zero emittance and thus a non-zero beam waist. Below each figure are plots of the phase space at difference points in the beam where the dashed line is indicitive of the phase-space area or emittance.}
+\label{figure:focusability}
+\end{figure}
+
 The emittance of a beam is not the only factor that determines the quality of the beam.
 Emittance could be made arbitrarilty small through the use of collimating slits however the reduced particle could would reduce the usefulness of that beam for most applications.
 A more comprehensie figure of merit is the number of particles with a given emittance, known as \emph{brightness}~\cite{reiser_theory_2008};
@@ -84,12 +91,7 @@ B = \frac{2I}{\pi^2\epsilon_x\epsilon_y},
 where $I$ is the current of the beam and $\epsilon_{x,y}$ is the emittance as described above.
 Brightness provides a better metric of a beam's quality with the additional requirement of knowing the beam current.
 
-\begin{figure}
-\center
-\includegraphics{part2/Figs/EmittanceFocasability.pdf}
-\caption{On the left is a particle beam with zero emittance, and thus can be focused to a beam waist of zero width. On the right is a beam with non-zero emittance and thus a non-zero beam waist. Below each figure are plots of the phase space at difference points in the beam where the dashed line is indicitive of the phase-space area or emittance.}
-\label{figure:focusability}
-\end{figure}
+
 
 \subsection{Emittance with a \gls{caeis}}
 \label{section:excess_energy_emittance}
@@ -329,8 +331,9 @@ More detail on the design of the streaking electronics can be found in Reference
 \begin{figure}
     \center
     \input{part2/Figs/DeflectorVoltages.pgf}
-    \caption{The voltages applied to the deflectors for the `slow' (left) and `fast' (right) streak modes. The zero on the time axis refers to the start of the electron bunches as shown in Figure~\ref{figure:streaks}. {\color{red} Fix figure, change line color to something consistent.}}
+    \caption{The voltages applied to the deflectors for the `slow' (left) and `fast' (right) streak modes. The zero on the time axis refers to the start of the electron bunches as shown in Figure~\ref{figure:streaks}.}
     \label{figure:deflector_voltages}
+    % Code and data located in 2017.07.25, plot2error.py
 \end{figure}
 
 Synchronisation with the experimental cycle was easily achieved using triggers from the pulse blaster, see Section~\ref{section:pulse_blaster}, and, while the pulse blaster did not have sufficient temporal resolution to correctly trigger the fast ramp, adjusting cable lengths for the trigger signal by a couple of meters provided an adequate delay.
@@ -358,7 +361,7 @@ The calibration image was taken by averaging a number of images with static defl
 The averaging of images at the two deflector positions was not required but is convenient for analysis.
 Any transformations applied to the streaked pepperpot images, such as rotation and deskewing, needed to be applied to the calibration image before measuring $dpixel$.
 An example calibration image is shown in Figure~\ref{figure:example_calibration}.
-The deflector voltage profile was measured by a \unit[1][GHz] oscilloscope\footnote{Tektronix DPO4104B-L Digital Phosphor Oscilloscope} with a probe attached to the vacuum feedthrough in order to minimise lag when comparing the deflector voltage to other signals, such as timing triggers.
+The deflector voltage profile was measured by a \unit[1]{GHz} oscilloscope\footnote{Tektronix DPO4104B-L Digital Phosphor Oscilloscope} with a probe attached to the vacuum feedthrough in order to minimise lag when comparing the deflector voltage to other signals, such as timing triggers.
 The voltage gradient, $\frac{dV}{dt}$, was measured by a linear fit to the deflector voltage profile.
 It was then simple to calculate the  deflection gradient for the image
 \begin{equation}
