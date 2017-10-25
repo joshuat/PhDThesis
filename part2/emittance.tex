@@ -86,26 +86,33 @@ The emittance of a beam is not the only factor that determines the quality of th
 Emittance could be made arbitrarily small through the use of collimating slits however the reduced particle could would reduce the usefulness of that beam for most applications.
 A more comprehensive figure of merit is the number of particles with a given emittance, known as \emph{brightness}~\cite{reiser_theory_2008};
 \begin{equation}
-B = \frac{2I}{\pi^2\epsilon_x\epsilon_y},
+B = \frac{I}{8\pi^2\epsilon_x\epsilon_y},
 \end{equation}
 where $I$ is the current of the beam and $\epsilon_{x,y}$ is the emittance as described above.
 Brightness provides a better metric of a beam's quality with the additional requirement of knowing the beam current.
 
+When comparing the emittance and brightness of particle beams from different sources it is often useful to use the \emph{normalised} emittance and brightness
+\begin{align}
+\bar{\epsilon_x} = \beta\epsilon_x,\\
+\bar{B} = \frac{I}{8\pi^2\bar{\epsilon_x}\bar{\epsilon_y}}
+\end{align}
+where $\beta=v/c\approx v_z/c$.
 
 
 \subsection{Emittance with a CAEIS}
 \label{section:excess_energy_emittance}
 
-For a \gls{caes} the radial emittance at the source is given by~\cite{mcculloch_high-coherence_2013}
+For a \gls{caes} the normalised \gls{rms} emittance at the source is given by~\cite{mcculloch_high-coherence_2013}
 \begin{equation}\label{equation:excess_energy_emittance}
-\epsilon_r = \sigma_r \sqrt{\frac{k_B T}{m c^2}}
+\epsilon_x = \sigma_x \sqrt{\frac{k_B T}{m c^2}}
 \end{equation}
-where $\sigma_r$ is the \gls{rms} beam radius, $k_B$ is Boltzmann's constant, $T$ is the temperature of the source, $m$ is the particle mass and $c$ is the speed of light.
+where $\sigma_x$ is the \gls{rms} beam radius, $k_B$ is Boltzmann's constant, $T$ is the temperature of the source, $m$ is the particle mass and $c$ is the speed of light.
 Equation~\ref{equation:excess_energy_emittance} highlights one of the advantages of a \gls{caeis} as the low source temperature allows for low emittance bunches compared to the common thermionic sources.
 
 The temperature of the \gls{caeis} source can be calculated from the wavelength of the ionisation lasers, $\lambda_{red}$ and $\lambda_{blue}$,
 \begin{align}
- E_{red} &= \frac{hc}{\lambda_{red}} E_{blue} &= \frac{hc}{\lambda_{blue}},
+ E_{red} &= \frac{hc}{\lambda_{red}} \\
+ E_{blue}&= \frac{hc}{\lambda_{blue}},
 \end{align}
 where $h$ is Plank's constant.
 We can define the total ionisation energy to be
@@ -119,7 +126,7 @@ E_{excess} = E_{total} - E_I
 
 The excess energy can be related to the temperatures of the ionised particles via
 \begin{equation}\label{equation:excess_energy_temperature}
-T = \frac{2 E_{excess}}{3 k_B}.
+T = \frac{E_{excess}}{k_B}.
 \end{equation}
 Combining Equations \ref{equation:excess_energy_emittance} and \ref{equation:excess_energy_temperature} allows for the calculation of the expected emittance of bunches generated from the \gls{caeis} for above-threshold ionisation.
 The emittance of bunches generated from below-threshold pathways, such as Rydberg-excitation with field-ionisation, cannot be calculated using Equation~\ref{equation:excess_energy_emittance}.
@@ -193,8 +200,8 @@ This equation can be implemented by appropriately rotating the detected beamlets
 \end{figure}
 
 \subsubsection{Temporal Resolution with Streaking}
-A one-dimensional pepperpot consists of either a line of holes or a line of slits and a line of holes is a prime target for a streaking measurement.
-In this case streaking is performed with a time varying electric field which deflects the charged particles across the detector providing time-resolution.
+A one-dimensional pepperpots can consist of a line of apertures and provide a prime target for a streak measurements.
+In this case streaking is performed with a time varying electric field which deflects the charged particles across the detector, providing time-resolution.
 For a pulsed charged particle source, such as the \gls{caeis}, the streak can be performed over the duration of the bunch or over a portion of the bunch if higher resolution is required.
 There are some considerations for how fast an electric field can be swept, which will not be examined in detail here, so extremely short bunches will require more complicated systems, such as a \gls{rf} cavity, to provide the appropriate timing and electric field temporal-gradient~\cite{alesini_rf_2006}.
 An example of a streaked pepperpot measurement is shown in Figure~\ref{figure:streaked_1d_pepperpot}.
