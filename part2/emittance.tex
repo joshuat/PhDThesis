@@ -458,7 +458,26 @@ Equation~\ref{equation:excess_energy_emittance} gives a useful comparison and al
 
 \section{Simulations}
 
+Due to the experimental constraints involving the low beam flux, pepperpot mask size limitations and lens aberations it was not possible to engineer an idea setup of beam and pepperpot parameters.
+The non-ideal experimental parameters cause some distortions to the emittance measurements so some simulations were undertaken in order to understand the effect and verify the validity of the corrections.
+These simulation also proved to be a useful confirmation of the analysis procedure used on the experimental data.
+
+The simulations were performed by a simple homemade particle tracker, able to operate in one- and two-dimensions, create arbirary bunch profiles with arbitrary emittances, propagate bunches and apply arbirary masks to the bunch.
+
+For these simulations a Gaussian bunch profile was used and the emittance of the bunch was set to one of a range of values similar to those achieveable with the actual apparatus.
+The path of the bunch was designed to replicate that of the \gls{caeis} by propagating the bunch to a `lens', then to a pepperpot mask and finally to a `detector'.
+The `lens' was implemented by applying a radially dependent velocity change to the particles in order to focus the beam such that the beam size was approximately the same as the size of the pepperpot mask, approximately \unit[2]{mm}.
+
 \subsection{Pepperpot Aperture Size}
+
+The first set of simulations investigated the effects of aperture size on the emittance measurement.
+The procedure outline in Reference~\cite{zhang_emittance_1996}, which formed the foundation of the analysis used here, assumes that the size of the apertures used is neglible compared to the divergence of the particles.
+Due the low emittance of the CAEIS and the low electron flux it is not feasible to use pepperpots with neglibly small holes so it is necessary to understand and correct for large pepperpot apertures.
+
+The profile of a beamlet on the detector can be thought of as a convolution of the aperture and beamlet profile from an infinitesimally small aperture thus when the aperture size is large compared to the effects of the divergence of the beam it will be difficult to determine the divergence whereas if the divergence affect is similar or large compared to the aperture size then the divergence will be easier to determine.
+The correction for finite apertures, where the aperture is not too large compared to the effect of the divergence, is thus to deconvolve the aperture size from the beamlet profile which, computationally, is most easily implemented by fitting the width of a Gaussian convolved with the aperture size to the known beamlet size, taking magnification into account.
+
+{\color{red}Simulation in progress to make nice looking data.}
 
 \subsection{Beamlet Overlap}
 
