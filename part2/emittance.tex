@@ -476,10 +476,21 @@ Due the low emittance of the CAEIS and the low electron flux it is not feasible 
 
 The profile of a beamlet on the detector can be thought of as a convolution of the aperture and beamlet profile from an infinitesimally small aperture thus when the aperture size is large compared to the effects of the divergence of the beam it will be difficult to determine the divergence whereas if the divergence affect is similar or large compared to the aperture size then the divergence will be easier to determine.
 The correction for finite apertures, where the aperture is not too large compared to the effect of the divergence, is thus to deconvolve the aperture size from the beamlet profile which, computationally, is most easily implemented by fitting the width of a Gaussian convolved with the aperture size to the known beamlet size, taking magnification into account.
+Reapplying the magnification to the result of the fit supplies the profile of beamlets had the apertures been infinitesimally small.
 
-{\color{red}Simulation in progress to make nice looking data.}
+The results of the analysis of a simulations that varies the size of the apertures is shown in Figure~\ref{figure:aperture_size_sim}, the improvement in the accuracy of the analysis when the aperture size correction is applied is evident.
+
+\begin{figure}
+    \center
+    \input{part2/Figs/aperture_size_sim.pgf}
+    \caption{The results of a simulation that varies the size of the apertures used in the pepperpot mask. The blue line indicates the results of analysis without the correction for aperture size and the green line indicates the results with the correction. The dotted black line is the true emittance of the bunch being simulated.}
+    \label{figure:aperture_size_sim}
+    % Data and code located in Code/Electrons/Simulation/1D Simulation SimScript1D.py
+\end{figure}
 
 \subsection{Beamlet Overlap}
+
+
 
 \subsection{Pepperpot Extent and Beam Coverage}
 
