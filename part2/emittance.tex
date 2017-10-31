@@ -603,7 +603,9 @@ The temporal resolution of these measurements in dictated by a number of factors
 The \gls{ccd} camera and lens used to take images of the detector is assumed to have a resolution much better than the point spread function of the phosphor screen.
 
 The \gls{psf} of the \gls{mcp} and phosphor screen is approximately Gaussian with a standard deviation of \unit[35]{$\mu$m} and is measured by examining single electron events on the detector~\cite{rory_thesis}.
-The majority of the signal from an electron is therefore contained within an area of four times the standard deviation or \unit[140]{$\mu$m} and thus the slow and fast streaks shown in Figure~\ref{figure:streaks} can be sliced into 100 and 74 temporal slices which correspond to time resolutions of \unit[143]{ns} and \unit[67.3]{ps} respectively.
+The streak calibration images (such as Figure~\ref{figure:example_calibration}) can be used as a simple measure for the size of the detected beamlets, which are a convolution of the beamlets size at the detector and the \gls{psf} of the detector.
+The detected beamlets tend to have a size with an \gls{rms} around \unit[183]{$\mu$m} although this does vary with the emittance of the beam.
+The majority of the signal from an electron is therefore contained within an area of four times the standard deviation or \unit[732]{$\mu$m} and thus the slow and fast streaks shown in Figure~\ref{figure:streaks} can be sliced into 27 and 18 temporal slices which correspond to time resolutions of \unit[524]{ns} and \unit[247]{ps} respectively.
 
 The temporal resolution can be enhanced by careful optimisation of the streak on the detector.
 Ensuring that the streak takes up the maximum available extent on the detector minimises the effect of the \gls{psf} on the temporal resolution with the downside that signal is now spread over a wider area thus reducing the \gls{snr}.
