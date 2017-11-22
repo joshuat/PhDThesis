@@ -3172,7 +3172,7 @@
 \pgftext[x=3.070860in,y=0.596944in,,top]{\fontsize{11.000000}{13.200000}\selectfont 15}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=2.060168in,y=0.392315in,,top]{\fontsize{11.000000}{13.200000}\selectfont Time (\(\displaystyle \mu\)s)}%
+\pgftext[x=2.060168in,y=0.392315in,,top]{\fontsize{11.000000}{13.200000}\selectfont Time (\(\displaystyle \muup\)s)}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
