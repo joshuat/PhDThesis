@@ -468,7 +468,7 @@ For these simulations a Gaussian bunch profile was used and the emittance of the
 The path of the bunch was designed to replicate that of the \gls{caeis} by propagating the bunch to a `lens', then to a pepperpot mask and finally to a `detector'.
 The `lens' was implemented by applying a radially dependent velocity change to the particles in order to focus the beam such that the beam size was approximately the same as the size of the pepperpot mask, approximately \unit[2]{mm}.
 
-\subsection{Pepperpot Aperture Size}
+\subsection{Pepperpot Aperture Size}\label{section:pepperpot_simulation}
 
 The first set of simulations investigated the effects of aperture size on the emittance measurement.
 The procedure outline in Reference~\cite{zhang_emittance_1996}, which formed the foundation of the analysis used here, assumes that the size of the apertures used is neglible compared to the divergence of the particles.
@@ -490,10 +490,11 @@ The results of the analysis of a simulations that varies the size of the apertur
     \input{part2/Figs/wavelength_sweep_sim.pgf}
     \caption{The results of a simulation with a pepperpot mask with \unit[50]{$\muup$m} diameter apertures with an extent much larger than the beam size. The blue line is the result of analysis of the simulated data without the aperture size correction and the green line indicates the analysis results with the aperture size correction. The resolution limit of the mask is apparent with excess energies less than \unit[10]{meV}.}
     \label{figure:wavelength_sim}
-    % Data and code located in Code/Electrons/Simulation/1D Simulation SimScript1D.py
+    % Data and code located in Code/Electrons/Simulation/1D Simulation SimScript1D.py - Wavelength Sweep
 \end{subfigure}
 
 \begin{subfigure}[b]{\textwidth}
+    \center
     \input{part2/Figs/aperture_size_sim.pgf}
     \caption{The results of a simulation that varies the size of the apertures used in the pepperpot mask. The blue line indicates the results of analysis without the correction for aperture size and the green line indicates the results with the correction. The dotted black line is the true emittance of the bunch being simulated.}
     \label{figure:aperture_size_sim}
@@ -578,7 +579,7 @@ The results from this test can be seen in Figure~\ref{figure:emittance_vs_theory
 \begin{figure}
     \center
     \input{part2/Figs/emittance_vs_theory.pgf}
-    \caption{Emittance of electron bunches produced by the \gls{caes} (blue) compared to the theoretical predictions (red), see Equation~\ref{equation:excess_energy_emittance}, as the excess energy is varied.}
+    \caption{Emittance of electron bunches produced by the \gls{caes} (blue) compared to theoretical predictions (red), see Equation~\ref{equation:excess_energy_emittance}, and the results of analysis of simulation (green) as the excess energy is varied.}
     \label{figure:emittance_vs_theory}
     % Data and code located in 2017.06.06, Analyse.py
 \end{figure}
@@ -595,7 +596,7 @@ As has been discussed a number of metrics can be extracted from the measurements
 \begin{figure}
     \center
     \input{part2/Figs/streaks.pgf}
-    \caption{{\color{red}WIP Figure - colours, errors, beautifying.} A `slow', left, and `fast', right, streaked pepperpot measurement showing, from top to bottom, the measurement, then the corresponding electron count, emittance, brightness and full beam size. The time axes have been aligned with the images at the top.}
+    \caption{Long (left) and short (right) duration electron bunch streaked pepperpot measurements showing, from top to bottom, the false-colour streak image, full-beam current, normalised \gls{rms} emittance, and normalised brightness. The dotted black lines indicate the start of the electron bunches. The red dotted lines in the emittance measurement indicate the expected emittance from the simulations discussed in Section~\ref{section:pepperpot_simulation}}
     \label{figure:streaks}
 \end{figure}
 
@@ -683,3 +684,12 @@ This chapter has presented an implementation of time-resolved brightness measure
 This technique has promise for use in a wide range of charged particle beam sources and is widely applicable to a range of scenarios.
 With a sufficiently high-current source, such as photocathode electron sources, this technique can also be used to perform measurements in a single-shot.
 Time-resolved brightness measurements have the potential to provide information on the behaviour of charged particle sources allowing for a better understanding of the physics involved and improvement of the apparatus involved.
+
+{\color{red}
+\section{To Do}
+\begin{itemize}
+    \item finish simulation section
+    \item update everything with paper discoveries
+    \item change `slow' and `fast' to long and short duration
+\end{itemize}
+}
