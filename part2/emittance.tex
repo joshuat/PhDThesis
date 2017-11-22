@@ -279,7 +279,7 @@ Due to the ad hoc nature of the magnetic lenses used in the \gls{caes} this meth
 \section{Experimental Setup}
 
 A number of modifications were made to the \gls{caeis} to prepare it for the streaked emittance measurements and there were a number of restrictions on various parameters due to the precise setup of the apparatus.
-The \gls{caeis} was operated in electron mode for these measurements due to the available magnetic optics and the larger emittance expected from electrons as the source temperature is higher for electrons, a minimum temperature of approximately \unit[10]{K} for electrons and \unit[100]{$\mu K$} for ions~\cite{saliba_spatial_2012}.
+The \gls{caeis} was operated in electron mode for these measurements due to the available magnetic optics and the larger emittance expected from electrons as the source temperature is higher for electrons, a minimum temperature of approximately \unit[10]{K} for electrons and \unit[100]{$\muup K$} for ions~\cite{saliba_spatial_2012}.
 Using electrons also allows some control of the bunch emittance as the excess energy can be controlled with the blue ionisation laser wavelength, with ions the change in emittance would be negligible.
 
 See Chapter~\ref{chapter:setup} for a more detailed description of the \gls{caeis} and Figure~\ref{figure:emittance_schematic} for a schematic of the setup used for the measurements in this chapter.
@@ -334,9 +334,9 @@ The streaking was performed using a pair of deflectors located after the pepperp
 For these measurements one deflector was grounded and the other given a time-varying voltage which was supplied in one of two ways:
 \begin{itemize}
 \item A fast ramp using a bipolar push-pull solid-state switch with a fixed transition time of \unit[10]{ns} and
-\item A slower ramp using an amplified signal generator with a minimum transition of approximately \unit[10]{$\mu$s}.
+\item A slower ramp using an amplified signal generator with a minimum transition of approximately \unit[10]{$\muup$s}.
 \end{itemize}
-An example of the voltage ramps is shown in Figure~\ref{figure:deflector_voltages}. The slow ramp was done by amplifying the output of signal generator\footnote{Rigol DG4162, able to operate up to \unit[160]{MHz}} which is highly configurable and thus capable of a wide range of pulse lengths, limited by the speed of the amplifier to a transition time approximately \unit[10]{$\mu$s} in duration as shown in Figure~\ref{figure:deflector_voltages}.
+An example of the voltage ramps is shown in Figure~\ref{figure:deflector_voltages}. The slow ramp was done by amplifying the output of signal generator\footnote{Rigol DG4162, able to operate up to \unit[160]{MHz}} which is highly configurable and thus capable of a wide range of pulse lengths, limited by the speed of the amplifier to a transition time approximately \unit[10]{$\muup$s} in duration as shown in Figure~\ref{figure:deflector_voltages}.
 More detail on the design of the streaking electronics can be found in Reference~{\color{red}(Cite Rory's thesis)}.
 
 \begin{figure}
@@ -403,16 +403,16 @@ There are a number of considerations when designing pepperpot masks;
 \end{itemize}
 
 A number of restrictions aided the selection of parameters for the pepperpots used, the maximum pepperpot extent and need to focus the beam to the pepperpot size to maximise flux dictated the approximate size of the beamlets on the detector and thus the lowest feasibly pitch in order to minimise the overlap of beamlets on the detector.
-The pepperpots were cut\footnote{The pepperpots were cut using a Oxford Laser Systems Alpha 532 laser micromachining system.} from \unit[25]{$\mu m$} thick copper pinholes\footnote{Gilder Grids GA50-C3, \unit[50]{$\mu m$} aperture.} with \unit[50]{$\mu m$} diameter holes cut in the centre.
-The central pinholes were used as the central aperture for the pepperpot arrays and since \unit[50]{$\mu m$} apertures provide adequate flux the rest of the apertures were also cut to the same diameter to simplify analysis while providing acceptable measurement resolution.
-A pitch of \unit[200]{$\mu m$} was chosen to provide acceptable sampling of the beam while minimising the overlap of beamlets on the detector.
+The pepperpots were cut\footnote{The pepperpots were cut using a Oxford Laser Systems Alpha 532 laser micromachining system.} from \unit[25]{$\muup$ m} thick copper pinholes\footnote{Gilder Grids GA50-C3, \unit[50]{$\muup$ m} aperture.} with \unit[50]{$\muup$ m} diameter holes cut in the centre.
+The central pinholes were used as the central aperture for the pepperpot arrays and since \unit[50]{$\muup$ m} apertures provide adequate flux the rest of the apertures were also cut to the same diameter to simplify analysis while providing acceptable measurement resolution.
+A pitch of \unit[200]{$\muup$ m} was chosen to provide acceptable sampling of the beam while minimising the overlap of beamlets on the detector.
 Given the \unit[2]{mm} diameter available this pitch allowed for one dimensional pepperpots with 7 apertures and two dimensional pepperpots with 7$\times$7 apertures.
 The pepperpots used are shown in Figures~\ref{figure:pepperpot_mask} and \ref{figure:1d_pepperpot}.
 
 \begin{figure}
     \center
     \includegraphics[width=0.49\linewidth]{part2/Figs/sample_holder.jpg}
-    \caption{One of two sample holders that are used to load up to eight samples into the vacuum system. Clockwise from the top: five \unit[50]{$\mu m$} apertures with \unit[300]{$\mu m$} pitch, 7 by 7 pepperpot of \unit[50]{$\mu m$} apertures with \unit[200]{$\mu m$} pitch, 5 by 5 pepperpot of \unit[50]{$\mu m$} apertures with \unit[300]{$\mu m$} pitch, thin gold sample. Each sample is \unit[3]{mm} in diameter. A `lid' with appropriate apertures is placed over the samples to hold them in place.}
+    \caption{One of two sample holders that are used to load up to eight samples into the vacuum system. Clockwise from the top: five \unit[50]{$\muup$ m} apertures with \unit[300]{$\muup$ m} pitch, 7 by 7 pepperpot of \unit[50]{$\muup$ m} apertures with \unit[200]{$\muup$ m} pitch, 5 by 5 pepperpot of \unit[50]{$\muup$ m} apertures with \unit[300]{$\muup$ m} pitch, thin gold sample. Each sample is \unit[3]{mm} in diameter. A `lid' with appropriate apertures is placed over the samples to hold them in place.}
     \label{figure:sample_holder_pepperpots}
 \end{figure}
 
@@ -450,7 +450,7 @@ The apertures sample the full beam and a Gaussian (or other known beam profile) 
 \subsubsection{Ionisation Laser}
 The ionisation laser was a \unit[457-493]{nm}, \unit[10]{ns} pulse laser\footnote{Sirah dye laser system CSTR-D-3000.} which ionises the atoms excited by the red excitation laser.
 The wavelength can be tuned to select various ionisation pathways such as above-threshold ionisation or field ionisation.
-The pathway selected affects the duration of the bunch produced, above threshold ionisation results in short bunches with durations the same as the duration of the ionisation laser and below threshold ionisation can result in much longer bunches with durations of \unit[10s]{$\mu s$} due to electrons tunneling out after the end of the ionisation pulse.
+The pathway selected affects the duration of the bunch produced, above threshold ionisation results in short bunches with durations the same as the duration of the ionisation laser and below threshold ionisation can result in much longer bunches with durations of \unit[10s]{$\muup$ s} due to electrons tunneling out after the end of the ionisation pulse.
 
 Another useful impact of the ionisation lasers wavelength is on the excess energy of the electrons and thus the emittance of the electron bunches.
 This is discussed in Sections~\ref{section:excess_energy} and \ref{section:excess_energy_emittance}.
@@ -487,7 +487,7 @@ The results of the analysis of a simulations that varies the size of the apertur
 \begin{figure}
 \begin{subfigure}[b]{\textwidth}
     \input{part2/Figs/wavelength_sweep_sim.pgf}
-    \caption{The results of a simulation with a pepperpot mask with \unit[50]{$\mu$m} diameter apertures with an extent much larger than the beam size. The blue line is the result of analysis of the simulated data without the aperture size correction and the green line indicates the analysis results with the aperture size correction. The resolution limit of the mask is apparent with excess energies less than \unit[10]{meV}.}
+    \caption{The results of a simulation with a pepperpot mask with \unit[50]{$\muup$m} diameter apertures with an extent much larger than the beam size. The blue line is the result of analysis of the simulated data without the aperture size correction and the green line indicates the analysis results with the aperture size correction. The resolution limit of the mask is apparent with excess energies less than \unit[10]{meV}.}
     \label{figure:wavelength_sim}
     % Data and code located in Code/Electrons/Simulation/1D Simulation SimScript1D.py
 \end{subfigure}
@@ -566,7 +566,7 @@ Another required parameter is the size of the source which is required to determ
 The transverse source size is the same size as the excitation laser as it passed through the \gls{mot}.
 This can be determined by intercepting the excitation laser with a mirror and directing the beam onto a camera placed the same distance away from the intercepting mirror as the location of the \gls{mot}.
 Knowing the size of pixels for the camera allows for an image of the beam to be determined.
-The source size was determined to be \unit[450.8]{$\mu m$} in the vertical direction and \unit[690.6]{$\mu m$} in the horizontal direction.
+The source size was determined to be \unit[450.8]{$\muup$ m} in the vertical direction and \unit[690.6]{$\muup$ m} in the horizontal direction.
 For simplicity the calculations in the following section have used the average of these two measurements.
 
 \subsection{Two-Dimensional Pepperpots}
@@ -602,10 +602,10 @@ As has been discussed a number of metrics can be extracted from the measurements
 The temporal resolution of these measurements in dictated by a number of factors, the finite \gls{psf} of the detector, the gradient or `slew' of the deflector voltages and the size of the beamlets on the detector.
 The \gls{ccd} camera and lens used to take images of the detector is assumed to have a resolution much better than the point spread function of the phosphor screen.
 
-The \gls{psf} of the \gls{mcp} and phosphor screen is approximately Gaussian with a standard deviation of \unit[35]{$\mu$m} and is measured by examining single electron events on the detector~\cite{rory_thesis}.
+The \gls{psf} of the \gls{mcp} and phosphor screen is approximately Gaussian with a standard deviation of \unit[35]{$\muup$m} and is measured by examining single electron events on the detector~\cite{rory_thesis}.
 The streak calibration images (such as Figure~\ref{figure:example_calibration}) can be used as a simple measure for the size of the detected beamlets, which are a convolution of the beamlets size at the detector and the \gls{psf} of the detector.
-The detected beamlets tend to have a size with an \gls{rms} around \unit[183]{$\mu$m} although this does vary with the emittance of the beam.
-The majority of the signal from an electron is therefore contained within an area of four times the standard deviation or \unit[732]{$\mu$m} and thus the slow and fast streaks shown in Figure~\ref{figure:streaks} can be sliced into 27 and 18 temporal slices which correspond to time resolutions of \unit[524]{ns} and \unit[247]{ps} respectively.
+The detected beamlets tend to have a size with an \gls{rms} around \unit[183]{$\muup$m} although this does vary with the emittance of the beam.
+The majority of the signal from an electron is therefore contained within an area of four times the standard deviation or \unit[732]{$\muup$m} and thus the slow and fast streaks shown in Figure~\ref{figure:streaks} can be sliced into 27 and 18 temporal slices which correspond to time resolutions of \unit[524]{ns} and \unit[247]{ps} respectively.
 
 The temporal resolution can be enhanced by careful optimisation of the streak on the detector.
 Ensuring that the streak takes up the maximum available extent on the detector minimises the effect of the \gls{psf} on the temporal resolution with the downside that signal is now spread over a wider area thus reducing the \gls{snr}.
