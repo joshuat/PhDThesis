@@ -135,8 +135,8 @@ The emittance of bunches generated from below-threshold pathways, such as Rydber
 
 Directly calculating the emittance of an ensemble with Equation~\ref{emittance} requires full knowledge of the position and momenta of the particles which is difficult as beam monitors tend to only measure the transverse positions of particles.
 There are a number of methods to practically calculate the emittance of a particle beam, namely pepperpots, the multiple profile method methods and the quadrupole method.
-
-{\color{red}Is it worth mentioning multi-profile and quadrupole methods? I never used them.... I have data to \emph{attempt} multi-profile. Consider just removing those sections.}
+In the \gls{caeis} the quadrupole method is not practical as the lenses in the system are not well characterised and multi-profile measurements are tedious due to the manual z-translation of the detector and bellows.
+The pepperpot method however is eminently achievable with this system although the details of the geometry are not ideal with this iteration of a \gls{caeis}.
 
 \subsection{Pepperpots}
 
@@ -206,75 +206,75 @@ For a pulsed charged particle source, such as the \gls{caeis}, the streak can be
 There are some considerations for how fast an electric field can be swept, which will not be examined in detail here, so extremely short bunches will require more complicated systems, such as a \gls{rf} cavity, to provide the appropriate timing and electric field temporal-gradient~\cite{alesini_rf_2006}.
 An example of a streaked pepperpot measurement is shown in Figure~\ref{figure:streaked_1d_pepperpot}.
 
-\subsection{Multi-profile Method}
+% \subsection{Multi-profile Method}
 
-If a beam can be described by $\sigma^0$ at $z_0$ and by $\sigma^1$ at $z_1$ then the transformation matrix, $\mathbf{R}_{12}$ from $z_0$ to $z_1$ is
-\begin{equation}
-\mathbf{R} = \begin{pmatrix} R_{11} & R_{12} \\ R_{21} & R_{22} \end{pmatrix}
-\end{equation}
-and
-\begin{equation}
-\sigma^1 = \mathbf{R}\sigma^0\mathbf{R}^T
-\end{equation}
-where $\mathbf{R}^T$ is the transpose of $\mathbf{R}$.
-The combined transfer matrix for a series of $z$ positions is simply the product of the individual transfer matrices.
+% If a beam can be described by $\sigma^0$ at $z_0$ and by $\sigma^1$ at $z_1$ then the transformation matrix, $\mathbf{R}_{12}$ from $z_0$ to $z_1$ is
+% \begin{equation}
+% \mathbf{R} = \begin{pmatrix} R_{11} & R_{12} \\ R_{21} & R_{22} \end{pmatrix}
+% \end{equation}
+% and
+% \begin{equation}
+% \sigma^1 = \mathbf{R}\sigma^0\mathbf{R}^T
+% \end{equation}
+% where $\mathbf{R}^T$ is the transpose of $\mathbf{R}$.
+% The combined transfer matrix for a series of $z$ positions is simply the product of the individual transfer matrices.
 
-We can write:
-\begin{equation}\label{equation:multiprofile}
-\sigma_{11}^1 = R_{11}^2\sigma_{11}^0 + 2R_{11}R_{12}\sigma_{12}^0 + R_{12}^2\sigma_{22}^0
-\end{equation}
+% We can write:
+% \begin{equation}\label{equation:multiprofile}
+% \sigma_{11}^1 = R_{11}^2\sigma_{11}^0 + 2R_{11}R_{12}\sigma_{12}^0 + R_{12}^2\sigma_{22}^0
+% \end{equation}
 
-Typical detectors are only able to measure the standard deviation of $x$, $\sigma_{11}$.
-With at least three measurements and known transfer matrices the other elements of $\sigma$ can be determined.
-With more than three measurements uncertainty can be reduced.
+% Typical detectors are only able to measure the standard deviation of $x$, $\sigma_{11}$.
+% With at least three measurements and known transfer matrices the other elements of $\sigma$ can be determined.
+% With more than three measurements uncertainty can be reduced.
 
-The transfer matrix for simple propagation over a distance $L$ is
-\begin{equation}
-\mathbf{R}_L = \begin{pmatrix}1 & L \\ 0 & 1\end{pmatrix}
-\end{equation}
-and then Equation~\ref{equation:multiprofile} becomes
-\begin{equation}
-\sigma_{11}^1 = \sigma_{11}^0 + 2L \sigma_{12}^0 + L_1^2\sigma_{22}^0.
-\end{equation}
+% The transfer matrix for simple propagation over a distance $L$ is
+% \begin{equation}
+% \mathbf{R}_L = \begin{pmatrix}1 & L \\ 0 & 1\end{pmatrix}
+% \end{equation}
+% and then Equation~\ref{equation:multiprofile} becomes
+% \begin{equation}
+% \sigma_{11}^1 = \sigma_{11}^0 + 2L \sigma_{12}^0 + L_1^2\sigma_{22}^0.
+% \end{equation}
 
-\begin{figure}
-\center
-\includegraphics{part2/Figs/Multi-ProfileEmittance.pdf}
-\caption{An example of a multi-profile emittance measurement conducted on an expanding beam travelling from left to right (or a shrinking beam travelling right to left).}
-\label{figure:multiprofileexample}
-\end{figure}
+% \begin{figure}
+% \center
+% \includegraphics{part2/Figs/Multi-ProfileEmittance.pdf}
+% \caption{An example of a multi-profile emittance measurement conducted on an expanding beam travelling from left to right (or a shrinking beam travelling right to left).}
+% \label{figure:multiprofileexample}
+% \end{figure}
 
-With an initial beam, $\sigma_0$, measured at $z_1, z_2$ and $z_3$ as shown in Figure~\ref{figure:multiprofileexample} then $\sigma_{11}^1$, $\sigma_{11}^2$, and $\sigma_{11}^3$ are know and we can write 
-\begin{align}
-\sigma_{11}^1 &= \sigma_{11}^0 +2L_{01}\sigma_{12}^0 + L_{01}^2\sigma_{22}^0 \notag\\
-\sigma_{11}^2&= \sigma_{11}^0+2(L_{01}+L_{12})\sigma_{12}^0 + (L_{01}+L_{12})^2\sigma_{22}^0 \notag\\
-\sigma_{11}^3&= \sigma_{11}^0+2(L_{01}+L_{12}+L_{23})\sigma_{12}^0 + (L_{01}+L_{12}+L_{23})^2\sigma_{22}^0 \label{eq:multiprofilesolution}
-\end{align}
+% With an initial beam, $\sigma_0$, measured at $z_1, z_2$ and $z_3$ as shown in Figure~\ref{figure:multiprofileexample} then $\sigma_{11}^1$, $\sigma_{11}^2$, and $\sigma_{11}^3$ are know and we can write 
+% \begin{align}
+% \sigma_{11}^1 &= \sigma_{11}^0 +2L_{01}\sigma_{12}^0 + L_{01}^2\sigma_{22}^0 \notag\\
+% \sigma_{11}^2&= \sigma_{11}^0+2(L_{01}+L_{12})\sigma_{12}^0 + (L_{01}+L_{12})^2\sigma_{22}^0 \notag\\
+% \sigma_{11}^3&= \sigma_{11}^0+2(L_{01}+L_{12}+L_{23})\sigma_{12}^0 + (L_{01}+L_{12}+L_{23})^2\sigma_{22}^0 \label{eq:multiprofilesolution}
+% \end{align}
 
-Which can easily be solved for $\sigma_0$ thus allowing the calculation of the emittance with Equation~\ref{eq:emittancewithdeterminant}.
+% Which can easily be solved for $\sigma_0$ thus allowing the calculation of the emittance with Equation~\ref{eq:emittancewithdeterminant}.
 
-This method is feasible with the \gls{caeis} at the University of Melbourne but labourious due to the manual operation of the bellows the detector is attached to.
+% This method is feasible with the \gls{caeis} at the University of Melbourne but labourious due to the manual operation of the bellows the detector is attached to.
 
-\subsection{Quadrupole Method}
+% \subsection{Quadrupole Method}
 
-The quadrupole method is similar to the multi-profile method but requires only a single location to measure the beam width and a well characterised variable lens such as a quadrupole lens.
-A quadrupole lens with a magnetic field gradient of $G$ has the transfer matrix in the focusing plane of
-\begin{equation}
-\mathbf{R}_f = \begin{pmatrix} \cos kl & (1/k)\sin kl\\
--k\sin kl & cos kl\end{pmatrix},
-\end{equation}
-where $l$ is the effective length of the quadrupole, $k^2=G/B\rho$ is the quadrupole strength and $B\rho$ is the magnetic rigidity of the particles in the assumed central trajectory.
-The matrix in the defocusing plane is
-\begin{equation}
-\mathbf{R}_d = \begin{pmatrix} \cosh kl & (1/k) \sin kl\\
-k \sinh kl & \cosh kl \end{pmatrix}
-\end{equation}
+% The quadrupole method is similar to the multi-profile method but requires only a single location to measure the beam width and a well characterised variable lens such as a quadrupole lens.
+% A quadrupole lens with a magnetic field gradient of $G$ has the transfer matrix in the focusing plane of
+% \begin{equation}
+% \mathbf{R}_f = \begin{pmatrix} \cos kl & (1/k)\sin kl\\
+% -k\sin kl & cos kl\end{pmatrix},
+% \end{equation}
+% where $l$ is the effective length of the quadrupole, $k^2=G/B\rho$ is the quadrupole strength and $B\rho$ is the magnetic rigidity of the particles in the assumed central trajectory.
+% The matrix in the defocusing plane is
+% \begin{equation}
+% \mathbf{R}_d = \begin{pmatrix} \cosh kl & (1/k) \sin kl\\
+% k \sinh kl & \cosh kl \end{pmatrix}
+% \end{equation}
 
-A beam measured a distance $L$ away from the quadrupole will have undergone the transformation $\mathbf{R}=\mathbf{R}_L\mathbf{R}_f$ on one axis and $\mathbf{R}=\mathbf{R}_L\mathbf{R}_d$ on the other.
-The symmetric beam matrix for the beam before the lens can then be determined from a series of beam profile measurements with different focusing strengths.
-The main advantage of this measurement is that is only requires a single beam monitor location.
+% A beam measured a distance $L$ away from the quadrupole will have undergone the transformation $\mathbf{R}=\mathbf{R}_L\mathbf{R}_f$ on one axis and $\mathbf{R}=\mathbf{R}_L\mathbf{R}_d$ on the other.
+% The symmetric beam matrix for the beam before the lens can then be determined from a series of beam profile measurements with different focusing strengths.
+% The main advantage of this measurement is that is only requires a single beam monitor location.
 
-Due to the ad hoc nature of the magnetic lenses used in the \gls{caes} this method is not practical without a thorough characterisation of the lenses, especially in comparison with the ease of the alternative methods.
+% Due to the ad hoc nature of the magnetic lenses used in the \gls{caes} this method is not practical without a thorough characterisation of the lenses, especially in comparison with the ease of the alternative methods.
 
 \section{Experimental Setup}
 
