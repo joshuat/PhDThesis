@@ -510,6 +510,16 @@ A naive analysis of overlapped beamlets might just analyse the potion of the bea
 A more sophisticated approach is to determine the portion of the beams that are overlapped in order to correctly determine the width.
 The method used here is to fit the sum of N Gaussians, where N is the number of beamlets, to the data.
 
+{\color{red}Refer to figure.}
+
+\begin{figure}
+    \center
+    \input{part2/Figs/OverlapExample.pgf}
+    \caption{An example of overlapping beamlets. The left figure shows overlapping beamlets from simualted data. The middle figure shows Gaussian parameters for each beamlet derived by separating each beamlet by the troughs in the distribution. The right figure shows Gaussian parameters from fitting the sum of Gaussians to the data. In the second two figure the pale lines indicate individual Gaussians for each beamlet and solid lines for the sum of the individual Gaussians and the dotted lines indicate the original data.}
+    \label{figure:overlap_example}
+    % Data and code located in Code/Electrons/Simulation/1D Simulation SimScript1D.py and OverlapExample.py
+\end{figure}
+
 
 \subsection{Pepperpot Extent and Beam Coverage}
 The third correction that was made was to take into account the proportion of the beam that was covered by the pepperpot extent.
@@ -587,12 +597,15 @@ For simplicity the calculations in the following section have used the average o
 \subsection{Two-Dimensional Pepperpots}
 The frequency of the ionisation laser can to tuned to control the emittance of electron bunches as it determines the excess energy of bunches.
 By varying the wavelength of the ionisation laser and measuring the emittance of the electron bunches using the two dimensional pepperpot allows for testing of the emittance measurement system and analysis as the results can be compared to the theory described by Equation~\ref{equation:excess_energy_emittance} and the simulations in Section~\ref{section:simulations}.
+
 The results from this test can be seen in Figure~\ref{figure:emittance_vs_theory} and the results are well matched to the theory and previous measurements of the emittance of this \gls{caes}~\cite{mcculloch_high-coherence_2013}.
+The data shown agrees well with the simulation results and the lower bound on measureable emittance is apparent in both the measurement and the simulation results.
+Due to the aperture size of \unit[50]{$\muup$m} and beam path geometry (propagation distances, focusing parameter, etc.) the measurements are limited to resolving emittance greater than \unit[41]{nm rad}.
 
 \begin{figure}
     \center
     \input{part2/Figs/emittance_vs_theory.pgf}
-    \caption{Emittance of electron bunches produced by the \gls{caes} (blue) compared to theoretical predictions (red), see Equation~\ref{equation:excess_energy_emittance}, and the results of analysis of simulation (green) as the excess energy is varied.}
+    \caption{Emittance of electron bunches produced by the \gls{caes} (blue) compared to theoretical predictions of Equation~\ref{equation:excess_energy_emittance} (red), and the results of analysis of simulation (green) as the excess energy is varied. The black dotted lines indicate the excess energy of the two streaks shown in Figure~\ref{figure:streaks}.}
     \label{figure:emittance_vs_theory}
     % Data and code located in 2017.06.06, Analyse.py
 \end{figure}
