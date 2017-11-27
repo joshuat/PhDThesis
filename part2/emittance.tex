@@ -542,18 +542,21 @@ The analysis procedure is roughly as follows:
     \item Average registered images
     \item Rotate image so dominant features are aligned with the pixel rows
     \item Deskew image so features along the second axis aligned with the columns
+    \item For each beamlet set use peak finding algorithms to find the location of each beamlet peak
     \begin{itemize}
         \item For two dimensional pepperpots sum the rows and columns individually to produce two one-dimensional sets of beamlets
         \item For streaked emittance measurements examine each column of pixels independently to produce a number of one-dimensional sets of beamlets.
     \end{itemize}
-    \item For each beamlet set use peak finding algorithms to find the location of each beamlet peak
     \item Separate each beamlet set into individual beamlets
-    \item Determine the amplitude, mean position and \gls{rms} width of each beamlet
-    \item Transform the position and width measurements from pixel measurement to real measurements using the camera calibration
+    \item Determine the approximate amplitude, mean position and \gls{rms} width of each beamlet
+    \item Refine the amplitude, mean positions and \gls{rms} width of each beamlet by fitting a number of Gaussians equal to the number of beamlets to the beamlet set
+    \item Transform the beamlet position and width measurements from pixel measurement to real measurements using the camera and \gls{mcp} calibration
+    \item Fit a Gaussian convolved with the aperture size to the refined beamlet parameters in order to determine the equivalent beamlet for a infinitessimal aperture
     \item Use Equation~\ref{equation:pepperpot} to determine the emittance
+    \item Estimate the full-beam profile of the bunch by fitting a Gaussian to the number of particles transmitted through each aperture (equal to the total particle count for each beamlet)
+    \item Correct the emittance by considering the beam coverage of the pepperpot mask given the full-beam profile
 \end{enumerate}
 
-Care has been taken to ensure that the full beam profile is Gaussian and this allows for the beamlet and pepperpot parameters to be used to fit to the full beam profile allowing for calculation of the full beam width and charge for each beamlet set.
 
 \subsection{Calibrations}
 A number of experimental parameters require calibration and the procedures for doing so are briefly outlined here.
