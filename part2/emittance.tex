@@ -459,12 +459,12 @@ Equation~\ref{equation:excess_energy_emittance} gives a useful comparison and al
 \section{Simulations}
 
 Due to the experimental constraints involving the low beam flux, pepperpot mask size limitations and lens aberations it was not possible to engineer an idea setup of beam and pepperpot parameters.
-The non-ideal experimental parameters cause some distortions to the emittance measurements so some simulations were undertaken in order to understand the effect and verify the validity of the corrections.
+The non-ideal experimental parameters cause some distortions to the emittance measurements so simulations were performed to explore the effects and verify the validity of the corrections.
 These simulation also proved to be a useful confirmation of the analysis procedure used on the experimental data.
 
 The simulations were performed by a simple homemade particle tracker, able to operate in one- and two-dimensions, create arbirary bunch profiles with arbitrary emittances, propagate bunches and apply arbirary masks to the bunch.
 
-For these simulations a Gaussian bunch profile was used and the emittance of the bunch was set to one of a range of values similar to those achieveable with the actual apparatus.
+For these simulations a Gaussian bunch profile was used and the emittance of the bunch was set to a range of values similar to those achieveable with the actual apparatus.
 The path of the bunch was designed to replicate that of the \gls{caeis} by propagating the bunch to a `lens', then to a pepperpot mask and finally to a `detector'.
 The `lens' was implemented by applying a radially dependent velocity change to the particles in order to focus the beam such that the beam size was approximately the same as the size of the pepperpot mask, approximately \unit[2]{mm}.
 
@@ -475,11 +475,11 @@ The procedure outline in Reference~\cite{zhang_emittance_1996}, which formed the
 Due the low emittance of the CAEIS and the low electron flux it is not feasible to use pepperpots with neglibly small holes so it is necessary to understand and correct for large pepperpot apertures.
 
 The profile of a beamlet on the detector is a convolution of the aperture profile and the beamlet profile from an infinitesimally small aperture.
-Thus when the aperture size is large compared to the effects of the beam divergence it will be difficult to determine the divergence whereas if the divergence affect is similar or large compared to the aperture size then the divergence will be easier to determine.
+Thus, when the aperture size is large compared to the effects of the beam divergence, it will be difficult to determine the divergence whereas if the divergence affect is similar or large compared to the aperture size then the divergence will be easier to determine.
 This results in an overestimation of beam divergence when the divergence and aperture size are similar and a minimum measureable divergence, and thus emittance, if the divergence is much smaller than the aperture size.
-An example of a resolution limited measurement is shown in Figure~\ref{figure:wavelength_sim}.
+An example of a resolution limit for this experiment is shown in Figure~\ref{figure:wavelength_sim}.
 
-The correction for finite apertures, where the aperture is not too large compared to the effect of the divergence, is thus to deconvolve the aperture size from the beamlet profile which, computationally, is most easily implemented by fitting the width of a Gaussian convolved with the aperture size to the known beamlet size, taking magnification into account.
+The correction for finite apertures, where the aperture is not too large compared to the effect of the divergence, is to deconvolve the aperture size from the beamlet profile which is most easily implemented by fitting the width of a Gaussian convolved with the aperture size to the known beamlet size, taking magnification into account.
 Reapplying the magnification to the result of the fit supplies the profile of beamlets had the apertures been infinitesimally small.
 
 The results of the analysis of a simulations that varies the size of the apertures is shown in Figure~\ref{figure:aperture_size_sim}, the improvement in the accuracy of the analysis when the aperture size correction is applied is evident.
@@ -500,12 +500,15 @@ The results of the analysis of a simulations that varies the size of the apertur
     \label{figure:aperture_size_sim}
     % Data and code located in Code/Electrons/Simulation/1D Simulation SimScript1D.py
 \end{subfigure}
+    \caption{}
 \end{figure}
 
 \subsection{Beamlet Overlap}
-Once again, due to the experimental constrainst it was difficult to produce ideal pepperpot measurements with one of the issues being the overlap of beamlets.
-A naive analysis of overlapped beamlets would just analyse the potion of the beamlet between the troughs in the signal however this results in an underestimate of the beamlet size due to the part underneath the neigbouring beamlets.
-A more sophisticated approach is to determine the portion of the beams that are overlapped in oder to correctly determine the width, one method to do this is to fit the sum of N Gaussians, where N is the number of beamlets, to the data.
+Once again, due to the experimental constraints it was difficult to produce ideal pepperpot measurements with one of the issues being the overlap of beamlets.
+Most pepperpot analysis procedures assume that the beamlets are completely separated which was difficult to achieve with this apparatus while providing sufficient flux for streaked measurements and enough sampling of the beam to allow for estimation of the full-beam profile.
+A naive analysis of overlapped beamlets might just analyse the potion of the beamlet between the troughs in the signal, however this results in an underestimate of the beamlet size due to the part underneath the neigbouring beamlets.
+A more sophisticated approach is to determine the portion of the beams that are overlapped in order to correctly determine the width.
+The method used here is to fit the sum of N Gaussians, where N is the number of beamlets, to the data.
 
 
 \subsection{Pepperpot Extent and Beam Coverage}
