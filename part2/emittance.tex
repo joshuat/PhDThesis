@@ -512,6 +512,13 @@ The method used here is to fit the sum of N Gaussians, where N is the number of 
 
 
 \subsection{Pepperpot Extent and Beam Coverage}
+The third correction that was made was to take into account the proportion of the beam that was covered by the pepperpot extent.
+A pepperpot mask that has an extent smaller than the size of the beam is effectively aperturing the beam and an apertures reduce the emittance of a beam.
+Thus, attempting to measure the emittance with a pepperpot that has an extent smaller the the size of the beam will result in an underestimation of the emittance proportional to coverage of the beam.
+
+For a Gaussian-profile beam the correction takes is performed by dividing the calculated emittance by the weighted proportion of the beam covered by the pepperpot mask.
+
+
 
 \section{Results}
 In order to demonstrate the feasibility of time-resolved emittance measurement via the streaking of pepperpot measurements a number of measurements have been made including a comparison of two dimensional pepperpot emittance measurements with theory and slow and fast streaks used to determine the time-resolved brightness of electron bunches produced by the \gls{caes}.
