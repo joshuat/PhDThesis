@@ -643,6 +643,12 @@
 \pgftext[x=0.275000in,y=1.141217in,,bottom,rotate=90.000000]{\fontsize{10.000000}{12.000000}\selectfont Particle Count}%
 \end{pgfscope}%
 \begin{pgfscope}%
+\definecolor{textcolor}{rgb}{1.000000,0.400000,0.200000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=1.604000in,y=1.447025in,left,base]{\color{textcolor}\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle \epsilon\) = 196}%
+\end{pgfscope}%
+\begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
@@ -2471,6 +2477,12 @@
 \end{pgfscope}%
 \end{pgfscope}%
 \begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.309804,0.478431,0.682353}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=3.324000in,y=1.447025in,left,base]{\color{textcolor}\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle \epsilon\) = 155}%
+\end{pgfscope}%
+\begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
@@ -4278,6 +4290,12 @@
 \pgfsys@transformshift{5.560000in}{1.753333in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.301961,0.607843,0.301961}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=5.044000in,y=1.447025in,left,base]{\color{textcolor}\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle \epsilon\) = 198}%
 \end{pgfscope}%
 \end{pgfpicture}%
 \makeatother%

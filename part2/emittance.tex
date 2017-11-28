@@ -506,16 +506,20 @@ The results of the analysis of a simulations that varies the size of the apertur
 \subsection{Beamlet Overlap}
 Once again, due to the experimental constraints it was difficult to produce ideal pepperpot measurements with one of the issues being the overlap of beamlets.
 Most pepperpot analysis procedures assume that the beamlets are completely separated which was difficult to achieve with this apparatus while providing sufficient flux for streaked measurements and enough sampling of the beam to allow for estimation of the full-beam profile.
-A naive analysis of overlapped beamlets might just analyse the potion of the beamlet between the troughs in the signal, however this results in an underestimate of the beamlet size due to the part underneath the neigbouring beamlets.
+A na\"ive analysis of overlapped beamlets might just analyse the potion of the beamlet between the troughs in the signal, however this results in an underestimate of the beamlet size due to the part underneath the neigbouring beamlets.
 A more sophisticated approach is to determine the portion of the beams that are overlapped in order to correctly determine the width.
 The method used here is to fit the sum of N Gaussians, where N is the number of beamlets, to the data.
 
-{\color{red}Refer to figure.}
+Shown in Figure~\ref{figure:overlap_example} is an example of overlapped beamlets, the improvement in the emittance measurement from the na\"ive approach to the fitting is clear in this example.
+Most of the measurements made during this project have a lower degree of overlap than that demonstrated in Figure~\ref{figure:overlap_example} and have a much smaller deviation from the correct emittance.
 
 \begin{figure}
     \center
     \input{part2/Figs/OverlapExample.pgf}
-    \caption{An example of overlapping beamlets. The left figure shows overlapping beamlets from simualted data. The middle figure shows Gaussian parameters for each beamlet derived by separating each beamlet by the troughs in the distribution. The right figure shows Gaussian parameters from fitting the sum of Gaussians to the data. In the second two figure the pale lines indicate individual Gaussians for each beamlet and solid lines for the sum of the individual Gaussians and the dotted lines indicate the original data.}
+    \caption{An example of overlapping beamlets.
+    The left figure shows overlapping beamlets from simualted data, the middle figure shows Gaussian parameters for each beamlet derived by considering only the portion of each beamlet between the troughs in the distribution, and the right figure shows Gaussian parameters from fitting the sum of Gaussians to the data.
+    The actual emittance of the simulated bunch is listed in the left figure and the emittance derived from the Gaussian sets is listed in the other two figures.
+    In the second two figure the pale lines indicate individual Gaussians for each beamlet and solid lines for the sum of the individual Gaussians and the dotted lines indicate the original data.}
     \label{figure:overlap_example}
     % Data and code located in Code/Electrons/Simulation/1D Simulation SimScript1D.py and OverlapExample.py
 \end{figure}
