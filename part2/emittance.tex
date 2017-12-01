@@ -1,25 +1,38 @@
 \chapter{Time-Resolved Brightness Measurements}
 
-Brightness is one of the best figure of merit for determining the quality of a charged particle beam.
-The brightness of a beam represents the current density per unit solid angle and combines the beam charge with the focusability of the beam.
-The `focusability' of a beam, known as emittance, determines the minimum size of the probe for electron and ion microscopes and is equivalent to the coherence for synchrotrons, \glspl{xfel} and diffraction experiments.
+The most comprehensive figure of merit for charged particle beams is brightness, which incorporates beam current and emittance~\cite{reiser_theory_2008}.
+Brightness measurements can also serve as a powerful diagnostic of the processes involved in beam creation and manipulation~\cite{mills_brightness_1980,qiang_three-dimensional_2006,bazarov_maximum_2009}.
+Time-resolved brightness measurements have the potential to reveal information related to effects such as electron diffusion time, image-charge formation, and space-charge interactions.
+This chapter presents a technique for measuring time-resolved brightness by combining pepperpot emittance measurements with beam streaking, and demonstrates the method with electrons generated from the \gls{caeis}.
 
-Time-resolved measurements of emittance and brightness can provide a powerful diagnostic for the improvement of charged particle beams.
-Elucidation of temporal behaviour of brightness has the potential to permit better understanding of the processes involved in the creation and propagation of charged particle beam and thus could be a useful tool in improving these devices.
-Time-resolved emittance measurements have been performed previously using a pulsed \gls{mcp}~\cite{yoshida_simple_2001}, with translating slits and a Faraday cup~\cite{anders_time-resolved_2003} and electro-optic shutters~\cite{bekefi_temporal_1987}, however all of these methods require many iterations of the experiment to build up the temporal profile.
-Time-resolved emittance measurements have been used to study the behaviour of metal ion sources for implantation and fusion~\cite{anders_time-resolved_2003, yoshida_simple_2001} and to determine that velvet-backed cathodes in field-emission electron guns are superior to graphite backed ones~\cite{bekefi_temporal_1987}.
+The pepperpot method measures the transverse emittance of a charged particle beam using an array of apertures or slits to divide the beam into smaller beamlets that are detected after propagation~\cite{collins_extraction_1964,van_steenbergen_evaluation_1967,wang_beam_1991,brunetti_low_2010}.
+The divergence, and thus the emittance, can be determined by measuring the position and size of each beamlet, giving an approximation of the transverse phase space of the beam~\cite{zhang_emittance_1996,wang_beam_1991}.
+The pepperpot method has been used on both electron and ion beams, and with electron energies up to 500\,MeV~\cite{delerue_single-shot_2010}.
+
+Time-resolved emittance measurements have been performed previously using time-gated detectors to study the feasibility and performance of laser-generated ion sources~\cite{collier_cern_1996,yoshida_simple_2001}, and with scanning slits and the time-resolved signal from a Faraday cup with the aim of minimizing the emittance of an electron storage ring~\cite{walter_time_2003}.
+These methods require many shots to accumulate the temporal profile, and consequently only measure the average beam behavior and are fundamentally incapable of observing shot-to-shot variation in bunch dynamics.
+An alternative method to determine the temporal emittance profile of a bunch is to apply a time-varying deflection to the beamlets formed by a one-dimensional pepperpot mask (a line of apertures) to `streak' the measurement across the detector.
+Streaking of diffracted electron bunches has been used to observe non-repeatable dynamical processes~\cite{li_note:_2010, mukojima_streak-camera_2015}, but has not been applied to the characterization of the electron pulse itself.
+With a sufficiently intense source, streak measurements could be performed in a single shot, providing information on shot-to-shot behavior to elucidate information unavailable to multiple shot averages, such as transient and stochastic effects.
+
+There are a number of important reasons for interest in time-resolved brightness measurements with a \gls{caeis} such as the advantage of knowing beam coherence for \gls{ued}, the ability to observe the performance of techniques to counter space-charge expansion, and the potential to provide information on the ionization processes in a \gls{caes}.
+
+The \gls{caeis} is a promising candidate for \gls{ued} imaging and structure determination due to its high brightness and coherence, with the potential to enable measurement of atomic-level sub-picosecond structural dynamics~\cite{siwick_atomic-level_2003,putkunz_atom-scale_2012,sparkes_high-coherence_2014}.
+\gls{ued} is often performed with photocathode electron sources which have sufficient current and bunch duration for \gls{ued} but limited coherence~\cite{van_oudheusden_electron_2007,tokita_single-shot_2009,sciaini_femtosecond_2011}.
+A \gls{caes} has the necessary coherence for \gls{ued} of nanocrystals and large molecules but not yet sufficient current~\cite{saliba_spatial_2012,mcculloch_high-coherence_2013}.
+In the context of (ultrafast) diffractive imaging, time-resolved knowledge of the source coherence can be incorporated into the image reconstruction to improve the process and, as the coherence can be calculated from the emittance, the technique presented here could prove to be useful for time-resolved \gls{ued}~\cite{flewett_extracting_2009,abbey_lensless_2011}.
+
+Electron bunches from the \gls{caes} can be produced with durations over a range of timescales, from femtoseconds to microseconds.
+With the use of femtosecond duration pulse lasers, a \gls{caes} can produce ultrashort electron bunches, which are dense enough to experience space-charge expansion and the related loss of beam quality~\cite{thompson_suppression_2016}.
+One of the obstacles to single-shot, \gls{ued} is degradation of beam quality due to space-charge expansion and streaked pepperpot measurements could be used to observe the performance of techniques designed to counter space-charge expansion~\cite{thompson_suppression_2016}.
+
+The production of electrons from photoionized cold atoms is a complex process, and the temporal profile of pulses from these sources has been characterized under a variety of ionization conditions~\cite{speirs_identification_2017}.
+The same complex ionization processes that result in variable pulse duration are also likely to affect the transverse velocity of the emitted electrons, and thus the emittance, as a function of time.
+The streaked pepperpot method presented allows the transverse velocity spread of the liberated electrons to be measured as a function of time, which can illuminate the underlying atomic ionization processes and provide a diagnostic which could allow optimization of electron bunch brightness in the future.
 
 This chapter presents a simple method of measuring time-resolved emittance that is applicable to a wide range of charged particle sources and has the potential to be performed with a single-shot measurement.
+The streaked-pepperpot technique was developed to observe time-varying effects during the photoionization and extraction of electrons from the \gls{caes}.
 The brightness of a \gls{caeis} is important to all of it's potential applications and the time-resolution provided by the technique described in this chapter will be a useful tool to examine the behaviour of the source and hopefully provide avenues for improvement.
-
-The method examined here for time-resolved emittance measurement is an adaption of the pepperpot method that achieves the time resolution through streaking.
-Streaking of charged particle beams involves applying a changing electric field to the beam in order to move it across the detector.
-The streaking technique has been used previously for a number of measurements and is central to the operation of streak cameras.
-Streaking has been used to provide time-resolution to ultrafast diffraction experiments using an \gls{rf} deflecting cavity to $\sim$\unit[200]{fs} resolution\cite{li_note:_2010}.
-
-With the potential to be performed in a single shot this technique could provide a number of interesting features to measurements in comparison with multi-shot measurements.
-Single-shot measurement simple allow for measurement to be acquired quicker than through other methods which is particularly useful in experiments that require the exploration of multi-dimensional parameter spaces.
-Time-resolved single-shot measurements also have the potential to reveal additional information on behaviours that may vary from shot-to-shot which would be obscured by multi-shot averaging.
 
 This chapter examines time-resolved emittance measurements through the streaking of pepperpots; including the theory involved, various technical considerations, example measurements and implementation of this technique with the \gls{caeis} at the University of Melbourne.
 
