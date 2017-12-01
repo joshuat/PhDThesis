@@ -54,7 +54,7 @@ The space of $(x, x^\prime)$ is referred to as trace-space.
 An example of the trace-space occupied by a beam is shown in Figure~\ref{figure:emittance_example}.
 The \emph{emittance} can be defined as
 \begin{equation}
-\epsilon^x \equiv \frac{A^x}{\pi}
+\epsilon_x \equiv \frac{A^x}{\pi}
 \end{equation}
 where $A^x$ is the area occupied by the beam in trace space.
 
@@ -65,22 +65,9 @@ where $A^x$ is the area occupied by the beam in trace space.
 \label{figure:emittance_example}
 \end{figure}
 
-The density, $\rho$, of a beam of $N$ particles in trace space can usually be described by a Gaussian:
-\begin{equation}\label{trace_space_density}
-\rho(x, x^\prime) = N exp\left[ \frac{-(\sigma_{22}x^2-2\sigma_{12}xx^\prime+\sigma_{11}x^{\prime2}}{2|\sigma|} \right]
-\end{equation}
-where $|\sigma|$ is the determinant of the symmetric beam matrix,
-\begin{equation}
-\sigma = \begin{pmatrix} \sigma_{11} & \sigma_{12} \\ \sigma_{21} & \sigma_{22} \end{pmatrix}.
-\end{equation}
-$\sigma_{11}$ is the standard deviation of $x$, $\sigma_{22}$ the standard deviation of $x^\prime$ and $\sigma_{12}=\sigma_{21}$ indicates the coupling between $x$ and $x^\prime$. The \emph{emittance} can also be defined as
-\begin{equation}\label{eq:emittancewithdeterminant}
-\epsilon^x \equiv \sqrt{|\sigma|} = \sqrt{\sigma_{11}\sigma_{22}-\sigma_{12}^2}
-\end{equation}
-
 The \emph{\gls{rms} emittance} is a more practical measure and is defined as
 \begin{equation}\label{emittance}
-\epsilon \equiv \sqrt{\langle x^2\rangle \langle x^{\prime 2}\rangle - \langle x x^\prime\rangle^2}.
+\bar{\epsilon}_x \equiv \sqrt{\langle x^2\rangle \langle x^{\prime 2}\rangle - \langle x x^\prime\rangle^2}.
 \end{equation}
 
 The emittance of a beam represents the `focusability' of the beam.
@@ -98,15 +85,15 @@ The emittance of a beam is not the only factor that determines the quality of th
 Emittance could be made arbitrarily small through the use of collimating slits however the reduced particle could would reduce the usefulness of that beam for most applications.
 A more comprehensive figure of merit is the number of particles with a given emittance, known as \emph{brightness}~\cite{reiser_theory_2008};
 \begin{equation}
-B = \frac{I}{8\pi^2\epsilon_x\epsilon_y},
+B = \frac{I}{8\pi^2\bar{\epsilon}_x\bar{\epsilon}_y},
 \end{equation}
-where $I$ is the current of the beam and $\epsilon_{x,y}$ is the emittance as described above.
+where $I$ is the current of the beam and $\bar{\epsilon}_{x,y}$ is the \gls{rms} emittance as described above.
 Brightness provides a better metric of a beam's quality with the additional requirement of knowing the beam current.
 
 When comparing the emittance and brightness of particle beams from different sources it is often useful to use the \emph{normalised} emittance and brightness
 \begin{align}
-\bar{\epsilon_x} = \beta\epsilon_x,\\
-\bar{B} = \frac{I}{8\pi^2\bar{\epsilon_x}\bar{\epsilon_y}}
+\bar{\epsilon}_{n,x} = \beta\bar{\epsilon}_x,\\
+B_n = \frac{I}{8\pi^2\bar{\epsilon}_{n,x}\bar{\epsilon}_{n,y}}
 \end{align}
 where $\beta=v/c\approx v_z/c$.
 
@@ -116,7 +103,7 @@ where $\beta=v/c\approx v_z/c$.
 
 For a \gls{caes} the normalised \gls{rms} emittance at the source is given by~\cite{mcculloch_high-coherence_2013}
 \begin{equation}\label{equation:excess_energy_emittance}
-\epsilon_x = \sigma_x \sqrt{\frac{k_B T}{m c^2}}
+\bar{\epsilon}_{n,x} = \sigma_x \sqrt{\frac{k_B T}{m c^2}}
 \end{equation}
 where $\sigma_x$ is the \gls{rms} beam radius, $k_B$ is Boltzmann's constant, $T$ is the temperature of the source, $m$ is the particle mass and $c$ is the speed of light.
 Equation~\ref{equation:excess_energy_emittance} highlights one of the advantages of a \gls{caeis} as the low source temperature allows for low emittance bunches compared to the common thermionic sources.
