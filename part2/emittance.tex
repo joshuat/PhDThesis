@@ -133,18 +133,18 @@ The emittance of bunches generated from below-threshold pathways, such as Rydber
 \section{Measurement}
 
 Directly calculating the emittance of an ensemble with Equation~\ref{emittance} requires full knowledge of the position and momenta of the particles which is difficult as beam monitors tend to only measure the transverse positions of particles.
-There are a number of methods to practically calculate the emittance of a particle beam, namely pepperpots, the multiple profile method methods and the quadrupole method.
-In the \gls{caeis} the quadrupole method is not practical as the lenses in the system are not well characterised and multi-profile measurements are tedious due to the manual z-translation of the detector and bellows.
+There are a number of methods to practically calculate the emittance of a particle beam, namely pepperpots, the multiple profile method methods and the lens method.
+In the \gls{caeis} the lens method is not practical as the lenses in the system are not well characterised and multi-profile measurements are tedious due to the required manual z-translation of the detector and bellows.
 The pepperpot method however is eminently achievable with this system although the details of the geometry are not ideal with this iteration of a \gls{caeis}.
 
 \subsection{Pepperpots}
 
-The pepperpot method uses a beam mask, consisting of an array of small holes, to separate the beam into a number of `beamlets' which are then propagated and detected downstream.
+The pepperpot method uses a beam mask, consisting of an array of apertures, to separate the beam into a number of `beamlets' which are then propagated and detected downstream.
 By examining the size of the beamlets the divergence of the beam can be estimated and thus the emittance of the beam can be calculated.
-Ideally the extent of the array should be larger than the size of the beam and the holes are as small as is practical while maintaining sufficient flux and ensuring the spots on the detector do not overlap.
+Ideally the extent of the array should be larger than the size of the beam and the holes as small as is practical while maintaining sufficient flux and ensuring the spots on the detector do not overlap.
 The name refers to the similarity of the simplest beam mask to the perforated lid of a container for pepper.
 
-A useful derivation of this technique is presented in Ref.~\cite{zhang_emittance_1996} with the one dimensional result:
+A useful derivation of this technique is presented in Reference~\cite{zhang_emittance_1996} with the one dimensional result:
 
 \begin{dmath}\label{equation:pepperpot}
 \epsilon_x^2 = \left\langle x^2\right\rangle \left\langle x^{\prime2}\right\rangle - \left\langle xx^\prime\right\rangle^2\allowbreak
@@ -163,7 +163,8 @@ where;
 \end{itemize}
 
 An example pepperpot mask and detected beamlets are shown in Figure~\ref{figure:pepperpot_example}.
-This equation can be implemented by appropriately rotating the detected beamlets and then performing row and column sums of the pixels followed by application of Equation~\ref{equation:pepperpot} for $x$ and $y$.
+For two-dimensional pepperpots this equation can be implemented by appropriately rotating the detected beamlets and then performing row and column sums of the pixels followed by application of Equation~\ref{equation:pepperpot} for $x$ and $y$.
+For one-dimensional streaked pepperpot measurements the image should be rotated such that the streaks are horizontal, or vertical, and then each column, or row, can be used to determine the emittance at that point in the streak.
 
 \begin{figure}
     \centering
@@ -199,10 +200,10 @@ This equation can be implemented by appropriately rotating the detected beamlets
 \end{figure}
 
 \subsubsection{Temporal Resolution with Streaking}
-A one-dimensional pepperpots can consist of a line of apertures and provides a prime target for a streak measurements.
-In this case streaking is performed with a time varying electric field which deflects the charged particles across the detector, providing time-resolution.
+A one-dimensional pepperpot can consist of a line of apertures and provides a prime target for streak measurements.
+In this case streaking is performed with a time varying electric field which deflects the charged particles across the detector.
 For a pulsed charged particle source, such as the \gls{caeis}, the streak can be performed over the duration of the bunch or over a portion of the bunch if higher resolution is required.
-There are some considerations for how fast an electric field can be swept, which will not be examined in detail here, so extremely short bunches will require more complicated systems, such as a \gls{rf} cavity or photoactivated switching, to provide the appropriate timing and electric field temporal-gradient~\cite{alesini_rf_2006,kassier_compact_2010}.
+There are some considerations for how fast an electric field can be swept, which will not be examined in detail here, so extremely short bunches will require more complicated streaking systems, such as a \gls{rf} cavity or photoactivated switching which are able to provide temporal resolution as low as \unit[100]{fs}~\cite{li_note:_2010,kassier_compact_2010,van_rens_theory_2018}.
 An example of a streaked pepperpot measurement is shown in Figure~\ref{figure:streaked_1d_pepperpot}.
 
 % \subsection{Multi-profile Method}
@@ -278,8 +279,8 @@ An example of a streaked pepperpot measurement is shown in Figure~\ref{figure:st
 \section{Experimental Setup}
 
 A number of modifications were made to the \gls{caeis} to prepare it for the streaked emittance measurements and there were a number of restrictions on various parameters due to the precise setup of the apparatus.
-The \gls{caeis} was operated in electron mode for these measurements due to the available magnetic optics and the larger emittance expected from electrons as the source temperature is higher for electrons, a minimum temperature of approximately \unit[10]{K} for electrons and \unit[100]{$\muup K$} for ions~\cite{saliba_spatial_2012}.
-Using electrons also allows some control of the bunch emittance as the excess energy can be controlled with the blue ionisation laser wavelength, with ions the change in emittance would be negligible.
+The \gls{caeis} was operated in electron mode for these measurements due to the available magnetic optics and the larger emittance expected from electrons as the source temperature is higher for electrons, a minimum temperature of approximately \unit[10]{K} for electrons and \unit[100]{$\muup$K} for ions~\cite{saliba_spatial_2012}.
+Using electrons also allows control of the bunch emittance as the excess energy can be controlled with the blue ionisation laser wavelength, with ions the change in emittance would be negligible.
 
 See Chapter~\ref{chapter:setup} for a more detailed description of the \gls{caeis} and Figure~\ref{figure:emittance_schematic} for a schematic of the setup used for the measurements in this chapter.
 
