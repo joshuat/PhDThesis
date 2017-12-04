@@ -300,7 +300,7 @@ The deflectors consisted of a pair of parallel plates mounted in the vaccum syst
 \subsubsection{Calibration}
 Calibration of the streak timing to the streak image was achieved with a calibration image, the voltage profile of the deflector during the streaking and assuming the streak position-time relation was linear.
 The calibration image was taken by averaging a number of images with static deflector voltages at the maximum and minimum deflector positions in order to determine the pixel-voltage gradient, $\frac{dpixel}{dV}$.
-The averaging of images at the two deflector positions was not required but is convenient for analysis.
+The averaging of images at the two deflector positions was not required but is convenient for analysies.
 Any transformations applied to the streaked pepperpot images, such as rotation and deskewing, needed to be applied to the calibration image before measuring $dpixel$.
 An example calibration image is shown in Figure~\ref{figure:example_calibration}.
 The deflector voltage profile was measured by a \unit[1]{GHz} oscilloscope\footnote{Tektronix DPO4104B-L Digital Phosphor Oscilloscope} with a probe attached to the vacuum feedthrough in order to minimise lag when comparing the deflector voltage to other signals, such as timing triggers.
@@ -310,9 +310,6 @@ It was then simple to calculate the  deflection gradient for the image
 \frac{dpixel}{dt} = \frac{dpixel}{dV} \frac{dV}{dt}.
 \end{equation}
 
-The oscilloscope was also connected to a photodiode that monitors the intensity of the pulsed ionisation laser and this was used to detemine the time during the voltage sweep that corresponds to the start of the streak as the streak begins when the blue laser is activated.
-The current of the short duration streaks correlates strongly with the intensity of the blue laser.
-
 \begin{figure}
     \center
     \includegraphics[width=0.5\linewidth]{part2/Figs/example_calibration.jpeg}
@@ -320,6 +317,18 @@ The current of the short duration streaks correlates strongly with the intensity
     This image is composed of the average of several images where the deflectors were at the minimum and maximum voltage.}
     % Set 9 2017.06.11
     \label{figure:example_calibration}
+\end{figure}
+
+The oscilloscope was also connected to a photodiode that monitors the intensity of the pulsed ionisation laser and this was used to detemine the time during the voltage sweep that corresponds to the start of the streak as the streak begins when the blue laser is activated.
+The beam current of the short duration streaks correlates strongly with the intensity of the blue laser as shown in Figure~\ref{figure:blue_streak}.
+
+\begin{figure}
+    \center
+    \input{part2/Figs/blue_electrons.pgf}
+    \caption{A comparison of an electron streak to the blue laser pulse used to ionise the atoms.
+    The top portion shows the electron streak across the detector, the middle portion shows the intensity of the blue laser, and the bottom portion shows the electron count calculated by suming the columns of the streak image.}
+    % 2017.04.12 - ThesisFigure.py
+    \label{figure:blue_streak}
 \end{figure}
 
 \subsection{Pepperpots}
