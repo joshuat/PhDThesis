@@ -363,10 +363,11 @@ The two-colour ionisation scheme required a `excitation' and `ionisation' laser,
 These lasers have a number of parameters that affect the emittance measurements.
 
 \subsubsection{Excitation Laser}
-The excitation laser was a \unit[780]{nm} laser, frequency locked to the Rb85 D2 F=3 to F=4 transition, which excites ground state atoms in the \gls{mot} to prepare the atoms for ionisation.
+The excitation laser was a \unit[780]{nm} laser, frequency locked to the Rb85 D2 F=3 to F=4 transition and was used in the first step of ionisation to excite ground state atoms that were trapped in the \gls{mot}.
 The spatial profile of this laser is highly controllable with a \gls{slm} allowing for arbitrary profiles to be mapped to the electron or ion bunch~\cite{mcculloch_arbitrarily_2011}.
-The highest flux is possible by simply saturating the \gls{mot} however control over the electron beam profile and size is usually desirable.
-One commonly used and simple distribution is a flat-top distribution as it can provide even electron intensity across the sample under examination however electron beams generated from electrons with high excess energy are unable to maintain the distribution, see Figure~\ref{figure:flat_top}.
+The highest electron flux is possible by simply saturating the \gls{mot} however control over the electron beam profile and size is usually desirable.
+One commonly used and simple distribution is a flat-top distribution as it can provide even electron intensity across the sample under examination.
+High emittance beams are unable to maintain the profile given by the excitation laser and will trend towards a Gauassian profile as they propagate, see Figure~\ref{figure:flat_top}.
 
 \begin{figure}
     \center
@@ -377,9 +378,10 @@ One commonly used and simple distribution is a flat-top distribution as it can p
 \end{figure}
 
 If the electron beam has a simple, non-uniform spatial distribution, such as a Gaussian, then the specifics of the beam profile can be extrapolated from the pepperpot images allowing for further metrics to be calculated such as beam size and total electron count.
+Using a Gaussian distribtuion also allows for the profile to be maintained with higher emittance beams.
 An example is shown in Figure~\ref{figure:pepperpot_profile}, the rows and columns of the pepperpot image can be summed to generate a one-dimensional set of beamlets.
 From the amplitude and standard deviation of each beamlet the total number of electrons in each beamlet can be calculated and this corresponds to the number of electrons that passed through the corresponding apertures.
-The apertures sample the full beam and a Gaussian (or other known beam profile) can be fitted to the beamlet electron counts to estimate the full beam profile and thus the beam size and full beam electron count can be determined.
+The apertures sample the full beam and a Gaussian can be fitted to the beamlet electron counts to estimate the full beam profile and thus the beam size and full beam electron count can be determined.
 
 \begin{figure}
     \center
@@ -392,7 +394,7 @@ The apertures sample the full beam and a Gaussian (or other known beam profile) 
 \subsubsection{Ionisation Laser}
 The ionisation laser was a \unit[457-493]{nm}, \unit[10]{ns} pulse laser\footnote{Sirah dye laser system CSTR-D-3000.} which ionises the atoms excited by the red excitation laser.
 The wavelength can be tuned to select various ionisation pathways such as above-threshold ionisation or field ionisation.
-The pathway selected affects the duration of the bunch produced, above threshold ionisation results in short bunches with durations the same as the duration of the ionisation laser and below threshold ionisation can result in much longer bunches with durations of \unit[10s]{$\muup$ s} due to electrons tunneling out after the end of the ionisation pulse.
+The pathway selected affects the duration of the bunch produced, above threshold ionisation results in short bunches with durations the same as the duration of the ionisation laser and below threshold ionisation can result in much longer bunches with durations of \unit[10s]{$\muup$s} due to electrons tunneling out after the end of the ionisation pulse.
 
 Another useful impact of the ionisation lasers wavelength is on the excess energy of the electrons and thus the emittance of the electron bunches.
 This is discussed in Sections~\ref{section:excess_energy} and \ref{section:excess_energy_emittance}.
@@ -400,11 +402,11 @@ Equation~\ref{equation:excess_energy_emittance} gives a useful comparison and al
 
 \section{Simulations}\label{section:simulations}
 
-Due to the experimental constraints involving the low beam flux, pepperpot mask size limitations and lens aberations it was not possible to engineer an idea setup of beam and pepperpot parameters.
+Due to the experimental constraints involving the low beam flux, pepperpot mask size and beamlet overlap it was not possible to engineer an idea setup of beam and pepperpot parameters.
 The non-ideal experimental parameters cause some distortions to the emittance measurements so simulations were performed to explore the effects and verify the validity of the corrections.
 These simulation also proved to be a useful confirmation of the analysis procedure used on the experimental data.
 
-The simulations were performed by a simple homemade particle tracker, able to operate in one- and two-dimensions, create arbirary bunch profiles with arbitrary emittances, propagate bunches and apply arbirary masks to the bunch.
+The simulations were performed by a simple homemade particle tracker, able to operate in one- and two-dimensions, create arbirary bunch profiles with arbitrary emittances, propagate bunches and apply arbitrary masks to the bunch.
 
 For these simulations a Gaussian bunch profile was used and the emittance of the bunch was set to a range of values similar to those achieveable with the actual apparatus.
 The path of the bunch was designed to replicate that of the \gls{caeis} by propagating the bunch to a `lens', then to a pepperpot mask and finally to a `detector'.
@@ -414,9 +416,9 @@ The `lens' was implemented by applying a radially dependent velocity change to t
 
 The first set of simulations investigated the effects of aperture size on the emittance measurement.
 The procedure outline in Reference~\cite{zhang_emittance_1996}, which formed the foundation of the analysis used here, assumes that the size of the apertures used is neglible compared to the divergence of the particles.
-Due the low emittance of the CAEIS and the low electron flux it is not feasible to use pepperpots with neglibly small holes so it is necessary to understand and correct for large pepperpot apertures.
+Due to the low electron flux it is not feasible to use pepperpots with neglibly small holes so it is necessary to understand and correct for finite aperture size.
 
-The profile of a beamlet on the detector is a convolution of the aperture profile and the beamlet profile from an infinitesimally small aperture.
+The profile of a beamlet is a convolution of the aperture profile and the beamlet profile from an infinitesimally small aperture.
 Thus, when the aperture size is large compared to the effects of the beam divergence, it will be difficult to determine the divergence whereas if the divergence affect is similar or large compared to the aperture size then the divergence will be easier to determine.
 This results in an overestimation of beam divergence when the divergence and aperture size are similar and a minimum measureable divergence, and thus emittance, if the divergence is much smaller than the aperture size.
 An example of a resolution limit for this experiment is shown in Figure~\ref{figure:wavelength_sim}.
@@ -424,13 +426,13 @@ An example of a resolution limit for this experiment is shown in Figure~\ref{fig
 The correction for finite apertures, where the aperture is not too large compared to the effect of the divergence, is to deconvolve the aperture size from the beamlet profile which is most easily implemented by fitting the width of a Gaussian convolved with the aperture size to the known beamlet size, taking magnification into account.
 Reapplying the magnification to the result of the fit supplies the profile of beamlets had the apertures been infinitesimally small.
 
-The results of the analysis of a simulations that varies the size of the apertures is shown in Figure~\ref{figure:aperture_size_sim}, the improvement in the accuracy of the analysis when the aperture size correction is applied is evident.
+The results of the analysis of simulations that vary the size of the apertures is shown in Figure~\ref{figure:aperture_size_sim}, the improvement in the accuracy of the analysis when the aperture size correction is applied is evident.
 
 \begin{figure}
 \begin{subfigure}[b]{\textwidth}
     \center
     \input{part2/Figs/wavelength_sweep_sim.pgf}
-    \caption{The results of a simulation with a pepperpot mask with \unit[50]{$\muup$m} diameter apertures with an extent much larger than the beam size. The blue line is the result of analysis of the simulated data without the aperture size correction and the green line indicates the analysis results with the aperture size correction. The resolution limit of the mask is apparent with excess energies less than \unit[10]{meV}.}
+    \caption{The results of a simulation with a pepperpot mask with \unit[50]{$\muup$m} diameter apertures with an extent much larger than the beam size and negligible beam overlap. The blue line is the result of analysis of the simulated data without the aperture size correction and the green line indicates the analysis results with the aperture size correction. The resolution limit of the mask is apparent with excess energies less than \unit[10]{meV}.}
     \label{figure:wavelength_sim}
     % Data and code located in Code/Electrons/Simulation/1D Simulation SimScript1D.py - Wavelength Sweep
 \end{subfigure}
@@ -448,31 +450,32 @@ The results of the analysis of a simulations that varies the size of the apertur
 \subsection{Beamlet Overlap}
 Once again, due to the experimental constraints it was difficult to produce ideal pepperpot measurements with one of the issues being the overlap of beamlets.
 Most pepperpot analysis procedures assume that the beamlets are completely separated which was difficult to achieve with this apparatus while providing sufficient flux for streaked measurements and enough sampling of the beam to allow for estimation of the full-beam profile.
-A na\"ive analysis of overlapped beamlets might just analyse the potion of the beamlet between the troughs in the signal, however this results in an underestimate of the beamlet size due to the part underneath the neigbouring beamlets.
-A more sophisticated approach is to determine the portion of the beams that are overlapped in order to correctly determine the width.
+A na\"ive analysis of overlapped beamlets might just analyse the potion of the beamlet between the troughs in the signal (which would work fine for fully separated beamlets), however this results in an underestimate of the beamlet size due to the portion underneath the neigbouring beamlets.
+A more sophisticated approach is to take the part of the beams that are overlapped into accoutn in order to correctly determine the beamlet width.
 The method used here is to fit the sum of N Gaussians, where N is the number of beamlets, to the data.
 
 Shown in Figure~\ref{figure:overlap_example} is an example of overlapped beamlets, the improvement in the emittance measurement from the na\"ive approach to the fitting is clear in this example.
-Most of the measurements made during this project have a lower degree of overlap than that demonstrated in Figure~\ref{figure:overlap_example} and have a much smaller deviation from the correct emittance.
+The results of the na\"ive approach can be used as a guess for the fitting of the more successful method.
+Most of the measurements made during this project have a lower degree of overlap than that demonstrated in Figure~\ref{figure:overlap_example} and have a much smaller deviation from the correct emittance however the correction was still made and results in a small improvement in the accuracy of the analysis.
 
 \begin{figure}
     \center
     \input{part2/Figs/OverlapExample.pgf}
     \caption{An example of overlapping beamlets.
-    The left figure shows overlapping beamlets from simualted data, the middle figure shows Gaussian parameters for each beamlet derived by considering only the portion of each beamlet between the troughs in the distribution, and the right figure shows Gaussian parameters from fitting the sum of Gaussians to the data.
+    The left figure shows overlapping beamlets from simualted data (shown as a dotted line in the other figures), the middle figure shows Gaussian parameters for each beamlet derived by considering only the portion of each beamlet between the troughs in the distribution, and the right figure shows Gaussian parameters from fitting the sum of Gaussians to the data.
     The actual emittance of the simulated bunch is listed in the left figure and the emittance derived from the Gaussian sets is listed in the other two figures.
-    In the second two figure the pale lines indicate individual Gaussians for each beamlet and solid lines for the sum of the individual Gaussians and the dotted lines indicate the original data.}
+    In the second two figure the pale lines indicate individual Gaussians fitted for each beamlet and solid lines for the sum of the individual Gaussians.}
     \label{figure:overlap_example}
     % Data and code located in Code/Electrons/Simulation/1D Simulation SimScript1D.py and OverlapExample.py
 \end{figure}
 
 
 \subsection{Pepperpot Extent and Beam Coverage}
-The third correction that was made was to take into account the proportion of the beam that was covered by the pepperpot extent.
-A pepperpot mask that has an extent smaller than the size of the beam is effectively aperturing the beam and an apertures reduce the emittance of a beam.
+The third correction that was made was to take into account the proportion of the beam that was covered by the pepperpot mask.
+A pepperpot mask that has an extent smaller than the size of the beam is effectively aperturing the beam and apertures reduce the emittance of a beam.
 Thus, attempting to measure the emittance with a pepperpot that has an extent smaller the the size of the beam will result in an underestimation of the emittance proportional to coverage of the beam.
 
-The emittance of a beam at a focus is proportional to beam size (see Eqs.\ref{eq:emittancewithdeterminant,equation:excess_energy_emittance}) so if a pepperpot measurement of a flat-top beam was to only measure half the beam the measurement would report half the actual emittance of the beam.
+The emittance of a beam at a focus is directly proportional to beam size (see Equations~\ref{emittance} and \ref{equation:excess_energy_emittance}) so if a pepperpot measurement of a flat-top beam was to only measure half the beam the measurement would report half the actual emittance of the beam.
 The correction is more complicated for a Gaussian profile beam as it is proportional to the integral of the normalised Gaussian covered by the pepperpot.
 If the beam shape in the pepperpot plane can be described by a Gaussian function, $f_{\bar{x},\sigma}(x)$, then the true emittance should be
 \begin{equation}
@@ -486,6 +489,7 @@ The simulations indicate that the reality is not this simple unfortunately. In o
 The factor of 0.75 was discovered by fitting to the simulated data.
 There is clearly some aspect of this correction that is not yet understood however it performs adequately for use with the measurements in this chapter.
 The performance of the correction is shown in Figure~\ref{figure:pepperpot_extent}.
+The correction performs well until the pepperpot extent approaches the \gls{rms} width of the beam at which point the beam size estimations become less reliable.
 
 {\color{red}
 Try and figure out what's going on with the magic number.
