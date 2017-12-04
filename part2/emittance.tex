@@ -400,7 +400,7 @@ Another useful impact of the ionisation lasers wavelength is on the excess energ
 This is discussed in Sections~\ref{section:excess_energy} and \ref{section:excess_energy_emittance}.
 Equation~\ref{equation:excess_energy_emittance} gives a useful comparison and allows for verification of the accuracy of the emittance measurements.
 
-\section{Simulations}\label{section:simulations}
+\section{Simulations}\label{section:pepperpot_simulation}
 
 Due to the experimental constraints involving the low beam flux, pepperpot mask size and beamlet overlap it was not possible to engineer an idea setup of beam and pepperpot parameters.
 The non-ideal experimental parameters cause some distortions to the emittance measurements so simulations were performed to explore the effects and verify the validity of the corrections.
@@ -412,7 +412,7 @@ For these simulations a Gaussian bunch profile was used and the emittance of the
 The path of the bunch was designed to replicate that of the \gls{caeis} by propagating the bunch to a `lens', then to a pepperpot mask and finally to a `detector'.
 The `lens' was implemented by applying a radially dependent velocity change to the particles in order to focus the beam such that the beam size was approximately the same as the size of the pepperpot mask, approximately \unit[2]{mm}.
 
-\subsection{Pepperpot Aperture Size}\label{section:pepperpot_simulation}
+\subsection{Pepperpot Aperture Size}
 
 The first set of simulations investigated the effects of aperture size on the emittance measurement.
 The procedure outline in Reference~\cite{zhang_emittance_1996}, which formed the foundation of the analysis used here, assumes that the size of the apertures used is neglible compared to the divergence of the particles.
@@ -506,7 +506,8 @@ Try and figure out what's going on with the magic number.
 \end{figure}
 
 \section{Results}
-In order to demonstrate the feasibility of time-resolved emittance measurement via the streaking of pepperpot measurements a number of measurements have been made including a comparison of two dimensional pepperpot emittance measurements with theory and slow and fast streaks used to determine the time-resolved brightness of electron bunches produced by the \gls{caes}.
+In order to demonstrate the feasibility of time-resolved brightness measurements via the streaking of pepperpots a number of measurements have been made including a comparison of two-dimensional pepperpot emittance measurements with theory and slow and fast streaks used to determine the time-resolved brightness of electron bunches produced by the \gls{caes}.
+These measurement also provide an opportunity to examine the emittance behaviour of the \gls{caes} under a limited set of ionisation conditions.
 
 \subsection{Analysis}
 The analysis procedure developed was based on the theory described in Reference~\cite{zhang_emittance_1996} and Equation~\ref{equation:pepperpot}.
@@ -516,30 +517,30 @@ In order to determine the emittance from a one dimensional pepperpot measurement
     \item Position of pepperpot apertures
     \item Size of beamlets on the detector
     \item Position of beamlets on the detector
-    \item Total number of electrons (or camera counts) for each beamlet
+    \item Total number of electrons in each beamlet
 \end{itemize}
-The pepperpot parameters are known from the fabrication and the beamlet parameters can be determined from appropriately prepared two dimensional pepperpot and streaked pepperpot measurements.
-
+The pepperpot parameters are known from the fabrication and the beamlet parameters can be determined from appropriately prepared two-dimensional and streaked one-dimensional pepperpot measurements.
 The analysis procedure is roughly as follows:
 \begin{enumerate}
     \item Acquire images from camera
     \item Register images (see Section~\ref{section:emittance_registration})
     \item Average registered images
     \item Rotate image so dominant features are aligned with the pixel rows
-    \item Deskew image so features along the second axis aligned with the columns
-    \item For each beamlet set use peak finding algorithms to find the location of each beamlet peak
+    \item Deskew image so features along the second axis align with the columns
     \begin{itemize}
-        \item For two dimensional pepperpots sum the rows and columns individually to produce two one-dimensional sets of beamlets
+        \item For two dimensional pepperpots sum the rows and columns to produce two one-dimensional sets of beamlets
         \item For streaked emittance measurements examine each column of pixels independently to produce a number of one-dimensional sets of beamlets.
     \end{itemize}
     \item Separate each beamlet set into individual beamlets
     \item Determine the approximate amplitude, mean position and \gls{rms} width of each beamlet
-    \item Refine the amplitude, mean positions and \gls{rms} width of each beamlet by fitting a number of Gaussians equal to the number of beamlets to the beamlet set
-    \item Transform the beamlet position and width measurements from pixel measurement to real measurements using the camera and \gls{mcp} calibration
+    \item Refine the amplitude, mean positions and \gls{rms} width of each beamlet by fitting a number of Gaussians equal to the number of beamlets to the beamlet set to account for any overlap
+    \item Transform the beamlet position and width measurements from pixel measurement to detector-plane measurements using the camera and \gls{mcp} calibration
     \item Fit a Gaussian convolved with the aperture size to the refined beamlet parameters in order to determine the equivalent beamlet for a infinitessimal aperture
     \item Use Equation~\ref{equation:pepperpot} to determine the emittance
     \item Estimate the full-beam profile of the bunch by fitting a Gaussian to the number of particles transmitted through each aperture (equal to the total particle count for each beamlet)
     \item Correct the emittance by considering the beam coverage of the pepperpot mask given the full-beam profile
+    \item Use the beam profile to detemine the beam current
+    \item Use the beam current and emittance to determine the brightness
 \end{enumerate}
 
 
@@ -563,19 +564,21 @@ This process was performed with the \gls{mcp} voltage at \unit[1.7]{kV} and the 
 
 \subsubsection{Source Size}
 Another required parameter is the size of the source which is required to determine the expected emittance using Equation~\ref{equation:excess_energy_emittance}.
-The transverse source size is the same size as the excitation laser as it passed through the \gls{mot}.
-This can be determined by intercepting the excitation laser with a mirror and directing the beam onto a camera placed the same distance away from the intercepting mirror as the location of the \gls{mot}.
-Knowing the size of pixels for the camera allows for an image of the beam to be determined.
+The transverse source size was the same size as the excitation laser as it passed through the \gls{mot}.
+This was determined by intercepting the excitation laser with a mirror and directing the beam onto a camera placed the same distance away from the intercepting mirror as the centre of the chamber in which the \gls{mot} was located.
+Knowing the size of pixels for the camera allowed for the spatial profile of the beam to be determined.
 The source size was determined to be \unit[450.8]{$\muup$m} in the vertical direction and \unit[690.6]{$\muup$m} in the horizontal direction.
-For simplicity the calculations in the following section have used the average of these two measurements.
+
+However by fitting Equation~\ref{equation:excess_energy_emittance} to the data shown in Figure~\ref{figure:emittance_vs_theory} it was apparant that the source size was closer to \unit[340]{$\muup$m} indicating that the \gls{mot} is no longer located in the centre of the chamber and thus that the position at which the laser beam profile was measured was not comparable.
+Slow changes in the position of the \gls{mot} were likely due to alignment drift given the age of the apparatus.
 
 \subsection{Two-Dimensional Pepperpots}
-The frequency of the ionisation laser can to tuned to control the emittance of electron bunches as it determines the excess energy of bunches.
-By varying the wavelength of the ionisation laser and measuring the emittance of the electron bunches using the two dimensional pepperpot allows for testing of the emittance measurement system and analysis as the results can be compared to the theory described by Equation~\ref{equation:excess_energy_emittance} and the simulations in Section~\ref{section:simulations}.
+The frequency of the ionisation laser could be tuned to control the emittance of electron bunches as it determined the excess energy of bunches.
+Varying the wavelength of the ionisation laser and measuring the emittance of the electron bunches using the two dimensional pepperpot allowed for testing of the emittance measurement system and analysis as the results could be compared to the theory described by Equation~\ref{equation:excess_energy_emittance} and the simulations in Section~\ref{section:pepperpot_simulations}.
 
 The results from this test can be seen in Figure~\ref{figure:emittance_vs_theory} and the results are well matched to the theory and previous measurements of the emittance of this \gls{caes}~\cite{mcculloch_high-coherence_2013}.
 The data shown agrees well with the simulation results and the lower bound on measureable emittance is apparent in both the measurement and the simulation results.
-Due to the aperture size of \unit[50]{$\muup$m} and beam path geometry (propagation distances, focusing parameter, etc.) the measurements are limited to resolving emittance greater than \unit[41]{nm rad}.
+Due to the aperture size of \unit[50]{$\muup$m} and beam path geometry (propagation distances, focusing parameter, etc.) the measurements were limited to resolving emittance greater than \unit[41]{nm rad}.
 
 \begin{figure}
     \center
@@ -589,20 +592,19 @@ Due to the aperture size of \unit[50]{$\muup$m} and beam path geometry (propagat
 \subsection{Streaked One-Dimensional Pepperpots}\label{section:streaked_pepperpot_results}
 Shown in Figure~\ref{figure:streaks} are examples of time-resolved brightness measurement from streaked pepperpot measurements.
 The measurements were conducted in the `slow' and `fast' modes previously discussed.
-Both measurements were constructed from 1000 shot registered averages.
+Both measurements were constructed from 1000-shot registered averages.
 The wavelength of the blue ionisation laser was \unit[487.2]{nm} for the slow streak and \unit[475.9]{nm} for the fast streak which corresponds to \unit[-42.67]{meV} and \unit[17.00]{meV} excess energy respectively.
 The wavelengths were carefully chosen to demonstrate streaking in the fast and slow modes.
-As has been discussed a number of metrics can be extracted from the measurements each with temporal resolution.
 
 \begin{figure}
     \center
     \input{part2/Figs/streaks.pgf}
-    \caption{Long (left) and short (right) duration electron bunch streaked pepperpot measurements showing, from top to bottom, the false-colour streak image, full-beam current, normalised \gls{rms} emittance, and normalised brightness. The dotted black lines indicate the start of the electron bunches. The red dotted lines in the emittance measurement indicate the expected emittance from the simulations discussed in Section~\ref{section:pepperpot_simulation}}
+    \caption{Long (left) and short (right) duration electron bunch streaked pepperpot measurements showing, from top to bottom, the false-colour streak image, full-beam current, normalised \gls{rms} emittance, and normalised brightness. The dotted black lines indicate the start of the electron bunches. The red dotted lines in the emittance measurement indicate the expected emittance from the simulations discussed in Section~\ref{section:pepperpot_simulation}. The shaded regions indicate the standard deviation of ten 100-shot measurements.}
     \label{figure:streaks}
 \end{figure}
 
 \subsubsection{Measurement Resolution}
-The temporal resolution of these measurements in dictated by a number of factors, the finite \gls{psf} of the detector, the gradient or `slew' of the deflector voltages and the size of the beamlets on the detector.
+The temporal resolution of these measurements in dictated by a number of factors ;the finite \gls{psf} of the detector, the gradient or `slew' of the deflector voltages and the size of the beamlets on the detector.
 The \gls{ccd} camera and lens used to take images of the detector is assumed to have a resolution much better than the point spread function of the phosphor screen.
 
 The \gls{psf} of the \gls{mcp} and phosphor screen is approximately Gaussian with a standard deviation of \unit[35]{$\muup$m} and is measured by examining single electron events on the detector~\cite{rory_thesis}.
@@ -610,9 +612,8 @@ The streak calibration images (such as Figure~\ref{figure:example_calibration}) 
 The detected beamlets tend to have a size with an \gls{rms} around \unit[183]{$\muup$m} although this does vary with the emittance of the beam.
 The majority of the signal from an electron is therefore contained within an area of four times the standard deviation or \unit[732]{$\muup$m} and thus the slow and fast streaks shown in Figure~\ref{figure:streaks} can be sliced into 27 and 18 temporal slices which correspond to time resolutions of \unit[524]{ns} and \unit[247]{ps} respectively.
 
-The temporal resolution can be enhanced by careful optimisation of the streak on the detector.
+The temporal resolution can be enhanced by carefully maximising the size of the streak on the detector, by using faster electronics, or by using alternative methods such as rf-cavities or photoactivated switches which are able to achieve \unit[100]{fs} resolution~\cite{li_note:_2010,kassier_compact_2010,van_rens_theory_2018}.
 Ensuring that the streak takes up the maximum available extent on the detector minimises the effect of the \gls{psf} on the temporal resolution with the downside that signal is now spread over a wider area thus reducing the \gls{snr}.
-Another method to increase temporal resolution is to increase the temporal gradient of the electric field generated by the deflectors.
 
 \subsection{Registration}\label{section:emittance_registration}
 Due to the instability in the beam path (see Section~\ref{section:stability}) it is necessary to `register' the sets of images captured for measurements.
@@ -622,19 +623,18 @@ The registration process can also be performed iteratively where the reference i
 
 This works well for high-signal image sets but does not work as well for lower signal sets such as two-dimensional pepperpots or one-dimensional pepperpot streaks.
 Lower signal data requires more care and in some cases cannot be registered.
-One of the registration errors that occurs with pepperpot data is `slipping' where the brightest beamlets in the reference image and the image being aligned are not the same and the image is thus aligned incorrectly.
+One of the registration errors that occurs with pepperpot data is `slipping' where the convolution maxima correspond to neighborouring beamlets rather than the same beamlet and thus the images are incorrectly aligned.
 This error can be evaded by applying a limit to how far the convolution maxima of an image can change from shot to shot, generally the limit should be less than the distance between beamlets.
 This allows slow drift of the beam path to be dealt with while preventing slipping.
-Any changes to the beam path between shots with a magnitude greater than the registration limit will result in slipping while the limit is applied but may be catered for if it is not enforced, as sudden jumps are rare this is rarely an issue and often causes more disruptive and blatant issues.
 
-Slipped, and therefore failed, pepperpot registrations were easy to identify since the number of beamlets was known and slipped errors results in extra beamlets appearing the the registered image.
+Slipped, and therefore failed, pepperpot registrations were usually easy to identify since the number of beamlets was known and slipped errors results in extra beamlets appearing in the the registered image.
 While registering the pepperpots the best results were provided with around 3 iterations and limits on the shot-to-shot drift less than distance between the pepperpots.
 An example of a slipped registration is shown in Figure~\ref{figure:registration_examples}.
 
 \begin{figure}
     \center
     \input{part2/Figs/registration_examples.pgf}
-    \caption{Single-Shot is a single image from a streaked pepperpot data set of 1000 images. Average is the simple of all 1000 images. Slipped is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation, there is an additional, faint beamlet visible at the top of the image. Registration is a successful registration where a shot-to-shot limit to drift of 5 pixels was enforced. Below each image is the row sum of image. All the images are independently log scaled.}
+    \caption{Single-Shot is a single image from a streaked pepperpot data set of 1000 images. Average is the simple average of all 1000 images. Slipped is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation, there is an additional, faint beamlet visible at the top of the image. Registration is a successful registration where a shot-to-shot limit to drift of 5 pixels was enforced. Below each image is the row sum of the image. All the images are independently log scaled.}
     \label{figure:registration_examples}
     % Data and code in 2017.07.24 plot_registration_examples.py
 \end{figure}
@@ -644,44 +644,14 @@ An example of a slipped registration is shown in Figure~\ref{figure:registration
 {\color{red}This should also be probably moved to a more general chapter with a rewording and just a reference to that section here.}
 
 \subsection{Electron Flux}
-The current electron flux of the \gls{caes} is not sufficient to perform the streaked emittance measurement in a single-shot and in some scenarios (such as ionisation pathways with poor coupling) the flux is so low that registration of measurements cannot be performed making those measurements impossible.
+The current electron flux of the \gls{caes} is not sufficient to perform the streaked emittance measurement in a single-shot and in some scenarios (such as ionisation pathways with poor coupling) the signal is so low that registration of measurements cannot be performed making those measurements impossible.
 
-At the core of the image analysis required for this measurement is the determination of the amplitude, mean and standard deviation of the peaks of the pepperpot beamlets.
-In order to roughly estimate the number of electrons required in a beamlet to determine the mean and standard deviation to 95\% accuracy some simulations were run.
-These simulations randomly draw $N$ values from a normal distribution and then compare the sample's mean, $\bar{x_s}$ and standard deviation, $\sigma_s$ to those of the normal distribution, $\bar{x}$ and $\sigma$, with the error functions
-\begin{align}
-E_{\bar{x}} &= \frac{\left|\bar{x} - \bar{x_s}\right|}{\sigma}\label{equation:error_mean}\\
-E_{\sigma} &= \frac{\left|\sigma - \sigma_s\right|}{\sigma}.\label{equation:error_std}
-\end{align}
-The simulation is repeated multiple times for a range of values of $N$.
-While not rigorous Equations~\ref{equation:error_mean} and \ref{equation:error_std} give an estimate of the accuracy possible with a given number of electrons when determining beamlet parameters.
-The results of these simulations are shown in Figure\ref{figure:gaussian_simulation}.
-In order to reduce the value of the error functions below 0.05 then 253 electrons are required for the mean and 128 for the standard deviation.
-
-\begin{figure}
-    \center
-    \input{part2/Figs/gaussian_sim.pgf}
-    \caption{Results from a simulation of the accuracy of sample mean and standard deviation given the size of the sample. For each value of sample size the simulation are repeated 100,000 times. The red dashed line indicates an error value of 0.05 and it intersects the mean (blue) at 253 and the standard deviation (STD, green) at 128. Error is defined in Equations~\ref{equation:error_mean} and \ref{equation:error_std}.}
-    \label{figure:gaussian_simulation}
-    % Code can be found in Code/Electrons/Simulation/MinimumSignal.py
-\end{figure}
-
-Estimating the required number of particles for a single-shot streaked emittance measurement is impossible without knowing a number of the parameters involved in a particular measurement scenario.
-To simplify matters here the parameters are assumed to be the same as those used in the fast mode streaks described in Section~\ref{section:streaked_pepperpot_results}.
-With a measurement with 200 points in time and 7 beamlets each requiring a minimum of 253 electrons would require 354,000 electrons after the pepperpot mask and approximately 10 million electrons in the full beam.
-This estimate is somewhat generous as it assumes all the beamlets have the same intensity across the pepperpot and throughout the streak.
-Certain photocathode sources are able to achieve electron counts of order $10^8$ electrons per bunch and thus these techniques could performed in a single shot and thus prove useful for beam diagnostics for these sources~\cite{li_note:_2010,musumeci_high_2010}.
-
-{\color{red}Extrapolate properly taking beam spatial and temporal profile into account.
-
-Consider mentioning that just multiplying the total number of trons times the number of shots gets the same result.... much easier, more intuitive way of calculating it.}
-% fast streak length in 256-24=232pixels
-
-
-{\color{red}I'm not happy with my error function for the mean... Doing it properly looks complicated. :/}
+In order to perform these measurement with the same \gls{snr} would require 1000 times as many electrons per bunch, or $10^8$ electrons, since these measurements are composed of 100-shot averages.
+Certain photocathode sources are able to achieve electron counts of order $10^8$ electrons per bunch and thus these techniques could perform equivalent measurements in a single shot and thus prove useful for beam diagnostics for these sources~\cite{li_note:_2010,musumeci_high_2010}.
+There are a number of strategies available to the \gls{caes} to improve the number of electron per shot such as increasing the \gls{mot} density, optimising the ionisation pathways, and using a higher intensity blue ionisation laser.
 
 \section{Conclusion}
-This chapter has presented an implementation of time-resolved brightness measurements using streaked pepperpots at the University of Melbourne \gls{caes}.
+This chapter has presented an demonstration of time-resolved brightness measurements using streaked pepperpots with a \gls{caes}.
 This technique has promise for use in a wide range of charged particle beam sources and is widely applicable to a range of scenarios.
 With a sufficiently high-current source, such as photocathode electron sources, this technique can also be used to perform measurements in a single-shot.
 Time-resolved brightness measurements have the potential to provide information on the behaviour of charged particle sources allowing for a better understanding of the physics involved and improvement of the apparatus involved.
@@ -689,9 +659,8 @@ Time-resolved brightness measurements have the potential to provide information 
 {\color{red}
 \section{To Do}
 \begin{itemize}
-    \item finish simulation section
-    \item update everything with paper discoveries
+    \item Mention expected outcome, results
+    \item Better conclusion
     \item change `slow' and `fast' to long and short duration
-    \item redo minimum flux section
 \end{itemize}
 }
