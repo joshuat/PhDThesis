@@ -200,81 +200,11 @@ For one-dimensional streaked pepperpot measurements the image should be rotated 
 \end{figure}
 
 \subsubsection{Temporal Resolution with Streaking}
-A one-dimensional pepperpot can consist of a line of apertures and provides a prime target for streak measurements.
+A one-dimensional pepperpot consisting of a line of apertures provides a prime target for streak measurements.
 In this case streaking is performed with a time varying electric field which deflects the charged particles across the detector.
 For a pulsed charged particle source, such as the \gls{caeis}, the streak can be performed over the duration of the bunch or over a portion of the bunch if higher resolution is required.
-There are some considerations for how fast an electric field can be swept, which will not be examined in detail here, so extremely short bunches will require more complicated streaking systems, such as a \gls{rf} cavity or photoactivated switching which are able to provide temporal resolution as low as \unit[100]{fs}~\cite{li_note:_2010,kassier_compact_2010,van_rens_theory_2018}.
+There are some considerations for how fast an electric field can be swept, which will not be examined in detail here, so extremely short bunches will require more sophisticated streaking systems, such as a \gls{rf} cavity or photoactivated switching which are able to provide temporal resolution as low as \unit[100]{fs}~\cite{li_note:_2010,kassier_compact_2010,van_rens_theory_2018}.
 An example of a streaked pepperpot measurement is shown in Figure~\ref{figure:streaked_1d_pepperpot}.
-
-% \subsection{Multi-profile Method}
-
-% If a beam can be described by $\sigma^0$ at $z_0$ and by $\sigma^1$ at $z_1$ then the transformation matrix, $\mathbf{R}_{12}$ from $z_0$ to $z_1$ is
-% \begin{equation}
-% \mathbf{R} = \begin{pmatrix} R_{11} & R_{12} \\ R_{21} & R_{22} \end{pmatrix}
-% \end{equation}
-% and
-% \begin{equation}
-% \sigma^1 = \mathbf{R}\sigma^0\mathbf{R}^T
-% \end{equation}
-% where $\mathbf{R}^T$ is the transpose of $\mathbf{R}$.
-% The combined transfer matrix for a series of $z$ positions is simply the product of the individual transfer matrices.
-
-% We can write:
-% \begin{equation}\label{equation:multiprofile}
-% \sigma_{11}^1 = R_{11}^2\sigma_{11}^0 + 2R_{11}R_{12}\sigma_{12}^0 + R_{12}^2\sigma_{22}^0
-% \end{equation}
-
-% Typical detectors are only able to measure the standard deviation of $x$, $\sigma_{11}$.
-% With at least three measurements and known transfer matrices the other elements of $\sigma$ can be determined.
-% With more than three measurements uncertainty can be reduced.
-
-% The transfer matrix for simple propagation over a distance $L$ is
-% \begin{equation}
-% \mathbf{R}_L = \begin{pmatrix}1 & L \\ 0 & 1\end{pmatrix}
-% \end{equation}
-% and then Equation~\ref{equation:multiprofile} becomes
-% \begin{equation}
-% \sigma_{11}^1 = \sigma_{11}^0 + 2L \sigma_{12}^0 + L_1^2\sigma_{22}^0.
-% \end{equation}
-
-% \begin{figure}
-% \center
-% \includegraphics{part2/Figs/Multi-ProfileEmittance.pdf}
-% \caption{An example of a multi-profile emittance measurement conducted on an expanding beam travelling from left to right (or a shrinking beam travelling right to left).}
-% \label{figure:multiprofileexample}
-% \end{figure}
-
-% With an initial beam, $\sigma_0$, measured at $z_1, z_2$ and $z_3$ as shown in Figure~\ref{figure:multiprofileexample} then $\sigma_{11}^1$, $\sigma_{11}^2$, and $\sigma_{11}^3$ are know and we can write 
-% \begin{align}
-% \sigma_{11}^1 &= \sigma_{11}^0 +2L_{01}\sigma_{12}^0 + L_{01}^2\sigma_{22}^0 \notag\\
-% \sigma_{11}^2&= \sigma_{11}^0+2(L_{01}+L_{12})\sigma_{12}^0 + (L_{01}+L_{12})^2\sigma_{22}^0 \notag\\
-% \sigma_{11}^3&= \sigma_{11}^0+2(L_{01}+L_{12}+L_{23})\sigma_{12}^0 + (L_{01}+L_{12}+L_{23})^2\sigma_{22}^0 \label{eq:multiprofilesolution}
-% \end{align}
-
-% Which can easily be solved for $\sigma_0$ thus allowing the calculation of the emittance with Equation~\ref{eq:emittancewithdeterminant}.
-
-% This method is feasible with the \gls{caeis} at the University of Melbourne but labourious due to the manual operation of the bellows the detector is attached to.
-
-% \subsection{Quadrupole Method}
-
-% The quadrupole method is similar to the multi-profile method but requires only a single location to measure the beam width and a well characterised variable lens such as a quadrupole lens.
-% A quadrupole lens with a magnetic field gradient of $G$ has the transfer matrix in the focusing plane of
-% \begin{equation}
-% \mathbf{R}_f = \begin{pmatrix} \cos kl & (1/k)\sin kl\\
-% -k\sin kl & cos kl\end{pmatrix},
-% \end{equation}
-% where $l$ is the effective length of the quadrupole, $k^2=G/B\rho$ is the quadrupole strength and $B\rho$ is the magnetic rigidity of the particles in the assumed central trajectory.
-% The matrix in the defocusing plane is
-% \begin{equation}
-% \mathbf{R}_d = \begin{pmatrix} \cosh kl & (1/k) \sin kl\\
-% k \sinh kl & \cosh kl \end{pmatrix}
-% \end{equation}
-
-% A beam measured a distance $L$ away from the quadrupole will have undergone the transformation $\mathbf{R}=\mathbf{R}_L\mathbf{R}_f$ on one axis and $\mathbf{R}=\mathbf{R}_L\mathbf{R}_d$ on the other.
-% The symmetric beam matrix for the beam before the lens can then be determined from a series of beam profile measurements with different focusing strengths.
-% The main advantage of this measurement is that is only requires a single beam monitor location.
-
-% Due to the ad hoc nature of the magnetic lenses used in the \gls{caes} this method is not practical without a thorough characterisation of the lenses, especially in comparison with the ease of the alternative methods.
 
 \section{Experimental Setup}
 
@@ -308,26 +238,25 @@ A number of permanent magnets were used to steer the beam through the various ap
 This was achieved by manually adjusting the positions of the magnets, which were mounted on posts external to the vacuum system, to ensure that the beam was passing through the apertures in the system and by scanning the Einzel lens to verify that the beam was passing through its centre.
 Due to the unstable nature of the apparatus these magnets needed to be adjusted on a day-to-day basis to maintain the beam path.
 
-The main limiting factor to pepperpot emittance measurements using the \gls{caes} was electron flux through the pepperpot masks.
-Flux through the pepperpot masks was maximised by using the Einzel lens to focus the beam to the approximate size of the pepperpots in the pepperpot plane, thus maximising the flux through the apertures.
-The Einzel lens voltage required for this was approximately \unit[4.8][kV] and varied slightly beam emittance, i.e.. high emittance beams result in a larger beam size and thus required adjusting the Einzel lens voltage by \unit[100]{V} or so.
+The Einzel lens was used to focus the beam through a focus to the approximate size of the pepperpot mask extent.
+This was done to increase the divergence of the beamlets, making measurement easier, and to increase the electron flux transmitted through the pepperpot mask.
+The Einzel lens voltage required for this was approximately \unit[4.8][kV] and varied slightly with beam emittance, i.e. high emittance beams result in a larger beam size and thus required adjusting the Einzel lens voltage by \unit[100]{V} or so.
 
 \subsection{Beam Energy}
-In many emittance measurements the beam energy would not be a free parameter as it will be used as a diagnostic for a specific system or scenario, however in this experiment we are able to vary the energy of our beam from a few hundred eV to around \unit[10]{keV}.
-There are a number of considerations in determining the optimal beam energy to use for pepperpot measurements such as measurement resolution, beam current and beam stability.
+In many emittance measurements the beam energy would not be a free parameter as emittance would be used as a diagnostic for a specific system or scenario, however in this experiment we are able to vary the energy of our beam from a few hundred eV to around \unit[10]{keV}.
+There were a number of considerations in determining the optimal beam energy to use for pepperpot measurements such as measurement resolution, beam current and beam stability.
 
 The resolution of a pepperpot measurement is greater when the size of the beamlets on the detector is larger and, as shown in Equation~\ref{equation:divergence} the divergence is greater for slower beams.
-Unfortunately the slower the beam the more fragile the alignment of the beam becomes.
-While attempting to align a \unit[500][eV] beam through it system it was impossible to position the steering magnets such that an unobstructed beam made it through the system to the detector.
-
+Unfortunately the slower the beam the more fragile the alignment of the beam becomes with the \gls{caes}.
+It was impossible to align a \unit[500][eV] beam unobstructed through the system to the detector and even had it been possible the stability of the beam path would have been difficult to work with.
 A relatively high energy beam of \unit[8]{keV} was used as this provided a robust beam alignment that was resistant to the transient changes in the magnetic environment while providing sufficient measurement resolution.
 
 \subsection{Bellows}
 
 The bellows provide an additional mechanism to control the resolution of the measurement by adjusting the propagation distance of the pepperpot beamlets and thus their size on the detector.
-As this parameter is also adjustable with the strength of the Einzel lens the bellows were placed approximately halfway between the minimum and maximum position where the beam alignment was still well behaved.
+Once the strength of the Einzel len had been set as described above the bellows were positioned such that the length of the streaks covered the majority of the detector which gave a propagation distance from the pepperpots of \unit[475]{mm}.
 
-{\color{red}Add photo of bellows}
+{\color{red}Add photo of bellows - there may not be any.....}
 
 \subsection{Streaking}
 The streaking was performed using a pair of deflectors located after the pepperpot sample and orientated such that the one-dimensional pepperpots could be streaked across the detector.
@@ -336,8 +265,8 @@ For these measurements one deflector was grounded and the other given a time-var
 \item A fast ramp using a bipolar push-pull solid-state switch with a fixed transition time of \unit[10]{ns} and
 \item A slower ramp using an amplified signal generator with a minimum transition of approximately \unit[10]{$\muup$s}.
 \end{itemize}
-An example of the voltage ramps is shown in Figure~\ref{figure:deflector_voltages}. The slow ramp was done by amplifying the output of signal generator\footnote{Rigol DG4162, able to operate up to \unit[160]{MHz}} which is highly configurable and thus capable of a wide range of pulse lengths, limited by the speed of the amplifier to a transition time approximately \unit[10]{$\muup$s} in duration as shown in Figure~\ref{figure:deflector_voltages}.
-More detail on the design of the streaking electronics can be found in Reference~{\color{red}(Cite Rory's thesis)}.
+An example of the voltage ramps is shown in Figure~\ref{figure:deflector_voltages}. The slow ramp was performed by amplifying the output of signal generator\footnote{Rigol DG4162, able to operate up to \unit[160]{MHz}} which was highly configurable and thus capable of a wide range of pulse lengths, limited by the speed of the amplifier to a transition time minimum of approximately \unit[10]{$\muup$s} in duration as shown in Figure~\ref{figure:deflector_voltages}.
+More detail on the design of the streaking electronics can be found in Reference~\cite{rory_thesis}.
 
 \begin{figure}
     \center
@@ -347,7 +276,7 @@ More detail on the design of the streaking electronics can be found in Reference
     % Code and data located in 2017.07.25, plot2error.py
 \end{figure}
 
-Synchronisation with the experimental cycle was easily achieved using triggers from the pulse blaster, see Section~\ref{section:pulse_blaster}, and, while the pulse blaster did not have sufficient temporal resolution to correctly trigger the fast ramp, adjusting cable lengths for the trigger signal by a couple of meters provided an adequate delay.
+Synchronisation with the experimental cycle was easily achieved using triggers from the pulse blaster, see Section~\ref{section:pulse_blaster}, and, while the pulse blaster did not have sufficient temporal resolution to correctly trigger the fast ramp precisely, adjusting cable lengths for the trigger signal by a couple of meters provided adequate control.
 
 An interesting effect that limited the potential length of the usable portion of fast streaks was `ringing' in the signal, this is shown in Figure~\ref{figure:ringing}.
 Due to the ringing the range of the usable voltage sweep is somewhat truncated as any bunch with a duration longer than the sweep time will oscillate about the end point of the streak.
@@ -363,6 +292,8 @@ Fortunately the majority of the streak is usable and bunches with durations shor
 
 \subsubsection{Deflectors}
 
+The deflectors consisted of a pair of parallel plates mounted in the vaccum system such that they could be retracted out of the beam path.
+
 {\color{red}Figure showing deflectors, photo + cross section. Talk to Andy.}
 
 
@@ -373,18 +304,20 @@ The averaging of images at the two deflector positions was not required but is c
 Any transformations applied to the streaked pepperpot images, such as rotation and deskewing, needed to be applied to the calibration image before measuring $dpixel$.
 An example calibration image is shown in Figure~\ref{figure:example_calibration}.
 The deflector voltage profile was measured by a \unit[1]{GHz} oscilloscope\footnote{Tektronix DPO4104B-L Digital Phosphor Oscilloscope} with a probe attached to the vacuum feedthrough in order to minimise lag when comparing the deflector voltage to other signals, such as timing triggers.
-The voltage gradient, $\frac{dV}{dt}$, was measured by a linear fit to the deflector voltage profile.
+The voltage gradient, $\frac{dV}{dt}$, was measured by a linear fit to the streak region of the deflector voltage profile.
 It was then simple to calculate the  deflection gradient for the image
 \begin{equation}
 \frac{dpixel}{dt} = \frac{dpixel}{dV} \frac{dV}{dt}.
 \end{equation}
 
-Determining the time during the voltage sweep that corresponds to the start of the streak was more difficult but could often be achieve by examining features that indicated the end of the streak such as that shown in Figure~\ref{figure:streaked_1d_pepperpot}.
+The oscilloscope was also connected to a photodiode that monitors the intensity of the pulsed ionisation laser and this was used to detemine the time during the voltage sweep that corresponds to the start of the streak as the streak begins when the blue laser is activated.
+The current of the short duration streaks correlates strongly with the intensity of the blue laser.
 
 \begin{figure}
     \center
     \includegraphics[width=0.5\linewidth]{part2/Figs/example_calibration.jpeg}
-    \caption{An example of an image used to calibration the timing of the streaked pepperpots.}
+    \caption{An example of an image used to calibration the timing of the streaked pepperpots.
+    This image is composed of the average of several images where the deflectors were at the minimum and maximum voltage.}
     % Set 9 2017.06.11
     \label{figure:example_calibration}
 \end{figure}
