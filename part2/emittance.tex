@@ -271,7 +271,7 @@ More detail on the design of the streaking electronics can be found in Reference
 \begin{figure}
     \center
     \input{part2/Figs/DeflectorVoltages.pgf}
-    \caption{The voltages applied to the deflectors for the `slow' (left) and `fast' (right) streak modes. The zero on the time axis refers to the start of the electron bunches as shown in Figure~\ref{figure:streaks}.}
+    \caption{The voltages applied to the deflectors for the long duration (left) and short duration (right) bunches. The zero on the time axis refers to the start of the electron bunches as shown in Figure~\ref{figure:streaks}.}
     \label{figure:deflector_voltages}
     % Code and data located in 2017.07.25, plot2error.py
 \end{figure}
@@ -285,7 +285,7 @@ Fortunately the majority of the streak is usable and bunches with durations shor
 \begin{figure}
     \center
     \input{part2/Figs/VoltagesRinging.pgf}
-    \caption{An example of ringing in the fast deflector voltage sweep. On the left is the Voltage on the detector from the start of the electron bunch, notice the slow damping oscillation after the fast \unit[10]{ns} sweep. On the right is an example of a streaked emittance measurement for a relatively long bunch length, notice the oscillations corresponding to the `ringing' present in the deflector voltage located on the right side of the figure.}
+    \caption{An example of ringing in the fast deflector voltage sweep. On the left is the Voltage on the detector from the start of the electron bunch, notice the slow damping oscillation after the initial \unit[10]{ns} sweep. On the right is an example of a streaked emittance measurement for a relatively long bunch length, notice the oscillations corresponding to the `ringing' present in the deflector voltage located on the right side of the streak.}
     \label{figure:ringing}
     % Fast streak from 2017.06.11 Set 12, code in 2017.07.25, plot2.py
 \end{figure}
@@ -506,8 +506,7 @@ Try and figure out what's going on with the magic number.
 \end{figure}
 
 \section{Results}
-In order to demonstrate the feasibility of time-resolved brightness measurements via the streaking of pepperpots a number of measurements have been made including a comparison of two-dimensional pepperpot emittance measurements with theory and slow and fast streaks used to determine the time-resolved brightness of electron bunches produced by the \gls{caes}.
-These measurement also provide an opportunity to examine the emittance behaviour of the \gls{caes} under a limited set of ionisation conditions.
+In order to demonstrate the feasibility of time-resolved brightness measurements a number of measurements have been made including a comparison of two-dimensional pepperpot emittance measurements with theory and simulation, and one-dimensional pepperpot streaked measurements with long and short duration electron bunches.
 
 \subsection{Analysis}
 The analysis procedure developed was based on the theory described in Reference~\cite{zhang_emittance_1996} and Equation~\ref{equation:pepperpot}.
@@ -590,11 +589,11 @@ Due to the aperture size of \unit[50]{$\muup$m} and beam path geometry (propagat
 
 
 \subsection{Streaked One-Dimensional Pepperpots}\label{section:streaked_pepperpot_results}
-Shown in Figure~\ref{figure:streaks} are examples of time-resolved brightness measurement from streaked pepperpot measurements.
-The measurements were conducted in the `slow' and `fast' modes previously discussed.
-Both measurements were constructed from 1000-shot registered averages.
-The wavelength of the blue ionisation laser was \unit[487.2]{nm} for the slow streak and \unit[475.9]{nm} for the fast streak which corresponds to \unit[-42.67]{meV} and \unit[17.00]{meV} excess energy respectively.
-The wavelengths were carefully chosen to demonstrate streaking in the fast and slow modes.
+Shown in Figure~\ref{figure:streaks} are examples of time-resolved brightness measurements from streaked one-dimensional pepperpots.
+The streaks were formed from long- and short-duration electron bunches produced from the \gls{caes} with below and above-threshold ionisation.
+The long-duration bunch was generated with a blue ionisation laser wavelength of \unit[487.2]{nm} corresponding to an excess ionisation energy of \unit[$-$43.25]{meV}, below-threshold ionisation and a bunch duration of order \unit[10]{$\muup$s}.
+The short-duration bunch was generated with a blue wavelength of \unit[475.9]{nm} with an excess energy of \unit[17.18]{meV}, resulting in above-threshold ionisation and a bunch duration of \unit[5]{ns}.
+These wavelengths were carefully chosen provide good demonstrations of streaking of long- and short-duration bunches.
 
 \begin{figure}
     \center
@@ -610,7 +609,7 @@ The \gls{ccd} camera and lens used to take images of the detector is assumed to 
 The \gls{psf} of the \gls{mcp} and phosphor screen is approximately Gaussian with a standard deviation of \unit[35]{$\muup$m} and is measured by examining single electron events on the detector~\cite{rory_thesis}.
 The streak calibration images (such as Figure~\ref{figure:example_calibration}) can be used as a simple measure for the size of the detected beamlets, which are a convolution of the beamlets size at the detector and the \gls{psf} of the detector.
 The detected beamlets tend to have a size with an \gls{rms} around \unit[183]{$\muup$m} although this does vary with the emittance of the beam.
-The majority of the signal from an electron is therefore contained within an area of four times the standard deviation or \unit[732]{$\muup$m} and thus the slow and fast streaks shown in Figure~\ref{figure:streaks} can be sliced into 27 and 18 temporal slices which correspond to time resolutions of \unit[524]{ns} and \unit[247]{ps} respectively.
+The majority of the signal from an electron is therefore contained within an area of four times the standard deviation or \unit[732]{$\muup$m} and thus the long- and short-duration streaks shown in Figure~\ref{figure:streaks} can be sliced into 27 and 18 temporal slices which correspond to time resolutions of \unit[524]{ns} and \unit[247]{ps} respectively.
 
 The temporal resolution can be enhanced by carefully maximising the size of the streak on the detector, by using faster electronics, or by using alternative methods such as rf-cavities or photoactivated switches which are able to achieve \unit[100]{fs} resolution~\cite{li_note:_2010,kassier_compact_2010,van_rens_theory_2018}.
 Ensuring that the streak takes up the maximum available extent on the detector minimises the effect of the \gls{psf} on the temporal resolution with the downside that signal is now spread over a wider area thus reducing the \gls{snr}.
@@ -661,6 +660,5 @@ Time-resolved brightness measurements have the potential to provide information 
 \begin{itemize}
     \item Mention expected outcome, results
     \item Better conclusion
-    \item change `slow' and `fast' to long and short duration
 \end{itemize}
 }
