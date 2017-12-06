@@ -8,10 +8,9 @@ Numerous doctoral students have worked on this system and the design and constru
 This chapter provides an overview of the \gls{caeis} and some of the investigations into source stability, source current and beam optimisation.
 
 \section{Description}
-In order to generate electrons and ions the University of Melbourne \gls{caeis} begins with a \gls{mot} that is loaded from a Zeeman slower.
-The optical and magnetic trapping fields are then extinguised and the ground-state atoms are carefully ionised using a combination of a red excitation laser and a blue ionisation laser.
-The charged particles are accelerated by a static electric produced by the accelerators electrodes.
-The polarity of the accelerators determines whether the source produces electrons or ions.
+In order to generate electrons and ions the University of Melbourne \gls{caeis} began by trapping and cooling atoms in a \gls{mot} that was loaded from a Zeeman slower.
+The optical and magnetic trapping fields were then extinguised and the ground-state atoms carefully ionised using a combination of a red excitation laser and a blue ionisation laser.
+The charged particles are accelerated by a static electric produced by the accelerators electrodes, one polarity accelerating ions towards the detector and the other electrons.
 
 When the source is acting as an electron source the it is essential to turn off the \gls{mot} and Zeeman slower magnetic fields before ionisation due to the significant deviation that the fields cause to the electron trajectories.
 Ion trajectories are not adversly affected if the fields are left on due to the much higher ion mass.
@@ -19,14 +18,23 @@ Ion trajectories are not adversly affected if the fields are left on due to the 
 {\color{red}Figure showing setup. Perhaps Fig 2.1 from Rory's thesis.}
 
 \subsection{Rubidium Oven}
-The source begins with an effusive Rubidium oven with a long heated collimation tube~\cite{bell_slow_2010}.
+The source begins with an effusive Rubidium oven with a long heated collimation tube.
 Typically effusive ovens are wasteful with large numbers of atoms lost into a large solid angles however this experimented makes use of a long heated collimation tube to collect and re-emit atoms that were initially emitted at high angles.
 These atoms are re-emitted back to the reservoir or into the collimated atom beam leaving the collimation tube.
+A brief schematic of the oven can be found to the left in Figure~\ref{figure:zeemanoven} and more detail on the design, operation, and performance of the oven can be found in References~\cite{bell_slow_2010} and \cite{bell_cold_2011}.
+
+\begin{figure}
+    \center
+    \includegraphics[width=130mm]{part2/Figs/ZeemanOven.pdf}
+    \caption{A schematic of the rubidium atom source. Atomic vapour from the oven is directed into the Zeeman slower where a laser detuned from the atomic resonance, in combination with a tapered magnetic coil, with a magnetic field as shown, slows the thermal atoms.}
+    \label{figure:zeemanoven}
+\end{figure}
 
 \subsection{Zeeman Slower}
 Following the oven is the tapered pitch Zeeman slower which slows atoms down so that they can be captured by the trapping fields of \gls{mot}~\cite{bell_slow_2010}.
 Zeeman slowers operate by using a laser red-detuned from resonance to slow the atoms down however as the atoms slow the conditions for resonance change due to the changing Doppler shift.
 The solution to this quandrary used here is a tapered magnetic coil to apply a magnetic field to shift the atomic resonance such that a particular velocity class of atoms remains resonant with the light field, and thus is slowed, along the length of the Zeeman slower.
+A schematic of the Zeeman slower with along with the magnetic field produced by the tapered coil is shown in Figure~\ref{figure:zeemanoven}.
 
 When extracting electrons from the \gls{mot} the magnetic coil must be turned off to prevent disruptions to the electron trajectory.
 
