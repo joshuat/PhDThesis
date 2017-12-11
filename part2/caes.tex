@@ -84,7 +84,21 @@ As less photons are required for each transision the overall transition rate can
     \label{figure:ionisation_modes}
 \end{figure}
 
-excess energy
+The temperature of particles generated from the \gls{caes} depends primarily on the excess ionisation energy given to the atoms by the absorbed photons.
+Due to the complex orbits of electrons in high-lying states the relationship between absorbed photon energy and temperature is complex~\cite{mcculloch_high-coherence_2013} but it is generally true that with greater photon energy comes greater source temperature.
+The classical ionisation threshold is lower in the presence of electric field, such as the accelerating field in the \gls{caeis}, due to the Stark-shift and the excess energy of an ion or electron relative to the classical ionisation threshold is:
+\begin{equation}\label{equation:ionisation_energy_stark}
+\Delta E = -E_I + 2\sqrt{ke^3F} + \sum_{i=0}^{n}{\frac{hc}{\lambda_i}},
+\end{equation}
+where $E_I=4.18\,meV$ is the ground state ionisation energy of rubidium-85, $k$ is the Coulomb constant, e is the elementary charge, $F$ is the strength of the electric field, $h$ is the Plank constant, and $c$ is speed of light.
+The second term represent the Stark-shift of the classical ionisation threshold, and the last term is the sum of the energy of the $n$ photons involved in the ionisation, with wavelength $\lambda_i$.
+Equation~\ref{equation:ionisation_energy_stark} assumes that rubidium is hydrogen-like which is a good approximation as long as $E_I \gg 2\sqrt{ke^3F}$.
+
+Sequential excitation and two-colour multiphoton excitation are the only ionisation processing that producce cold electrons as the excess ionisation energy is minised by tuning the photon energy.
+This can be seen in Figure~\ref{figure:ionisation_modes} in the momentum distributions.
+
+Due to the tunability of the lasers involved in generating cold electrons the it was possible to directly ionise regardless of the electric field which resulted in short duration bunches, field-ionise such that the majority of the bunch had a short duration but some particles continued to tunnel out over a longer duration, or to excite the atoms such that tunneling through the Stark-shifted potential was the only route to ionisation resulting in lower bunch current and long duration.
+A more detailed examination of the ionisation processes can be found in References~\cite{speirs_identification_2017} and \cite{speirs_electron_2017}.
 
 \subsubsection{Beam Shaping}
 
