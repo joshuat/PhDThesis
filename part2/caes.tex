@@ -36,7 +36,7 @@ The following beams were used:
 
 A previous iteration of the cooling and repump laser systems for the \gls{caeis} consisted of six separate diode lasers each indenpendently locked to appropriate rubidium transitions.
 This setup suffered in reliability as, if any of the six diodes became unlocked (a common occurance) then identification and relocking of the offending laser was a length process.
-The setup was streamlined by using only two diode lasers amplified by \glspl{ta} with greater resistance to environmental pertubations making the loss of lock a less common occurance and easier to recover from.
+The setup was streamlined by using only two diode lasers amplified by \glspl{ta} with greater resistance to environmental perturbations making the loss of lock a less common occurance and easier to recover from.
 A simplified schematic of the cooling and repump laser setup is shown in Figure~\ref{figure:laser_setup}.
 
 \begin{figure}
@@ -216,7 +216,7 @@ There are a few avenues available to the \gls{caeis} to improve the bunch count 
 An investigation of the performance of the apparatus in \gls{cw} mode is shown in Section\ref{section:pulse_vs_continuous}.
 
 The stability of the source was also problematic, particularly for electron bunches, as a number of transient effects interferred with the path of the beams on a shot-to-shot and minute-to-minute timescale.
-Effects such as eddy currents due to the switching of the strgon magnetic fields in the steel of the vaccum system and boards the optics are mounted on was one of the primary suspects for a source of the pertubations in the beam path.
+Effects such as eddy currents due to the switching of the strgon magnetic fields in the steel of the vaccum system and boards the optics are mounted on was one of the primary suspects for a source of the perturbations in the beam path.
 Other potential sources are the electronic equipment such as power supplies and switches that were placed as far away from the beam path as practical but were still in the vicinity.
 The poor stability of the source made some measurements difficult and other impossible.
 Multi-shot measurements were required in a number of cases and, due to the drift of the beam, straight averages of the images from the detector resulted in a unusable blur.
@@ -225,9 +225,26 @@ Measurements without sharp features could not be well registered, as the registr
 Registration is discussed further in Section~\ref{section:registration}.
 
 \section{Pulsed vs Continuous}\label{section:pulse_vs_continuous}
+Comparing the performance of the source in its usual pulse mode against the performance as a continuous source had the potential to show pathways for improving the pulsed mode as well as a mode that would provide better performance for particular applications, as some measurements, such as simple \gls{cdi}, do not require the source to be pulsed.
+Continous mode functions by using the two-stage ionisation and acceleration on the Zeeman slowed atom beam from the oven without further cooling and trapping in the \gls{mot}.
+It was hoped that the beam current would increase with this mode of operation and that the beam produced would be subject to less trajectory perturbation as the magntic fields were not switching.
 
+While the entire apparatus and control system had been designed to operate in pulse mode it was fortunately relatively simple to modify the setup to operate continuously.
+The \gls{mot} was disabled, the excitation beam was left on, and the \gls{cw} blue was used instead of the usual blue pulse laser to act as the ionisation laser.
+
+Before switching to continuous mode the \gls{caeis} had been measured to have \unit[$0.42\times10^6$]{electrons per bunch} equating to a beam current of \unit[$4.2\times10^6$]{electrons per second}.
+Initially the continuous mode was producing \unit[$0.64\times10^6$]{electrons per second} however there were a number of optimisations available to improve the current, as detailed below.
 
 \subsection{Oven Temperature to Electron Count}
+When operating in pulsed mode the \gls{mot} was given more than enough time to saturate and thus there was no benefit to producing more electrons from the oven.
+In continuous mode the beam current was dependent on the density of atoms in the ionisation region which could be increased by producing more atoms from the oven.
+
+The atomic flux from the oven could easily be increased by running the oven at a higher temperature.
+During normal operation the oven was set to a temperature of approximately \unit[80]{$^\circ$C} (rubidium has a melting point of \unit[39.30]{$^\circ$C}) however the oven is able to operate at up to \unit[200]{$^\circ$C}.
+
+{\color{red}Atomic flux from oven vs temperature??}
+
+
 
 \subsection{Blue Power}
 
