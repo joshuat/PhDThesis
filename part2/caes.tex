@@ -298,8 +298,28 @@ A quadrupole magnetic field can be described as
 B_x &= K y \notag\\
 B_y &= K x,
 \end{align}
-The force on particles in a charged beam, such as that in the \gls{caes}, passing through a quadrupole field is shown in Figure~\ref{figure:quadrupole_example}.
-The quadrupole results in inwards force along one axis and an outwards force along the other which is ideal for correcting astigmatism.
+The force on particles in a charged beam, such as that in the \gls{caes}, passing through a quadrupole field is shown in Figure~\ref{figure:quadrupole_example} where there is an inwards force along one axis and an outwards force along the other, which is ideal for correcting astigmatism.
+The figures in Figure~\ref{figure:quadrupole_example} were generated with the same code used to generate the magnetic fields for the simulation described below.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\linewidth}
+    \centering
+    \input{part2/Figs/QuadrupoleField.pgf}
+    \caption{}
+    \label{figure:quadrupole_example_field}
+    \end{subfigure}
+    \begin{subfigure}{0.49\linewidth}
+    \centering
+    \input{part2/Figs/QuadrupoleForce.pgf}
+    \caption{}
+    \label{figure:quadrupole_example_force}
+    \end{subfigure}
+    \caption{A transverse view of a magnetic quadrupole lens with the magnetic field, (a), and force field for an electron beam directed out of the page, (b), where the arrows indicate the direction and strength of the field.
+    The red circles and crosses indicated the cross section of the quadrupole solenoids with circles representing current travelling out of the page and crosses into the page.}
+    \label{figure:quadrupole_example}
+    % Code for figures located in Code/Electrons/Simulation/Older Simulator Code/MagneticFields.py
+\end{figure}
 
 To correct for the astigmatism in the \gls{caes} a simple solenoid magnetic quadrupole lens was designed and built consisting of four solenoid magnets facing in and spaced around the beamline with alternating current directions.
 The design was constrained as it had to be external to the vacuum system with an inner diameter of \unit[70]{mm} and have a longitudinal length less \unit[20]{mm} due to the crowded beamline.
