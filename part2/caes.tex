@@ -281,7 +281,11 @@ Using the maximum power available with an oven temperature of \unit[200]{$^\circ
 
 The significant instability in the electron beam path observed in pulsed mode was still obvious with \gls{cw} mode indicating that the source of the instability was not the magnetic coils as had been previously suspected.
 \Gls{cw} mode did provide a opportunity to investigate the spectral behaviour of the beam drift as the beam can be focussed onto the detector and observed with a \gls{ccd} camera that was able to operate at \unit[240]{Hz}.
-The most likely culprit for noise is the mains power supply which operates at \unit[50]{Hz} and thus requires a sampling rate of at least \unit[100]{Hz} to observe.
+The most likely culprit for noise is something involving the mains power supply which operates at \unit[50]{Hz} and thus requires a sampling rate of at least \unit[100]{Hz} to easily observe.
+
+In order to examine the frequency behaviour of the beam drift a faster camera was used to observe the \gls{mcp}\footnote{Point Grey Flea3 USB3 {\color{red}smomthing or other}} with the electron beam focused to a point.
+In order to operate the camera a the desired frequency it was necessary to reduce the size of the image from the camera to a smaller field of view.
+In order to assign accurate timestamps to each image...
 
 
 \subsubsection{Registration}\label{section:registration}
@@ -339,7 +343,8 @@ In order to determine the approximate number of current turns required for the s
 A simple homebuilt charged particle simulator was created with the ability to propagate charged particles through arbitrary magnetic fields which in this case were formed by a parameterised quadrupole lens.
 A number of figures of merit were available to determine the ideal design, such as the degree to which the quadrupole lens was able to correct the astigmatism, the current required for the lens to correct for the astigmatism, and the size of the beam waist.
 
-A subset of the results from the simulations are shown in Figure~\ref{figure:quad_sims} and they indicated that a few hundred \unit{A turns} with the solenoid as wide as the diameter of the vacuum system produced the best results.
+The simulation results {\color{red}(Figure pending getting high enough resolution data)} shown in Figure~\ref{figure:quad_sims} indicate that {\color{red}(Confirm)} the best performance is achieved with a small transverse width for the quadrupole coils however that would require a large current as well as being more difficult to create as smaller solenoids are more difficult to wind.
+A decent compromise between required current turns, performance and ease of assembly is to use a transverse width of \unit[70]{mm}.
 
 The chassis for the quadrupole solenoids was then modelled and 3D printed from plastic and the solenoid coils were hand wound onto the chassis, as shown in Figure~\ref{figure:quadrupole}.
 In Figure~\ref{figure:quadrupole_scans_on} is shown the electron beam from the \gls{caes} with the astigmatism corrected by the quadrupole lens.
