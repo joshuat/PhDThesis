@@ -281,16 +281,24 @@ Using the maximum power available with an oven temperature of \unit[200]{$^\circ
 
 The significant instability in the electron beam path observed in pulsed mode was still obvious with \gls{cw} mode indicating that the source of the instability was not the magnetic coils as had been previously suspected.
 \Gls{cw} mode did provide a opportunity to investigate the spectral behaviour of the beam drift as the beam can be focussed onto the detector and observed with a \gls{ccd} camera that was able to operate at \unit[240]{Hz}.
-The most likely culprit for noise is something involving the mains power supply which operates at \unit[50]{Hz} and thus requires a sampling rate of at least \unit[100]{Hz} to easily observe.
+The most likely culprit for noise is something involving the mains power supply which operates at \unit[50]{Hz} and thus, accordint to the Nyquist-Shannon sampling theorem, requires a sampling rate of at least \unit[100]{Hz} to observe.
 
-In order to examine the frequency behaviour of the beam drift a faster camera was used to observe the \gls{mcp}\footnote{Point Grey Flea3 FL3-U3-13S2M-CS} with the electron beam focused to a point.
-In order to operate the camera a the desired frequency it was necessary to reduce the size of the image from the camera to a smaller field of view.
+In order to examine the frequency behaviour of the beam drift a faster camera was used to observe the \gls{mcp}\footnote{Point Grey Flea3 FL3-U3-13S2M-CS} with the electron beam focused at the detector.
+To operate the camera at the desired frequency it was necessary to reduce the size of the image from the camera to a smaller field of view.
+Data was collected with the \gls{caes} operating in continuous mode and in an analogue of normal pulsed mode
 
-In order to assign accurate timestamps to each image it was necessary to use one of the features of the camera to add an accurate truncated timestamp to directly to the image as it's processed by the camera itself along with the timestamp on the image file create by the computer the camera was running on.
-The combination of the fine and accurate timestamp from the camera (which only counted to \unit[128]{seconds} before restting) with the coarse but inaccurate timestamp on the image file allowed for long duration datasets to be accuratedly analysed.
+To assign accurate timestamps to each image it was necessary to use one of the features of the camera to add an accurate truncated timestamp to directly to the image as it's processed by the camera itself along with the timestamp on the image file create by the computer the camera was running on.
+The combination of the fine and accurate timestamp from the camera (which only counted to \unit[128]{seconds} before restting) with the coarse, inaccurate timestamp on the image file allowed for long duration datasets to be accuratedly analysed.
 
-Fourier transforms of the beam position on the detector is one of the more useful ways to examine the stability of the source however due to the repetition rate of the source in its normal pulsed mode it is difficult to fully compare the two modes, particularly around the frequency of particular interest, \unit[50]{Hz}, which requires a sampling rate of at least \unit[100]{Hz} to resolve.
-Shown in Figure~\ref{}...
+Fourier transformations of the beam position coordinates on the detector is one of the more useful ways to examine the stability of the source.
+With the source operating in continuous mode the frequency analysis was limited by the frequency at which the camera can operate (\unit[240]{Hz}) and in pulsed mode it was limited by the repetition rate of the experiment (\unit[10]{Hz}).
+Shown in Figure~\ref{figure:stability} are the recorded positions of the electron beam and the corresponding Fourier transforms for continuous and pulsed mode.
+With the low sampling rate of the pulsed mode there is little information in the Fourier transform with the only feature being a peak near \unit[0]{Hz} corresponding to the slow oscillation visible in the data.
+The higher sampling rate of the continuous mode data provides much more information with numerous peaks visible in the spectrum.
+The continous mode spectrum reveals a strong contribution at \unit[50]{Hz}, likely related to the mains power supply, as well at peaks at \unit[0]{Hz}, \unit[45]{Hz}, \unit[67]{Hz}, \unit[84]{Hz}, and \unit[92]{Hz} which are of unknown origin.
+
+The instabilities present in the normal pulsed operation are still apparent in the continuous mode beam indicating that the fast switching of the magnetic-fields is not the primary source of the beam drfit.
+The \unit[50]{Hz} peaks in the position spectrum are indicative of some interaction with the main power supply however care has already been taken to keep power supplies and similar devices as far from the beamline as is practical.
 
 \begin{figure}
     \begin{subfigure}{\linewidth}
@@ -308,15 +316,18 @@ Shown in Figure~\ref{}...
     \end{subfigure}
     \caption{Beam position and position spectrum for $x$ (blue) and $y$ (green) directions for \gls{cw}-mode electrons (top) and pulse-mode electrons (bottom).
     Pulsed operation is limited to \unit[10]{Hz} and thus the spectrum is limited to \unit[5]{Hz}. The continuous beam spectrum was limited by the camera speed of \unit[240]{Hz}.}
+    \label{figure:stability}
 \end{figure}
 
+\subsection{Summation}
 
+It was hoped that continuous mode would provide a viable alternative to normal pulsed operation with this iteration of the \gls{caes} with better beam current and stability.
+The investigations in this section indicate that, with the current apparatus, continuous mode is on-par or worse than pulsed-mode with respect to beam current and stabilty.
+With significant investments of time and money it would be possible to achieve better current and stability with continuous mode however with the next iteration of the experiment on the near-horizon it is not worth pursuing these avenues with this apparatus.
 
-\subsubsection{Registration}\label{section:registration}
+\section{Registration}\label{section:registration}
 
-\section{Source Characterisation}
-
-\subsection{Astigmatism}
+\section{Astigmatism}
 
 During the investigations already discussed in this section beam astigmatism was observed in the electron beam.
 The astigmatism was apparent when the strength of the electron lenses were adjusted or while translating the \gls{mcp} detector past a beam focus as the two orthogonal transverse axes did not share a focus, as shown in Figures~\ref{figure:astigmatism_translation} and \ref{figure:quadrupole_scans_off}.
