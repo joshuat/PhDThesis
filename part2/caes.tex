@@ -331,6 +331,14 @@ Instability in the beam path (see Section~\ref{section:stability}) results in th
 When multi-shot averages are required the beam drift results in the beam being `smeared' when averaged.
 It is necessary to `register' the sets of images to prevent this smearing, see Figure~\ref{figure:registration_examples}.
 
+\begin{figure}
+    \center
+    \input{part2/Figs/registration_examples.pgf}
+    \caption{Single-Shot is a single image from a streaked pepperpot data set of 1000 images. Average is the simple average of all 1000 images. Slipped is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation, there is an additional, faint beamlet visible at the top of the image. Registration is a successful registration where a shot-to-shot limit to drift of 5 pixels was enforced. Below each image is the row sum of the image. All the images are independently log scaled.}
+    \label{figure:registration_examples}
+    % Data and code in 2017.07.24 plot_registration_examples.py
+\end{figure}
+
 Registration consisted of convolving each image with a reference image, recording the location of the maximum value of the convolution and then using that location to align all the images.
 The reference image usually consists of either just the first image in the set or the average image of the entire set, depending on the amount of signal in a single image.
 The registration process can also be performed iteratively where the reference image becomes the aligned output of the previous iteration.
@@ -348,17 +356,9 @@ Slipped, and therefore failed, pepperpot registrations were usually easy to iden
 While registering the pepperpots the best results were provided with around 3 iterations and limits on the shot-to-shot drift less than distance between the pepperpots.
 An example of a slipped registration is shown in Figure~\ref{figure:registration_examples} using data from Chapter~\ref{chapter:brightness}.
 
-\begin{figure}
-    \center
-    \input{part2/Figs/registration_examples.pgf}
-    \caption{Single-Shot is a single image from a streaked pepperpot data set of 1000 images. Average is the simple average of all 1000 images. Slipped is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation, there is an additional, faint beamlet visible at the top of the image. Registration is a successful registration where a shot-to-shot limit to drift of 5 pixels was enforced. Below each image is the row sum of the image. All the images are independently log scaled.}
-    \label{figure:registration_examples}
-    % Data and code in 2017.07.24 plot_registration_examples.py
-\end{figure}
-
 {\color{red} I'm still not happy with this example of slipping. I should look for a better one. I may have to engineer one.}
 
-\section{Astigmatism}
+\section{Astigmatism}\label{section:quadrupole}
 
 During the investigations already discussed in this section beam astigmatism was observed in the electron beam.
 The astigmatism was apparent when the strength of the electron lenses were adjusted or while translating the \gls{mcp} detector past a beam focus as the two orthogonal transverse axes did not share a focus, as shown in Figures~\ref{figure:astigmatism_translation} and \ref{figure:quadrupole_scans_off}.
