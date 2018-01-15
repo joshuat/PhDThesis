@@ -327,14 +327,20 @@ With significant investments of time and money it would be possible to achieve b
 
 \section{Registration}\label{section:registration}
 
-Due to the instability in the beam path (see Section~\ref{section:stability}) it is necessary to `register' the sets of images captured for measurements.
-The registration consisted of convolving each image with a reference image, recording the maximum value of the convolution and then aligning all the images using the convolution maxima.
-The reference image usually consists of either just the first image in the set or the average image of the entire set.
-The registration process can also be performed iteratively where the reference image become the output of the previous iteration.
+Instability in the beam path (see Section~\ref{section:stability}) results in the electron beam drifting around the detector from shot-to-shot.
+When multi-shot averages are required the beam drift results in the beam being `smeared' when averaged.
+It is necessary to `register' the sets of images to prevent this smearing, see Figure~\ref{figure:registration_examples}.
 
-This works well for high-signal image sets but does not work as well for lower signal sets such as two-dimensional pepperpots or one-dimensional pepperpot streaks.
-Lower signal data requires more care and in some cases cannot be registered.
-One of the registration errors that occurs with pepperpot data is `slipping' where the convolution maxima correspond to neighborouring beamlets rather than the same beamlet and thus the images are incorrectly aligned.
+Registration consisted of convolving each image with a reference image, recording the location of the maximum value of the convolution and then using that location to align all the images.
+The reference image usually consists of either just the first image in the set or the average image of the entire set, depending on the amount of signal in a single image.
+The registration process can also be performed iteratively where the reference image becomes the aligned output of the previous iteration.
+
+Registration functions very well for high signal, structured data such as diffraction patterns (see Chapter~\ref{chapter:diffraction}) or pepperpot beam masks (see Chapter~\ref{chapter:brightness}).
+Low signal data can be registered as long there is enough signal in a single shot for the convolution to correctly identify the features in the image.
+Unstructured data or continuous data, such as large flat beam profiles, will not register well as the convolution with not be able to identify common features well.
+
+Lower signal data requires more care than high signal data and in some cases cannot be registered.
+One of the registration errors that has occured with pepperpot data is `slipping' where the convolution maxima correspond to neighbouring beamlets rather than the same beamlet and thus the images are incorrectly aligned.
 This error can be evaded by applying a limit to how far the convolution maxima of an image can change from shot to shot, generally the limit should be less than the distance between beamlets.
 This allows slow drift of the beam path to be dealt with while preventing slipping.
 
