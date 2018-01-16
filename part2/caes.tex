@@ -213,24 +213,24 @@ The trapping lasers and fields were extinguisted \unit[5]{ms} before the excitat
 There were a number of factors preventing the \gls{caeis} achieving its goal of single-shot ultrafast electron diffractive imaging, most importantly electron flux and beam stability.
 These factors also require improvement for other \gls{caes} goals such as \gls{fib} milling, and imaging.
 
-The minimum electron flux required for \gls{ued} is 10$^6$ electrons per bunch~\cite{van_oudheusden_compression_2010} whereas this iteration of the \gls{caes} was only able to get $5\times10^5$ electrons.
-There are a few avenues available to the \gls{caeis} to improve the bunch count such as increasing the \gls{mot} density, increasing the power of the ionisation laser, better optimisation of the ionisation pathways~\cite{mcculloch_field_2017}, and running the apparatus in \gls{cw} mode.
-\Gls{cw} mode  has the potential to increase the number of particals per second however some applications would be difficult or impossible without discrete bunches.
+The minimum electron flux required for \gls{ued} is 10$^6$ electrons per bunch~\cite{van_oudheusden_compression_2010} whereas this iteration of the \gls{caes} was only able to get $5\times10^5$ electrons at best.
+There are a few avenues available to the \gls{caeis} to improve the bunch count such as increasing the \gls{mot} density, increasing the power of the ionisation laser, better optimisation of the ionisation pathways~\cite{mcculloch_field_2017}, and potentially running the apparatus in \gls{cw} mode.
+\Gls{cw} mode  has the potential to increase the number of particles per second however some applications would be difficult or impossible without discrete bunches.
 An investigation of the performance of the apparatus in \gls{cw} mode is shown in Section\ref{section:pulse_vs_continuous}.
 
-The stability of the source was also problematic, particularly for electron bunches, as a number of transient effects interferred with the path of the beams on a shot-to-shot and minute-to-minute timescale.
-Effects such as eddy currents due to the switching of the strgon magnetic fields in the steel of the vaccum system and boards the optics are mounted on was one of the primary suspects for a source of the perturbations in the beam path.
+The stability of the source was also problematic, particularly for electron bunches, as a number of transient effects interferred with the path of the beams on timescales from shot-to-shot to minute-to-minute.
+Effects such as eddy currents due to the switching of the strong magnetic fields in the steel of the vaccum system and optical tables was one of the primary suspects for a source of the perturbations in the beam path.
 Other potential sources are the electronic equipment such as power supplies and switches that were placed as far away from the beam path as practical but were still in the vicinity.
-The poor stability of the source made some measurements difficult and other impossible.
+The poor stability of the source made some measurements difficult and others impossible.
 Multi-shot measurements were required in a number of cases and, due to the drift of the beam, straight averages of the images from the detector resulted in a unusable blur.
 Generating usable images for multi-shot measurements required `registration' of the images, set averages where the features in each individual image was aligned with the other images to prevent blurring.
-Measurements without sharp features could not be well registered, as the registration algorithms have trouble precisly aligning the images.
+Measurements without sharp features could not be well registered, as the registration algorithms have trouble precisely aligning the images.
 Registration is discussed further in Section~\ref{section:registration}.
 
 \section{Pulsed vs Continuous}\label{section:pulse_vs_continuous}
-Comparing the performance of the source in its usual pulse mode against the performance as a continuous source had the potential to show pathways for improving the pulsed mode as well as a mode that would provide better performance for particular applications, as some measurements, such as simple \gls{cdi}, do not require the source to be pulsed.
-Continous mode functions by using the two-stage ionisation and acceleration on the Zeeman slowed atom beam from the oven without further cooling and trapping in the \gls{mot}.
-It was hoped that the beam current would increase with this mode of operation and that the beam produced would be subject to less trajectory perturbation as the magntic fields were not switching.
+Comparing the performance of the source in its usual pulse mode against the performance as a continuous source had the potential to show pathways for improving the pulsed mode as well as providing an alternative that could provide better performance for particular applications, as some measurements, such as simple \gls{cdi}, do not require the source to be pulsed.
+Continous mode functions by using the two-stage ionisation and acceleration on the atom beam from the oven without cooling or trapping by the Zeeman slower or \gls{mot}.
+It was hoped that the beam current would increase with this mode of operation and that the beam produced would be subject to less drift and instability as the large magntic fields were not switching.
 
 While the entire apparatus and control system had been designed to operate in pulse mode it was fortunately relatively simple to modify the setup to operate continuously.
 The \gls{mot} was disabled, the excitation beam was left on, and the \gls{cw} blue was used instead of the usual blue pulse laser to act as the ionisation laser.
@@ -242,7 +242,7 @@ Initially the continuous mode was producing \unit[$0.64\times10^6$]{electrons pe
 When operating in pulsed mode the \gls{mot} was given more than enough time to saturate and thus there was no benefit to producing more electrons from the oven.
 In continuous mode the beam current was dependent on the density of atoms in the ionisation region which could be increased by producing more atoms from the oven.
 
-The atomic flux from the oven could easily be increased by running the oven at a higher temperature.
+The atomic flux from the oven could be increased by running the oven at a higher temperature.
 During normal operation the oven was set to a temperature of approximately \unit[80]{$^\circ$C} (rubidium has a melting point of \unit[39.30]{$^\circ$C}) however the oven is able to operate at up to \unit[200]{$^\circ$C}.
 
 {\color{red}Atomic flux from oven vs temperature??}
@@ -264,7 +264,7 @@ This data indicates that the \gls{cw} beam current could be improved with the us
 
 The second avenue available to increase the beam current is to increase the intensity of the \gls{cw} blue ionisation laser beam as it is unlikely to be saturating the atom beam.
 Optimisation of the laser and beamline allowed for up to \unit[280]{mW} to be delivered to vacuum system.
-By reducing the power of the blue beam incident on the atom beam and recoding the beam current it was possible to determine that the atoms were not saturated by the blue laser.
+By reducing the power of the blue beam incident on the atom beam and recording the beam current it was clear that the atoms were not saturated by the blue laser.
 If the blue laser power was saturating or close to saturating the atom beam then the beam current would have been approaching a limit which is not apparent from the shape of the curve in Figure~\ref{figure:blue_power}.
 
 While the true situation was more complicated, involving the atom beam cross-sectional area and the blue laser intensity at the atom beam, the data shown in Figure~\ref{figure:blue_power} indicates that a more powerful blue laser or better optimisation of the laser intensity at the atom beam would increase the available beam current, this is also true of pulse mode as the available power of the blue pulse laser is poor.
