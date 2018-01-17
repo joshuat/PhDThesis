@@ -3,40 +3,40 @@
 The \gls{caeis} at the University of Melbourne is a source of low temperature electrons or rubidium ions with promising potential as a alternative charge particle source.
 The \gls{caeis} works by carefully ionising rubidium atoms trapped in a \gls{mot} in order to generate a low temperature plasma which can then be accelerated to form a particle beam.
 The apparatus described here is reaching the end of it's useful life, greater understanding of the limitations imposed by this implementation of a \gls{caeis} and the already impressive developments achieved with this source have paved the way for the next generation of \gls{caeis} which is not compatible with the apparatus.
-Numerous doctoral students have worked on this system and the design and construction details can be found in their theses~\cite{sheludko_shaped_2010,bell_cold_2011,saliba_cold_2011,mcculloch_generation_2013,murphy_measurement_2017,speirs_electron_2017}.
+Numerous doctoral students have worked on this system and the design and construction details can be found in their theses~\cite{sheludko_shaped_2010,bell_cold_2011,saliba_cold_2011,mcculloch_generation_2013,tielen_development_2015,murphy_measurement_2017,speirs_electron_2017}.
 
 This chapter provides an overview of the \gls{caeis} and some of the investigations into source stability, source current and beam optimisation.
 
 \section{Description}
 The first step in to generating electrons and ions at the University of Melbourne \gls{caeis} was to by trap and cool atoms in a \gls{mot} that was loaded from a Zeeman slower.
-The optical and magnetic trapping fields were then extinguised and the cold ground-state atoms carefully ionised using a combination of a red excitation laser and a blue ionisation laser.
+The optical and magnetic trapping fields were then extinguished and the cold ground-state atoms carefully ionised using a combination of a red excitation laser and a blue ionisation laser.
 The charged particles were accelerated by a static electric produced by the accelerator electrodes, one polarity accelerating ions towards the detector and the other electrons.
 The main detector for experiments was a phosphor-coupled \gls{mcp} combined with a \gls{ccd} camera.
 
 When the source is acting as an electron source the it is essential to turn off the \gls{mot} and Zeeman slower magnetic fields before ionisation due to the significant deviation that the fields cause to the electron trajectories.
-Ion trajectories are not adversly affected if the fields are left on due to the much higher mass of ions.
+Ion trajectories are not adversely affected if the fields are left on due to the much higher mass of ions.
 
 \subsection{Laser Systems}
 There were a number of light fields required or useful for the running of the \gls{caeis}.
-The \unit[780]{nm} red lasers were locked relative to the rubidium-85 primary cycling transition, 5$^2$S$_{1/2}$ (F=3) $\rightarrow$ 5$^2$P$_{3/2}$ (F$^\prime$=4), and repump transition, 5$^2$S$_{1/2}$ (F=2) $\rightarrow$ 5$^2$P$_{3/2}$ (F$^\prime$=3).
+The \unit[780]{nm} red lasers\footnote{MOGLabs External Cavity Diode Lasers with MOGLabs Diode Laser Controllers} were locked relative to the rubidium-85 primary cycling transition, 5$^2$S$_{1/2}$ (F=3) $\rightarrow$ 5$^2$P$_{3/2}$ (F$^\prime$=4), and repump transition, 5$^2$S$_{1/2}$ (F=2) $\rightarrow$ 5$^2$P$_{3/2}$ (F$^\prime$=3).
 The repump beams listed below were mixed with the primary beam and coupled into the same optical fibres for delivery to the vacuum system.
 The following beams were used:
 \begin{itemize}
-    \item{\emph{Zeeman Slower Beam:}} Used in conjuction with the tapered magnetic coil to slow atoms leaving the oven. This beam was locked \unit[250]{MHz} below the cycling transition.
+    \item{\emph{Zeeman Slower Beam:}} Used in conjunction with the tapered magnetic coil to slow atoms leaving the oven. This beam was locked \unit[250]{MHz} below the cycling transition.
     \item{\emph{Zeeman Slower Repump Beam:}} Used to keep atoms in the Zeeman slower from being lost to the dark F=2 ground state. Locked \unit[250]{MHz} below the repump transition.
-    \item{\emph{\Gls{mot} Cooling Beams:}} Used to cool and trap lasers in conjuction with the \gls{mot} magnetic field. Locked \unit[10]{MHz} below the cooling transition.
+    \item{\emph{\Gls{mot} Cooling Beams:}} Used to cool and trap lasers in conjunction with the \gls{mot} magnetic field. Locked \unit[10]{MHz} below the cooling transition.
     \item{\emph{\Gls{mot} Cooling Repump Beams:}} Used to keep atoms in the \gls{mot} from the dark state where they can no longer be trapped. Locked to the repump transition.
     \item{\emph{\Gls{cw} Excitation Beam:}} Used to excite atoms in the \gls{mot} in the first stage of ionisation. Locked to the cooling transition.
     \item{\emph{\Gls{cw} Excitation Repump Beam:}} Used to keep atoms out of the dark state when performing ionisation. Locked to the repump transition.
-    \item{\emph{Femtosecond Excitation Beam:}} Generated by a mode-locked Ti:sapphire amplified pulse laser with \unit[780-830]{nm} wavelength and a minimum pulse duration of \unit[35]{fs}.
+    \item{\emph{Femtosecond Excitation Beam:}} Generated by a mode-locked Ti:sapphire amplified pulse laser\footnote{Spectra-Physics Spitfire Pro} with \unit[780-830]{nm} wavelength and a minimum pulse duration of \unit[35]{fs}.
     \item{\emph{Pulsed Ionisation Beam:}} A tunable \unit[457-493]{nm} \unit[10]{ns}-pulse laser used to perform the second stage of ionisation\footnote{Sirah dye laser system CSTR-D-3000}.
     \item{\emph{\Gls{cw} Ionisation Beam:}} A \gls{cw} tunable \unit[480]{nm} laser used as an alternative to the blue pulse laser\footnote{Toptica TA-SHG pro}.
     \item{\emph{Imaging Beam:}} Used occasionally to image the atom cloud. Locked \unit[4]{MHz} below the cooling transition.
 \end{itemize}
 
-A previous iteration of the cooling and repump laser systems for the \gls{caeis} consisted of six separate diode lasers each indenpendently locked to appropriate rubidium transitions.
-This setup suffered in reliability as, if any of the six diodes became unlocked (a common occurance) then identification and relocking of the offending laser was a length process.
-The setup was streamlined by using only two diode lasers amplified by \glspl{ta} with greater resistance to environmental perturbations making the loss of lock a less common occurance and easier to recover from.
+A previous iteration of the cooling and repump laser systems for the \gls{caeis} consisted of six separate diode lasers each independently locked to appropriate rubidium transitions.
+This setup suffered in reliability as, if any of the six diodes became unlocked (a common occurrence) then identification and relocking of the offending laser was a length process.
+The setup was streamlined by using only two diode lasers amplified by \glspl{ta} with greater resistance to environmental perturbations making the loss of lock a less common occurrence and easier to recover from.
 A simplified schematic of the cooling and repump laser setup is shown in Figure~\ref{figure:laser_setup}.
 
 \begin{figure}
@@ -65,7 +65,7 @@ A brief schematic of the oven can be found to the left in Figure~\ref{figure:zee
 \subsection{Zeeman Slower}
 Following the oven is the tapered pitch Zeeman slower which slows atoms down so that they can be captured by the trapping fields of \gls{mot}~\cite{bell_slow_2010}.
 Zeeman slowers operate by using a laser red-detuned from resonance to slow the atoms down however as the atoms slow the conditions for resonance change due to the changing Doppler shift.
-The solution to this quandrary used here is a tapered magnetic coil to apply a magnetic field to shift the atomic resonance such that a particular velocity class of atoms remains resonant with the light field, and thus is slowed, along the length of the Zeeman slower.
+The solution to this quandary used here is a tapered magnetic coil to apply a magnetic field to shift the atomic resonance such that a particular velocity class of atoms remains resonant with the light field, and thus is slowed, along the length of the Zeeman slower.
 Atoms leaving the Zeeman slower typically had velocities around \unit[35]{m/s}, well within the capture velocity of the \gls{mot}.
 A schematic of the Zeeman slower with along with the magnetic field produced by the tapered coil is shown in Figure~\ref{figure:zeemanoven}.
 
@@ -75,7 +75,7 @@ When extracting electrons from the \gls{mot} the magnetic coil must be turned of
 \Glspl{mot} use a combination of magnetic and light fields to trap and cool atoms to $\muup$K temperatures.
 In the \gls{caeis} the \gls{mot} was formed from six counter propagating \unit[780]{nm} lasers in a a retro-reflective quasi-mirror \gls{mot} configuration~\cite{hanssen_using_2006,mcculloch_generation_2013} as shown in Figure~\ref{figure:mot} to allow for the accelerator structure consisting of transparent and reflective electrodes.
 The static accelerating electric field was generated by two accelerator electrodes which were approximately \unit[11]{cm} in diameter and \unit[4]{mm} thick with the transmissive plate being \gls{ar} coated at \unit[780]{nm} and coated with indium-tin-oxide which is also transmisive to \unit[780]{nm} to 96\%.
-The second reflective electrode was coposed of copper coated with polished gold and there was a third electrode that was not consistently used.
+The second reflective electrode was composed of copper coated with polished gold and there was a third electrode that was not consistently used.
 Each of the electrodes had an aperture in the center to allow the electron and ion bunches to pass through.
 The magnetic component of the \gls{mot} was formed from two magnetic coils in an anti-Helmholtz configuration providing a zero-field region in the centre of the trap.
 
@@ -96,8 +96,8 @@ Generally cold electron bunches are preferable and bunch duration depends on the
 
 Rubidium has a ground state ionisation threshold of \unit[4.18]{eV} which can be generated using a one blue and one red photon.
 The \gls{caeis} has two options for the generation of blue light and two for red.
-Red light could be generated by light from a \gls{cw} diode laser applified by a \gls{ta} and locked to the Rb85 5$^2$S$_{1/2} $(F=3) $\rightarrow$ 5$^2$P$_{3/2} $(F$^\prime$=4) cycling transition or it could be generated with a mode-locked Ti:sapphire amplified pulsed laser with a wavelength range of \unit[770]{nm} to \unit[830]{nm} and a minimum pulse length of \unit[35]{fs}.
-Blue light could be generated with a tunable dye pulse laser\footnote{Sirah dye laser system CSTR-D-3000.} that produced \unit[460 to 490]{nm} light with a \gls{fwhm} duration of \unit[5]{nm} or with a \gls{cw} laser generated by a high-power tunable frequency-double diode laser.
+Red light could be generated by light from a \gls{cw} diode laser amplified by a \gls{ta} and locked to the Rb85 5$^2$S$_{1/2} $(F=3) $\rightarrow$ 5$^2$P$_{3/2} $(F$^\prime$=4) cycling transition or it could be generated with a mode-locked Ti:sapphire amplified pulsed laser with a wavelength range of \unit[770]{nm} to \unit[830]{nm} and a minimum pulse length of \unit[35]{fs}.
+Blue light could be generated with a tunable dye pulse laser that produced \unit[460 to 490]{nm} light with a \gls{fwhm} duration of \unit[5]{nm} or with a \gls{cw} laser generated by a high-power tunable frequency-double diode laser.
 
 Sequential ionisation utilised a single red photon to excite from the ground state to an intermediate excited state followed by a single blue photon to transition to a field-ionising state or to the ionisation continuum.
 The bunch duration was determined by the shortest of; the duration of the laser pulse driving the transition from the exited state to the ionising state, the lifetime of the intermediate state, or by the depletion time of the intermediate state.
@@ -108,9 +108,9 @@ If $n$ is the number of photon absorbed for the atom to reach its final ionised 
 Due to the short lifetime of the virtual intermediate states the bunch duration is determined by the duration of the laser pulses.
 Multiphoton excitation can occur with just with photons of one colour or with two colour of photons.
 
-Reonsance-enhanced multiphoton excitation occurs when a there is a combination of sequential excitation and multiphon excitation.
+Resonance-enhanced multiphoton excitation occurs when a there is a combination of sequential excitation and multiphoton excitation.
 Here a number of photons are absorbed to excite the atom to a real intermediate state followed by more photon being absorbed to transition to the final state.
-As less photons are required for each transision the overall transition rate can be much higher when compared to plain multiphoton excitation.
+As less photons are required for each transition the overall transition rate can be much higher when compared to plain multiphoton excitation.
 
 \begin{figure}
     \center
@@ -130,7 +130,7 @@ where $E_I=4.18\,meV$ is the ground state ionisation energy of rubidium-85, $k$ 
 The second term represents the Stark-shift of the classical ionisation threshold, and the last term is the sum of the energy of the $n$ photons involved in the ionisation, with wavelength $\lambda_i$.
 Equation~\ref{equation:ionisation_energy_stark} assumes that rubidium is hydrogen-like which is a good approximation as long as $E_I \gg 2\sqrt{ke^3F}$.
 
-Sequential excitation and two-colour multiphoton excitation are the only ionisation processing that produced cold electrons as the excess ionisation energy was minised by tuning the photon energy.
+Sequential excitation and two-colour multiphoton excitation are the only ionisation processing that produced cold electrons as the excess ionisation energy was minimised by tuning the photon energy.
 This can be seen in Figure~\ref{figure:ionisation_modes} in the momentum distributions.
 
 Due to the tunability of the lasers involved in generating cold electrons it was possible to directly ionise regardless of the electric field which resulted in short duration bunches, field-ionise such that the majority of the bunch had a short duration but some particles continued to tunnel out over a longer duration, or to excite the atoms such that tunneling through the Stark-shifted potential was the only route to ionisation resulting in lower bunch current and long duration.
@@ -141,12 +141,12 @@ Long duration bunch length depended on the lifetime of the atomic states involve
 
 The \glspl{caeis} was able to shape the profile of the electron and ion bunches produced by manipulating the red excitation and blue ionisation beam~\cite{mcculloch_arbitrarily_2011}.
 The lasers imparted their profiles onto the ionised atoms which, for cold low-emittance bunches, could be maintained to the detector.
-The transverse bunch profile was determined by the red exciation laser profile combined with the density profile of the atomic cloud.
+The transverse bunch profile was determined by the red excitation laser profile combined with the density profile of the atomic cloud.
 Similarly the longitudinal profile depended on the ionisation laser profile and atomic cloud density.
 Beam shaping required the red and blue lasers to not be saturating the atomic cloud.
 
 Control over the excitation beam profile was achieved with a \gls{slm} and an iterative feedback system~\cite{van_bijnen_patterned_2015}.
-With a second \gls{slm} and control system the longidutinal profile could also be controllable.
+With a second \gls{slm} and control system the longitudinal profile could also be controllable.
 A schematic of the bunch profile system is shown in Figure~\ref{figure:beam_shaping_schematic} and an example of its performance can be seen in Figure~\ref{figure:beam_shaping}.
 
 \begin{figure}
@@ -161,7 +161,7 @@ A schematic of the bunch profile system is shown in Figure~\ref{figure:beam_shap
     \includegraphics{part2/Figs/beam_shaping.pdf}
     \caption{An example of beam shaping and the effects of temperature on the degradation of the bunch profile.
     \emph{a} Excitation laser profile (left), followed by detected electron bunches as excess ionisation energy is varied.
-    \emph{b} Electron bunches genearted from a uniform excitation laser profile as excess energy is varied.
+    \emph{b} Electron bunches generated from a uniform excitation laser profile as excess energy is varied.
     At \unit[-1.680]{meV} bunch current increases as the ionisation laser couples to a Rydberg state.}
     \label{figure:beam_shaping}
 \end{figure}
@@ -172,7 +172,7 @@ Suppression of space-charge expansion has been demonstrated with the \gls{caeis}
 
 \subsection{Beam Optics}
 
-There were a number of systems in place for manipulating the electron and ion beams; a solenoid lens, an Einzel lens, a magnetic quadrupole lens, a one-axis deflector, and a number of permanent magnets located outside the vaccum system.
+There were a number of systems in place for manipulating the electron and ion beams; a solenoid lens, an Einzel lens, a magnetic quadrupole lens, a one-axis deflector, and a number of permanent magnets located outside the vacuum system.
 The lenses were used to focus the bunches, usually to a focus on the detector but sometimes to manipulate the size of the beam at the sample plane.
 The quadrupole lens was used to counter astigmatism in the beam and is discussed in more detail in Section~\ref{section:quadrupole}.
 The deflector was located after the sample stage and was used to streak bunches across the detector.
@@ -180,11 +180,11 @@ The permanent magnets were used to steer electron bunches through the system, th
 
 \subsection{Sample Management}
 
-Experimental samples were mounted on a custom sample mount formed from an alumium paddle that was large enough to mount eight \gls{tem} samples and block any portion of the beam not passing through the samples.
-The samples were held by two commercial \gls{tem} mounts attached to the paddle that were able to fit \unit[3.05]{mm} diamter samples with approximately \unit[2]{mm} diameter of the sample visible to the bunches when the sample lid was in place.
-Grazing indicence reflection diffraction samples could also be mounted at the end of the paddle as shown in Figure~\ref{figure:sample_holder}.
+Experimental samples were mounted on a custom sample mount formed from an aluminium paddle that was large enough to mount eight \gls{tem} samples and block any portion of the beam not passing through the samples.
+The samples were held by two commercial \gls{tem} mounts attached to the paddle that were able to fit \unit[3.05]{mm} diameter samples with approximately \unit[2]{mm} diameter of the sample visible to the bunches when the sample lid was in place.
+Grazing incidence reflection diffraction samples could also be mounted at the end of the paddle as shown in Figure~\ref{figure:sample_holder}.
 The sample paddle was mounted on a stage with manual control over two-axis translation transverse to the beam axis and rotation.
-The sample paddle could also be connected to a high-voltage supply to allow for the sample to be biased to further manipulate the beam energy as described in Secion~\ref{section:sample_bias}.
+The sample paddle could also be connected to a high-voltage supply to allow for the sample to be biased to further manipulate the beam energy as described in Section~\ref{section:sample_bias}.
 
 \begin{figure}
     \centering
@@ -196,7 +196,7 @@ The sample paddle could also be connected to a high-voltage supply to allow for 
     \centering
     \includegraphics[width=\linewidth]{part2/Figs/sample_holder_in_vitro.jpg}
     \end{subfigure}
-    \caption{The sample holder used in the \gls{caes}. In the left photograph the sample holder with eight transmission samples and a relection sample is shown. On the right is the sample holder in the sample chamber, with the post-sample deflector and Faraday cup also visible retracted from the beam path (bunches travel from right to left).}
+    \caption{The sample holder used in the \gls{caes}. In the left photograph the sample holder with eight transmission samples and a reflection sample is shown. On the right is the sample holder in the sample chamber, with the post-sample deflector and Faraday cup also visible retracted from the beam path (bunches travel from right to left).}
     \label{figure:sample_holder}
 \end{figure}
 
@@ -205,8 +205,8 @@ The sample paddle could also be connected to a high-voltage supply to allow for 
 Synchronisation throughout the experiment was achieved with a 24-channel digital timing card\footnote{Spincore Pulseblaster PCI mounted in external USB enclosure.}.
 Low voltage TTL signals are used to trigger the numerous time-sensitive devices involved in the experiment.
 The \gls{caeis} operated at the frequency of the flashlamp of the \unit[5]{ns} blue pulse laser, \unit[10]{Hz}.
-The sequency began with \gls{mot} and Zeeman lasers and fields turning on to load the trap for approximately \unit[90]{ms}.
-The trapping lasers and fields were extinguisted \unit[5]{ms} before the excitation and ionisation lasers and \gls{ccd} camera were triggered to generate and detect the electron or ion bunch.
+The sequence began with \gls{mot} and Zeeman lasers and fields turning on to load the trap for approximately \unit[90]{ms}.
+The trapping lasers and fields were extinguished \unit[5]{ms} before the excitation and ionisation lasers and \gls{ccd} camera were triggered to generate and detect the electron or ion bunch.
 
 \section{Current Limitations}
 
@@ -218,8 +218,8 @@ There are a few avenues available to the \gls{caeis} to improve the bunch count 
 \Gls{cw} mode  has the potential to increase the number of particles per second however some applications would be difficult or impossible without discrete bunches.
 An investigation of the performance of the apparatus in \gls{cw} mode is shown in Section\ref{section:pulse_vs_continuous}.
 
-The stability of the source was also problematic, particularly for electron bunches, as a number of transient effects interferred with the path of the beams on timescales from shot-to-shot to minute-to-minute.
-Effects such as eddy currents due to the switching of the strong magnetic fields in the steel of the vaccum system and optical tables was one of the primary suspects for a source of the perturbations in the beam path.
+The stability of the source was also problematic, particularly for electron bunches, as a number of transient effects interfered with the path of the beams on timescales from shot-to-shot to minute-to-minute.
+Effects such as eddy currents due to the switching of the strong magnetic fields in the steel of the vacuum system and optical tables was one of the primary suspects for a source of the perturbations in the beam path.
 Other potential sources are the electronic equipment such as power supplies and switches that were placed as far away from the beam path as practical but were still in the vicinity.
 The poor stability of the source made some measurements difficult and others impossible.
 Multi-shot measurements were required in a number of cases and, due to the drift of the beam, straight averages of the images from the detector resulted in a unusable blur.
@@ -229,8 +229,8 @@ Registration is discussed further in Section~\ref{section:registration}.
 
 \section{Pulsed vs Continuous}\label{section:pulse_vs_continuous}
 Comparing the performance of the source in its usual pulse mode against the performance as a continuous source had the potential to show pathways for improving the pulsed mode as well as providing an alternative that could provide better performance for particular applications, as some measurements, such as simple \gls{cdi}, do not require the source to be pulsed.
-Continous mode functions by using the two-stage ionisation and acceleration on the atom beam from the oven without cooling or trapping by the Zeeman slower or \gls{mot}.
-It was hoped that the beam current would increase with this mode of operation and that the beam produced would be subject to less drift and instability as the large magntic fields were not switching.
+Continuous mode functions by using the two-stage ionisation and acceleration on the atom beam from the oven without cooling or trapping by the Zeeman slower or \gls{mot}.
+It was hoped that the beam current would increase with this mode of operation and that the beam produced would be subject to less drift and instability as the large magnetic fields were not switching.
 
 While the entire apparatus and control system had been designed to operate in pulse mode it was fortunately relatively simple to modify the setup to operate continuously.
 The \gls{mot} was disabled, the excitation beam was left on, and the \gls{cw} blue was used instead of the usual blue pulse laser to act as the ionisation laser.
@@ -250,7 +250,7 @@ During normal operation the oven was set to a temperature of approximately \unit
 The effects of the oven temperature on the beam current are shown in Figure~\ref{figure:oven_counts}.
 There was a significant increase in the beam current as the oven temperature was increased, with a high enough temperature is was even greater than that of the pulsed mode bunches.
 The unfortunate side affect of running the oven at such high temperatures is that the lifetime of the \unit[5]{g} rubidium ampule in the oven will be drastically reduced to the point where a threefold increase in current is not worth the reduced lifetime.
-This data indicates that the \gls{cw} beam current could be improved with the use of transverse compression of the atom beam which would provide a similar improvement to beam current as more atoms would be present in the ionisation region.
+This data indicates that the \gls{cw} beam current could be improved with the use of transverse compression of the atom beam which would provide a similar improvement to beam current as more atoms would be present in the ionisation region~\cite{tielen_development_2015}.
 
 \begin{figure}
     \center
@@ -278,36 +278,36 @@ While the true situation was more complicated, involving the atom beam cross-sec
     % Data and code located in 2016/Ultrafast_Electrons/2016.06.23
 \end{figure}
 
-Using the maximum power available with an oven temperature of \unit[200]{$^\circ$C} provides approimately a sixfold increase in beam current compared to pulse mode, which does not justify the compromise in rubidium source lifetime, or loss of the potential to investigate temporal behaviours with this iteration of the apparatus.
+Using the maximum power available with an oven temperature of \unit[200]{$^\circ$C} provides approximately a sixfold increase in beam current compared to pulse mode, which does not justify the compromise in rubidium source lifetime, or loss of the potential to investigate temporal behaviours with this iteration of the apparatus.
 
 \subsection{Stability}\label{section:stability}
 
 The significant instability in the electron beam path observed in pulsed mode was still obvious with \gls{cw} mode indicating that the source of the instability was not the magnetic coils as had been previously suspected.
-\Gls{cw} mode did provide a opportunity to investigate the spectral behaviour of the beam drift as the beam can be focussed onto the detector and observed with a \gls{ccd} camera that was able to operate at \unit[240]{Hz}.
-The most likely culprit for noise is something involving the mains power supply which operates at \unit[50]{Hz} and thus, accordint to the Nyquist-Shannon sampling theorem, requires a sampling rate of at least \unit[100]{Hz} to observe.
+\Gls{cw} mode did provide a opportunity to investigate the spectral behaviour of the beam drift as the beam can be focused onto the detector and observed with a \gls{ccd} camera that was able to operate at \unit[240]{Hz}.
+The most likely culprit for noise is something involving the mains power supply which operates at \unit[50]{Hz} and thus, according to the Nyquist-Shannon sampling theorem, requires a sampling rate of at least \unit[100]{Hz} to observe.
 
 In order to examine the frequency behaviour of the beam drift a faster camera was used to observe the \gls{mcp}\footnote{Point Grey Flea3 FL3-U3-13S2M-CS} with the electron beam focused at the detector.
 To operate the camera at the desired frequency it was necessary to reduce the size of the image from the camera to a smaller field of view.
 Data was collected with the \gls{caes} operating in continuous mode and in an analogue of normal pulsed mode
 
 To assign accurate timestamps to each image it was necessary to use one of the features of the camera to add an accurate truncated timestamp to directly to the image as it's processed by the camera itself along with the timestamp on the image file create by the computer the camera was running on.
-The combination of the fine and accurate timestamp from the camera (which only counted to \unit[128]{seconds} before restting) with the coarse, inaccurate timestamp on the image file allowed for long duration datasets to be accuratedly analysed.
+The combination of the fine and accurate timestamp from the camera (which only counted to \unit[128]{seconds} before resetting) with the coarse, inaccurate timestamp on the image file allowed for long duration datasets to be accurately analysed.
 
 Fourier transformations of the beam position coordinates on the detector is one of the more useful ways to examine the stability of the source.
 With the source operating in continuous mode the frequency analysis was limited by the frequency at which the camera can operate (\unit[240]{Hz}) and in pulsed mode it was limited by the repetition rate of the experiment (\unit[10]{Hz}).
 Shown in Figure~\ref{figure:stability} are the recorded positions of the electron beam and the corresponding Fourier transforms for continuous and pulsed mode.
 With the low sampling rate of the pulsed mode there is little information in the Fourier transform with the only feature being a peak near \unit[0]{Hz} corresponding to the slow oscillation visible in the data.
 The higher sampling rate of the continuous mode data provides much more information with numerous peaks visible in the spectrum.
-The continous mode spectrum reveals a strong contribution at \unit[50]{Hz}, likely related to the mains power supply, as well at peaks at \unit[0]{Hz}, \unit[45]{Hz}, \unit[67]{Hz}, \unit[84]{Hz}, and \unit[92]{Hz} which are of unknown origin.
+The continuous mode spectrum reveals a strong contribution at \unit[50]{Hz}, likely related to the mains power supply, as well at peaks at \unit[0]{Hz}, \unit[45]{Hz}, \unit[67]{Hz}, \unit[84]{Hz}, and \unit[92]{Hz} which are of unknown origin.
 
-The instabilities present in the normal pulsed operation are still apparent in the continuous mode beam indicating that the fast switching of the magnetic-fields is not the primary source of the beam drfit.
+The instabilities present in the normal pulsed operation are still apparent in the continuous mode beam indicating that the fast switching of the magnetic-fields is not the primary source of the beam drift.
 The \unit[50]{Hz} peaks in the position spectrum are indicative of some interaction with the main power supply however care has already been taken to keep power supplies and similar devices as far from the beamline as is practical.
 
 \begin{figure}
     \begin{subfigure}{\linewidth}
     \centering
     \includegraphics{part2/Figs/cw_beam_stability.pdf}
-    \caption{Continous electron beam.}
+    \caption{Continuous electron beam.}
     \label{figure:cw_stability}
     \end{subfigure}
 
@@ -325,7 +325,7 @@ The \unit[50]{Hz} peaks in the position spectrum are indicative of some interact
 \subsection{Summation}
 
 It was hoped that continuous mode would provide a viable alternative to normal pulsed operation with this iteration of the \gls{caes} with better beam current and stability.
-The investigations in this section indicate that, with the current apparatus, continuous mode is on-par or worse than pulsed-mode with respect to beam current and stabilty.
+The investigations in this section indicate that, with the current apparatus, continuous mode is on-par or worse than pulsed-mode with respect to beam current and stability.
 With significant investments of time and money it would be possible to achieve better current and stability with continuous mode however with the next iteration of the experiment on the near-horizon it is not worth pursuing these avenues with this apparatus.
 
 \section{Registration}\label{section:registration}
@@ -351,7 +351,7 @@ Low signal data can be registered as long there is enough signal in a single sho
 Unstructured data or continuous data, such as large flat beam profiles, will not register well as the convolution with not be able to identify common features well.
 
 Lower signal data requires more care than high signal data and in some cases cannot be registered.
-One of the registration errors that has occured with pepperpot data is `slipping' where the convolution maxima correspond to neighbouring beamlets rather than the same beamlet and thus the images are incorrectly aligned.
+One of the registration errors that has occurred with pepperpot data is `slipping' where the convolution maxima correspond to neighbouring beamlets rather than the same beamlet and thus the images are incorrectly aligned.
 This error can be evaded by applying a limit to how far the convolution maxima of an image can change from shot to shot, generally the limit should be less than the distance between beamlets.
 This allows slow drift of the beam path to be dealt with while preventing slipping.
 
@@ -410,7 +410,7 @@ To correct for the astigmatism in the \gls{caes} a simple solenoid magnetic quad
 The design was constrained as it had to be external to the vacuum system with an inner diameter of \unit[70]{mm} and have a longitudinal length less \unit[20]{mm} due to the crowded beamline.
 In order to determine the approximate number of current turns required for the solenoids forming the quadrupole lens as well as the ideal transverse solenoid length simulations were run.
 
-A simple homebuilt charged particle simulator was created with the ability to propagate charged particles through arbitrary magnetic fields which in this case were formed by a parameterised quadrupole lens.
+A simple home built charged particle simulator was created with the ability to propagate charged particles through arbitrary magnetic fields which in this case were formed by a parameterised quadrupole lens.
 A number of figures of merit were available to determine the ideal design, such as the degree to which the quadrupole lens was able to correct the astigmatism, the current required for the lens to correct for the astigmatism, and the size of the beam waist.
 
 The simulation results {\color{red}(Figure pending getting high enough resolution data)} shown in Figure~\ref{figure:quad_sims} indicate that {\color{red}(Confirm)} the best performance is achieved with a small transverse width for the quadrupole coils however that would require a large current as well as being more difficult to create as smaller solenoids are more difficult to wind.
@@ -440,6 +440,6 @@ In Figure~\ref{figure:quadrupole_scans_on} is shown the electron beam from the \
     \caption{Quadrupole On}
     \label{figure:quadrupole_scans_on}
     \end{subfigure}
-    \caption{The size of the electron beam on the detector as the voltage through the Einzel lens is varied with the quadrupole len off (left) and on (right). The blue lines indicate the horizontal \gls{rms} beam width and the green lines the vertical \gls{rms} beam width. Inset in each figure are the beam profiles for minimum spot size for each axis. The quadrupole is able to correct the astigmatism present in the beam.}
+    \caption{The size of the electron beam on the detector as the voltage through the Einzel lens is varied with the quadrupole lens off (left) and on (right). The blue lines indicate the horizontal \gls{rms} beam width and the green lines the vertical \gls{rms} beam width. Inset in each figure are the beam profiles for minimum spot size for each axis. The quadrupole is able to correct the astigmatism present in the beam.}
     \label{figure:quadrupole_scans}
 \end{figure}
