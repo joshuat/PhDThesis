@@ -17,6 +17,51 @@ While the \gls{caes} is able to operate in \gls{cw} mode the performance with th
 
 \subsection{Theory}
 
+Crystalline sturctures consist of repeated sub-structures, unit cells, each with identical arrangements of atoms.
+A perfect infinite cystal can be described as a lattice of unit cells where a set of basis vectors, $\mathbf{\hat{a}}$, $\mathbf{\hat{b}}$ and $\mathbf{\hat{c}}$, can be used to describe translations,
+\begin{equation}
+\mathbf{t} = u\mathbf{\hat{a}} + v\mathbf{\hat{b}} + w\mathbf{\hat{c}},
+\end{equation}
+where the integer coordiantes $u$, $v$ and $w$ describe the number of unit cells along each basis vector.
+A primitive unit cell may contain one or more atoms and symmetry is sometimes more apparent if the unit cell consists of multiple primitive unit cells.
+
+When a wave interacting with the crystal lattice interacts with a specific atom in every unit cell then the reflected waves will be in phase, thus creating the maxima of the diffraction pattern.
+These planes in the crystal that these atoms line up on can eb described by points in the reciprocal lattice.
+The reciprocal lattice is described by the reciprocal lattice basis vectors, $\mathbf{\hat{a}^*}$, $\mathbf{\hat{b}^*}$ and $\mathbf{\hat{c}^*}$, where
+\begin{align}
+\mathbf{\hat{a}^*}&=\frac{2\pi\:\mathbf{\hat{b}}\times\mathbf{\hat{c}}}{\mathbf{\hat{a}}\cdot (\mathbf{\hat{b}} \times \mathbf{\hat{c}})}  &  \mathbf{\hat{b}^*}&=\frac{2\pi\:\mathbf{\hat{c}}\times\mathbf{\hat{a}}}{\mathbf{\hat{a}}\cdot (\mathbf{\hat{b}} \times \mathbf{\hat{c}})}  &  \mathbf{\hat{c}^*}&=\frac{2\pi\:\mathbf{\hat{a}}\times\mathbf{\hat{b}}}{\mathbf{\hat{a}}\cdot (\mathbf{\hat{b}} \times \mathbf{\hat{c}})}.
+\end{align}
+The $2\pi$ originates from the cenvention chosen for the wave-vector, $|\mathbf{k}|=2\pi/\lambda$. The reciprocal lattice vector is thus,
+\begin{equation}
+\mathbf{g} = h\mathbf{\hat{a}^*} + \mathbf{\hat{b}^*} + l\mathbf{\hat{c}^*},
+\end{equation}
+where the integers $h$, $k$ and $l$ are known as the Miller indices.
+
+Scattering events can be described by, $\mathbf{q}$, the scattering vector, which is the difference between the initial and final wavevectors, $\mathbf{k_0} and \mathbf{k}$;
+\begin{equation}
+\mathbf{q} = \mathbf{k} - \mathbf{k_0}.
+\end{equation}
+In the case of elastically scatter waves, $|\mathbf{k}| = |\mathbf{k_0}|$, constructive interference occurs only where $\mathbf{q}$ is equal to a reciprocal lattice vector, so that the scattering condition for crystals is
+\begin{equation}
+\mathbf{q} = \mathbf{g}.
+\end{equation}
+The realationship between the scattering vector and the scattering angle is
+\begin{equation}\label{equation:diffraction_angle}
+|\mathbf{q}| = 2|\mathbf{k_0}|\sin(\theta)
+\end{equation}
+where $\theta$ is the half angle between the initial and final wavevectors.
+Due to the wavevector convention used the relation between real and reciprocal space distances is
+\begin{equation}\label{equation:diffraction_distance}
+|\mathbf{g}| = \frac{2\pi}{d_{hkl}},
+\end{equation}
+where $d_{hkl}$ is the distance between the set of planes described by the subscripted Miller indices.
+
+If we combine Equations~\ref{equation:diffraction_angle} and \ref{equation:diffraction_distance} then we get the Bragg condition,
+\begin{equation}
+2d_{hkl}\sin\theta = n\lambda,
+\end{equation}
+where $n$ is the diffraction order.
+
 \section{Why ultrafast?}
 
 \section{How does CAES do it?}
