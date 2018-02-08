@@ -62,6 +62,24 @@ If we combine Equations~\ref{equation:diffraction_angle} and \ref{equation:diffr
 \end{equation}
 where $n$ is the diffraction order.
 
+The relative intensity of a wave with scattering vector $\mathbf{q}$ is given by
+\begin{equation}
+I(\mathbf{q}) = |\tilde{V}(\mathbf{q})|^2,
+\end{equation}
+where $\tilde{V}(\mathbf{q}$ is the Fourier transform of the crystal potential evaluated at $\mathbf{q}$ and we approximate to single-scattering events only.
+
+The Fourier transform of the crystal potential, for an infinite crystal, can be written in terms of the structure factors, $V_g$,
+\begin{equation}
+\tilde{V}(\mathbf{q}) = (2\pi)^3 \sum_g V_g \delta(\mathbf{q} - \mathbf{g}),
+\end{equation}
+where the sum takes the scattering crontribution from all the reciprocal lattice poitns in to account, and the scattering condition is implemented with the Dirac delta.
+The crystal basis affects the calculation of the structure factors for each reciprocal lattice point.
+For a particular reciprocal lattice point, the structure factor is calculated by taking the position $\mathbf{x_j}$ and scatterring factors $\tilde{V}_j$ for each atom, $j$, in the cyrstal basis:
+\begin{equation}
+V_g = \frac{1}{V_{cell}}\sum\tilde{V}_j(\mathbf{g})e^{-i\mathbf{g}\cdot\mathbf{x_j}}.
+\end{equation}
+
+
 \section{Why ultrafast?}
 
 \section{How does CAES do it?}
