@@ -107,11 +107,33 @@ As we use crystal foils in the experiments presented here , the sinc terms end u
 Equation~\ref{equation:foil_ft_potential} indicates that the diffraction condition does not need to be exactly met in order to diffract electrons in a particular direction.
 The intensity of the diffracted spot will be reduced the further from meeting the diffraction condition the situation is.
 
-\section{Why ultrafast?}
+\subsection{Diffraction Geometry}
 
-\section{How does CAES do it?}
+A typical transmission electron diffraction apparatus uses a collimated beam of electrons, directed through the sample and then observes the angle to which the electron diffraction, thus providing information such as the crystal lattice spacing.
+The use of a collimated beam simplifies the treatment of the reciprocal space as any diffracted electrons interacting with a specific reciprocal lattice point will be scattered in the same direction.
+This results in a series of beamlets which correspond to the reflections where each beamlet is also collimated and of the same size an the incident beam.
+In order to resolve the beamlets, they can either be propagated to the far field or passed through a lens in order to place the detector in the focal plane.
 
-\section{Sample Bias}\label{section:sample_bias}
+Propagating the beam to the far field requires satisfying the Fraunhofer conditions,
+\begin{equation}
+W^2 \ll \Delta z\,\lambda,
+\end{equation}
+where $W$ is the transverse size of the initial beam, $\Delta z$ is the propagation distance and $\lambda$ is the electron wavelength.
+To satisfy the Faunhofer condition requires either the beam size to be very small or the propagation distance to be very large.
+The more practical method is to use a lens to artificially propagate the beam.
+Lenses are the usual method used in \glspl{tem} and the lenses are often combined with other sophiticated beam optics allowing for diffcration and imaging of a variety of samples and geometries.
+The downside is the obvious complexity and cost associated with sophisticated beam optics.
+
+\Glspl{tem} consist of a relatively simple electron source combined with complex optics and in contract our \gls{caes} consists of a complex electron source with relatively primitive beam optics.
+For the measurements described in this chapter we only use a simple condenser lens between the source and sample to focus the beam on to the detector (the quadrupole lens discussed in Section~\ref{section:quadrupole} was added after these measurements were taken).
+Due to the long focal length used the beam has a small converging angle but still cannot be considered to be converging.
+Due to the non-collimated beam there is a spread of incident angles at the crystalline samples that results in the reflected beamlets possessing the same convergence angle as the incident beam.
+
+{\color{red}Figure showing diffraction geometry}
+
+\section{Experimental Setup}
+
+\subsection{Sample Bias}\label{section:sample_bias}
 
 \section{Results}
 
@@ -130,4 +152,4 @@ The intensity of the diffracted spot will be reduced the further from meeting th
 
 \subsection{Other Stuff}
 
-\section{Why don't all our samples work?}
+\subsection{Why don't all our samples work?}
