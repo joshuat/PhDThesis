@@ -143,7 +143,7 @@ These measurement did not take advantage of the beam shaping potential of the so
 The excitation laser beam profile was Gaussian in beamshape with a \gls{fwhm} of \unit[80]{$\muup$m} at the focus however, due to the laser intensity saturating the atom cloud, the bunch takes on the shape of the atomic cloud which tends to be Gaussian.
 The electron bunches at the source have been determined to have a Gaussian shape with a \gls{fwhm} of \unit[1.4]{mm} with a divergence of $\sigma_{\theta_x}$=\,\unit[0.3]{$\muup$rad} and thus a source emittance of $\epsilon_x$=\,\unit[50]{nm\,rad}~\cite{mcculloch_high-coherence_2013}.
 
-The number of electrons per pulse with this setup was measured with a Faraday cup to be $5\times10^5$ which corresponds to a bunch charge of \unit[80]{fC}.
+The number of electrons per pulse when producing ns-duration bunches with this setup was measured with a Faraday cup to be $5\times10^5$ which corresponds to a bunch charge of \unit[80]{fC}.
 
 The solenoid lens located just after the \gls{mot}, well before the samples, was used to focus the electron beam onto the detector with as small a convergence angle as practical.
 These measurement were taken before the investigations into beam astigmatism discussed in Section~\ref{section:quadrupole} so there is some asymmettry apparent in the data.
@@ -164,20 +164,28 @@ This work presents the capstone to the diffraction studies conducted with this i
 
 The most successful diffraction was observed with a thin foil sample of single cyrstal gold.
 The sample was a standard \unit[3]{mm} \gls{tem} sample of \unit[11]{nm} thick monocrystalline gold on a {\color{red}something} grid.
-
-\subsubsection{Diffraction from Gold}
+Example diffractions patterns from the gold sample are shown in Figure~\ref{figure:au_diffraction} which shows 100-shot registered-averages and single shot diffraction patterns generated with high-current ns-duration bunches and 1000-shot registered-averaged diffraction using relatively low-current ultrafast bunches.
 
 \begin{figure}
     \center
     \input{part2/Figs/gold_diffractions.pgf}
-    \caption{Log-scaled false-colour diffraction patters from monocrystalline gold foil. (a) is a multishot average diffraction pattern generated with ns duration electron bunches. (b) is a single-shot from the set that forms (a). (c) is the radial average of (a). (d) is a 1000-shot averaged diffraction pattern generated with ultrafast electron bunches. The red lines indicate the lattice spaces for gold. The colour scale for each image is individually scaled to optimise visibility.}
+    \caption{Log-scaled false-colour diffraction patters from monocrystalline gold foil. (a) is a 100-shot average diffraction pattern generated with ns duration electron bunches. (b) is a single-shot from the set that forms (a). (c) is the radial average of (a). (d) is a 1000-shot averaged diffraction pattern generated with ultrafast electron bunches. The red lines indicate the lattice spaces for gold. The colour scale for each image is individually scaled to optimise visibility.}
     \label{figure:au_diffraction}
 \end{figure}
 
-\subsubsection{Single-Shot Diffraction from Gold}
-
 \subsubsection{Ultrafast Diffraction from Gold}
 
+Significant increases in beam current will permit single-shot diffraction and future iterations of \glspl{caes} should be able to provide ultrafast bunches with higher beam charge.
+
+The ultrafast bunches were produced using two-colour multiphoton excitation, see Section\ref{section:two_stage_ionisation}, which was able to produce a few hundred electrons per shot.
+Due to the lower current of the of the ultrafast bunches the Bragg spots are only visible with multi-shot averages.
+A logarithmically-scaled 1000-shot average of ultrafast diffraction from gold is shown in Figure~\ref{figure:au_diffraction}(d).
+Despite the low signal there was sufficient intensity in the central spot to enable the individual shots to be registered using the technique described in Section~\ref{section:registration}.
+Visible about the central spot is a halo generated from poorly focused electrons from single colour multiphoton excitation.
+
+The electron bunches used to produce this data were not themselves verified to be ultrafast via streaking but equivalent bunches were verified, as shown in Reference~\cite{speirs_identification_2017}, and it is reasonable to assume that these bunches also have durations of 10s of ps.
+
+One of the aims of the \gls{caes} is to produce ultrafast electron bunches so this demonstration of ultrafast diffraction is an important milestone however significant improvements to ultrafast beam current are required before \glspl{caes} can be useful in producing usable single-shot ultrafast diffraction patterns particularly when compared to the current capabilities of photocathode sources.
 
 \subsection{Aluminium}\label{section:aluminium_diffraction}
 
