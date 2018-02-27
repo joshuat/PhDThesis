@@ -415,14 +415,28 @@ To correct for the astigmatism in the \gls{caes} a simple solenoid magnetic quad
 The design was constrained as it had to be external to the vacuum system with an inner diameter of \unit[70]{mm} and have a longitudinal length less \unit[20]{mm} due to the crowded beamline.
 In order to determine the approximate number of current turns required for the solenoids forming the quadrupole lens as well as the ideal transverse solenoid length simulations were run.
 
-A simple home built charged particle simulator was created with the ability to propagate charged particles through arbitrary magnetic fields which in this case were formed by a parameterised quadrupole lens.
+\subsection{Quadrupole Simulations}
+
+A simple charged particle simulator was created with the ability to propagate charged particles through arbitrary magnetic fields which in this case were formed by a parameterised quadrupole lens.
 A number of figures of merit were available to determine the ideal design, such as the degree to which the quadrupole lens was able to correct the astigmatism, the current required for the lens to correct for the astigmatism, and the size of the beam waist.
 
-The simulation results {\color{red}(Figure pending getting high enough resolution data)} shown in Figure~\ref{figure:quad_sims} indicate that {\color{red}(Confirm)} the best performance is achieved with a small transverse width for the quadrupole coils however that would require a large current as well as being more difficult to create as smaller solenoids are more difficult to wind.
-A decent compromise between required current turns, performance and ease of assembly is to use a transverse width of \unit[70]{mm}.
+A portion of the simulation results are shown in Figure~\ref{figure:quad_sims} and the main figures of merit used were the separation of the foci for each axis and the number of current turns required to achieve it.
+The results indicate that the negligible waist separation requires a transverse width of at least \unit[35]{mm} and that the larger the transverse width the lower the required current turns through the solenoids.
 
-The chassis for the quadrupole solenoids was then modelled and 3D printed from plastic and the solenoid coils were hand wound onto the chassis, as shown in Figure~\ref{figure:quadrupole}.
-In Figure~\ref{figure:quadrupole_scans_on} is shown the electron beam from the \gls{caes} with the astigmatism corrected by the quadrupole lens.
+\begin{figure}
+    \centering
+    \input{part2/Figs/quad_sims.pgf}
+    \caption{Particle simulation results while varying quadrupole parameters. The left figure shows the minimum separation of the beams waists in the $x$ and $y$ direction as the transverse radius of the solenoids forming the quadrupole is varied. The right figure shows the current turns required to achieve the minimum waist separation as the transverse solenoid radius is varied.}
+    \label{figure:quadrupole_sims}
+\end{figure}
+
+\subsection{Quadrupole Construction}
+
+The selection of parameters for the construction of the quadrupole lens was informed by the simulations and a transverse radius of \unit[35]{mm} was chosen to provide the small beam waist separation with a manageable number of current turns given the current supplies available.
+Another consideration was the space available along the beamline, if a wider solenoid transverse width was chosen then there would be additional complexity required to mount the lens to the vacuum system in the limited space available.
+
+The chassis for the quadrupole solenoids was modelled and 3D printed from plastic and the solenoid coils were hand wound onto the chassis, as shown in Figure~\ref{figure:quadrupole}.
+Each of the solenoid coils has approximately 100 turns.
 
 \begin{figure}
     \centering
@@ -430,6 +444,12 @@ In Figure~\ref{figure:quadrupole_scans_on} is shown the electron beam from the \
     \caption{The 3D printed chassis was wound with copper wire to form the quadrupole lens.}
     \label{figure:quadrupole}
 \end{figure}
+
+\subsection{Quadrupole Correction}
+
+The quadrupole lens functioned as desired and was able to correct the astigmatism as shown in Figure~\ref{figure:quadrupole_scans_on}.
+The lens required a current of approximately \unit[1]{A} running through the solenoids in order to correct the astigmatism.
+The lens was used during a number of measurements to improve the bunch quality, an example of this is shown in Figure~\ref{figure:astigmatic_pepperpot}. 
 
 \begin{figure}
     \centering
