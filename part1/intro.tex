@@ -1,4 +1,4 @@
-\chapter{Introduction}
+\section{Introduction}
 
 Laser frequency stabilisation is an essential tool for atomic physics experiments, without it experiments involving \glspl{bec}, atomic clocks and many more would not be possible~\cite{anderson_observation_1995,ye_quantum_2008}.
 There are a plethora of techniques available for laser frequency stabilisation each with numerous advantages and disadvantages.
@@ -9,7 +9,7 @@ This chapter provides an overview of laser frequency stabilisation, a detailed d
 
 {\color{red} Mention Rb context and other common elements used in laser cooling.}
 
-\section{Laser Frequency Stabilisation}
+\subsection{Laser Frequency Stabilisation}
 
 Laser frequency stabilisation describes a number of techniques that are used to reduce the temporal frequency spread of a laser's frequency.
 This can range from weak frequency stabilisation keeping the centre frequency of a laser at a particular point to convoluted frequency narrowing techniques that attempt to reduce laser linewidth to sub-hertz levels.
@@ -35,25 +35,25 @@ A few of these techniques are listed below:
 \end{itemize}
 Some of these techniques will be discussed later on in this chapter.
 
-\section{Frequency Control and Feedback}
+\subsection{Frequency Control and Feedback}
 
 There are a number of ways to control the output frequency of a laser and these methods can be used to supply feedback from the stabilisation technique in order to decrease the linewidth of a laser system.
 The focus here will be on the feedback systems of diode lasers, particularly \glspl{ecdl}.
 
-\subsection{Temperature}
+\subsubsection{Temperature}
 The temperature of a laser diode affects the output frequency due to the temperature dependence of the optical path length and gain curves~\cite{wieman_using_1991}.
 The two processes affect output frequency at different rates and both show an increase in wavelength with increasing temperature.
 
 The temperature of laser diodes can be controlled through two methods. \Glspl{tec} can be used to directly control the temperature of the device and the injection current into the diode affects the temperature. Good insulation and thermal inertia also contribute to the stability of diode temperature~\cite{saliba_cold_2011}.
 
-\subsection{Injection Current}
+\subsubsection{Injection Current}
 Modulation of the injection current into the laser diode is one of most common ways of controlling the output wavelength of a diode laser.
 The injection current into the diode affects the temperature of the diode and the density of charge carriers which in turn affects the refractive index of the medium and thus the wavelength of the laser light produced.
 
 The design of the electronics involved in the modulation of the injection current can have a noticeable influence on the performance at high frequencies as noise becomes an issue.
 {\color{red} Citations or more discussion.}
 
-\subsection{Grating Angle}
+\subsubsection{Grating Angle}
 In external cavity diode lasers, for example Littrow configuration \glspl{ecdl} as shown in Figure~\ref{figure:littrow}, the angle of the external grating can be used to control the output frequency.
 The grating angle affects the wavelength of the light that is reflected back into the laser diode and thus the angle can be used to select output wavelength.
 The grating angle is commonly controlled using piezoelectric actuators~\cite{hawthorn_littrow_2001}.
@@ -72,7 +72,7 @@ To talk about:
 \end{itemize}
 
 
-\section{Noise}
+\subsection{Noise}
 Thermal noise can affect the alignment of optics, the efficiency and polarisation of light transmitted through fibres, atomic vapour cell opacity and the intensity and frequency of light emitted from laser diodes, not to mention mode hops.
 
 Noise in the electronic environment can also cause frequency instability. Noise on the power supply to the laser diode affects the intensity and frequency of the light emitted.
@@ -94,11 +94,11 @@ Bleh.
 \Glspl{ecdl} subjected to mechanical vibrations will experience frequency noise as the alignment of the light coupled back into the diode off the grating varies.
 Vibrations can also affect the alignment, and thus transmitted power, of laser through optical fibres, optical isolators and through apertures.
 
-\section{Stabilisation Techniques}
+\subsection{Stabilisation Techniques}
 
 This section contains a brief overview of a number of stabilisation techniques.
 
-\subsection{Saturated Absorption Spectroscopy}
+\subsubsection{Saturated Absorption Spectroscopy}
 \glsreset{sa}
 \Gls{sa} is a simple and common technique for laser frequency stabilisation which is used with a number of atomic species~\cite{demtroder_laser_2003}.
 \Gls{sa} is often used in experiments where narrow linewidths are not required due to the ease and setup and low cost.
@@ -127,11 +127,11 @@ Without modulation the system is more susceptible to drift and there is an frequ
 If modulation is used then there is the added complexity of implementing the modulation and the linewidth is limited by modulation frequency.
 Linewidths under \unit[150]{kHz} are easily attainable with modulated saturated absorption spectroscopy.
 
-\subsection{Polarisation Spectroscopy}
+\subsubsection{Polarisation Spectroscopy}
 \glsreset{ps}
 \Gls{ps} is a technique that involves counter-propagating pump and probes beams passing through an atomic sample and measuring the polarisation rotation of the probe due to the pump. \Gls{ps} is discussed in detail in Chapter~\ref{chapter:pol_spec}.
 
-\subsection{Pound Drever Hall}
+\subsubsection{Pound Drever Hall}
 
 The \gls{pdh} technique is the standard for laser frequency linewidth reduction.\cite{drever_laser_1983}
 \gls{pdh} uses an optical cavity as a frequency reference and an \gls{eom} to modulate the the light incident to the cavity.
@@ -143,17 +143,18 @@ More detail. Some maths. What linewidth can it achieve?\cite{ludlow_compact_2007
 \includegraphics[width=\linewidth]{part1/Figs/pdh.jpg}
 \caption{A beautiful \gls{pdh} schematic.}
 \end{figure}
+
 \subsubsection{Dichroic Atomic Vapour Laser Lock}
 \Gls{davll} works by....
 
 It can achieve linewidths of....
 
-\subsection{Modulation Transfer Spectroscopy}
+\subsubsection{Modulation Transfer Spectroscopy}
 \Gls{mts}...
 
 It can achieve linewidths of...\cite{negnevitsky_wideband_2013}
 
-\subsection{Other Techniques}
+\subsubsection{Other Techniques}
 
 Any others?
 
