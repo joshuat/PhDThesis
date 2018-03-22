@@ -17,13 +17,12 @@ This chapter provides an overview of laser frequency stabilisation, a detailed d
 
 \section{Laser Frequency Stabilisation}
 
-Laser frequency stabilisation describes a number of techniques that are used to reduce the temporal frequency spread of a laser's frequency.
-This can range from weak frequency stabilisation keeping the centre frequency of a laser at a particular point to convoluted frequency narrowing techniques that attempt to reduce laser linewidth to sub-hertz levels.
+Laser frequency stabilisation describes a number of techniques that are used to reduce the frequency spread of a laser's frequency.
+This can range from weak frequency stabilisation keeping the centre frequency of a laser at a particular frequency to convoluted frequency narrowing techniques that attempt to reduce laser linewidth to sub-hertz levels.
 Typically these techniques use some reference to measure frequency deviation from a given frequency and provide negative feedback to the laser, using a servo system, to keep it at the target frequency.
 
 The efficacy of stabilisation techniques can be described by width of the frequency distribution of the laser, called the linewidth.
-Width is usually refers to either the \gls{fwhm} or \gls{rms} width about the central frequency.
-Linewidth can describe short or long timescale measurements.
+Linewidth usually refers to either the \gls{fwhm} or \gls{rms} width about the central frequency and is used to descibe measurements made over various timescales.
 Short measurements, usually less than a second measurement, are used to describe the linewidth of laser whereas long timescale measurement, hours or days in duration, are used to describe the drift of the laser central frequency over time.
 
 There are a number of traits that are desirable in a laser frequency stabilization scheme including the ability to stabilize to an absolute atomic reference, absence of frequency or amplitude modulation, high bandwidth to achieve low spectral linewidth, large capture range, low complexity and low cost.
@@ -35,15 +34,14 @@ A few of these techniques are listed below:
 \item \gls{davll}~\cite{corwin_frequency-stabilized_1998, millett-sikking_davll_2007},
 \item \gls{mts}~\cite{shirley_modulation_1982, mccarron_modulation_2008, xiang-hui_ultra-stable_2009},
 \item Sagnac interferometry~\cite{robins_Interferometric_2002, jundt_non-linear_2003},
-\item \acrfull{ps}~\cite{wieman_doppler-free_1976, lancaster_polarisation_1999, yoshikawa_frequency_2003, harris_polarization_2006, pearman_polarization_2002, tiwari_laser_2006, do_polarization_2008, torii_laser-phase_2012}
+\item \acrfull{ps}~\cite{wieman_doppler-free_1976, lancaster_polarisation_1999, yoshikawa_frequency_2003, harris_polarization_2006, pearman_polarization_2002, tiwari_laser_2006, do_polarization_2008, torii_laser-phase_2012},
 \item \gls{pdh}~\cite{drever_laser_1983} and
 \item H\"ansch Couillaud stabilisation~\cite{hansch_laser_1980}.
 \end{itemize}
-Some of these techniques will be discussed later on in this chapter.
 
 \subsection{Frequency Control and Feedback}
 
-There are a number of ways to control the output frequency of a laser and these methods can be used to supply feedback from the stabilisation technique in order to decrease the linewidth of a laser system.
+There are a number of methods to control the output frequency of a laser and these can be used to supply feedback from the stabilisation technique in order to decrease the linewidth of a laser system.
 The focus here will be on the feedback systems of diode lasers, particularly \glspl{ecdl}.
 
 \subsubsection{Temperature}
@@ -52,12 +50,15 @@ The two processes affect output frequency at different rates and both show an in
 
 The temperature of laser diodes can be controlled through two methods. \Glspl{tec} can be used to directly control the temperature of the device and the injection current into the diode affects the temperature. Good insulation and thermal inertia also contribute to the stability of diode temperature~\cite{saliba_cold_2011}.
 
+Temperature is not typically used to directly manipulate the frequency of a laser due to the relatively slow response.
+Typically temperature is just stabilised to reduce the impact of ambient temperature changes on the performance of the diode laser.
+
 \subsubsection{Injection Current}
 Modulation of the injection current into the laser diode is one of most common ways of controlling the output wavelength of a diode laser.
 The injection current into the diode affects the temperature of the diode and the density of charge carriers which in turn affects the refractive index of the medium and thus the wavelength of the laser light produced.
 
 The design of the electronics involved in the modulation of the injection current can have a noticeable influence on the performance at high frequencies as noise becomes an issue.
-{\color{red} Citations or more discussion.}
+{\color{red}See section something that discusses improvements made to the design of the electronics used in the MogLabs lasers used in this research.}
 
 \subsubsection{Grating Angle}
 In external cavity diode lasers, for example Littrow configuration \glspl{ecdl} as shown in Figure~\ref{figure:littrow}, the angle of the external grating can be used to control the output frequency.
@@ -65,7 +66,7 @@ The grating angle affects the wavelength of the light that is reflected back int
 The grating angle is commonly controlled using piezoelectric actuators~\cite{hawthorn_littrow_2001}.
 
 \begin{figure}
-\includegraphics[width=\linewidth]{part1/Figs/littrow.jpg}
+\includegraphics{part1/Figs/LittrowConfiguration.pdf}
 \caption{Littrow configuration for diode lasers.}
 \label{figure:littrow}
 \end{figure}
