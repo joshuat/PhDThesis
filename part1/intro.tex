@@ -41,13 +41,14 @@ The two processes affect output frequency at different rates and both show an in
 
 The temperature of laser diodes can be controlled through two methods. \Glspl{tec} can be used to directly control the temperature of the device and the injection current into the diode affects the temperature. Good insulation and thermal inertia also contribute to the stability of diode temperature~\cite{saliba_cold_2011}.
 
-Temperature is not typically used to directly manipulate the frequency of a laser due to the relatively slow response.
+Temperature is not typically used to directly manipulate the frequency of a laser due to the relatively slow response as changes in the control signal take seconds to propagate from the \gls{tec} to the diode and longer to fully thermalise.
 Typically temperature is just stabilised to reduce the impact of ambient temperature changes on the performance of the diode laser.
 
 \subsubsection{Injection Current}
 Modulation of the injection current into the laser diode is one of most common ways of controlling the output wavelength of a diode laser.
 The injection current into the diode affects the temperature of the diode and the density of charge carriers which in turn affects the refractive index of the medium and thus the wavelength of the laser light produced.
 
+Modulation of the injection current is the fastest feedback method available to diode lasers and is able to suppress noise to at least \unit[1]{MHz}.
 The design of the electronics involved in the modulation of the injection current can have a noticeable influence on the performance at high frequencies as noise becomes an issue.
 {\color{red}See section something that discusses improvements made to the design of the electronics used in the MogLabs lasers used in this research.}
 
@@ -62,10 +63,12 @@ The grating angle is commonly controlled using piezoelectric actuators~\cite{haw
 \label{figure:littrow}
 \end{figure}
 
+Frequency control by controlling the grating angle is limited by the response rate of the piezo actuator which tend to respond in microseconds.
+Thus the grating angle can be used to deal with relatively low frequency noise, up to \unit[1]{kHz} or so, such as changes to ambient temperature or pressure.
+
 {\color{red} Verify these and provide citations.}
 To talk about:
 \begin{itemize}
-\item Typical feedback bandwidths.
 \item Fast feedback - complications (isolation from ground, phase lag...).
 \end{itemize}
 
