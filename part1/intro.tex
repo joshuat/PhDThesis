@@ -32,7 +32,7 @@ A few of these techniques are listed below:
 \begin{itemize}
 \item \gls{sa}~\cite{haroche_theory_1972, maguire_theoretical_2006, cuneo_optically_1994, preston_doppler-free_1996, saliba_linewidths_2009},
 \item \gls{davll}~\cite{corwin_frequency-stabilized_1998, millett-sikking_davll_2007},
-\item \gls{mts}~\cite{shirley_modulation_1982, mccarron_modulation_2008, xiang-hui_ultra-stable_2009},
+\item \gls{mts}~\cite{shirley_modulation_1982, mccarron_modulation_2008, xiang-hui_ultra-stable_2009,negnevitsky_wideband_2013},
 \item Sagnac interferometry~\cite{robins_Interferometric_2002, jundt_non-linear_2003},
 \item \acrfull{ps}~\cite{wieman_doppler-free_1976, lancaster_polarisation_1999, yoshikawa_frequency_2003, harris_polarization_2006, pearman_polarization_2002, tiwari_laser_2006, do_polarization_2008, torii_laser-phase_2012},
 \item \gls{pdh}~\cite{drever_laser_1983} and
@@ -124,10 +124,12 @@ Adding the pump beam results in less absorption at each transition due to the pu
 An example spectrum is shown in Figure~\ref{figure:satabsspectrum}
 
 \begin{figure}
-\includegraphics[width=\linewidth]{part1/Figs/SatAbsSpectrum.pdf}
-\caption{An example of a saturated absorption spectroscopy absorption spectrum for the rubidium-85 D2 transition.
-The blue line is the absorption spectrum and the green line is the error signal for modulated \gls{sa}. The two leftmost and the rightmost bumps in the absorption spectrum are the $F=3$ to $F'=1,2,3$ transitions respectively and the other two larger features are the cross-overs for the $F=3$ to $F'=1,3$ and $F'=2,3$ transitions.}
-\label{figure:satabsspectrum}
+    \center
+    \includegraphics{part1/Figs/SatAbsSpectrum.pdf}
+    \caption{An example of a saturated absorption spectroscopy absorption spectrum for the rubidium-85 D2 transition.
+    The blue line shows the absorption spectrum and the green line shows the error signal for modulated \gls{sa}.
+    From left to right the peaks in the absorption spectrum are the $F=3$ to $F'=1,1/2,2,1/3,2/3$, and $3$, where $x/y$ refers to a crossover transition.}
+    \label{figure:satabsspectrum}
 \end{figure}
 
 \Gls{sa} can operate with or without frequency modulation of the laser or modulation of the transition frequencies of the atoms in the vapour cell.
@@ -152,18 +154,5 @@ More detail. Some maths. What linewidth can it achieve?\cite{ludlow_compact_2007
 \caption{A beautiful \gls{pdh} schematic.}
 \end{figure}
 
-\subsubsection{Dichroic Atomic Vapour Laser Lock}
-\Gls{davll} works by....
-
-It can achieve linewidths of....
-
-\subsubsection{Modulation Transfer Spectroscopy}
-\Gls{mts}...
-
-It can achieve linewidths of...\cite{negnevitsky_wideband_2013}
-
-\subsubsection{Other Techniques}
-
-Any others?
 
 
