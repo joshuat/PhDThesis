@@ -50,7 +50,7 @@ Typically temperature is just stabilised to reduce the impact of ambient tempera
 Modulation of the injection current into the laser diode is one of most common ways of controlling the output wavelength of a diode laser.
 The injection current into the diode affects the temperature of the diode and the density of charge carriers which in turn affects the refractive index of the medium and thus the wavelength of the laser light produced.
 
-Modulation of the injection current is the fastest feedback method available to diode lasers and is able to suppress noise to at least \unit[1]{MHz}.
+Modulation of the injection current is the fastest feedback method available to diode lasers and is able to suppress noise up to \unit{MHz} ranges~\cite{ludlow_compact_2007,torrance_sub-kilohertz_2016}.
 The design of the electronics involved in the modulation of the injection current can have a noticeable influence on the performance at high frequencies as noise becomes an issue.
 {\color{red}See section something that discusses improvements made to the design of the electronics used in the MogLabs lasers used in this research.}
 
@@ -66,7 +66,7 @@ The grating angle is commonly controlled using piezoelectric actuators~\cite{haw
 \end{figure}
 
 Frequency control by controlling the grating angle is limited by the response rate of the piezo actuator which tend to respond in microseconds.
-Thus the grating angle can be used to deal with relatively low frequency noise, up to \unit[1]{kHz} or so, such as changes to ambient temperature or pressure.
+Thus the grating angle can be used to deal with relatively low frequency noise, up to approximately \unit[100]{kHz} or so, such as changes to ambient temperature or pressure.
 
 {\color{red} Verify these and provide citations.}
 To talk about:
@@ -77,32 +77,18 @@ To talk about:
 
 \subsection{Noise}
 In this context noise refers to effects that change the frequency of a laser in undesireable ways.
-Some sources of noise are thermal changes, ambient vibrations, atmospheric pressure, or changes in the electrical power suppply.
+Some sources of noise are thermal changes, ambient vibrations, atmospheric pressure, or changes in the electrical power supply.
 
 Thermal noise can be causes by changes in weather, unreliable building climate control, or unexpected behaviours in thermal management devices (a malfunctioning \gls{tec} for example).
 Thermal noise can affect the alignment of optics, the efficiency and polarisation of light transmitted through fibres, atomic vapour cell opacity and the intensity and frequency of light emitted from laser diodes all of which can affect the frequency of a stabilised laser system.
 
 Electrical noise can occur with changes to the wider electrical grid as well as when devices in the lab are turned on or off, fast switching high-voltage/-current supplies, such as those used to switch the \gls{mot} coils, can cause noticeable affects on other electrical equipment in close proximity.
 Noise in the electronic environment can cause frequency instability particularly if a laser diode is not fully isolated from the electrical ground. Noise on the power supply to the laser diode affects the intensity and frequency of the light emitted.
+Laser intensity noise can also cause problems, for example laser frequency stabilisation is often conducted with spectroscopic techniques that will interpret intensity fluctuations as frequency fluctuations. Thus the feedback system will create frequency noise as it attempts to correct for the phantom frequency nosie.
 
-{\color{red}Refine up to here.}
-
-In certain applications {\color{red}(such as?? imaging?)} intensity noise can be as much as a drawback as frequency noise and with some frequency discrimination methods intensity noise is interpreted as frequency noise which the servo would then attempt to correct for thus inducing frequency noise.
-
-Feedback to laser systems typically takes the form of modulation of either the current supply to the diode or the voltage to a piezo that controls the angle of the grating in an \gls{ecdl}.
-Temperature feedback has also been used to maintain frequency stability {\color{red}[find that paper again]}.
-The bandwidth of current feedback tends to range from \unit[0]{Hz} to MHz~\cite{ludlow_compact_2007}{\color{red}[cite my paper here?]}.
-Piezo response is significantly slower ranging from \unit[0]{Hz} to \unit[100]{kHz}.
-
-{\color{red}Frequency ranges of noise.}
-
-{\color{red}More detail? More References on noise in general.}
-
-{\color{red}Cite some of Seb's stuff thesis\cite{saliba_cold_2011}, papers\cite{saliba_linewidths_2009, saliba_mode_2009}.}
-
-Bleh.
-\Glspl{ecdl} subjected to mechanical vibrations will experience frequency noise as the alignment of the light coupled back into the diode off the grating varies.
-Vibrations can also affect the alignment, and thus transmitted power, of laser through optical fibres, optical isolators and through apertures.
+Mechanical noise can have numerous sources such as audible noise, percussive noise (dropped spanners, doors) or vibrational sources such as cooling fans on nearby equipment.
+\Glspl{ecdl} subjected to mechanical vibrations will experience frequency noise as the alignment of the light coupled back into the diode from the grating varies.
+Mechanical noise can also affect the alignment, and thus transmitted power, of laser through optical fibres, optical isolators and apertures.
 
 \subsection{Stabilisation Techniques}
 
