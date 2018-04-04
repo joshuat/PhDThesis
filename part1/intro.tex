@@ -149,10 +149,20 @@ The frequency difference between one cavity tranmission and the next is called t
 \end{equation}
 The quality of an optical cavity is described by the cavity Finesse, $\mathscr{F}$, which effectively describes the number of traversals a beam makes before leaking out or being absorped and it is determined by the reflectivity of the mirrors, $R$,
 \begin{align}
-\mathscr{F} &= \frac{2\pi}{-\ln\left(R^2\right)} \notag\\
+\mathscr{F} &= \frac{2\pi}{-\log_e\left(R^2\right)} \notag\\
  &= \frac{\Delta \nu_{FSR}}{\delta},
 \end{align}
 where $\delta$ is the \gls{fwhm} linewidth of the cavity.
+
+The light transmitted through an optical cavity can be described by
+\begin{equation}
+T = \frac{1}{1+K\sin^2\frac{d}{2}},
+\end{equation}
+where $d=2\pi\frac{2L}{\lambda}$ and $K=\frac{4R}{\left(1-R\right)^2}$.
+
+The cavity used in the experiments described in this chapter was a high-finesse cavity from Stable Laser Ssystems that was located inside an evacuuated temperature-controlled can.
+This cavity has a finesse of 20942, a \gls{fsr} of \unit[1.5]{GHz}, a \gls{fwhm} linwidth of \unit[71.6]{kHz}, and the mirrors had a reflectivity of 0.99985.
+
 
 More detail. Some maths.
 
