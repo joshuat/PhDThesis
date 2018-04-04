@@ -134,7 +134,25 @@ Linewidths under \unit[150]{kHz} are easily attainable with modulated saturated 
 The \gls{pdh} technique is the gold-standard for laser frequency linewidth reduction~\cite{drever_laser_1983} and has been used to achieve extremely low linewidth of less than \unit[40]{mHz}~\cite{kessler_sub-40-mhz-linewidth_2012}.
 \Gls{pdh} uses an optical cavity as a frequency reference and a modulated beam and some electronics to generate the error signal for feedback to the laser.
 
-Light incident on a Fabry-P\'erot cavity will only couple into the cavity if the length of the cavity is equal to an integer number of wavelengths of the light........
+A Fabry-P\'erot cavity is formed by two highly reflective mirrors facing each other such that light can form a standing wave between the two mirrors.
+Laser light incident on a Fabry-P\'erot cavity will only couple into the cavity if the length of the cavity is equal to an integer number of wavelengths of the light.
+So for an ideal laser to be resonant with an ideal cavity,
+\begin{equation}
+L = n \lambda,
+\end{equation}
+where $L$ is the length of the cavity, $\lambda$ is the wavelength of the laser and $n$ is some integer.
+Realistic lasers and cavities have finite linewidths which when viewed as a transmission or reflection spectrum are shown as a convolution of the cavity and laser linewidth.
+
+The frequency difference between one cavity tranmission and the next is called the \gls{fsr}, $\Delta \nu_{FSR}$ and depends on the length of the cavity,
+\begin{equation}
+\Delta \nu_{FSR} = \frac{c}{2L}
+\end{equation}
+The quality of an optical cavity is described by the cavity Finesse, $\mathscr{F}$, which effectively describes the number of traversals a beam makes before leaking out or being absorped and it is determined by the reflectivity of the mirrors, $R$,
+\begin{align}
+\mathscr{F} &= \frac{2\pi}{-\ln\left(R^2\right)} \notag\\
+ &= \frac{\Delta \nu_{FSR}}{\delta},
+\end{align}
+where $\delta$ is the \gls{fwhm} linewidth of the cavity.
 
 More detail. Some maths.
 
