@@ -84,17 +84,10 @@ Mechanical noise can have numerous sources such as audible noise, percussive noi
 \Glspl{ecdl} subjected to mechanical vibrations will experience frequency noise as the alignment of the light coupled back into the diode from the grating varies.
 Mechanical noise can also affect the alignment, and thus transmitted power, of laser through optical fibres, optical isolators and apertures.
 
-\subsection{Stabilisation Techniques}
-
-This section contains a brief overview of a number of stabilisation techniques that are used with the \gls{caeis}.
-Saturated absorption spectroscopy is the standard frequency stabilisation technique and is suitable for some atom cloud imaging techniques, for the first step in \gls{caeis} ionisation, and for laser cooling and trapping.
-Polarisation spectroscopy is a technique similar to saturated absorption spectrscopy but somewhat more sophisticated with a number of interesting advantages.
-The Pound-Drever-Hall technique is a complex technique involving an optical cavity with which it is possible to achieve extremely small linewidths.
-
-\subsubsection{Saturated Absorption Spectroscopy}
+\section{Saturated Absorption Spectroscopy}
 \glsreset{sa}
 \Gls{sa} is a simple and common technique for laser frequency stabilisation which can be used with a number of atomic species and is a staple of atom optics laboratories~\cite{demtroder_laser_2003}.
-\Gls{sa} is often used in experiments where extremely narrow linewidths are not required due to the relative simplicity of the method.
+\Gls{sa} is often used in applications where extremely narrow linewidths are not required due to the relative simplicity of the method such as \gls{mot} trapping and cooling, or atom cloud imaging.
 A schematic of \gls{sa} is shown in Figure~\ref{figure:satabs}.
 
 \begin{figure}
@@ -125,15 +118,12 @@ Without modulation the system is more susceptible to drift and there is an frequ
 If modulation is used then there is the added complexity of implementing the modulation and the potential linewidth is limited by modulation frequency.
 Linewidths under \unit[150]{kHz} are easily attainable with modulated saturated absorption spectroscopy~\cite{saliba_linewidths_2009}.
 
-\subsubsection{Polarisation Spectroscopy}
-\glsreset{ps}
-\Gls{ps} is a technique that involves counter-propagating pump and probes beams passing through an atomic sample and measuring the polarisation rotation of the probe due to the birefringence induced in the atoms by the pump. \Gls{ps} is discussed in detail in Section~\ref{chapter:pol_spec}.
-
-\subsubsection{Pound Drever Hall}
+\section{Pound Drever Hall}
 
 The \gls{pdh} technique is the gold-standard for laser frequency linewidth reduction~\cite{drever_laser_1983} and has been used to achieve extremely low linewidth of less than \unit[40]{mHz}~\cite{kessler_sub-40-mhz-linewidth_2012}.
 \Gls{pdh} uses an optical cavity as a frequency reference and a modulated beam and some electronics to generate the error signal for feedback to the laser.
 
+\subsection{Fabry-P\'erot Cavities}{
 A Fabry-P\'erot cavity is formed by two highly reflective mirrors facing each other such that light can form a standing wave between the two mirrors.
 Laser light incident on a Fabry-P\'erot cavity will only couple into the cavity if the length of the cavity is equal to an integer number of wavelengths of the light.
 So for an ideal laser to be resonant with an ideal cavity,
@@ -154,17 +144,29 @@ The quality of an optical cavity is described by the cavity Finesse, $\mathscr{F
 \end{align}
 where $\delta$ is the \gls{fwhm} linewidth of the cavity.
 
-The light transmitted through an optical cavity can be described by
-\begin{equation}
-T = \frac{1}{1+K\sin^2\frac{d}{2}},
+The light transmitted through an optical cavity can be described by~\cite{pedrotti_introduction_2007}
+\begin{equation}\label{equation:cavity_transmission}
+T = \frac{1}{1+F\sin^2\frac{d}{2}},
 \end{equation}
-where $d=2\pi\frac{2L}{\lambda}$ and $K=\frac{4R}{\left(1-R\right)^2}$.
+where $d=2\pi\frac{2L}{\lambda}$ and $F=\frac{4R}{\left(1-R\right)^2}$ is the coefficient of finesse.
+The coefficient of finesse is related to the finesse by
+\begin{equation}
+\mathscr{F}=\frac{\pi}{2}\sqrt{F}.
+\end{equation}
+The phase difference between successive traversals of the cavity is represented by $d$
+We can define $\Delta\lambda=L-n\lambda$, then Equation~\ref{equation:cavity_transmission} can be written as
+\begin{equation}
+T = \frac{1}{1+F\sin^2\left(2\pi\frac{\Delta\lambda}{\lambda}\right)}.
+\end{equation}
+$T$ takes the form of a Lorentzian, or Airy, function and an example spectra is shown in Figure~{\color{red}[make cavity transmission figure]}
 
 The cavity used in the experiments described in this chapter was a high-finesse cavity from Stable Laser Ssystems that was located inside an evacuuated temperature-controlled can.
 This cavity has a finesse of 20942, a \gls{fsr} of \unit[1.5]{GHz}, a \gls{fwhm} linwidth of \unit[71.6]{kHz}, and the mirrors had a reflectivity of 0.99985.
+}
 
+\subsubsection{PDH Error Signal}
 
-More detail. Some maths.
+Describe how the error signal is generated.
 
 \begin{figure}
 \centering
