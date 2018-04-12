@@ -155,7 +155,7 @@ The coefficient of finesse is related to the finesse by
 \end{equation}
 The phase difference between successive traversals of the cavity is represented by $d$
 We can define the difference between the laser wavelength and closest cavity resonance as $\Delta\lambda=L-n\lambda$, then Equation~\ref{equation:cavity_transmission} can be written as
-\begin{equation}
+\begin{equation}\label{equation:cavity_transmission}
 T = \frac{1}{1+F\sin^2\left(2\pi\frac{\Delta\lambda}{\lambda}\right)}.
 \end{equation}
 $T$ takes the form of a Lorentzian, or Airy, function and an example spectra is shown in Figure~{\color{red}[make cavity transmission figure]}
@@ -180,7 +180,7 @@ E_R = E_0 \left( r e^{i\left(\omega t + \pi\right)} + t r t e^{i\left(\omega t -
 \end{equation}
 where $r$ is the mirror reflectivity and $t=\sqrt{1-r^2}$ is the transmissivity of the mirrors.
 Equation~\ref{equation:cavity_reflected_field} can be simlified to give the reflection coefficient
-\begin{equation}
+\begin{equation}\label{equation:reflection_coefficient}
 F(\omega) \equiv \frac{E_R}{E_I} = \frac{r\left(e^{i\omega / \Delta\nu_{FSR}} - 1 \right)}{1-r^2 e^{i\omega / \Delta\nu_{FSR}}}.
 \end{equation}
 Figure {\color{red}[reference figure]} shows that $F(\omega)$ is antisymettric about the cavity resonance making it ideal for frequency stabilisation however more steps are required to generate a useable error signal.
@@ -210,15 +210,29 @@ where $P_{c,s}$ are the power of the carrier and sideband components respectivel
 
 The phase information is retrieved with the use of a ``mixer'' which is an electronic device that multiplies two signals together essentially multiplying the signal from the photodetector, $P_R \propto \sin\Omega t$, with the signal from the oscillator driving the \gls{eom}, $\sin\Omega t$, resulting in a DC component and a $\cos2\Omega t$ component.
 A low-pass electronic filter is then used to extract the DC component which is the \gls{pdh} error signal,
-\begin{equation}
+\begin{equation}\label{equation:pdh_error}
 \epsilon = 2\sqrt{P_cP_s}\operatorname{Im}\Bigg[F(\omega)F^*(\omega+\Omega) - F^*(\omega)F(\omega-\Omega)\Bigg].
 \end{equation}
+An example \gls{pdh} error signal is shown in Figure~\ref{figure:pdh_plots}, the steep antisymmetric slope about the resonance is ideal for frequency stabilisation and the large region, equal the twice the modulation frequency, about the resonance for which the signal is of the correct sign allows for a large capture range. 
 
+\begin{figure}
+\centering
+\input{part1/Figs/pdh_transmission_error.pgf}
+\caption{Simulated plots of cavity transmission function (Equation~\ref{equation:cavity_transmission}), reflection coefficient (Equation~\ref{equation:reflection_coefficient}) and \gls{pdh} error signal (Equation~\ref{equation:pdh_error}) from left to right all as a function of the frequency difference between the cavity resonance and the laser frequency.
+The cavity has a length of \unit[10]{cm} and a finesse of 20942 and a phase modulation frequency of \unit[2]{MHz} was used to generate the error signal.}
+\label{figure:pdh_plots}
+\end{figure}
+
+\Gls{pdh} locking is generally achieved with the modulation applied to the laser using an \gls{eom} with the laser then incident on a cavity.
+The light reflected from the cavity is then measured by a photodetector and the signal from the detector is mixed with the same frequency source as is driving the \gls{eom}.
+A low-pass filter removed the higher frequency component from the resulting signal which is then passed to the servo system which attempts to stabilise the laser frequency.
+This is shown in Figure~\ref{figure:pdh_schematic}.
 
 \begin{figure}
 \centering
 \includegraphics{part1/Figs/PDH.pdf}
 \caption{A beautiful \gls{pdh} schematic.}
+\label{figure:pdh_schematic}
 \end{figure}
 
 
