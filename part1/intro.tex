@@ -158,7 +158,7 @@ The coefficient of finesse is related to the finesse by
 \end{equation}
 The phase difference between successive traversals of the cavity is represented by $d$
 We can define the difference between the laser wavelength and closest cavity resonance as $\Delta\lambda=L-n\lambda$, then Equation~\ref{equation:cavity_transmission} can be written as
-\begin{equation}\label{equation:cavity_transmission}
+\begin{equation}\label{equation:cavity_transmission2}
 T = \frac{1}{1+F\sin^2\left(2\pi\frac{\Delta\lambda}{\lambda}\right)}.
 \end{equation}
 $T$ takes the form of a Lorentzian, or Airy, function and an example spectra is shown in Figure~\ref{figure:pdh_plots}.
@@ -220,7 +220,7 @@ An example \gls{pdh} error signal is shown in Figure~\ref{figure:pdh_plots}, the
 \begin{figure}
 \centering
 \input{part1/Figs/pdh_transmission_error.pgf}
-\caption{Simulated plots of cavity transmission function (Equation~\ref{equation:cavity_transmission}), reflection coefficient (Equation~\ref{equation:reflection_coefficient}) and \gls{pdh} error signal (Equation~\ref{equation:pdh_error}) from left to right all as a function of the frequency difference between the cavity resonance and the laser frequency.
+\caption{Simulated plots of cavity transmission function (Equation~\ref{equation:cavity_transmission2}), reflection coefficient (Equation~\ref{equation:reflection_coefficient}) and \gls{pdh} error signal (Equation~\ref{equation:pdh_error}) from left to right all as a function of the frequency difference between the cavity resonance and the laser frequency.
 The cavity has a length of \unit[10]{cm} and a finesse of 20942 and a phase modulation frequency of \unit[2]{MHz} was used to generate the error signal.}
 \label{figure:pdh_plots}
 \end{figure}
