@@ -39,9 +39,18 @@ which can be expressed in terms of the circularly polarised basis vectors, $(\ha
 
 After propagating through an atomic sample of length $L$ with refractive indices for the circular polarisation components of $n_\pm$, $\vec{E}$ and absorption coefficients of $\alpha_\pm$ the electric field becomes
 \begin{align}
-\vec{E} = &\frac{E_0}{2}e^{-i\phi}(\hat{x}+i\hat{y})\,\exp\left[\frac{i\omega n_+ L}{c} - \frac{\alpha_+ L}{2}\right] +\notag\\
-&\frac{E_0}{2}e^{+i\phi}(\hat{x}-i\hat{y})\,\exp\left[\frac{i\omega n_- L}{c} - \frac{\alpha_- L}{2}\right]\label{equation:elliptically_polarised}
+\vec{E}\  = \ &\frac{E_0}{2}e^{-i\phi}\,\exp\left[\frac{i\omega n_+ L}{c} - \frac{\alpha_+ L}{2}\right](\hat{x}+i\hat{y})\ +\notag\\
+&\frac{E_0}{2}e^{+i\phi}\,\exp\left[\frac{i\omega n_- L}{c} - \frac{\alpha_- L}{2}\right](\hat{x}-i\hat{y}) \\ \label{equation:elliptically_polarised}
+\  = \ &\frac{E_0}{2} e^{-i\phi}\,\exp\left[\frac{i\omega L}{2c}(n_+-n_-) + \frac{i\omega L}{2c}(n_+ + n_-) - \frac{L}{4}(\alpha_+ -\alpha_-) - \frac{L}{4}(\alpha_+ + \alpha_-)\right](\hat{x}+i\hat{y})\ +\notag\\
+              &\frac{E_0}{2} e^{+i\phi}\,\exp\left[-\frac{i\omega L}{2c}(n_+-n_-) + \frac{i\omega L}{2c}(n_-+n_+) + \frac{L}{4}(\alpha_+-\alpha_-) - \frac{L}{4}(\alpha_-+\alpha_+) \right](\hat{x}-i\hat{y}) \\
+\  = \ &\frac{E_0}{2} \exp\left[\frac{i\omega L}{2c}(n_+ + n_-) - \frac{L}{4}(\alpha_+ + \alpha_-)\right] \left\{ e^{-i(\phi - \Omega)}\, \, (\hat{x}+i\hat{y})\ + e^{+i(\phi-\Omega)}\,(\hat{x}-i\hat{y})\right\},
 \end{align}
+where
+\begin{equation}
+\Omega = \frac{\omega L}{2c}(n_+-n_-) + i\frac{L}{4}(\alpha_+ -\alpha_-)
+\end{equation}
+
+{\color{red}Missing steps here.}
 
 Equation \ref{equation:elliptically_polarised} represents elliptically polarised light with the major axis at an angle of $\theta$ to the $x$-axis, where
 \begin{equation}
