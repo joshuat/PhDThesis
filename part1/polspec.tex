@@ -37,48 +37,60 @@ which can be expressed in terms of the circularly polarised basis vectors, $(\ha
 \vec{E} = \frac{E_0}{2}e^{-i\phi}(\hat{x}+i\hat{y}) + \frac{E_0}{2}e^{+i\phi}(\hat{x}-i\hat{y})
 \end{equation}
 
-After propagating through an atomic sample of length $L$ with refractive indices for the circular polarisation components of $n_\pm$, $\vec{E}$ and absorption coefficients of $\alpha_\pm$ the electric field becomes
+After propagating through an atomic sample of length $L$ with refractive indices for the circular polarisation components of $n_\pm$, and absorption coefficients of $\alpha_\pm$ the electric field becomes
 \begin{align}
-\vec{E}\  = \ &\frac{E_0}{2}e^{-i\phi}\,\exp\left[\frac{i\omega n_+ L}{c} - \frac{\alpha_+ L}{2}\right](\hat{x}+i\hat{y})\ +\notag\\
-&\frac{E_0}{2}e^{+i\phi}\,\exp\left[\frac{i\omega n_- L}{c} - \frac{\alpha_- L}{2}\right](\hat{x}-i\hat{y}) \\ \label{equation:elliptically_polarised}
+\vec{E}\  = \ &\frac{E_0}{2}e^{-i\phi}\,\exp\left[\frac{i\omega n_+ L}{c} - \frac{\alpha_+ L}{2}\right](\hat{x}+i\hat{y})\quad +\quad \frac{E_0}{2}e^{+i\phi}\,\exp\left[\frac{i\omega n_- L}{c} - \frac{\alpha_- L}{2}\right](\hat{x}-i\hat{y}) \notag\\ 
 \  = \ &\frac{E_0}{2} e^{-i\phi}\,\exp\left[\frac{i\omega L}{2c}(n_+-n_-) + \frac{i\omega L}{2c}(n_+ + n_-) - \frac{L}{4}(\alpha_+ -\alpha_-) - \frac{L}{4}(\alpha_+ + \alpha_-)\right](\hat{x}+i\hat{y})\ +\notag\\
-              &\frac{E_0}{2} e^{+i\phi}\,\exp\left[-\frac{i\omega L}{2c}(n_+-n_-) + \frac{i\omega L}{2c}(n_-+n_+) + \frac{L}{4}(\alpha_+-\alpha_-) - \frac{L}{4}(\alpha_-+\alpha_+) \right](\hat{x}-i\hat{y}) \\
-\  = \ &\frac{E_0}{2} \exp\left[\frac{i\omega L}{2c}(n_+ + n_-) - \frac{L}{4}(\alpha_+ + \alpha_-)\right] \left\{ e^{-i(\phi - \Omega)}\, \, (\hat{x}+i\hat{y})\ + e^{+i(\phi-\Omega)}\,(\hat{x}-i\hat{y})\right\},
+&\frac{E_0}{2} e^{+i\phi}\,\exp\left[-\frac{i\omega L}{2c}(n_+-n_-) + \frac{i\omega L}{2c}(n_-+n_+) + \frac{L}{4}(\alpha_+-\alpha_-) - \frac{L}{4}(\alpha_-+\alpha_+) \right](\hat{x}-i\hat{y}) \notag\\
+\  = \ &\frac{E_0}{2} \exp\left[\frac{i\omega L}{2c}(n_+ + n_-) - \frac{L}{4}(\alpha_+ + \alpha_-)\right] \left\{ e^{-i(\phi - \Omega)}\, \, (\hat{x}+i\hat{y})\ + e^{+i(\phi-\Omega)}\,(\hat{x}-i\hat{y})\right\},\label{equation:elliptically_polarised}
 \end{align}
 where
 \begin{equation}
-\Omega = \frac{\omega L}{2c}(n_+-n_-) + i\frac{L}{4}(\alpha_+ -\alpha_-)
+\Omega = \frac{\omega L}{2c}(n_+-n_-) + i\frac{L}{4}(\alpha_+ -\alpha_-).
 \end{equation}
+Equation \ref{equation:elliptically_polarised} represents elliptically polarised light with the major axis at an angle of $\theta = \phi + \Omega$ to the $x$-axis.
 
-{\color{red}Missing steps here.}
-
-Equation \ref{equation:elliptically_polarised} represents elliptically polarised light with the major axis at an angle of $\theta$ to the $x$-axis, where
-\begin{equation}
-\theta = \phi + \frac{\pi L (n_+ - n_-)}{\lambda}
-\end{equation}
-thus the angle by which the probe has rotated is
-\begin{equation}
-\Phi = \frac{\pi L \Delta n}{\lambda},
-\end{equation}
-where $\Delta n = n_+ - n_-$.
-
-The electric field after the sample can be approximated to
-\begin{equation}
-\vec{E} = E_0\big(\cos\left[\phi+\Phi\right]\,\hat{x}+\sin\left[\phi+\Phi\right]\,\hat{y}\big).
-\end{equation}
-
-The output of the balanced polarimeter is the difference between the intensity of light incident on each detector:
+The horizontal and vertical polarisation components of the beam are separated by the \gls{pbs},
 \begin{align}
-I_{out} = I_x - I_y &= \frac{1}{2}\epsilon_0 c \left(|E_x|^2 - |E_y|^2\right)\notag\\
-&= \frac{1}{2}\epsilon_0 c \left(\cos^2\left[\phi+\Phi\right] - \sin^2\left[\phi+\Phi\right]\right)\notag\\
-&= \frac{1}{2}\epsilon_0 c \cos\left[2\phi+2\Phi\right]\notag\\
-&= I_0 \cos\left[2\phi+2\Phi\right]
+\vec{E} = &\frac{E_0}{2} \exp\left[\frac{i\omega L}{2c}(N_+ + n_-) - \frac{L}{4}(\alpha_++\alpha_-)\right]\ \left[ \hat{x} \left(e^{-i(\phi-\Omega)}+e^{-i(\phi-\Omega)}\right) + i\hat{y} \left(e^{-i(\phi-\Omega)}-e^{-i(\phi-\Omega)}\right)\right]\notag\\
+ = & E_0 \exp\left[\frac{i\omega L}{2c}(N_+ + n_-) - \frac{L}{4}(\alpha_++\alpha_-)\right] \bigg[ \hat{x} \cos(\phi-\Omega) + \hat{y} \sin(\phi-\Omega)\bigg],
+\end{align}
+and the intensity of the beams are then detected by photodetectors,
+\begin{align}
+I_x &= |E_x|^2 \notag \\
+& = \left|E_0 \exp\left[\frac{i\omega L}{2c}(N_+ + n_-) - \frac{L}{4}(\alpha_++\alpha_-)\right] \cos(\phi-\Omega) \right|^2 \notag \\
+& = E_0^2\left| \exp\left[\frac{i\omega L}{2c}(N_+ + n_-)\right]\exp\left[-\frac{L}{4}(\alpha_++\alpha_-)\right] \right|^2 \cos\bigg(\phi-\Omega\bigg) \cos\bigg(\overline{\phi-\Omega}\bigg) \notag \\
+& = E_0^2 \exp\left[-\frac{L}{2}(\alpha_++\alpha_-)\right] \cos\bigg(\phi-\frac{\omega L}{2c}(n_+-n_-) + i\frac{L}{4}(\alpha_+ -\alpha_-)\bigg) \cos\bigg(\phi-\frac{\omega L}{2c}(n_+-n_-) - i\frac{L}{4}(\alpha_+ -\alpha_-)\bigg) \notag \\
+& = \frac{E_0^2}{2} \exp\left[-\frac{L}{2}(\alpha_++\alpha_-)\right] \left[\cos\bigg(2i\frac{L}{4}(\alpha_+ -\alpha_-)\bigg) + \cos\bigg(2\phi-2\frac{\omega L}{2c}(n_+-n_-)\bigg)\right] \\
+\notag\\
+I_y &= |E_y|^2 \notag \\
+& = \left|E_0 \exp\left[\frac{i\omega L}{2c}(N_+ + n_-) - \frac{L}{4}(\alpha_++\alpha_-)\right] \sin(\phi-\Omega) \right|^2 \notag \\
+& = \frac{E_0^2}{2} \exp\left[-\frac{L}{2}(\alpha_++\alpha_-)\right] \left[\cos\bigg(2i\frac{L}{4}(\alpha_+ -\alpha_-)\bigg) - \cos\bigg(2\phi-2\frac{\omega L}{2c}(n_+-n_-)\bigg)\right]
+\end{align}
+and subtracted by electronics to generate the error signal,
+\begin{align}
+\epsilon =\ &I_y - I_x = E_y^2 - E_x^2 \notag \\
+=\ &E_0^2 \exp\left[-\frac{L}{2}(\alpha_++\alpha_-)\right] \cos\bigg(2\phi-2\frac{\omega L}{2c}(n_+-n_-)\bigg).
 \end{align}
 
-The largest spectrum is provided when $\phi=\pi/4$ and since $\Phi$ is small $I_{out}$ can be approximated to
+The spectral profile of $(\alpha_+-\alpha_-)$ is a power-broadened Lorentzian~\cite{pearman_polarization_2002},
 \begin{equation}
-I_{out} = I_0 2\Phi = I_0 \frac{2\pi L \Delta n}{\lambda}
+\alpha_+ - \alpha_- = \frac{\Delta\alpha_0}{1+x^2},
 \end{equation}
+where $x=\frac{\omega_0-\omega}{\Gamma/2}$ is the detuning scaled by the atomic linewidth $\Gamma$, and $\Delta\alpha_0$ is the maximum difference in absorption coefficients at the atomic resonance.
+The absorption cooefficients and refractive indices are related via the Kramers-Kronig dispersion relation~\cite{demtroder_laser_2014},
+\begin{equation}
+n_+ - n_- = \frac{c}{\omega_0} \Delta\alpha_0 \frac{x}{1+x^2}.
+\end{equation}
+Typically the polarisation rotation induced by the medium is small and is maximised when $\phi=\frac{\pi}{4}$ giving the approximate error signal,
+\begin{equation}
+\epsilon \simeq - I_0 e^{-L(\alpha_++\alpha_-)/2}\left( L \Delta\alpha_0 \frac{x}{1+x^2}\right)
+\end{equation}
+
+\Gls{ps} produces a dispersion shaped spectrum about the atomic resonance with zero background, as shown in {\color{red}PS SPECTRUM FIGURE}, and is ideal for laser locking due to the large capture range and steep gradient near the resonance.
+Unlike \gls{pdh}, \gls{ps} acts as an absolute reference as it tied to the frequency of the atomic-ensemble reference rather than a cavity.
+
+
 
 \subsubsection{Magnetic shielding}
 
