@@ -1,12 +1,14 @@
 \section{Measurement Techniques}
-We have characterized the performance of \gls*{ps} frequency stabilisation using a number of methods which are detailed here.
+Visible light has frequencies in the THz range which is well beyond the capabilites of modern electronics to directly measure so a number of clever strategies have been developed to measure the spectral quality of laser systems.
+The performance of \gls*{ps} and \gls{pdh} frequency stabilisation has been characterised using a number of methods which are detailed here.
 Spectral linewidth is the principle metric by which stabilisation techniques are compared and it can be considered over a range of timescales with different implications.
 Short timescales measurements, less than a second, indicate the narrowness of the frequency spectrum and are useful when considering frequency dependent interactions, such as those with atoms or optical cavities.
 Long timescale measurements, minutes to hours, are useful to determine the stability of the laser and its succeptability to frequency drift and the robustness of the locking scheme.
 
 \subsection{Heterodyne Methods}
 
-Heterodyning is a technique, invented by Canadian Reginald Feessenden in 1901, which mixes two frequencies to produce a new frequency. {\color{red} [get proper citation, this is from Wiki]} In optics the technique can be used to examine the spectral properties of two lasers.~{\color{red}[Citation?]}
+Heterodyning is a technique, invented by Canadian Reginald Feessenden in 1901, which mixes two frequencies to produce a new frequency~\cite{cooper_physics_2001}.
+The technique can be used to examine the spectral properties of lasers as the newly produced frequencies can be tailored such that they are easily measurable by photodetectors and spectrum analysers.
 
 \subsubsection{Basic Theory}
 In the electrical signals context heterodyning involves the `mixing' or multiplying of two signals (e.g. two sine waves) to produce two different signals with frequencies equal to the difference and sum of the original frequencies:
@@ -21,24 +23,38 @@ I(t) = \frac{c\epsilon_0}{2}|E|^2.
 
 For two copropagating lasers with electric fields $E_{1, 2}$ and angular frequencies $\omega_{1, 2}$ we can write
 \begin{equation}
-E_{i}(t) = \sin(2\pi \omega_{i}).
+E_{i}(t) = \sin(\omega_{i}t).
 \end{equation}
 The electric field at the detector, $E_T$, is given by the sum of $E_{1}$ and $E_{2}$, and thus the intensity is given by,
 \begin{align}
 I(t) &= |E_1(t) + E_2(t)|^2\nonumber\\
-&= E_1(t)^2 + E_1(t)E_2(t) + E_2(t)^2.
+&= |E_1(t)|^2 + E_1(t)E_2^*(t) + |E_2(t)|^2.
 \end{align}
-The interference term, $E_1(t)E_2(t)$, allows heterodyning of optical signals.
+The interference term, $E_1(t)E_2(t)$, allows for the spectral measurements with optical signals as
+\begin{align}
+E_1(t)E_2(t) &= \sin(\omega_1 t) \sin(\omega_2 t) \notag \\
+&= \frac{1}{2} (\cos([\omega_1-\omega_2]t) - \cos([\omega_1+\omega_2]t)), \label{equation:hetero}
+\end{align}
+and if $\omega{1,2}$ are appropriately selected then the first term in Equation~\ref{equation:hetero} is measurable.
+The difference in frequency ideally should be fairly small, less than a few GHz, which can often be induced on lasers with the same frequency by \glspl{aom} or \glspl{eom}.
+
+The equations presented above provide an obviously na\"ive approach as the frequency spread of the lasers is non-zero.
 
 \subsubsection{Optical Heterodyne Methods}
 
-There are a number of linewidth measurement techniques that utilise heterodyning. The major ones are:
+There are a number of permutations of linewidth measurement techniques that utilise heterodyning. The major ones are:
 \begin{itemize}
-\item Heterodyne beatnote with two identical lasers.
-\item Heterodyne beatnote between laser of interest and a relatively narrow reference laser.
-\item Self-heterodyne beatnote of a laser with itself.
-\item Three-cornered hat....
+\item Heterodyne beatnote with two `identical' lasers,
+\item Heterodyne beatnote between laser of interest and a relatively narrow reference laser,
+\item Self-heterodyne beatnote of a laser with itself, and
+\item The three-cornered hat method.
 \end{itemize}
+
+Two almost identical lasers setups can be heterodyned to give the linewidth with the assumption that the lineshapes are identical.
+As the lasers will be locked to the same frequency the difference in frequencies detected by the heterodyne method will the zero and spectrum analysers do not function well at zero so one of the lasers is usually frequency shifted by an \gls{aom} such that the combined lineshape of the two lasers is centred about shifted frequency.
+
+In some circumstances a second laser with a frequency linewidth much smaller than that of the laser of interest can be used to generate the heterodyne beatnote.
+{\color{red}Not done here.}
 
 \subsubsection{Linewidth Discrepancies}
 {\color{red}I'm not certain enough about what's going on here so just remove this.}
