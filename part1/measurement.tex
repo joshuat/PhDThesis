@@ -10,6 +10,10 @@ Long timescale measurements, minutes to hours, are useful to determine the stabi
 Heterodyning is a technique, invented by Canadian Reginald Feessenden in 1901, which mixes two frequencies to produce a new frequency~\cite{cooper_physics_2001}.
 The technique can be used to examine the spectral properties of lasers as the newly produced frequencies can be tailored such that they are easily measurable by photodetectors and spectrum analysers.
 
+Laser frequency spectrum measurements using heterodyne technique are simple to implement with the correct equipment.
+The two laser beams are combined such that they copropagate, requiring some mirrors and a beamsplitter/combiner, and then focussed onto a high-bandwidth photodetector, where the bandwidth is dependent on the desired resolution.
+The signal from the detector can then be fed into an equally high bandwidth spectrum analyser which will display the frequency spectrum of the intensity of the light on the detector.
+
 \subsubsection{Basic Theory}
 In the electrical signals context heterodyning involves the `mixing' or multiplying of two signals (e.g. two sine waves) to produce two different signals with frequencies equal to the difference and sum of the original frequencies:
 \begin{equation}
@@ -35,10 +39,11 @@ The interference term, $E_1(t)E_2(t)$, allows for the spectral measurements with
 E_1(t)E_2(t) &= \sin(\omega_1 t) \sin(\omega_2 t) \notag \\
 &= \frac{1}{2} (\cos([\omega_1-\omega_2]t) - \cos([\omega_1+\omega_2]t)), \label{equation:hetero}
 \end{align}
-and if $\omega{1,2}$ are appropriately selected then the first term in Equation~\ref{equation:hetero} is measurable.
+and if $\omega_{1,2}$ are appropriately selected then the first term in Equation~\ref{equation:hetero} is measurable.
 The difference in frequency ideally should be fairly small, less than a few GHz, which can often be induced on lasers with the same frequency by \glspl{aom} or \glspl{eom}.
 
-The equations presented above provide an obviously na\"ive approach as the frequency spread of the lasers is non-zero.
+The equations presented above provide an obviously na\"ive approach as the frequency spread of the lasers is non-zero but gives a sufficient demonstration of the basis of the heterodyne method.
+The spectral profile of the heterodyne signal is formed by the convolution of the spectral profiles of the component lasers, thus if one laser is very narrow in width compared to the other then the heterodyne signal's spectral profile is approximately equal to that of the larger linewidth laser.
 
 \subsubsection{Optical Heterodyne Methods}
 
@@ -50,11 +55,31 @@ There are a number of permutations of linewidth measurement techniques that util
 \item The three-cornered hat method.
 \end{itemize}
 
+
+\subsubsection{Frequency Reference}
+
+In some circumstances a second laser with a frequency linewidth much smaller than that of the laser of interest can be used to generate the heterodyne beatnote.
+
+\subsubsection{Two-Laser Heterodyne}
+
 Two almost identical lasers setups can be heterodyned to give the linewidth with the assumption that the lineshapes are identical.
 As the lasers will be locked to the same frequency the difference in frequencies detected by the heterodyne method will the zero and spectrum analysers do not function well at zero so one of the lasers is usually frequency shifted by an \gls{aom} such that the combined lineshape of the two lasers is centred about shifted frequency.
 
-In some circumstances a second laser with a frequency linewidth much smaller than that of the laser of interest can be used to generate the heterodyne beatnote.
-{\color{red}Not done here.}
+\subsubsection{Self-heterodyne}
+{\color{red}Figure}
+
+The self-heterodyne technique involves beating a laser with itself in order to perform a heterodyne measurement\cite{okoshi_novel_1980, richter_linewidth_1986}.
+The laser output is split and one portion is delayed, by $\tau_d$, by passing it through a kilometres long fibre.
+The $\tau_d$ should be as long as feasible, compared to the coherence time of the laser, in order to ensure that the beams at the heterodyne detector are uncorrelated.
+The remaining correlated portions of the beams result in a delta-function like peak in the frequency spectrum of the beatnote.
+
+These are the results I got...
+
+They look good... too good.
+
+Here's why...\cite{richter_linewidth_1986}
+
+\subsubsection{Three-cornered Hat}
 
 \subsubsection{Linewidth Discrepancies}
 {\color{red}I'm not certain enough about what's going on here so just remove this.}
@@ -114,26 +139,6 @@ So the width of the signal shown on a spectrum analyser has twice the spectral w
 \label{figure:simple_beatnote}
 \end{figure}
 
-\subsubsection{Self-heterodyne}
-{\color{red}Figure}
-
-The self-heterodyne technique involves beating a laser with itself in order to perform a heterodyne measurement\cite{okoshi_novel_1980, richter_linewidth_1986}.
-The laser output is split and one portion is delayed, by $\tau_d$, by passing it through a kilometres long fibre.
-The $\tau_d$ should be as long as feasible, compared to the coherence time of the laser, in order to ensure that the beams at the heterodyne detector are uncorrelated.
-The remaining correlated portions of the beams result in a delta-function like peak in the frequency spectrum of the beatnote.
-
-These are the results I got...
-
-They look good... too good.
-
-Here's why...\cite{richter_linewidth_1986}
-
-\subsubsection{Frequency Reference}
-\begin{itemize}
-\item Identical laser
-\item Narrow laser
-\item Three Gaussian lasers
-\end{itemize}
 
 \subsection{cavity Measurements}
 
