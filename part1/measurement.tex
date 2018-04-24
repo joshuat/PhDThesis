@@ -60,10 +60,36 @@ There are a number of permutations of linewidth measurement techniques that util
 
 In some circumstances a second laser with a frequency linewidth much smaller than that of the laser of interest can be used to generate the heterodyne beatnote.
 
+\begin{figure}
+    %\centering
+    \begin{subfigure}{0.49\linewidth}
+    %\centering
+    \includegraphics{part1/Figs/HeterodyneReferenceLaser.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.49\linewidth}
+    %\centering
+    \input{part1/Figs/reference_laser_heterodyne.pgf}
+    \end{subfigure}
+    \caption{}
+\end{figure}
+
 \subsubsection{Two-Laser Heterodyne}
 
 Two almost identical lasers setups can be heterodyned to give the linewidth with the assumption that the lineshapes are identical.
 As the lasers will be locked to the same frequency the difference in frequencies detected by the heterodyne method will the zero and spectrum analysers do not function well at zero so one of the lasers is usually frequency shifted by an \gls{aom} such that the combined lineshape of the two lasers is centred about shifted frequency.
+
+\begin{figure}
+    %\centering
+    \begin{subfigure}{0.49\linewidth}
+    %\centering
+    \includegraphics{part1/Figs/HeterodyneTwoLasers.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.49\linewidth}
+    %\centering
+    \input{part1/Figs/two_laser_heterodyne.pgf}
+    \end{subfigure}
+    \caption{}
+\end{figure}
 
 \subsubsection{Self-heterodyne}
 {\color{red}Figure}
@@ -72,6 +98,19 @@ The self-heterodyne technique involves beating a laser with itself in order to p
 The laser output is split and one portion is delayed, by $\tau_d$, by passing it through a kilometres long fibre.
 The $\tau_d$ should be as long as feasible, compared to the coherence time of the laser, in order to ensure that the beams at the heterodyne detector are uncorrelated.
 The remaining correlated portions of the beams result in a delta-function like peak in the frequency spectrum of the beatnote.
+
+\begin{figure}
+    %\centering
+    \begin{subfigure}{0.49\linewidth}
+    %\centering
+    \includegraphics{part1/Figs/SelfHeterodyne.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.49\linewidth}
+    %\centering
+    \input{part1/Figs/self-heterodyne.pgf}
+    \end{subfigure}
+    \caption{}
+\end{figure}
 
 These are the results I got...
 
