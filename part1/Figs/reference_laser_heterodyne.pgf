@@ -59,7 +59,7 @@
 \pgfsetrectcap%
 \pgfsetroundjoin%
 \pgfsetlinewidth{1.003750pt}%
-\definecolor{currentstroke}{rgb}{0.309804,0.478431,0.682353}%
+\definecolor{currentstroke}{rgb}{0.600000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.342732in}{0.521851in}}%
@@ -112,8 +112,8 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.342732in}{0.521851in}}%
-\pgfpathlineto{\pgfqpoint{1.130154in}{0.521851in}}%
+\pgfpathmoveto{\pgfqpoint{1.130154in}{0.521851in}}%
+\pgfpathlineto{\pgfqpoint{1.130154in}{1.277500in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -134,8 +134,8 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.130154in}{0.521851in}}%
-\pgfpathlineto{\pgfqpoint{1.130154in}{1.277500in}}%
+\pgfpathmoveto{\pgfqpoint{0.342732in}{0.521851in}}%
+\pgfpathlineto{\pgfqpoint{1.130154in}{0.521851in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -216,7 +216,7 @@
 \pgfsetrectcap%
 \pgfsetroundjoin%
 \pgfsetlinewidth{1.003750pt}%
-\definecolor{currentstroke}{rgb}{0.301961,0.607843,0.301961}%
+\definecolor{currentstroke}{rgb}{0.043137,0.325490,0.580392}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.130154in}{0.521851in}}%
@@ -253,8 +253,8 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.130154in}{0.521851in}}%
-\pgfpathlineto{\pgfqpoint{1.917577in}{0.521851in}}%
+\pgfpathmoveto{\pgfqpoint{1.917577in}{0.521851in}}%
+\pgfpathlineto{\pgfqpoint{1.917577in}{1.277500in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -275,8 +275,8 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.917577in}{0.521851in}}%
-\pgfpathlineto{\pgfqpoint{1.917577in}{1.277500in}}%
+\pgfpathmoveto{\pgfqpoint{1.130154in}{0.521851in}}%
+\pgfpathlineto{\pgfqpoint{1.917577in}{0.521851in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -357,7 +357,7 @@
 \pgfsetrectcap%
 \pgfsetroundjoin%
 \pgfsetlinewidth{1.003750pt}%
-\definecolor{currentstroke}{rgb}{1.000000,0.400000,0.200000}%
+\definecolor{currentstroke}{rgb}{0.301961,0.607843,0.301961}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.917577in}{0.521851in}}%
@@ -409,7 +409,7 @@
 \pgfsetbuttcap%
 \pgfsetroundjoin%
 \pgfsetlinewidth{1.003750pt}%
-\definecolor{currentstroke}{rgb}{0.301961,0.607843,0.301961}%
+\definecolor{currentstroke}{rgb}{0.043137,0.325490,0.580392}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{{1.000000pt}{3.000000pt}}{0.000000pt}%
 \pgfpathmoveto{\pgfqpoint{1.917577in}{0.521851in}}%
@@ -445,7 +445,7 @@
 \pgfsetbuttcap%
 \pgfsetroundjoin%
 \pgfsetlinewidth{1.003750pt}%
-\definecolor{currentstroke}{rgb}{0.309804,0.478431,0.682353}%
+\definecolor{currentstroke}{rgb}{0.600000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{{1.000000pt}{3.000000pt}}{0.000000pt}%
 \pgfpathmoveto{\pgfqpoint{1.917577in}{0.521851in}}%
@@ -498,8 +498,8 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.917577in}{0.521851in}}%
-\pgfpathlineto{\pgfqpoint{2.705000in}{0.521851in}}%
+\pgfpathmoveto{\pgfqpoint{2.705000in}{0.521851in}}%
+\pgfpathlineto{\pgfqpoint{2.705000in}{1.277500in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -520,8 +520,8 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{2.705000in}{0.521851in}}%
-\pgfpathlineto{\pgfqpoint{2.705000in}{1.277500in}}%
+\pgfpathmoveto{\pgfqpoint{1.917577in}{0.521851in}}%
+\pgfpathlineto{\pgfqpoint{2.705000in}{0.521851in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
