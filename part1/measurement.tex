@@ -43,9 +43,10 @@ and if $\omega_{1,2}$ are appropriately selected then the first term in Equation
 The difference in frequency ideally should be fairly small, less than a few GHz, which can often be induced on lasers with the same frequency by \glspl{aom} or \glspl{eom}.
 
 The equations presented above provide an obviously na\"ive approach as the frequency spread of the lasers is non-zero but gives a sufficient demonstration of the basis of the heterodyne method.
-The spectral profile of the heterodyne signal is formed by the convolution of the spectral profiles of the component lasers, thus if one laser is very narrow in width compared to the other then the heterodyne signal's spectral profile is approximately equal to that of the larger linewidth laser.
+The spectral profile of the heterodyne signal is formed by the convolution of the spectral profiles of the component lasers, thus strategies are required in order to resolve the lineshape of a single laser.
 
 \subsubsection{Optical Heterodyne Methods}
+{\color{red} Remove this section once the others are written.}
 
 There are a number of permutations of linewidth measurement techniques that utilise heterodyning. The major ones are:
 \begin{itemize}
@@ -57,8 +58,8 @@ There are a number of permutations of linewidth measurement techniques that util
 
 
 \subsubsection{Frequency Reference}
-
-In some circumstances a second laser with a frequency linewidth much smaller than that of the laser of interest can be used to generate the heterodyne beatnote.
+One method of resolving the lineshape of a single laser is to use a second laser known to have a frequency lineshape much narrower than the laser of interest so that the convolved lineshape is the same as the lineshape of the laser of interest.
+This method has some limitations in its application as it is only useful for resolving the lineshape of lasers with relatively wide specral width.
 
 \begin{figure}
     %\centering
@@ -94,9 +95,11 @@ As the lasers will be locked to the same frequency the difference in frequencies
 \subsubsection{Self-heterodyne}
 
 The self-heterodyne technique involves beating a laser with itself in order to perform a heterodyne measurement\cite{okoshi_novel_1980, richter_linewidth_1986}.
-The laser output is split and one portion is delayed, by $\tau_d$, by passing it through a kilometres long fibre.
-The $\tau_d$ should be as long as feasible, compared to the coherence time of the laser, in order to ensure that the beams at the heterodyne detector are uncorrelated.
-The remaining correlated portions of the beams result in a delta-function like peak in the frequency spectrum of the beatnote.
+In order to perform this measurement it is necessary to split the laser into two beams and frequency shift, usually with an \gls{aom} one such that the beatnote is not centred at \unit[0]{Hz}.
+The two beams are still correlated so it is necessary to propagate one beam for long enough to reduce the coherence otherwise the lineshape of the beatnote would just appear as a delta function centred at the \gls{aom} frequency.
+Typically this is done with a long, \unit[$\sim$10]{km}, long optical fiber which gives a delay of \unit[$\sim$33]{$\muup$s} thus allowing for portions of the laser frequency spectrum greater than \unit[$\sim$30]{kHz} to be measured.
+The portions of the lasers beams that are still correlated produce a delta-function-like peak in the centre of the beatnote lineshape, as shown in Figure~{\color{red}FIGURE}.
+A delay line as long as the coherence length of the laser is ideal however due to absorption in the fibre it can become impractical to fully de-cohere the beams.
 
 \begin{figure}
     %\centering
