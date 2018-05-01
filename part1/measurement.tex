@@ -64,14 +64,17 @@ This method is shown in Figure~\ref{figure:heterodyne_reference}.
     \label{figure:heterodyne_reference}
 \end{figure}
 
+The initial intention with the experiments described in the this chapter was to be able to use a \gls{pdh} locked laser as a frequency reference to characterise the performance of another laser locked with \gls{ps} using high-bandwidth feedback.
+Unfortunately, initial measurements were unable to confirm that the \gls{pdh} locked laser was in fact much narrower than \gls{ps} locked one so more sophisticated methods were required.
+
 \subsubsection{Self-heterodyne}
 
 The self-heterodyne technique involves beating a laser with itself in order to perform a heterodyne measurement, as shown in Figure~\ref{figure:heterodyne_reference}~\cite{okoshi_novel_1980}.
-In order to perform this measurement it is necessary to split the laser into two beams and frequency shift, usually with an \gls{aom} one such that the beatnote is not centred at \unit[0]{Hz}.
-The two beams are still correlated so it is necessary to propagate one beam for long enough to reduce the coherence otherwise the lineshape of the beatnote would just appear as a delta function centred at the \gls{aom} frequency~\cite{richter_linewidth_1986}.
-Typically this is done with a long, \unit[$\sim$10]{km}, long optical fiber which gives a delay of \unit[$\sim$33]{$\muup$s} thus allowing for portions of the laser frequency spectrum greater than \unit[$\sim$30]{kHz} to be measured.
-The portions of the lasers beams that are still correlated produce a delta-function-like peak in the centre of the beatnote lineshape, as shown in Figure~{\color{red}FIGURE}.
-A delay line as long as the coherence length of the laser is ideal however due to absorption in the fibre it can become impractical to fully de-cohere the beams.
+In order to perform this measurement it is necessary to split the laser into two beams and frequency shift on beam, usually with an \gls{aom}, such that the beatnote is not centred at \unit[0]{Hz}.
+The two beams are still correlated so it is necessary to propagate one beam to reduce the coherence otherwise the lineshape of the beatnote would just appear as a delta function centred at the \gls{aom} frequency~\cite{richter_linewidth_1986}.
+One beam of the beams is typically delayed by a very long optical fibre such that that arm of the heterodyne measurement has been delayed, ideally for as long as the coherence time of the laser.
+Practically this would require optical fibres with lengths from 1 to \unit[100]{km} depending on the linewidth of the laser under investigation.
+Unfortunately the absorption losses in fibres tends to be at least a few dB per kilometre making fibres longer than \unit[10]{km} troublesome to use.
 
 \begin{figure}
     %\centering
