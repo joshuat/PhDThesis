@@ -60,6 +60,7 @@ There are a number of permutations of linewidth measurement techniques that util
 \subsubsection{Frequency Reference}
 One method of resolving the lineshape of a single laser is to use a second laser known to have a frequency lineshape much narrower than the laser of interest so that the convolved lineshape is the same as the lineshape of the laser of interest.
 This method has some limitations in its application as it is only useful for resolving the lineshape of lasers with relatively wide specral width.
+This method is shown in Figure~\ref{figure:heterodyne_reference}.
 
 \begin{figure}
     %\centering
@@ -72,31 +73,14 @@ This method has some limitations in its application as it is only useful for res
     \input{part1/Figs/reference_laser_heterodyne.pgf}
     \end{subfigure}
     \caption{Heterodyne measurement with a narrow reference laser by combining the laser of interest ($\omega_1$, red) with the reference laser ($\omega_2$, blue). Shown on the right is the spectral lineshapes of the lasers and the heterodyne beatnote (green).}
-\end{figure}
-
-\subsubsection{Two-Laser Heterodyne}
-
-Two almost identical lasers setups can be heterodyned to give the linewidth with the assumption that the lineshapes are identical.
-As the lasers will be locked to the same frequency the difference in frequencies detected by the heterodyne method will the zero and spectrum analysers do not function well at zero so one of the lasers is usually frequency shifted by an \gls{aom} such that the combined lineshape of the two lasers is centred about shifted frequency.
-
-\begin{figure}
-    %\centering
-    \begin{subfigure}{0.49\linewidth}
-    %\centering
-    \includegraphics{part1/Figs/HeterodyneTwoLasers.pdf}
-    \end{subfigure}
-    \begin{subfigure}{0.49\linewidth}
-    %\centering
-    \input{part1/Figs/two_laser_heterodyne.pgf}
-    \end{subfigure}
-    \caption{Heterodyne measurement with two `identical' lasers. One beam is frequency shifted by an \gls{aom} from the initial frequency ($\omega_1$, red) to an offset frequency ($\omega_1+\delta$, blue) to enable measurement by a spectrum analyser. Shown on the right is the spectral lineshapes of the lasers and the heterodyne beatnote (green).}
+    \label{figure:heterodyne_reference}
 \end{figure}
 
 \subsubsection{Self-heterodyne}
 
-The self-heterodyne technique involves beating a laser with itself in order to perform a heterodyne measurement\cite{okoshi_novel_1980, richter_linewidth_1986}.
+The self-heterodyne technique involves beating a laser with itself in order to perform a heterodyne measurement, as shown in Figure~\ref{figure:heterodyne_reference}~\cite{okoshi_novel_1980}.
 In order to perform this measurement it is necessary to split the laser into two beams and frequency shift, usually with an \gls{aom} one such that the beatnote is not centred at \unit[0]{Hz}.
-The two beams are still correlated so it is necessary to propagate one beam for long enough to reduce the coherence otherwise the lineshape of the beatnote would just appear as a delta function centred at the \gls{aom} frequency.
+The two beams are still correlated so it is necessary to propagate one beam for long enough to reduce the coherence otherwise the lineshape of the beatnote would just appear as a delta function centred at the \gls{aom} frequency~\cite{richter_linewidth_1986}.
 Typically this is done with a long, \unit[$\sim$10]{km}, long optical fiber which gives a delay of \unit[$\sim$33]{$\muup$s} thus allowing for portions of the laser frequency spectrum greater than \unit[$\sim$30]{kHz} to be measured.
 The portions of the lasers beams that are still correlated produce a delta-function-like peak in the centre of the beatnote lineshape, as shown in Figure~{\color{red}FIGURE}.
 A delay line as long as the coherence length of the laser is ideal however due to absorption in the fibre it can become impractical to fully de-cohere the beams.
@@ -111,7 +95,9 @@ A delay line as long as the coherence length of the laser is ideal however due t
     %\centering
     \input{part1/Figs/self-heterodyne.pgf}
     \end{subfigure}
-    \caption{Self-Heterodyne measurement. The laser is split with one beam frequency shifted by an \gls{aom} from the initial frequency ($\omega_1$, red) to an offset frequency ($\omega_1+\delta$, blue) to enable measurement by a spectrum analyser and then propagated through a long optical fiber to such that the beams are no longer correlated. Shown on the right is the spectral lineshapes of the laser and the heterodyne beatnote (green).}
+    \caption{Self-heterodyne measurement. The laser is split with one beam frequency shifted by an \gls{aom} from the initial frequency ($\omega_1$, red) to an offset frequency ($\omega_1+\delta$, blue) to enable measurement by a spectrum analyser and then propagated through a long optical fiber to such that the beams are no longer correlated. Shown on the right is the spectral lineshapes of the laser and the heterodyne beatnote (green).}
+    \label{figure:heterodyne_reference}
+    % Code for pgfs in Code/Figures/HeterodyneVersion.py
 \end{figure}
 
 These are the results I got...
@@ -120,7 +106,23 @@ They look good... too good.
 
 Here's why...\cite{richter_linewidth_1986}
 
-\subsubsection{Three-cornered Hat}
+\subsubsection{Two-Laser Heterodyne}
+
+Two almost identical lasers setups can be used in a heterodyne measurement to determine the lineshape under the assumption that the lineshape of each laser is the same.
+As the lasers will be locked to the same frequency the difference in frequencies detected by the heterodyne method will the zero and spectrum analysers do not function well at zero so one of the lasers is usually frequency shifted by an \gls{aom} such that the combined lineshape of the two lasers is centred about shifted frequency.
+
+\begin{figure}
+    %\centering
+    \begin{subfigure}{0.49\linewidth}
+    %\centering
+    \includegraphics{part1/Figs/HeterodyneTwoLasers.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.49\linewidth}
+    %\centering
+    \input{part1/Figs/two_laser_heterodyne.pgf}
+    \end{subfigure}
+    \caption{Heterodyne measurement with two `identical' lasers. One beam is frequency shifted by an \gls{aom} from the initial frequency ($\omega_1$, red) to an offset frequency ($\omega_1+\delta$, blue) to enable measurement by a spectrum analyser. Shown on the right is the spectral lineshapes of the lasers and the heterodyne beatnote (green).}
+\end{figure}
 
 \subsubsection{Linewidth Discrepancies}
 {\color{red}I'm not certain enough about what's going on here so just remove this.}
@@ -172,14 +174,6 @@ and
 &= B e^{-(f-f_0)^2/2(2\sigma)^2}
 \end{align}
 So the width of the signal shown on a spectrum analyser has twice the spectral width of the electric field that generated it.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.5\linewidth]{part1/Figs/beatnote.jpg}
-\caption{Depiction of simple beatnote.}
-\label{figure:simple_beatnote}
-\end{figure}
-
 
 \subsection{cavity Measurements}
 
