@@ -74,7 +74,7 @@ In order to perform this measurement it is necessary to split the laser into two
 The two beams are still correlated so it is necessary to propagate one beam to reduce the coherence otherwise the lineshape of the beatnote would just appear as a delta function centred at the \gls{aom} frequency~\cite{richter_linewidth_1986}.
 One beam of the beams is typically delayed by a very long optical fibre such that that arm of the heterodyne measurement has been delayed, ideally for as long as the coherence time of the laser.
 Practically this would require optical fibres with lengths from 1 to \unit[100]{km} depending on the linewidth of the laser under investigation.
-Unfortunately the absorption losses in fibres tends to be at least a few dB per kilometre making fibres longer than \unit[10]{km} troublesome to use.
+Unfortunately the absorption losses in fibres tends to be at least a few dB per kilometre making fibres longer than \unit[10]{km} troublesome to use however it is not necessary to fully decohere the beams with a delay time longer than the coherence time, as discussed in Reference~\cite{richter_linewidth_1986}.
 
 \begin{figure}
     %\centering
@@ -91,16 +91,15 @@ Unfortunately the absorption losses in fibres tends to be at least a few dB per 
     % Code for pgfs in Code/Figures/HeterodyneVersion.py
 \end{figure}
 
-These are the results I got...
-
-They look good... too good.
-
-Here's why...\cite{richter_linewidth_1986}
+Self-heterodyne was one of the first diagnostics used to measure the performance of \gls{ps}.
+Figure~\ref{figure:self-heterodyne_example} shows a self-heterodyne beatnote from a laser locked with \gls{ps} without high-bandwidth feedback, the figure shows the beatnote at a few resolutions with the full beatnote, the central portion of the beatnote, and the delta-function component of the beatnote visible.
+The central portion of the beatnote indicates that the laser has a \gls{fwhm} linewidth of \unit[33]{kHz} (comparable to the measurements made in Reference~\cite{torii_laser-phase_2012}), and the delta-function component of the beatnote manifests as a peak of order \unit[100]{Hz} width.
+A laser locked with \gls{ps} and high-bandwidth feedback was expected to achieve a linewidth of order \unit[100]{Hz} andthe delta-function component of the self-heterodyne beatnote would confound these measurements thus other linewidth measurement techniques are required.
 
 \begin{figure}
 \center
 \input{part1/Figs/Self-heterodyne_example.pgf}
-\caption{An example of a self-heterodyne beatnote of an \gls{ecdl} locked with \gls{ps} at various resolutions.
+\caption{An example of a self-heterodyne beatnote of an \gls{ecdl} locked with \gls{ps} (without fast-feedback) at various resolutions.
 The grey shaded areas indicate the frequency range of the next figure as the resolution is increased (resolution bandwidth is, left-to-right, \unit[3]{kHz}, \unit[1]{kHz}, \unit[1]{Hz}).
 The dotted red lines indicate Gaussian fits to the beatnote features, the middle fit has a \unit[3]{dB} width of \unit[77]{kHz} and the right fit a width of \unit[570]{Hz} which correspond to a laser linewidth of \unit[33]{kHz} and \unit[240]{Hz} respectively.}
 
