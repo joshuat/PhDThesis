@@ -101,7 +101,8 @@ A laser locked with \gls{ps} and high-bandwidth feedback was expected to achieve
 \input{part1/Figs/Self-heterodyne_example.pgf}
 \caption{An example of a self-heterodyne beatnote of an \gls{ecdl} locked with \gls{ps} (without fast-feedback) at various resolutions.
 The grey shaded areas indicate the frequency range of the next figure as the resolution is increased (resolution bandwidth is, left-to-right, \unit[3]{kHz}, \unit[1]{kHz}, \unit[1]{Hz}).
-The dotted red lines indicate Gaussian fits to the beatnote features, the middle fit has a \unit[3]{dB} width of \unit[77]{kHz} and the right fit a width of \unit[570]{Hz} which correspond to a laser linewidth of \unit[33]{kHz} and \unit[240]{Hz} respectively.}
+The dotted red lines indicate Gaussian fits to the beatnote features, the middle fit has a \unit[3]{dB} width of \unit[77]{kHz} and the right fit a width of \unit[570]{Hz} which correspond to a laser linewidth of \unit[33]{kHz} and \unit[240]{Hz} respectively.
+The horizontal axis indicates the frequency from the beatnote center.}
 \label{figure:self-heterodyne_example}
 % Code and data at 2014.01.31/Rb87 Cooling
 \end{figure}
@@ -130,8 +131,10 @@ A summary of two-laser heterodyne is shown in Figure~\ref{figure:two-laser_heter
 Two-laser heterodyne provides a useful measurement due to its simplicity and the lack of confounding effects (such as those found with self-heterodyne) and thus can relatively easily provide confidence in the results of the measurement.
 The downside of this method is the obvious requirement for two very similar lasers frequency stabilised with the same methods to be used.
 
-In order to test the efficacy of high-bandwidth \gls{ps} two similar laser setups were used; both used commercial Littrow configuration lasers\footnote{MOGLabs ECD003 and Toptica DL pro controlled with MOGLabs DLC202 and DLC252 laser controllers respectively.}, identical optic setups as shown in Figure~\ref{figure:two_laser_setup} with optical fibres that can be connected to the diagnostic measurements such as the heterodyne setup.
-A \unit[1]{GHz} detector\footnote{NewFocus 1621} was connected to a spectrum analysers\footnote{Rohde and Swartz FSP7}.
+In order to test the efficacy of high-bandwidth \gls{ps} two similar laser setups were used; both used commercial Littrow configuration lasers\footnote{MOGLabs ECD003 and Toptica DL pro controlled with MOGLabs DLC202 and DLC252 laser controllers respectively.}, identical optic setups as shown in Figure~\ref{figure:two_laser_setup} with optical fibres that can be connected to the diagnostic measurements such as the heterodyne setup and the high-finesse cavity.
+A \unit[1]{GHz} detector\footnote{NewFocus 1621} was connected to a spectrum analyser\footnote{\unit[9]{kHz} to \unit[7]{KHz} Rohde and Swartz FSP7} to measure the spectrum of the beatnote that was centred around \unit[80]{MHz}.
+
+...
 
 \begin{figure}
 \center
