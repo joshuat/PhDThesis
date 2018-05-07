@@ -45,6 +45,8 @@ The difference in frequency ideally should be fairly small, less than a few GHz,
 The equations presented above provide an obviously na\"ive approach as the frequency spread of the lasers is non-zero but gives a sufficient demonstration of the basis of the heterodyne method.
 The spectral profile of the heterodyne signal is formed by the convolution of the spectral profiles of the component lasers, thus strategies are required in order to resolve the lineshape of a single laser.
 
+
+
 \subsubsection{Frequency Reference}
 One method of resolving the lineshape of a single laser is to use a second laser known to have a frequency lineshape much narrower than the laser of interest so that the convolved lineshape is the same as the lineshape of the laser of interest.
 This method has some limitations in its application as it is only useful for resolving the lineshape of lasers with relatively wide specral width.
@@ -132,9 +134,6 @@ Two-laser heterodyne provides a useful measurement due to its simplicity and the
 The downside of this method is the obvious requirement for two very similar lasers frequency stabilised with the same methods to be used.
 
 In order to test the efficacy of high-bandwidth \gls{ps} two similar laser setups were used; both used commercial Littrow configuration lasers\footnote{MOGLabs ECD003 and Toptica DL pro controlled with MOGLabs DLC202 and DLC252 laser controllers respectively.}, identical optic setups as shown in Figure~\ref{figure:two_laser_setup} with optical fibres that can be connected to the diagnostic measurements such as the heterodyne setup and the high-finesse cavity.
-A \unit[1]{GHz} detector\footnote{NewFocus 1621} was connected to a spectrum analyser\footnote{\unit[9]{kHz} to \unit[7]{KHz} Rohde and Swartz FSP7} to measure the spectrum of the beatnote that was centred around \unit[80]{MHz}.
-
-...
 
 \begin{figure}
 \center
@@ -147,12 +146,17 @@ The polarisation rotation of the probe beam is then measured by a balanced polar
 \label{figure:two_laser_setup}
 \end{figure}
 
+A \unit[1]{GHz} detector\footnote{NewFocus 1621} was connected to a spectrum analyser\footnote{\unit[9]{kHz} to \unit[7]{KHz} Rohde and Swartz FSP7} to measure the spectrum of the beatnote that was centred around \unit[80]{MHz} due to the frequency shift imposed on one beam of the heterodyne measurement by an \gls{aom}.
+An example of a beatnote from two lasers locked with \gls{ps} with high-bandwidth feedback is shown in Figure~\ref{figure:two_laser_beatnote}.
+These measurements indicate that \gls{ps} with high-bandwidth feedback is able to narrow the laser linewidth to \unit[0.6$\pm$0.1]{kHz} which is significant improvement, two orders of magnitude, over previously published \gls{ps} performance~\cite{torii_laser-phase_2012}.
+
 \begin{figure}
 \center
 \input{part1/Figs/InsetBeatnote.pgf}
-\caption{Heterodyne beatnote for two lasers locked with \gls{ps} and inset is a higher resolution measurement of the centre peak which has a -3dB width of \unit[2.0$\pm$0.36]{kHz} which corresponds to a laser width of \unit[0.6$\pm$0.1]{kHz}.
+\caption{Heterodyne beatnote for two lasers locked with \gls{ps} and inset is a higher resolution measurement of the centre peak which has a -3dB width (\gls{fwhm}) of \unit[2.0$\pm$0.36]{kHz} which corresponds to a laser width of \unit[0.6$\pm$0.1]{kHz}.
 Both figures are 50-shot averages captured with resolution bandwidths of \unit[30]{kHz} and \unit[100]{Hz} and total measurement times of \unit[0.5]{s} and \unit[2]{s} respectively.}
 \label{figure:two_laser_beatnote}
+% Code and data located at Code/PolSpec Code/Laser/Beatnote/Beatnote Inset.py
 \end{figure}
 
 \subsubsection{Linewidth Discrepancies}
