@@ -1,70 +1,14 @@
 \chapter{Heterodyne Beatnote of Two Lasers}
 
-This will be take two of my heterodyne proof since I don't like the result I got for the first go and I'm assuming that's because there are errors somewhere.
+This is a proof showing, in excruciating detail, that the \gls{fwhm} of a heterodyne beatnote generated from two identical idenpendent Gaussian-lineshape lasers has  a specral width that is $2\sqrt{2\log_e(2)}$ larger than the spectral width of the individual lasers.
 
-\section{Perfectly Narrow Lasers}
-Let us take two lasers,
+Consider two independent lasers with Gaussian spectral widths such that the Fourier transform of the electric field is
 \begin{align}
-\vec{E_1}(t) = E_1\cos(\omega_1 t)\\
-\vec{E_2}(t) = E_2\cos(\omega_2 t)
+\mathcal{F}\{E_i\} = \exp\left(-\frac{(f-f_0)^2}{2\sigma_i^2}\right),
 \end{align}
+where the lasers have a spectral width of $\sigma_i$ centred at frequency $f$.
 
-If we combine the two lasers onto a detector then the detector see the sum of the electric fields.
-\begin{align}
-\vec{E_T}(t) = \vec{E_1}(t) + \vec{E_2}(t)
-\end{align}
-
-The detector measures the power of the lasers which is given by
-\begin{align}
-P_{detector}(t) &= I(t) * A_{detector}\notag\\
-&= \frac{cA\epsilon_0}{2}|E|^2\notag\\
-&= \frac{cA\epsilon_0}{2}(\vec{E_1}^2 + \vec{E_1}\vec{E_2} + \vec{E_2}^2)\notag\\
-&= \frac{cA\epsilon_0}{2}(E_1^2\cos(\omega_1 t)^2 + E_1\cos(\omega_1 t)E_2\cos(\omega_2 t) + E_2^2\cos(\omega_2 t)^2)
-\end{align}
-
-Since $\cos^2(x) = \frac{1+\cos(2x)}{2}$ and $\cos(x)\cos(y) = \frac{1}{2}(\cos(x-y)+\cos(y-x))$,
-\begin{align}
-P_{detector}(t) = \frac{cA\epsilon_0}{2}&\left(\frac{E_1^2}{2}(1+\cos(2\omega_1 t)) + \frac{E_1E_2}{2}(\cos([\omega_1-\omega_2]t)+\cos([\omega_2-\omega_1] t)) + \frac{E_2^2}{2}(1+\cos(2\omega_2 t))\right)\notag\\
-= \frac{cA\epsilon_0}{4}\Bigg(&E_1^2 + E_2^2+\quad\mathrm{[Constant\,\, Terms]}\notag\\
-&E_1E_2\Big(\cos\big([\omega_1-\omega_2]t\big) + \cos\big([\omega_2-\omega_1] t\big)\Big) +\quad\mathrm{[Low\,\,Frequency\,\, Term]}\notag\\
-&\frac{E_1^2}{2}\cos(2\omega_1t) + \frac{E_2^2}{2}\cos(2\omega_2t) \Bigg)\quad\mathrm{[High\,\, Frequency\,\, Term]}
-\end{align}
-
-We're interested in the low frequency term which represents the beatnote. So,
-\begin{align}
-P_{detector}(t) &= \frac{cA\epsilon_0E_1E_2}{4}\Big(\cos\big(\Delta t\big) + \cos\big(-\Delta t\big)\Big)\notag\\
-&= \frac{cA\epsilon_0E_1E_2}{2}\cos\big(\Delta t\big)
-\end{align}
-where $\Delta=\omega_1-\omega_2$.
-
-A spectrum analyser measure the electrical power of a signal, $P=IV=V^2/R$. For a photodetector the voltage is proportional to the optical power, $V\propto P$, thus the electrical power is proportional to the optical power squared.
-
-So,
-\begin{align}
-P_{elec}(T) \propto \left[P_{detector}(t)\right]^2 &= \left[\frac{cA\epsilon_0E_1E_2}{4}\cos(\Delta t) \right]^2\notag\\
-&= \left[\frac{cA\epsilon_0E_1E_2}{4}\right]^2 \cos^2(\Delta t)\notag\\
-&= \left[\frac{cA\epsilon_0E_1E_2}{4}\right]^2 \left[\frac{1+\cos(2\Delta t)}{2}\right]\notag\\
-&= \left[\frac{cA\epsilon_0E_1E_2}{8}\right]^2 \left[1+\cos(2\Delta t)\right]
-\end{align}
-
-The spectrum analyser works in Fourier space so let's transform,
-\begin{align}
-\mathcal{F}\{P_{detector}^2\}(f) &= \mathcal{F}\left\{\left[\frac{cA\epsilon_0E_1E_2}{8}\right]^2 \left[1+\cos(2\Delta t)\right]\right\}\notag\\
-&= \left[\frac{cA\epsilon_0E_1E_2}{8}\right]^2 \left[\mathcal{F}\left\{1\right\}+\mathcal{F}\left\{\cos(2\Delta t)\right\}\right]\notag\\
-&= \left[\frac{cA\epsilon_0E_1E_2}{8}\right]^2 \left[\delta\{f\}+\frac{1}{2}\left(\delta\left\{f-\frac{\Delta}{\pi}\right\}+\delta\left\{f+\frac{\Delta}{\pi}\right\}\right)\right]
-\end{align}
-
-The spectrum analyser can't tell the difference between $\pm f$ and is not good at detecting things at $f=0$ so we can write,
-\begin{align}
-\mathcal{F}\{P_{detector}^2\} &= \left[\frac{cA\epsilon_0E_1E_2}{8}\right]^2 \delta\left(f-\frac{\Delta}{\pi}\right)
-\end{align}
-
-\section{Gaussian Lasers}
-More realistically the lasers should have spectral width. Let's give the lasers Gaussian widths.
-\begin{align}
-\mathcal{F}\{E_i\} = \exp\left(-\frac{(f-f_0)^2}{2\sigma_i^2}\right)
-\end{align}
-so, ignoring the centre frequency $f_0$ for now,
+Ignoring the centre frequency $f_0$ for now,
 \begin{align}
 E_i &= \int_{-\infty}^{\infty} \exp\left(-\frac{f^2}{2\sigma_i^2}\right) \exp(2\pi i f t) \,df\notag\\
 &= \int_{-\infty}^{\infty} \exp\left(-\frac{f^2}{2\sigma_i^2}\right) \big(\cos(2\pi f t) + i\sin(2\pi f t)\big) \,df
@@ -75,7 +19,7 @@ E_i &= \int_{-\infty}^{\infty} \exp\left(-\frac{f^2}{2\sigma_i^2}\right) \big(\c
 &= \int_{-\infty}^{\infty} \exp\left(-\frac{f^2}{2\sigma_i^2}\right)\cos(2\pi f t) \,df
 \end{align}
 
-Apparently (Abramowitz and Stegun (1972, p. 302, equation 7.4.6),
+According to Reference~\cite{abramowitz_handbook_2012} (page 302, equation 7.4.6),
 \begin{align}
 \int_{-\infty}^{\infty}e^{-ax^2}\cos(2\pi k x)\,dx = \sqrt{\frac{\pi}{a}} e^{-\pi^2k^2/a}
 \end{align}
@@ -90,18 +34,28 @@ Using the Fourier transform shift property we can put $f_0$ back in.
 E_i &= \sigma_i\sqrt{2 \pi} e^{-2 \pi^2t^2 \sigma_i^2}\,e^{-2\pi i t f_0}
 \end{align}
 
-So the signal on the spectrum analyser should be
+The detector measures the power of the lasers which is given by
+\begin{align}
+P_{detector}(t) &= I(t) * A\notag\\
+&= \frac{cA\epsilon_0}{2}|E|^2
+\end{align}
+where $A$ is the area of the detector.
+
+The signal shown on the spectrum analyser should be
 \begin{align}
 \mathcal{F}\{P_{elec}\} &\propto \mathcal{F}\{\left[P_{detector}\right]^2\}\notag\\
 &= \mathcal{F}\left\{\left[\frac{cA\epsilon_0}{2}|E|^2\right]^2\right\}\notag\\
-&= \mathcal{F}\left\{\left[\frac{cA\epsilon_0}{2}|\vec{E_1}+\vec{E_2}|^2\right]^2\right\}\\\notag\\
+&= \mathcal{F}\left\{\left[\frac{cA\epsilon_0}{2}|\vec{E_1}+\vec{E_2}|^2\right]^2\right\}
+\end{align}
+\begin{align}
 |\vec{E_1}+\vec{E_2}|^2 &= (\vec{E_1}+\vec{E_2})(\vec{E_1}+\vec{E_2})^*\notag\\
-&= \sqrt{2\pi} \Big(\sigma_1 e^{-2\pi^2t^2\sigma_1^2-2\pi i t f_1} + \sigma_2 e^{-2\pi^2t^2\sigma_2^2-2\pi i t f_2}\Big)\Big(\sigma_1 e^{-2\pi^2t^2\sigma_1^2+2\pi i t f_1} + \sigma_2 e^{-2\pi^2t^2\sigma_2^2+2\pi i t f_2}\Big)\notag\\
-&= \sqrt{2\pi}\Big(\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + \sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)-2\pi i t (f_1-f_2)} + \sigma_2\sigma_1 e^{-2\pi^2t^2(\sigma_2^2+\sigma_1^2)+2\pi i t (f_1-f_2)} \Big)\notag\\
-&= \sqrt{2\pi}\Big(\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + \sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)}\left\{e^{-2\pi i t (f_1-f_2)} + e^{+2\pi i t (f_1-f_2)} \right\}\Big)\notag\\
-&= \sqrt{2\pi}\Big(\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + \notag\\&\quad\quad\quad\quad\sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)}\left\{\cos\big[2\pi t (f_1-f_2)\big]-i\sin\big[2\pi t (f_1-f_2)\big] + \cos\big[2\pi t (f_1-f_2)\big]+i\sin\big[2\pi t (f_1-f_2)\big]\right\} \Big)\notag\\
-&= \sqrt{2\pi}\Big(\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + 2\sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)}\cos\big[2\pi t (f_1-f_2)\big] \Big)\\
-\notag\\
+&= \sqrt{2\pi} \Bigg(\sigma_1 e^{-2\pi^2t^2\sigma_1^2-2\pi i t f_1} + \sigma_2 e^{-2\pi^2t^2\sigma_2^2-2\pi i t f_2}\Big)\Big(\sigma_1 e^{-2\pi^2t^2\sigma_1^2+2\pi i t f_1} + \sigma_2 e^{-2\pi^2t^2\sigma_2^2+2\pi i t f_2}\Bigg)\notag\\
+&= \sqrt{2\pi}\Bigg(\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + \sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)-2\pi i t (f_1-f_2)} + \sigma_2\sigma_1 e^{-2\pi^2t^2(\sigma_2^2+\sigma_1^2)+2\pi i t (f_1-f_2)} \Bigg)\notag\\
+&= \sqrt{2\pi}\Bigg(\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + \sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)}\left\{e^{-2\pi i t (f_1-f_2)} + e^{+2\pi i t (f_1-f_2)} \right\}\Bigg)\notag\\
+&= \sqrt{2\pi}\Bigg(\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + \notag\\&\quad\quad\quad\quad\sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)}\left\{\cos\big[2\pi t (f_1-f_2)\big]-i\sin\big[2\pi t (f_1-f_2)\big] + \cos\big[2\pi t (f_1-f_2)\big]+i\sin\big[2\pi t (f_1-f_2)\big]\right\} \Bigg)\notag\\
+&= \sqrt{2\pi}\Bigg(\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + 2\sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)}\cos\big[2\pi t (f_1-f_2)\big] \Bigg)
+\end{align}
+\begin{align}
 \mathcal{F}\{\left[P_{detector}\right]^2\} &= \frac{c^2A^2\epsilon_0^2 \pi}{2}\mathcal{F}\left\{\left[\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + 2\sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)}\cos\big[2\pi t (f_1-f_2)\big] \right]^2\right\}\notag\\
 &= \frac{c^2A^2\epsilon_0^2 \pi}{2}\mathcal{F}\Big\{\sigma_1^4 e^{-8\pi^2t^2\sigma_1^2} + \sigma_2^4 e^{-8\pi^2t^2\sigma_2^2} + 4\sigma_1^2\sigma_2^2 e^{-4\pi^2t^2(\sigma_1^2+\sigma_2^2)}\cos^2\big[2\pi t (f_1-f_2)\big] + 2\sigma_1^2\sigma_2^2 e^{-4\pi^2t^2(\sigma_1^2+\sigma_2^2)} +\notag\\
 &\quad\quad\quad\quad\quad\quad  4\sigma_1^3\sigma_2 e^{-2\pi^2t^2(3\sigma_1^2+\sigma_2^2)}\cos\big[2\pi t (f_1-f_2)\big] + 4\sigma_1\sigma_2^3e^{-2\pi^2t^2(\sigma_1^2+3\sigma_2^2)}\cos\big[2\pi t (f_1-f_2)\big] \Big\}\notag\\

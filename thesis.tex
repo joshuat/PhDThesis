@@ -28,7 +28,7 @@
 \usepackage{subcaption}
 
 % This may include the bibliography in the table of contents
-\usepackage[numbib]{tocbibind}
+%\usepackage[]{tocbibind}
 
 % Slightly neater way of doing units.
 \usepackage{units}
@@ -57,6 +57,9 @@
 
 % Fancy curly F for Fourier transform and cavity finesse
 \usepackage{mathrsfs}
+
+% Appendices with table of contents entries
+%\usepackage[page,toc]{appendix}
 
 % Acronyms
 \include{acronyms}
@@ -109,14 +112,19 @@ Where do we go from here?
 
 \section{New source}
 
-
+% Appendices
 \appendix
+
 \chapter{Glossary}
 \printglossary
+
+\include{appendices/heterodyne}
 
 % References
 %\bibliographystyle{unsrt}
 %\renewcommand\bibname{References}
+\addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
+
 
 \end{document}
