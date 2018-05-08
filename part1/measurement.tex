@@ -46,8 +46,6 @@ The equations presented above provide an obviously na\"ive approach as the frequ
 The spectral profile of the heterodyne signal is formed by the convolution of the spectral profiles of the component lasers, thus strategies are required in order to resolve the lineshape of a single laser.
 For two near identical lasers with Gaussian lineshape the beatnote width is $2\sqrt{2\log_e2}\sim2.35$ (see Appendix~\ref{appendix:heterodyne}).
 
-
-
 \subsubsection{Frequency Reference}
 One method of resolving the lineshape of a single laser is to use a second laser known to have a frequency lineshape much narrower than the laser of interest so that the convolved lineshape is the same as the lineshape of the laser of interest.
 This method has some limitations in its application as it is only useful for resolving the lineshape of lasers with relatively wide specral width.
@@ -159,57 +157,6 @@ Both figures are 50-shot averages captured with resolution bandwidths of \unit[3
 \label{figure:two_laser_beatnote}
 % Code and data located at Code/PolSpec Code/Laser/Beatnote/Beatnote Inset.py
 \end{figure}
-
-\subsubsection{Linewidth Discrepancies}
-{\color{red}I'm not certain enough about what's going on here so just remove this.}
-
-There is an interesting discrepancy between intuition and what the literature uses to describe `linewidth'.
-Intuitively, when discussing the spectral properties of light, one would expect references to refer to the properties of the electric field since that is the entity that is interacting with atoms and other frequency references.
-However, the literature seems to exclusively refer to properties of the power of the signal from photodetectors, as shown on spectrum analysers, which differ by a factor of 2 which will be shown below.
-Despite this fact this document follows the convention to avoid confusion.
-
-The simplest way to examine a heterodyne signal is to look at the signal from the detector on a radio-frequency spectrum analyser.
-A spectrum analyser shows the power for each frequency component of the input electrical signal.
-The power of the electrical signal from the detector, $P_{elec}$ is roughly:
-\begin{equation}
-P_{elec}\propto I^2 \propto E^2
-\label{eq:beatnote_proportional}
-\end{equation}
-where $I$ is the light intensity incident on the detector and $E$ is the electric field incident on the detector.
-
-Of primary interest are the spectral properties of these signals which are given by their Fourier transform.
-However we cannot simply write
-\begin{equation}
-\mathcal{F}[P_{elec}]\propto \mathcal{F}[I^2] \propto \mathcal{F}[E^2]
-\end{equation}
-since it's not true.
-The inverse convolution theorem, however, can be used
-\begin{equation}
-f\cdot g = \mathcal{F}^{-1} \bigg[ \mathcal{F}[f] \otimes\mathcal{F}[g]\bigg].
-\end{equation}
-
-So Equation~\ref{eq:beatnote_proportional} in Fourier space becomes
-\begin{align}
-\mathcal{F}[P_{elec}]&\propto \mathcal{F}[I]\otimes\mathcal{F}[I]\nonumber\\
-&\propto \big\{\mathcal{F}[E] \otimes\mathcal{F}[E]\big\} \otimes\big\{\mathcal{F}[E] \otimes\mathcal{F}[E]\big\}
-\end{align}
-
-For a Gaussian lineshape beatnote with \gls{rms} width $\sigma$, we can write
-\begin{equation}
-\mathcal{F}[E] = A e^{-(f-f_0)^2/2\sigma^2}.
-\end{equation}
-
-It is easy to show that the convolution of two Gaussians produces another Gaussian with variance equal to the sum of the variance of the two constituent functions.
-Thus,
-\begin{equation}
-\mathcal{F}[I] = B e^{-(f-f_0)^2/4\sigma^2}
-\end{equation}
-and
-\begin{align}
-\mathcal{F}[P] &= B e^{-(f-f_0)^2/8\sigma^2}\nonumber\\
-&= B e^{-(f-f_0)^2/2(2\sigma)^2}
-\end{align}
-So the width of the signal shown on a spectrum analyser has twice the spectral width of the electric field that generated it.
 
 \subsection{cavity Measurements}
 
