@@ -164,10 +164,15 @@ The high-finesse optical cavity used for \gls{pdh} frequency stabilisation provi
 
 \subsubsection{Cavity Resonance Sweep}
 
+The high-finesse optical cavity provides a useful tool for quickly checking the efficacy of high-bandwidth locking if the cavity and final laser linewidth are within a few orders of magnitude of each other.
+While attempting to lock a laser the transmission of the laser through the cavity, an \gls{aom} is used to sweep the diagnostic beam across the cacity resonance, the jitter of the laser can be monitored as the bandwith of the locking scheme is increased.
+An example of this process is shown in Figure~\ref{figure:cavity_scans} where the laser is locked with \gls{ps} as the bandwidth of the servo system is increased.
+This method proved particularly useful when performing two-laser heterodyne measurements with \gls{ps} locked lasers as the succesfull locking of the laser could be confirmed with the cavity before attempting to measure the heterodyne beatnote.
+
 \begin{figure}
 \center
 \input{part1/Figs/CavityScans.pgf}
-\caption{Caption}
+\caption{Optical cavity transmission as a function of frequency offset from the cavity resonance for varying laser locking bandwidths. Piezo only laser feedback (left), piezo and slow curent feedback (middle), and piezo, slow current and fast current feedback. Cavity \gls{fwhm} \unit[72]{kHz}.}
 \label{figure:cavity_scans}
 % Code and data located at Code/PolSpec Code/Laser/Noise PSD/noiseplot.py
 \end{figure}
