@@ -70,7 +70,7 @@ Unfortunately, initial measurements were unable to confirm that the \gls{pdh} lo
 
 \subsubsection{Self-heterodyne}
 
-The self-heterodyne technique involves beating a laser with itself in order to perform a heterodyne measurement, as shown in Figure~\ref{figure:heterodyne_reference}~\cite{okoshi_novel_1980}.
+The self-heterodyne technique involves beating a laser with itself in order to perform a heterodyne measurement, as shown in Figure~\ref{figure:self-heterodyne}~\cite{okoshi_novel_1980}.
 In order to perform this measurement it is necessary to split the laser into two beams and frequency shift on beam, usually with an \gls{aom}, such that the beatnote is not centred at \unit[0]{Hz}.
 The two beams are still correlated so it is necessary to propagate one beam to reduce the coherence otherwise the lineshape of the beatnote would just appear as a delta function centred at the \gls{aom} frequency~\cite{richter_linewidth_1986}.
 One beam of the beams is typically delayed by a very long optical fibre such that that arm of the heterodyne measurement has been delayed, ideally for as long as the coherence time of the laser.
@@ -88,7 +88,7 @@ Unfortunately the absorption losses in fibres tends to be at least a few dB per 
     \input{part1/Figs/self-heterodyne.pgf}
     \end{subfigure}
     \caption{Self-heterodyne measurement. The laser is split with one beam frequency shifted by an \gls{aom} from the initial frequency ($\omega_1$, red) to an offset frequency ($\omega_1+\delta$, blue) to enable measurement by a spectrum analyser and then propagated through a long optical fiber to such that the beams are no longer correlated. Shown on the right is the spectral lineshapes of the laser and the heterodyne beatnote (green).}
-    \label{figure:heterodyne_reference}
+    \label{figure:self_heterodyne}
     % Code for pgfs in Code/Figures/HeterodyneVersion.py
 \end{figure}
 
@@ -188,6 +188,16 @@ As shown in Section~\ref{section:cavity_theory}, the transmission through the ca
 \begin{equation}
 T(f) = \frac{1}{1+F\left(\frac{\omega L}{c}\right)^2}.
 \end{equation}
+For a relatively narrow linewidth laser, the frequency of the laser into the cavity can be adjusted (with an \gls{aom} or frequency sidebands with an \gls{eom}) such that the transmission through the cavity is approximately 0.5, thus any deviations in frequency will manifest as a change in the transmission through the cavity.
+An example of this is shown in Figure~\ref{figure:side_of_peak}.
+
+\begin{figure}
+\center
+\input{part1/Figs/SideOfPeak.pgf}
+\caption{Caption}
+\label{figure:side_of_peak}
+% Code and data located at Code/PolSpec Code/Laser/Noise PSD/noiseplot.py
+\end{figure}
 
 \subsection{Noise measurements}
 
