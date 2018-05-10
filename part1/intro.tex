@@ -130,7 +130,7 @@ Linewidths under \unit[150]{kHz} are easily attainable with modulated saturated 
 The \gls{pdh} technique is the gold-standard for laser frequency linewidth reduction and has been used to achieve extremely low linewidth of less than \unit[40]{mHz}~\cite{kessler_sub-40-mhz-linewidth_2012}.
 \Gls{pdh} uses an optical cavity as a frequency reference and a modulated beam and some electronics to generate the error signal for feedback to the laser~\cite{drever_laser_1983,black_introduction_2000}.
 
-\subsection{Fabry-P\'erot Cavities}
+\subsection{Fabry-P\'erot Cavities}\label{section:cavity_theory}
 A Fabry-P\'erot cavity is formed by two highly reflective mirrors facing each other such that light can form a standing wave between the two mirrors.
 Laser light incident on a Fabry-P\'erot cavity will only couple into the cavity if the length of the cavity is equal to an integer number of wavelengths of the light.
 So for an ideal laser to be resonant with an ideal cavity,
@@ -162,9 +162,11 @@ The coefficient of finesse is related to the finesse by
 \end{equation}
 The phase difference between successive traversals of the cavity is represented by $d$
 We can define the difference between the laser wavelength and closest cavity resonance as $\Delta\lambda=L-n\lambda$, then Equation~\ref{equation:cavity_transmission} can be written as
-\begin{equation}\label{equation:cavity_transmission2}
-T = \frac{1}{1+F\sin^2\left(2\pi\frac{\Delta\lambda}{\lambda}\right)}.
-\end{equation}
+\begin{align}\label{equation:cavity_transmission2}
+T &= \frac{1}{1+F\sin^2\left(2\pi\frac{\Delta\lambda}{\lambda}\right)}. \notag \\
+&= \frac{1}{1+F\left(\frac{\omega L}{c}\right)^2},
+\end{align}
+where $\omega$ is the angular frequency of the laser.
 $T$ takes the form of a Lorentzian, or Airy, function and an example spectra is shown in Figure~\ref{figure:pdh_plots}.
 
 The cavity used in the experiments described in this chapter was a high-finesse cavity from Stable Laser Ssystems that was located inside an evacuuated temperature-controlled can.
