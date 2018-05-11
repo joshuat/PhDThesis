@@ -161,6 +161,7 @@ Both figures are 50-shot averages captured with resolution bandwidths of \unit[3
 \subsection{Cavity Diagnostics}
 
 The high-finesse optical cavity used for \gls{pdh} frequency stabilisation provides a useful diagnostic tool for examining laser spectral behaviour.
+There are a large number of ways that the cavity can be used to examine the specral behaviour of a laser system, two that were particularly useful are detailed in this section.
 
 \subsubsection{Cavity Resonance Sweep}
 
@@ -177,11 +178,7 @@ This method proved particularly useful when performing two-laser heterodyne meas
 % Code and data located at Code/PolSpec Code/Laser/Noise PSD/noiseplot.py
 \end{figure}
 
-\subsubsection{Two-Sided Peak Measurements}
-
-{\color{red}I don't have any nice data showing this. Only screenshots from the scopes. Probably skip this section, just leave reference to it being an option in the one-sided peak section.}
-
-\subsubsection{One-Sided Peak Measurements}
+\subsubsection{One-Sided Peak Measurements}\label{section:one_sided_peak}
 
 If the linewidth of the laser is lower than that of the optical cavity then the cavity can be used to directly measure the linewidth of the laser.
 As shown in Section~\ref{section:cavity_theory}, the transmission through the caivty, as a function of laser frequency, can be described by a Airy function,
@@ -194,12 +191,19 @@ An example of this is shown in Figure~\ref{figure:side_of_peak}.
 \begin{figure}
 \center
 \input{part1/Figs/SideOfPeak.pgf}
-\caption{Caption}
+\caption{Laser linewidth measured by measuring the transmission through the cavity. On the left figure the blue line shows the cavity transmission as the frequency of the beam into the cavity is scanned with an \gls{aom} and the green points show the cavity transmission when the \gls{aom} is used to centre the laser frequency part way up the transmission peak.
+The known tranmission function (blue line) can be used to map the transmission distribution to a frequency distribution, shown as the green line in the right figure.
+The dashed red line is a Gaussian fit to the frequency distribution with a \gls{rms} width of \unit[1.40$\pm$0.33]{kHz}.
+The laser used with this measurement was locked with \gls{ps} and high-bandwidth feedback.}
 \label{figure:side_of_peak}
 % Code and data located at Code/PolSpec Code/Laser/Linewidth Through Cavity/linewidth.py
 \end{figure}
 
 \subsection{Noise measurements}
+
+Another type of measurement that can prove useful is frequency noise measurements where the frequency spetra of the laser is examined.
+This measurement can be made by taking the on-resonance error signal from \gls{ps} or the cavity transmission signal part way up the Airy peak (similar to that used in Section~\ref{section:one_sided_peak}) and examing the frequency spectrum either with a spectrum analyser or computationally.
+Noise measurements can be useful when attempting to identify frequency noise sources and for determining the bandwidth of frequency locking schemes.
 
 \subsubsection{Bandwidth Stuff}
 
