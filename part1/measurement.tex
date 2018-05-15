@@ -209,7 +209,9 @@ Noise measurements can be useful when attempting to identify frequency noise sou
 \begin{figure}
 \center
 \input{part1/Figs/CombinedPSDs.pgf}
-\caption{CAPTION}
+\caption{\Gls{psd} measurements of a \gls{ps} locked laser, the top figure is from the \gls{ps} error signal and the bottom figure is from the cavity transmission signal at half the peak height.
+The \gls{psd} for a variety of scenarios is shown, the unlocked laser with no frequency stabilisation, piezo only feedback, piezo and slow current feedback, fully locked with piezo, slow current and fast current feedback, and the noise floor of the measurement where the laser frequency is far from the atomic and cavity resonances.
+The measurements are shown with a superimposed smoothed curve with a moving average and window size of $10\log_{10}(f)$ where $f$ is the frequency.}
 \label{figure:psd}
 % Code and data located at Code/PolSpec Code/Laser/Noise PSD/plotting.py
 \end{figure}
