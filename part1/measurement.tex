@@ -218,7 +218,6 @@ Comparing the unlocked spectrum to that of the other spectrums allows for an app
 The noise floor of this measurement can be measured by examining the spectrum of the \gls{ps} error signal while the laser is far from the atomic resonance.
 The spectrum of the off-resonance spectrum indicates that the on-resonance error signal is nosie limited.
 
-
 \begin{figure}
 \center
 \input{part1/Figs/CombinedPSDs.pgf}
@@ -229,9 +228,29 @@ The measurements are shown with a superimposed smoothed curve with a moving aver
 % Code and data located at Code/PolSpec Code/Laser/Noise PSD/plotting.py
 \end{figure}
 
-\subsubsection{Bandwidth Stuff}
+The high-finesse optical cavity provides another method to examing the frequency noise spectrum of the laser system as it provides a much lower noise measurement, this is shown in the lower portion of Figure~\ref{figure:psd}.
+The cavity was used as a independent laser frequency descriminator by setting the laser frequency such that the trasmission through the cavity was half of the peak (similar to the method described in Section~\ref{section:one_sided_peak}) and the resulting signal was fed to the spectrum analysers and the resulting spectrum calibrated given the know cavity transmission function.
+The noise floor for this measurement was determined by illuminated the photodetector directly with light of intensity equal to that used for the other measurement but without the frequency dependent influence of the cavity.
+The noise floor for the cavity measurement is significantly lower than that of the error signal measurement and shows that there is significant signal available that could be used if the noise in the \gls{ps} error signal could be lowered.
+Due to the narrow linewidth of the cavity transmission, \unit[72.5]{kHz}, it is not possible to measure the frequency noise of the other feedback-bandwidth configurations as the laser linewidth was greater than that of the cavity.
 
 \subsubsection{Noise Integration}
+
+The \gls{psd} of a laser, in \unit[Hz$^2$/Hz], can be decribed as~\cite{turner_frequency_2002},
+\begin{equation}
+S(f)=2\int_0^\infty \langle\Delta v(t)\Delta v(t+\tau)\rangle\exp(-i2\pi f \tau)d\tau,
+\end{equation}
+where $f$ is the Fourier frequency, and $\Delta v (t)$ is the instantaneous frequency of the laser.
+The \gls{rms} linewidth of the laser is then
+\begin{equation}\label{equation:noise_integration}
+\Delta v^2_{rms} = \int_0^\infty S(f) df.
+\end{equation}
+
+Using Equation~\ref{equation:noise_integration} we can extract a laser linewidth from the \gls{psd} measurements to provide additional confirmation of the other linewidths measurements.
+Integrating the \gls{psd} of the fully locked laser, measured with the optical cavity, results in a \gls{rms} linewidth of \unit[1.68$\pm$0.49]{kHz}.
+
+{\color{red} Explain discrepancy?}
+
 
 \subsection{Long Term Stability}
 
