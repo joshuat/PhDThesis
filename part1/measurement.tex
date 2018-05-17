@@ -234,6 +234,8 @@ The noise floor for this measurement was determined by illuminated the photodete
 The noise floor for the cavity measurement is significantly lower than that of the error signal measurement and shows that there is significant signal available that could be used if the noise in the \gls{ps} error signal could be lowered.
 Due to the narrow linewidth of the cavity transmission, \unit[72.5]{kHz}, it is not possible to measure the frequency noise of the other feedback-bandwidth configurations as the laser linewidth was greater than that of the cavity.
 
+{\color{red} Explain discrepancy? Bode bumps.}
+
 \subsubsection{Noise Integration}
 
 The \gls{psd} of a laser, in \unit[Hz$^2$/Hz], can be decribed as~\cite{turner_frequency_2002},
@@ -249,8 +251,14 @@ The \gls{rms} linewidth of the laser is then
 Using Equation~\ref{equation:noise_integration} we can extract a laser linewidth from the \gls{psd} measurements to provide additional confirmation of the other linewidths measurements.
 Integrating the \gls{psd} of the fully locked laser, measured with the optical cavity, results in a \gls{rms} linewidth of \unit[1.68$\pm$0.49]{kHz}.
 
-{\color{red} Explain discrepancy? Bode bumps.}
-
 
 \subsection{Long Term Stability}
+
+\begin{figure}
+\center
+\input{part1/Figs/ps_drift.pgf}
+\caption{Frequency drift of a \gls{ps} locked laser over a \unit[60]{hour} period measured every \unit[10]{seconds} measured by the high-finesse optical cavity. The standard deviation of this measurement was \unit[51]{kHz}.}
+\label{figure:ps_drift}
+% Code and data located at 2016.02.29/plot.py
+\end{figure}
 
