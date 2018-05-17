@@ -172,7 +172,7 @@ $T$ takes the form of a Lorentzian, or Airy, function and an example spectra is 
 The cavity used in the experiments described in this chapter was a high-finesse cavity from Stable Laser Ssystems that was located inside an evacuuated temperature-controlled can.
 This cavity has a finesse of 20942, a \gls{fsr} of \unit[1.5]{GHz}, a \gls{fwhm} linwidth of \unit[71.6]{kHz}, and the mirrors had a reflectivity of 0.99985.
 
-\subsubsection{PDH Error Signal}
+\subsubsection{PDH Error Signal}\label{section:pdh_error}
 
 The magnitude of the electric field incident on a Fabry-P\'erot cavity, if the frequency is assumed to be approximately constant, can be written as
 \begin{equation}
@@ -239,7 +239,10 @@ This is shown in Figure~\ref{figure:pdh_schematic}.
 \begin{figure}
 \centering
 \includegraphics{part1/Figs/PDH.pdf}
-\caption{{\color{red}A beautiful \gls{pdh} schematic.}}
+\caption{A standard \gls{pdh} layout.
+The laser passes through an \gls{eom} to create frequency sidebands and is then incident on the optical cavity.
+The beam reflected from the cavity is then detected with a photodeetector and the signal passed through appropriate electrons to produce the error signal (see Section~\ref{section:pdh_error}).
+The error signal is passed to the servo system to generate feedback to keep the laser's frequency on the cavity resonance.}
 \label{figure:pdh_schematic}
 \end{figure}
 
