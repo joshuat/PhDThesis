@@ -102,7 +102,7 @@ A laser locked with \gls{ps} and high-bandwidth feedback was expected to achieve
 \input{part1/Figs/Self-heterodyne_example.pgf}
 \caption{An example of a self-heterodyne beatnote of an \gls{ecdl} locked with \gls{ps} (without fast-feedback) at various resolutions.
 The grey shaded areas indicate the frequency range of the next figure as the resolution is increased (resolution bandwidth is, left-to-right, \unit[3]{kHz}, \unit[1]{kHz}, \unit[1]{Hz}).
-The dotted red lines indicate Gaussian fits to the beatnote features, the middle fit has a \unit[3]{dB} width of \unit[77]{kHz} and the right fit a width of \unit[570]{Hz} which correspond to a laser linewidth of \unit[33]{kHz} and \unit[240]{Hz} respectively.
+The dotted red lines indicate Gaussian fits to the beatnote features, the middle fit has a \unit[-3]{dB} width (\gls{fwhm}) of \unit[77]{kHz} and the right fit a width of \unit[570]{Hz} which correspond to a laser linewidth of \unit[33]{kHz} and \unit[240]{Hz} respectively.
 The horizontal axis indicates the frequency from the beatnote center.}
 \label{figure:self-heterodyne_example}
 % Code and data at 2014.01.31/Rb87 Cooling
@@ -254,6 +254,14 @@ Integrating the \gls{psd} of the fully locked laser, measured with the optical c
 
 \subsection{Long Term Stability}
 
+Polarization spectroscopy is inherently a DC technique, susceptible to low frequency drift ($1/f$ noise).
+Drift in the laser power output as the laser alignment drifts, variations in fiber coupling efficiency if fibers are used, variations in the atomic vapor density due to changes in temperature, thermal effects on the waveplates and changes to the electronic gains and offsets can all affect the lock point of \gls{ps} due to the resulting intensity noise combined with the difficulty in perfectly balancing the polarimeter.
+
+The high-finesse cavity was used as a reference to quantify the long-term drift of the \gls{ps} locked laser over a period of \unit[60]{hours}, measured every \unit[10]{seconds}, Figure~\ref{figure:ps_drift}.
+Drift in the optical cavity frequency was corrected by reference to the central frequency of a beatnote between a laser locked to the rubidium transition using saturated absorption spectroscopy and the \gls{ps} locked laser incident on the cavity.
+The standard deviation of the \gls{ps}-locked laser frequency measurements was \unit[51]{kHz} over the \unit[60]{hour} measurement, approximately half the standard deviation of the measurements in~\cite{tiwari_laser_2006} and significantly smaller than the \unit[400]{kHz} quoted in~\cite{lee_frequency_2014}.
+The frequency change between each measurement was on average \unit[5]{Hz}, with a standard deviation of \unit[210]{Hz}.
+
 \begin{figure}
 \center
 \input{part1/Figs/ps_drift.pgf}
@@ -262,3 +270,8 @@ Integrating the \gls{psd} of the fully locked laser, measured with the optical c
 % Code and data located at 2016.02.29/plot.py
 \end{figure}
 
+The frequency stability of \gls{ps} is strongly dependent on the extent to which the apparatus is isolated from ambient temperature variations~\cite{yoshikawa_frequency_2003}.
+In our system the lasers are temperature stabilized and isolated with acrylic enclosures, and the optical cavity was temperature controlled and isolated inside a vacuum chamber, but the \gls{ps} and saturated absorption spectroscopy components and optical components between lasers and optical cavity were not temperature controlled or shielded from the general laboratory environment.
+The locking stability and drift are expected to improve with environmental isolation of all optical components and temperature stabilization of the atomic vapor cell.
+The power into the \gls{ps} setup is particularly sensitive to polarization drift in the light exiting the optical fibers.
+Although single-mode polarization maintaining fibers were used, they exhibited significant polarization drift with laboratory temperature variations, and it is expected that shielded free-space propagation or active power stabilization of the light into the PS setup would further improve the frequency stability.
