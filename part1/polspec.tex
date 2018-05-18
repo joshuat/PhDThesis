@@ -146,6 +146,45 @@ Many saturated absorption spectroscopy setups use arrangements similar to the \g
 Similarly the \gls{ps} layout has been improved with the use of a non-polarising beam splitter to reflect the pump beam into the gas cell without interferring with the pump's circular polarisation or the probes rotated linear polarisation.
 This gives the pump and probe beams the maximum interaction volume and maximises the signal produced.
 
+\subsection{Error Signal Characteristics}
+
+There are a number of aspects of \gls{ps} that make it an attractive candidate for high-bandwidth frequency stabilisation.
+
+\subsubsection{High Signal-to-Noise Ratio}
+
+\Gls{ps} has a number of advantages with respect to \gls{snr} comapred to other techniques.
+\Gls{ps} is a velocity selective technique that which produces a dispersive error signal with high frequency-discrimination slope, comparable to \gls{sa} and \gls{mts}.
+The subtraction associated with the balanced polarimeter removes technical noise, particularly probe laser intensity noise across the entire signal bandwidth.
+The resultant \gls{ps} error signal therefore approaches teh shot-noise limit and the \gls{snr} is very high over a large bandwidth, this is shown Figure~\ref{figure:psd}.
+
+\subsubsection{Modulation Free}
+
+\Gls{ps} is a technique that does not require any modulation of the laser beam or electronic signals.
+With modulation-based frequency stabilisation techniques such as \gls{pdh}, gls{sa}, or \gls{mts}, the feedback bandwidth is limited in theory, by the Nyquist theorem, to half the modulation frequency but in practise to well below this due to the need to filter the signal to remove the second harmonic product and upconverted flicker noise at the first harmonic which is made more difficult in servo applications by the need to keep latency low to preserve phase margin.
+The absense of modulation also reduces the implementation complexity and cost but some care is required to minimise noise contributions at low frequencies which contribute to frequency drift, and at high frequencies where noise is more likely to exceed the signal.
+
+\subsubsection{Selectivity}
+
+\Gls{ps} optically pumps the atomic sample into the primary transition pair, for example the $5^2$S$_{1/2}$ F$=3\rightarrow5^2$P$_{3/2}$ F$=4$ transition of Rb85.
+Subsidiary transistions, such as the F$=3\rightarrow$F$=3$, are strongly suppressed and the crossover resonances of \gls{sa} are relatively small and do not cross zero.
+This selectivity, whcih also applies to \gls{mts}, has two important benefits.
+First the \gls{ps} error signal is of the correct sign over the full Doppler with of the sample, free of the zero crossings at nearby resonances that are seen with other techniques such as \gls{sa}, allowing for for high effective feedback bandwidth.
+
+Second, if a laser locked to a \gls{ps} feature becomes unlocked, for example due to an external disturbance, there are no zero-crossings in the feedback error signal to trap the locking servo anywhere but at the desired primary transition.
+This is known as the capture range which is defined as the the range of frequencies about the resonance for which the error signal is of the correct sign to provide negative feedback.
+The capture range can be deduced from the error signal by locating the zero-crossings to either side of the resonance as shown in Figure~\ref{figure:capture_range}.
+For the spectra shown in Figure~\ref{figure:capture_range} the \gls{ps} capture range is greater than \unit[$\pm150$]{MHz}, many times larger than that the \unit[$\pm15$]{MHz} of \gls{sa}.
+
+{\color{red}Capture range figure.}
+\begin{figure}
+\center
+\input{part1/Figs/capture_range.pgf}
+\caption{Saturated absorption spectroscopy (top) and polarisation spectroscopy (bottom) error signals for the Rb85 D2 transition.
+The shaded regions indicate the capture range of the respective error signals, the \gls{sa} capture range is \unit[$\pm15$]{MHz} and the \gls{ps} range is greater than \unit[$\pm150$]{MHz}.}
+\label{figure:capture_range}
+% Code and data located at PolSpec Code/Spectra for Paper/GrapherCompletion.py
+\end{figure}
+
 \subsection{Fast Theory}
 
 \subsection{Developments}
