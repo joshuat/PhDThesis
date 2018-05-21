@@ -172,12 +172,15 @@ There are a large number of ways that the cavity can be used to examine the spec
 The high-finesse optical cavity provides a useful tool for quickly checking the efficacy of high-bandwidth locking if the cavity and final laser linewidth are within a few orders of magnitude of each other.
 While attempting to lock a laser the transmission of the laser through the cavity, an \gls{aom} is used to sweep the diagnostic beam across the cacity resonance, the jitter of the laser can be monitored as the bandwith of the locking scheme is increased.
 An example of this process is shown in Figure~\ref{figure:cavity_scans} where the laser is locked with \gls{ps} as the bandwidth of the servo system is increased.
+The resulting traces provide a clear illustration of the effect of increased locking bandwidth.
+With piezo-only locking the peak appears broad as the lser jitters about the resonant frequency, with slow-current feedback the transmission peak shape becomes apparent.
+Finally, with high-bandwidth feedback the full tranmission function of the cavity is apparent with the peak width limited by the cavity finesse indicating that the laser linewidth is much smaller than the cavity linewidth.
 This method proved particularly useful when performing two-laser heterodyne measurements with \gls{ps} locked lasers as the succesfull locking of the laser could be confirmed with the cavity before attempting to measure the heterodyne beatnote.
 
 \begin{figure}
 \center
 \input{part1/Figs/CavityScans.pgf}
-\caption{Optical cavity transmission as a function of frequency offset from the cavity resonance for varying laser locking bandwidths. Piezo only laser feedback (left), piezo and slow curent feedback (middle), and piezo, slow current and fast current feedback. Cavity \gls{fwhm} \unit[72]{kHz}.}
+\caption{Optical cavity transmission as a function of frequency offset from the cavity resonance for varying laser locking bandwidths. The frequency offset was scanned using a double-pass \gls{aom}. Piezo only laser feedback (left), piezo and slow curent feedback (middle), and piezo, slow current and fast current feedback. Cavity \gls{fwhm} \unit[71.6]{kHz}.}
 \label{figure:cavity_scans}
 % Code and data located at Code/PolSpec Code/Laser/Noise PSD/noiseplot.py
 \end{figure}
@@ -239,12 +242,11 @@ The measurements are shown with a superimposed smoothed curve with a moving aver
 \end{figure}
 
 The high-finesse optical cavity provides another method to examing the frequency noise spectrum of the laser system as it provides a much lower noise measurement, this is shown in the lower portion of Figure~\ref{figure:psd}.
-The cavity was used as a independent laser frequency descriminator by setting the laser frequency such that the trasmission through the cavity was half of the peak (similar to the method described in Section~\ref{section:one_sided_peak}) and the resulting signal was fed to the spectrum analysers and the resulting spectrum calibrated given the know cavity transmission function.
-The noise floor for this measurement was determined by illuminated the photodetector directly with light of intensity equal to that used for the other measurement but without the frequency dependent influence of the cavity.
+The cavity was used as a independent laser frequency descriminator by setting the laser frequency with an \gls{aom} such that the trasmission through the cavity was half of the peak (similar to the method described in Section~\ref{section:one_sided_peak}) and the resulting signal was fed to the spectrum analysers and the resulting spectrum calibrated given the known cavity transmission function.
+The noise floor for this measurement was determined by illuminated the photodetector directly with light of intensity equal to that used for the other measurement but without the frequency dependent influence of the cavity and the signal was well above the noise floor for frequencies up to the \unit[5.5]{MHz} bandwidth of the photodetector.
 The noise floor for the cavity measurement is significantly lower than that of the error signal measurement and shows that there is significant signal available that could be used if the noise in the \gls{ps} error signal could be lowered.
+The three to four order of magnitude difference in noise floors is consistent with the lower shot noise in the cavity measurement where the laser power was \unit[10]{$\muup$W} compared to the \unit[1]{mW} in the \gls{ps} balanced polarimeter.
 Due to the narrow linewidth of the cavity transmission, \unit[71.6]{kHz}, it is not possible to measure the frequency noise of the other feedback-bandwidth configurations as the laser linewidth was greater than that of the cavity.
-
-{\color{red} Explain discrepancy? Bode bumps.}
 
 \subsubsection{Noise Integration}
 
