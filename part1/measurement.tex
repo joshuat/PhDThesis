@@ -187,24 +187,29 @@ This method proved particularly useful when performing two-laser heterodyne meas
 
 \subsubsection{One-Sided Peak Measurements}\label{section:one_sided_peak}
 
-If the linewidth of the laser is lower than that of the optical cavity then the cavity can be used to directly measure the linewidth of the laser.
+If the linewidth of the laser is lower than that of the optical cavity then the cavity can be used to measure the linewidth of the laser.
 As shown in Section~\ref{section:cavity_theory}, the transmission through the caivty, as a function of laser frequency, can be described by a Airy function,
 \begin{equation}
 T(f) = \frac{1}{1+F\left(\frac{\omega L}{c}\right)^2}.
 \end{equation}
 For a relatively narrow linewidth laser, the frequency of the laser into the cavity can be adjusted (with an \gls{aom} or frequency sidebands with an \gls{eom}) such that the transmission through the cavity is approximately 0.5, thus any deviations in frequency will manifest as a change in the transmission through the cavity.
-An example of this is shown in Figure~\ref{figure:side_of_peak}.
+The variation of the signal measured by the detector can be mapped to the associated variation in frequency using the above equation which can then be used to determine the frequency lineshape as shown in Figure~\ref{figure:side_of_peak}.
 
 \begin{figure}
 \center
 \input{part1/Figs/SideOfPeak.pgf}
 \caption{Laser linewidth measured by measuring the transmission through the cavity. On the left figure the blue line shows the cavity transmission as the frequency of the beam into the cavity is scanned with an \gls{aom} and the green points show the cavity transmission when the \gls{aom} is used to centre the laser frequency part way up the transmission peak.
 The known tranmission function (blue line) can be used to map the transmission distribution to a frequency distribution, shown as the green line in the right figure.
-The dashed red line is a Gaussian fit to the frequency distribution with a \gls{rms} width of \unit[1.40$\pm$0.33]{kHz}.
+The dashed red line is a Gaussian fit to the frequency distribution with a \gls{rms} width of \unit[2.4$\pm$0.3]{kHz}.
 The laser used with this measurement was locked with \gls{ps} and high-bandwidth feedback.}
 \label{figure:side_of_peak}
 % Code and data located at Code/PolSpec Code/Laser/Linewidth Through Cavity/linewidth.py
 \end{figure}
+
+This cavity transmission actually includes contributions from the both the laser frequency and amplitude noise.
+An estimate of the linewidth contrubution from amplitude noise for this measurement can be made by placing the detector infont of the cavity and setting the power incident on the cavity to the same as that used in the measurement followed by mapping as normal.
+This measurement indicates that the amplitude noise contribution was \unit[1.4$\pm$0.2]{kHz}.
+Assuming that the frequency and amplitude noise is uncorrelated and that the observed signal is a convolution of the two indicates that the linewidth determined from the cavity tranmission mapping consists of the \unit[1.4$\pm$0.2]{kHz} amplitude noise in combination with a frequency noise linewidth of \unit[2.0$\pm$0.5]{kHz} to produce the frequency distribution shown in Figure~\ref{figure:side_of_peak} which has a linewidth of \unit[2.4$\pm$0.3]{kHz}.
 
 \subsection{Frequency Noise Measurements}
 
