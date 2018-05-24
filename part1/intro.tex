@@ -27,18 +27,30 @@ Laser frequency stabilisation describes a number of techniques that are used to 
 This can range from weak frequency stabilisation keeping the centre frequency of a laser at a particular frequency to convoluted frequency narrowing techniques that attempt to reduce laser linewidth to sub-hertz levels.
 Typically these techniques use some reference to measure frequency deviation from a given frequency and provide negative feedback to the laser, using a servo system, to keep it at the target frequency.
 
-The efficacy of stabilisation techniques can be described by the width of the frequency distribution of the laser, called the linewidth.
-Linewidth usually refers to either the \gls{fwhm} or \gls{rms} width about the central frequency and is used to descibe measurements made over various timescales.
-Short measurements, usually less than a second measurement, are used to describe the linewidth of laser whereas long timescale measurement, hours or days in duration, are used to describe the drift of the laser central frequency over time.
+Typically the frequency decrimination method is used to generate an error signal which is then fed into the servo system which in turn controls the various feedback mechanisms.
+A servo system, or servomechanism or just servo, is a system that uses error sensing negative feedback to control a device.
+A simple example of a servo is the cruise control in a car where the difference between the desired speed and the actual speed (the error signal) is used to modulate the throttle to get closer to the desired speed (negative feedback).
+Laser stabilisation systems use servo systems to appropriately apply gain to the error signal and apply the result to the various feedback mechanisms available.
 
-There are a number of traits that are desirable in a laser frequency stabilization scheme including the ability to stabilize to an absolute atomic reference, absence of frequency or amplitude modulation, high bandwidth to achieve low spectral linewidth, large capture range, low complexity and low cost.
+The efficacy of stabilisation techniques can be described by the width of the frequency distribution of the laser, called the linewidth.
+Linewidth usually refers to either the \gls{fwhm} or \gls{rms} spectral width about the central frequency and is used to describe measurements made over various timescales.
+Short duration measurements, usually less than a second, are used to describe the linewidth of laser whereas long timescale measurement, hours or days in duration, are used to describe the drift of the laser central frequency over time.
+
+A number of traits that are desirable in a laser frequency stabilization scheme including:
+\begin{itemize}
+    \item \emph{Absolute frequency reference}: Frequency stabilisation techniques that rely on optical cavities are vulnerable to changes in the cavity's resonant frequency, due to changes in cavity length with temperature or press for example, whereas other techniques such as \gls{sa} or \gls{ps} are relative to atomic energy levels and thus not subject to drift.
+    \item \emph{High-bandwidth}: All else being equal, high-bandwidth techniques provide greater potential for linewidth reduction than low-bandwidth techniques. In realist of course there tends to be other trade-offs between techniques with different bandwidths.
+    \item \emph{Modulation-free}: A number of stabilisation techniques require frequency- or phase-modulation which limits the bandwidth of the technique to half the modulation frequency due to the Nyquist limit, thus modulation-free, or high-frequency modulation techniques are often preferable.
+    \item \emph{Low drift}: Drift can occur with slow changes to the lock point of the stabilisation scheme, potentially due to ambient changes in lab temperature or pressure, or the electrical environment causing subsequent changes to laser beam power, polarisation or locking electronics voltages levels all of which can result in drift in the laser's frequency. Some techniques are more succeptible to these affects than others.
+    \item \emph{Stable}: Some techniques are more succeptible than others to unlocking, where pertubations such as ambient temperature or pressure changes or percussive event (doors closing, dropped tool) cause large changes in laser frequency which the servo system is unable to compensate for. Techniques with large capture ranges tend to greater stablility (see Section~\ref{section:capture_range} for an example).
+\end{itemize}
 
 There are a large number of available techniques and variations on techniques for stabilization each with different advantages and drawbacks.
 A few of these techniques are \gls{sa}~\cite{haroche_theory_1972, maguire_theoretical_2006, cuneo_optically_1994, preston_doppler-free_1996, saliba_linewidths_2009}, \gls{davll}~\cite{corwin_frequency-stabilized_1998, millett-sikking_davll_2007}, \gls{mts}~\cite{shirley_modulation_1982, mccarron_modulation_2008, xiang-hui_ultra-stable_2009,negnevitsky_wideband_2013}, Sagnac interferometry~\cite{robins_Interferometric_2002, jundt_non-linear_2003}, \acrfull{ps}~\cite{wieman_doppler-free_1976, lancaster_polarisation_1999, yoshikawa_frequency_2003, harris_polarization_2006, pearman_polarization_2002, tiwari_laser_2006, do_polarization_2008, torii_laser-phase_2012}, \gls{pdh}~\cite{drever_laser_1983}, and H\"ansch Couillaud stabilisation~\cite{hansch_laser_1980}.
 
 \subsection{Frequency Control and Feedback}
 
-There are a number of methods to control the output frequency of a laser and these can be used to supply feedback from the stabilisation technique in order to decrease the linewidth of a laser system.
+A number of methods can be used to control the output frequency of a laser and these can be used in concert to supply feedback from the stabilisation technique in order to stabilise the laser's frequency and decrease the spectral linewidth.
 The focus here will be on the feedback systems of diode lasers, particularly \glspl{ecdl}.
 
 \subsubsection{Temperature}
@@ -57,6 +69,9 @@ The injection current into the diode affects the temperature of the diode and th
 Modulation of the injection current is the fastest feedback method available to diode lasers and is able to suppress noise up to \unit{MHz} ranges~\cite{ludlow_compact_2007,torrance_sub-kilohertz_2016}.
 The design of the electronics involved in the modulation of the injection current can have a noticeable influence on the performance at high frequencies as noise becomes an issue.
 {\color{red}See section something that discusses improvements made to the design of the electronics used in the MogLabs lasers used in this research.}
+
+The lasers used in the experiments described in this thesis all had two modes of current feedback, `slow' current feedback, with bandwidth from \unit[0]{Hz} to approximately \unit[100]{kHz}, and `fast' current feedback, with bandwidth from about \unit[100]{kHz} to \unit[50]{MHz}.
+
 
 \subsubsection{Grating Angle}
 In external cavity diode lasers, for example Littrow configuration \glspl{ecdl} as shown in Figure~\ref{figure:littrow}, the angle of the external grating can be used to control the output frequency.
@@ -87,12 +102,6 @@ Laser intensity noise can also cause problems, for example laser frequency stabi
 Mechanical noise can have numerous sources such as audible noise, percussive noise (dropped spanners, doors) or vibrational sources such as cooling fans on nearby equipment.
 \Glspl{ecdl} subjected to mechanical vibrations will experience frequency noise as the alignment of the light coupled back into the diode from the grating varies.
 Mechanical noise can also affect the alignment, and thus transmitted power, of laser through optical fibres, optical isolators and apertures.
-
-\subsection{Error Signals and Servo Systems}
-
-{\color{red}Discuss errors signals, servos, capture range, figure showing capture range comparison. Mention modulation/modulation-free?}
-
-{\color{red}Define slow-current and fast-current (direct diode current modulation) feedback.}
 
 \section{Saturated Absorption Spectroscopy}
 \glsreset{sa}

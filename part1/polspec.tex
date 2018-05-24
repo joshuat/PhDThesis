@@ -163,7 +163,7 @@ The resultant \gls{ps} error signal therefore approaches teh shot-noise limit an
 With modulation-based frequency stabilisation techniques such as \gls{pdh}, gls{sa}, or \gls{mts}, the feedback bandwidth is limited in theory, by the Nyquist theorem, to half the modulation frequency but in practise to well below this due to the need to filter the signal to remove the second harmonic product and upconverted flicker noise at the first harmonic which is made more difficult in servo applications by the need to keep latency low to preserve phase margin.
 The absense of modulation also reduces the implementation complexity and cost but some care is required to minimise noise contributions at low frequencies which contribute to frequency drift, and at high frequencies where noise is more likely to exceed the signal.
 
-\subsubsection{Selectivity}
+\subsubsection{Selectivity}\label{section:capture_range}
 
 \Gls{ps} optically pumps the atomic sample into the primary transition pair, for example the $5^2$S$_{1/2}$ F$=3\rightarrow5^2$P$_{3/2}$ F$=4$ transition of Rb85.
 Subsidiary transistions, such as the F$=3\rightarrow$F$=3$, are strongly suppressed and the crossover resonances of \gls{sa} are relatively small and do not cross zero.
