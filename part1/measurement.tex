@@ -1,9 +1,35 @@
 \section{Polarisation Spectroscopy Performance}
 Visible light has frequencies in the THz range which is well beyond the capabilites of modern electronics to directly measure so a number of clever strategies have been developed to measure the spectral quality of laser systems.
-The performance of \gls*{ps} frequency stabilisation has been characterised using a number of methods detailed here.
+The performance of \gls*{ps} frequency stabilisation with high-bandwidth feedback has been characterised using a number of methods detailed here.
 Spectral linewidth is the principle metric by which stabilisation techniques are compared and it can be considered over a range of timescales with different implications.
 Short timescales measurements, less than a second, indicate the narrowness of the frequency spectrum and are useful when considering frequency dependent interactions, such as those with atoms or optical cavities.
 Long timescale measurements, minutes to hours, are useful to determine the stability of the laser and its succeptability to frequency drift and the robustness of the locking scheme.
+
+\subsection{Laser Systems}
+
+The basic layout of the laser systems used is shown in Figure~\ref{figure:laser_setup}.
+A number of the measurements described in this chapter required only a single laser however the most reliable method, two-laser heterodyne (see Section~\ref{section:two-laser_heterodyen}), requires two very similar laser systems.
+Two almost identical lasers systems were constructed for these measurements with the only major difference being the \gls{ecdl} itself, one being a MOGLabs ECD003 and the other a Toptica DL pro.
+Both lasers were controlled by MOGLabs laser controllers\footnote{MOGLabs laser controlled with a MOGLabs DLC202 and Toptica with a DLC252.} and used high-bandwidth, \unit[14]{MHz}, servo controllers\footnote{NewFocus LB1005, \unit[14]{MHz} bandwidth} to control the high-frequency diode injection current channel (\unit[>10]{MHz} bandwidth).
+The laser controllers were used as servos to provide the low-frequency feedback to the \gls{ecdl} piezo (\unit[1]{kHz} bandwidth) and slow current channel (\unit[50]{kHz} bandwidth).
+In order to provide flexibility when perform the numerous measurements with different locking techniques the beam from each laser was split in two and coupled into single-mode polarisation-maintaining fibres.
+For each laser one beam also passed through a double-pass \gls{aom} before being couple into the fibre to provide some frequency control which was useful for both cavity and heterodyne measurements.
+
+\begin{figure}
+\center
+\includegraphics[width=\linewidth]{part1/Figs/ps_two_laser.pdf}
+\caption{Schematic of the polarisation spectroscopy apparatus used to measure the performance of the high-bandwidth feedback. The beam from the laser passes through an isolator before being split into two beams by an \gls{pbs} and coupled into optical fibres.
+One fibre leads to the \gls{ps} setup shown here, the other to the measurement apparatus via an \gls{aom}.
+The \gls{ps} setup consists of a polarisation stabilising Glan-Thompson prism folled by a beam expanding telescope.
+The expanded beam is then divided by a \gls{pbs} into a linearly polarised probe and circularly polarised pump which counter-propagate, via a non-polarising 50:50 \gls{bs}, through the magnetically-shielded \unit[15]{cm}-long rubidium gas sample.
+The polarisation rotation of the probe beam is then measured by a balanced polarimeter which consists of a $\lambdaup/2$ waveplate, \gls{pbs} and two high-bandwidth photodetectors (Thorlabs PDA10A).}
+\label{figure:laser_setup}
+\end{figure}
+
+In the two near-identical polarisation spectroscopy setups high quality calcite polarisers where used to stabilise the polarisation of the beam out of the fibre as, despite being polarisation maintaining, ambient temperature changes resulted in polarisation changes in the output beam from the fibres.
+Following the calcite was a beam expanding telescope that expanded the beams to the size of the apertures in the double-layer mu-metal magnetic shields, \unit[1.5]{cm} diameter, reducing transit-broadening and improving the optical pumping within the \unit[7.5]{cm} long Rb gas cells.
+The pump and probe beams had typical powers of \unit[2.4]{mW} and \unit[2.7]{mW} respectively.
+High-bandwidth photodetectors\footnote{Thorlabs PDA36A-EC, \unit[150]{MHz} bandwidth} where used in the balanced polarimeter to generate the error signal fed into the servo system.
 
 \subsection{Heterodyne Methods}
 
@@ -113,7 +139,7 @@ The horizontal axis indicates the frequency from the beatnote center.}
 % Code and data at 2014.01.31/Rb87 Cooling
 \end{figure}
 
-\subsubsection{Two-Laser Heterodyne}
+\subsubsection{Two-Laser Heterodyne}\label{section:two-laser_heterodyen}
 
 Two almost identical lasers setups can be used in a heterodyne measurement to determine the lineshape under the assumption that the lineshape of each laser is the same.
 This method is very similar to the self-heterodyne technique without the need to consider the coherence between the two beams.
@@ -137,18 +163,7 @@ A summary of two-laser heterodyne is shown in Figure~\ref{figure:two-laser_heter
 Two-laser heterodyne provides a useful measurement due to its simplicity and the lack of confounding effects (such as those found with self-heterodyne) and thus can relatively easily provide confidence in the results of the measurement.
 The downside of this method is the obvious requirement for two very similar lasers frequency stabilised with the same methods to be used.
 
-In order to test the efficacy of high-bandwidth \gls{ps} two similar laser setups were used; both used commercial Littrow configuration lasers\footnote{MOGLabs ECD003 and Toptica DL pro controlled with MOGLabs DLC202 and DLC252 laser controllers respectively.}, identical optic setups as shown in Figure~\ref{figure:two_laser_setup} with optical fibres that can be connected to the diagnostic measurements such as the heterodyne setup and the high-finesse cavity.
-
-\begin{figure}
-\center
-\includegraphics[width=\linewidth]{part1/Figs/ps_two_laser.pdf}
-\caption{Schematic of the polarisation spectroscopy apparatus used to measure the performance of the high-bandwidth feedback. The beam from the laser passes through an isolator before being split into two beams by an \gls{pbs} and coupled into optical fibres.
-One fibre leads to the \gls{ps} setup shown here, the other to the measurement apparatus via an \gls{aom}.
-The \gls{ps} setup consists of a polarisation stabilising Glan-Thompson prism folled by a beam expanding telescope.
-The expanded beam is then divided by a \gls{pbs} into a linearly polarised probe and circularly polarised pump which counter-propagate, via a non-polarising 50:50 \gls{bs}, through the magnetically-shielded \unit[15]{cm}-long rubidium gas sample.
-The polarisation rotation of the probe beam is then measured by a balanced polarimeter which consists of a $\lambdaup/2$ waveplate, \gls{pbs} and two high-bandwidth photodetectors (Thorlabs PDA10A).}
-\label{figure:two_laser_setup}
-\end{figure}
+In order to test the efficacy of high-bandwidth \gls{ps} two similar laser setups were used; both used commercial Littrow configuration lasers, identical optic setups as shown in Figure~\ref{figure:laser_setup} with optical fibres that can be connected to the diagnostic measurements such as the heterodyne setup and the high-finesse cavity.
 
 One laser was freqency shifted with a double-pass \gls{aom}, to give a total frequency shift of \unit[160]{MHz}, which was then combined with the other laser with a 50:50 beamsplitter and then incident on the photodetector.
 The \unit[1]{GHz} detector\footnote{NewFocus 1621} was connected to a spectrum analyser\footnote{\unit[9]{kHz} to \unit[7]{GHz} Rohde and Swartz FSP7} to measure the spectrum of the beatnote that was centred around \unit[160]{MHz} due to the frequency shift imposed on one beam of the heterodyne measurement by the \gls{aom}.
