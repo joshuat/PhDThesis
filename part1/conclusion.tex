@@ -1,13 +1,47 @@
 \section{Conclusion}
 
-{\color{red} Explain discrepancy?}
+The various linewidth measurements for \gls{ps} with high-bandwidth feedback are summarised in Table~\ref{table:linewidths}.
+The simplest and most reliable method, two-laser heterodyne, indicates that the laser linewidth achieveable with this laser freqeuncy stabilisation technique is \unit[0.6$\pm$0.1]{kHz}, well below preivously demonstrated with \gls{ps}.
+The difference in linewidth measured with the two cavity methods can be explained by the low-frequency cutoff of the frequency noise integration method, as the spectrum analysers where unable to measure frequency contributions below \unit[24]{Hz}.
+The discrepancy between the two-laser heterodyne measurement and the cavity measurements can be attributed to the affects of laser intensity noise on the cavity measurements and the contributions from high-frequency noise which forms the broad `pedestal' visible in the beatnote but does not affect the heterodyne width.
 
-Updated measurements.
+\begin{table}
+\centering
+\begin{tabular}{c c c}
+\\
+\hline
+  & Method & RMS Linewidth (kHz) \\ \hline
+  (i) & Cavity transmission mapping  & \,\,$2.0 \pm 0.5$ \\
+  (ii) & Cavity transmission integral & \,\,$2.4 \pm 0.7$ \\
+  (iii) & Heterodyne & $0.60\pm0.1$ \\
+  (iv) & Long-term drift & \,\,$51$ \\ \hline\end{tabular}
 
+\caption{Spectral linewidth results from \gls{ps} locked lasers.
+(i) Mapping the transmission signal through a cavity with a FWHM of \unit[71.6]{kHz} to a Lorentzian signal followed by deconvolving from the amplitude noise.
+(ii) The results from integrating the power-spectral density of the cavity transmission signal, Figure~\ref{figure:psd}.
+(iii) Laser linewidth derived from the heterodyne measurement, Figure~\ref{figure:two_laser_beatnote}.
+(iv) Long-term stability measured with the optical cavaity, Figure~\ref{figure:ps_drift}.}
+\label{table:linewidths}
+\end{table}
 
-Summarise linewidth measurements.
+The high-bandwidth feedback system indicates that \gls{ps} is capable of achieving spectral linewidth previously only reachable with expensive high-finesse optical cavities.
+The long-term frequency stability is easily sufficient for many laser cooling experiments and is significantly lower that previously demonstrated long term drifts.
 
-Hurray narrow linewidth.
-This will allow...stuff.
+Further improvements to spectral linewidth could be improved if the noise in the \gls{ps} measurement can be decreased and the signal strength improved allowing for lower shot-noise and greater nosie suppression.
+Drift can be expected to improve with active temperature stabilisation of the atomic gas cells, active laser-power stablisation into the \gls{ps} setup, and free space propagation rather than the use of optical fibres.
 
-What else can be improved? Stability (understanding the behaviour of fibres will have potential wider implications).
+\section{Cateye Laser Beatnote}
+
+Sometime after the work described in this chapter was summarised and published in Reference~\cite{torrance_sub-kilohertz_2016} MOGLabs was able to supply two identical new cateye configuration~\cite{thompson_narrow_2012} lasers\footnote{MOGLabs CEL}.
+These two lasers were inserted into the experimental setup described in Section~\ref{section:ps_experimental_setup} in place of the \glspl{ecdl}.
+These lasers were able to achieve an individual laser \gls{rms} linewidth of \unit[0.36]{kHz} as shown in Figure~\ref{figure:cateye_beatnote}.
+An interesting feature of this beatnote is the smaller peak to the left of the main peak which is due to the two lasers not having exactly the same lockpoint and the amplitude modulation caused by the \gls{aom} that frequency shifts one of the laser beam for the heterodyne measurement.
+
+\begin{figure}
+\center
+\input{part1/Figs/CateyeInsetBeatnote.pgf}
+\caption{Heterodyne beatnote for two lasers locked with \gls{ps} and inset is a higher resolution measurement of the centre peak which has a \unit[-3]{dB} width (\gls{fwhm}) of \unit[1.2]{kHz} which corresponds to a laser width of \unit[0.36]{kHz}.
+Both figures are 50-shot averages captured with resolution bandwidths of \unit[30]{kHz} and \unit[100]{Hz} and total measurement times of \unit[0.5]{s} and \unit[2]{s} respectively.}
+\label{figure:cateye_beatnote}
+% Code and data located at 2016.09.22/BeatnoteInset2.py
+\end{figure}
