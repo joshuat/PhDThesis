@@ -1,7 +1,38 @@
 \chapter{Conclusion}
 
-Where do we go from here?
+A large number of experiments have been performed with the \gls{caes} following the roadmap towards the holy grail of single-shot, ultrafast \gls{cdi} of single molecules which are described in a this thesis and those from previous students~\cite{sheludko_shaped_2010,bell_cold_2011,saliba_cold_2011,mcculloch_generation_2013,taylor_rydberg_2013,tielen_development_2015,murphy_measurement_2017,speirs_electron_2017}.
+The research detailed in this thesis decribes the last set of research performed with this iteration of the \gls{caes} and has paved the way for the next iteration.
 
-\section{Why CDI won't work with this generation of CAES}
+In Chater~\ref{chapter:polspec} laser frequency stablisation using \gls{ps} was demonstrated with impressive linewidth reduction, narrowing \gls{ecdl} \gls{rms} linewidth to \unit[600]{Hz} and that of cateye lasers to \unit[360]{Hz}, significantly lower than previously shown with this technique and previously only achieved with high-finesse optical cavities.
+The long-term frequency drift was only \unit[51]{kHz}, easily sufficient for most laser cooling experiments and again much lower than previously reported.
+Even greater improvements to laser frequency linewidth and drift is expected if the noise in the system can be reduced.
+\Gls{ps} could also prove useful as an absolute reference for high-performance frequency stabilisation using an optical cavity for high-lying Rydberg excitation.
 
-\section{New source}
+The \gls{caes} was originally intended to be a high-brightness electron source with similar characteristics to photocathode sources.
+The finely controlled ionisation method allows for lower source temperatures and thus higher potential brightness compared to those achieable with thermionic sources.
+The low emittance of the \gls{caes} has been demostrated multiple times along with the \unit[10]{K} source temperature, which is much lower than the temperatures typical of electrons originating from solid photocathodes.
+
+\Glspl{caes} are progressing well along the path towards structural determination with single-shot ultrafast \gls{cdi} but there is still a long way to go.
+The \gls{caes} described in Chapter~\ref{chapter:setup} was capable of single-shot diffraction through monocrystalline gold and ultrafast diffraction (see Chapter~\ref{chapter:diffraction}) through gold but due to the beam current contraints by this implementation it was not possible to achieve both single-shot and ultrafast imaging.
+In Section~\ref{section:pulse_vs_continuous} some strategies for increasing the beam current were investigated; continuous source operations, rubidium oven temperature, and laser intensity.
+These investigations indicated that the main limiting factor with this system was the intensity of the blue ionisation laser system as it was far from saturating the atoms available.
+A blue laser with enough power to easily saturate the ionisation process would go a long way to providing the flux for \gls{cdi} and single-shot, ultrafast diffraction.
+
+The beam quality from the source was also investigated and improved with the characterisation and correction of astigmatism described in Section~\ref{section:quadrupole}.
+Improvements to beam quality allow for the maximisation of signal and have similar effect to improving the beam current.
+There remain many issues with the quality of the beam from the \gls{caes} that could be fixed given years of work and resources.
+Fortunately this work has already been done within the mature field of electron and ion microscopy and `all' that is required to piggyback off this is to acquire an existing microscope column and set it up with a \gls{caes} as a source.
+
+Another issue with this \gls{caes} was the instabilities in the electron trajectories.
+Electron beam drift was a major issue complicating the measurement presented in this thesis and the registration technique described in Section~\ref{section:registration} was essential to working around the beam drift and extracting signal from the multi-shot diffraction and emittance measurements.
+The beam drift is attributed to a number of things such as the high-power switches, step-down transformers and the steel of the vacuum system itself all of which are exacerbated by the long distance from the source to the detector.
+If the \gls{caes} was to be redesigned from scratch then there are a large number of details that could be designed differently to minimise or elimate the effects of drift, such as a shorter propagation distance, mu-metal vacuum components, minimising the volume of steel near the exmperiment and ensuring that high-power devices were shielded or far away.
+
+Another of the interesting features of a \gls{caes} is the beam shaping capabilites which are especially interesting when considering shace charge.
+Space charge degrades the quality, or emittance, of charged particle beams but uniform ellipsoidal profile bunches have linear interactions which can be undone, thus preserving the beam emittance.
+In Chapter~\ref{chapter:brightness} a new emittance measurement technique is discussed which uses streaked pepperpots to determine the time-resolved emittance and brightness of a beam.
+The technique was shown to match up well with theoretical predictions and simulations despite some experimental constraints limiting the implementation.
+This technique should prove useful when quantifying the efficacy of techniques for the reduction of beam degradation due to space charge.
+The technique is generally applicable to charged particle beams and could prove useful in contexts other than \glspl{caes}.
+
+Next iteration of CAES
