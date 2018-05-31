@@ -18,7 +18,7 @@ For each laser one beam also passed through a double-pass \gls{aom} before being
 \begin{figure}
 \center
 \includegraphics[width=\linewidth]{part1/Figs/ps_two_laser.pdf}
-\caption{Schematic of the polarisation spectroscopy apparatus used to measure the performance of the high-bandwidth feedback. The beam from the laser passes through an isolator before being split into two beams by an \gls{pbs} and coupled into optical fibres.
+\caption[Apparatus used to test the efficacy of polarisation spectroscopy.]{Schematic of the polarisation spectroscopy apparatus used to measure the performance of the high-bandwidth feedback. The beam from the laser passes through an isolator before being split into two beams by an \gls{pbs} and coupled into optical fibres.
 One fibre leads to the \gls{ps} setup shown here, the other to the measurement apparatus via an \gls{aom}.
 The \gls{ps} setup consists of a polarisation stabilising Glan-Thompson prism followed by a beam expanding telescope.
 The expanded beam is then divided by a \gls{pbs} into a linearly polarised probe and circularly polarised pump which counter-propagate, via a non-polarising 50:50 \gls{bs}, through the magnetically-shielded \unit[15]{cm}-long rubidium gas sample.
@@ -91,7 +91,7 @@ This method is shown in Figure~\ref{figure:heterodyne_reference}.
     %\centering
     \input{part1/Figs/reference_laser_heterodyne.pgf}
     \end{subfigure}
-    \caption{Heterodyne measurement with a narrow reference laser by combining the laser of interest ($\omega_1$, red) with the reference laser ($\omega_2$, blue). Shown on the right is the spectral lineshapes of the lasers and the heterodyne beatnote (green).}
+    \caption[Heterodyne measurement with a spectrally narrow reference laser.]{Heterodyne measurement with a spectrally narrow reference laser by combining the laser of interest ($\omega_1$, red) with the reference laser ($\omega_2$, blue). Shown on the right is the spectral lineshapes of the lasers and the heterodyne beatnote (green).}
     \label{figure:heterodyne_reference}
 \end{figure}
 
@@ -117,7 +117,7 @@ Unfortunately the absorption losses in fibres tends to be at least a few dB per 
     %\centering
     \input{part1/Figs/self-heterodyne.pgf}
     \end{subfigure}
-    \caption{Self-heterodyne measurement. The laser is split with one beam frequency shifted by an \gls{aom} from the initial frequency ($\omega_1$, red) to an offset frequency ($\omega_1+\delta$, blue) to enable measurement by a spectrum analyser and then propagated through a long optical fibre to such that the beams are no longer correlated. Shown on the right is the spectral lineshapes of the laser and the heterodyne beatnote (green).}
+    \caption[Self-heterodyne measurement.]{Self-heterodyne measurement. The laser is split with one beam frequency shifted by an \gls{aom} from the initial frequency ($\omega_1$, red) to an offset frequency ($\omega_1+\delta$, blue) to enable measurement by a spectrum analyser and then propagated through a long optical fibre to such that the beams are no longer correlated. Shown on the right is the spectral lineshapes of the laser and the heterodyne beatnote (green).}
     \label{figure:self_heterodyne}
     % Code for pgfs in Code/Figures/HeterodyneVersion.py
 \end{figure}
@@ -131,7 +131,7 @@ Due to the unclear results it was necessary to perform additional measurements t
 \begin{figure}
 \center
 \input{part1/Figs/Self-heterodyne_example.pgf}
-\caption{An example of a self-heterodyne beatnote of an \gls{ecdl} locked with \gls{ps} at various resolutions.
+\caption[Example self-heterodyne beatnote.]{An example of a self-heterodyne beatnote of an \gls{ecdl} locked with \gls{ps} at various resolutions.
 The grey shaded areas indicate the frequency range of the next figure as the resolution is increased (resolution bandwidth is, left-to-right, \unit[3]{kHz}, \unit[1]{kHz}, \unit[1]{Hz}).
 The dotted red lines indicate Gaussian fits to the beatnote features, the middle fit has a \unit[-3]{dB} width (\gls{fwhm}) of \unit[77]{kHz} and the right fit a width of \unit[570]{Hz} which correspond to a laser linewidth of \unit[33]{kHz} and \unit[240]{Hz} respectively.
 The horizontal axis indicates the frequency from the beatnote centre.}
@@ -156,7 +156,7 @@ A summary of two-laser heterodyne is shown in Figure~\ref{figure:two-laser_heter
     %\centering
     \input{part1/Figs/two_laser_heterodyne.pgf}
     \end{subfigure}
-    \caption{Heterodyne measurement with two `identical' lasers. One beam is frequency shifted by an \gls{aom} from the initial frequency ($\omega_1$, red) to an offset frequency ($\omega_1+\delta$, blue) to enable measurement by a spectrum analyser. Shown on the right is the spectral lineshapes of the lasers and the heterodyne beatnote (green).}
+    \caption[Heterodyne measurement with a two `identical' lasers.]{Heterodyne measurement with two `identical' lasers. One beam is frequency shifted by an \gls{aom} from the initial frequency ($\omega_1$, red) to an offset frequency ($\omega_1+\delta$, blue) to enable measurement by a spectrum analyser. Shown on the right is the spectral lineshapes of the lasers and the heterodyne beatnote (green).}
     \label{figure:two-laser_heterodyne}
 \end{figure}
 
@@ -177,7 +177,7 @@ These measurements indicate that \gls{ps} with high-bandwidth feedback is able t
 \begin{figure}
 \center
 \input{part1/Figs/InsetBeatnote.pgf}
-\caption{Heterodyne beatnote for two lasers locked with \gls{ps} and inset is a higher resolution measurement of the centre peak which has a \unit[-3]{dB} width (\gls{fwhm}) of \unit[2.0$\pm$0.36]{kHz} which corresponds to a laser width of \unit[0.6$\pm$0.1]{kHz}.
+\caption[Heterodyne beatnote for two \gls{ecdl} lasers locked with high-bandwidth polarisation spectroscopy.]{Heterodyne beatnote for two lasers locked with \gls{ps} and inset is a higher resolution measurement of the centre peak which has a \unit[-3]{dB} width (\gls{fwhm}) of \unit[2.0$\pm$0.36]{kHz} which corresponds to a laser width of \unit[0.6$\pm$0.1]{kHz}.
 Both figures are 50-shot averages captured with resolution bandwidths of \unit[30]{kHz} and \unit[100]{Hz} and total measurement times of \unit[0.5]{s} and \unit[2]{s} respectively.}
 \label{figure:two_laser_beatnote}
 % Code and data located at Code/PolSpec Code/Laser/Beatnote/Beatnote Inset.py
@@ -204,7 +204,7 @@ This method proved particularly useful when performing two-laser heterodyne meas
 \begin{figure}
 \center
 \input{part1/Figs/CavityScans.pgf}
-\caption{Optical cavity transmission as a function of frequency offset from the cavity resonance for varying laser locking bandwidths. The frequency offset was scanned using a double-pass \gls{aom}. Piezo only laser feedback (left), piezo and slow current feedback (middle), and piezo, slow current and fast current feedback. Cavity \gls{fwhm} \unit[71.6]{kHz}.}
+\caption[Optical cavity transmission demonstrating laser frequency lock bandwidths.]{Optical cavity transmission as a function of frequency offset from the cavity resonance for varying laser locking bandwidths. The frequency offset was scanned using a double-pass \gls{aom}. Piezo only laser feedback (left), piezo and slow current feedback (middle), and piezo, slow current and fast current feedback. Cavity \gls{fwhm} \unit[71.6]{kHz}.}
 \label{figure:cavity_scans}
 % Code and data located at Code/PolSpec Code/Laser/Noise PSD/noiseplot.py
 \end{figure}
@@ -222,7 +222,7 @@ The variation of the signal measured by the detector can be mapped to the associ
 \begin{figure}
 \center
 \input{part1/Figs/SideOfPeak.pgf}
-\caption{Laser linewidth measured by measuring the transmission through the cavity. On the left figure the blue line shows the cavity transmission as the frequency of the beam into the cavity is scanned with an \gls{aom} and the green points show the cavity transmission when the \gls{aom} is used to centre the laser frequency part way up the transmission peak.
+\caption[Laser linewidth measured by examining cavity transmission on one side of the cavity transmission peak.]{Laser linewidth measured by measuring the transmission through the cavity. On the left figure the blue line shows the cavity transmission as the frequency of the beam into the cavity is scanned with an \gls{aom} and the green points show the cavity transmission when the \gls{aom} is used to centre the laser frequency part way up the transmission peak.
 The known transmission function (blue line) can be used to map the transmission distribution to a frequency distribution, shown as the green line in the right figure.
 The dashed red line is a Gaussian fit to the frequency distribution with a \gls{rms} width of \unit[2.4$\pm$0.3]{kHz}.
 The laser used with this measurement was locked with \gls{ps} and high-bandwidth feedback.}
@@ -260,7 +260,7 @@ The frequency of the servo bump at \unit[1.3]{MHz} for the fully-locked spectrum
 \begin{figure}
 \center
 \input{part1/Figs/CombinedPSDs.pgf}
-\caption{\Gls{psd} measurements of a \gls{ps} locked laser, the top figure is from the \gls{ps} error signal and the bottom figure is from the cavity transmission signal at half the peak height.
+\caption[Laser frequency noise power spectral density from polarisation spectroscopy error signal and cavity transmission for a polarisation spectroscopy locked laser.]{\Gls{psd} measurements of a \gls{ps} locked laser, the top figure is from the \gls{ps} error signal and the bottom figure is from the cavity transmission signal at half the peak height.
 The \gls{psd} for a variety of scenarios is shown, the unlocked laser with no frequency stabilisation, piezo only feedback, piezo and slow current feedback, fully locked with piezo, slow current and fast current feedback, and the noise floor of the measurement where the laser frequency is far from the atomic and cavity resonances.
 The measurements are shown with a superimposed smoothed curve with a moving average and window size of $10\log_{10}(f)$ where $f$ is the frequency.}
 \label{figure:psd}
@@ -306,7 +306,7 @@ The frequency change between each measurement was on average \unit[5]{Hz}, with 
 \begin{figure}
 \center
 \input{part1/Figs/ps_drift.pgf}
-\caption{Frequency drift of a \gls{ps} locked laser over a \unit[60]{hour} period measured every \unit[10]{seconds} measured by the high-finesse optical cavity. The standard deviation of this measurement was \unit[51]{kHz}.}
+\caption[Long-term frequency drift of a laser locked with polarisation spectroscopy.]{Frequency drift of a \gls{ps} locked laser over a \unit[60]{hour} period measured every \unit[10]{seconds} measured by the high-finesse optical cavity. The standard deviation of this measurement was \unit[51]{kHz}.}
 \label{figure:ps_drift}
 % Code and data located at 2016.02.29/plot.py
 \end{figure}
