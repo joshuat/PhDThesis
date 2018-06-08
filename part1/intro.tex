@@ -15,7 +15,7 @@ In order to capitalise on the narrow linewidth achievable with \gls{pdh} locking
 
 The focus of this chapter is on \gls{ps} which was first described by Wieman and H\"anch in 1976 as, ``...a sensitive new method of Doppler-free spectroscopy, monitoring the nonlinear interaction of two monochromatic laser beams in an absorbing gas via changes in light polarisation."~\cite{wieman_doppler-free_1976,demtroder_laser_2003}.
 It has been shown previously that \gls{ps} can be used to reduce the linewidth of a distributed feedback diode from \unit[2]{MHz} to \unit[20]{kHz}~\cite{torii_laser-phase_2012} and of \glspl{ecdl} to \unit[65]{kHz}~\cite{yoshikawa_frequency_2003}.
-During the course of the research described here \gls{ps} was demonstrated to be capable of linewidth reduction to sub-kilohertz linewidth~\cite{torrance_sub-kilohertz_2016}.
+During the course of the research described here \gls{ps} was demonstrated to be capable of linewidth reduction to sub-kilohertz linewidth if high-bandwidth feedback is used, published as Reference~\cite{torrance_sub-kilohertz_2016}.
 
 This chapter provides an overview of laser frequency stabilisation, a detailed discussion of the physics of \gls{ps} followed by details on the implementation and measurement of high bandwidth frequency stabilisation using \gls{ps}.
 Much of the work described in this chapter was conducted in collaboration with MOGLabs using MOGLabs' diode lasers and control electronics.
@@ -25,7 +25,7 @@ This research was instrumental in improving the bandwidth of the electronics hea
 
 Laser frequency stabilisation describes a number of techniques that are used to reduce the frequency spread of a laser's frequency.
 This can range from weak frequency stabilisation keeping the centre frequency of a laser at a particular frequency to convoluted frequency narrowing techniques that attempt to reduce laser linewidth to sub-hertz levels.
-Typically these techniques use some reference to measure frequency deviation from a given frequency and provide negative feedback to the laser, using a servo system, to keep it at the target frequency.
+Typically these techniques use some reference to measure frequency deviation from a given frequency and provide negative feedback to the laser, using a servo system, to keep the laser at the target frequency.
 
 Typically the frequency discrimination method is used to generate an error signal which is then fed into the servo system which in turn controls the various feedback mechanisms.
 A servo system, or servomechanism or just servo, is a system that uses error sensing negative feedback to control a device.
@@ -38,11 +38,11 @@ Short duration measurements, usually less than a second, are used to describe th
 
 A number of traits that are desirable in a laser frequency stabilisation scheme including:
 \begin{itemize}
-    \item \emph{Absolute frequency reference}: Frequency stabilisation techniques that rely on optical cavities are vulnerable to changes in the cavity's resonant frequency, due to changes in cavity length with temperature or press for example, whereas other techniques such as \gls{sa} or \gls{ps} are relative to atomic energy levels and thus not subject to drift.
-    \item \emph{High-bandwidth}: All else being equal, high-bandwidth techniques provide greater potential for linewidth reduction than low-bandwidth techniques. In realist of course there tends to be other trade-offs between techniques with different bandwidths.
+    \item \emph{Absolute frequency reference}: Frequency stabilisation techniques that rely on optical cavities are vulnerable to changes in the cavity's resonant frequency, due to changes in cavity length with temperature or pressure for example, whereas other techniques such as \gls{sa} or \gls{ps} are relative to atomic energy levels and thus not subject to drift in the same way.
+    \item \emph{High-bandwidth}: All else being equal, high-bandwidth techniques provide greater potential for linewidth reduction than low-bandwidth techniques. In reality of course there tends to be trade-offs between techniques with different bandwidths.
     \item \emph{Modulation-free}: A number of stabilisation techniques require frequency- or phase-modulation which limits the bandwidth of the technique to half the modulation frequency due to the Nyquist limit, thus modulation-free, or high-frequency modulation techniques are often preferable.
     \item \emph{Low drift}: Drift can occur with slow changes to the lock point of the stabilisation scheme, potentially due to ambient changes in lab temperature or pressure, or the electrical environment causing subsequent changes to laser beam power, polarisation or locking electronics voltages levels all of which can result in drift in the laser's frequency. Some techniques are more susceptible to these affects than others.
-    \item \emph{Stable}: Some techniques are more susceptible than others to unlocking, where perturbations such as ambient temperature or pressure changes or percussive event (doors closing, dropped tool) cause large changes in laser frequency which the servo system is unable to compensate for. Techniques with large capture ranges tend to greater stability (see Section~\ref{section:capture_range} for an example).
+    \item \emph{Stable}: Some techniques are more susceptible than others to unlocking, where perturbations such as ambient temperature or pressure changes, or percussive events (doors closing, dropped tools) cause large sudden changes in laser frequency which the servo system is unable to compensate for. Techniques with large capture ranges tend to have greater stability due to being able recover from larger frequency pertubations, see Section~\ref{section:capture_range} for an example.
 \end{itemize}
 
 There are a large number of available techniques and variations on techniques for stabilisation each with different advantages and drawbacks.
@@ -50,7 +50,7 @@ A few of these techniques are \gls{sa}~\cite{haroche_theory_1972, maguire_theore
 
 \subsection{Frequency Control and Feedback}
 
-A number of methods can be used to control the output frequency of a laser and these can be used in concert to supply feedback from the stabilisation technique in order to stabilise the laser's frequency and decrease the spectral linewidth.
+A number of methods can be used to control the output frequency of a laser and these can be used in concert to supply feedback from the frequency reference in order to stabilise the laser's frequency and decrease the spectral linewidth.
 The focus here will be on the feedback systems of diode lasers, particularly \glspl{ecdl}.
 
 \subsubsection{Temperature}
@@ -101,7 +101,7 @@ Laser intensity noise can also cause problems, for example laser frequency stabi
 
 Mechanical noise can have numerous sources such as audible noise, percussive noise (dropped spanners, doors) or vibrational sources such as cooling fans on nearby equipment.
 \Glspl{ecdl} subjected to mechanical vibrations will experience frequency noise as the alignment of the light coupled back into the diode from the grating varies.
-Mechanical noise can also affect the alignment, and thus transmitted power, of laser through optical fibres, optical isolators and apertures.
+Mechanical noise can also affect the alignment, and thus transmitted power, of laser through optical fibres, optical isolators and apertures, which in turn can be falsely interpreted by the servo system as a change in frequency and `corrected'.
 
 \section{Saturated Absorption Spectroscopy}
 \glsreset{sa}
@@ -172,7 +172,7 @@ The coefficient of finesse is related to the finesse by
 \begin{equation}
 \mathscr{F}=\frac{\pi}{2}\sqrt{F}.
 \end{equation}
-The phase difference between successive traversals of the cavity is represented by $d$
+The phase difference between successive traversals of the cavity is represented by $d$.
 We can define the difference between the laser wavelength and closest cavity resonance as $\Delta\lambda=L-n\lambda$, then Equation~\ref{equation:cavity_transmission} can be written as
 \begin{align}\label{equation:cavity_transmission2}
 T &= \frac{1}{1+F\sin^2\left(2\pi\frac{\Delta\lambda}{\lambda}\right)}. \notag \\
@@ -183,6 +183,7 @@ $T$ takes the form of a Lorentzian, or Airy, function and an example spectra is 
 
 The cavity used in the experiments described in this chapter was a high-finesse cavity from Stable Laser Systems that was located inside an evacuated temperature-controlled can.
 This cavity has a finesse of 20942, a \gls{fsr} of \unit[1.5]{GHz}, a \gls{fwhm} linewidth of \unit[71.6]{kHz}, and the mirrors had a reflectivity of 0.99985.
+This cavity had fixed mirrors unlike some others that have one of the mirrors attached to a piezoactuator to allow for modulation of the cavity resonance.
 
 \subsubsection{PDH Error Signal}\label{section:pdh_error}
 
@@ -245,7 +246,7 @@ The cavity has a length of \unit[10]{cm} and a finesse of 20942 and a phase modu
 
 \Gls{pdh} locking is generally achieved with the modulation applied to the laser using an \gls{eom} with the laser then incident on a cavity.
 The light reflected from the cavity is then measured by a photodetector and the signal from the detector is mixed with the same frequency source as is driving the \gls{eom}.
-A low-pass filter removed the higher frequency component from the resulting signal which is then passed to the servo system which attempts to stabilise the laser frequency.
+A low-pass filter removes the higher frequency component from the resulting signal which is passed to the servo system which attempts to stabilise the laser frequency.
 This is shown in Figure~\ref{figure:pdh_schematic}.
 
 \begin{figure}

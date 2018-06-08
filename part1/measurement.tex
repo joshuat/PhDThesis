@@ -10,10 +10,10 @@ Long timescale measurements, minutes to hours, are useful to determine the stabi
 The basic layout of the laser systems used is shown in Figure~\ref{figure:two_laser_setup}.
 A number of the measurements described in this chapter required only a single laser however the most reliable method, two-laser heterodyne (see Section~\ref{section:two-laser_heterodyen}), requires two very similar laser systems.
 Two almost identical lasers systems were constructed for these measurements with the only major difference being the \gls{ecdl} itself, one being a MOGLabs ECD003 and the other a Toptica DL pro.
-Both lasers were controlled by MOGLabs laser controllers\footnote{MOGLabs laser controlled with a MOGLabs DLC202 and Toptica laser with a DLC252.} and used high-bandwidth, \unit[14]{MHz}, servo controllers\footnote{NewFocus LB1005, \unit[14]{MHz} bandwidth} to control the high-frequency diode injection current channel (\unit[>10]{MHz} bandwidth).
+Both lasers were controlled by MOGLabs laser controllers\footnote{MOGLabs laser controlled with a MOGLabs DLC202 and Toptica laser with a DLC252.} and used high-bandwidth, \unit[14]{MHz}, servo controllers\footnote{NewFocus LB1005, \unit[14]{MHz} bandwidth} to control the high-frequency diode injection current channel (\unit[$>$10]{MHz} bandwidth).
 The laser controllers were used as servos to provide the low-frequency feedback to the \gls{ecdl} piezo (\unit[1]{kHz} bandwidth) and slow current channel (\unit[50]{kHz} bandwidth).
 In order to provide flexibility when perform the numerous measurements with different locking techniques the beam from each laser was split in two and coupled into single-mode polarisation-maintaining fibres.
-For each laser one beam also passed through a double-pass \gls{aom} before being couple into the fibre to provide some frequency control which was useful for both cavity and heterodyne measurements.
+For each laser one beam also passed through a double-pass \gls{aom} before being coupled into the fibre to provide some frequency control which was useful for both cavity and heterodyne measurements.
 
 \begin{figure}
 \center
@@ -27,7 +27,7 @@ The polarisation rotation of the probe beam is then measured by a balanced polar
 \end{figure}
 
 In the two near-identical polarisation spectroscopy setups high quality calcite polarisers where used to stabilise the polarisation of the beam out of the fibre as, despite being polarisation maintaining, ambient temperature changes resulted in polarisation changes in the output beam from the fibres.
-Following the calcite was a beam expanding telescope that expanded the beams to the size of the apertures in the double-layer mu-metal magnetic shields, \unit[1.5]{cm} diameter, reducing transit-broadening and improving the optical pumping within the \unit[7.5]{cm} long Rb gas cells.
+Following the calcite was a beam expanding telescope that expanded the beams to the size of the apertures in the double-layer mu-metal magnetic shields, \unit[1.5]{cm} diameter, reducing transit-broadening and improving the optical pumping within the \unit[7.5]{cm} long rubidium gas cells.
 The pump and probe beams had typical powers of \unit[2.4]{mW} and \unit[2.7]{mW} respectively.
 High-bandwidth photodetectors\footnote{Thorlabs PDA36A-EC, \unit[150]{MHz} bandwidth} where used in the balanced polarimeter to generate the error signal fed into the servo system.
 
@@ -74,7 +74,7 @@ The difference in frequency ideally should be fairly small, less than a few GHz,
 
 The equations presented above provide an obviously na\"ive approach as the frequency spread of the lasers is non-zero but gives a sufficient demonstration of the basis of the heterodyne method.
 The spectral profile of the heterodyne signal is formed by the convolution of the spectral profiles of the component lasers, thus strategies are required in order to resolve the lineshape of a single laser.
-For two near identical lasers with Gaussian lineshape the beatnote width is $2\sqrt{2\log_e2}\sim2.35$ (see Appendix~\ref{appendix:heterodyne}).
+For two near identical lasers with Gaussian lineshape the beatnote width is $2\sqrt{2\log_e2}\sim2.35$ larger than the lineshape of the individual lasers (see Appendix~\ref{appendix:heterodyne}).
 
 \subsubsection{Frequency Reference}
 One method of resolving the lineshape of a single laser is to use a second laser known to have a frequency lineshape much narrower than the laser of interest so that the convolved lineshape is the same as the lineshape of the laser of interest.
@@ -103,7 +103,7 @@ Unfortunately, initial measurements were unable to confirm that the \gls{pdh} lo
 The self-heterodyne technique involves beating a laser with itself in order to perform a heterodyne measurement, as shown in Figure~\ref{figure:self_heterodyne}~\cite{okoshi_novel_1980}.
 In order to perform this measurement it is necessary to split the laser into two beams and frequency shift on beam, usually with an \gls{aom}, such that the beatnote is not centred at \unit[0]{Hz}.
 The two beams are still correlated so it is necessary to propagate one beam to reduce the coherence otherwise the lineshape of the beatnote would just appear as a delta function centred at the \gls{aom} frequency~\cite{richter_linewidth_1986}.
-One beam of the beams is typically delayed by a very long optical fibre such that that arm of the heterodyne measurement has been delayed, ideally for as long as the coherence time of the laser.
+The beam is typically delayed by a very long optical fibre ideally such that the beam is delayed for as long as the coherence time of the laser.
 Practically this would require optical fibres with lengths from 1 to \unit[100]{km} depending on the linewidth of the laser under investigation.
 Unfortunately the absorption losses in fibres tends to be at least a few dB per kilometre making fibres longer than \unit[10]{km} troublesome to use however it is not necessary to fully decohere the beams with a delay time longer than the coherence time, as discussed in Reference~\cite{richter_linewidth_1986}.
 
@@ -125,8 +125,8 @@ Unfortunately the absorption losses in fibres tends to be at least a few dB per 
 Self-heterodyne was one of the first diagnostic tools used to measure the performance of \gls{ps}.
 Figure~\ref{figure:self-heterodyne_example} shows a self-heterodyne beatnote from a laser locked with \gls{ps} without high-bandwidth feedback, the figure shows the beatnote at various ranges and resolutions with the full beatnote, the central portion of the beatnote, and a close up of the central peak.
 The centre of the beatnote consists of a central portion with a frequency \gls{fwhm} of \unit[33]{kHz}, an extremely narrow peak in with a \gls{fwhm} of \unit[240]{Hz} and an even narrower small peak with a width under \unit[100]{Hz}.
-The central portion has a width comparable to that reported in Reference~\cite{torii_laser-phase_2012} and it was unclear whether the central peaks were due to the laser frequency spread or due to the correlated portions of the laser.
-Due to the unclear results it was necessary to perform additional measurements to determine the true linewidth achievable with \gls{ps}.
+The central portion has a width comparable to the \gls{ps} linewidth reported in Reference~\cite{torii_laser-phase_2012}, \unit[20]{kHz}, and it was unclear whether the central peaks were due to the laser frequency spread or due to the correlated portions of the laser.
+Due to this uncertainty it was necessary to perform additional measurements to determine the true linewidth achievable with \gls{ps}.
 
 \begin{figure}
 \center
@@ -161,7 +161,7 @@ A summary of two-laser heterodyne is shown in Figure~\ref{figure:two-laser_heter
 \end{figure}
 
 Two-laser heterodyne provides a useful measurement due to its simplicity and the lack of confounding effects (such as those found with self-heterodyne) and thus can relatively easily provide confidence in the results of the measurement.
-The downside of this method is the obvious requirement for two very similar lasers frequency stabilised with the same methods to be used.
+The downside of this method is the obvious requirement for two very similar lasers frequency stabilised with the same methods.
 
 In order to test the efficacy of high-bandwidth \gls{ps} two similar laser setups were used; both used commercial Littrow configuration lasers, identical optic setups as shown in Figure~\ref{figure:two_laser_setup} with optical fibres that can be connected to the diagnostic measurements such as the heterodyne setup and the high-finesse cavity.
 
@@ -194,7 +194,7 @@ There are a large number of ways that the cavity can be used to examine the spec
 \subsubsection{Cavity Resonance Sweep}
 
 The high-finesse optical cavity provides a useful tool for quickly checking the efficacy of high-bandwidth locking if the cavity and final laser linewidth are within a few orders of magnitude of each other.
-While attempting to lock a laser the transmission of the laser through the cavity, an \gls{aom} is used to sweep the diagnostic beam across the cavity resonance, the jitter of the laser can be monitored as the bandwidth of the locking scheme is increased.
+While attempting to lock a laser the transmission of the laser through the cavity, an \gls{aom} is used to sweep the frequency of the diagnostic beam across the cavity resonance, the jitter of the laser can be monitored as the bandwidth of the locking scheme is increased.
 An example of this process is shown in Figure~\ref{figure:cavity_scans} where the laser is locked with \gls{ps} as the bandwidth of the servo system is increased.
 The resulting traces provide a clear illustration of the effect of increased locking bandwidth.
 With piezo-only locking the peak appears broad as the laser jitters about the resonant frequency, with slow-current feedback the transmission peak shape becomes apparent.
@@ -267,7 +267,7 @@ The measurements are shown with a superimposed smoothed curve with a moving aver
 % Code and data located at Code/PolSpec Code/Laser/Noise PSD/plotting.py
 \end{figure}
 
-The high-finesse optical cavity provides another method to examining the frequency noise spectrum of the laser system as it provides a much lower noise measurement, this is shown in the lower portion of Figure~\ref{figure:psd}.
+The high-finesse optical cavity provides another method to examining the frequency noise spectrum of the laser system and it provides a much lower noise measurement, this is shown in the lower portion of Figure~\ref{figure:psd}.
 The cavity was used as a independent laser frequency discriminator by setting the laser frequency with an \gls{aom} such that the transmission through the cavity was half of the peak (similar to the method described in Section~\ref{section:one_sided_peak}) and the resulting signal was fed to the spectrum analysers and the resulting spectrum calibrated given the known cavity transmission function.
 The noise floor for this measurement was determined by illuminated the photodetector directly with light of intensity equal to that used for the other measurement but without the frequency dependent influence of the cavity and the signal was well above the noise floor for frequencies up to the \unit[5.5]{MHz} bandwidth of the photodetector.
 The noise floor for the cavity measurement is significantly lower than that of the error signal measurement and shows that there is significant signal available that could be used if the noise in the \gls{ps} error signal could be lowered.
@@ -290,7 +290,7 @@ Using Equation~\ref{equation:noise_integration} we can extract a laser linewidth
 Integrating the \gls{psd} of the fully locked laser, measured with the optical cavity, results in a \gls{rms} linewidth of \unit[1.68$\pm$0.49]{kHz}.
 
 The noise floor can also be integrated to get an indication of how much the noise contributes to the measured linewidth.
-For the data shown in Figure~\ref{figure:psd} the noise contributes \unit[0.11$\pm$0.05]{kHz} which is more or less negligible.
+For the data shown in Figure~\ref{figure:psd} the noise contributes \unit[0.11$\pm$0.05]{kHz} which is negligible contribution.
 The measurements shown have a low frequency cutoff of \unit[24]{Hz} as the spectrum analysers were unable to measure below this point and the lower noise linewidth contribution of this measurement, compared to the one-sided peak measurement, indicates that the majority of the intensity noise occurs below \unit[24]{Hz}.
 
 \subsection{Long Term Stability}
@@ -298,7 +298,7 @@ The measurements shown have a low frequency cutoff of \unit[24]{Hz} as the spect
 Polarisation spectroscopy is inherently a DC technique, susceptible to low frequency drift ($1/f$ noise).
 Drift in the laser power output as the laser alignment drifts, variations in fibre coupling efficiency if fibres are used, variations in the atomic vapour density due to changes in temperature, thermal effects on the waveplates and changes to the electronic gains and offsets can all affect the lock point of \gls{ps} due to the resulting intensity noise combined with the difficulty in perfectly balancing the polarimeter.
 
-The high-finesse cavity was used as a reference to quantify the long-term drift of the \gls{ps} locked laser over a period of \unit[60]{hours}, measured every \unit[10]{seconds}, Figure~\ref{figure:ps_drift}.
+The high-finesse cavity was used as a reference to quantify the long-term drift of the \gls{ps} locked laser over a period of \unit[60]{hours}, measured every \unit[10]{seconds}, see Figure~\ref{figure:ps_drift}.
 Drift in the optical cavity frequency was corrected by reference to the central frequency of a beatnote between a laser locked to the rubidium transition using saturated absorption spectroscopy and the \gls{ps} locked laser incident on the cavity.
 The standard deviation of the \gls{ps}-locked laser frequency measurements was \unit[51]{kHz} over the \unit[60]{hour} measurement, approximately half the standard deviation of the measurements in~\cite{tiwari_laser_2006} and significantly smaller than the \unit[400]{kHz} quoted in~\cite{lee_frequency_2014}.
 The frequency change between each measurement was on average \unit[5]{Hz}, with a standard deviation of \unit[210]{Hz}.
