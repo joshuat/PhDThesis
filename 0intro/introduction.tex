@@ -49,9 +49,10 @@ While \glspl{xfel} require a several kilometre long facility with a billion doll
 To resolve the structure of single molecules requires sufficient signal such that the orientation problem can be solved and averaging performed, and the imaging needs to be completed before the molecule is substantially damaged by the beam~\cite{huldt_diffraction_2003}.
 Thus a single pulse must be extremely intense, {\color{red}how intense?}, and extremely short in duration, 10s of femtoseconds~\cite{chapman_femtosecond_2006}.
 Damage to molecules can occur via numerous mechanisms and are different for X-rays and electrons but in both cases occur in femtosecond timescales~\cite{spence_outrunning_2017}.
+{\color{red}Some more details on damage, a few machanisms and timscales.}
 
-The coherence of the source is also an important consideration for this kind of imaging as the beam must have a coherence length as large as that of the molecule under consideration so that portions of the illuminating wave diffracted from different positions on the molecule interfere coherently.
-The diffraction pattern detected is the square of the Fourier coefficients that represents the molecule under examination.
+The coherence of the source is also an important consideration for diffraction imaging as the beam must have a coherence length as large as that of the molecule under consideration so that portions of the illuminating wave diffracted from different positions on the molecule interfere coherently.
+When performing \gls{cdi} the diffraction pattern detected is the square of the Fourier coefficients that represents the molecule under examination.
 Due to the loss of the complex phase components when the Fourier coefficients are squared it is not possible to directly invert to recover the structure of the molecules, this is known as the \emph{phase problem}~\cite{rodenburg_phase_1989}.
 The most common solution to the phase problem is iterative computational phase-retrieval~\cite{chapman_coherent_2010}.
 
@@ -59,16 +60,15 @@ Ultrafast \gls{cdi} has been demonstrated has been demonstrated previously on mi
 
 \subsection{Imaging Targets}
 
-Great strides in our understanding of biology and medicine have been made with the knowledge provided by crystallographic techniques over the decades they have been in use.
-Crystallography has been of particular use to biology as the structure of biological molecules plays a vital role in their function, with proteins interacting with sub-structures of other proteins to mediate biological processes, somewhat analogous to a lock and key.
+Crystallography has been of enormous benefit to biology as the structure of biological molecules plays a vital role in their function, with proteins interacting with sub-structures of other proteins to mediate biological processes, somewhat analogous to a lock and key.
 Knowing the structure of biological proteins is essential to fully understanding how the mechanism that protein is involved in functions, and can provide vital information to researchers on how to produce drugs to manipulate that mechanism~\cite{aloy_structural_2006,almen_mapping_2009}.
 The design and creation of drugs based on knowledge of the structure of the proteins involved in a mechanism is sometimes referred to as \emph{direct drug design} and has had some success to date~\cite{klebe_recent_2000,jhoti_structure-based_2007,mauser_recent_2008}.
 The first example of structurally informed direct drug design was the drug dorzolamide which was released to the market in 1995 to reduce intraocular pressure in certain circumstances~\cite{greer_application_1994}.
 
 One of the obvious restrictions on crystallography is that the target sample must be crystallisable in order for it to be imaged and unfortunately there are large numbers of important biological proteins that scientists have been unable to crystallise, notably a large portion of membrane proteins which mediate interactions on the surfaces of cells~\cite{geerlof_impact_2006}.
-Alternative structure determination techniques such as ultrafast \gls{cdi} with a \gls{xfel} or \gls{caes} would be able to bypass the crystallisation requirement and thus provide researchers with a wealth of useful information.
+Alternative structure determination techniques such as ultrafast \gls{cdi} with an \gls{xfel} or \gls{caes} would be able to bypass the crystallisation requirement and thus provide researchers with a wealth of useful information.
 
-The potential to be able to produce molecular movies the range of interesting samples increases as knowledge of the changes in molecular structures during many complex and interesting dynamics (such as melting, photosynthesis, molecular phase transitions, or chemical reactions) would prove invaluable to understanding the physics, chemistry and biology of many areas.
+Knowledge of the changes in molecular structures during many complex and interesting dynamics (such as melting, photosynthesis, molecular phase transitions, or chemical reactions) would prove invaluable to understanding the physics, chemistry and biology of many areas.
 
 \section{Cold-atom electron and ion sources}
 
@@ -77,19 +77,22 @@ Initially the aim of the project was to create ultrafast coherent electron bunch
 It has also become apparent that by simply reversing the polarity of the accelerator the source can generate high quality ion bunches with similar properties to the electron bunches thus providing a new source for use in ion microscopy and nano-fabrication.
 
 Cold-atom sources operate by carefully ionising atoms in a \gls{mot} such that the resulting ions and electrons are cold and thus the bunches accelerated from those clouds have low emittance and high coherence.
-The low transverse temperature of ions and electrons produced by a \gls{caeis} is one of the main advantages of this source however the source also allows for the production ultrafast bunches, arbitrarily shaped bunches and these techniques are applicable to any of the many atomic species that can be laser cooled and trapped.
+The low transverse temperature of ions and electrons produced by a \gls{caeis} is one of the main advantages of this source.
+The source also allows for the production of ultrafast, and arbitrarily shaped electron and ion bunches.
+These techniques are applicable to any of the many atomic species that can be laser cooled and trapped.
 
 A \gls{caes} can be thought of as a photocathode electron source with the solid cathode replaced with an ultracold gas which provides the \gls{caes} with a few advantages such as the high quantum efficiency achievable, and near-threshold ionisation producing colder electrons than those from other photocathode sources~\cite{engelen_effective_2014}.
 The simplicity of the interactions between photons and atoms allows for the high quantum efficiency to be achieved.
 In comparison, in solid cathodes the atoms surrounding a photonic interaction complicate the ionisation and electron extraction processes.
-An isolated atom, such as that in the ultracold gas, that interacts with a photon has a much more limited range of potential outcomes, absorption of the photon, radiative decay or ionisation, each with well understood probabilities thus allowing the optimisation of the quantum efficiency~\cite{baranov_field_1994}.
+An isolated atom, such as that in the ultracold gas, has a much more limited range of potential outcomes: absorption of the photon, radiative decay or ionisation.
+Each process is well understood thus allowing the optimisation of the quantum efficiency~\cite{baranov_field_1994}.
 
-Another advantage of gas photocathodes over solid ones is the lack of optically induced damage from high-intensity laser-fields.
-Solid cathodes undergo constant degradation due to the strong fields used and require regular replacement~\cite{dowell_results_1995} whereas the gaseous target in a \gls{caes} is renewed with every bunch produced.
+Another advantage of gas photocathodes is the lack of optically induced damage from high-intensity laser-fields.
+Solid cathodes undergo constant degradation and require regular replacement~\cite{dowell_results_1995} whereas the gaseous target in a \gls{caes} is renewed with every bunch produced.
 
 One of the major advantages of \glspl{caeis} is the low temperature of the source which is due to the careful ionisation of the atoms trapped within the \gls{mot}.
 The ultracold atoms trapped in the \gls{mot} have temperatures around \unit[100]{$\muup$K} but after ionisation the electrons have temperatures determined by the excess energy from the ionisation process~\cite{engelen_high-coherence_2013,engelen_analytical_2014,sparkes_high-coherence_2014,speirs_identification_2017}.
-Precise control over the ionisation is possible due to the well understood physics and high quality lasers available, so it is possible to minimise the excess energy from the ionisation process and electrons produced can have transverse temperature as low as \unit[$\sim$10]{K}~\cite{saliba_spatial_2012}.
+Precise control over the ionisation is possible to minimise the excess energy from the ionisation process and electrons produced can have transverse temperature as low as \unit[$\sim$10]{K}~\cite{saliba_spatial_2012}.
 Unlike electrons, ions produced by the source have their initial temperature determined predominantly by the temperature of the trapped atoms before ionisation, \unit[100]{$\muup$K}, with an ion temperature around \unit[1]{mK}~\cite{debernardi_measurement_2011,murphy_detailed_2014}.
 
 \subsection{Ion Source}
