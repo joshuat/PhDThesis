@@ -148,11 +148,12 @@ For the results presented in this chapter the apparatus described in Chapter~\re
 The energy of the beam was close to the maximum the accelerator is able to produce, with the electrons given \unit[11.7]{keV}.
 
 The majority of the data presented here was generated using electron bunches produced with ionisation pathways designed to maximise beam current.
-The exception was the ultrafast diffraction measurements which used the ionisation pathways that produced ultrafast electron bunches~\cite{speirs_single-shot_2015,speirs_identification_2017,speirs_electron_2017}.
+The exception was the ultrafast diffraction measurements which used the ionisation pathways that produced ultrafast electron bunches, as described in Section~\ref{section:two_stage_ionisation}~\cite{speirs_single-shot_2015,speirs_identification_2017,speirs_electron_2017}.
 
 These measurement did not take advantage of the beam shaping potential of the source instead the red excitation laser was given enough optical power to saturate the atom cloud, thus producing a higher beam current than is possible with shaping.
-The excitation laser beam profile was Gaussian in beamshape with a \gls{fwhm} of \unit[80]{$\muup$m} at the focus however, due to the laser intensity saturating the atom cloud, the bunch takes on the shape of the atomic cloud which tends to be Gaussian.
-The electron bunches at the source have been determined to have a Gaussian shape with a \gls{fwhm} of \unit[1.4]{mm} with a divergence of $\sigma_{\theta_x}$=\,\unit[0.3]{$\muup$rad} and thus a source emittance of $\epsilon_x$=\,\unit[50]{nm\,rad}~\cite{mcculloch_high-coherence_2013}.
+The excitation laser beam profile was Gaussian in beamshape with a \gls{fwhm} of \unit[80]{$\muup$m} at the \gls{mot} however, due to the laser intensity saturating the atom cloud, the electron bunches took on the shape of the atomic cloud which was roughly Gaussian.
+The transverse bunch profile was not of particular concern as it was focused to a point at the detector.
+The electron bunches at the source under similar conditions have been determined to have a Gaussian shape with a \gls{fwhm} of \unit[1.4]{mm} with a divergence of $\sigma_{\theta_x}$=\,\unit[0.3]{$\muup$rad} and thus a source emittance of $\epsilon_x$=\,\unit[50]{nm\,rad}~\cite{mcculloch_high-coherence_2013}.
 
 The number of electrons per pulse when producing ns-duration bunches with this setup was measured with a Faraday cup to be $5\times10^5$ which corresponds to a bunch charge of \unit[80]{fC}.
 
@@ -162,9 +163,9 @@ These measurement were taken before the investigations into beam astigmatism dis
 \subsection{Sample Bias}\label{section:sample_bias}
 
 As is shown in Section~\ref{section:aluminium_diffraction}, the maximum electron energy that the accelerator electrodes are able to provide is not sufficient to observe diffraction with some of the test samples.
-If higher voltages were applied to the electrodes then they would undergo electrical breakdown.
+If higher voltages were applied to the electrodes then they would undergo electrical breakdown making it impossible to generate higher energy electrons using the normal accelerator stuctures.
 In order to provide a greater range of available particle energies a high voltage feedthrough was attached to the aluminium sample paddle so that incoming electrons would undergo a change in energy, dependant on the polarity and strength of the voltage bias.
-The sample voltage bias could be up to \unit[7]{kV} before the high voltage cable would begin to short allowing for the beam energy to be increased by \unit[7]{keV}.
+The sample voltage bias could be up to \unit[8.5]{kV} before the high voltage cable would begin to short allowing for the beam energy to be increased to approximately \unit[20.2]{keV}.
 
 \section{Results}
 
@@ -175,12 +176,12 @@ This work presents the capstone to the diffraction studies conducted with this i
 
 The most successful diffraction was observed with a thin foil sample of single crystal gold.
 The sample was a standard \unit[3]{mm} \gls{tem} sample of \unit[11]{nm} thick monocrystalline gold on a carbon grid.
-Example diffraction patterns from the gold sample are shown in Figure~\ref{figure:au_diffraction} which shows 100-shot registered-averages and single shot diffraction patterns generated with high-current ns-duration bunches and 1000-shot registered-averaged diffraction using relatively low-current ultrafast bunches.
+Example diffraction patterns from the gold sample are shown in Figure~\ref{figure:au_diffraction} which shows 100-shot registered-averages and single shot diffraction patterns generated with high-current nanosecond-duration bunches and 1000-shot registered-averaged diffraction using relatively low-current ultrafast bunches.
 
 \begin{figure}
     \center
     \input{part2/Figs/gold_diffractions.pgf}
-    \caption[Diffraction patterns from gold.]{Log-scaled false-colour diffraction patterns from monocrystalline gold foil. (a) is a 100-shot average diffraction pattern generated with ns duration electron bunches. (b) is a single-shot from the set that forms (a). (c) is the radial average of (a). (d) is a 1000-shot averaged diffraction pattern generated with ultrafast electron bunches. The red lines indicate the lattice spaces for gold. The colour scale for each image is individually scaled to optimise visibility.}
+    \caption[Diffraction patterns from gold.]{Log-scaled false-colour diffraction patterns from monocrystalline gold foil. (a) is a 100-shot average diffraction pattern generated with nanosecond-duration electron bunches. (b) is a single-shot from the set that forms (a). (c) is the radial average of (a). (d) is a 1000-shot registered-average diffraction pattern generated with ultrafast electron bunches. The red lines indicate the lattice spaces for gold. The colour scale for each image is individually scaled to optimise visibility.}
     \label{figure:au_diffraction}
 \end{figure}
 
@@ -188,7 +189,7 @@ Example diffraction patterns from the gold sample are shown in Figure~\ref{figur
 
 Significant increases in beam current will permit single-shot diffraction and future iterations of \glspl{caes} should be able to provide ultrafast bunches with higher beam charge.
 
-The ultrafast bunches were produced using two-colour multiphoton excitation, see Section\ref{section:two_stage_ionisation}, which was able to produce a few hundred electrons per shot.
+The ultrafast bunches were produced using two-colour multiphoton excitation, see Section~\ref{section:two_stage_ionisation}, which was able to produce a few hundred electrons per shot.
 Due to the lower current of the of the ultrafast bunches the Bragg spots are only visible with multi-shot averages.
 A logarithmically-scaled 1000-shot average of ultrafast diffraction from gold is shown in Figure~\ref{figure:au_diffraction}(d).
 Despite the low signal there was sufficient intensity in the central spot to enable the individual shots to be registered using the technique described in Section~\ref{section:registration}.
@@ -229,6 +230,6 @@ If a thinner aluminium sample was used or if the beam energy could be increased 
 
 \section{Conclusion}
 
-The \gls{caes} has been used to demonstrate single-shot diffraction and ultrafast diffraction from crystalline gold which are important steps along the road towards the many potential applications of a \gls{caes}.
-Demonstrating single-shot diffraction is important due to a number of applications requiring high bunch charge which is demonstrated with single-shot diffraction.
-Some applications also require ultrafast bunches and the diffraction results produced using such bunches are another demonstration.
+The \gls{caes} has previously been used to demonstrate single-shot diffraction and now if has demonstrated ultrafast diffraction from crystalline gold.
+These are important steps along the road towards the many potential applications of the \gls{caes}.
+The next step is to demonstrate diffraction that is both single-shot and ultrafast which will require the next generation of \gls{caes} and the higher beam current it will be able to produce.
