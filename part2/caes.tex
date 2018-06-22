@@ -4,7 +4,9 @@ The \gls{caeis} at the University of Melbourne is a source of low temperature el
 The \gls{caeis} works by carefully ionising rubidium atoms trapped in a \gls{mot} in order to generate a low temperature plasma which can then be electrostatically accelerated to form a particle beam.
 The apparatus described here has enabled numerous experiments which have provided greater understanding of the certain aspects of atomic physics and the capabilities of \glspl{caeis}.
 The many years of experience with this apparatus has also taught where the limitations of this \gls{caeis} implementation are and have paved the way for the next generation of \gls{caeis} which will be able to achieve outcomes not possible with this apparatus.
-Numerous masters and doctoral students have worked on this system and the design and construction details can be found in their theses~\cite{sheludko_shaped_2010,bell_cold_2011,saliba_cold_2011,mcculloch_generation_2013,taylor_rydberg_2013,tielen_development_2015,murphy_measurement_2017,speirs_electron_2017}.
+
+The \gls{caeis} was initially designed and developed by then doctoral students Simon Bell and David Sheludko and is discussed in detail in References~\cite{sheludko_shaped_2010} and \cite{bell_cold_2011}.
+Numerous other masters and doctoral students have worked on maintaining and improving the system and details can be found in their theses~\cite{saliba_cold_2011,mcculloch_generation_2013,taylor_rydberg_2013,tielen_development_2015,murphy_measurement_2017,speirs_electron_2017}.
 
 The description of the \gls{caeis} in this chapter provides a context for the rest of the thesis as all research conducted was directly or indirectly related to the continued improved of the \gls{caeis}. A number of investigations and improvements to source stability, source current and beam optimisation are also presented.
 A comparison of the standard pulsed operation is compared to continuous operation in Section~\ref{section:pulse_vs_continuous} where it was hoped that continuous operation might provide significantly higher beam current.
@@ -12,19 +14,18 @@ An essential component of data processing with this appratus is the technique us
 Without registration the \gls{snr} in most of the results described in this thesis would be worse and a number of the measurements performed would be impossible.
 Section~\ref{section:quadrupole} decribes the characterisation and correction of an astigmatism in the electron bunches which provides improved beam quality and \gls{snr} for the results described in later chapters.
 
-
 \section{Description}
 The first step in generating electrons and ions at the University of Melbourne \gls{caeis} was trapping and cooling atoms in a \gls{mot} loaded from a Zeeman slower.
-The optical and magnetic trapping fields were then extinguished and the cold ground-state atoms carefully ionised using a combination of a red excitation laser and a blue ionisation laser.
+The optical and magnetic trapping fields were then extinguished and the cold ground-state atoms ionised using a combination of a red excitation laser and a blue ionisation laser.
 The charged particles were accelerated by a static electric produced by the accelerator electrodes, one polarity accelerating ions towards the detector and the other electrons.
 The main detector for experiments was a phosphor-coupled \gls{mcp} combined with a \gls{ccd} camera.
 
-When the source is acting as an electron source it is essential to turn off the \gls{mot} and Zeeman slower magnetic fields before ionisation due to the significant deviation that the fields cause to the electron trajectories.
+When acting as an electron source it was essential to turn off the \gls{mot} and Zeeman slower magnetic fields before ionisation due to the significant deviation that the fields cause to the electron trajectories.
 Ion trajectories are not adversely affected if the fields are left on due to the much higher mass of ions.
 
 \subsection{Laser Systems}
-There were a number of light fields required or useful for the running of the \gls{caeis}.
-The \unit[780]{nm} red lasers\footnote{MOGLabs External Cavity Diode Lasers with MOGLabs Diode Laser Controllers} were frequency locked relative to the rubidium-85 primary cycling transition, 5$^2$S$_{1/2}$ (F=3) $\rightarrow$ 5$^2$P$_{3/2}$ (F$^\prime$=4), and repump transition, 5$^2$S$_{1/2}$ (F=2) $\rightarrow$ 5$^2$P$_{3/2}$ (F$^\prime$=3).
+There were a number of light fields required for the running of the \gls{caeis}.
+The \unit[780]{nm} red lasers\footnote{MOGLabs External Cavity Diode Lasers with MOGLabs Diode Laser Controllers} were frequency locked relative to the rubidium-85 primary cycling transition, 5$^2$S$_{1/2}$ (F=3) $\rightarrow$ 5$^2$P$_{3/2}$ (F$^\prime$=4), also known as the cooling transition, and the repump transition, 5$^2$S$_{1/2}$ (F=2) $\rightarrow$ 5$^2$P$_{3/2}$ (F$^\prime$=3).
 The repump beams listed below were mixed with the primary beam and coupled into the same optical fibres for delivery to the vacuum system.
 The following beams were used:
 \begin{itemize}
@@ -37,11 +38,11 @@ The following beams were used:
     \item{\emph{Femtosecond Excitation Beam:}} Generated by a mode-locked Ti:sapphire amplified pulse laser\footnote{Spectra-Physics Spitfire Pro} with \unit[780-830]{nm} wavelength and a minimum pulse duration of \unit[35]{fs}.
     \item{\emph{Pulsed Ionisation Beam:}} A tunable \unit[457-493]{nm} \unit[10]{ns}-pulse laser used to perform the second stage of ionisation\footnote{Sirah dye laser system CSTR-D-3000}.
     \item{\emph{\Gls{cw} Ionisation Beam:}} A \gls{cw} tunable \unit[480]{nm} laser used as an alternative to the blue pulse laser\footnote{Toptica TA-SHG pro}.
-    \item{\emph{Imaging Beam:}} Used occasionally to image the atom cloud. Locked \unit[4]{MHz} below the cooling transition.
+    \item{\emph{Imaging Beam:}} Used to image the atom cloud. Locked \unit[4]{MHz} below the cooling transition.
 \end{itemize}
 
 A previous iteration of the cooling and repump laser systems for the \gls{caeis} consisted of six separate diode lasers each independently locked to appropriate rubidium transitions.
-This setup suffered in reliability as, if any of the six diodes became unlocked (a common occurrence) then identification and relocking of the offending laser was a lengthy process.
+That setup suffered in reliability as, if any of the six diodes became unlocked (a common occurrence) then identification and relocking of the offending laser was a lengthy process.
 The setup was streamlined by using only two diode lasers amplified by \glspl{ta} with greater resistance to environmental perturbations making the loss of lock a less common occurrence and easier to recover from.
 A simplified schematic of the cooling and repump laser setup is shown in Figure~\ref{figure:laser_setup}.
 
@@ -49,17 +50,18 @@ A simplified schematic of the cooling and repump laser setup is shown in Figure~
     \center
     \includegraphics{part2/Figs/laser_setup.pdf}
     \caption[Simplified schematic of the laser setup for the \gls{caeis}.]{The simplified setup of the lasers locked to the rubidium-85 cycling (a) and repump (b) transitions.
-    The \gls{ecdl} lasers are locked with saturated absorption spectroscopy, amplified with tapered amplifiers and offset for numerous applications using \gls{aom}.
+    The \glspl{ecdl} are locked with saturated absorption spectroscopy, amplified with tapered amplifiers and frequency-offset using \glspl{aom}.
     $\Delta$s refer to the frequency relative to the cycling or repump transitions.}
     \label{figure:laser_setup}
 \end{figure}
 
 \subsection{Rubidium Oven}
-The source begins with an effusive Rubidium oven with a long heated collimation tube.
-Typically effusive ovens are wasteful with large numbers of atoms lost into a large solid angles however this experimented makes use of a long heated collimation tube to collect and re-emit atoms that were initially emitted at high angles.
+The source begins with an effusive rubidium oven with a long heated collimation tube.
+Typically effusive ovens are wasteful with large numbers of atoms lost to large solid angles.
+This apparatus makes use of a long heated collimation tube to collect and re-emit atoms that were initially emitted at high angles.
 These atoms are re-emitted back to the reservoir or into the collimated atom beam leaving the collimation tube.
 The rubidium reservoir was typically heated to \unit[80]{$^\circ$C} and the collimation tube to \unit[120]{$^\circ$C}.
-A brief schematic of the oven can be found to the left in Figure~\ref{figure:zeemanoven} and more detail on the design, operation, and performance of the oven can be found in References~\cite{bell_slow_2010} and \cite{bell_cold_2011}.
+Detail on the design, operation, and performance of the oven can be found in References~\cite{bell_slow_2010} and \cite{bell_cold_2011}.
 
 \begin{figure}
     \center
@@ -69,20 +71,20 @@ A brief schematic of the oven can be found to the left in Figure~\ref{figure:zee
 \end{figure}
 
 \subsection{Zeeman Slower}
-Following the oven is the tapered pitch Zeeman slower which slows atoms down so that they can be captured by the trapping fields of \gls{mot}~\cite{bell_slow_2010}.
-Zeeman slowers operate by using a laser red-detuned from resonance to slow the atoms down however as the atoms slow the conditions for resonance change due to the changing Doppler shift.
-The solution to this quandary used here is a tapered magnetic coil to apply a magnetic field to shift the atomic resonance such that a particular velocity class of atoms remains resonant with the light field, and thus is slowed, along the length of the Zeeman slower.
+A Zeeman slower using a solenoid with tapered winding pitch is used to slow the atoms so that they can be captured by the \gls{mot}~\cite{bell_slow_2010}.
+Zeeman slowers operate by using a laser red-detuned from resonance to slow the atoms down but as the atoms slow the conditions for resonance change due to the changing Doppler shift thus preventing further slowing of the atoms.
+The solution to this quandary used here was a tapered magnetic coil that applied a magnetic field to shift the atomic resonance such that a particular velocity class of atoms remained resonant with the light field, and thus was slowed, along the length of the Zeeman slower.
 Atoms leaving the Zeeman slower typically had velocities around \unit[35]{m/s}, well within the capture velocity of the \gls{mot}.
-A schematic of the Zeeman slower with along with the magnetic field produced by the tapered coil is shown in Figure~\ref{figure:zeemanoven}.
+A schematic of the Zeeman slower along with the magnetic field produced by the tapered coil is shown in Figure~\ref{figure:zeemanoven}.
 
 When extracting electrons from the \gls{mot} the magnetic coil must be turned off to prevent disruptions to the electron trajectory.
 
 \subsection{Magneto-Optic Trap}
-\Glspl{mot} use a combination of magnetic and light fields to trap and cool atoms to $\muup$K temperatures.
-In the \gls{caeis} the \gls{mot} was formed from six counter propagating \unit[780]{nm} lasers in a a retro-reflective quasi-mirror \gls{mot} configuration~\cite{hanssen_using_2006,mcculloch_generation_2013} as shown in Figure~\ref{figure:mot} to allow for the accelerator structure consisting of transparent and reflective electrodes.
+\Glspl{mot} use a combination of magnetic and light fields to trap and cool atoms to $\muup$K temperatures~\cite{metcalf_laser_1999}.
+In the \gls{caeis} the \gls{mot} was formed from six counter propagating \unit[780]{nm} lasers in a a retro-reflective quasi-mirror \gls{mot} configuration~\cite{hanssen_using_2006,mcculloch_generation_2013} to allow for the accelerator structure consisting of transparent and reflective electrodes, as shown in Figure~\ref{figure:mot}.
 The magnetic component of the \gls{mot} was formed from two magnetic coils in an anti-Helmholtz configuration providing a zero-field region in the centre of the trap.
 
-The \gls{mot} trapping lasers were detuned \unit[$-10$]{MHz} from the 5$^2$S$_{1/2} $(F=3) $\rightarrow$ 5$^2$P$_{3/2}$ (F$^\prime$=4) Rb85 transition and were mixed with on resonant 5S$_{1/2}$ (F=2) $\rightarrow$ 5P$_{3/2}$ (F$^\prime$=3) light to pump atoms that fell into the dark F=2 state.
+The \gls{mot} trapping lasers were detuned \unit[$-10$]{MHz} from the cycling transition and were mixed with on-resonant light at the repump transition to pump atoms that fell into the dark F=2 state.
 
 \begin{figure}
     \center
@@ -93,48 +95,49 @@ The \gls{mot} trapping lasers were detuned \unit[$-10$]{MHz} from the 5$^2$S$_{1
 
 \subsection{Ionisation}\label{section:two_stage_ionisation}
 
-The \gls{caes} was capable of generating bunches of electron and ions with long (\unit[$\sim$10]{$\muup$s}), short (\unit[$\sim$5]{ns}), and ultrashort (\unit[$\sim$10]{ps}) bunch duration depending on the laser systems used~\cite{speirs_identification_2017,speirs_electron_2017}.
-Depending on the ionisation pathway used, the \gls{caes} was able to produce cold bunches (\unit[$\sim$10]{K}) or hotter bunches (\unit[$>$10]{K}).
-Generally cold electron bunches are preferable and bunch duration depends on the desired application, for example \gls{ued} requires ultrashort bunches.
+The \gls{caeis} was capable of generating bunches of electron and ions with long (\unit[$\sim$10]{$\muup$s}), short (\unit[$\sim$5]{ns}), and ultrashort (\unit[$\sim$10]{ps}) bunch duration depending on the laser systems used~\cite{speirs_identification_2017,speirs_electron_2017}.
+Depending on the ionisation pathway the \gls{caeis} was able to produce cold electron bunches (\unit[$\sim$10]{K}) or hotter electron bunches (\unit[$>$10]{K}).
+Generally cold electron bunches were preferable and desired bunch duration depended on the application, \gls{ued} for example requires ultrashort bunches.
 
-Rubidium has a ground state ionisation threshold of \unit[4.18]{eV} which can be generated using a one blue and one red photon.
-The \gls{caeis} has two options for the generation of blue light and two for red.
-Red light could be generated by light from a \gls{cw} diode laser amplified by a \gls{ta} and locked to the Rb85 5$^2$S$_{1/2}$ (F=3) $\rightarrow$ 5$^2$P$_{3/2}$ (F$^\prime$=4) cycling transition or it could be generated with a mode-locked Ti:sapphire amplified pulsed laser with a wavelength range of \unit[770]{nm} to \unit[830]{nm} and a minimum pulse length of \unit[35]{fs}.
+Rubidium has a ground state ionisation threshold of \unit[4.18]{eV} which can be generated using one blue and one red photon.
+Red light could be generated by light from a \gls{cw} diode laser amplified by a \gls{ta} and locked to the cycling transition or it could be generated with a mode-locked Ti:sapphire amplified pulsed laser with a wavelength range of \unit[770]{nm} to \unit[830]{nm} and a minimum pulse length of \unit[35]{fs}.
 Blue light could be generated with a tunable dye pulse laser that produced \unit[460 to 490]{nm} light with a \gls{fwhm} duration of \unit[5]{nm} or with a \gls{cw} laser generated by a high-power tunable frequency-double diode laser.
 
 Sequential ionisation utilised a single red photon to excite from the ground state to an intermediate excited state followed by a single blue photon to transition to a field-ionising state or to the ionisation continuum.
-The bunch duration was determined by the shortest of; the duration of the laser pulse driving the transition from the exited state to the ionising state, the lifetime of the intermediate state, or by the depletion time of the intermediate state.
+The bunch duration was determined by the shortest of the duration of the laser pulse driving the transition from the exited state to the ionising state, the lifetime of the intermediate state, or by the depletion time of the intermediate state.
 
-Multiphoton excitation happens when the laser intensities are high enough for nonlinear optical transitions to occur which was the case when the pulse lasers were tightly focused into the atom cloud.
+Multiphoton excitation occurs when the laser intensities are high enough for nonlinear optical transitions to occur which was the case when the red or blue pulse lasers were tightly focused into the atom cloud.
 In multiphoton excitation two or more photons are absorbed without transitioning via a real intermediate state.
-If $n$ is the number of photon absorbed for the atom to reach its final ionised state then the transition rate is proportional to the $n$th power of the optical intensity~\cite{joachain_atoms_2011}.
+If $n$ is the number of photons absorbed for the atom to reach its final ionised state then the transition rate is proportional to the $n$th power of the optical intensity~\cite{joachain_atoms_2011}.
 Due to the short lifetime of the virtual intermediate states the bunch duration is determined by the duration of the laser pulses.
-Multiphoton excitation can occur with just with photons of one colour or with two colour of photons.
+Multiphoton excitation can occur with just photons of one colour or with photons of both colours.
 
-Resonance-enhanced multiphoton excitation occurs when a there is a combination of sequential excitation and multiphoton excitation.
-Here a number of photons are absorbed to excite the atom to a real intermediate state followed by more photon being absorbed to transition to the final state.
+\Gls{rempe} occurs when there is a combination of sequential excitation and multiphoton excitation.
+Here a number of photons are absorbed to excite the atom to a real intermediate state followed by more photons being absorbed to transition to the final state.
 As less photons are required for each transition the overall transition rate can be much higher when compared to plain multiphoton excitation.
 
 \begin{figure}
     \center
     \includegraphics{part2/Figs/ionisationmodes.pdf}
-    \caption[Photoexcitation pathways.]{A number of photoexcitation pathways were possible in the presence of high intensity illumination by the red a blue lasers in the \gls{caes} such as sequential excitation (SE), multiphoton excitation (MPE), resonance-enhanced multiphoton excitation (REMPE), and two-colour multiphoton excitation (TCMPE). TCMPE is the only pathway that produces bunches that are cold and ultrashort. The images show the transverse momentum distributions for the detected bunches.}
+    \caption[Photoexcitation pathways.]{A number of photoexcitation pathways were possible in the presence of high intensity illumination by the red a blue lasers in the \gls{caes} such as sequential excitation (SE), multiphoton excitation (MPE), resonance-enhanced multiphoton excitation (REMPE), and two-colour multiphoton excitation (TCMPE). TCMPE is the only pathway that produces bunches that are cold and ultrashort. The images show the transverse momentum distributions for the detected bunches.
+    This figure is adapted from Reference~\ref{speirs_electron_2017}.}
     \label{figure:ionisation_modes}
 \end{figure}
 
 The temperature of particles generated from the \gls{caes} depends primarily on the excess ionisation energy given to the atoms by the absorbed photons.
-Due to the complex orbits of electrons in high-lying states the relationship between absorbed photon energy and temperature is complex~\cite{mcculloch_high-coherence_2013} but it is generally true that with greater photon energy comes greater source temperature.
+Due to the complex spatial probability distributions of electrons in high-lying states the relationship between absorbed photon energy and temperature is complex~\cite{mcculloch_high-coherence_2013} but it is generally true that with greater photon energy comes greater source temperature.
 The classical ionisation threshold is lower in the presence of electric field, such as the accelerating field in the \gls{caeis}, due to the Stark-shift.
 The excess energy of an ion or electron relative to the classical ionisation threshold is:
 \begin{equation}\label{equation:ionisation_energy_stark}
 \Delta E = -E_I + 2\sqrt{ke^3F} + \sum_{i=0}^{n}{\frac{hc}{\lambda_i}},
 \end{equation}
-where $E_I=$\,\unit[4.18]{meV} is the ground state ionisation energy of rubidium-85, $k$ is the Coulomb constant, e is the elementary charge, $F$ is the strength of the electric field, $h$ is the Plank constant, and $c$ is speed of light.
+where $E_I=$\,\unit[4.18]{eV} is the ground state ionisation energy of rubidium-85, $k$ is the Coulomb constant, $e$ is the elementary charge, $F$ is the strength of the electric field, $h$ is the Planck constant, and $c$ is the speed of light.
 The second term represents the Stark-shift of the classical ionisation threshold, and the last term is the sum of the energy of the $n$ photons involved in the ionisation, with wavelength $\lambda_i$.
-Equation~\ref{equation:ionisation_energy_stark} assumes that rubidium is hydrogen-like which is a good approximation as long as $E_I \gg 2\sqrt{ke^3F}$.
+Equation~\ref{equation:ionisation_energy_stark} assumes that rubidium is hydrogen-like which is a good approximation as long as $E_I \gg 2\sqrt{ke^3F}$~\cite{gallagher_rydberg_2005}.
 
-Sequential excitation and two-colour multiphoton excitation are the only ionisation processing that produced cold electrons as the excess ionisation energy was minimised by tuning the photon energy.
-This can be seen in Figure~\ref{figure:ionisation_modes} in the momentum distributions.
+Sequential excitation and two-colour multiphoton excitation are the only ionisation processes that produced cold electrons as the atoms underwent field ionisation due to the combined photon energy being less than $E_I$.
+With the other methods the combined photon energy is larger than $E_I$ and the excess ionisation energy is tranferred to the electrons.
+The electron bunch temperature was demonstrated experimentally~\cite{speirs_identification_2017} and can be seen in Figure~\ref{figure:ionisation_modes} in the momentum distributions for various ionisation processes.
 
 Due to the tunability of the lasers involved in generating cold electrons it was possible to directly ionise regardless of the electric field which resulted in short duration bunches, field-ionise such that the majority of the bunch had a short duration but some particles continued to tunnel out over a longer duration, or to excite the atoms such that tunneling through the Stark-shifted potential was the only route to ionisation resulting in lower bunch current and long duration.
 The short bunch duration depended on the duration of the laser pulses, generally either the ultrafast bunches with less than \unit[320]{ps} duration using the red femtosecond pulse laser, or \unit[5]{ns} long bunches with \gls{cw} red and the \unit[5]{ns} pulsed blue laser.
