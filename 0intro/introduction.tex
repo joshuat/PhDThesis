@@ -72,7 +72,7 @@ Knowledge of the changes in molecular structures during many complex and interes
 \section{Cold-atom electron and ion sources}
 
 The research described by this thesis is part of an ongoing effort to develop an alternative source of electrons and ions that extracts the charged particles from a laser cooled atomic cloud.
-Initially the aim of the project was to create ultrafast coherent electron bunches for use in diffraction imaging in a similar way to ultrafast X-ray pulses however it was later realised that \gls{caes} could also serve as an injection source for particle accelerators.
+Initially the aim of the project was to create ultrafast coherent electron bunches for use in diffraction imaging in a similar way to ultrafast X-ray pulses however it was later realised that \gls{caes} could also serve as an injection source for particle accelerators or \gls{fib} devices.
 It has also become apparent that by simply reversing the polarity of the accelerator the source can generate high quality ion bunches with similar properties to the electron bunches thus providing a new source for use in ion microscopy and nano-fabrication.
 
 Cold-atom sources operate by carefully ionising atoms in a \gls{mot} such that the resulting ions and electrons are cold and thus the bunches accelerated from those clouds have low emittance and high coherence.
@@ -88,9 +88,8 @@ These techniques are applicable to any of the many atomic species that can be la
     \label{figure:simple_caeis_schem}
 \end{figure}
 
-A \gls{caes} can be thought of as a photocathode electron source with the solid cathode replaced with an ultracold gas which provides the \gls{caes} with a few advantages such as high quantum efficiency, and near-threshold ionisation producing colder electrons than those from other photocathode sources~\cite{engelen_effective_2014}.
+A \gls{caes} can be thought of as a photocathode electron source with the normally solid cathode replaced with an ultracold gas which provides the \gls{caes} with a few advantages such as high quantum efficiency, and near-threshold ionisation producing colder electrons than those from other photocathode sources~\cite{engelen_effective_2014}.
 The simplicity of the interactions between photons and atoms allows for the high quantum efficiency to be achieved~\cite{baranov_field_1994}.
-
 Another advantage of gas photocathodes is the lack of optically induced damage from high-intensity laser-fields.
 Solid cathodes undergo constant degradation and require regular replacement~\cite{dowell_results_1995} whereas the gaseous target in a \gls{caes} is renewed with every bunch produced.
 
@@ -102,14 +101,15 @@ Unlike electrons, ions produced by the source have their initial temperature det
 
 The ionisation methods used in \glspl{caeis} involve a two-step ionisation process that first excites the atoms to an intermediate state with one laser followed by near-threshold ionisation of the excited atoms with a second laser frequency-tuned to minimise the excess ionisation energy.
 Generally the second stage in the excitation process involves exciting the atom from the intermediary excited state to a high-lying Rydberg state from which the atom can be field ionised in the presence of the accelerating electric field~\cite{mcculloch_field_2017}.
-Due to the small energy difference between high-lying Rydberg states narrow linewidth lasers are required and in order to provide such lasers the limits of polarisation spectroscopy~\cite{wieman_doppler-free_1976} as a laser frequency stabilisation technique have been explored in Chapter~\ref{chapter:polspec}~\cite{torrance_sub-kilohertz_2016}.
+Due to the small energy difference between high-lying Rydberg states narrow linewidth lasers are required to precisely interact with them.
+In order to provide such lasers the limits of polarisation spectroscopy~\cite{wieman_doppler-free_1976} as a laser frequency stabilisation technique have been explored in Chapter~\ref{chapter:polspec}~\cite{torrance_sub-kilohertz_2016}.
 Polarisation spectroscopy with high-bandwidth feedback is able to provide laser frequency linewidths two orders of magnitude smaller that those previously reported and this will prove useful for precision interaction with the high-lying Rydberg levels used in \gls{caeis} ionisation as well as other fields such as spectroscopy or metrology where low laser linewidth is important.
 
 The sophisticated ionisation scheme used in a \gls{caeis} allows for the production of ultrashort duration bunches and arbitrary shaping of the bunches.
 \Glspl{caeis} have been shown to be able to produce electron bunches with duration less than \unit[130]{ps} (with expected bunch duration of a few tens of picoseconds)~\cite{speirs_identification_2017} and should be able to provide bunches suitable for compression to bunch duration of order \unit[100]{fs}, suitable for ultrafast imaging~\cite{van_oudheusden_compression_2010}.
 
 \Glspl{caeis} also have the ability to produce arbitrarily shaped electron or ion bunches by manipulating the profiles of the laser beams used to ionise the atoms~\cite{mcculloch_arbitrarily_2011}.
-This capability is useful in a large number of ways but has particular potential as an avenue for production of uniform ellipsoidal to allow for reversal of beam-quality degradation by space-charge expansion~\cite{luiten_how_2004,thompson_bunch_2015}.
+This capability is useful in a large number of ways but has particular potential as an avenue for production of uniform ellipsoidal bunches to allow for reversal of beam-quality degradation by space-charge expansion~\cite{luiten_how_2004,thompson_bunch_2015}.
 
 One of the most important figures of merit for charged particle beam is beam emittance which can be directly correlated with the temperature of the particle source.
 Emittance describes the angular spread of particles within a beam or bunch and can be thought of as the ``focusability of the beam'' with low-emittance being preferable to high-emittance.
@@ -134,7 +134,7 @@ Ion beams share the same advantages as the electron beams with bunches being sha
 
 \glsreset{fib}
 \Glspl{fib} have a wide variety of applications such as high-resolution imaging~\cite{scipioni_helium_2008}, sample analysis and nanofabrication~\cite{khizroev_focused-ion-beam-based_2004}.
-Liquid metal ion sources are the most commonly used \gls{fib} sources, usually using gallium ions due to it's simplicity and robustness despite gallium having a tendency to contaminate or destroy samples.
+Liquid metal ion sources are the most commonly used \gls{fib} sources, usually using gallium ions for simplicity and robustness despite gallium having a tendency to contaminate or destroy samples.
 \Glspl{cais} promise to provide an attractive alternative to conventional sources as they have high-brightness, low-emittance and are able to operate with a large range of ions, which could be selected to avoid sample contamination.
 
 \Glspl{cais} have been used to demonstrate microscopy with lithium ions~\cite{knuffman_nanoscale_2011} and chromium ions~\cite{steele_focused_2010}.
