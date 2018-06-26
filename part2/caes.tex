@@ -260,49 +260,54 @@ Measurements without sharp features could not be well registered, as the registr
 Registration is discussed further in Section~\ref{section:registration}.
 
 \section{Pulsed vs Continuous}\label{section:pulse_vs_continuous}
-Comparing the performance of the source in its usual pulse mode against the performance as a continuous source had the potential to show pathways for improving the pulsed mode as well as providing an alternative that could provide better performance for particular applications, as some measurements, such as simple \gls{cdi}, do not require the source to be pulsed.
+This \gls{caeis} had not previously been operated as a continuous source and with minor modifications was modified to act as a continuous source.
+Comparing the performance of the source in its usual pulse mode against the performance as a continuous source had the potential to show pathways for improving the pulsed mode.
+Continuous operation, if found advantageous, could have provided an alternative that could be used to demonstrate particular applications, such as \glsreset{cdi}\gls{cdi}, that do not require the source to be pulsed.
 Continuous mode functions by using the two-stage ionisation and acceleration on the atom beam from the oven without cooling or trapping by the Zeeman slower and \gls{mot}.
 It was hoped that the beam current would increase with this mode of operation and that the beam produced would be subject to less drift and instability as the large magnetic fields were not switching.
 
-While the entire apparatus and control system had been designed to operate in pulse mode it was fortunately relatively simple to modify the setup to operate continuously.
-The \gls{mot} was disabled, the excitation beam was left on, and the \gls{cw} blue was used instead of the usual blue pulse laser to act as the ionisation laser.
+While the entire apparatus and control system had been designed to operate in pulse mode it was fortunately relatively simple to modify the setup to operate to continuously produce an electron beam.
+The lasers and magnetic field of the \gls{mot} were disabled, the excitation beam was left on, and the \gls{cw} blue laser was used instead of the usual blue pulse laser to drive ionisation.
 
 Before switching to continuous mode the \gls{caeis} had been measured to have \unit[$0.42\times10^6$]{electrons per bunch} equating to a beam current of \unit[$4.2\times10^6$]{electrons per second}.
 Initially the continuous mode was producing \unit[$0.64\times10^6$]{electrons per second} however there were a number of optimisations available to improve the current, as detailed below.
 
 \subsection{Oven Temperature to Electron Count}
-When operating in pulsed mode the \gls{mot} was given more than enough time to saturate and thus there was no benefit to producing more electrons from the oven.
+When operating in pulsed mode the \gls{mot} was given more than enough time to saturate and thus there was no benefit to producing more atoms from the oven.
 In continuous mode the beam current was dependent on the density of atoms in the ionisation region which could be increased by producing more atoms from the oven.
 
 The atomic flux from the oven could be increased by running the oven at a higher temperature.
 During normal operation the oven was set to a temperature of approximately \unit[80]{$^\circ$C} (rubidium has a melting point of \unit[39.30]{$^\circ$C}) however the oven is able to operate at up to \unit[200]{$^\circ$C}.
 
 The effects of the oven temperature on the beam current are shown in Figure~\ref{figure:oven_counts}.
-There was a significant increase in the beam current as the oven temperature was increased, with a high enough temperature is was even greater than that of the pulsed mode bunches.
-The unfortunate side affect of running the oven at such high temperatures is that the lifetime of the \unit[5]{g} rubidium ampule in the oven will be drastically reduced to the point where a threefold increase in current is not worth the reduced lifetime.
+There was a significant increase in the electron beam current as the oven temperature was increased.
+With high temperature the beam current was greater than that of the pulsed mode bunches.
+The unfortunate side effect of running the oven at such high temperatures is that the lifetime of the \unit[5]{g} rubidium ampule in the oven will be drastically reduced to the point where a threefold increase in current is unlikely to be worth the reduced lifetime.
 This data indicates that the \gls{cw} beam current could be improved with the use of transverse compression of the atom beam which would provide a similar improvement to beam current as more atoms would be present in the ionisation region~\cite{tielen_development_2015}.
 
 \begin{figure}
     \center
     \input{part2/Figs/oven_counts.pgf}
-    \caption[Beam current and rubidium oven temperature.]{The temperature of the rubidium oven, as measured by an external sensor, compared to the beam current, measured by the calibrated \gls{mcp} detector.
+    \caption[Beam current and rubidium oven temperature.]{The electron beam current, measured by the calibrated \gls{mcp} detector, compared to the temperature of the rubidium oven, as measured by an external sensor.
     The dashed black line indicates the approximate beam current for electrons generated with the \gls{caes} in pulsed mode.}
     \label{figure:oven_counts}
 \end{figure}
 
-\subsection{Blue Power}
+\subsection{Blue Laser Power}
 
-The second avenue available to increase the beam current is to increase the intensity of the \gls{cw} blue ionisation laser beam as it is unlikely to be saturating the atom beam.
-Optimisation of the laser and beamline allowed for up to \unit[280]{mW} to be delivered to vacuum system.
+The second avenue available to increase the beam current is to increase the intensity of the \gls{cw} blue ionisation laser beam.
+Optimisation of the laser and beamline allowed for up to \unit[280]{mW} to be delivered to the vacuum system.
 By reducing the power of the blue beam incident on the atom beam and recording the beam current it was clear that the atoms were not saturated by the blue laser.
 If the blue laser power was saturating or close to saturating the atom beam then the beam current would have been approaching a limit which is not apparent from the shape of the curve in Figure~\ref{figure:blue_power}.
 
-While the true situation was more complicated, involving the atom beam cross-sectional area and the blue laser intensity at the atom beam, the data shown in Figure~\ref{figure:blue_power} indicates that a more powerful blue laser or better optimisation of the laser intensity at the atom beam would increase the available beam current, this is also true of pulse mode as the available power of the blue pulse laser is poor.
+While the true situation was more complicated, involving the atom beam cross-sectional area and the blue laser intensity at the atom beam, the data shown in Figure~\ref{figure:blue_power} indicates that a more powerful blue laser or better optimisation of the laser intensity at the atom beam would increase the available beam current.
+Increasing the intensity of the blue ionisation laser would also improve the beam current when operating in pulsed mode as the available power of the blue pulse laser is poor.
+As well as optimising or replacing the laser systems, another avenue for increasing the intensity in the ionisation region would be to recycle the beam as most of the power is transmitted through the atom beam or \gls{mot}.
 
 \begin{figure}
     \center
     \input{part2/Figs/blue_power.pgf}
-    \caption[Beam current and ionisation laser power.]{The power in the \gls{cw} blue ionisation laser compared to the beam current with a rubidium oven temperature of \unit[78.1]{$^\circ$C}.
+    \caption[Beam current and ionisation laser power.]{The electron beam current compared to the power in the \gls{cw} blue ionisation laser with a rubidium oven temperature of \unit[78.1]{$^\circ$C}.
     The continuing upward trend indicates that the atom beam is far from saturated by the blue beam.}
     \label{figure:blue_power}
     % Data and code located in 2016/Ultrafast_Electrons/2016.06.23
@@ -310,28 +315,34 @@ While the true situation was more complicated, involving the atom beam cross-sec
 
 Using the maximum power available with an oven temperature of \unit[200]{$^\circ$C} provides approximately a sixfold increase in beam current compared to pulse mode, which does not justify the compromise in rubidium source lifetime, or loss of the potential to investigate temporal behaviours with this iteration of the apparatus.
 
+{\color{red}Quantify loss of oven lifetime.
+
+Quantify saturation intensity of blue.}
+
 \subsection{Stability}\label{section:stability}
 
-The significant instability in the electron beam path observed in pulsed mode was still obvious with \gls{cw} mode indicating that the source of the instability was not the magnetic coils as had been previously suspected.
-\Gls{cw} mode did provide a opportunity to investigate the spectral behaviour of the beam drift as the beam can be focused onto the detector and observed with a \gls{ccd} camera that was able to operate at \unit[240]{Hz}.
-The most likely culprit for noise is something involving the mains power supply which operates at \unit[50]{Hz} and thus, according to the Nyquist-Shannon sampling theorem, requires a sampling rate of at least \unit[100]{Hz} to observe.
+The instability in the electron beam path observed in pulsed mode was still obvious with \gls{cw} mode, indicating that the source of the instability was not the magnetic coils as had been previously suspected.
+The next most likely culprit for noise is something involving the mains power supply which operates at \unit[50]{Hz} and thus, according to the Nyquist-Shannon sampling theorem, requires a sampling rate of at least \unit[100]{Hz} to observe.
+The \unit[10]{Hz} rate of pulse mode made it impossible to observe \unit[50]{Hz} behaviour but \gls{cw} mode with a high framerate camera, in this case \unit[240]{Hz}, allows for a much greater frequency range to be observed.
+Focusing the \gls{cw} beam onto the detector gives high enough intensity to resolve the beam centre with only \unit[4]{ms} camera exposure.
 
-In order to examine the frequency behaviour of the beam drift a faster camera was used to observe the \gls{mcp}\footnote{Point Grey Flea3 FL3-U3-13S2M-CS} with the electron beam focused at the detector.
-To operate the camera at the desired frequency it was necessary to reduce the size of the image from the camera to a smaller field of view.
-Data was collected with the \gls{caes} operating in continuous mode and in an analogue of normal pulsed mode
+In order to examine the temporal behaviour of the beam drift a faster camera was used to observe the \gls{mcp}\footnote{Point Grey Flea3 FL3-U3-13S2M-CS} with the electron beam focused at the detector.
+To operate the camera at the desired framerate it was necessary to reduce the size of the image from the camera to a smaller field of view.
+Data was collected with the \gls{caes} operating in continuous mode and in pulsed mode
 
-To assign accurate timestamps to each image it was necessary to use one of the features of the camera to add an accurate truncated timestamp to directly to the image as it's processed by the camera itself along with the timestamp on the image file create by the computer the camera was running on.
+To assign accurate timestamps to each image it was necessary to use a feature of the camera that adds an accurate truncated timestamp directly to the image combined with the inaccurate timestamp on the image file created by the computer the camera was running on.
 The combination of the fine and accurate timestamp from the camera (which only counted to \unit[128]{seconds} before resetting) with the coarse, inaccurate timestamp on the image file allowed for long duration data sets to be accurately analysed.
 
-Fourier transformations of the beam position coordinates on the detector is one of the more useful ways to examine the stability of the source.
-With the source operating in continuous mode the frequency analysis was limited by the frequency at which the camera can operate (\unit[240]{Hz}) and in pulsed mode it was limited by the repetition rate of the experiment (\unit[10]{Hz}).
+To examine the temporal behaviour of the source stability the beam position coordinate were deduced from the images and then Fourier transformed.
+With the source operating in continuous mode the analysis was limited by the framerate of the camera (\unit[240]{Hz}) and in pulsed mode it was limited by the repetition rate of the experiment (\unit[10]{Hz}).
 Shown in Figure~\ref{figure:stability} are the recorded positions of the electron beam and the corresponding Fourier transforms for continuous and pulsed mode.
 With the low sampling rate of the pulsed mode there is little information in the Fourier transform with the only feature being a peak near \unit[0]{Hz} corresponding to the slow oscillation visible in the data.
 The higher sampling rate of the continuous mode data provides much more information with numerous peaks visible in the spectrum.
-The continuous mode spectrum reveals a strong contribution at \unit[50]{Hz}, likely related to the mains power supply, as well at peaks at \unit[0]{Hz}, \unit[45]{Hz}, \unit[67]{Hz}, \unit[84]{Hz}, and \unit[92]{Hz} which are of unknown origin.
+The continuous mode spectrum reveals a strong contribution at \unit[50]{Hz}, likely related to the mains power supply, as well at peaks at \unit[45]{Hz}, \unit[67]{Hz}, \unit[84]{Hz}, and \unit[92]{Hz} which are of unknown origin.
 
-The instabilities present in the normal pulsed operation are still apparent in the continuous mode beam indicating that the fast switching of the magnetic-fields is not the primary source of the beam drift.
-The \unit[50]{Hz} peaks in the position spectrum are indicative of some interaction with the main power supply however care has already been taken to keep power supplies and similar devices as far from the beamline as is practical.
+The instabilities present in the normal pulsed operation are still apparent in the continuous mode beam indicating that the fast switching of the magnetic-fields was not the primary source of the beam drift.
+The \unit[50]{Hz} peaks in the position spectrum are indicative of some interaction with the main power supply however care had already been taken to keep power supplies and similar devices as far from the beamline as was practical.
+It is possible that there were induced currents
 
 \begin{figure}
     \begin{subfigure}{\linewidth}
@@ -347,17 +358,19 @@ The \unit[50]{Hz} peaks in the position spectrum are indicative of some interact
     \caption{Pulsed electron beam.}
     \label{figure:pulse_stability}
     \end{subfigure}
-    \caption[Beam stability for continuous and pulsed operation.]{Beam position and position spectrum for $x$ (blue) and $y$ (green) directions for \gls{cw}-mode electrons (top) and pulse-mode electrons (bottom).
-    Pulsed operation is limited to \unit[10]{Hz} and thus the spectrum is limited to \unit[5]{Hz}. The continuous beam spectrum was limited by the camera speed of \unit[240]{Hz}.}
+    \caption[Beam stability for continuous and pulsed operation.]{Beam position and position spectrum for $x$ (blue) and $y$ (green) directions for \gls{cw}-mode electrons (a) and pulse-mode electrons (b).
+    Pulsed operation is limited to \unit[10]{Hz} and thus the spectrum is limited to \unit[5]{Hz}. The continuous beam spectrum was limited to \unit[120]{Hz} by the camera framerate of \unit[240]{Hz}.}
     \label{figure:stability}
+    % CW data and code at 2016.06.29
+    % Pulsed data and code at 2016.06.17
 \end{figure}
 
 \subsection{Summary}
 
-It was hoped that continuous mode would provide a viable alternative to normal pulsed operation with this iteration of the \gls{caes} with better beam current and stability.
+It was hoped that continuous mode would provide a viable alternative to normal pulsed operation with this iteration of the \gls{caeis} with better beam current and stability.
 The fast switching on and off of the \gls{mot} and Zeeman slower magnetic coils were eliminated as a primary source of the electron beam instabilities as the magnitude of the drift was more or less the same with pulsed and \gls{cw} mode.
 The investigations in this section indicate that, with the current apparatus, continuous mode is on-par or worse than pulsed-mode with respect to beam current and stability.
-With significant investments of time and money it would be possible to achieve better current and stability with continuous mode however with the next iteration of the experiment on the near-horizon it is not worth pursuing these avenues with this apparatus.
+With significant investments of time and money it would be possible to achieve better current and stability with continuous mode however with the apparatus soon to be dismantled to make way for a new cold atom source improvements were not pursued.
 
 \section{Registration}\label{section:registration}
 
