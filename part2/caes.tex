@@ -215,7 +215,7 @@ The permanent magnets were used to steer electron bunches through the system, th
 Experimental samples were mounted on a custom sample mount formed from an aluminium paddle that was large enough to mount eight \gls{tem} samples and block any portion of the beam not passing through the samples.
 The samples were held by two commercial \gls{tem} mounts attached to the paddle that were able to fit \unit[3.05]{mm} diameter samples with approximately \unit[2]{mm} diameter of the sample visible to the bunches when the sample lid was in place.
 Grazing incidence reflection diffraction samples could also be mounted at the end of the paddle as shown in Figure~\ref{figure:sample_holder}.
-The sample paddle was mounted on a stage with manual control over two-axis translation transverse to the beam axis and rotation.
+The sample paddle was mounted on a stage with manual control over two-axis translation transverse to the beam axis, as well as rotation about the horizontal transverse axis.
 The sample paddle could also be connected to a high-voltage supply to allow for the sample to be biased to further manipulate the beam energy as described in Section~\ref{section:sample_bias}.
 
 \begin{figure}
@@ -235,26 +235,26 @@ The sample paddle could also be connected to a high-voltage supply to allow for 
 \subsection{Timing}\label{section:pulse_blaster}
 
 Synchronisation throughout the experiment was achieved with a 24-channel digital timing card\footnote{Spincore Pulseblaster PCI mounted in external USB enclosure.}.
-Low voltage TTL signals are used to trigger the numerous time-sensitive devices involved in the experiment.
-The \gls{caeis} operated at the frequency of the flashlamp of the \unit[5]{ns} blue pulse laser, \unit[10]{Hz}.
+Low voltage TTL signals were used to trigger the numerous time-sensitive devices involved in the experiment.
+The \gls{caeis} operated at \unit[10]{Hz}, the frequency of the flashlamp of the \unit[5]{ns} blue pulse laser.
 The sequence began with \gls{mot} and Zeeman lasers and fields turning on to load the trap for approximately \unit[90]{ms}.
 The trapping lasers and fields were extinguished \unit[5]{ms} before the excitation and ionisation lasers and \gls{ccd} camera were triggered to generate and detect the electron or ion bunch.
 
 \section{Current Limitations}
 
-There were a number of factors preventing the \gls{caeis} achieving its goal of single-shot ultrafast electron diffractive imaging, most importantly electron flux and beam stability.
-These factors also require improvement for other \gls{caes} goals such as \gls{fib} milling, and imaging.
+There were a number of factors preventing the \gls{caeis} achieving its goal of electron diffractive imaging that was both single-shot and ultrafast, most importantly the electron beam current and the stability of the electron trajectory.
+These factors also require improvement for other \gls{caeis} goals such as \gls{fib} milling.
 
-The minimum electron flux required for \gls{ued} is 10$^6$ electrons per bunch~\cite{van_oudheusden_compression_2010} whereas this iteration of the \gls{caes} was only able to get $5\times10^5$ electrons at best.
+The University of Melbourne \gls{caes} was able to generate bunches of $5\times10^5$ electrons when generating \unit[5]{ns} duration bunches, which is of order the charge required for \gls{ued}~\cite{van_oudheusden_compression_2010} but only a few hundred electrons when generating \unit[10]{ps} duration bunches~\cite{speirs_identification_2017}.
 There are a few avenues available to the \gls{caeis} to improve the bunch count such as increasing the \gls{mot} density, increasing the power of the ionisation laser, better optimisation of the ionisation pathways~\cite{mcculloch_field_2017}, and potentially running the apparatus in \gls{cw} mode.
-\Gls{cw} mode  has the potential to increase the number of particles per second however some applications would be difficult or impossible without discrete bunches.
+\Gls{cw} mode has the potential to increase the number of particles per second however some applications would be difficult or impossible without discrete bunches.
 An investigation of the performance of the apparatus in \gls{cw} mode is shown in Section~\ref{section:pulse_vs_continuous}.
 
 The stability of the source was also problematic, particularly for electron bunches, as a number of transient effects interfered with the path of the beams on timescales from shot-to-shot to minute-to-minute.
-Effects such as eddy currents due to the switching of the strong magnetic fields in the steel of the vacuum system and optical tables was one of the primary suspects for a source of the perturbations in the beam path.
+Effects such as eddy currents, due to the switching of the strong magnetic fields, in the steel of the vacuum system and optical tables was one of the primary suspects for the perturbations in the beam path.
 Other potential sources are the electronic equipment such as power supplies and switches that were placed as far away from the beam path as practical but were still in the vicinity.
 The poor stability of the source made some measurements difficult and others impossible.
-Multi-shot measurements were required in a number of cases and, due to the drift of the beam, straight averages of the images from the detector resulted in a unusable blur.
+Multi-shot measurements were required in a number of cases and, due to the drift of the beam, straight averages of the images from the detector resulted in an unusable blur.
 Generating usable images for multi-shot measurements required `registration' of the images, set averages where the features in each individual image was aligned with the other images to prevent blurring.
 Measurements without sharp features could not be well registered, as the registration algorithms have trouble precisely aligning the images.
 Registration is discussed further in Section~\ref{section:registration}.
