@@ -381,7 +381,7 @@ It is necessary to `register' the sets of images to prevent this smearing, see F
 \begin{figure}
     \center
     \input{part2/Figs/registration_examples.pgf}
-    \caption[Image registration examples.]{Single-Shot is a single image from a streaked pepperpot data set of 1000 images. Average is the simple average of all 1000 images. Slipped is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation, there is an additional, faint beamlet visible at the top of the image. Registration is a successful registration where a shot-to-shot limit to drift of 5 pixels was enforced. Below each image is the row sum of the image. All the images are independently log scaled.}
+    \caption[Image registration examples.]{A demonstration of the importance of the image registration technique.\emph{Single-Shot} is a single image from a streaked pepperpot data set of 1000 images. \emph{Average} is the simple average of all 1000 images. \emph{Slipped} is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation, there is an additional, faint beamlet visible at the top of the image. \emph{Registration} is a successful registration where a shot-to-shot limit to drift of 5 pixels was enforced. Below each image is the row sum of the image. All the images are independently log scaled.}
     \label{figure:registration_examples}
     % Data and code in 2017.07.24 plot_registration_examples.py
 \end{figure}
@@ -390,12 +390,12 @@ Registration consisted of convolving each image with a reference image, recordin
 The reference image usually consists of either just the first image in the set or the average image of the entire set, depending on the amount of signal in a single image.
 The registration process can also be performed iteratively where the reference image becomes the aligned output of the previous iteration.
 
-Registration functions very well for high signal, structured data such as diffraction patterns (see Chapter~\ref{chapter:diffraction}) or pepperpot beam masks (see Chapter~\ref{chapter:brightness}).
-Low signal data can be registered as long there is enough signal in a single shot for the convolution to correctly identify the features in the image.
-Unstructured data or continuous data, such as large flat beam profiles, will not register well as the convolution with not be able to identify common features well.
+Registration functions very well for low noise, structured data such as diffraction patterns (see Chapter~\ref{chapter:diffraction}) or pepperpot beam masks (see Chapter~\ref{chapter:brightness}).
+Low signal data can be registered as long as there is enough signal in a single shot for the convolution to correctly identify the features in the image.
+Unstructured data or continuous data, such as large flat beam profiles, will not register well as the convolution will not be able to identify common features well.
 
-Lower signal data requires more care than high signal data and in some cases cannot be registered.
-One of the registration errors that has occurred with pepperpot data is `slipping' where the convolution maxima correspond to neighbouring beamlets rather than the same beamlet and thus the images are incorrectly aligned.
+Noisier data requires more care than clean data and in some cases cannot be registered.
+One of the registration errors that has occurred with pepperpot data is `slipping' where the convolution maxima correspond to neighbouring beamlets rather than the same beamlet and thus the images are incorrectly aligned (see Figure~\ref{figure:registration_examples}).
 This error can be evaded by applying a limit to how far the convolution maxima of an image can change from shot to shot, generally the limit should be less than the distance between beamlets.
 This allows slow drift of the beam path to be dealt with while preventing slipping.
 
@@ -407,17 +407,17 @@ An example of a slipped registration is shown in Figure~\ref{figure:registration
 
 \section{Astigmatism}\label{section:quadrupole}
 
-During the investigations already discussed in this section beam astigmatism was observed in the electron beam.
-The astigmatism was apparent when the strength of the electron lenses were adjusted or while translating the \gls{mcp} detector past a beam focus as the two orthogonal transverse axes did not share a focus, as shown in Figures~\ref{figure:astigmatism_translation} and \ref{figure:quadrupole_scans_off}.
-While varying the strength of the Einzel lens the electron beam can be seen to pass through two foci as shown in Figures~\ref{figure:quadrupole_scans_off}.
+During the investigations already discussed in this section, astigmatism was observed in the electron beam.
+The astigmatism was apparent when the strength of the electron lenses were adjusted or while translating the \gls{mcp} detector past a beam focus as the two orthogonal transverse axes did not share a focal point, as shown in Figures~\ref{figure:astigmatism_translation} and \ref{figure:quadrupole_scans_off}.
 
 \begin{figure}
     \centering
     \input{part2/Figs/astigmatism_translation.pgf}
-    \caption[Electron beam astigmatism.]{The \gls{rms} beam widths along the $x$ (blue) and $y$ (green) axes as the \gls{mcp} detector is translated through the beam focus.
-    The crosses indicate the measured beam size and the line a fit to the Gaussian beam waist equation.
-    The beam astigmatism is apparent as the two axes to not come to a focus at the same position.}
+    \caption[Electron beam astigmatism.]{A demonstration of astigmatism in the electron beam as the detector is translated past the focal points. The $x$ (blue) and $y$ (green) axis \gls{rms} beam widths are shown on the vertical figure axis and the horizontal figure axis shows the \gls{mcp} detector position along the beam axis, $z$.
+    The crosses indicate the measured beam size and the lines a fit to the Gaussian beam waist equation.
+    The beam astigmatism is apparent as the two axes do not come to a focus at the same position.}
     \label{figure:astigmatism_translation}
+    % Code and data at 2016.08.09
 \end{figure}
 
 A quadrupole magnetic field can be used to correct for astigmatism in a beam along a fixed axis.
@@ -426,8 +426,8 @@ A quadrupole magnetic field can be described as
 B_x &= K y \notag\\
 B_y &= K x,
 \end{align}
-where the constant $K$ indicates the strength of the field.
-The force on particles in a charged beam, such as that in the \gls{caes}, passing through a quadrupole field is shown in Figure~\ref{figure:quadrupole_example} where there is an inwards force along one axis and an outwards force along the other, which is ideal for correcting astigmatism.
+where the constant $K$ indicates the strength of the field, and $x$ and $y$ refer to the transverse distance from the central axis.
+The force on particles in a charged beam, such as that in the \gls{caeis}, passing through a quadrupole field is shown in Figure~\ref{figure:quadrupole_example} where there is an inwards force along one axis and an outwards force along the other, which is ideal for correcting astigmatism.
 The fields in Figure~\ref{figure:quadrupole_example} were generated with the same code used to generate the magnetic fields for the simulation described below.
 
 \begin{figure}
@@ -444,38 +444,15 @@ The fields in Figure~\ref{figure:quadrupole_example} were generated with the sam
     \caption{Force Field}
     \label{figure:quadrupole_example_force}
     \end{subfigure}
-    \caption[Quadrupole magnetic and force fields.]{A transverse view of a magnetic quadrupole lens with the magnetic field, (a), and force field for an electron beam directed out of the page, (b), where the arrows indicate the direction and strength of the field.
+    \caption[Quadrupole magnetic and force fields.]{The magnetic field and force on a moving electron for a quadrupole lens. (a) shows the magnetic field, and (b) shows the force field for an electron beam travelling out of the page, (b), where the arrows indicate the direction and strength of the field.
     The green circles and crosses indicated the cross section of the quadrupole solenoids with circles representing current travelling out of the page and crosses into the page.}
     \label{figure:quadrupole_example}
     % Code for figures located in Code/Electrons/Simulation/Older Simulator Code/MagneticFields.py
 \end{figure}
 
-To correct for the astigmatism in the \gls{caes} a simple solenoid magnetic quadrupole lens was designed and built consisting of four solenoid magnets, orientated radially, and spaced around the beamline with alternating current directions as shown in Figure~\ref{figure:quadrupole_example}.
+To correct for the astigmatism in the \gls{caes} a simple solenoid magnetic quadrupole lens was designed and built consisting of four solenoid magnets, orientated radially, and spaced around the beamline with alternating current directions as shown in Figures~\ref{figure:quadrupole_example} and \ref{figure:quadrupole}.
 The design was constrained as it had to be external to the vacuum system with an inner diameter of \unit[70]{mm} and have a longitudinal length less than \unit[20]{mm} due to the crowded beamline.
-In order to determine the approximate number of current turns required for the solenoids forming the quadrupole lens as well as the ideal transverse solenoid length simulations were run.
-
-\subsection{Quadrupole Simulations}
-
-A simple charged particle simulator was created with the ability to propagate charged particles through arbitrary magnetic fields which in this case were formed by a parameterised quadrupole lens.
-A number of figures of merit were available to determine the ideal design, such as the degree to which the quadrupole lens was able to correct the astigmatism, the current required for the lens to correct for the astigmatism, and the size of the beam waist.
-
-A portion of the simulation results are shown in Figure~\ref{figure:quad_sims} and the main figures of merit used were the separation of the foci for each axis and the number of current turns required to achieve it.
-The results indicate that the negligible waist separation requires a transverse solenoid width of at least \unit[35]{mm} and that the larger the transverse width the lower the required current turns through the solenoids.
-
-\begin{figure}
-    \centering
-    \input{part2/Figs/quad_sims.pgf}
-    \caption[Quadrupole simulation results.]{Particle simulation results while varying quadrupole parameters. The left figure shows the minimum separation of the beams waists in the $x$ and $y$ direction as the transverse radius of the solenoids forming the quadrupole is varied. The right figure shows the current turns required to achieve the minimum waist separation as the transverse solenoid radius is varied.}
-    \label{figure:quad_sims}
-\end{figure}
-
-\subsection{Quadrupole Construction}
-
-The selection of parameters for the construction of the quadrupole lens was informed by the simulations and a transverse radius of \unit[35]{mm} was chosen to provide the small beam waist separation with a manageable number of current turns given the current supplies available.
-Another consideration was the space available along the beamline, if a wider solenoid transverse width was chosen then there would be additional complexity required to mount the lens to the vacuum system in the limited space available.
-
-The chassis for the quadrupole solenoids was modelled and 3D printed from plastic and the solenoid coils were hand wound onto the chassis, as shown in Figure~\ref{figure:quadrupole}.
-Each of the solenoid coils has approximately 100 turns.
+Simulations were performed to determine the approximate number of current turns required for the solenoids forming the quadrupole lens as well as the ideal transverse solenoid length.
 
 \begin{figure}
     \centering
@@ -483,6 +460,33 @@ Each of the solenoid coils has approximately 100 turns.
     \caption[3D printed quadrupole lens.]{The 3D printed chassis was wound with copper wire to form the quadrupole lens.}
     \label{figure:quadrupole}
 \end{figure}
+
+\subsection{Quadrupole Simulations}
+
+A simple charged particle simulator was created with the ability to propagate charged particles through arbitrary magnetic fields which in this case were formed by a parameterised quadrupole lens.
+The electrons used in the simulations had a beam energy of \unit[8.5]{keV} and an initial \gls{rms} beam radius of \unit[5]{mm}, similar to electron bunches produced by the \gls{caes}.
+The electrons were given normally distributed randomly determined initial transverse velocities with the $x$ velocity distribution given a \gls{rms} width of \unit[10]{km\,s$^{-1}$} and the $y$ velocity distribution given a \gls{rms} width of \unit[20]{km\,s$^{-1}$} which produced an astigmatism very similar to that observed experimentally.
+The electrons bunches were propagated \unit[250]{mm} to the virtual quadrupole lens, through the lens, for another \unit[250]{mm} to a focusing lens, and finally for another \unit[500]{mm} to observe the beam foci.
+A number of figures of merit were available to determine the ideal design, such as the degree to which the quadrupole lens was able to correct the astigmatism, the current required for the lens to correct for the astigmatism, and the size of the beam waist.
+
+A portion of the simulation results are shown in Figure~\ref{figure:quad_sims} and the main figures of merit used were the separation of the foci for each axis and the number of current turns required to achieve minimum foci separation for a given solenoid transverse radius.
+The results indicate that negligible waist separation requires a transverse solenoid radius of at least \unit[35]{mm} and that the larger the transverse radius the lower the required current turns through the solenoids.
+
+\begin{figure}
+    \centering
+    \input{part2/Figs/quad_sims.pgf}
+    \caption[Quadrupole simulation results.]{Particle simulation results from propagating \unit[8.5]{keV} electrons through a quadrupole lens while varying the quadrupole parameters. The electrons had an initial \gls{rms} bunch radius of \unit[5]{mm} and were given initial velocities to replicate the astigmatism observed in the \gls{caes}. The left figure shows the minimum separation of the beams waists in the $x$ and $y$ direction as the transverse radius of the solenoids forming the quadrupole is varied. The right figure shows the current turns required to achieve the minimum waist separation as the transverse solenoid radius is varied.}
+    \label{figure:quad_sims}
+    % Code located at Code/Electrons/Simulation/Older Simulator Code/ElectronLens.py
+\end{figure}
+
+\subsection{Quadrupole Construction}
+
+The selection of parameters for the construction of the quadrupole lens was informed by the simulations and a transverse radius of \unit[35]{mm} was chosen to provide small beam waist separation with a manageable number of current turns given the current supplies available.
+Another consideration was the space available along the beamline: if a wider solenoid transverse width was chosen then there would be additional complexity required to mount the lens to the vacuum system in the limited space available.
+
+The chassis for the quadrupole solenoids was modelled and 3D printed from plastic and the solenoid coils were hand wound onto the chassis, as shown in Figure~\ref{figure:quadrupole}.
+Each of the solenoid coils has approximately 100 turns.
 
 \subsection{Quadrupole Correction}
 
