@@ -274,15 +274,17 @@ Initially the continuous mode was producing \unit[$0.64\times10^6$]{electrons pe
 
 \subsection{Oven Temperature to Electron Count}
 When operating in pulsed mode the \gls{mot} was given more than enough time to saturate and thus there was no benefit to producing more atoms from the oven.
-In continuous mode the beam current was dependent on the density of atoms in the ionisation region which could be increased by producing more atoms from the oven.
+In continuous mode the beam current was dependent on the density of atoms in the ionisation region which could be increased by increasing the atomic flux from the rubidium oven.
 
 The atomic flux from the oven could be increased by running the oven at a higher temperature.
 During normal operation the oven was set to a temperature of approximately \unit[80]{$^\circ$C} (rubidium has a melting point of \unit[39.30]{$^\circ$C}) however the oven is able to operate at up to \unit[200]{$^\circ$C}.
+Previous measurements indicate that the atomic flux from the oven was \unit[$5\times10^9$]{cm$^{-2}$s$^{-1}$} at \unit[80]{$^\circ$C} and increasing approximately linearly to \unit[$2\times10^{10}$]{cm$^{-2}$s$^{-1}$} at \unit[200]{$^\circ$C}~\cite{bell_slow_2010}.
 
 The effects of the oven temperature on the beam current are shown in Figure~\ref{figure:oven_counts}.
 There was a significant increase in the electron beam current as the oven temperature was increased.
 With high temperature the beam current was greater than that of the pulsed mode bunches.
-The unfortunate side effect of running the oven at such high temperatures is that the lifetime of the \unit[5]{g} rubidium ampule in the oven will be drastically reduced to the point where a threefold increase in current is unlikely to be worth the reduced lifetime.
+An unfortunate side effect of running the oven at high temperatures is that the lifetime of the \unit[5]{g} rubidium ampule in the oven will be reduced.
+A lower bound of a factor of four in reduced lifetime can estimated using the atomic flux measurements in Reference~\cite{bell_slow_2010}.
 This data indicates that the \gls{cw} beam current could be improved with the use of transverse compression of the atom beam which would provide a similar improvement to beam current as more atoms would be present in the ionisation region~\cite{tielen_development_2015}.
 
 \begin{figure}
@@ -313,11 +315,7 @@ As well as optimising or replacing the laser systems, another avenue for increas
     % Data and code located in 2016/Ultrafast_Electrons/2016.06.23
 \end{figure}
 
-Using the maximum power available with an oven temperature of \unit[200]{$^\circ$C} provides approximately a sixfold increase in beam current compared to pulse mode, which does not justify the compromise in rubidium source lifetime, or loss of the potential to investigate temporal behaviours with this iteration of the apparatus.
-
-{\color{red}Quantify loss of oven lifetime.
-
-Quantify saturation intensity of blue.}
+Using the maximum laser power available with an oven temperature of \unit[200]{$^\circ$C} provides approximately a sixfold increase in beam current compared to pulse mode.
 
 \subsection{Stability}\label{section:stability}
 
@@ -342,7 +340,6 @@ The continuous mode spectrum reveals a strong contribution at \unit[50]{Hz}, lik
 
 The instabilities present in the normal pulsed operation are still apparent in the continuous mode beam indicating that the fast switching of the magnetic-fields was not the primary source of the beam drift.
 The \unit[50]{Hz} peaks in the position spectrum are indicative of some interaction with the main power supply however care had already been taken to keep power supplies and similar devices as far from the beamline as was practical.
-It is possible that there were induced currents
 
 \begin{figure}
     \begin{subfigure}{\linewidth}
@@ -368,9 +365,11 @@ It is possible that there were induced currents
 \subsection{Summary}
 
 It was hoped that continuous mode would provide a viable alternative to normal pulsed operation with this iteration of the \gls{caeis} with better beam current and stability.
-The fast switching on and off of the \gls{mot} and Zeeman slower magnetic coils were eliminated as a primary source of the electron beam instabilities as the magnitude of the drift was more or less the same with pulsed and \gls{cw} mode.
-The investigations in this section indicate that, with the current apparatus, continuous mode is on-par or worse than pulsed-mode with respect to beam current and stability.
-With significant investments of time and money it would be possible to achieve better current and stability with continuous mode however with the apparatus soon to be dismantled to make way for a new cold atom source improvements were not pursued.
+An increase in beam current of approximately a factor of six is possible, compared to pulsed mode, by increasing the atomic flux and intensity of the blue ionisation laser.
+The fast switching on and off of the \gls{mot} and Zeeman slower magnetic coils were eliminated as a primary candidate for the electron beam instabilities as the magnitude of the drift was more or less the same with pulsed and \gls{cw} mode.
+
+The investigations in this section indicate that, with the current apparatus, continuous mode is able to provide an increase in beam current but no increase in beam stability at the cost of no longer being able to produce ultrafast bunches.
+The next interation of the \gls{caeis} will operate as a continuous source, capitalising on the beam current achievable by directly ionising the atom beam~\cite{mcculloch_heralded_2018}.
 
 \section{Registration}\label{section:registration}
 
@@ -510,6 +509,7 @@ The lens was used during a number of measurements to improve the bunch quality; 
     \end{subfigure}
     \caption[Astigmatism correction.]{The size of the electron beam on the detector as the Einzel lens voltage is varied with the quadrupole lens off (a) and on (b). The blue lines indicate the horizontal, $x$, \gls{rms} beam radius and the green lines the vertical, $y$, \gls{rms} beam radius. Inset in each figure are the beam profiles for minimum spot size for each axis. The quadrupole is able to correct the astigmatism present in the beam.}
     \label{figure:quadrupole_scans}
+    % Code and data at 2016.11.02
 \end{figure}
 
 \section{Summary}
