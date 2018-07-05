@@ -376,14 +376,14 @@ The next interation of the \gls{caeis} will operate as a continuous source, capi
 
 Instability in the beam path (see Section~\ref{section:stability}) results in the electron beam drifting around the detector from shot-to-shot.
 When multi-shot averages are required the beam drift results in the beam being `smeared' when averaged.
-It is necessary to `register' the sets of images to prevent this smearing, see Figure~\ref{figure:registration_examples}.
+It is necessary to `register' the sets of images to prevent this smearing and this is demonstrated in Figure~\ref{figure:registration_examples}.
 
 \begin{figure}
     \center
     \input{part2/Figs/registration_examples.pgf}
-    \caption[Image registration examples.]{A demonstration of the importance of the image registration technique.\emph{Single-Shot} is a single image from a streaked pepperpot data set of 1000 images. \emph{Average} is the simple average of all 1000 images. \emph{Slipped} is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation, there is an additional, faint beamlet visible at the top of the image. \emph{Registration} is a successful registration where a shot-to-shot limit to drift of 5 pixels was enforced. Below each image is the row sum of the image. All the images are independently log scaled.}
+    \caption[Image registration examples.]{A demonstration of the importance of the image registration technique. \emph{Single-Shot} is a single image from a prototype pepperpot data set of 1000 images. \emph{Average} is the simple average of all 1000 images. \emph{Slipped} is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation, there is an additional set of beamlets visible at the top of the image. \emph{Registration} is a successful registration where a shot-to-shot limit to drift was enforced. All the images are independently log scaled.}
     \label{figure:registration_examples}
-    % Data and code in 2017.07.24 plot_registration_examples.py
+    % Data and code in 2016.10.27
 \end{figure}
 
 Registration consisted of convolving each image with a reference image, recording the location of the maximum value of the convolution and then using that location to align all the images.
@@ -395,15 +395,13 @@ Low signal data can be registered as long as there is enough signal in a single 
 Unstructured data or continuous data, such as large flat beam profiles, will not register well as the convolution will not be able to identify common features well.
 
 Noisier data requires more care than clean data and in some cases cannot be registered.
-One of the registration errors that has occurred with pepperpot data is `slipping' where the convolution maxima correspond to neighbouring beamlets rather than the same beamlet and thus the images are incorrectly aligned (see Figure~\ref{figure:registration_examples}).
+One of the registration errors that has occurred with pepperpot data is `slipping' where the convolution maxima correspond to neighbouring beamlets rather than the same beamlet and thus the images are incorrectly aligned.
 This error can be evaded by applying a limit to how far the convolution maxima of an image can change from shot to shot, generally the limit should be less than the distance between beamlets.
 This allows slow drift of the beam path to be dealt with while preventing slipping.
 
 Slipped, and therefore failed, pepperpot registrations were usually easy to identify since the number of beamlets was known and slipped errors results in extra beamlets appearing in the the registered image.
 While registering the pepperpots the best results were provided with around 3 iterations and limits on the shot-to-shot drift less than distance between the pepperpots.
-An example of a slipped registration is shown in Figure~\ref{figure:registration_examples} using data from Chapter~\ref{chapter:brightness}.
-
-{\color{red} I'm still not happy with this example of slipping. I should look for a better one. I may have to engineer one.}
+An example of a slipped registration is shown in Figure~\ref{figure:registration_examples}.
 
 \section{Astigmatism}\label{section:quadrupole}
 
