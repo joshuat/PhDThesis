@@ -377,13 +377,21 @@ The next generation of the \gls{caeis} now under construction will operate as a 
 
 Instability in the beam path (see Section~\ref{section:stability}) results in the electron beam trajectory drifting from shot-to-shot.
 When multi-shot averages are required the beam drift results in the beam being `smeared' when averaged.
-It is necessary to `register' the images to prevent this smearing and this is demonstrated in Figure~\ref{figure:registration_examples}.
+It is necessary to `register' the images to prevent this smearing and this is demonstrated with in Figures~\ref{figure:registration_examples} and \ref{figure:real_registration_examples}.
 
 \begin{figure}
     \center
     \input{part2/Figs/registration_examples.pgf}
-    \caption[Image registration examples.]{A demonstration of the importance of the image registration technique. \emph{Single-Shot} is a single image from a prototype pepperpot data set of 1000 images. \emph{Average} is the simple average of all 1000 images. \emph{Slipped} is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation; there is an additional set of beamlets visible at the top of the image. \emph{Registration} is a successful registration where a shot-to-shot limit to drift was enforced. All the images are independently log scaled.}
+    \caption[Contrived image registration example.]{A demonstration of the importance of the image registration technique using a contrived example of slipping. \emph{Single-Shot} is a single image from a prototype-pepperpot data set of 1000 images. \emph{Average} is the simple average of all 1000 images. \emph{Slipped} is an attempt at registration where the algorithm was altered to demonstrate slipping; there is an additional set of beamlets visible at the top of the image. \emph{Registration} is a successful registration where a shot-to-shot limit to drift was enforced. All the images are independently log scaled.}
     \label{figure:registration_examples}
+    % Data and code in 2016.10.27
+\end{figure}
+
+\begin{figure}
+    \center
+    \input{part2/Figs/streak_registration_examples.pgf}
+    \caption[Realistic image registration example.]{A demonstration of the image registration technique using a real example. \emph{Single-Shot} is a single image from a streaked pepperpot data set of 1000 images. \emph{Average} is the simple average of all 1000 images. \emph{Slipped} is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation; there is an additional faint beamlet visible at the top of the image. \emph{Registration} is a successful registration where a shot-to-shot limit to drift was enforced. Below each image is the row sum of that image. All the images are independently log scaled.}
+    \label{figure:real_registration_examples}
     % Data and code in 2016.10.27
 \end{figure}
 
@@ -402,7 +410,7 @@ This allows slow drift of the beam path to be dealt with while preventing slippi
 
 Slipped, and therefore failed, pepperpot registrations were usually easy to identify since the number of beamlets was known and slipped errors results in extra beamlets appearing in the registered image.
 While registering the pepperpots the best results were provided with around 3 iterations and limits on the shot-to-shot drift less than distance between the pepperpots.
-An example of a slipped registration is shown in Figure~\ref{figure:registration_examples}.
+An contrived example of a slipped registration is shown in Figure~\ref{figure:registration_examples} and a real, albeit subtle, example can be seen in Figure~\ref{figure:real_registration_examples} using data from Chapter~\ref{chapter:brightness}.
 
 \section{Astigmatism}\label{section:quadrupole}
 
