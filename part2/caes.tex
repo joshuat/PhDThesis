@@ -1,21 +1,22 @@
 \chapter{Cold-Atom Electron and Ion Source}\label{chapter:setup}
 
-The \gls{caeis} at the University of Melbourne is a source of low temperature electrons or rubidium ions with promising potential as an alternative charge particle source.
+The \gls{caeis} at the University of Melbourne is a source of low temperature electrons or rubidium ions with promising potential as an alternative charged particle source.
 The \gls{caeis} works by carefully ionising rubidium atoms trapped in a \gls{mot} in order to generate a low temperature plasma which can then be electrostatically accelerated to form a bunched particle beam.
-The apparatus described here has enabled numerous experiments which have provided greater understanding of certain aspects of atomic physics and the capabilities of \glspl{caeis}.
-The many years of experience with this apparatus have taught where the limitations of this \gls{caeis} implementation are and have paved the way for the next generation of \gls{caeis} which will be able to achieve outcomes not possible with this apparatus.
+The apparatus described here has enabled numerous experiments which have provided greater understanding of certain aspects of atomic physics and the capabilities of the \gls{caeis}.
+This work identifies some of the strengths and weaknesses of our \gls{caeis} and provides guidance for developing the next generation of cold atom sources.
 
 The \gls{caeis} was initially designed and developed by then doctoral students Simon Bell and David Sheludko and is discussed in detail in References~\cite{sheludko_shaped_2010} and \cite{bell_cold_2011}.
 Numerous other masters and doctoral students have worked on maintaining and improving the system and details can be found in their theses~\cite{saliba_cold_2011,mcculloch_generation_2013,taylor_rydberg_2013,tielen_development_2015,murphy_measurement_2017,speirs_electron_2017}.
 
 The description of the \gls{caeis} in this chapter provides a context for the rest of the thesis as all research conducted was directly or indirectly related to the continued improved of the \gls{caeis}.
+Section~\ref{section:apparatus} provides a description of the apparatus and some of its limitations.
 A number of investigations and improvements to source stability, source current and beam optimisation are also presented here.
-A comparison of the standard pulsed operation is compared to continuous operation in Section~\ref{section:pulse_vs_continuous} where it was hoped that continuous operation might provide significantly higher beam current.
+A comparison of the standard pulsed operation is compared to continuous operation in Section~\ref{section:pulse_vs_continuous} to explore the possibility of achieving greater time-averaged beam current.
 An essential component of data processing with this appratus is the technique used for managing multi-shot image averaging with the unstable electron trajectories, called `registration', and this is discussed in Section~\ref{section:registration}.
 Without registration the \gls{snr} in most of the results described in this thesis would be worse and a number of the measurements performed would be impossible.
 Section~\ref{section:quadrupole} decribes the characterisation and correction of an astigmatism in the electron bunches which provides improved beam quality and \gls{snr} for the results described in later chapters.
 
-\section{Description}
+\section{The Melbourne CAEIS}\label{section:apparatus}
 The first step in generating electrons and ions at the University of Melbourne \gls{caeis} was trapping and cooling atoms in a \gls{mot} loaded from a Zeeman slower.
 The optical and magnetic trapping fields were then extinguished and the cold ground-state atoms ionised using a combination of a red excitation laser and a blue ionisation laser.
 The charged particles were accelerated by a static electric field produced by the accelerator electrodes, one polarity accelerating ions towards the detector and the other electrons.
@@ -24,7 +25,6 @@ The main detector for experiments was a phosphor-coupled \gls{mcp} combined with
 When acting as an electron source it was essential to turn off the \gls{mot} and Zeeman slower magnetic fields before ionisation due to the significant deviation that the fields cause to the electron trajectories.
 Ion trajectories are not adversely affected if the fields are left on due to the much higher mass of ions.
 
-\subsection{Laser Systems}
 There were a number of light fields required for the running of the \gls{caeis}.
 The \unit[780]{nm} red lasers\footnote{MOGLabs External Cavity Diode Lasers with MOGLabs Diode Laser Controllers} were frequency locked relative to the rubidium-85 primary cycling transition, 5$^2$S$_{1/2}$ (F=3) $\rightarrow$ 5$^2$P$_{3/2}$ (F$^\prime$=4), also known as the cooling transition, and the repump transition, 5$^2$S$_{1/2}$ (F=2) $\rightarrow$ 5$^2$P$_{3/2}$ (F$^\prime$=3).
 The repump beams listed below were mixed with the primary beam and coupled into the same optical fibres for delivery to the vacuum system.
@@ -241,15 +241,15 @@ The \gls{caeis} operated at \unit[10]{Hz}, the frequency of the flashlamp of the
 The sequence began with \gls{mot} and Zeeman lasers and fields turning on to load the trap for approximately \unit[90]{ms}.
 The trapping lasers and fields were extinguished \unit[5]{ms} before the excitation and ionisation lasers and \gls{ccd} camera were triggered to generate and detect the electron or ion bunch.
 
-\section{Current Limitations}
+\subsection{Current Limitations of the Melbourne CAEIS}
 
-There were a number of factors preventing the \gls{caeis} achieving its goal of electron diffractive imaging that was both single-shot and ultrafast, most importantly the electron beam current and the stability of the electron trajectory.
+There were a number of factors preventing the \gls{caeis} achieving its goal of electron diffractive imaging that was both single-shot and ultrafast, most importantly the low electron beam current and the instability of the electron trajectory.
 These factors also require improvement for other \gls{caeis} goals such as \gls{fib} milling.
 
 The University of Melbourne \gls{caes} was able to generate bunches of $5\times10^5$ electrons when generating \unit[5]{ns} duration bunches, which is of order the charge required for \gls{ued}~\cite{van_oudheusden_compression_2010} but only a few hundred electrons when generating \unit[10]{ps} duration bunches~\cite{speirs_identification_2017}.
 There are a few avenues available to the \gls{caeis} to improve the bunch count such as increasing the \gls{mot} density, increasing the power of the ionisation laser, better optimisation of the ionisation pathways~\cite{mcculloch_field_2017}, and potentially running the apparatus in \gls{cw} mode.
 \Gls{cw} mode has the potential to increase the number of particles per second however some applications would be difficult or impossible without discrete bunches.
-An investigation of the performance of the apparatus in \gls{cw} mode is shown in Section~\ref{section:pulse_vs_continuous}.
+An investigation of the performance of the apparatus in \gls{cw} mode is described in Section~\ref{section:pulse_vs_continuous}.
 
 The stability of the source was also problematic, particularly for electron bunches, as a number of transient effects interfered with the path of the beams on timescales from shot-to-shot to minute-to-minute.
 Effects such as eddy currents, due to the switching of the strong magnetic fields, in the steel of the vacuum system and optical tables was one of the primary suspects for the perturbations in the beam path.
@@ -265,7 +265,8 @@ This \gls{caeis} had not previously been operated as a continuous source and wit
 Comparing the performance of the source in its usual pulse mode against the performance as a continuous source had the potential to show pathways for improving the pulsed mode.
 Continuous operation, if found advantageous, could have provided an alternative that could be used to demonstrate particular applications, such as \glsreset{cdi}\gls{cdi}, that do not require the source to be pulsed.
 Continuous mode functions by using the two-stage ionisation and acceleration on the atom beam from the oven without cooling or trapping by the Zeeman slower and \gls{mot}.
-It was hoped that the beam current would increase with this mode of operation and that the beam produced would be subject to less drift and instability as the large magnetic fields were not switching.
+It was hoped that the average beam current would increase with this mode of operation and that the beam produced would be subject to less drift and instability as the large magnetic fields were not switching.
+This investigation of continuous operation also, almost serendipitously, permitted a more detailed investigation of the instabilities in the electron trajectory as it provided an opportunity to examine the temporal behaviour of the instability, something not possible when the source operates at a mere \unit[10]{Hz}.
 
 While the entire apparatus and control system had been designed to operate in pulse mode it was fortunately relatively simple to modify the setup to operate to continuously produce an electron beam.
 The lasers and magnetic field of the \gls{mot} were disabled, the excitation beam was left on, and the \gls{cw} blue laser was used instead of the usual blue pulse laser to drive ionisation.
@@ -322,7 +323,7 @@ Using the maximum laser power available with an oven temperature of \unit[200]{$
 
 The instability in the electron beam path observed in pulsed mode was still obvious with \gls{cw} mode, indicating that the primary source of the instability was not the fast switching of the magnetic coils as had been previously suspected.
 The next most likely culprit for noise is something involving the mains power supply which operates at \unit[50]{Hz} and thus, according to the Nyquist-Shannon sampling theorem, requires a sampling rate of at least \unit[100]{Hz} to observe.
-The \unit[10]{Hz} rate of pulse mode made it impossible to observe \unit[50]{Hz} behaviour but \gls{cw} mode with a high framerate camera, in this case \unit[240]{Hz}, allows for a much greater frequency range to be observed.
+The repetition rate of pulse mode, \unit[10]{Hz}, made it impossible to observe \unit[50]{Hz} behaviour but \gls{cw} mode with a high framerate camera, in this case \unit[240]{Hz}, allows for a much greater frequency range to be observed.
 Focusing the \gls{cw} electron beam onto the detector gives high enough intensity to resolve the beam centre with only \unit[4]{ms} camera exposure.
 
 In order to examine the temporal behaviour of the beam drift a faster camera was used to observe the \gls{mcp}\footnote{Point Grey Flea3 FL3-U3-13S2M-CS} with the electron beam focused at the detector.
@@ -366,22 +367,22 @@ The \unit[50]{Hz} peaks in the position spectrum are indicative of some interact
 \subsection{Summary}
 
 It was hoped that continuous mode would provide a viable alternative to normal pulsed operation with this iteration of the \gls{caeis} with better beam current and stability.
-An increase in beam current of approximately a factor of six is possible, compared to pulsed mode, by increasing the atomic flux and intensity of the blue ionisation laser.
+An increase in the time-averaged beam current of approximately a factor of six is possible, compared to pulsed mode, by increasing the atomic flux and intensity of the blue ionisation laser.
 The fast switching on and off of the \gls{mot} and Zeeman slower magnetic coils were eliminated as a primary candidate for the electron beam instabilities as the magnitude of the drift was more or less the same with pulsed and \gls{cw} mode.
 
 The investigations in this section indicate that, with the current apparatus, continuous mode is able to provide an increase in beam current but no increase in beam stability at the cost of no longer being able to produce ultrafast bunches.
-The next interation of the \gls{caeis} will operate as a continuous source, capitalising on the beam current achievable by directly ionising the atom beam~\cite{mcculloch_heralded_2018}.
+The next generation of the \gls{caeis} now under construction will operate as a continuous ion source, capitalising on the beam current achievable by directly ionising the atom beam~\cite{mcculloch_heralded_2018}.
 
 \section{Registration}\label{section:registration}
 
-Instability in the beam path (see Section~\ref{section:stability}) results in the electron beam drifting around the detector from shot-to-shot.
+Instability in the beam path (see Section~\ref{section:stability}) results in the electron beam trajectory drifting from shot-to-shot.
 When multi-shot averages are required the beam drift results in the beam being `smeared' when averaged.
-It is necessary to `register' the sets of images to prevent this smearing and this is demonstrated in Figure~\ref{figure:registration_examples}.
+It is necessary to `register' the images to prevent this smearing and this is demonstrated in Figure~\ref{figure:registration_examples}.
 
 \begin{figure}
     \center
     \input{part2/Figs/registration_examples.pgf}
-    \caption[Image registration examples.]{A demonstration of the importance of the image registration technique. \emph{Single-Shot} is a single image from a prototype pepperpot data set of 1000 images. \emph{Average} is the simple average of all 1000 images. \emph{Slipped} is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation, there is an additional set of beamlets visible at the top of the image. \emph{Registration} is a successful registration where a shot-to-shot limit to drift was enforced. All the images are independently log scaled.}
+    \caption[Image registration examples.]{A demonstration of the importance of the image registration technique. \emph{Single-Shot} is a single image from a prototype pepperpot data set of 1000 images. \emph{Average} is the simple average of all 1000 images. \emph{Slipped} is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation; there is an additional set of beamlets visible at the top of the image. \emph{Registration} is a successful registration where a shot-to-shot limit to drift was enforced. All the images are independently log scaled.}
     \label{figure:registration_examples}
     % Data and code in 2016.10.27
 \end{figure}
@@ -399,7 +400,7 @@ One of the registration errors that has occurred with pepperpot data is `slippin
 This error can be evaded by applying a limit to how far the convolution maxima of an image can change from shot to shot, generally the limit should be less than the distance between beamlets.
 This allows slow drift of the beam path to be dealt with while preventing slipping.
 
-Slipped, and therefore failed, pepperpot registrations were usually easy to identify since the number of beamlets was known and slipped errors results in extra beamlets appearing in the the registered image.
+Slipped, and therefore failed, pepperpot registrations were usually easy to identify since the number of beamlets was known and slipped errors results in extra beamlets appearing in the registered image.
 While registering the pepperpots the best results were provided with around 3 iterations and limits on the shot-to-shot drift less than distance between the pepperpots.
 An example of a slipped registration is shown in Figure~\ref{figure:registration_examples}.
 
@@ -455,7 +456,7 @@ Simulations were performed to determine the approximate number of current turns 
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{part2/Figs/quadrupole.jpg}
-    \caption[3D printed quadrupole lens.]{The 3D printed chassis was wound with copper wire to form the quadrupole lens.}
+    \caption[3D printed quadrupole lens.]{The 3D printed chassis wound with copper wire to form a quadrupole lens. The scale is apparent from \unit[70]{mm} inner diameter of the lens and the \unit[25]{mm} spacing of the holes of the optical bench the lens is resting on.}
     \label{figure:quadrupole}
 \end{figure}
 
@@ -513,20 +514,20 @@ The lens was used during a number of measurements to improve the bunch quality; 
 
 \section{Summary}
 
-The university of Melbourne \gls{caeis} has undergone many changes and improvements since its inception, the most recent of which have been detailed in this chapter.
+The University of Melbourne \gls{caeis} has undergone many changes and improvements since its inception, the most recent of which have been detailed in this chapter.
 The apparatus is able to produce low temperature electron and ion bunches with arbitrary transverse profiles which already have sufficient coherence for imaging of small biomolecules.
 
 Careful manipulation of the ionisation mechanisms of \gls{caeis} allows for the production of electron and ion bunches with duration that ranges from 10s of picoseconds to nanoseconds to 10s of microseconds.
-Picosecond duration bunches have the potential to be used with bunch compression to produce femptosecond duration bunches for \gls{ued}.
-The current obstacles to swift progress towards the production of molecular movies are the low beam current, particularly for ultrafast bunches, and the unstable electron trajectories.
+Picosecond duration bunches have the potential to be used with bunch compression to produce femtosecond duration bunches for \gls{ued}.
+The remaining obstacles to swift progress towards the production of molecular movies are the low beam current, particularly for ultrafast bunches, and the unstable electron trajectories.
 
 A comparison of the usual pulsed \gls{caeis} operation with continuous beam production was undertaken in the hopes that beam current and electron trajectory stability could be improved.
-This investigation did not result in an improvement to beam stability but the did prove useful in eliminating the \gls{mot} coils as a potential source and identifying the \unit[50]{Hz} frequency of the primary  noise source.
-Continuous operation was able to produce  higher current beams than pulsed operation but did not produce discrete bunches.
+This investigation did not result in an improvement to beam stability but did prove useful in eliminating the \gls{mot} coils as a potential source and identifying the \unit[50]{Hz} frequency of the primary  noise source.
+Continuous operation was able to produce higher current beams than pulsed operation.
 
 The registration algorithm is an essential component of the \gls{caeis} that deals with electron beam path instability by aligning images from multiple shots as the beam drifts.
-This technique allows for measurement that would otherwise not be possible performed and is essential to the diffraction and brightness measurements in Chapters~\ref{chapter:diffraction} and \ref{chapter:brightness}.
+This technique allows for measurement that would otherwise not be possible and is essential to the diffraction and brightness measurements that will be presented in Chapters~\ref{chapter:diffraction} and \ref{chapter:brightness}.
 
 Beam astigmatism in the electron beam was also detected and characterised.
-A magnetic quadrupole lens was designed and built that was able correct this astigmatism.
+A magnetic quadrupole lens was designed and built to correct this astigmatism.
 This quadrupole lens was used to improve the beam quality for the measurements presented in Chapter~\ref{chapter:brightness}.
