@@ -8,10 +8,10 @@ Laser frequency stabilisation is an essential component of the \gls{caeis} as it
 Relatively simple techniques such as saturated absorption spectroscopy~\cite{haroche_theory_1972,preston_doppler-free_1996,maguire_theoretical_2006} are adequate for the frequency linewidths required for the \gls{mot}.
 More precise methods are useful when interacting with the Rydberg states of an atom as some of the Rydberg transitions have very narrow linewidths.
 
-\Gls{pdh} locking with a high-finesse cavity~\cite{drever_laser_1983} is a proposed method for precise control over a laser's frequency.
+\Gls{pdh} locking with a high-finesse cavity~\cite{drever_laser_1983} is a proposed method for precise control over laser frequency.
 \Gls{pdh} has been used to produce extremely good frequency stabilisation with sub-\unit[40]{mHz} linewidths achievable and is an essential part of the frequency stabilisation systems used at \gls{ligo}~\cite{ludlow_compact_2007,kessler_sub-40-mhz-linewidth_2012,abramovici_ligo:_1992,black_introduction_2000}.
 The \gls{pdh} technique is unfortunately not relative to an absolute frequency reference, such as an atomic transition.
-In order to capitalise on the narrow linewidth achievable with \gls{pdh} locking while ensuring absolute frequency stability, \gls{pdh} can be combined with saturation or polarisation spectroscopy to an absolute frequency reference such as an atomic transition, to prevent slower frequency drifts due to changes in the optical cavity's resonance as temperature and pressure changes in the lab.
+In order to capitalise on the narrow linewidth achievable with \gls{pdh} locking while ensuring absolute frequency stability, \gls{pdh} can be combined with saturation or polarisation spectroscopy to an absolute frequency reference such as an atomic transition, to prevent slower frequency drifts due to changes in the optical cavity resonance frequency as temperature and pressure changes in the lab.
 
 The focus of this chapter is on \gls{ps} which was first described by Wieman and H\"anch in 1976 as, ``...a sensitive new method of Doppler-free spectroscopy, monitoring the nonlinear interaction of two monochromatic laser beams in an absorbing gas via changes in light polarisation."~\cite{wieman_doppler-free_1976,demtroder_laser_2003}.
 It has been shown previously that \gls{ps} can be used to reduce the linewidth of a distributed feedback diode from \unit[2]{MHz} to \unit[20]{kHz}~\cite{torii_laser-phase_2012} and of \glspl{ecdl} to \unit[65]{kHz}~\cite{yoshikawa_frequency_2003}.
@@ -24,25 +24,25 @@ The research outcomes were instrumental in improving the bandwidth of the electr
 
 \section{Laser Frequency Stabilisation}
 
-Laser frequency stabilisation describes a number of techniques that are used to reduce the frequency spread of a laser's frequency.
-This can range from weak frequency stabilisation keeping the centre frequency of a laser at a particular frequency to convoluted frequency narrowing techniques that attempt to reduce laser linewidth to sub-hertz levels.
-Typically these techniques use some reference to measure frequency deviation from a given frequency and provide negative feedback to the laser, using a servo system, to keep the laser at the target frequency.
+Laser frequency stabilisation is used to reduce the frequency spread of a laser.
+Laser frequency stabilisation can range from weak stabilisation keeping the centre frequency of a laser at a particular frequency to convoluted frequency narrowing techniques that attempt to reduce laser spectral linewidth to sub-hertz levels.
+These techniques use a frequency reference such as an optical cavity or atomic transition and provide negative feedback to the laser, using a servo system, to keep the laser at the reference frequency.
 
-Typically the frequency discrimination method is used to generate an error signal which is then fed into the servo system which in turn controls the various feedback mechanisms.
-A servo system, or servomechanism or just servo, is a system that uses error sensing negative feedback to control a device.
-A simple example of a servo is the cruise control in a car where the difference between the desired speed and the actual speed (the error signal) is used to modulate the throttle to get closer to the desired speed (negative feedback).
-Laser stabilisation systems use servo systems to appropriately apply gain to the error signal and apply the result to the various feedback mechanisms available.
+A frequency discrimination method is used to generate an error signal and a servo system drives various feedback actuators to minimise that error.
+A servo system, or servomechanism or just servo, is a system that uses error sensing negative feedback to control a device via an actuator.
+A simple example of a servo is the cruise control in a car where the difference between the desired speed and the actual speed (the error signal) is used to modulate the throttle to get closer to the desired speed.
+Laser stabilisation systems use servo systems to appropriately apply gain to the error signal and apply the result to the various feedback actuators available.
 
 The efficacy of stabilisation techniques can be described by the width of the frequency distribution of the laser, called the linewidth.
 Linewidth usually refers to either the \gls{fwhm} or \gls{rms} spectral width about the central frequency and is used to describe measurements made over various timescales.
-Short duration measurements, usually less than a second, are used to describe the linewidth of laser whereas long timescale measurement, hours or days in duration, are used to describe the drift of the laser central frequency over time.
+Short duration measurements, usually less than a second, are used to describe the linewidth of laser whereas long timescale measurement, hours or days in duration, is used to describe the drift of the laser central frequency over time.
 
-A number of traits that are desirable in a laser frequency stabilisation scheme including:
+A number of traits are desirable in a laser frequency stabilisation scheme including:
 \begin{itemize}
-    \item \emph{Absolute frequency reference}: Frequency stabilisation techniques that rely on optical cavities are vulnerable to changes in the cavity's resonant frequency, due to changes in cavity length with temperature or pressure for example, whereas other techniques such as \gls{sa} or \gls{ps} are relative to atomic energy levels and thus not subject to drift in the same way.
-    \item \emph{High-bandwidth}: All else being equal, high-bandwidth techniques provide greater potential for linewidth reduction than low-bandwidth techniques. In reality of course there tends to be trade-offs between techniques with different bandwidths.
-    \item \emph{Modulation-free}: A number of stabilisation techniques require frequency- or phase-modulation which limits the bandwidth of the technique to half the modulation frequency due to the Nyquist limit, thus modulation-free, or high-frequency modulation techniques are often preferable.
-    \item \emph{Low drift}: Drift can occur with slow changes to the lock point of the stabilisation scheme, potentially due to ambient changes in lab temperature or pressure, or the electrical environment causing subsequent changes to laser beam power, polarisation or locking electronics voltages levels all of which can result in drift in the laser's frequency. Some techniques are more susceptible to these affects than others.
+    \item \emph{Absolute frequency reference}: Frequency stabilisation techniques that rely on optical cavities are vulnerable to changes in the cavity resonant frequency, due to changes in cavity length with temperature or pressure for example, whereas other techniques such as \gls{sa} or \gls{ps} are relative to atomic energy levels and thus not subject to drift in the same way.
+    \item \emph{High-bandwidth}: All else being equal, high-bandwidth techniques provide greater potential for linewidth reduction than low-bandwidth techniques.
+    \item \emph{Modulation-free}: A number of stabilisation techniques require frequency- or phase-modulation which limits the bandwidth of the technique to half the modulation frequency due to the Nyquist limit; thus modulation-free, or high-frequency modulation techniques are often preferable. Modulation-free techniques are often more susceptible to low frequency noise than modulated techniques.
+    \item \emph{Low drift}: Drift can occur with slow changes to the lock point of the stabilisation scheme, potentially due to ambient changes in lab temperature or pressure, or the electrical environment causing subsequent changes to laser beam power, polarisation or locking electronics voltages levels all of which can result in drift in the laser frequency. This can even occur with techniques that use an absolute frequency reference although non-absolute techniques tend to be more susceptible to drift.
     \item \emph{Stable}: Some techniques are more susceptible than others to unlocking, where perturbations such as ambient temperature or pressure changes, or percussive events (doors closing, dropped tools) cause large sudden changes in laser frequency which the servo system is unable to compensate for. Techniques with large capture ranges tend to have greater stability due to being able recover from larger frequency pertubations, see Section~\ref{section:capture_range} for an example.
 \end{itemize}
 
@@ -51,29 +51,30 @@ A few of these techniques are \gls{sa}~\cite{haroche_theory_1972, maguire_theore
 
 \subsection{Frequency Control and Feedback}
 
-A number of methods can be used to control the output frequency of a laser and these can be used in concert to supply feedback from the frequency reference in order to stabilise the laser's frequency and decrease the spectral linewidth.
+A number of methods can be used to control the output frequency of a laser and these can be used in concert to supply feedback from the frequency reference in order to stabilise the laser frequency and decrease the spectral linewidth.
 The focus here will be on the feedback systems of diode lasers, particularly \glspl{ecdl}.
 
 \subsubsection{Temperature}
-The temperature of a laser diode affects the output frequency due to the temperature dependence of the optical path length and gain curves~\cite{wieman_using_1991}.
-The two processes affect output frequency at different rates and both show an increase in wavelength with increasing temperature.
+The temperature of a laser diode affects the output frequency due to the temperature dependence of the optical path length, gain curves and the thermal expansion of the external cavity with an \gls{ecdl}~\cite{wieman_using_1991}.
+The processes affect output frequency at different rates and all show an increase in wavelength with increasing temperature.
 
-The temperature of laser diodes can be controlled through two methods. \Glspl{tec} can be used to directly control the temperature of the device and the injection current into the diode affects the temperature. Good insulation and thermal inertia also contribute to the stability of diode temperature~\cite{saliba_cold_2011}.
+The temperature of laser diodes can be controlled through two methods. \Glspl{tec} can be used to directly control the temperature of the device, and the injection current into the diode affects the temperature through resistive heating effects.
+Good insulation and thermal inertia also contribute to the stability of diode temperature~\cite{saliba_cold_2011}.
 
 Temperature is not typically used to directly manipulate the frequency of a laser due to the relatively slow response as changes in the control signal take seconds to propagate from the \gls{tec} to the diode and longer to fully thermalise.
 Typically temperature is just stabilised to reduce the impact of ambient temperature changes on the performance of the diode laser.
 
 \subsubsection{Injection Current}
 Modulation of the injection current into the laser diode is one of most common ways of controlling the output wavelength of a diode laser.
-The injection current into the diode affects the temperature of the diode and the density of charge carriers which in turn affects the refractive index of the medium and thus the wavelength of the laser light produced.
+The injection current into the diode affects the temperature of the diode, and the density of charge carriers which in turn affects the refractive index of the medium and thus the wavelength of the laser light produced.
 
 Modulation of the injection current is the fastest feedback method available to diode lasers and is able to suppress noise up to \unit{MHz} ranges~\cite{ludlow_compact_2007,torrance_sub-kilohertz_2016}.
 The design of the electronics involved in the modulation of the injection current can have a noticeable influence on the performance at high frequencies as noise becomes an issue.
 
-The lasers used in the experiments described in this thesis all had two modes of current feedback, `slow' current feedback, with bandwidth from \unit[0]{Hz} to approximately \unit[100]{kHz}, and `fast' current feedback, with bandwidth from about \unit[100]{kHz} to \unit[50]{MHz}.
+The lasers used in the experiments described in this thesis all had two modes of current feedback, `slow' current feedback, with bandwidth from DC to approximately \unit[100]{kHz}, and `fast' current feedback, with bandwidth from about \unit[100]{kHz} to \unit[50]{MHz}.
 
-The investigations of laser spectral behaviour, discussed later in this chapter, where instrumental in identifying potential improvements to the design of the electronics involved in the fast current channel of the MOGLabs diode lasers.
-The measurements presented where made with made with the final prototype of the enhanced laser headboard, now standard with lasers made by MOGLabs.
+The investigations of laser spectral behaviour, discussed later in this chapter, were instrumental in identifying potential improvements to the design of the electronics involved in the fast current channel of MOGLabs diode lasers.
+The measurements presented where made with the final prototype of the enhanced laser headboard, now standard with lasers made by MOGLabs.
 
 \subsubsection{Grating Angle}
 In external cavity diode lasers, for example Littrow configuration \glspl{ecdl} as shown in Figure~\ref{figure:littrow}, the angle of the external grating can be used to control the output frequency.
@@ -256,7 +257,7 @@ This is shown in Figure~\ref{figure:pdh_schematic}.
 \caption[Pound-Drever-Hall frequency stabilisation setup.]{A standard \gls{pdh} layout.
 The laser passes through an \gls{eom} to create frequency sidebands and is then incident on the optical cavity.
 The beam reflected from the cavity is then detected with a photodetector and the signal passed through appropriate electrons to produce the error signal (see Section~\ref{section:pdh_error}).
-The error signal is passed to the servo system to generate feedback to keep the laser's frequency on the cavity resonance.}
+The error signal is passed to the servo system to generate feedback to keep the laser frequency on the cavity resonance.}
 \label{figure:pdh_schematic}
 \end{figure}
 
