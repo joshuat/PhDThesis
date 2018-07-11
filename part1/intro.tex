@@ -14,7 +14,7 @@ The \gls{pdh} technique is unfortunately not relative to an absolute frequency r
 In order to capitalise on the narrow linewidth achievable with \gls{pdh} locking while ensuring absolute frequency stability, \gls{pdh} can be combined with saturation or polarisation spectroscopy to an absolute frequency reference such as an atomic transition, to prevent slower frequency drifts due to changes in the optical cavity resonance frequency as temperature and pressure changes in the lab.
 
 The focus of this chapter is on \gls{ps} which was first described by Wieman and H\"anch in 1976 as, ``...a sensitive new method of Doppler-free spectroscopy, monitoring the nonlinear interaction of two monochromatic laser beams in an absorbing gas via changes in light polarisation."~\cite{wieman_doppler-free_1976,demtroder_laser_2003}.
-It has been shown previously that \gls{ps} can be used to reduce the linewidth of a distributed feedback diode from \unit[2]{MHz} to \unit[20]{kHz}~\cite{torii_laser-phase_2012} and of \glspl{ecdl} to \unit[65]{kHz}~\cite{yoshikawa_frequency_2003}.
+It has been shown previously that \gls{ps} can be used to reduce the linewidth of a distributed feedback diode from \unit[2]{MHz} to \unit[20]{kHz}~\cite{torii_laser-phase_2012} and of an \gls{ecdl} to \unit[65]{kHz}~\cite{yoshikawa_frequency_2003}.
 During the course of the research described here, \gls{ps} was demonstrated to be capable of linewidth reduction to sub-kilohertz linewidth if high-bandwidth feedback is used.
 This work has been published as Reference~\cite{torrance_sub-kilohertz_2016}.
 
@@ -52,13 +52,13 @@ A few of these techniques are \gls{sa}~\cite{haroche_theory_1972, maguire_theore
 \subsection{Frequency Control and Feedback}
 
 A number of methods can be used to control the output frequency of a laser and these can be used in concert to supply feedback from the frequency reference in order to stabilise the laser frequency and decrease the spectral linewidth.
-The focus here will be on the feedback systems of diode lasers, particularly \glspl{ecdl}.
+The focus here will be on the feedback systems of diode lasers, particularly those of an \gls{ecdl}.
 
 \subsubsection{Temperature}
 The temperature of a laser diode affects the output frequency due to the temperature dependence of the optical path length, gain curves and the thermal expansion of the external cavity with an \gls{ecdl}~\cite{wieman_using_1991}.
 The processes affect output frequency at different rates and all show an increase in wavelength with increasing temperature.
 
-The temperature of laser diodes can be controlled through two methods. \Glspl{tec} can be used to directly control the temperature of the device, and the injection current into the diode affects the temperature through resistive heating effects.
+The temperature of laser diodes can be controlled through two methods. A \gls{tec} can be used to directly control the temperature of the device, and the injection current into the diode affects the temperature through resistive heating effects.
 Good insulation and thermal inertia also contribute to the stability of diode temperature~\cite{saliba_cold_2011}.
 
 Temperature is not typically used to directly manipulate the frequency of a laser due to the relatively slow response as changes in the control signal take seconds to propagate from the \gls{tec} to the diode and longer to fully thermalise.
@@ -77,7 +77,7 @@ The investigations of laser spectral behaviour, discussed later in this chapter,
 The measurements presented where made with the final prototype of the enhanced laser headboard, now standard with lasers made by MOGLabs.
 
 \subsubsection{Grating Angle}
-In external cavity diode lasers, for example Littrow configuration \glspl{ecdl} as shown in Figure~\ref{figure:littrow}, the angle of the external grating can be used to control the output frequency.
+In external cavity diode lasers, for example the Littrow configuration \gls{ecdl} shown in Figure~\ref{figure:littrow}, the angle of the external grating can be used to control the output frequency.
 The grating angle affects the wavelength of the light that is reflected back into the laser diode from the second-order reflection and thus the angle can be used to select output wavelength.
 The grating angle is commonly controlled using piezoelectric actuators~\cite{hawthorn_littrow_2001}.
 
@@ -102,7 +102,7 @@ Noise in the electronic environment can cause frequency instability particularly
 Laser intensity noise can also cause problems, for example laser frequency stabilisation is often conducted with spectroscopic techniques that will interpret intensity fluctuations as frequency fluctuations. Thus the feedback system will create frequency noise as it attempts to correct for the phantom frequency noise.
 
 Mechanical noise can have numerous sources such as audible noise, percussive noise (dropped spanners, doors) or vibrational sources such as cooling fans on nearby equipment.
-\Glspl{ecdl} subjected to mechanical vibrations will experience frequency noise as the alignment of the light coupled back into the diode from the grating varies.
+An \gls{ecdl} subjected to mechanical vibrations will experience frequency noise as the alignment of the light coupled back into the diode from the grating varies.
 Mechanical noise can also affect the alignment, and thus transmitted power, of laser through optical fibres, optical isolators and apertures, which in turn can be falsely interpreted by the servo system as a change in frequency and `corrected'.
 
 \section{Saturated Absorption Spectroscopy}
