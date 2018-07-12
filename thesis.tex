@@ -8,7 +8,14 @@
 
 % I want multiple citations to be condenced. ie. [1, 2, 3, 4] -> [1-4]
 % I want back references in my bibliography.
-\usepackage[backref=true, sorting=none, backend=bibtex, style=nature]{biblatex}
+\usepackage[backref=true,
+            sorting=none,
+            %backend=bibtex,
+            style=nature,
+            doi=false,
+            url=false,
+            isbn=false]{biblatex}
+
 % Phrase the back reference nicely.
 \DefineBibliographyStrings{english}{%
   backrefpage = {cited on page},
@@ -17,6 +24,36 @@
 
 % Links without boxes around them.
 \usepackage[hidelinks]{hyperref}
+
+% Attempting to get DOI links to reference title.
+\newbibmacro{string+doiurlisbn}[1]{%
+  \iffieldundef{doi}{%
+    \iffieldundef{url}{%
+      \iffieldundef{isbn}{%
+        \iffieldundef{issn}{%
+          #1%
+        }{%
+          \href{http://books.google.com/books?vid=ISSN\thefield{issn}}{#1}%
+        }%
+      }{%
+        \href{http://books.google.com/books?vid=ISBN\thefield{isbn}}{#1}%
+      }%
+    }{%
+      \href{\thefield{url}}{#1}%
+    }%
+  }{%
+    \href{http://dx.doi.org/\thefield{doi}}{#1}%
+  }%
+}
+
+\DeclareFieldFormat{title}{\usebibmacro{string+doiurlisbn}{\mkbibemph{#1}}}
+\DeclareFieldFormat[article,incollection]{title}%
+    {\usebibmacro{string+doiurlisbn}{\mkbibquote{#1}}}
+
+
+
+% DOI links in references.
+%\usepackage{doi}
 
 % Color for... color.
 \usepackage{color}

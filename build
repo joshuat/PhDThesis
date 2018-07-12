@@ -4,7 +4,8 @@
 pdflatex -output-directory Jank thesis.tex
 cp Library.bib Jank/
 cd Jank
-bibtex thesis
+#bibtex thesis
+biber thesis
 makeglossaries thesis
 cd ..
 pdflatex -output-directory Jank thesis.tex
