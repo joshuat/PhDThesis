@@ -76,10 +76,10 @@ The lasers used in the experiments described in this thesis all had two modes of
 The investigations of laser spectral behaviour, discussed later in this chapter, were instrumental in identifying potential improvements to the design of the electronics involved in the fast current channel of MOGLabs diode lasers.
 The measurements presented where made with the final prototype of the enhanced laser headboard, now standard with lasers made by MOGLabs.
 
-\subsubsection{Grating Angle}
-In external cavity diode lasers, for example the Littrow configuration \gls{ecdl} shown in Figure~\ref{figure:littrow}, the angle of the external grating can be used to control the output frequency.
+\subsubsection{Grating Angle and Position}
+In external cavity diode lasers, for example the Littrow configuration \gls{ecdl} shown in Figure~\ref{figure:littrow}, the angle and position of the external grating can be used to control the output frequency.
 The grating angle affects the wavelength of the light that is reflected back into the laser diode from the second-order reflection and thus the angle can be used to select output wavelength.
-The grating angle is commonly controlled using piezoelectric actuators~\cite{hawthorn_littrow_2001}.
+The grating position is used to control the length of the external cavity which also determines the laser wavelength and is commonly controlled using piezoelectric actuators~\cite{hawthorn_littrow_2001}.
 
 \begin{figure}
 \includegraphics{part1/Figs/LittrowConfiguration.pdf}
@@ -87,23 +87,24 @@ The grating angle is commonly controlled using piezoelectric actuators~\cite{haw
 \label{figure:littrow}
 \end{figure}
 
-Frequency control by controlling the grating angle is limited by the response rate of the piezo actuator which tend to respond in microseconds.
-Thus the grating angle can be used to deal with relatively low frequency noise, up to approximately \unit[100]{kHz} or so, such as changes to ambient temperature or pressure.
+Wavelength control via the grating angle is limited by the response rate of the piezo actuator which tend to respond in microseconds.
+Thus the grating angle can be used to deal with relatively low frequency noise, up to approximately \unit[1]{kHz} or so, such as changes to ambient temperature, pressure, or acoustic vibrations.
 
 \subsection{Noise}
 In this context noise refers to effects that change the frequency of a laser in undesirable ways.
-Some sources of noise are thermal changes, ambient vibrations, atmospheric pressure, or changes in the electrical power supply.
+Some sources of noise are thermal changes, ambient vibrations, atmospheric pressure, or the electrical power supply.
 
-Thermal noise can be causes by changes in weather, unreliable building climate control, or unexpected behaviours in thermal management devices (a malfunctioning \gls{tec} for example).
-Thermal noise can affect the alignment of optics, the efficiency and polarisation of light transmitted through fibres, atomic vapour cell opacity and the intensity and frequency of light emitted from laser diodes all of which can affect the frequency of a stabilised laser system.
+Thermal noise can be caused by a number of effects such as changes in weather, and unreliable building climate control.
+Thermal noise can directly affect the length of the laser cavity and the refractive index of air within the cavity but also affects the alignment of optics, the efficiency and polarisation of light transmitted through fibres, and atomic vapour cell opacity which can erroneusly be interpreted by some frequency stabilisation sytstems as frequency changes and `corrected'.
 
-Electrical noise can occur with changes to the wider electrical grid as well as when devices in the lab are turned on or off, fast switching high-voltage/-current supplies, such as those used to switch the \gls{mot} coils, can cause noticeable affects on other electrical equipment in close proximity.
-Noise in the electronic environment can cause frequency instability particularly if a laser diode is not fully isolated from the electrical ground. Noise on the power supply to the laser diode affects the intensity and frequency of the light emitted.
+Electrical noise can occur with changes to the wider electrical grid as well as when devices in the lab are turned on or off, fast switching high-voltage/-current supplies, such as those used to switch the \gls{mot} coils, can cause noticeable effects on other electrical equipment in close proximity.
+Noise in the electronic environment can cause frequency instability particularly if a laser diode is not fully isolated from the electrical ground.
+Noise on the power supply to the laser diode affects the power and frequency of the light emitted.
 Laser intensity noise can also cause problems, for example laser frequency stabilisation is often conducted with spectroscopic techniques that will interpret intensity fluctuations as frequency fluctuations. Thus the feedback system will create frequency noise as it attempts to correct for the phantom frequency noise.
 
 Mechanical noise can have numerous sources such as audible noise, percussive noise (dropped spanners, doors) or vibrational sources such as cooling fans on nearby equipment.
-An \gls{ecdl} subjected to mechanical vibrations will experience frequency noise as the alignment of the light coupled back into the diode from the grating varies.
-Mechanical noise can also affect the alignment, and thus transmitted power, of laser through optical fibres, optical isolators and apertures, which in turn can be falsely interpreted by the servo system as a change in frequency and `corrected'.
+An \gls{ecdl} subjected to mechanical vibrations will experience frequency noise as the diode cavity length and refractive index varies.
+Mechanical noise can also affect the alignment, and thus transmitted power, of light through optical fibres, optical isolators and apertures, which in turn can be falsely interpreted by the servo system as a change in frequency and `corrected'.
 
 \section{Saturated Absorption Spectroscopy}
 \glsreset{sa}
