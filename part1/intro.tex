@@ -120,8 +120,10 @@ A schematic of \gls{sa} is shown in Figure~\ref{figure:satabs}.
 \end{figure}
 
 \Gls{sa} involves counter-propagating pump and probe beams from the laser source through a sample of atomic vapour with the intensity of the probe beam after the gas measured by a photodetector.
-Without the pump beam the absorption of the probe as a function of laser frequency would show peaks at the atomic transitions, with width equal to the linewidth of each transition, smeared out by the thermal distribution of the atoms due to thermal motion which for room temperature atoms results in a smooth curve 100s of MHz wide which obscures the hyperfine transitions.
-Adding the pump beam results in less absorption at each transition due to the pump exciting atoms which are then inaccessible to the probe. With counter-propagating beams `cross-over' features appear halfway between each pair of transitions.
+Without the pump beam the absorption of the probe as a function of laser frequency would show peaks at the atomic transitions.
+The width of the absorption peaks is equal to the linewidth of each transition, smeared out by the thermal distribution of the atoms due to thermal motion.
+At room temperature the absorption spectrum for rubidium is a smooth curve 100s of MHz wide which obscures the hyperfine transitions.
+Adding the pump beam results in less absorption at each transition due to the pump exciting atoms which are then inaccessible to the probe. With counter-propagating beams `cross-over' features appear halfway between each pair of transitions~\cite{demtroder_laser_2003}.
 An example spectrum for rubidium-85 is shown in Figure~\ref{figure:satabsspectrum}.
 In Figure~\ref{figure:satabs} the pump beam is recycled to act as the probe.
 
@@ -135,15 +137,18 @@ In Figure~\ref{figure:satabs} the pump beam is recycled to act as the probe.
     % Code and data in Code/PolSpec Code/Laser/Spectra for Paper/Grapher.py
 \end{figure}
 
-Different variations of \gls{sa} can operate with or without modulation, which can be modulation of the laser itself or modulation of the transition frequencies of the atoms in the vapour cell (via a solenoid magnet wrapped around the vapour cell).
-Without modulation the system is more susceptible to drift and there is an frequency offset from centre of the atomic transition.
-If modulation is used then there is the added complexity of implementing the modulation and the potential linewidth is limited by modulation frequency.
-Linewidths under \unit[150]{kHz} are easily attainable with modulated saturated absorption spectroscopy~\cite{saliba_linewidths_2009}.
+Different variations of \gls{sa} can operate with or without frequency modulation, which can be modulation of the laser (at the laser diode or just the beam with an \gls{aom} or \gls{eom}) or modulation of the transition frequencies of the atoms in the vapour cell (via a solenoid magnet wrapped around the vapour cell).
+Without modulation the system is more susceptible to drift and there is a frequency offset from the centre of the atomic transition.
+If modulation is used then there is the added complexity of implementing the modulation and the feedback bandwidth is limited to half the modulation frequency.
+Laser linewidth under \unit[150]{kHz} is attainable with modulated saturated absorption spectroscopy~\cite{saliba_linewidths_2009}.
 
 \section{Pound Drever Hall}
 
 The \gls{pdh} technique is the gold-standard for laser frequency linewidth reduction and has been used to achieve extremely low linewidth of less than \unit[40]{mHz}~\cite{kessler_sub-40-mhz-linewidth_2012}.
 \Gls{pdh} uses an optical cavity as a frequency reference and a modulated beam and some electronics to generate the error signal for feedback to the laser~\cite{drever_laser_1983,black_introduction_2001}.
+\Gls{pdh} is a phase sensitive measurement that compares the laser frequency with the light stored in the optical cavity and thus is not bandwidth limited by the spontaneous emission lifetime.
+
+\Gls{pdh} was used to provide a comparison to \gls{ps} and the optical cavity was used extensively as a diagnostic tool for examining laser frequency behaviour.
 
 \subsection{Fabry-P\'erot Cavities}\label{section:cavity_theory}
 A Fabry-P\'erot cavity is formed by two highly reflective mirrors facing each other such that light can form a standing wave between the two mirrors.
@@ -159,7 +164,7 @@ The frequency difference between one cavity transmission and the next is called 
 \begin{equation}
 \Delta \nu_{FSR} = \frac{c}{2L}
 \end{equation}
-The quality of an optical cavity is described by the cavity Finesse, $\mathscr{F}$, which effectively describes the number of traversals a beam makes before leaking out or being absorbed and it is determined by the reflectivity of the mirrors, $R$,
+The quality of an optical cavity is described by the cavity finesse, $\mathscr{F}$, which effectively describes the number of traversals a beam makes before leaking out or being absorbed and it is determined by the intensity reflectivity of the mirrors, $R$,
 \begin{align}
 \mathscr{F} &= \frac{2\pi}{-\log_e\left(R^2\right)} \notag\\
  &= \frac{\Delta \nu_{FSR}}{\delta},
@@ -179,13 +184,13 @@ The phase difference between successive traversals of the cavity is represented 
 We can define the difference between the laser wavelength and closest cavity resonance as $\Delta\lambda=L-n\lambda$, then Equation~\ref{equation:cavity_transmission} can be written as
 \begin{align}\label{equation:cavity_transmission2}
 T &= \frac{1}{1+F\sin^2\left(2\pi\frac{\Delta\lambda}{\lambda}\right)}. \notag \\
-&= \frac{1}{1+F\left(\frac{\omega L}{c}\right)^2},
+&\simeq \frac{1}{1+F\left(\frac{\omega L}{c}\right)^2},
 \end{align}
 where $\omega$ is the angular frequency of the laser.
-$T$ takes the form of a Lorentzian, or Airy, function and an example spectra is shown in Figure~\ref{figure:pdh_plots}.
+$T$ takes the form of a Airy function and an example spectra is shown in Figure~\ref{figure:pdh_plots}.
 
-The cavity used in the experiments described in this chapter was a high-finesse cavity from Stable Laser Systems that was located inside an evacuated temperature-controlled can.
-This cavity has a finesse of 20942, a \gls{fsr} of \unit[1.5]{GHz}, a \gls{fwhm} linewidth of \unit[71.6]{kHz}, and the mirrors had a reflectivity of 0.99985.
+We used a high-finesse cavity from Stable Laser Systems, isolated inside a temperature controlled vacuum chamber.
+This cavity has a finesse of 20942, mirrors with a reflectivity of 0.99985, a \gls{fsr} of \unit[1.5]{GHz}, and a \gls{fwhm} linewidth of \unit[71.6]{kHz}.
 This cavity had fixed mirrors unlike some others that have one of the mirrors attached to a piezoactuator to allow for modulation of the cavity resonance.
 
 \subsubsection{PDH Error Signal}\label{section:pdh_error}
@@ -205,39 +210,42 @@ E_R = E_0 \left( r e^{i\left(\omega t + \pi\right)} + t r t e^{i\left(\omega t -
 where $r$ is the mirror reflectivity and $t=\sqrt{1-r^2}$ is the transmissivity of the mirrors.
 Equation~\ref{equation:cavity_reflected_field} can be simplified to give the reflection coefficient
 \begin{equation}\label{equation:reflection_coefficient}
-F(\omega) \equiv \frac{E_R}{E_I} = \frac{r\left(e^{i\omega / \Delta\nu_{FSR}} - 1 \right)}{1-r^2 e^{i\omega / \Delta\nu_{FSR}}}.
+F_R(\omega) \equiv \frac{E_R}{E_I} = \frac{r\left(e^{i\omega / \Delta\nu_{FSR}} - 1 \right)}{1-r^2 e^{i\omega / \Delta\nu_{FSR}}}.
 \end{equation}
-Figure~\ref{figure:pdh_plots} shows that $F(\omega)$ is antisymmetric about the cavity resonance making it ideal for frequency stabilisation however more steps are required to generate a usable error signal.
+Figure~\ref{figure:pdh_plots} shows that $F_R(\omega)$ is antisymmetric about the cavity resonance making it ideal for frequency stabilisation however more steps are required to generate a usable error signal.
 
-To generate the error signal phase modulation is imposed on the laser, typically using an \gls{eom}.
-The modulated incident laser beam with a modulation frequency of $\Omega/2\pi$ and modulation strength $\beta$ has electric field
+To generate the error signal phase modulation is imposed on the laser beam, typically using an \gls{eom}.
+The modulated incident laser beam with a modulation frequency of $\Omega$ and modulation strength $\beta$ has electric field
 \begin{align}
 E_I &= E_0 e^{i\left(\omega t + \beta \sin\Omega t \right)} \notag \\
 &\approx E_0 \Bigg( J_0(\beta) + 2iJ_1(\beta)\sin\Omega t \Bigg)e^{i\omega t} \notag \\
 &= E_0 \Bigg( J_0(\beta)e^{i\omega t} + J_1(\beta)e^{i(\omega + \Omega)t} - J_1(\beta)e^{i(\omega - \Omega)t} \Bigg),\label{equation:cavity_phase_mod}
 \end{align}
 valid for small $\beta$ where $J_0$ and $J_1$ are Bessel functions.
-Equation~\ref{equation:cavity_phase_mod} shows that the phase modulated beam has three frequency components and the two $J_1$ components are referred to as the `sidebands' which are offset from the central frequency by the modulation frequency $\Omega/2\pi$.
+Equation~\ref{equation:cavity_phase_mod} shows that the phase modulated beam has three frequency components and the two $J_1$ components are referred to as the sidebands which are offset from the central frequency by the modulation frequency $\Omega$.
 
-The reflected beam from the cavity due to the phase-modulated beam results in each frequency component being transformed by $F(\omega)$ to give
+The reflected beam from the cavity due to the phase-modulated beam results in each frequency component being transformed by $F_R(\omega)$ to give
 \begin{equation}
-E_R = E_0 \Bigg(F(\omega)J_0(\beta)e^{i\omega t} + F(\omega+\Omega)J_1(\beta)e^{i(\omega+\Omega) t} - F(\omega-\Omega)J_1(\beta)e^{i(\omega-\Omega) t} \Bigg).
+E_R = E_0 \Bigg(F_R(\omega)J_0(\beta)e^{i\omega t} + F_R(\omega+\Omega)J_1(\beta)e^{i(\omega+\Omega) t} - F_R(\omega-\Omega)J_1(\beta)e^{i(\omega-\Omega) t} \Bigg).
 \end{equation}
-The electric field is not directly measured however, photodetectors measure the power, $P=|E|^2$ of the beam incident on them.
+The electric field is not directly measured, photodetectors measure the power, $P=|E|^2$, of the beam.
 Thus,
 \begin{align}
-P_R \quad= \quad&P_c|F(\omega)|^2 \quad\qquad+\quad\qquad P_s \Bigg( F(\omega+\Omega) + F(\omega-\Omega)\bigg) &+\qquad&\notag\\
-& 2\sqrt{P_cP_s} \, \operatorname{Re}\Bigg[ F(\omega)F^*(\omega+\Omega)-F^*(\omega)F(\omega-\Omega)\Bigg]\cdot\cos\Omega t &+\qquad& \notag\\
-& 2\sqrt{P_cP_s} \, \operatorname{Im}\Bigg[ F(\omega)F^*(\omega+\Omega)-F^*(\omega)F(\omega-\Omega)\Bigg]\cdot\sin\Omega t &+ \qquad&O[2\Omega],
+P_R \quad= \quad&P_c|F_R(\omega)|^2 \quad\qquad+\quad\qquad P_s \Bigg( F_R(\omega+\Omega) + F_R(\omega-\Omega)\bigg) &+\qquad&\notag\\
+& 2\sqrt{P_cP_s} \, \operatorname{Re}\Bigg[ F_R(\omega)F_R^*(\omega+\Omega)-F_R^*(\omega)F_R(\omega-\Omega)\Bigg]\cdot\cos\Omega t &+\qquad& \notag\\
+& 2\sqrt{P_cP_s} \, \operatorname{Im}\Bigg[ F_R(\omega)F_R^*(\omega+\Omega)-F_R^*(\omega)F_R(\omega-\Omega)\Bigg]\cdot\sin\Omega t &+ \qquad&O[2\Omega],
 \end{align}
 where $P_{c,s}$ are the power of the carrier and sideband components respectively and the final term represents the higher-order components from the interactions between the sidebands.
+
+{\color{red}Up to here. Should probably not be lazy and do the multiplication.}
 
 The phase information is retrieved with the use of a ``mixer'' which is an electronic device that multiplies two signals together essentially multiplying the signal from the photodetector, $P_R \propto \sin\Omega t$, with the signal from the oscillator driving the \gls{eom}, $\sin\Omega t$, resulting in a DC component and a $\cos2\Omega t$ component.
 A low-pass electronic filter is then used to extract the DC component which is the \gls{pdh} error signal,
 \begin{equation}\label{equation:pdh_error}
-\epsilon = 2\sqrt{P_cP_s}\operatorname{Im}\Bigg[F(\omega)F^*(\omega+\Omega) - F^*(\omega)F(\omega-\Omega)\Bigg].
+\epsilon = 2\sqrt{P_cP_s}\operatorname{Im}\Bigg[F_R(\omega)F_R^*(\omega+\Omega) - F_R^*(\omega)F_R(\omega-\Omega)\Bigg].
 \end{equation}
-An example \gls{pdh} error signal is shown in Figure~\ref{figure:pdh_plots}, the steep antisymmetric slope about the resonance is ideal for frequency stabilisation and the large region, equal the twice the modulation frequency, about the resonance for which the signal is of the correct sign allows for a large capture range. 
+An example \gls{pdh} error signal is shown in Figure~\ref{figure:pdh_plots}.
+The steep antisymmetric slope about the resonance is ideal for frequency stabilisation and the large region, equal to twice the modulation frequency, about the resonance for which the signal is of the correct sign allows for a large capture range. 
 
 \begin{figure}
 \centering
@@ -247,7 +255,7 @@ The cavity has a length of \unit[10]{cm} and a finesse of 20942 and a phase modu
 \label{figure:pdh_plots}
 \end{figure}
 
-\Gls{pdh} locking is generally achieved with the modulation applied to the laser using an \gls{eom} with the laser then incident on a cavity.
+\Gls{pdh} locking is generally achieved with the modulation applied to the laser beam using an \gls{eom} with the beam then incident on a cavity.
 The light reflected from the cavity is then measured by a photodetector and the signal from the detector is mixed with the same frequency source as is driving the \gls{eom}.
 A low-pass filter removes the higher frequency component from the resulting signal which is passed to the servo system which attempts to stabilise the laser frequency.
 This is shown in Figure~\ref{figure:pdh_schematic}.
