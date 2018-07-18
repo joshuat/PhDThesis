@@ -147,6 +147,17 @@ Laser linewidth under \unit[150]{kHz} is attainable with modulated saturated abs
 The \gls{pdh} technique is the gold-standard for laser frequency linewidth reduction and has been used to achieve extremely low linewidth of less than \unit[40]{mHz}~\cite{kessler_sub-40-mhz-linewidth_2012}.
 \Gls{pdh} uses an optical cavity as a frequency reference and a modulated beam and some electronics to generate the error signal for feedback to the laser~\cite{drever_laser_1983,black_introduction_2001}.
 \Gls{pdh} is a phase sensitive measurement that compares the laser frequency with the light stored in the optical cavity and thus is not bandwidth limited by the spontaneous emission lifetime.
+A schematic of a standard \gls{pdh} setup is shown in Figure~\ref{figure:pdh_schematic}.
+
+\begin{figure}
+\centering
+\includegraphics{part1/Figs/PDH.pdf}
+\caption[Pound-Drever-Hall frequency stabilisation setup.]{A standard \gls{pdh} layout.
+The laser beam passes through an \gls{eom} to create frequency sidebands and is then incident on the optical cavity.
+The beam reflected from the cavity is detected with a photodetector and the signal passed through appropriate electronics to produce the error signal (see Section~\ref{section:pdh_error}).
+The error signal is passed to the servo system to generate feedback to keep the laser frequency on the cavity resonance.}
+\label{figure:pdh_schematic}
+\end{figure}
 
 \Gls{pdh} was used to provide a comparison to \gls{ps} and the optical cavity was used extensively as a diagnostic tool for examining laser frequency behaviour.
 
@@ -263,16 +274,3 @@ The steep antisymmetric slope about the resonance is ideal for frequency stabili
 The light reflected from the cavity is then measured by a photodetector and the signal from the detector is mixed with the same frequency source as is driving the \gls{eom}.
 A low-pass filter removes the higher frequency component from the resulting signal which is passed to the servo system which attempts to stabilise the laser frequency.
 This is shown in Figure~\ref{figure:pdh_schematic}.
-
-\begin{figure}
-\centering
-\includegraphics{part1/Figs/PDH.pdf}
-\caption[Pound-Drever-Hall frequency stabilisation setup.]{A standard \gls{pdh} layout.
-The laser passes through an \gls{eom} to create frequency sidebands and is then incident on the optical cavity.
-The beam reflected from the cavity is then detected with a photodetector and the signal passed through appropriate electrons to produce the error signal (see Section~\ref{section:pdh_error}).
-The error signal is passed to the servo system to generate feedback to keep the laser frequency on the cavity resonance.}
-\label{figure:pdh_schematic}
-\end{figure}
-
-
-
