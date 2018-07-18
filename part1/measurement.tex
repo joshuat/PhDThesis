@@ -1,19 +1,19 @@
 \section{Polarisation Spectroscopy Performance}
 Visible light has frequencies in the THz range which is well beyond the capabilities of modern electronics to directly measure so a number of clever strategies have been developed to measure the spectral quality of laser systems.
-The performance of \gls*{ps} frequency stabilisation with high-bandwidth feedback has been characterised using a number of methods detailed here.
-Spectral linewidth is the principle metric by which stabilisation techniques are compared and it can be considered over a range of timescales with different implications.
+The performance of \gls{ps} frequency stabilisation with high-bandwidth feedback has been characterised using a number of methods detailed here.
+Spectral linewidth is a useful metric by which stabilisation techniques are compared and it can be considered over a range of timescales with different implications.
 Short timescales measurements, less than a second, indicate the narrowness of the frequency spectrum and are useful when considering frequency dependent interactions, such as those with atoms or optical cavities.
 Long timescale measurements, minutes to hours, are useful to determine the stability of the laser and its susceptibility to frequency drift and the robustness of the locking scheme.
 
 \subsection{Laser Systems}\label{section:ps_experimental_setup}
 
-The basic layout of the laser systems used is shown in Figure~\ref{figure:two_laser_setup}.
+The basic layout of the laser system is shown in Figure~\ref{figure:two_laser_setup}.
 A number of the measurements described in this chapter required only a single laser however the most reliable method, two-laser heterodyne (see Section~\ref{section:two-laser_heterodyen}), requires two very similar laser systems.
-Two almost identical lasers systems were constructed for these measurements with the only major difference being the \gls{ecdl} itself, one being a MOGLabs ECD003 and the other a Toptica DL pro.
+Two almost identical laser systems were constructed for these measurements with the only major difference being the \gls{ecdl} itself, one being a MOGLabs ECD003 and the other a Toptica DL pro.
 Both lasers were controlled by MOGLabs laser controllers\footnote{MOGLabs laser controlled with a MOGLabs DLC202 and Toptica laser with a DLC252.} and used high-bandwidth, \unit[14]{MHz}, servo controllers\footnote{NewFocus LB1005, \unit[14]{MHz} bandwidth} to control the high-frequency diode injection current channel (\unit[$>$10]{MHz} bandwidth).
 The laser controllers were used as servos to provide the low-frequency feedback to the \gls{ecdl} piezo (\unit[1]{kHz} bandwidth) and slow current channel (\unit[50]{kHz} bandwidth).
-In order to provide flexibility when perform the numerous measurements with different locking techniques the beam from each laser was split in two and coupled into single-mode polarisation-maintaining fibres.
-For each laser one beam also passed through a double-pass \gls{aom} before being coupled into the fibre to provide some frequency control which was useful for both cavity and heterodyne measurements.
+To provide flexibility when performing the numerous measurements with different locking techniques the beam from each laser was split in two and coupled into single-mode polarisation-maintaining fibres.
+For each laser, one beam also passed through a double-pass \gls{aom} before being coupled into the fibre to provide some frequency control which was useful for both cavity and heterodyne measurements.
 
 \begin{figure}
 \center
@@ -26,7 +26,7 @@ The polarisation rotation of the probe beam is then measured by a balanced polar
 \label{figure:two_laser_setup}
 \end{figure}
 
-In the two near-identical polarisation spectroscopy setups high quality calcite polarisers where used to stabilise the polarisation of the beam out of the fibre as, despite being polarisation maintaining, ambient temperature changes resulted in polarisation changes in the output beam from the fibres.
+In the two near-identical polarisation spectroscopy setups, high quality calcite polarisers where used to stabilise the polarisation of the beam out of the fibre as, despite being polarisation maintaining, ambient temperature changes resulted in polarisation changes in the output beam from the fibres.
 Following the calcite was a beam expanding telescope that expanded the beams to the size of the apertures in the double-layer mu-metal magnetic shields, \unit[1.5]{cm} diameter, reducing transit-broadening and improving the optical pumping within the \unit[7.5]{cm} long rubidium gas cells.
 The pump and probe beams had typical powers of \unit[2.4]{mW} and \unit[2.7]{mW} respectively.
 High-bandwidth photodetectors\footnote{Thorlabs PDA36A-EC, \unit[150]{MHz} bandwidth} where used in the balanced polarimeter to generate the error signal fed into the servo system.
