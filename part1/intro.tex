@@ -233,14 +233,18 @@ Thus,
 \begin{align}
 P_R \quad= \quad&P_c|F_R(\omega)|^2 \quad\qquad+\quad\qquad P_s \Bigg( F_R(\omega+\Omega) + F_R(\omega-\Omega)\bigg) &+\qquad&\notag\\
 & 2\sqrt{P_cP_s} \, \operatorname{Re}\Bigg[ F_R(\omega)F_R^*(\omega+\Omega)-F_R^*(\omega)F_R(\omega-\Omega)\Bigg]\cdot\cos\Omega t &+\qquad& \notag\\
-& 2\sqrt{P_cP_s} \, \operatorname{Im}\Bigg[ F_R(\omega)F_R^*(\omega+\Omega)-F_R^*(\omega)F_R(\omega-\Omega)\Bigg]\cdot\sin\Omega t &+ \qquad&O[2\Omega],
+& 2\sqrt{P_cP_s} \, \operatorname{Im}\Bigg[ F_R(\omega)F_R^*(\omega+\Omega)-F_R^*(\omega)F_R(\omega-\Omega)\Bigg]\cdot\sin\Omega t &+ \qquad&O[2\Omega],\label{equation:pdh_detector}
 \end{align}
 where $P_{c,s}$ are the power of the carrier and sideband components respectively and the final term represents the higher-order components from the interactions between the sidebands.
 
-{\color{red}Up to here. Should probably not be lazy and do the multiplication.}
-
-The phase information is retrieved with the use of a ``mixer'' which is an electronic device that multiplies two signals together essentially multiplying the signal from the photodetector, $P_R \propto \sin\Omega t$, with the signal from the oscillator driving the \gls{eom}, $\sin\Omega t$, resulting in a DC component and a $\cos2\Omega t$ component.
-A low-pass electronic filter is then used to extract the DC component which is the \gls{pdh} error signal,
+The phase information is retrieved with the use of a ``mixer'' which is an electronic device that multiplies two signals together essentially multiplying the signal from the photodetector, $P_R \propto \sin\Omega t$, with the signal from the oscillator driving the \gls{eom}, $\sin\Omega t$.
+The oscillating portions of the third and forth terms in Equation~\ref{equation:pdh_detector} when mixed become
+\begin{align}
+\cos\Omega t \sin\Omega t &= \frac{1}{2}\sin2\Omega \notag \\
+\sin\Omega t \sin\Omega t &= \frac{1-\cos2\Omega t}{2},
+\end{align}
+thus resulting in a DC component and $2\Omega$ components.
+A low-pass electronic filter is then used to extract the DC component which forms the \gls{pdh} error signal,
 \begin{equation}\label{equation:pdh_error}
 \epsilon = 2\sqrt{P_cP_s}\operatorname{Im}\Bigg[F_R(\omega)F_R^*(\omega+\Omega) - F_R^*(\omega)F_R(\omega-\Omega)\Bigg].
 \end{equation}
@@ -250,9 +254,9 @@ The steep antisymmetric slope about the resonance is ideal for frequency stabili
 \begin{figure}
 \centering
 \input{part1/Figs/pdh_transmission_error.pgf}
-\caption[Simulated cavity transmission and reflection, and \gls{pdh} error spectra.]{Simulated plots of cavity transmission function (Equation~\ref{equation:cavity_transmission2}), reflection coefficient (Equation~\ref{equation:reflection_coefficient}) and \gls{pdh} error signal (Equation~\ref{equation:pdh_error}) from left to right all as a function of the frequency difference between the cavity resonance and the laser frequency.
-The cavity has a length of \unit[10]{cm} and a finesse of 20942 and a phase modulation frequency of \unit[2]{MHz} was used to generate the error signal.}
+\caption[Simulated cavity transmission and reflection, and \gls{pdh} error spectra.]{Simulated plots of cavity transmission function (Equation~\ref{equation:cavity_transmission2}), reflection coefficient (Equation~\ref{equation:reflection_coefficient}) and \gls{pdh} error signal (Equation~\ref{equation:pdh_error}) from left to right all, as a function of $\Delta\omega$, the angular frequency difference between the cavity resonance and the laser frequency. $\Omega$ is the modulation frequency.}
 \label{figure:pdh_plots}
+% Code in Code/Figure/pdh.py
 \end{figure}
 
 \Gls{pdh} locking is generally achieved with the modulation applied to the laser beam using an \gls{eom} with the beam then incident on a cavity.
