@@ -1,25 +1,30 @@
 \section{Polarisation Spectroscopy}%\label{chapter:pol_spec}
 \label{section:pol_spec_theory}
 
+\Gls{pdh} is a powerful technique but is not atomically referenced and is fairly complicated to implement, particularly if it is to be used to its full potential.
+\glsreset{ps}\Gls{ps} is an alternative frequency stabilisation technique that is atomically referenced and able to provide impressive linewidth reduction, which will be demonstrated here.
+Discussions of the advantages and performance of \gls{ps} are given in the following sections.
+
+Shown in Figure \ref{figure:pol_spec_schematic} is a schematic of an implementation of \gls{ps}.
 In \gls{ps} a circularly polarised pump beam from a monochromatic laser, with frequency close to an atomic resonance, induces frequency-dependent circular birefringence in a magnetically-shielded atomic gas sample.
 A linearly polarised beam from the same laser source is used to measure the birefringence, monitored with a balanced polarimeter consisting of a half-wave phase retarder, \gls{pbs} and two detectors.
-This is shown in Figure \ref{figure:pol_spec_schematic}.
-The magnetic shielding of the atomic gas sample is required to prevent Faraday rotation from ambient magnetic fields interfering with the probe beam polarisation.
+The magnetic shielding of the atomic gas sample is required to prevent Faraday rotation caused by ambient magnetic fields affecting the probe beam polarisation.
 
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{part1/Figs/PolSpecSchematic.pdf}
-\caption[Polarisation spectroscopy setup.]{A schematic of \gls{ps} with a balanced polarimeter.
-The power balance between the probe and the pump beam is controlled with the left-most $\lambda/2$ phase retarder and \gls{pbs}.
+\caption[Polarisation spectroscopy setup.]{A schematic of polarisation spectroscopy with a balanced polarimeter.
+The power balance between the probe and the pump beam is controlled with the left-most $\lambda/2$ phase retarder and polarising beamsplitter (PBS).
 The $\lambda/4$ retarder is adjusted to produce a circularly polarised pump beam.
-The non-polarising beamsplitter (BS) is used to counter-propagate the pump beam through the atomic sample without altering the polarisation of the circular pump or linear probe.
+The non-polarising beamsplitter (NPBS) is used to counter-propagate the pump beam through the atomic sample without altering the polarisation of the circular pump or linear probe.
 The final $\lambda/2$ retarder, \gls{pbs} and the detectors form the balanced polarimeter that monitors the polarisation rotation of the probe.}
 \label{figure:pol_spec_schematic}
 \end{figure}
 
 The circularly polarised pump beam induces circular birefringence in the atomic sample by partial optical pumping of the sample into one of the extreme hyperfine sublevels, $m_F=\pm F$, where $m_F$ labels the hyperfine sublevel and $F$ is the atomic angular momentum number.
 This partial optical pumping, referred to here as the anisotropy of the medium, results in unequal absorption coefficients for each circular polarisation.
-The linearly polarised probe beam can be decomposed into two equal and oppositely circularly polarised components which undergo different absorption due to the anisotropy, such that when recombined after passing through the atomic sample the probe beam becomes elliptically polarised with an angle different to that of the original linear polarisation.
+The linearly polarised probe beam can be decomposed into two equal and oppositely circularly polarised components which undergo different absorption due to the anisotropy.
+When the circularly polarised components are recombined, after passing through the atomic sample, the probe beam becomes elliptically polarised and rotated from the original linear polarisation angle.
 
 The dispersive error signal is the difference of the two orthogonal polarisation components~\cite{pearman_polarization_2002, hughes_polarization_2009}
 \begin{equation}
@@ -51,7 +56,7 @@ The absorption coefficient for a given transition is $\alpha_{(F, m_F\rightarrow
 
 The atomic substate populations established by interaction with the pump beam can be calculated using optical Bloch equations~\cite{hughes_polarization_2009}.
 The PS signal is proportional to the refractive index difference given by Equation~\ref{result}, which describes a steep, background-free antisymmetric dispersive function.
-%%%%%% I prefer the theory given inthe paper. %%%%%
+%%%%%% I prefer the theory given in the paper. %%%%%
 %Consider the electric field of the probe beam before it enters the atomic sample at an angle $\phi$ to the $x$ axis:
 % \begin{equation}
 % \vec{E}=E_0\big(\cos{\phi}\,\hat{x}+\sin{\phi}\,\hat{y}\big)
@@ -112,12 +117,12 @@ The PS signal is proportional to the refractive index difference given by Equati
 % \end{equation}
 
 \Gls{ps} produces a dispersion shaped spectrum about the atomic resonance with zero background, as shown in Figure~\ref{figure:polspecspectrum}, and is ideal for laser locking due to the large capture range and steep gradient near the resonance.
-Unlike \gls{pdh}, \gls{ps} acts as an absolute reference as it tied to the frequency of the atomic-ensemble reference rather than a cavity.
+Unlike \gls{pdh}, \gls{ps} acts as an absolute reference as it tied to the frequency of the atomic-ensemble reference.
 
 \begin{figure}
 \center
 \input{part1/Figs/PolSpecSpectrum.pgf}
-\caption[Polarisation spectroscopy absorption and error spectra.]{Absorption spectrum for \gls{ps} horizontal and vertical polarisations (red) and the corresponding error signal (blue). This spectrum is for the rubidium-85 D2 line with the horizontal axis zero relative to the $F=3$ to $F^\prime=4$ transition.}
+\caption[Polarisation spectroscopy absorption and error spectra.]{Measured absorption spectrum for \gls{ps} horizontal and vertical polarisations (red) and the corresponding error signal (blue). This spectrum is for the rubidium-85 D2 line with the horizontal axis zero relative to the F=3 to F$^\prime$=4 transition.}
 \label{figure:polspecspectrum}
 \end{figure}
 
@@ -134,17 +139,17 @@ With the pump inducing anisotropy in the atomic sample the rotation of the probe
 \label{figure:wieman_doppler-free_schematic}
 \end{figure}
 
-Pearson et al. proposed the alternative method of using a balanced polarimeter, shown in Figure~\ref{figure:pol_spec_schematic}, which provides a background-free signal with peak-to-peak height more than an order of magnitude greater than with the crossed polariser method~\cite{pearman_polarization_2002,yoshikawa_frequency_2003}.
+Pearson \emph{et al.} proposed the alternative method of using a balanced polarimeter, shown in Figure~\ref{figure:pol_spec_schematic}, which provides a background-free signal with peak-to-peak height more than an order of magnitude greater than with the crossed polariser method~\cite{pearman_polarization_2002,yoshikawa_frequency_2003}.
 
 \subsubsection{Co-propagating Beams}
 
 Wieman and H\"anch's initial proposal for \gls{ps} used a mirror next to the probe beamline to angle the pump beam such that it was \emph{almost} counter-propagating with the probe beam, as shown in Figure~\ref{figure:wieman_doppler-free_schematic}.
-In saturated absorption spectroscopy imperfect alignment of the pump and probe results in geometric broadening of the spectral features and a reduction in the overlap region and thus the number of atoms involved and the degree of signal produced~\cite{himsworth_rubidium_2010}.
+In saturated absorption spectroscopy imperfect alignment of the pump and probe results in geometric broadening of the spectral features and a reduction in the overlap region and thus the number of atoms involved and the strength of the signal~\cite{himsworth_rubidium_2010}.
 \Gls{ps} does not rely on the Doppler-shifted velocities of the atoms involved and thus does not suffer from geometric broadening but the signal strength can be improved with fully counter-propagated beams.
 
 Many saturated absorption spectroscopy setups use arrangements similar to the \gls{ps} setup shown in Figure~\ref{figure:wieman_doppler-free_schematic} in order to get the pump and probe beam to approximately counter-propagate however the layout shown in Figure~\ref{figure:satabs} provides a much simpler arrangement with anti-parallel beams and fewer required optics.
-Similarly the \gls{ps} layout has been improved with the use of a non-polarising beam splitter to reflect the pump beam into the gas cell without interfering with the pump's circular polarisation or the probes rotated linear polarisation.
-This gives the pump and probe beams the maximum interaction volume and maximises the signal produced.
+Similarly the \gls{ps} layout has been improved with the use of a non-polarising beam splitter to reflect the pump beam into the gas cell without interfering with the pump's circular polarisation or rotated linear polarisation of the probe.
+Co-propagating the beams gives the pump and probe the maximum interaction volume and maximises the signal produced.
 
 \subsection{Error Signal Characteristics}
 
@@ -153,25 +158,27 @@ There are a number of aspects of \gls{ps} that make it an attractive candidate f
 \subsubsection{High Signal-to-Noise Ratio}
 
 \Gls{ps} has a number of advantages with respect to \gls{snr} compared to other techniques.
-\Gls{ps} is a velocity selective technique that which produces a dispersive error signal with high frequency-discrimination slope, comparable to \gls{sa} and \gls{mts}.
-The subtraction associated with the balanced polarimeter removes technical noise, particularly probe laser intensity noise across the entire signal bandwidth.
-The resultant \gls{ps} error signal therefore approaches the shot-noise limit and the \gls{snr} is very high over a large bandwidth, this is shown Figure~\ref{figure:psd}.
+\Gls{ps} is a velocity selective technique that produces a dispersive error signal with high frequency-discrimination slope, comparable to \gls{sa} and \gls{mts}.
+The subtraction associated with the balanced polarimeter removes technical noise, particularly probe laser intensity noise, across the entire signal bandwidth.
+The resultant \gls{ps} error signal therefore approaches the shot-noise limit and the \gls{snr} is very high over a large bandwidth, shown in Figure~\ref{figure:psd}.
 
 \subsubsection{Modulation Free}
 
 \Gls{ps} is a technique that does not require any modulation of the laser beam or electronic signals.
-With modulation-based frequency stabilisation techniques such as \gls{pdh}, \gls{sa}, or \gls{mts}, the feedback bandwidth is limited in theory, by the Nyquist theorem, to half the modulation frequency but in practise to well below this due to the need to filter the signal to remove the second harmonic product and upconverted flicker noise at the first harmonic which is made more difficult in servo applications by the need to keep latency low to preserve phase margin.
-The absence of modulation also reduces the implementation complexity and cost but some care is required to minimise noise contributions at low frequencies which contribute to frequency drift, and at high frequencies where noise is more likely to exceed the signal.
+With modulation-based frequency stabilisation techniques such as \gls{pdh}, \gls{sa}, or \gls{mts}, the feedback bandwidth is theoretically limited to half the modulation frequency by the Nyquist theorem.
+In practise the bandwidth is limited to well below the Nyquist limit due to the need to filter the signal to remove the second harmonic product and upconverted flicker noise at the first harmonic.
+The filtering is made more difficult in servo applications by the need to keep latency low to preserve phase margin.
+The absence of modulation also reduces the implementation complexity and cost but some care is required to minimise noise contributions at low frequencies which cause frequency drift.
 
 \subsubsection{Selectivity}\label{section:capture_range}
 
-\Gls{ps} optically pumps the atomic sample into the primary transition pair, for example the $5^2$S$_{1/2}$ F$=3\rightarrow5^2$P$_{3/2}$ F$=4$ transition of Rb85.
-Subsidiary transitions, such as the F$=3\rightarrow$F$=3$, are strongly suppressed and the crossover resonances of \gls{sa} are relatively small and do not cross zero.
+\Gls{ps} optically pumps the atomic sample into the primary transition pair, for example the $5^2$S$_{1/2}$ F=3$\rightarrow5^2$P$_{3/2}$ F=4 transition of Rb85.
+Subsidiary transitions, such as the F=3$\rightarrow$F=3, are strongly suppressed and the crossover resonances that dominate \gls{sa} become comparatively small and do not cross zero.
 This selectivity, which also applies to \gls{mts}, has two important benefits.
-First the \gls{ps} error signal is of the correct sign over the full Doppler with of the sample, free of the zero crossings at nearby resonances that are seen with other techniques such as \gls{sa}, allowing for for high effective feedback bandwidth.
+First the \gls{ps} error signal is of the correct sign over the full Doppler with of the sample, free of the zero crossings at nearby resonances that are seen with other techniques such as \gls{sa}, allowing for high effective feedback bandwidth.
 
 Second, if a laser locked to a \gls{ps} feature becomes unlocked, for example due to an external disturbance, there are no zero-crossings in the feedback error signal to trap the locking servo anywhere but at the desired primary transition.
-This is known as the capture range which is defined as the the range of frequencies about the resonance for which the error signal is of the correct sign to provide negative feedback.
+This defines the capture range; that is, the range of frequencies about the resonance for which the error signal is of the correct sign to provide negative feedback.
 The capture range can be deduced from the error signal by locating the zero-crossings to either side of the resonance as shown in Figure~\ref{figure:capture_range}.
 For the spectra shown in Figure~\ref{figure:capture_range} the \gls{ps} capture range is greater than \unit[$\pm150$]{MHz}, many times larger than that the \unit[$\pm15$]{MHz} of \gls{sa}.
 
