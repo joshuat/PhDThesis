@@ -18,34 +18,35 @@ For each laser, one beam also passed through a double-pass \gls{aom} before bein
 \begin{figure}
 \center
 \includegraphics[width=\linewidth]{part1/Figs/ps_two_laser.pdf}
-\caption[Apparatus used to test the efficacy of polarisation spectroscopy.]{Schematic of the polarisation spectroscopy apparatus used to measure the performance of the high-bandwidth feedback. The beam from the laser passes through an isolator before being split into two beams by an \gls{pbs} and coupled into optical fibres.
-One fibre leads to the \gls{ps} setup shown here, the other to the measurement apparatus via an \gls{aom}.
+\caption[Apparatus used to test the efficacy of polarisation spectroscopy.]{Schematic of the polarisation spectroscopy apparatus used to measure the performance of the high-bandwidth feedback. The beam from the laser passes through an isolator before being split into two beams by a \gls{pbs} and coupled into optical fibres.
+One fibre leads to the \gls{ps} setup shown here, the other to the beatnote or cavity measurements via an \gls{aom}.
 The \gls{ps} setup consists of a polarisation stabilising Glan-Thompson prism followed by a beam expanding telescope.
 The expanded beam is then divided by a \gls{pbs} into a linearly polarised probe and circularly polarised pump which counter-propagate, via a non-polarising 50:50 \gls{bs}, through the magnetically-shielded \unit[15]{cm}-long rubidium gas sample.
 The polarisation rotation of the probe beam is then measured by a balanced polarimeter which consists of a $\lambdaup/2$ waveplate, \gls{pbs} and two high-bandwidth photodetectors (Thorlabs PDA10A).}
 \label{figure:two_laser_setup}
 \end{figure}
 
-In the two near-identical polarisation spectroscopy setups, high quality calcite polarisers where used to stabilise the polarisation of the beam out of the fibre as, despite being polarisation maintaining, ambient temperature changes resulted in polarisation changes in the output beam from the fibres.
-Following the calcite was a beam expanding telescope that expanded the beams to the size of the apertures in the double-layer mu-metal magnetic shields, \unit[1.5]{cm} diameter, reducing transit-broadening and improving the optical pumping within the \unit[7.5]{cm} long rubidium gas cells.
+In the two near-identical polarisation spectroscopy setups, high quality calcite polarisers where used to stabilise the polarisation of the beam out of the fibre because ambient temperature changes resulted in polarisation changes in the output beam from the fibres, even though polarisation maintaining fibres were used.
+Following the calcite a telescope expanded the beams to the size of the apertures in the double-layer mu-metal magnetic shields, \unit[1.5]{cm} diameter.
+Expanding the beams reduced transit-broadening and improved the optical pumping within the \unit[7.5]{cm} long rubidium gas cells.
 The pump and probe beams had typical powers of \unit[2.4]{mW} and \unit[2.7]{mW} respectively.
-High-bandwidth photodetectors\footnote{Thorlabs PDA36A-EC, \unit[150]{MHz} bandwidth} where used in the balanced polarimeter to generate the error signal fed into the servo system.
+High-bandwidth photodetectors\footnote{Thorlabs PDA36A-EC, \unit[150]{MHz} bandwidth} where used in the balanced polarimeter to generate the error signal.
 
 \subsection{Heterodyne Methods}
 
-Heterodyning is a technique, invented by Canadian Reginald Fessenden in 1901, which mixes two frequencies to produce a new frequency~\cite{cooper_physics_2001}.
+Heterodyning is a technique, invented by Reginald Fessenden in 1901, which mixes two frequencies to produce a new frequency~\cite{cooper_physics_2001}.
 The technique can be used to examine the spectral properties of lasers as the newly produced frequencies can be tailored such that they are easily measurable by photodetectors and spectrum analysers.
 
 Laser frequency spectrum measurements using heterodyne technique are simple to implement with the correct equipment.
-The two laser beams are combined such that they co-propagate, requiring some mirrors and a beamsplitter/combiner, and then focused onto a high-bandwidth photodetector, where the bandwidth is dependent on the desired resolution.
-The signal from the detector can then be fed into an equally high bandwidth spectrum analyser which will display the frequency spectrum of the intensity of the light on the detector.
+The two laser beams are combined such that they co-propagate, requiring some mirrors and a beamsplitter/combiner, and then directed onto a high-bandwidth photodetector.
+The signal from the detector can then be fed into a spectrum analyser which will display the power spectral density of the light on the detector.
 Laser heterodyne measurements have the added advantage that they are insensitive to laser amplitude noise.
 
 Heterodyne measurements can also be performed with sound waves, in fact this method is used to tune musical instruments as the new frequency produced can be heard as a `beat' or `beatnote'.
 The term `beatnote' is also used in general to refer to the signal resulting from a heterodyne measurement.
 
 \subsubsection{Basic Theory}
-In the electrical signals context heterodyning involves the `mixing' or multiplying of two signals (e.g. two sine waves) to produce two different signals with frequencies equal to the difference and sum of the original frequencies:
+In the electrical signal context heterodyning involves the `mixing' or multiplying of two signals (e.g. two sine waves) to produce two different signals with frequencies equal to the difference and sum of the original frequencies:
 \begin{equation}
 \sin(\theta_1)\sin(\theta_2) = \frac{1}{2} \cos(\theta_1-\theta_2) - \frac{1}{2} \cos(\theta_1+\theta_2).
 \end{equation}
@@ -74,11 +75,10 @@ The difference in frequency ideally should be fairly small, less than a few GHz,
 
 The equations presented above provide an obviously na\"ive approach as the frequency spread of the lasers is non-zero but gives a sufficient demonstration of the basis of the heterodyne method.
 The spectral profile of the heterodyne signal is formed by the convolution of the spectral profiles of the component lasers, thus strategies are required in order to resolve the lineshape of a single laser.
-For two near identical lasers with Gaussian lineshape the beatnote width is $2\sqrt{2\log_e2}\sim2.35$ larger than the lineshape of the individual lasers (see Appendix~\ref{appendix:heterodyne}).
+For two near identical lasers with Gaussian lineshape the beatnote width is $2\sqrt{2\log_e2}=2.35$ larger than the lineshape of the individual lasers (see Appendix~\ref{appendix:heterodyne}).
 
 \subsubsection{Frequency Reference}
 One method of resolving the lineshape of a single laser is to use a second laser known to have a frequency lineshape much narrower than the laser of interest so that the convolved lineshape is the same as the lineshape of the laser of interest.
-This method has some limitations in its application as it is only useful for resolving the lineshape of lasers with relatively wide spectral width.
 This method is shown in Figure~\ref{figure:heterodyne_reference}.
 
 \begin{figure}
@@ -95,17 +95,19 @@ This method is shown in Figure~\ref{figure:heterodyne_reference}.
     \label{figure:heterodyne_reference}
 \end{figure}
 
-The initial intention with the experiments described in the this chapter was to be able to use a \gls{pdh} locked laser as a frequency reference to characterise the performance of another laser locked with \gls{ps} using high-bandwidth feedback.
-Unfortunately, initial measurements were unable to confirm that the \gls{pdh} locked laser was in fact much narrower than \gls{ps} locked one so more sophisticated methods were required.
+The initial intention with the experiments described in this chapter was to be able to use a \gls{pdh} locked laser as a frequency reference to characterise the performance of another laser locked with \gls{ps} using high-bandwidth feedback.
+Unfortunately, initial measurements were unable to confirm that the \gls{pdh} locked laser was in fact much narrower than \gls{ps} locked laser so more sophisticated methods were required.
 
 \subsubsection{Self-heterodyne}
 
 The self-heterodyne technique involves beating a laser with itself in order to perform a heterodyne measurement, as shown in Figure~\ref{figure:self_heterodyne}~\cite{okoshi_novel_1980}.
-In order to perform this measurement it is necessary to split the laser into two beams and frequency shift on beam, usually with an \gls{aom}, such that the beatnote is not centred at \unit[0]{Hz}.
+In order to perform this measurement it is necessary to split the laser into two beams and frequency shift one beam, usually with an \gls{aom}, such that the beatnote is not centred at DC.
 The two beams are still correlated so it is necessary to propagate one beam to reduce the coherence otherwise the lineshape of the beatnote would just appear as a delta function centred at the \gls{aom} frequency~\cite{richter_linewidth_1986}.
 The beam is typically delayed by a very long optical fibre ideally such that the beam is delayed for as long as the coherence time of the laser.
 Practically this would require optical fibres with lengths from 1 to \unit[100]{km} depending on the linewidth of the laser under investigation.
-Unfortunately the absorption losses in fibres tends to be at least a few dB per kilometre making fibres longer than \unit[10]{km} troublesome to use however it is not necessary to fully decohere the beams with a delay time longer than the coherence time, as discussed in Reference~\cite{richter_linewidth_1986}.
+For example to have minimal coherence between frequency components at \unit[1]{kHz} would require a fibre with a length of \unit[300]{km}.
+Unfortunately the absorption losses in fibres tends to be at least a few dB per kilometre making fibres longer than \unit[10]{km} troublesome.
+Shorter fibres can be used with more complex analysis, as shown by Reference~\cite{richter_linewidth_1986}.
 
 \begin{figure}
     %\centering
@@ -117,14 +119,15 @@ Unfortunately the absorption losses in fibres tends to be at least a few dB per 
     %\centering
     \input{part1/Figs/self-heterodyne.pgf}
     \end{subfigure}
-    \caption[Self-heterodyne measurement.]{Self-heterodyne measurement. The laser is split with one beam frequency shifted by an \gls{aom} from the initial frequency ($\omega_1$, red) to an offset frequency ($\omega_1+\delta$, blue) to enable measurement by a spectrum analyser and then propagated through a long optical fibre to such that the beams are no longer correlated. Shown on the right is the spectral lineshapes of the laser and the heterodyne beatnote (green).}
+    \caption[Self-heterodyne measurement.]{Self-heterodyne measurement. The laser is split with one beam frequency shifted by an \gls{aom} from the initial frequency ($\omega_1$, red) to an offset frequency ($\omega_1+\delta$, blue) to enable measurement by a spectrum analyser and then propagated through a long optical fibre to such that the beams are no longer correlated. Shown on the right are the spectral lineshapes of the laser and the heterodyne beatnote (green).}
     \label{figure:self_heterodyne}
     % Code for pgfs in Code/Figures/HeterodyneVersion.py
 \end{figure}
 
-Self-heterodyne was one of the first diagnostic tools used to measure the performance of \gls{ps}.
-Figure~\ref{figure:self-heterodyne_example} shows a self-heterodyne beatnote from a laser locked with \gls{ps} without high-bandwidth feedback, the figure shows the beatnote at various ranges and resolutions with the full beatnote, the central portion of the beatnote, and a close up of the central peak.
-The centre of the beatnote consists of a central portion with a frequency \gls{fwhm} of \unit[33]{kHz}, an extremely narrow peak in with a \gls{fwhm} of \unit[240]{Hz} and an even narrower small peak with a width under \unit[100]{Hz}.
+Self-heterodyne was used to measure the performance of \gls{ps}.
+Figure~\ref{figure:self-heterodyne_example} shows measurements of a self-heterodyne beatnote from a laser locked with \gls{ps} without high-bandwidth feedback.
+The figure shows the beatnote at various ranges and resolutions with the full beatnote, the central portion of the beatnote, and a close up of the central peak.
+The centre of the beatnote consists of a central portion with a frequency \gls{fwhm} of \unit[33]{kHz}, an extremely narrow peak with a \gls{fwhm} of \unit[240]{Hz} and an even narrower small peak with a width under \unit[100]{Hz}.
 The central portion has a width comparable to the \gls{ps} linewidth reported in Reference~\cite{torii_laser-phase_2012}, \unit[20]{kHz}, and it was unclear whether the central peaks were due to the laser frequency spread or due to the correlated portions of the laser.
 Due to this uncertainty it was necessary to perform additional measurements to determine the true linewidth achievable with \gls{ps}.
 
@@ -141,9 +144,9 @@ The horizontal axis indicates the frequency from the beatnote centre.}
 
 \subsubsection{Two-Laser Heterodyne}\label{section:two-laser_heterodyen}
 
-Two almost identical lasers setups can be used in a heterodyne measurement to determine the lineshape under the assumption that the lineshape of each laser is the same.
+Two almost identical laser setups can be used in a heterodyne measurement to determine the lineshape under the assumption that the lineshape of each laser is the same.
 This method is very similar to the self-heterodyne technique without the need to consider the coherence between the two beams.
-As with self-heterodyne it is necessary to frequency shift one of the beams with an \gls{aom} such that the beatnote is not centred at \unit[0]{Hz}.
+As with self-heterodyne it is necessary to frequency-shift one of the beams with an \gls{aom} such that the beatnote is not centred at DC.
 A summary of two-laser heterodyne is shown in Figure~\ref{figure:two-laser_heterodyne}.
 
 \begin{figure}
@@ -160,7 +163,7 @@ A summary of two-laser heterodyne is shown in Figure~\ref{figure:two-laser_heter
     \label{figure:two-laser_heterodyne}
 \end{figure}
 
-Two-laser heterodyne provides a useful measurement due to its simplicity and the lack of confounding effects (such as those found with self-heterodyne) and thus can relatively easily provide confidence in the results of the measurement.
+Two-laser heterodyne provides a useful measurement due to its simplicity and the lack of confounding effects (such as those found with self-heterodyne) and thus can provide greater confidence in the results of the measurement.
 The downside of this method is the obvious requirement for two very similar lasers frequency stabilised with the same methods.
 
 In order to test the efficacy of high-bandwidth \gls{ps} two similar laser setups were used; both used commercial Littrow configuration lasers, identical optic setups as shown in Figure~\ref{figure:two_laser_setup} with optical fibres that can be connected to the diagnostic measurements such as the heterodyne setup and the high-finesse cavity.
@@ -169,10 +172,10 @@ One laser was frequency shifted with a double-pass \gls{aom}, to give a total fr
 The \unit[1]{GHz} detector\footnote{NewFocus 1621} was connected to a spectrum analyser\footnote{\unit[9]{kHz} to \unit[7]{GHz} Rohde and Schwarz FSP7} to measure the spectrum of the beatnote that was centred around \unit[160]{MHz} due to the frequency shift imposed on one beam of the heterodyne measurement by the \gls{aom}.
 An example of a beatnote from two lasers locked with \gls{ps} with high-bandwidth feedback is shown in Figure~\ref{figure:two_laser_beatnote}.
 The majority of the optical power is contained within the central peak of the beatnote which, unlike self-heterodyne, can confidently be said to be due only to the frequency spectrum of the lasers.
-The central peak has a \unit[$-3$]{dB} width (\gls{fwhm}) of \unit[2$\pm$0.4]{kHz}.
-As the lasers are uncorrelated and assuming they have identical Gaussian lineshapes indicates that the individual lasers have an \gls{rms} linewidth of \unit[0.60$\pm$0.1]{kHz}.
+The central peak has a \unit[$-3$]{dB} width (\gls{fwhm}) of \unit[2.0$\pm$0.4]{kHz}.
+As the lasers are uncorrelated and assuming they have identical Gaussian lineshapes indicates that the individual lasers have an \gls{rms} linewidth of \unit[0.6$\pm$0.1]{kHz}.
 The `shoulders' of the beatnote at \unit[$\pm$1.5]{MHz} correspond to the servo bump of the fully locked noise spectrum shown in Figure~\ref{figure:psd}.
-These measurements indicate that \gls{ps} with high-bandwidth feedback is able to narrow the laser linewidth to \unit[0.6$\pm$0.1]{kHz} which is significant improvement, two orders of magnitude, over previously published \gls{ps} performance~\cite{torii_laser-phase_2012}.
+These measurements indicate that \gls{ps} with high-bandwidth feedback is able to narrow the laser linewidth to \unit[0.6$\pm$0.1]{kHz} which is a significant improvement, by two orders of magnitude, over previously published \gls{ps} performance~\cite{torii_laser-phase_2012}.
 
 \begin{figure}
 \center
@@ -185,6 +188,8 @@ Both figures are 50-shot averages captured with resolution bandwidths of \unit[3
 
 The measurement shown in Figure~\ref{figure:two_laser_beatnote} is a 50-shot average with a total measurement time of approximately \unit[2]{seconds}.
 Individual measurements, with measurement times around \unit[40]{ms}, had \unit[-3]{dB} widths as low as \unit[880$\pm$280]{Hz}, corresponding to a \gls{rms} laser linewidth of \unit[270$\pm$90]{Hz}.
+These measurements show, for the first time, \gls{ps} achieving sub-kilohertz linewidth narrowing, a regime previously relegated to the more complex \gls{pdh}.
+\Gls{ps} is able to achieve this low linewidth without the need for modulation or a high-finesse cavity while providing an absolute reference.
 
 \subsection{Cavity Diagnostics}
 
