@@ -193,18 +193,21 @@ These measurements show, for the first time, \gls{ps} achieving sub-kilohertz li
 
 \subsection{Cavity Diagnostics}
 
+To confirm the linewidth narrowing results shown by the hetrodyne method, we used a high-finesse optical cavity to directly measure the frequency spectrum of a single laser.
+Although FM demodulation of the heterodyne beatnote can be used to determine the frequency noise spectrum~\cite{turner_frequency_2002}, wide bandwidth FM demodulation is technically difficult and the results are still a convolution of the nosie spectra of two lasers.
+A cavity readily provides the noise spectrum for a single laser.
 The high-finesse optical cavity used for \gls{pdh} frequency stabilisation provides a useful diagnostic tool for examining laser spectral behaviour.
-There are a large number of ways that the cavity can be used to examine the spectral behaviour of a laser system, two that were particularly useful are detailed in this section.
+There are a large number of ways that the cavity can be used to examine the spectral behaviour of a laser system; two that were particularly useful are detailed in this section.
 
 \subsubsection{Cavity Resonance Sweep}
 
-The high-finesse optical cavity provides a useful tool for quickly checking the efficacy of high-bandwidth locking if the cavity and final laser linewidth are within a few orders of magnitude of each other.
-While attempting to lock a laser the transmission of the laser through the cavity, an \gls{aom} is used to sweep the frequency of the diagnostic beam across the cavity resonance, the jitter of the laser can be monitored as the bandwidth of the locking scheme is increased.
-An example of this process is shown in Figure~\ref{figure:cavity_scans} where the laser is locked with \gls{ps} as the bandwidth of the servo system is increased.
+The high-finesse optical cavity provides a useful tool for quickly checking the efficacy of high-bandwidth locking if the cavity linewidth and final laser linewidth are within a few orders of magnitude of each other.
+While attempting to lock a laser, the transmission of a portion of the laser beam through the cavity can be monitored.
+By sweeping the diagnostic beam frequency incident on the cavity across the cavity resonance, with an \gls{aom}, the laser frequency jitter can be monitored as the bandwidth of the locking scheme is increased.
+An example of this process is shown in Figure~\ref{figure:cavity_scans} where the laser is locked with \gls{ps} and the bandwidth of the servo system is varied.
 The resulting traces provide a clear illustration of the effect of increased locking bandwidth.
-With piezo-only locking the peak appears broad as the laser jitters about the resonant frequency, with slow-current feedback the transmission peak shape becomes apparent.
-Finally, with high-bandwidth feedback the full transmission function of the cavity is apparent with the peak width limited by the cavity finesse indicating that the laser linewidth is much smaller than the cavity linewidth.
-This method proved particularly useful when performing two-laser heterodyne measurements with \gls{ps} locked lasers as the successful locking of the laser could be confirmed with the cavity before attempting to measure the heterodyne beatnote.
+With piezo-only locking the peak appears broad as the laser jitters about the resonant frequency; with slow-current feedback the transmission peak shape becomes apparent.
+Finally, with high-bandwidth feedback the transmission function of the cavity is clear with the peak width limited by the cavity finesse indicating that the laser linewidth is much smaller than the cavity linewidth.
 
 \begin{figure}
 \center
@@ -216,8 +219,8 @@ This method proved particularly useful when performing two-laser heterodyne meas
 
 \subsubsection{One-Sided Peak Measurements}\label{section:one_sided_peak}
 
-If the linewidth of the laser is lower than that of the optical cavity then the cavity can be used to measure the linewidth of the laser.
-As shown in Section~\ref{section:cavity_theory}, the transmission through the cavity, as a function of laser frequency, can be described by a Airy function,
+If the linewidth of the laser is lower than that of the optical cavity then the cavity can be used as a frequency discriminator, to convert frequency noise to electrical noise which can then be analysed to determine the laser frequency noise spectrum and linewidth.
+As shown in Section~\ref{section:cavity_theory}, the transmission through the cavity, as a function of laser frequency, can be described by an Airy function,
 \begin{equation}
 T(f) = \frac{1}{1+F\left(\frac{\omega L}{c}\right)^2}.
 \end{equation}
@@ -235,10 +238,14 @@ The laser used with this measurement was locked with \gls{ps} and high-bandwidth
 % Code and data located at Code/PolSpec Code/Laser/Linewidth Through Cavity/linewidth.py
 \end{figure}
 
-This cavity transmission actually includes contributions from the both the laser frequency and amplitude noise.
-An estimate of the linewidth contribution from amplitude noise for this measurement can be made by placing the detector in front of the cavity and setting the power incident on the cavity to the same as that used in the measurement followed by mapping as normal.
+The cavity transmission actually includes contributions from both the frequency and amplitude noise of the laser.
+An estimate of the linewidth contribution from amplitude noise requires an almost identical measurement without the frequency discrimination provided by the cavity.
+By placing the detector in front of the cavity and ensuring the power incident on the cavity is the same as the average power of the cavity transmission measurement the amplitude noise contribution can be determined.
 This measurement indicates that the amplitude noise contribution was \unit[1.4$\pm$0.2]{kHz}.
-Assuming that the frequency and amplitude noise is uncorrelated and that the observed signal is a convolution of the two indicates that the linewidth determined from the cavity transmission mapping consists of the \unit[1.4$\pm$0.2]{kHz} amplitude noise in combination with a frequency noise linewidth of \unit[2.0$\pm$0.5]{kHz} to produce the frequency distribution shown in Figure~\ref{figure:side_of_peak} which has a linewidth of \unit[2.4$\pm$0.3]{kHz}.
+This analysis assumes that the frequency and amplitude noise are uncorrelated and that the observed signal is a convolution of the two.
+ indicates that the linewidth determined from the cavity transmission mapping consists of the \unit[1.4$\pm$0.2]{kHz} amplitude noise in combination with a frequency noise linewidth of \unit[2.0$\pm$0.5]{kHz} to produce the frequency distribution shown in Figure~\ref{figure:side_of_peak} which has a linewidth of \unit[2.4$\pm$0.3]{kHz}.
+
+{\color{red}Finish fixing the above sentence.}
 
 \subsection{Frequency Noise Measurements}
 
