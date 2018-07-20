@@ -1,42 +1,4 @@
-\section{Conclusion}
-
-The various linewidth measurements for \gls{ps} with high-bandwidth feedback are summarised in Table~\ref{table:linewidths}.
-The simplest and most reliable method, two-laser heterodyne, indicates that the laser linewidth achievable with this laser frequency stabilisation technique is \unit[0.6$\pm$0.1]{kHz}, well below previously demonstrated with \gls{ps}.
-The difference in linewidth measured with the two cavity methods can be explained by the low-frequency cutoff of the frequency noise integration method, as the spectrum analysers where unable to measure frequency contributions below \unit[24]{Hz}.
-The discrepancy between the two-laser heterodyne measurement and the cavity measurements can be attributed to the affects of laser intensity noise on the cavity measurements and the contributions from high-frequency noise which forms the broad `pedestal' visible in the beatnote but does not affect the heterodyne width.
-
-\begin{table}
-\centering
-\begin{tabular}{c c c}
-\\
-\hline
-  & Method & RMS Linewidth (kHz) \\ \hline
-  (i) & Cavity one-sided peak & \,\,$2.0 \pm 0.5$ \\
-  (ii) & Cavity transmission integral & \,\,$1.68 \pm 0.49$ \\
-  (iii) & Heterodyne & $0.60\pm0.1$ \\
-  (iv) & Long-term drift & \,\,$51$ \\ \hline\end{tabular}
-
-\caption{Spectral linewidth results from \gls{ps} locked lasers.
-(i) Mapping the transmission noise through the optical cavity to the cavity transmission function followed by deconvolving from the amplitude noise.
-(ii) The results from integrating the power-spectral density of the cavity transmission signal, Figure~\ref{figure:psd}.
-(iii) Laser linewidth derived from the heterodyne measurement, Figure~\ref{figure:two_laser_beatnote}.
-(iv) Long-term stability measured with the optical cavity, Figure~\ref{figure:ps_drift}.}
-\label{table:linewidths}
-\end{table}
-
-The high-bandwidth feedback system indicates that \gls{ps} is capable of achieving spectral linewidth previously only reachable with expensive high-finesse optical cavities.
-The long-term frequency stability is easily sufficient for many laser cooling experiments and is significantly lower that previously demonstrated long term drifts with other laser systems and stabilisation techniques.
-
-Further improvements to spectral linewidth could be improved if the noise in the \gls{ps} measurement can be decreased and the signal strength improved allowing for lower shot-noise and greater noise suppression.
-Drift can be expected to improve with active temperature stabilisation of the atomic gas cells, active laser-power stabilisation into the \gls{ps} setup, and free space propagation rather than the use of optical fibres.
-
 \section{Cat-eye Laser Beatnote}
-
-Sometime after the work described in this chapter was summarised and published in Reference~\cite{torrance_sub-kilohertz_2016} MOGLabs was able to supply two identical new cat-eye configuration~\cite{thompson_narrow_2012} lasers\footnote{MOGLabs CEL}.
-These two lasers were inserted into the experimental setup described in Section~\ref{section:ps_experimental_setup} in place of the \glspl{ecdl}.
-These lasers were able to achieve an individual laser \gls{rms} linewidth of \unit[0.36]{kHz} as shown in Figure~\ref{figure:cateye_beatnote}.
-An interesting feature of this beatnote is the smaller peak to the left of the main peak which is due to the two lasers not having exactly the same lock-point and the amplitude modulation caused by the \gls{aom} that frequency shifts one of the laser beam for the heterodyne measurement.
-This feature is not visible in other beatnote measurements as the lasers were locked to the same point and the equivalent peak was drowned out by the central peak of the beatnote.
 
 \begin{figure}
 \center
@@ -46,3 +8,48 @@ Both figures are 50-shot averages captured with resolution bandwidths of \unit[3
 \label{figure:cateye_beatnote}
 % Code and data located at 2016.09.22/BeatnoteInset2.py
 \end{figure}
+
+Sometime after the work described in this chapter was summarised and published in Reference~\cite{torrance_sub-kilohertz_2016} MOGLabs was able to supply two identical new cat-eye configuration lasers\footnote{MOGLabs CEL} that use high-bandwidth low-phase-delay in-laser modulation electronics~\cite{thompson_narrow_2012}.
+These two lasers were inserted into the experimental setup described in Section~\ref{section:ps_experimental_setup} in place of the \glspl{ecdl}.
+These lasers were able to achieve an individual laser \gls{rms} linewidth of \unit[0.36]{kHz} as shown in Figure~\ref{figure:cateye_beatnote}.
+An interesting feature of this beatnote is the smaller peak to the left of the main peak which is due to residual amplitude modulation caused by the \gls{aom} that is usually hidden under the main peak.
+ the two lasers not having exactly the same lock-point and the amplitude modulation  that frequency shifts one of the laser beams for the heterodyne measurement.
+This feature is not visible in other beatnote measurements as the lasers were locked to the same point and the equivalent peak was drowned out by the central peak of the beatnote.
+
+\section{Conclusion}
+
+The various linewidth measurements for \gls{ps} with high-bandwidth feedback are summarised in Table~\ref{table:linewidths}.
+The simplest and most reliable method, two-laser heterodyne, indicates that the laser linewidth achievable with this laser frequency stabilisation technique is \unit[0.6$\pm$0.1]{kHz}, well below previously demonstrated with \gls{ps}.
+The difference in linewidth between the cavity one-sided-peak and cavity \gls{psd} integration measurements can be explained by the low-frequency cutoff of the spectrum analyser used in the integration.
+The discrepancy between the two-laser heterodyne measurement and the cavity measurements can be attributed to the effects of laser intensity noise on the cavity measurements and the contributions from high-frequency noise which forms the broad `pedestal' visible in the beatnote but does not affect the heterodyne width.
+
+\begin{table}
+\centering
+\begin{tabular}{c c c}
+\\
+\hline
+        & Method                       & RMS Linewidth (kHz) \\ \hline
+  (i)   & Cavity one-sided peak        & \,\,$2.0 \pm 0.5$   \\
+  (ii)  & Cavity transmission integral & \,\,$1.68 \pm 0.49$ \\
+  (iii) & Heterodyne                   & $0.60\pm0.1$        \\
+  (iv)  & Heterodyne (cateye)          & $0.36$              \\
+  (v)   & Long-term drift              & \,\,$51$            \\ \hline\end{tabular}
+
+\caption{Spectral linewidth results from \gls{ps} locked lasers.
+(i) Mapping the transmission noise through the optical cavity to the cavity transmission function followed by deconvolving from the amplitude noise.
+(ii) The results from integrating the power-spectral density of the cavity transmission signal, Figure~\ref{figure:psd}.
+(iii) Laser linewidth derived from the heterodyne measurement, Figure~\ref{figure:two_laser_beatnote}.
+(iv) Laser linewidth derived from the heterodyne measurement using cateye lasers, Figure~\ref{figure:cateye_beatnote}.
+(v) Long-term stability measured with the optical cavity, Figure~\ref{figure:ps_drift}.}
+\label{table:linewidths}
+\end{table}
+
+The high-bandwidth feedback system indicates that \gls{ps} is capable of achieving spectral linewidth previously only reachable with expensive high-finesse optical cavities.
+The long-term frequency stability is easily sufficient for many laser cooling experiments and is significantly lower that previously demonstrated long term drifts with other laser systems and stabilisation techniques while at the same time providing substantial linewidth narrowing.
+
+Further improvements to spectral linewidth could be improved if the noise in the \gls{ps} measurement can be decreased and the signal strength improved allowing for lower shot-noise and greater noise suppression.
+Drift can be expected to improve with active temperature stabilisation of the atomic gas cells, active laser-power stabilisation into the \gls{ps} setup, and free space propagation rather than the use of optical fibres.
+
+The investigations described in this chapter have advanced the understanding of high-bandwidth absolute laser frequency stabilisation which may prove useful in the complex ionisation processes utilised by the \gls{caeis}, laser spectroscopy and laser cooling applications.
+This research was also instrumental in learning how to utilise high-bandwidth for linewidth narrowing which aided MOGLabs in developing new laser electronics for direct modulation of the diode injection current, and a new fast servo controller\footnote{MOGLabs Fast Servo Controller, \unit[40]{MHz} bandwidth.}.
+The use of high-finesse cavities for laser stabilisation, with application for interacting with Rydberg state with a \gls{caeis}, and as a powerful diagnostic tool have been explored.
