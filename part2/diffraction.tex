@@ -1,26 +1,26 @@
 \chapter{Ultrafast Electron Diffractive Imaging}\label{chapter:diffraction}
 
-One of the central motivations for the development of \gls{caeis} is their potential use as an electron source for the creation of molecular movies~\cite{van_der_geer_ultracold_2009}.
-One of the stepping stones towards molecular movies is achieving single-shot ultrafast diffractive imaging and single-shot electron diffraction from gold nanofoils has already been demonstrated~\cite{speirs_single-shot_2015}.
-If care is taken with the ionisation pathways the \gls{caes} is able to produce ultrafast bunches of cold electrons, as discussed in Section~\ref{section:two_stage_ionisation}~\cite{speirs_single-shot_2015,speirs_identification_2017,speirs_electron_2017}.
-With improvements to the bunch current the next generation \gls{caes} will have the potential to do Bragg diffraction from simple samples that is both single-shot and ultrafast and eventually \gls{cdi}~\cite{mcculloch_cold_2016}.
+One of the central motivations for the development of the \gls{caeis} is its potential use as an electron source for the creation of molecular movies~\cite{van_der_geer_ultracold_2009}.
+One of the stepping stones towards molecular movies is achieving single-shot ultrafast diffractive imaging.
+Single-shot electron diffraction from gold nanofoils has already been demonstrated with a cold-atom source~\cite{speirs_single-shot_2015} but far from the temporal resolution required for \gls{ued}.
+With appropriate control of the ionisation pathways, we have previously shown that a \gls{caes} can produce ultrafast bunches of cold electrons, as discussed in Section~\ref{section:two_stage_ionisation}~\cite{speirs_single-shot_2015,speirs_identification_2017,speirs_electron_2017}.
+Improvements to the bunch current in the next generation of \gls{caes} may enable single-shot and ultrafast Bragg diffraction from simple samples, and perhaps \glsreset{cdi}\gls{cdi}~\cite{mcculloch_cold_2016}.
 
-Previous results from the \gls{caes} have shown diffraction from large crystalline samples using traditional crystallographic techniques~\cite{speirs_single-shot_2015,speirs_electron_2017}.
-This chapter describes extensions to those results, namely demonstrating ultrafast diffraction from gold nanofoils and using a additional voltage bias applied to the sample holder to achieve the required beam energy for diffraction from polycrystalline aluminium.
+Previous results from the Melbourne \gls{caes} have shown diffraction from large crystalline samples using traditional crystallographic techniques~\cite{speirs_single-shot_2015,speirs_electron_2017}.
+This chapter describes extensions to those results, namely demonstrating ultrafast diffraction from gold nanofoils, and using an additional voltage bias applied to the sample holder to achieve the required beam energy for diffraction from polycrystalline aluminium.
 
 \section{Crystallography}
 
-Crystallography refers the the science of diffractive imaging from crystals and has been studied for over \unit[100]{years}, being the subject of the 1915 Nobel prize in physics~\cite{bragg_structure_1913}.
-Crystallography has been an highly productive science generating numerous Nobel prizes and producing results such as the structure of DNA~\cite{franklin_structure_1953,dennis_eternal_2003}.
-There are over 100,000 entries in the Protein Data Bank from from X-ray crystallography~\cite{noauthor_pdb_nodate}.
+Crystallography refers to the science of diffractive imaging from crystals and has been studied for over \unit[100]{years}, being the subject of the 1915 Nobel prize in physics~\cite{bragg_structure_1913}.
 Crystallographic techniques have been under constant development and refinement since their inception.
-The majority of crystallography to date has been performed using X-rays however relatively recent developments have utilised electrons as electron diffraction techniques are more versatile than those of X-rays~\cite{cowley_electron_1992}.
+The majority of crystallography to date has been performed using X-rays however relatively recent developments have utilised electrons, cryo-electron microscopy has provided another avenue for imaging membrane proteins and other non-crystallisable molecules~\cite{zeitler_cryo_1982,cowley_electron_1992}.
 
-Due to the mature understanding of crystallographic techniques, crystallography is ideal for the first steps in demonstrating the capabilities of a \gls{caes}.
+Due to the mature understanding of crystallographic techniques, crystallography is ideal for the first steps in demonstrating the capabilities of the \gls{caes}.
 While the \gls{caes} is able to operate in \gls{cw} mode the performance with this apparatus has been optimised for pulse mode (see Section~\ref{section:pulse_vs_continuous}) and thus the results described in this chapter have been taken with pulsed bunches of electrons.
 
 \subsection{Theory}
 
+The theory of Bragg diffraction is well developed and the basics of the theory are presented here to provide a context for the diffraction results presented later in this chapter~\cite{kittel_introduction_2004}.
 Crystalline structures consist of repeated sub-structures, unit cells, each with identical arrangements of atoms.
 A perfect infinite crystal can be described as a lattice of unit cells where a set of basis vectors, $\mathbf{\hat{a}}$, $\mathbf{\hat{b}}$, and $\mathbf{\hat{c}}$, can be used to describe translations,
 \begin{equation}
@@ -35,17 +35,17 @@ The reciprocal lattice is described by the reciprocal lattice basis vectors, $\m
 \begin{align}
 \mathbf{\hat{a}^*}&=\frac{2\pi\:\mathbf{\hat{b}}\times\mathbf{\hat{c}}}{\mathbf{\hat{a}}\cdot (\mathbf{\hat{b}} \times \mathbf{\hat{c}})},  &  \mathbf{\hat{b}^*}&=\frac{2\pi\:\mathbf{\hat{c}}\times\mathbf{\hat{a}}}{\mathbf{\hat{a}}\cdot (\mathbf{\hat{b}} \times \mathbf{\hat{c}})},  &  \mathbf{\hat{c}^*}&=\frac{2\pi\:\mathbf{\hat{a}}\times\mathbf{\hat{b}}}{\mathbf{\hat{a}}\cdot (\mathbf{\hat{b}} \times \mathbf{\hat{c}})}.
 \end{align}
-The $2\pi$ originates from the convention chosen for the wave-vector, $|\mathbf{k}|=2\pi/\lambda$. The reciprocal lattice vector is thus,
+The $2\pi$ originates from the convention chosen for the wave-vector, $|\mathbf{k}|=2\pi/\lambda$. The reciprocal lattice vector is thus
 \begin{equation}
 \mathbf{g} = h\mathbf{\hat{a}^*} + k\mathbf{\hat{b}^*} + l\mathbf{\hat{c}^*},
 \end{equation}
 where the integers $h$, $k$, and $l$ are known as the Miller indices.
 
-Scattering events can be described by, $\mathbf{q}$, the scattering vector, which is the difference between the initial and final wavevectors, $\mathbf{k_0}$ and $\mathbf{k}$;
+Scattering events can be described by $\mathbf{q}$, the scattering vector, which is the difference between the initial and final wavevectors $\mathbf{k_0}$ and $\mathbf{k}$;
 \begin{equation}
 \mathbf{q} = \mathbf{k} - \mathbf{k_0}.
 \end{equation}
-In the case of elastically scatter waves, $|\mathbf{k}| = |\mathbf{k_0}|$.
+In the case of elastically scattered waves, $|\mathbf{k}| = |\mathbf{k_0}|$.
 Constructive interference occurs only where $\mathbf{q}$ is equal to a reciprocal lattice vector, so the scattering condition for crystals is
 \begin{equation}
 \mathbf{q} = \mathbf{g}.
@@ -67,30 +67,31 @@ If we combine Equations~\ref{equation:diffraction_angle} and \ref{equation:diffr
 \end{equation}
 where $n$ is the diffraction order.
 
-The relative intensity of a wave with scattering vector $\mathbf{q}$ is given by
+The relative intensity of a wave with scattering vector $\mathbf{q}$ is
 \begin{equation}
 I(\mathbf{q}) = \left|\tilde{V}(\mathbf{q})\right|^2,
 \end{equation}
 where $\tilde{V}(\mathbf{q})$ is the Fourier transform of the crystal potential evaluated at $\mathbf{q}$ and we approximate to single-scattering events only.
 
-The Fourier transform of the crystal potential, for an infinite crystal, can be written in terms of the structure factors, $V_g$,
+The Fourier transform of the crystal electronic potential, for an infinite crystal, can be written in terms of the structure factors $V_g$:
 \begin{equation}
 \tilde{V}_{inf}(\mathbf{q}) = (2\pi)^3 \sum_g V_g \, \delta(\mathbf{q} - \mathbf{g}),
 \end{equation}
-where the sum takes the scattering contribution from all the reciprocal lattice points in to account, and the scattering condition is implemented with the Dirac delta.
+where the sum takes the scattering contribution from all the reciprocal lattice points, and the scattering condition is implemented with the Dirac delta.
 The crystal basis affects the calculation of the structure factors for each reciprocal lattice point.
 For a particular reciprocal lattice point, the structure factor is calculated by taking the position $\mathbf{x_j}$ and scattering factors $\tilde{V}_j$ for each atom, $j$, in the crystal basis:
 \begin{equation}
 V_g = \frac{1}{V_{cell}}\sum\tilde{V}_j(\mathbf{g})e^{-i\mathbf{g}\cdot\mathbf{x_j}}.
 \end{equation}
-$V_{cell}$ is the volume of the unit cell. The Fourier transform of an isolated atomic potential gives the scattering factors, $\tilde{V}_j(\mathbf{k})$ which are not the same as the Fourier transform of the whole crystal potential, $\tilde{V}(\mathbf{k})$.
+$V_{cell}$ is the volume of the unit cell.
+The Fourier transform of an isolated atomic potential gives the scattering factors $\tilde{V}_j(\mathbf{k})$ which are not the same as the Fourier transform of the whole crystal potential, $\tilde{V}(\mathbf{k})$.
 $\tilde{V}_j(\mathbf{g})$ represents the probability that the atom $j$ will scatter an electron in to a direction corresponding to $\mathbf{g}$.
 Scattering factors for most elements for a range of scattering angles and electron energies have been tabulated~\cite{peng_electron_1999}.
 The numerical values for scattering factors are different for electrons and X-rays and are more commonly referred to as \emph{atomic form factors} in X-ray diffraction.
 
-Due to the relatively low electron energy and bunch count used with the \gls{caes} it was necessary to use fairly thin samples to avoid overly attenuating the beam.
+Due to the relatively low electron energy and bunch charge the \gls{caes} it was necessary to use thin samples to achieve detectable transmission of the scattered electrons.
 The use of thin samples causes a significant deviation from the infinite crystal assumption presented above.
-For a finite crystal the potential can be calculated by incorporating the \emph{shape function}, $S(\mathbf{x})$, into the calculation;
+For a finite crystal the potential can be calculated by incorporating the \emph{shape function}, $S(\mathbf{x})$, into the calculation:
 \begin{equation}
 V(\mathbf{x}) = V_{inf}(\mathbf{x})S(\mathbf{x})
 \end{equation}
@@ -103,36 +104,36 @@ S(\mathbf{x}) = \left\{\begin{array}{l l}
 \right.
 \end{equation}
 
-The Fourier transform of this potential, with the delta functions softened into sinc functions, is
+The delta functions are softened into sinc function to simulate the finite crystal size.
+The Fourier transform of the finite crystal potential is then
 \begin{equation}\label{equation:foil_ft_potential}
 \tilde{V}(\mathbf{q}) = \sum_g V_g \: t_x  t_y  t_z \: \text{sinc}{\left( \frac{(q_x-g_x)t_x}{2} \right)} \,\, \text{sinc}{\left( \frac{(q_y-g_y)t_y}{2} \right)} \,\, \text{sinc}{\left( \frac{(q_z-g_z)t_z}{2} \right)}.
 \end{equation}
 Here, $t_x$, $t_y$ and $t_z$ are the sizes of the illuminated portions of the crystal.
-As we use crystal foils in the experiments presented here , the sinc terms end up limiting towards delta functions in the two large dimensions, $x$ and $y$.
+As we use thin crystal foils in the experiments presented here, the sinc terms end up limiting back towards delta functions in the two large dimensions, $x$ and $y$.
 Equation~\ref{equation:foil_ft_potential} indicates that the diffraction condition does not need to be exactly met in order to diffract electrons in a particular direction.
-The intensity of the diffracted spot will be reduced the further from meeting the diffraction condition the situation is.
 
 \subsection{Diffraction Geometry}
 
-A typical transmission electron diffraction apparatus uses a collimated beam of electrons, directed through the sample and then observes the angle to which the electrons diffract.
+A typical transmission electron diffraction apparatus uses a collimated beam of electrons directed through the sample and detects the electron flux as a function of diffraction angle.
 The use of a collimated beam simplifies the treatment of the reciprocal space as any diffracted electrons interacting with a specific reciprocal lattice point will be scattered in the same direction.
 This results in a series of beamlets which correspond to the reflections where each beamlet is also collimated and of the same size an the incident beam.
-In order to resolve the beamlets, they can either be propagated to the far field or passed through a lens in order to place the detector in the focal plane.
+In order to resolve the beamlets, they can either be propagated to the far field or passed through a lens with the detector at the focal plane.
 
-Propagating the beam to the far field requires satisfying the Fraunhofer condition,
+Propagating the beam to the far field requires satisfying the Fraunhofer condition
 \begin{equation}
 W^2 \ll \Delta z\,\lambda,
 \end{equation}
 where $W$ is the transverse size of the initial beam, $\Delta z$ is the propagation distance and $\lambda$ is the electron wavelength.
 The Fraunhofer condition requires either the beam size to be very small or the propagation distance to be very large.
-The more practical method is to use a lens to artificially propagate the beam.
+Propagation to the far field converts angle to transverse displacement which can also be achieved with a lens with less propagation.
 Lenses are the usual method used in \gls{tem} and the lenses are often combined with other sophisticated beam optics allowing for diffraction and imaging of a variety of samples and geometries.
 The downside is the obvious complexity and cost associated with sophisticated beam optics.
 
 A \gls{tem} consist of a relatively simple electron source combined with complex optics and in contrast our \gls{caes} consists of a complex electron source with relatively primitive beam optics.
 For the measurements described in this chapter we only use a simple condenser lens between the source and sample to focus the beam on to the detector (the quadrupole lens discussed in Section~\ref{section:quadrupole} was added after these measurements were taken).
 The beam was focused onto the detector in order to increase the intensity of the Bragg spots to inprove the \gls{snr}.
-Due to the non-collimated beam there is a spread of incident angles at the crystalline samples that results in the reflected beamlets possessing the same convergence angle as the incident beam.
+Due to the non-collimated beam there is a spread of incident angles at the crystalline samples that results in the reflected beamlets possessing the same convergence angle as the incident beam allowing the \gls{snr} to be maximised by focusing the beam onto the detector.
 A schematic of the experimental setup is shown in Figure~\ref{figure:diffraction_geometry}.
 
 \begin{figure}
@@ -145,27 +146,30 @@ A schematic of the experimental setup is shown in Figure~\ref{figure:diffraction
 \section{Experimental Setup}
 
 For the results presented in this chapter the apparatus described in Chapter~\ref{chapter:setup} was used to produce pulsed bunches of electrons.
-The energy of the beam was close to the maximum the accelerator is able to produce, with the electrons given \unit[11.7]{keV}.
+The energy of the beam was \unit[11.7]{keV}, close to the maximum possible without breakdown.
 
 The majority of the data presented here was generated using electron bunches produced with ionisation pathways designed to maximise beam current.
 The exception was the ultrafast diffraction measurements which used the ionisation pathways that produced ultrafast electron bunches, as described in Section~\ref{section:two_stage_ionisation}~\cite{speirs_single-shot_2015,speirs_identification_2017,speirs_electron_2017}.
 
-These measurement did not take advantage of the beam shaping potential of the source instead the red excitation laser was given enough optical power to saturate the atom cloud, thus producing a higher beam current than is possible with shaping.
-The excitation laser beam profile was Gaussian in beamshape with a \gls{fwhm} of \unit[80]{$\muup$m} at the \gls{mot} however, due to the laser intensity saturating the atom cloud, the electron bunches took on the shape of the atomic cloud which was roughly Gaussian.
-The transverse bunch profile was not of particular concern as it was focused to a point at the detector.
-The electron bunches at the source under similar conditions have been determined to have a Gaussian shape with a \gls{fwhm} of \unit[1.4]{mm} with a divergence of $\sigma_{\theta_x}$=\,\unit[0.3]{$\muup$rad} and thus a source emittance of $\epsilon_x$=\,\unit[50]{nm\,rad}~\cite{mcculloch_high-coherence_2013}.
+These measurements did not take advantage of the beam shaping potential of the source.
+Instead, the red excitation laser was adjusted to ensure saturation of the transition across the the atom cloud, to produce a higher beam current than is possible with shaping.
+The excitation laser beam profile was Gaussian in beamshape with a \gls{fwhm} of \unit[80]{$\muup$m} at the \gls{mot}.
+Saturation of the excitation resulted in the electron bunches taking on the shape of the atomic cloud, which was approximately Gaussian.
+The transverse bunch profile was not of particular concern because it was focused to a point at the detector.
+Under similar conditions, the shape of the electron bunches was determined to have a Gaussian shape with a \gls{fwhm} of \unit[1.4]{mm} with a divergence of $\sigma_{\theta_x}$=\,\unit[0.3]{$\muup$rad} and thus a source emittance of $\epsilon_x$=\,\unit[50]{nm\,rad}~\cite{mcculloch_high-coherence_2013}.
 
 The number of electrons per pulse when producing ns-duration bunches with this setup was measured with a Faraday cup to be $5\times10^5$ which corresponds to a bunch charge of \unit[80]{fC}.
 
 The solenoid lens located just after the \gls{mot}, well before the samples, was used to focus the electron beam onto the detector with as small a convergence angle as practical.
-These measurement were taken before the investigations into beam astigmatism discussed in Section~\ref{section:quadrupole} so there is some asymmetry apparent in the data.
+These measurements were taken before the investigations into beam astigmatism discussed in Section~\ref{section:quadrupole} so there is some asymmetry apparent in the data.
 
 \subsection{Sample Bias}\label{section:sample_bias}
 
-As is shown in Section~\ref{section:aluminium_diffraction}, the maximum electron energy that the accelerator electrodes are able to provide is not sufficient to observe diffraction with some of the test samples.
+The maximum electron energy that the accelerator electrodes are able to provide was not sufficient to observe diffraction with some of the test samples.
 If higher voltages were applied to the electrodes then they would undergo electrical breakdown making it impossible to generate higher energy electrons using the normal accelerator stuctures.
-In order to provide a greater range of available particle energies a high voltage feedthrough was attached to the aluminium sample paddle so that incoming electrons would undergo a change in energy, dependant on the polarity and strength of the voltage bias.
-The sample voltage bias could be up to \unit[8.5]{kV} before the high voltage cable would begin to short allowing for the beam energy to be increased to approximately \unit[20.2]{keV}.
+In order to provide a greater range of bunch energies a high voltage feedthrough was attached to the aluminium sample paddle so that incoming electrons would undergo a change in energy, dependent on the polarity and strength of the voltage bias.
+The sample voltage bias could be up to \unit[8.5]{kV} before breakdown in the high voltage cable.
+With \unit[11.7]{keV} source energy and \unit[8.5]{keV} on the sample the effective beam energy was \unit[20.2]{keV} allowing acquisition of diffraction data for aluminium with \unit[31]{nm} thickness.
 
 \section{Results}
 
