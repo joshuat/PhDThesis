@@ -1,17 +1,12 @@
 \chapter{Time-Resolved Brightness Measurement}\label{chapter:brightness}
 
 The most comprehensive figure of merit for charged particle beams is brightness, which incorporates beam current and emittance~\cite{reiser_theory_2008}.
+Emittance can be improved, along with potential imaging resolution, with the aperturing of a beam but there will be a loss of beam current which will result in imaging tasks taking longer to complete.
+Brightness can be used to as a metric for both resolution and imaging time.
 Brightness measurements can also serve as a powerful diagnostic of the processes involved in beam creation and manipulation~\cite{mills_brightness_1980,qiang_three-dimensional_2006,bazarov_maximum_2009}.
-Time-resolved brightness measurements have the potential to reveal information related to effects such as electron diffusion time, image-charge formation, and space-charge interactions.
-This chapter presents a technique for measuring time-resolved brightness by combining pepperpot emittance measurements with beam streaking, and demonstrates the method with electrons generated from the \gls{caeis} as shown in Figure~\ref{figure:emittance_schematic_render}.
+Brightness measurements are typically static but time-resolution has the potential to reveal information related to effects such as electron diffusion time, image-charge formation, and space-charge interactions.
+This chapter presents a technique for measuring time-resolved brightness by combining pepperpot emittance measurements with beam streaking, and demonstrates the method with electrons generated from the \gls{caeis}
 This work has been published as Reference~\cite{torrance_time-resolved_2018}.
-
-\begin{figure}
-\center
-\includegraphics[width=\linewidth]{part2/Figs/render.pdf}
-\caption[The experimental setup for the streaked brightness measurements.]{The experimental setup for time-resolved brightness measurements by streaking one-dimensional pepperpots with a \gls{caes}. Inset are shown the one- and two-dimensional pepperpot masks.}
-\label{figure:emittance_schematic_render}
-\end{figure}
 
 The pepperpot method measures the transverse emittance of a charged particle beam using an array of apertures or slits to divide the beam into smaller beamlets that are detected after propagation~\cite{collins_extraction_1964,van_steenbergen_evaluation_1967,wang_beam_1991,brunetti_low_2010}.
 The divergence, and thus the emittance, can be determined by measuring the position and size of each beamlet, giving an approximation of the transverse phase space of the beam~\cite{zhang_emittance_1996,wang_beam_1991}.
@@ -19,18 +14,18 @@ The pepperpot method has been used on both electron and ion beams, and with elec
 
 Time-resolved emittance measurements have been performed previously using time-gated detectors to study the feasibility and performance of laser-generated ion sources~\cite{collier_cern_1996,yoshida_simple_2001}, and with scanning slits and the time-resolved signal from a Faraday cup with the aim of minimising the emittance of an electron storage ring~\cite{walter_time_2003}.
 These methods require many shots to accumulate the temporal profile, and consequently only measure the average beam behaviour and are fundamentally incapable of observing shot-to-shot variation in bunch dynamics.
-An alternative method to determine the temporal emittance profile of a bunch is to apply a time-varying deflection to the beamlets formed by a one-dimensional pepperpot mask (a line of apertures) to `streak' the measurement across the detector.
-Streaking of diffracted electron bunches has been used to observe non-repeatable dynamical processes~\cite{li_note:_2010, mukojima_streak-camera_2015}, and to characterise the electron pulse itself~\cite{ratner_time-resolved_2015}.
+An alternative method to determine the temporal emittance profile of a bunch is to apply a time-varying deflection to the beamlets formed by a one-dimensional pepperpot mask (a line of apertures) to `streak' the measurement across an imaging detector.
+Streaked measurements have been used in electron diffraction studies to observe non-repeatable dynamical processes~\cite{li_note:_2010, mukojima_streak-camera_2015}, and to characterise the electron pulse at the Linac Coherent Light Source (LCLS)~\cite{ratner_time-resolved_2015}.
 With a sufficiently intense source, streak measurements could be performed in a single shot, providing information on shot-to-shot behaviour to elucidate information unavailable to multiple shot averages, such as transient and stochastic effects.
 
-There are a number of important reasons for interest in time-resolved brightness measurements with a \gls{caeis} as low emittance and high brightness are important to all applications for both electrons and ions.
+There are a number of important reasons for interest in time-resolved brightness measurements with a \gls{caeis}, beacause high brightness is critical to achieving high spatial and temporal resolution imaging.
 Knowledge of source brightness is of particular interest in a number of areas such as the advantage of knowing beam coherence for \gls{ued}, the ability to observe the performance of techniques to counter space-charge expansion, and the potential to provide information on the ionisation processes in a \gls{caes}.
 Beam emittance is also a vital factor when considering ion beam milling and ion microscope applications as the emittance limits the resolution achievable~\cite{scipioni_helium_2008,khizroev_focused-ion-beam-based_2004}.
 
-The \gls{caeis} is a promising candidate for \gls{ued} imaging and structure determination due to its high brightness and coherence, with the potential to enable measurement of atomic-level sub-picosecond structural dynamics~\cite{siwick_atomic-level_2003,putkunz_atom-scale_2012,sparkes_high-coherence_2014}.
-\gls{ued} is often performed with photocathode electron sources which have sufficient current and bunch duration for \gls{ued} but limited coherence~\cite{van_oudheusden_electron_2007,tokita_single-shot_2009,sciaini_femtosecond_2011}.
+The \gls{caeis} is a promising candidate for \gls{ued} imaging and structure determination due to its potential for high brightness and coherence, with the prospect of enabling the measurement of atomic-level sub-picosecond structural dynamics~\cite{siwick_atomic-level_2003,putkunz_atom-scale_2012,sparkes_high-coherence_2014}.
+\gls{ued} is often performed with photocathode electron sources which have sufficient current and bunch duration for \gls{ued} with crystalline samples but has limited coherence~\cite{van_oudheusden_electron_2007,tokita_single-shot_2009,sciaini_femtosecond_2011}.
 A \gls{caes} has the necessary coherence for \gls{ued} of nanocrystals and large molecules but not yet sufficient current~\cite{saliba_spatial_2012,mcculloch_high-coherence_2013}.
-In the context of (ultrafast) diffractive imaging, time-resolved knowledge of the source coherence can be incorporated into the image reconstruction to improve the process and, as the coherence can be calculated from the emittance, the technique presented here could prove to be useful for time-resolved \gls{ued}~\cite{flewett_extracting_2009,abbey_lensless_2011}.
+In the context of (ultrafast) diffractive imaging, time-resolved knowledge of the source coherence can be incorporated into the image reconstruction to improve the process and, as the coherence can be calculated from the emittance, the technique presented here could prove to be useful for achieving \gls{ued} of nanocrystals and even non-crystalline targets~\cite{flewett_extracting_2009,abbey_lensless_2011}.
 
 Electron bunches from the \gls{caes} can be produced with durations over a range of timescales, from femtoseconds to microseconds.
 With the use of femtosecond duration pulse lasers, a \gls{caes} can produce ultrashort electron bunches, which are dense enough to experience space-charge expansion and the related loss of beam quality~\cite{luiten_how_2004,van_oudheusden_compression_2010,thompson_suppression_2016}.
@@ -40,11 +35,11 @@ The production of electrons from photoionised cold atoms is a complex process, a
 The same complex ionisation processes that result in variable pulse duration are also likely to affect the transverse velocity of the emitted electrons, and thus the emittance, as a function of time.
 The streaked pepperpot method presented allows the transverse velocity spread of the liberated electrons to be measured as a function of time, which can illuminate the underlying atomic ionisation processes and provide a diagnostic which could allow optimisation of electron bunch brightness in the future.
 
-This chapter presents a simple method of measuring time-resolved emittance that is applicable to a wide range of charged particle sources and has the potential to be performed with a single-shot measurement.
+This chapter presents a simple method of measuring time-resolved emittance that is applicable to a wide range of charged particle sources and which could be used for single-shot measurement of sources with high currents.
 The streaked-pepperpot technique was developed to observe time-varying effects during the photoionisation and extraction of electrons from the \gls{caes}.
-The brightness of a \gls{caeis} is important to all of it's potential applications and the time-resolution provided by the technique described in this chapter will be a useful tool to examine the behaviour of the source and hopefully provide avenues for improvement.
+The brightness of a \gls{caeis} is important to potential applications and the time-resolution provided by the technique described in this chapter will be a useful tool to examine the behaviour of the source and hopefully provide avenues for improvement.
 
-This chapter examines time-resolved emittance measurements through the streaking of pepperpots; including the theory involved, various technical considerations, example measurements and implementation of this technique with the \gls{caeis} at the University of Melbourne.
+This chapter examines time-resolved emittance measurements through the streaking of pepperpots, including the theory involved, various technical considerations, example measurements and implementation of this technique with the \gls{caeis} at the University of Melbourne.
 
 \section{Brightness and Emittance}
 
@@ -95,7 +90,7 @@ A more comprehensive figure of merit is the number of particles with a given emi
 B = \frac{I}{8\pi^2\bar{\epsilon}_x\bar{\epsilon}_y},
 \end{equation}
 where $I$ is the current of the beam and $\bar{\epsilon}_{x,y}$ is the \gls{rms} emittance as described above.
-Brightness provides a better metric of a beam's quality with the additional requirement of knowing the beam current.
+Compared to emittance, which characterises the ultimate spatial resolution that can be obtained, brightness provides a better metric of beam quailty because it incorporates the beam current which is important in determining the temporal resolution.
 
 When comparing the emittance and brightness of particle beams from different sources it is often useful to use the \emph{normalised} emittance and brightness
 \begin{align}
