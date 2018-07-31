@@ -68,7 +68,7 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.255144in}{0.255809in}}%
-\pgfpathlineto{\pgfqpoint{0.706794in}{0.255809in}}%
+\pgfpathlineto{\pgfqpoint{0.838983in}{0.255809in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -93,8 +93,8 @@
 \definecolor{currentstroke}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.706794in}{0.308381in}}%
-\pgfpathlineto{\pgfqpoint{0.706794in}{0.203237in}}%
+\pgfpathmoveto{\pgfqpoint{0.838983in}{0.308381in}}%
+\pgfpathlineto{\pgfqpoint{0.838983in}{0.203237in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -104,8 +104,8 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.150000in}{1.535938in}}%
-\pgfpathlineto{\pgfqpoint{1.853333in}{1.535938in}}%
+\pgfpathmoveto{\pgfqpoint{0.150000in}{0.150665in}}%
+\pgfpathlineto{\pgfqpoint{0.150000in}{1.535938in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -137,15 +137,15 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.150000in}{0.150665in}}%
-\pgfpathlineto{\pgfqpoint{0.150000in}{1.535938in}}%
+\pgfpathmoveto{\pgfqpoint{0.150000in}{1.535938in}}%
+\pgfpathlineto{\pgfqpoint{1.853333in}{1.535938in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.480969in,y=0.308381in,,bottom]{\color{textcolor}\fontsize{11.000000}{13.200000}\selectfont 10\,mm\(\displaystyle \)}%
+\pgftext[x=0.599635in,y=0.308381in,,bottom]{\color{textcolor}\fontsize{11.000000}{13.200000}\selectfont 1\,\AA\(\displaystyle ^{-1}\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgftext[x=1.001667in,y=1.605383in,,base]{\fontsize{12.000000}{14.400000}\selectfont 0\(\displaystyle \,\)V Bias}%
@@ -182,7 +182,7 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.108477in}{0.255809in}}%
-\pgfpathlineto{\pgfqpoint{2.560127in}{0.255809in}}%
+\pgfpathlineto{\pgfqpoint{2.646223in}{0.255809in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -207,8 +207,8 @@
 \definecolor{currentstroke}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{2.560127in}{0.308381in}}%
-\pgfpathlineto{\pgfqpoint{2.560127in}{0.203237in}}%
+\pgfpathmoveto{\pgfqpoint{2.646223in}{0.308381in}}%
+\pgfpathlineto{\pgfqpoint{2.646223in}{0.203237in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -218,8 +218,8 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{2.003333in}{1.535938in}}%
-\pgfpathlineto{\pgfqpoint{3.706667in}{1.535938in}}%
+\pgfpathmoveto{\pgfqpoint{2.003333in}{0.150665in}}%
+\pgfpathlineto{\pgfqpoint{2.003333in}{1.535938in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -251,15 +251,15 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{2.003333in}{0.150665in}}%
-\pgfpathlineto{\pgfqpoint{2.003333in}{1.535938in}}%
+\pgfpathmoveto{\pgfqpoint{2.003333in}{1.535938in}}%
+\pgfpathlineto{\pgfqpoint{3.706667in}{1.535938in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.334302in,y=0.308381in,,bottom]{\color{textcolor}\fontsize{11.000000}{13.200000}\selectfont 10\,mm\(\displaystyle \)}%
+\pgftext[x=2.429922in,y=0.308381in,,bottom]{\color{textcolor}\fontsize{11.000000}{13.200000}\selectfont 1\,\AA\(\displaystyle ^{-1}\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgftext[x=2.855000in,y=1.605383in,,base]{\fontsize{12.000000}{14.400000}\selectfont 4.2\(\displaystyle \,\)kV Bias}%
@@ -296,7 +296,7 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.962409in}{0.255245in}}%
-\pgfpathlineto{\pgfqpoint{4.414493in}{0.255245in}}%
+\pgfpathlineto{\pgfqpoint{4.462224in}{0.255245in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -321,8 +321,8 @@
 \definecolor{currentstroke}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{4.414493in}{0.307868in}}%
-\pgfpathlineto{\pgfqpoint{4.414493in}{0.202623in}}%
+\pgfpathmoveto{\pgfqpoint{4.462224in}{0.307868in}}%
+\pgfpathlineto{\pgfqpoint{4.462224in}{0.202623in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -332,8 +332,8 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{3.857164in}{1.536604in}}%
-\pgfpathlineto{\pgfqpoint{5.559503in}{1.536604in}}%
+\pgfpathmoveto{\pgfqpoint{3.857164in}{0.150000in}}%
+\pgfpathlineto{\pgfqpoint{3.857164in}{1.536604in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -365,15 +365,15 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{3.857164in}{0.150000in}}%
-\pgfpathlineto{\pgfqpoint{3.857164in}{1.536604in}}%
+\pgfpathmoveto{\pgfqpoint{3.857164in}{1.536604in}}%
+\pgfpathlineto{\pgfqpoint{5.559503in}{1.536604in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=4.188451in,y=0.307868in,,bottom]{\color{textcolor}\fontsize{11.000000}{13.200000}\selectfont 10\,mm\(\displaystyle \)}%
+\pgftext[x=4.264939in,y=0.307868in,,bottom]{\color{textcolor}\fontsize{11.000000}{13.200000}\selectfont 1\,\AA\(\displaystyle ^{-1}\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgftext[x=4.708333in,y=1.606048in,,base]{\fontsize{12.000000}{14.400000}\selectfont 8.5\(\displaystyle \,\)kV Bias}%
