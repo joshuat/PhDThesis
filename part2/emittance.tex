@@ -195,26 +195,29 @@ For one-dimensional streaked pepperpot measurements the image should be rotated 
     \begin{subfigure}{0.49\linewidth}
     \centering
     \input{part2/Figs/example_streaked_pepperpot.pgf}
+    % Code and data in 2017.07.25, plot2error.py
     \caption{}
     \label{figure:streaked_1d_pepperpot}
     \end{subfigure}
     % Manual labels.....
-    \caption[One- and two-dimensional pepperpot masks.]{(a) a pepperpot mask cut into a thin \unit[3]{mm}-diameter copper disk and, (b), the corresponding set of beamlets on the detector. (c) a one-dimensional pepperpot mask (held in place by a copper ring) and the corresponding streaked set of beamlets on the detector, (d). The beam images are log scaled.}
+    \caption[One- and two-dimensional pepperpot masks.]{(a) a pepperpot mask cut into a thin \unit[3]{mm}-diameter copper disk and, (b), the corresponding set of beamlets on the detector. (c) a one-dimensional pepperpot mask and the corresponding streaked set of beamlets on the detector, (d). The beam images are log scaled and the color scale is indicated in (d).}
     \label{figure:pepperpot_example}
 \end{figure}
 
 \subsubsection{Temporal Resolution with Streaking}
 A one-dimensional pepperpot consisting of a line of apertures provides a good basis for streak measurements.
 In this case streaking is performed with a time varying electric field which deflects the charged particles across the detector.
-For a pulsed charged particle source, such as the \gls{caeis}, the streak can be performed over the duration of the bunch or over a portion of the bunch if higher resolution is required.
-There are some considerations for how fast an electric field can be swept, which will not be examined in detail here, so extremely short bunches will require more sophisticated streaking systems, such as a \gls{rf} cavity or photoactivated switching which are able to provide temporal resolution as low as \unit[100]{fs}~\cite{li_note:_2010,kassier_compact_2010,van_rens_theory_2018}.
+For a pulsed charged particle source, such as the \gls{caeis}, the streak can be performed over the duration of the bunch or over a portion of the bunch if higher temporal resolution is required.
+There are some considerations for how fast an electric field can be swept, which will not be examined in detail here.
+Extremely short bunches will require more sophisticated streaking systems, such as an \gls{rf} cavity or photoactivated switching which are able to provide temporal resolution as low as \unit[100]{fs}~\cite{li_note:_2010,kassier_compact_2010,van_rens_theory_2018}.
 An example of a streaked pepperpot measurement is shown in Figure~\ref{figure:streaked_1d_pepperpot}.
 
 \section{Experimental Setup}
 
-A number of modifications were made to the \gls{caeis} to prepare it for the streaked emittance measurements and there were a number of restrictions on various parameters due to the precise setup of the apparatus.
-The \gls{caeis} was operated in electron mode for these measurements due to the available magnetic optics and the larger emittance expected from electrons as the source temperature is higher for electrons, a minimum temperature of approximately \unit[10]{K} for electrons and \unit[100]{$\muup$K} for ions~\cite{saliba_spatial_2012}.
-Using electrons also allows control of the bunch emittance as the excess energy can be controlled with the blue ionisation laser wavelength, with ions the change in emittance would be negligible.
+A number of modifications were made to the \gls{caeis} for the streaked emittance measurements and there were a number of restrictions on various parameters due to the precise setup of the apparatus.
+The \gls{caeis} was operated in electron mode for these measurements due to the available magnetic optics and the larger emittance expected from electrons compared to ions.
+The source temperature, and hence emittance, is higher for electrons, approximately \unit[10]{K} for electrons and \unit[100]{$\muup$K} for ions~\cite{saliba_spatial_2012}.
+Using electrons also allows control of the bunch emittance as the excess energy can be controlled with the blue ionisation laser wavelength; with ions the change in emittance would be negligible.
 
 See Chapter~\ref{chapter:setup} for a more detailed description of the \gls{caeis} and Figure~\ref{figure:emittance_schematic} for a schematic of the setup used for the measurements in this chapter.
 
@@ -233,7 +236,7 @@ When focusing was required the Einzel lens was used.
 \begin{figure}
     \center
     \includegraphics[width=0.5\linewidth]{part2/Figs/example_astigmatic_pepperpot.jpeg}
-    \caption[Pepperpot measurements with and without beam astigmatism correction.]{An example of a pepperpot without the beam correction from the quadrupole lens. It is readily apparent that spacing of the beamlets is not the same for the $x$ and $y$ axes. This image is log scaled.}
+    \caption[Pepperpot measurements with and without beam astigmatism correction.]{An example of a electrons after the pepperpot mask without the beam correction from the quadrupole lens. It is readily apparent that spacing of the beamlets is not the same for the $x$ and $y$ axes even though the spacing in the pepperpot mask was symmetric. This image is log scaled.}
     \label{figure:astigmatic_pepperpot}
     % From 2017.06.01
 \end{figure}
