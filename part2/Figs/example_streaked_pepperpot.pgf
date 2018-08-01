@@ -18,7 +18,7 @@
 \begingroup%
 \makeatletter%
 \begin{pgfpicture}%
-\pgfpathrectangle{\pgfpointorigin}{\pgfqpoint{2.797900in}{1.940378in}}%
+\pgfpathrectangle{\pgfpointorigin}{\pgfqpoint{2.797900in}{2.425473in}}%
 \pgfusepath{use as bounding box, clip}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -31,18 +31,18 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.000000in}{0.000000in}}%
 \pgfpathlineto{\pgfqpoint{2.797900in}{0.000000in}}%
-\pgfpathlineto{\pgfqpoint{2.797900in}{1.940378in}}%
-\pgfpathlineto{\pgfqpoint{0.000000in}{1.940378in}}%
+\pgfpathlineto{\pgfqpoint{2.797900in}{2.425473in}}%
+\pgfpathlineto{\pgfqpoint{0.000000in}{2.425473in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.000000in}{0.000000in}}{\pgfqpoint{2.797900in}{1.940378in}} %
+\pgfpathrectangle{\pgfqpoint{0.000000in}{0.485095in}}{\pgfqpoint{2.797900in}{1.940378in}} %
 \pgfusepath{clip}%
-\pgftext[at=\pgfqpoint{0.000000in}{0.000000in},left,bottom]{\pgfimage[interpolate=true,width=2.810000in,height=1.950000in]{example_streaked_pepperpot-img0.png}}%
+\pgftext[at=\pgfqpoint{0.000000in}{0.485095in},left,bottom]{\pgfimage[interpolate=true,width=2.810000in,height=1.950000in]{example_streaked_pepperpot-img0.png}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.000000in}{0.000000in}}{\pgfqpoint{2.797900in}{1.940378in}} %
+\pgfpathrectangle{\pgfqpoint{0.000000in}{0.485095in}}{\pgfqpoint{2.797900in}{1.940378in}} %
 \pgfusepath{clip}%
 \pgfsetrectcap%
 \pgfsetroundjoin%
@@ -50,12 +50,12 @@
 \definecolor{currentstroke}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{2.008022in}{0.190908in}}%
-\pgfpathlineto{\pgfqpoint{2.546967in}{0.190908in}}%
+\pgfpathmoveto{\pgfqpoint{2.008022in}{0.676003in}}%
+\pgfpathlineto{\pgfqpoint{2.546967in}{0.676003in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.000000in}{0.000000in}}{\pgfqpoint{2.797900in}{1.940378in}} %
+\pgfpathrectangle{\pgfqpoint{0.000000in}{0.485095in}}{\pgfqpoint{2.797900in}{1.940378in}} %
 \pgfusepath{clip}%
 \pgfsetrectcap%
 \pgfsetroundjoin%
@@ -63,12 +63,12 @@
 \definecolor{currentstroke}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{2.008022in}{0.253501in}}%
-\pgfpathlineto{\pgfqpoint{2.008022in}{0.128315in}}%
+\pgfpathmoveto{\pgfqpoint{2.008022in}{0.738596in}}%
+\pgfpathlineto{\pgfqpoint{2.008022in}{0.613410in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.000000in}{0.000000in}}{\pgfqpoint{2.797900in}{1.940378in}} %
+\pgfpathrectangle{\pgfqpoint{0.000000in}{0.485095in}}{\pgfqpoint{2.797900in}{1.940378in}} %
 \pgfusepath{clip}%
 \pgfsetrectcap%
 \pgfsetroundjoin%
@@ -76,15 +76,124 @@
 \definecolor{currentstroke}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{2.546967in}{0.253501in}}%
-\pgfpathlineto{\pgfqpoint{2.546967in}{0.128315in}}%
+\pgfpathmoveto{\pgfqpoint{2.546967in}{0.738596in}}%
+\pgfpathlineto{\pgfqpoint{2.546967in}{0.613410in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.277495in,y=0.253501in,,bottom]{\color{textcolor}\fontsize{11.000000}{13.200000}\selectfont 5\(\displaystyle \,\)mm}%
+\pgftext[x=2.277495in,y=0.738596in,,bottom]{\color{textcolor}\fontsize{11.000000}{13.200000}\selectfont 5\(\displaystyle \,\)mm}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.139895in}{0.201533in}}{\pgfqpoint{2.518110in}{0.125906in}} %
+\pgfusepath{clip}%
+\pgfsetbuttcap%
+\pgfsetmiterjoin%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
+\pgfsetfillcolor{currentfill}%
+\pgfsetlinewidth{0.010037pt}%
+\definecolor{currentstroke}{rgb}{1.000000,1.000000,1.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfpathmoveto{\pgfqpoint{0.139895in}{0.201533in}}%
+\pgfpathlineto{\pgfqpoint{0.149731in}{0.201533in}}%
+\pgfpathlineto{\pgfqpoint{2.648169in}{0.201533in}}%
+\pgfpathlineto{\pgfqpoint{2.658005in}{0.201533in}}%
+\pgfpathlineto{\pgfqpoint{2.658005in}{0.327439in}}%
+\pgfpathlineto{\pgfqpoint{2.648169in}{0.327439in}}%
+\pgfpathlineto{\pgfqpoint{0.149731in}{0.327439in}}%
+\pgfpathlineto{\pgfqpoint{0.139895in}{0.327439in}}%
+\pgfpathclose%
+\pgfusepath{stroke,fill}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgftext[at=\pgfqpoint{0.140000in}{0.205473in},left,bottom]{\pgfimage[interpolate=true,width=2.520000in,height=0.130000in]{example_streaked_pepperpot-img1.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfsetbuttcap%
+\pgfsetmiterjoin%
+\pgfsetlinewidth{1.003750pt}%
+\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfpathmoveto{\pgfqpoint{0.139895in}{0.201533in}}%
+\pgfpathlineto{\pgfqpoint{0.149731in}{0.201533in}}%
+\pgfpathlineto{\pgfqpoint{2.648169in}{0.201533in}}%
+\pgfpathlineto{\pgfqpoint{2.658005in}{0.201533in}}%
+\pgfpathlineto{\pgfqpoint{2.658005in}{0.327439in}}%
+\pgfpathlineto{\pgfqpoint{2.648169in}{0.327439in}}%
+\pgfpathlineto{\pgfqpoint{0.149731in}{0.327439in}}%
+\pgfpathlineto{\pgfqpoint{0.139895in}{0.327439in}}%
+\pgfpathclose%
+\pgfusepath{stroke}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfsetbuttcap%
+\pgfsetroundjoin%
+\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetfillcolor{currentfill}%
+\pgfsetlinewidth{0.501875pt}%
+\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfsys@defobject{currentmarker}{\pgfqpoint{0.000000in}{0.000000in}}{\pgfqpoint{0.000000in}{0.055556in}}{%
+\pgfpathmoveto{\pgfqpoint{0.000000in}{0.000000in}}%
+\pgfpathlineto{\pgfqpoint{0.000000in}{0.055556in}}%
+\pgfusepath{stroke,fill}%
+}%
+\begin{pgfscope}%
+\pgfsys@transformshift{0.502843in}{0.201533in}%
+\pgfsys@useobject{currentmarker}{}%
+\end{pgfscope}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgftext[x=0.502843in,y=0.145978in,,top]{\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle 10^{-2}\)}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfsetbuttcap%
+\pgfsetroundjoin%
+\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetfillcolor{currentfill}%
+\pgfsetlinewidth{0.501875pt}%
+\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfsys@defobject{currentmarker}{\pgfqpoint{0.000000in}{0.000000in}}{\pgfqpoint{0.000000in}{0.055556in}}{%
+\pgfpathmoveto{\pgfqpoint{0.000000in}{0.000000in}}%
+\pgfpathlineto{\pgfqpoint{0.000000in}{0.055556in}}%
+\pgfusepath{stroke,fill}%
+}%
+\begin{pgfscope}%
+\pgfsys@transformshift{1.579351in}{0.201533in}%
+\pgfsys@useobject{currentmarker}{}%
+\end{pgfscope}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgftext[x=1.579351in,y=0.145978in,,top]{\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle 10^{-1}\)}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfsetbuttcap%
+\pgfsetroundjoin%
+\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetfillcolor{currentfill}%
+\pgfsetlinewidth{0.501875pt}%
+\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfsys@defobject{currentmarker}{\pgfqpoint{0.000000in}{0.000000in}}{\pgfqpoint{0.000000in}{0.055556in}}{%
+\pgfpathmoveto{\pgfqpoint{0.000000in}{0.000000in}}%
+\pgfpathlineto{\pgfqpoint{0.000000in}{0.055556in}}%
+\pgfusepath{stroke,fill}%
+}%
+\begin{pgfscope}%
+\pgfsys@transformshift{2.655859in}{0.201533in}%
+\pgfsys@useobject{currentmarker}{}%
+\end{pgfscope}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgftext[x=2.655859in,y=0.145978in,,top]{\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle 10^{0}\)}%
 \end{pgfscope}%
 \end{pgfpicture}%
 \makeatother%
