@@ -92,30 +92,31 @@ B = \frac{I}{8\pi^2\bar{\epsilon}_x\bar{\epsilon}_y},
 where $I$ is the current of the beam and $\bar{\epsilon}_{x,y}$ is the \gls{rms} emittance as described above.
 Compared to emittance, which characterises the ultimate spatial resolution that can be obtained, brightness provides a better metric of beam quailty because it incorporates the beam current which is important in determining the temporal resolution.
 
-When comparing the emittance and brightness of particle beams from different sources it is often useful to use the \emph{normalised} emittance and brightness
+To compare the emittance and brightness of particle beams with different beam energy it is useful to define the \emph{normalised} emittance and brightness
 \begin{align}
 \bar{\epsilon}_{n,x} = \beta\bar{\epsilon}_x,\\
 B_n = \frac{I}{8\pi^2\bar{\epsilon}_{n,x}\bar{\epsilon}_{n,y}}
 \end{align}
-where $\beta=v/c\approx v_z/c$.
+where $\beta=v/c\approx v_z/c$ and $c$ is the speed of light.
+Normalised brightness and emittance are invariant for a particular beam under ideal conditions.
 
 
 \subsection{Emittance with a CAEIS}
 \label{section:excess_energy_emittance}
 
-For a \gls{caes} the normalised \gls{rms} emittance at the source is given by~\cite{mcculloch_high-coherence_2013}
+The normalised \gls{rms} emittance for a thermal source (such as the \gls{caes}), is given by~\cite{mcculloch_high-coherence_2013}
 \begin{equation}\label{equation:excess_energy_emittance}
 \bar{\epsilon}_{n,x} = \sigma_x \sqrt{\frac{k_B T}{m c^2}}
 \end{equation}
-where $\sigma_x$ is the \gls{rms} beam radius, $k_B$ is Boltzmann's constant, $T$ is the temperature of the source, $m$ is the particle mass and $c$ is the speed of light.
-Equation~\ref{equation:excess_energy_emittance} highlights one of the advantages of a \gls{caeis} as the low source temperature allows for low emittance bunches compared to the common thermionic sources.
+where $\sigma_x$ is the \gls{rms} beam radius, $k_B$ is Boltzmann's constant, $T$ is the temperature of the source, and $m$ is the particle mass.
+Equation~\ref{equation:excess_energy_emittance} highlights one of the advantages of a \gls{caeis}: the low source temperature allows for low emittance bunches compared to common thermionic sources.
 
 The temperature of the \gls{caeis} source can be calculated from the wavelength of the ionisation lasers, $\lambda_{red}$ and $\lambda_{blue}$,
 \begin{align}
  E_{red} &= \frac{hc}{\lambda_{red}} \\
  E_{blue}&= \frac{hc}{\lambda_{blue}},
 \end{align}
-where $h$ is Plank's constant.
+where $h$ is Planck's constant.
 We can define the total ionisation energy to be
 \begin{align}
 E_{total} = E_{red} + E_{blue}.
@@ -127,21 +128,22 @@ E_{excess} = E_{total} - E_I
 
 The excess energy can be related to the temperatures of the ionised particles via
 \begin{equation}\label{equation:excess_energy_temperature}
-T = \frac{E_{excess}}{k_B}.
+T = \frac{E_{excess}}{k_B},
 \end{equation}
+if some of the details, such as disorder induced heating, are ignored.
 Combining Equations \ref{equation:excess_energy_emittance} and \ref{equation:excess_energy_temperature} allows for the calculation of the expected emittance of bunches generated from the \gls{caeis} for above-threshold ionisation.
-The emittance of bunches generated from below-threshold pathways, such as Rydberg-excitation with field-ionisation, cannot be calculated using Equation~\ref{equation:excess_energy_emittance}.
+The emittance of bunches generated from below-threshold pathways, such as Rydberg-excitation with field-ionisation, cannot be calculated using Equation~\ref{equation:excess_energy_emittance}, see Reference~\cite{mcculloch_field_2017} for greater detail.
 
 \section{Measurement}
 
-Directly calculating the emittance of an ensemble with Equation~\ref{emittance} requires full knowledge of the position and momenta of the particles which is difficult as beam monitors tend to only measure the transverse positions of particles.
-There are a number of methods to practically calculate the emittance of a particle beam, namely pepperpots, the multiple profile method methods and the lens method.
-In the \gls{caeis} the lens method is not practical as the lenses in the system are not well characterised and multi-profile measurements are tedious due to the required manual z-translation of the detector and bellows.
-The pepperpot method however is eminently achievable with this system although the details of the geometry are not ideal with this iteration of a \gls{caeis}.
+Directly calculating the emittance of an ensemble with Equation~\ref{emittance} requires full knowledge of the position and momenta of the particles which is difficult because beam monitors tend to only measure the transverse positions of particles.
+There are a number of methods to measure the emittance of a particle beam, namely pepperpots, the multiple profile method and the examination of beam profile as the strength of a well characterised lens is varied.
+In the Melbourne \gls{caeis} the lens method is not practical as the lenses in the system are not well characterised and multi-profile measurements are tedious due to the required manual z-translation of the detector and bellows.
+The pepperpot method however is achievable with this system although the details of the geometry are not ideal with this iteration of a \gls{caeis}.
 
 \subsection{Pepperpots}
 
-The pepperpot method uses a beam mask, consisting of an array of apertures, to separate the beam into a number of `beamlets' which are then propagated and detected downstream.
+The pepperpot method uses a beam mask, consisting of an array of apertures, to separate the beam into a number of `beamlets' which are then propagated and imaged with a spatially resolved detector.
 By examining the size of the beamlets the divergence of the beam can be estimated and thus the emittance of the beam can be calculated.
 Ideally the extent of the array should be larger than the size of the beam and the holes as small as is practical while maintaining sufficient flux and ensuring the spots on the detector do not overlap.
 The name refers to the similarity of the simplest beam mask to the perforated lid of a container for pepper.
@@ -178,8 +180,8 @@ For one-dimensional streaked pepperpot measurements the image should be rotated 
     \end{subfigure}
     \begin{subfigure}{0.49\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{part2/Figs/example_pepperpot_detector_linear.jpeg}
-    % 486.971 pepperpot from 2017.06.06
+    \input{part2/Figs/example_pepperpot_detector_linear.pgf}
+    % 486.971 pepperpot from 2017.06.06, plot_fiting.py
     \caption{}
     \label{figure:pepperpot_image}
     \end{subfigure}
@@ -192,17 +194,17 @@ For one-dimensional streaked pepperpot measurements the image should be rotated 
     \end{subfigure}
     \begin{subfigure}{0.49\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{part2/Figs/example_streaked_pepperpot.png}
+    \input{part2/Figs/example_streaked_pepperpot.pgf}
     \caption{}
     \label{figure:streaked_1d_pepperpot}
     \end{subfigure}
     % Manual labels.....
-    \caption[One- and two-dimensional pepperpot masks.]{(a) a pepperpot mask cut into a thing copper disk and, (b), the corresponding set of beamlets on the detector. (c) a one-dimensional pepperpot mask (held in place by a copper ring) and the corresponding streaked set of beamlets on the detector, (d). The beam images are log scaled.}
+    \caption[One- and two-dimensional pepperpot masks.]{(a) a pepperpot mask cut into a thin \unit[3]{mm}-diameter copper disk and, (b), the corresponding set of beamlets on the detector. (c) a one-dimensional pepperpot mask (held in place by a copper ring) and the corresponding streaked set of beamlets on the detector, (d). The beam images are log scaled.}
     \label{figure:pepperpot_example}
 \end{figure}
 
 \subsubsection{Temporal Resolution with Streaking}
-A one-dimensional pepperpot consisting of a line of apertures provides a prime target for streak measurements.
+A one-dimensional pepperpot consisting of a line of apertures provides a good basis for streak measurements.
 In this case streaking is performed with a time varying electric field which deflects the charged particles across the detector.
 For a pulsed charged particle source, such as the \gls{caeis}, the streak can be performed over the duration of the bunch or over a portion of the bunch if higher resolution is required.
 There are some considerations for how fast an electric field can be swept, which will not be examined in detail here, so extremely short bunches will require more sophisticated streaking systems, such as a \gls{rf} cavity or photoactivated switching which are able to provide temporal resolution as low as \unit[100]{fs}~\cite{li_note:_2010,kassier_compact_2010,van_rens_theory_2018}.
