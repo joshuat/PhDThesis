@@ -230,8 +230,8 @@ See Chapter~\ref{chapter:setup} for a more detailed description of the \gls{caei
 
 \subsection{Beam Optics}
 The quadrupole electron optics discussed in Section \ref{section:quadrupole} were use to reduce the astigmatism present in the electron beam as discussed in the aforementioned section.
-The two-dimensional pepperpot provide another avenue to monitor the astigmatism of the beam as with an astigmatic beam the spacing of the beamlets on the detector are not the same along each axis as shown in Figure~\ref{figure:astigmatic_pepperpot}.
-When focusing was required the Einzel lens was used.
+The two-dimensional pepperpot provide another avenue to monitor the astigmatism of the beam because with an astigmatic beam the spacing of the beamlets on the detector are not the same along each axis as shown in Figure~\ref{figure:astigmatic_pepperpot}.
+The Einzel lens was used when focusing was required.
 
 \begin{figure}
     \center
@@ -241,51 +241,56 @@ When focusing was required the Einzel lens was used.
     % From 2017.06.01
 \end{figure}
 
-A number of permanent magnets were used to steer the beam through the various apertures and onto the detector and care was taken to attempt to keep the beam on the central axis of the apparatus.
-This was achieved by manually adjusting the positions of the magnets, which were mounted on posts external to the vacuum system, to ensure that the beam was passing through the apertures in the system and by scanning the Einzel lens to verify that the beam was passing through its centre.
-Due to the unstable nature of the apparatus these magnets needed to be adjusted on a day-to-day basis to maintain the beam path.
+A number of permanent magnets were used to steer the beam through the various apertures and onto the detector and care was taken to keep the beam on the central axis of the apparatus.
+The static magnetic fields were configured manually by adjusting the positions of the magnets, which were mounted on posts external to the vacuum system.
+Due to the unstable nature of the magnetic environment and the multiple simultaneous research projects these magnets needed to be adjusted on a day-to-day basis to maintain the beam path.
 
-The Einzel lens was used to focus the beam through a focus to the approximate size of the pepperpot mask extent.
-This was done to increase the divergence of the beamlets, making measurement easier, and to increase the electron flux transmitted through the pepperpot mask.
-The Einzel lens voltage required for this was approximately \unit[4.8][kV] and varied slightly with beam emittance, i.e. high emittance beams result in a larger beam size and thus required adjusting the Einzel lens voltage by \unit[100]{V} or so.
+The Einzel lens was used to focus the beam to a diameter approximately the same as the diameter of the pepperpot mask, as indicated in Figure~\ref{figure:emittance_schematic}.
+This focal arrangement was done to increase the divergence of the beamlets, making measurement easier, and to increase the electron flux transmitted through the pepperpot mask.
+The Einzel lens voltage required for this was approximately \unit[4.8]{kV} and varied slightly with beam emittance, i.e. high emittance beams result in a larger beam size and thus required adjusting the Einzel lens voltage by \unit[$\pm$100]{V} to keep the beam diameter equal to the pepperpot mask diameter at the mask.
 
 \subsection{Beam Energy}
-In many emittance measurements the beam energy would not be a free parameter as emittance would be used as a diagnostic for a specific system or scenario, however in this experiment we are able to vary the energy of our beam from a few hundred eV to around \unit[10]{keV}.
-There were a number of considerations in determining the optimal beam energy to use for pepperpot measurements such as measurement resolution, beam current and beam stability.
+In many emittance measurements the beam energy would not be a free parameter.
+Emittance measurement would normally be used as a diagnostic for a specific system or scenario.
+In this experiment there were a number of considerations in determining the optimal beam energy to use for pepperpot measurements such as measurement resolution, beam current and beam stability and we were able to vary the energy of the beam from a few hundred eV to \unit[11.7]{keV}.
 
-The resolution of a pepperpot measurement is greater when the size of the beamlets on the detector is larger and, as shown in Equation~\ref{equation:divergence} the divergence is greater for slower beams.
+
+The measurement resolution is affected by the beam energy.
+For a given emittance (transverse momentum spread), at low beam energy the size of the beamlets will be larger and thus more apparent at the detector than for high beam energy.
 Unfortunately the slower the beam the more fragile the alignment of the beam becomes with the \gls{caes}.
-It was impossible to align a \unit[500][eV] beam unobstructed through the system to the detector and even had it been possible the stability of the beam path would have been difficult to work with.
-A relatively high energy beam of \unit[8]{keV} was used as this provided a robust beam alignment that was resistant to the transient changes in the magnetic environment while providing sufficient measurement resolution.
+It was impossible to align a \unit[500]{eV} beam through the system to the detector and even had it been possible the stability of the beam would have been highly succeptible to the beam trajectory instabilities discussed in Section~\ref{section:stability}.
+A relatively high beam energy of \unit[8]{keV} was used, providing robust beam alignment that was resistant to the transient changes in the magnetic environment and acceptable measurement resolution.
 
 \subsection{Bellows}
 
 The bellows provide an additional mechanism to control the resolution of the measurement by adjusting the propagation distance of the pepperpot beamlets and thus their size on the detector.
-Once the strength of the Einzel lens had been set as described above the bellows were positioned such that the length of the streaks covered the majority of the detector which gave a propagation distance from the pepperpots of \unit[475]{mm}.
+Once the strength of the Einzel lens had been set as described above the bellows were positioned such that the length of the streaks covered the majority of the detector.
+The optimum propagation distance was found to be \unit[475]{mm}.
 
 \subsection{Streaking}
-The streaking was performed using a pair of deflectors located after the pepperpot sample and orientated such that the one-dimensional pepperpots could be streaked across the detector.
+The streaking was achieved using a pair of deflectors located after the pepperpot sample and aligned such that the one-dimensional pepperpots could be streaked across the detector.
 For these measurements one deflector was grounded and the other given a time-varying voltage which was supplied in one of two ways:
 \begin{itemize}
-\item A fast ramp using a bipolar push-pull solid-state switch with a fixed transition time of \unit[10]{ns} and
-\item A slower ramp using an amplified signal generator with a minimum transition of approximately \unit[10]{$\muup$s}.
+\item a fast ramp using a bipolar push-pull solid-state switch with a fixed transition time of \unit[10]{ns} and
+\item a slower ramp using an amplified signal generator with a minimum transition of approximately \unit[10]{$\muup$s}.
 \end{itemize}
-An example of the voltage ramps is shown in Figure~\ref{figure:deflector_voltages}. The slow ramp was performed by amplifying the output of signal generator\footnote{Rigol DG4162, able to operate up to \unit[160]{MHz}} which was highly configurable and thus capable of a wide range of pulse lengths, limited by the speed of the amplifier to a transition time minimum of approximately \unit[10]{$\muup$s} in duration as shown in Figure~\ref{figure:deflector_voltages}.
-More detail on the design of the streaking electronics can be found in Reference~\cite{speirs_electron_2017}.
+An example of the voltage ramps is shown in Figure~\ref{figure:deflector_voltages}.
+The slow ramp was performed by amplifying the output of the signal generator\footnote{Rigol DG4162, bandwidth \unit[160]{MHz}}, limited by the speed of the amplifier to a transition time minimum of approximately \unit[10]{$\muup$s} in duration as shown in Figure~\ref{figure:deflector_voltages}.
+The streaking electrons were designed and constructed by fellow student Rory Speirs as described in Reference~\cite{speirs_electron_2017}.
 
 \begin{figure}
     \center
     \input{part2/Figs/DeflectorVoltages.pgf}
-    \caption[Streak deflector voltages.]{The voltages applied to the deflectors for the long duration (left) and short duration (right) bunches. The zero on the time axis refers to the start of the electron bunches as shown in Figure~\ref{figure:streaks}.}
+    \caption[Streak deflector potential.]{The potentials applied to the deflectors for the long duration (left) and short duration (right) bunches. The zero on the time axis refers to the start of the electron bunches as shown in Figure~\ref{figure:streaks}.}
     \label{figure:deflector_voltages}
     % Code and data located in 2017.07.25, plot2error.py
 \end{figure}
 
-Synchronisation with the experimental cycle was easily achieved using triggers from the pulse blaster, see Section~\ref{section:pulse_blaster}, and, while the pulse blaster did not have sufficient temporal resolution to correctly trigger the fast ramp precisely, adjusting cable lengths for the trigger signal by a couple of meters provided adequate control.
+Synchronisation with the experimental cycle was achieved using triggers from the PulseBlaster, see Section~\ref{section:pulse_blaster}, and, while the PulseBlaster did not have sufficient temporal resolution to correctly trigger the fast ramp precisely, adjusting cable lengths for the trigger signal by a couple of metres provided adequate control.
 
-An interesting effect that limited the potential length of the usable portion of fast streaks was `ringing' in the signal, this is shown in Figure~\ref{figure:ringing}.
-Due to the ringing the range of the usable voltage sweep is somewhat truncated as any bunch with a duration longer than the sweep time will oscillate about the end point of the streak.
-Fortunately the majority of the streak is usable and bunches with durations shorted than the voltage sweep time are not affected.
+An interesting effect that limited the length of the usable portion of fast streaks was `ringing' in the signal; shown in Figure~\ref{figure:ringing}.
+Due to the ringing the range of the voltage sweep is truncated because any bunch with a duration longer than the sweep time would oscillate about the end point of the streak.
+Fortunately the majority of the sweep is usable and bunches with duration shorter than the voltage sweep time are not affected.
 
 \begin{figure}
     \center
