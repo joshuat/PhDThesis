@@ -100,7 +100,6 @@ B_n &= \frac{I}{8\pi^2\bar{\epsilon}_{n,x}\bar{\epsilon}_{n,y}}
 where $\beta=v/c\approx v_z/c$ and $c$ is the speed of light.
 Normalised brightness and emittance are invariant for a particular beam under ideal conditions.
 
-
 \subsection{Emittance with a CAEIS}
 \label{section:excess_energy_emittance}
 
@@ -295,56 +294,54 @@ Fortunately the majority of the sweep is usable and bunches with duration shorte
 \begin{figure}
     \center
     \input{part2/Figs/VoltagesRinging.pgf}
-    \caption[Streak deflector voltage oscillations.]{An example of ringing in the fast deflector voltage sweep. On the left is the Voltage on the detector from the start of the electron bunch, notice the slow damping oscillation after the initial \unit[10]{ns} sweep. On the right is an example of a streaked emittance measurement for a relatively long bunch length, notice the oscillations corresponding to the `ringing' present in the deflector voltage located on the right side of the streak.}
+    \caption[Streak deflector voltage oscillations.]{An example of ringing in the fast deflector voltage sweep. On the left is the Voltage on the detector from the start of the electron bunch, notice the slow damping oscillation after the initial \unit[10]{ns} sweep. On the right is an example of a streaked emittance measurement for a relatively long bunch length, notice the oscillations corresponding to the `ringing' present in the deflector voltage located on the right side of the streak. This image is log scaled and the color scale is the same as that shown in Figure~\ref{figure:pepperpot_example}.}
     \label{figure:ringing}
     % Fast streak from 2017.06.11 Set 12, code in 2017.07.25, plot2.py
 \end{figure}
 
 \subsubsection{Calibration}
-Calibration of the streak timing to the streak image was achieved with a calibration image, the voltage profile of the deflector during the streaking and assuming the streak position-time relation was linear.
-The calibration image was taken by averaging a number of images with static deflector voltages at the maximum and minimum deflector positions in order to determine the pixel-voltage gradient, $\frac{dpixel}{dV}$.
-The averaging of images at the two deflector positions was not required but is convenient for analysis.
-Any transformations applied to the streaked pepperpot images, such as rotation and deskewing, needed to be applied to the calibration image before measuring $dpixel$.
+Calibration of the streak timing to the streak image was achieved with a calibration image of the electron bunch transmitted through the pepperpot mask minimum and maximum deflection, the voltage profile of the deflector during the streaking and assuming the streak position-time relation was linear.
+The calibration image allows for the determination of the deflection-voltage gradient, $\frac{dx}{dV}$.
+Any necessary transformations applied to the streaked pepperpot images, such as rotation and deskewing, were applied to the calibration image before measuring $dx$.
 An example calibration image is shown in Figure~\ref{figure:example_calibration}.
-The deflector voltage profile was measured by a \unit[1]{GHz} oscilloscope\footnote{Tektronix DPO4104B-L Digital Phosphor Oscilloscope} with a probe attached to the vacuum feedthrough in order to minimise lag when comparing the deflector voltage to other signals, such as timing triggers.
+The deflector voltage profile was measured with a \unit[1]{GHz} oscilloscope\footnote{Tektronix DPO4104B-L} with a probe attached directly to the vacuum feedthrough.
 The voltage gradient, $\frac{dV}{dt}$, was measured by a linear fit to the streak region of the deflector voltage profile.
 It was then simple to calculate the  deflection gradient for the image
 \begin{equation}
-\frac{dpixel}{dt} = \frac{dpixel}{dV} \frac{dV}{dt}.
+\frac{dx}{dt} = \frac{dx}{dV} \frac{dV}{dt}.
 \end{equation}
 
 \begin{figure}
     \center
     \includegraphics[width=0.5\linewidth]{part2/Figs/example_calibration.jpeg}
-    \caption[Streaked pepperpot calibration image.]{An example of an image used to calibration the timing of the streaked pepperpots.
-    This image is composed of the average of several images where the deflectors were at the minimum and maximum voltage.}
+    \caption[Streaked pepperpot calibration image.]{An example of an image used to calibrate the timing of the streaked pepperpots.
+    This image is composed of the average of several images where the deflectors were at the minimum and maximum voltages. This image is log scaled and the color scale is the same as that shown in Figure~\ref{figure:pepperpot_example}.}
     % Set 9 2017.06.11
     \label{figure:example_calibration}
 \end{figure}
 
-The oscilloscope was also connected to a photodiode that monitors the intensity of the pulsed ionisation laser and this was used to determine the time during the voltage sweep that corresponds to the start of the streak as the streak begins when the blue laser is activated.
-The beam current of the short duration streaks correlates strongly with the intensity of the blue laser as shown in Figure~\ref{figure:blue_streak} which implies that the atom cloud is not saturated by the blue laser, thus suggesting that electron flux could be increased with a higher intensity laser.
+The oscilloscope was also connected to a photodiode that monitored the intensity of the pulsed ionisation laser and this was used to determine the time during the voltage sweep that corresponds to the start of the streak.
+The beam current of the short duration streaks correlates strongly with the intensity of the blue laser as shown in Figure~\ref{figure:blue_streak} which implies that the atom cloud is not saturated by the blue laser.
 
 \begin{figure}
     \center
     \input{part2/Figs/blue_electrons.pgf}
     \caption[Comparison between time-resolved electron count and ionisation laser power.]{A comparison of the relative intensities of an unobstructed electron bunch focused and streaked across the detector and the blue laser pulse used to ionise the atoms.
-    The top portion shows the electron bunch focused on the detector and streaked, the middle portion shows the intensity of the blue laser, and the bottom portion shows the electron count calculated by sum of each column of the streak image.}
+    The top portion shows the streak of the electron bunch focused on the detector and streaked, the image is linearly scaled with a colour scale as indicated. The middle portion shows the intensity of the blue laser, and the bottom portion shows the electron count calculated by summation of each column of the streak image.}
     % 2017.04.12 - ThesisFigure.py
     \label{figure:blue_streak}
 \end{figure}
 
 \subsection{Pepperpots}
 There were a number of iterations on the precise configuration of the one- and two-dimensional pepperpot masks used in these experiments.
-There are a number of considerations when designing pepperpot masks:
+The considerations when designing pepperpot masks were:
 \begin{itemize}
-    \item{\emph{Aperture size:} Smaller apertures provide a better resolution to the emittance measurement but reduce the signal as fewer particles pass through the hole.
-    Aperture size affects the size of the beamlets on the detector, which affects the beamlet overlap. Smaller apertures also allow for a smaller aperture spacing as when the aperture diameter and aperture spacing are similar the pepperpot can become fragile. The aperture size also affects the minimum resolvable emittance with smaller aperture able to resolve lower emittance.}
+    \item{\emph{Aperture size:} Smaller apertures provide a better resolution to the emittance measurement but reduce the signal, affects the beamlet overlap on the detector, allows for a smaller aperture spacings because when the aperture diameter and spacing are similar the pepperpot can become fragile.}
     \item{\emph{Aperture spacing:} Aperture spacing, also known as pitch, determines how well the full beam is sampled.
-    Smaller pitch allows for better sampling of the full beam however pitch should be large enough that the beamlet overlap on the detector is manageable.
+    Smaller pitch allows for better sampling but pitch should be large enough that the beamlet overlap on the detector can be corrected for, see Section~\ref{section:overlap_correction}.
     If the pitch is too small then the pepperpot can also become fragile.}
-    \item{\emph{Extent:} Ideally a the total extent of the pepperpot should be much larger than the largest beam for a particular apparatus.
-    Unfortunately, due to the sample mounting arrangement the size of samples was limited to \unit[3]{mm} diameter and only a \unit[2]{mm} diameter portion of the sample was accessible to the beam. A view of the sample holder without the `lid' is shown in Figure~\ref{figure:sample_holder_pepperpots}.}
+    \item{\emph{Extent:} Ideally the total extent of the pepperpot should be much larger than the largest beam for a particular apparatus.
+    Unfortunately, due to the mounting arrangement the size of samples was limited to \unit[3]{mm} diameter and only a \unit[2]{mm} diameter portion of the sample was accessible to the beam, see Figure~\ref{figure:sample_holder_pepperpots}.}
 \end{itemize}
 
 A number of restrictions aided the selection of parameters for the pepperpots used, the maximum pepperpot extent and need to focus the beam to the pepperpot size to maximise flux dictated the approximate size of the beamlets on the detector and thus the lowest feasibly pitch in order to minimise the overlap of beamlets on the detector.
@@ -450,7 +447,7 @@ The results of the analysis of simulations that vary the size of the apertures i
     \caption[Results of a simulations investigating the efficacy of the aperture size correction for various excess energies and aperture sizes.]{}
 \end{figure}
 
-\subsection{Beamlet Overlap}
+\subsection{Beamlet Overlap}\label{section:overlap_correction}
 Once again, due to the experimental constraints it was difficult to produce ideal pepperpot measurements with one of the issues being the overlap of beamlets.
 Most pepperpot analysis procedures assume that the beamlets are completely separated which was difficult to achieve with this apparatus while providing sufficient flux for streaked measurements and enough sampling of the beam to allow for estimation of the full-beam profile.
 A na\"ive analysis of overlapped beamlets might just analyse the potion of the beamlet between the troughs in the signal (which would work fine for fully separated beamlets), however this results in an underestimate of the beamlet size due to the portion underneath the neighbouring beamlets.
