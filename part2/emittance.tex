@@ -344,9 +344,10 @@ The considerations when designing pepperpot masks were:
     Unfortunately, due to the mounting arrangement the size of samples was limited to \unit[3]{mm} diameter and only a \unit[2]{mm} diameter portion of the sample was accessible to the beam, see Figure~\ref{figure:sample_holder_pepperpots}.}
 \end{itemize}
 
-A number of restrictions aided the selection of parameters for the pepperpots used, the maximum pepperpot extent and need to focus the beam to the pepperpot size to maximise flux dictated the approximate size of the beamlets on the detector and thus the lowest feasibly pitch in order to minimise the overlap of beamlets on the detector.
-The pepperpots were cut\footnote{The pepperpots were cut using a Oxford Laser Systems Alpha 532 laser micromachining system.} from \unit[25]{$\muup$m} thick copper pinholes\footnote{Gilder Grids GA50-C3, \unit[50]{$\muup$m} aperture.} with \unit[50]{$\muup$m} diameter holes cut in the centre.
-The central pinholes were used as the central aperture for the pepperpot arrays and since \unit[50]{$\muup$m} apertures provide adequate flux the rest of the apertures were also cut to the same diameter to simplify analysis while providing acceptable measurement resolution.
+There were a number of constraints on the pepperpot parameters.
+The maximum extend of the pepperpot masks were limited to the diameter accessible by the beam, \unit[2]{mm}.
+The need to maximise flux, by focusing the beam to the pepperpot size, and avoid excessive beamlet overlap at the detector also limited the minimum feasible pitch.
+The pepperpots were machined\footnote{The pepperpots were cut using an Oxford Laser Systems Alpha 532 laser micromachining system.} from \unit[25]{$\muup$m} thick copper films\footnote{Gilder Grids GA50-C3, \unit[50]{$\muup$m} aperture.} with \unit[50]{$\muup$m} diameter holes.
 A pitch of \unit[200]{$\muup$m} was chosen to provide acceptable sampling of the beam while minimising the overlap of beamlets on the detector.
 Given the \unit[2]{mm} diameter available this pitch allowed for one dimensional pepperpots with 7 apertures and two dimensional pepperpots with 7$\times$7 apertures.
 The pepperpots used are shown in Figures~\ref{figure:pepperpot_mask} and \ref{figure:1d_pepperpot}.
@@ -354,25 +355,24 @@ The pepperpots used are shown in Figures~\ref{figure:pepperpot_mask} and \ref{fi
 \begin{figure}
     \center
     \includegraphics[width=0.49\linewidth]{part2/Figs/sample_holder.jpg}
-    \caption[Sample holder.]{One of two sample holders that are used to load up to eight samples into the vacuum system. Clockwise from the top: five \unit[50]{$\muup$m} apertures with \unit[300]{$\muup$m} pitch, 7 by 7 pepperpot of \unit[50]{$\muup$m} apertures with \unit[200]{$\muup$m} pitch, 5 by 5 pepperpot of \unit[50]{$\muup$m} apertures with \unit[300]{$\muup$m} pitch, thin gold sample. Each sample is \unit[3]{mm} in diameter. A `lid' with appropriate apertures is placed over the samples to hold them in place allowing approximately \unit[2]{mm} diameter of each sample accessible to the beam.}
+    \caption[Sample holder.]{Photo one of the sample holders that were used to load up to eight samples into the vacuum system. Clockwise from the top: five \unit[50]{$\muup$m} apertures with \unit[300]{$\muup$m} pitch, 7 by 7 pepperpot of \unit[50]{$\muup$m} apertures with \unit[200]{$\muup$m} pitch, 5 by 5 pepperpot of \unit[50]{$\muup$m} apertures with \unit[300]{$\muup$m} pitch, thin gold sample. Each sample is \unit[3]{mm} in diameter. A `lid' with appropriate apertures is placed over the samples to hold them in place leaving approximately \unit[2]{mm} diameter of each sample accessible to the beam.}
     \label{figure:sample_holder_pepperpots}
 \end{figure}
 
 \subsection{Laser Parameters}
-The two-colour ionisation scheme required a `excitation' and `ionisation' laser, see Section~\ref{section:two_stage_ionisation}, a \gls{cw} red and pulsed blue laser respectively.
-These lasers have a number of parameters that affect the emittance measurements.
+The two-colour ionisation scheme required a \gls{cw} red excitation laser and a pulsed blue ionisation laser, see Section~\ref{section:two_stage_ionisation}.
 
 \subsubsection{Excitation Laser}
-The excitation laser was a \unit[780]{nm} laser, frequency locked to the Rb85 D2 F=3 to F=4 transition and was used in the first step of ionisation to excite ground state atoms that were trapped in the \gls{mot}.
-The spatial profile of this laser is highly controllable with a \gls{slm} allowing for arbitrary profiles to be mapped to the electron or ion bunch~\cite{mcculloch_arbitrarily_2011}.
-The highest electron flux is possible by simply saturating the \gls{mot} however control over the electron beam profile and size is usually desirable.
-One commonly used and simple distribution is a flat-top distribution as it can provide even electron intensity across the sample under examination.
-High emittance beams are unable to maintain the profile given by the excitation laser and will trend towards a Gaussian profile as they propagate, see Figure~\ref{figure:flat_top}.
+The \unit[780]{nm} excitation laser was frequency locked to the Rb85 cooling transition.
+The spatial profile of this laser was highly controllable with an \gls{slm} allowing for arbitrary profiles to be mapped to the electron or ion bunch~\cite{mcculloch_arbitrarily_2011}.
+The highest electron flux could be obtained by simply saturating the \gls{mot} but that limits control over the electron beam profile and size.
+One commonly used distribution is a flat-top which provided uniform electron intensity across the sample under examination.
+If the electron beam emittance is high, as the beam propagates the beam profile will degrade to something closer to a Gaussian (see Figure~\ref{figure:flat_top}).
 
 \begin{figure}
     \center
     \input{part2/Figs/flattops_emittance.pgf}
-    \caption[Blurring of flat-top electron profile with emittance.]{Unobstructed, unfocused electron beams generated with a flat-top profile on the excitation laser with varying ionisation laser wavelengths, and thus excess energies. The excess energy is listed above each beam profile. Below each profile is a trace of the central row of pixels (indicated by the dashed white line). The dotted lines on the lower figures indicate the profiles of the first and last profile for comparison.}
+    \caption[Blurring of flat-top electron profile with emittance.]{Images of electron beams that are unobstructed and not focused. The beams are generated with a flat-top profile on the excitation laser with varying ionisation laser wavelengths, and thus excess energies. The excess ionisation energy is listed above each beam profile. Below each profile is a trace of the central row of pixels (indicated by the dashed white line). The images are linearly scaled with and the colour scale is the same as that in Figure~\ref{figure:blue_streak}.}
     \label{figure:flat_top}
     % Data and code at 2017.05.09
 \end{figure}
