@@ -467,32 +467,33 @@ Most of the measurements made during this project have a lower degree of overlap
 \begin{figure}
     \center
     \input{part2/Figs/OverlapExample.pgf}
-    \caption[An example of overlapping beamlets.]{An example of overlapping beamlets.
-    The left figure shows overlapping beamlets from simulated data (shown as a dotted line in the other figures), the middle figure shows Gaussian parameters for each beamlet derived by considering only the portion of each beamlet between the troughs in the distribution, and the right figure shows Gaussian parameters from fitting the sum of Gaussians to the data.
+    \caption[An example of overlapping beamlets.]{Simulated one-dimensional pepperpot emittance measurement, demonstrating overlapping beamlets.
+    The left figure shows overlapping beamlets from simulated one-dimensional data (shown as a dotted line in the other figures), the middle figure shows nine Gaussian fits to each beamlet, and the summation of those fits, derived by considering only the portion of each beamlet between the troughs in the distribution, and the right figure shows nine Gaussian fits from fitting the sum of nine Gaussians to the data.
     The actual emittance of the simulated bunch is listed in the left figure and the emittance derived from the Gaussian sets is listed in the other two figures.
-    In the second two figure the pale lines indicate individual Gaussians fitted for each beamlet and solid lines for the sum of the individual Gaussians.}
+    In the second two figures the pale lines indicate individual Gaussians fitted for each beamlet and solid lines for the sum of the individual Gaussians.}
     \label{figure:overlap_example}
     % Data and code located in Code/Electrons/Simulation/1D Simulation SimScript1D.py and OverlapExample.py
 \end{figure}
 
 
 \subsection{Pepperpot Extent and Beam Coverage}
-A pepperpot mask that has an extent smaller than the size of the beam is effectively aperturing the beam and apertures reduce the emittance of a beam.
-Thus, attempting to measure the emittance with a pepperpot that has an extent smaller the the size of the beam will result in an underestimation of the emittance proportional to coverage of the beam.
+A pepperpot mask that has an extent smaller than the size of the beam is sampling only a portion of the beam and provides an underestimation of the beam emittance.
 
-The emittance of a beam at a focus is directly proportional to beam size (see Equations~\ref{emittance} and \ref{equation:excess_energy_emittance}) so if a pepperpot measurement of a flat-top beam was to only measure half the beam the measurement would report half the actual emittance of the beam.
-The correction is more complicated for a Gaussian profile beam as it is proportional to the integral of the normalised Gaussian covered by the pepperpot.
-If the beam shape in the pepperpot plane can be described by a Gaussian function, $f_{\bar{x},\sigma}(x)$, then the true emittance should be
+The emittance of a beam depends on the beam width (see Equations~\ref{emittance} and \ref{equation:excess_energy_emittance}).
+If for example, a pepperpot measures only half of a flat-top uniform distribution beam, then the measured value with be half the full emittance of the beam.
+The correction is more complicated for a Gaussian profile beam as the emittance is proportional to the integral of the normalised Gaussian covered by the pepperpot.
+If the beam shape in the pepperpot plane can be described by a Gaussian function $f_{\bar{x},\sigma}(x)$ then the true emittance should be
 \begin{equation}
 \epsilon_t = \epsilon_m \int_{-E}^{E} f_{\bar{x}, \sigma}(x) dx,
 \end{equation}
 where $\epsilon_m$ is the measured uncorrected emittance and the pepperpot extends from $-E$ to $+E$.
-The simulations indicate that the reality is not this simple unfortunately. In order to get the simulated correction to work is it necessary to use:
+The simulations indicate that the reality is not this simple.
+From detailed simulations it was determined that a better estimate can be obtained using
 \begin{equation}
 \epsilon_t = \epsilon_m \int_{-0.75*E}^{0.75*E} f_{\bar{x}, \sigma}(x) dx.
 \end{equation}
 The factor of 0.75 was discovered by fitting to the simulated data.
-There is clearly some aspect of this correction that is not yet understood however it performs adequately for use with the measurements in this chapter.
+There is clearly some aspect of this correction that is not yet understood but it performs adequately for use with the measurements in this chapter.
 The performance of the correction is shown in Figure~\ref{figure:pepperpot_extent}.
 The correction performs well until the pepperpot extent approaches the \gls{rms} width of the beam at which point the beam size estimations become less reliable.
 
@@ -503,19 +504,19 @@ Try and figure out what's going on with the magic number.
 \begin{figure}
     \center
     \input{part2/Figs/PepperpotExtent.pgf}
-    \caption[Results of a simulation investigating the efficacy of the beam coverage correction for various beam sizes.]{The results of analysis of simulations of the apparatus while varying the extent of the pepperpot mask compared to the size of the bunch at the pepperpot plane.
+    \caption[Results of a simulation investigating the efficacy of the beam coverage correction for various beam sizes.]{Simulated emittance as the extent of the pepperpot mask coverage of the beam is varied.
     The red dotted line indicates the true emittance of the bunch, the blue line indicates the measured emittance of the bunch without the beam coverage correction and the green line is the measured emittance with the correction.
     The dotted black line indicates the \gls{rms} width of the beam at the pepperpot plane (\unit[873]{$\muup$m}).}
     \label{figure:pepperpot_extent}
     % Data and code located in Code/Electrons/Simulation/1D Simulation SimScript1D.py
 \end{figure}
 
-\section{Results}
-In order to demonstrate the feasibility of time-resolved brightness measurements a number of measurements have been made including a comparison of two-dimensional pepperpot emittance measurements with theory and simulation, and one-dimensional pepperpot streaked measurements with long and short duration electron bunches.
+\section{Brightness Measurements}
+To demonstrate the feasibility of time-resolved brightness measurements a number of measurements have been made including a comparison of two-dimensional pepperpot emittance measurements with theory and simulation, and one-dimensional pepperpot streaked measurements with long and short duration electron bunches.
 
 \subsection{Analysis}
 The analysis procedure developed was based on the theory described in Reference~\cite{zhang_emittance_1996} and Equation~\ref{equation:pepperpot}.
-In order to determine the emittance from a one dimensional pepperpot measurement a number of parameters are required:
+To determine the emittance from a one dimensional pepperpot measurement a number of parameters are required:
 \begin{itemize}
     \item Size of pepperpot apertures
     \item Position of pepperpot apertures
@@ -524,22 +525,21 @@ In order to determine the emittance from a one dimensional pepperpot measurement
     \item Total number of electrons in each beamlet
 \end{itemize}
 The pepperpot parameters are known from the fabrication and the beamlet parameters can be determined from appropriately prepared two-dimensional and streaked one-dimensional pepperpot measurements.
-The analysis procedure is roughly as follows:
+The analysis procedure is as follows:
 \begin{enumerate}
-    \item Acquire images from camera
+    \item Acquire electron projection images
     \item Register images (see Section~\ref{section:registration})
     \item Average registered images
     \item Rotate image so dominant features are aligned with the pixel rows
     \item Deskew image so features along the second axis align with the columns
     \begin{itemize}
-        \item For two dimensional pepperpots sum the rows and columns to produce two one-dimensional sets of beamlets
-        \item For streaked emittance measurements examine each column of pixels independently to produce a number of one-dimensional sets of beamlets.
+        \item For two dimensional pepperpots, sum the rows and columns separately to produce two one-dimensional sets of beamlets
+        \item For streaked emittance measurements, consider each column of pixels independently as a one-dimensional sets of beamlets.
     \end{itemize}
-    \item Separate each beamlet set into individual beamlets
     \item Determine the approximate amplitude, mean position and \gls{rms} width of each beamlet
-    \item Refine the amplitude, mean positions and \gls{rms} width of each beamlet by fitting a number of Gaussians equal to the number of beamlets to the beamlet set to account for any overlap
+    \item Refine the amplitude, mean position and \gls{rms} width of each beamlet by fitting a number of Gaussians equal to the number of beamlets to the beamlet set to account for any overlap
     \item Transform the beamlet position and width measurements from pixel measurement to detector-plane measurements using the camera and \gls{mcp} calibration
-    \item Fit a Gaussian convolved with the aperture size to the refined beamlet parameters in order to determine the equivalent beamlet for a infinitesimal aperture
+    \item Fit a Gaussian convolved with the aperture size to the refined beamlet parameters in order to determine the equivalent beamlet for an infinitesimal aperture
     \item Use Equation~\ref{equation:pepperpot} to determine the emittance
     \item Estimate the full-beam profile of the bunch by fitting a Gaussian to the number of particles transmitted through each aperture (equal to the total particle count for each beamlet)
     \item Correct the emittance by considering the beam coverage of the pepperpot mask given the full-beam profile
