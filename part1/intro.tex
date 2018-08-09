@@ -20,7 +20,7 @@ This work has been published as Reference~\cite{torrance_sub-kilohertz_2016}.
 
 This chapter provides an overview of laser frequency stabilisation, a discussion of the physics of \gls{ps} followed by details on the implementation and measurement of high bandwidth frequency stabilisation using \gls{ps}.
 Much of the work described in this chapter was conducted as part of an academic/industrial collaboration project with industry partner MOG Laboratories Pty. Ltd. ("MOGLabs").
-The research outcomes were instrumental in improving the bandwidth of the electronics used within MOGLabs lasers which have since been used to acheive sub-hertz linewidths in a commercial system~\cite{menlo_systems_ors-dl_2016}.
+The research outcomes were instrumental in improving the bandwidth of the electronics used within MOGLabs lasers which have since been used to achieve sub-hertz linewidths in a commercial system~\cite{menlo_systems_ors-dl_2016}.
 
 \section{Laser Frequency Stabilisation}
 
@@ -43,7 +43,7 @@ A number of traits are desirable in a laser frequency stabilisation scheme inclu
     \item \emph{High-bandwidth}: All else being equal, high-bandwidth techniques provide greater potential for linewidth reduction than low-bandwidth techniques.
     \item \emph{Modulation-free}: A number of stabilisation techniques require frequency- or phase-modulation which limits the bandwidth of the technique to half the modulation frequency due to the Nyquist limit; thus modulation-free, or high-frequency modulation techniques are often preferable. Modulation-free techniques are often more susceptible to low frequency noise than modulated techniques.
     \item \emph{Low drift}: Drift can occur with slow changes to the lock point of the stabilisation scheme, potentially due to ambient changes in lab temperature or pressure, or the electrical environment causing subsequent changes to laser beam power, polarisation or locking electronics voltages levels all of which can result in drift in the laser frequency. This can even occur with techniques that use an absolute frequency reference although non-absolute techniques tend to be more susceptible to drift.
-    \item \emph{Stable}: Some techniques are more susceptible than others to unlocking, where perturbations such as ambient temperature or pressure changes, or percussive events (doors closing, dropped tools) cause large sudden changes in laser frequency which the servo system is unable to compensate for. Techniques with large capture ranges tend to have greater stability due to being able recover from larger frequency pertubations, see Section~\ref{section:capture_range} for an example.
+    \item \emph{Stable}: Some techniques are more susceptible than others to unlocking, where perturbations such as ambient temperature or pressure changes, or percussive events (doors closing, dropped tools) cause large sudden changes in laser frequency which the servo system is unable to compensate for. Techniques with large capture ranges tend to have greater stability due to being able recover from larger frequency perturbations, see Section~\ref{section:capture_range} for an example.
 \end{itemize}
 
 There are a large number of available techniques and variations on techniques for stabilisation each with different advantages and drawbacks.
@@ -95,7 +95,7 @@ In this context noise refers to effects that change the frequency of a laser in 
 Some sources of noise are thermal changes, ambient vibrations, atmospheric pressure, or the electrical power supply.
 
 Thermal noise can be caused by a number of effects such as changes in weather, and unreliable building climate control.
-Thermal noise can directly affect the length of the laser cavity and the refractive index of air within the cavity but also affects the alignment of optics, the efficiency and polarisation of light transmitted through fibres, and atomic vapour cell opacity which can erroneusly be interpreted by some frequency stabilisation sytstems as frequency changes and `corrected'.
+Thermal noise can directly affect the length of the laser cavity and the refractive index of air within the cavity but also affects the alignment of optics, the efficiency and polarisation of light transmitted through fibres, and atomic vapour cell opacity which can erroneously be interpreted by some frequency stabilisation systems as frequency changes and `corrected'.
 
 Electrical noise can occur with changes to the wider electrical grid as well as when devices in the lab are turned on or off, fast switching high-voltage/-current supplies, such as those used to switch the \gls{mot} coils, can cause noticeable effects on other electrical equipment in close proximity.
 Noise in the electronic environment can cause frequency instability particularly if a laser diode is not fully isolated from the electrical ground.
