@@ -480,26 +480,25 @@ Most of the measurements made during this project have a lower degree of overlap
 A pepperpot mask that has an extent smaller than the size of the beam is sampling only a portion of the beam and provides an underestimation of the beam emittance.
 
 The emittance of a beam depends on the beam width (see Equations~\ref{emittance} and \ref{equation:excess_energy_emittance}).
-If for example, a pepperpot measures only half of a flat-top uniform distribution beam, then the measured value with be half the full emittance of the beam.
+If for example, a pepperpot measures only half of a flat-top uniform distribution beam at a beam waist, then the measured emittance will be half the full emittance of the beam.
 The correction is more complicated for a Gaussian profile beam as the emittance is proportional to the integral of the normalised Gaussian covered by the pepperpot.
 If the beam shape in the pepperpot plane can be described by a Gaussian function $f_{\bar{x},\sigma}(x)$ then the true emittance should be
-\begin{equation}
+\begin{equation}\label{equations:emittance_correction_simple}
 \epsilon_t = \epsilon_m \int_{-E}^{E} f_{\bar{x}, \sigma}(x) dx,
 \end{equation}
 where $\epsilon_m$ is the measured uncorrected emittance and the pepperpot extends from $-E$ to $+E$.
-The simulations indicate that the reality is not this simple.
-From detailed simulations it was determined that a better estimate can be obtained using
+
+If the pepperpot mask measuring the beam is not at a beam waist then, due to the beam divergence, the correction shown in Equation~\ref{equations:emittance_correction_simple} is not suitable.
+Adding another factor $k$ to the limits of the integral in Equation~\ref{equations:emittance_correction_simple} allows for a simple method of taking the divergence into account,
 \begin{equation}
-\epsilon_t = \epsilon_m \int_{-0.75*E}^{0.75*E} f_{\bar{x}, \sigma}(x) dx.
+\epsilon_t = \epsilon_m \int_{-k\,E}^{k\,E} f_{\bar{x}, \sigma}(x) dx.
 \end{equation}
-The factor of 0.75 was discovered by fitting to the simulated data.
-There is clearly some aspect of this correction that is not yet understood but it performs adequately for use with the measurements in this chapter.
+The value of $k$ depends on the divergence of the beam which in turn depends on the precise geometry of the measurement.
+Fitting to the simulations, which replicate the geometry of the apparatus used here, indicates that for this apparatus k$=$0.75.
+
 The performance of the correction is shown in Figure~\ref{figure:pepperpot_extent}.
 The correction performs well until the pepperpot extent approaches the \gls{rms} width of the beam at which point the beam size estimations become less reliable.
-
-{\color{red}
-Try and figure out what's going on with the magic number.
-}
+The extent of the pepperpots in the measurements described in the following sections was much greater than the size of the beam at the pepperpot plane.
 
 \begin{figure}
     \center
@@ -575,7 +574,6 @@ The results from this test can be seen in Figure~\ref{figure:emittance_vs_theory
 The data are taken from 100-shot registered averages and agree with the simulation results.
 The lower bound on measurable emittance is apparent in both the measurement and simulation results.
 Due to the aperture size of \unit[50]{$\muup$m} and beam path geometry (propagation distances, focusing parameter, etc.) the measurements were limited to resolving emittance greater than \unit[41]{nm rad}.
-{\color{red}Contrast to beam waist measurement? I.e. Eindhoven?}
 
 \begin{figure}
     \center
