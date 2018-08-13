@@ -69,18 +69,6 @@ def emittance_from_line(line, peaks, sum_peaks=False, diag=False, m_per_pixel=m_
                         aperture_size=50e-6, adjust_for_aperture_size=True, refine_parameters=False, zero=True, index=-1, subplots=True):
     xs = arange(line.size, dtype='f')
     
-    ############ HAX
-    #if index>303 or False:
-    if index>365 or False:
-        print('\tHAXX Mk2')
-        number_holes = 4
-        peaks = peaks[2:-1]
-    elif index==214 or index==215 or index>218 or False:
-        print('\tHAXX')
-        #rms_size = 452.08e-6
-        number_holes = 6
-        peaks = peaks[1:]
-    
     if diag and subplots:
         plt.subplot(2, 2, 1)
     ret = get_gaussians_from_line(xs, line, peaks, sum_peaks=sum_peaks, diag=diag, zero=zero)
