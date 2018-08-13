@@ -2,7 +2,12 @@
 
 The code presented in this appendix was written for use with Python 3.
 
-\section{One-Dimensional Pepperpot Simulation}
+\section{One-Dimensional Pepperpot Simulation}\label{section:1d_code}
+
+This code was used to simulate the behaviour of the electron beam as the emittance is measured with a pepperpot mask.
+The results of the simulations performed with this code confirmed the accuracy of the corrections applied to the emittance measurements.
+Bunch1d.py contains the core simulator code, Mask1D.py contains functions for applying pepperpot masks to the beam, and SimScript1D.py contains simulations of a number of different scenarios.
+These simulations are discussed in Section~\ref{section:pepperpot_simulations}.
 
 \subsection{Bunch1D.py}
 \lstinputlisting[language=Python,basicstyle=\tiny\ttfamily]{appendices/code/Bunch1D.py}
@@ -13,22 +18,38 @@ The code presented in this appendix was written for use with Python 3.
 \subsection{SimScript1D.py}
 \lstinputlisting[language=Python,basicstyle=\tiny\ttfamily]{appendices/code/SimScript1D.py}
 
+\newpage
 \section{Two-Dimensional Quadrupole and Pepperpot Simulations}
+
+This code was used in Sections~\ref{section:quadrupole} and \ref{section:pepperpot_simulations}.
+This code simulates charged particle beams, performing particle tracing, magnetic field interactions and optional particle-particle interactions.
+ElectronLens.py contains the class ElectronBunch which performs the beam simulation.
+MagneticFields.py contains a number of functions for the contruction of magnetic fields for use with the simulation.
+EmittanceSim.py simulates the emittance measurements for Section~\ref{section:pepperpot_simulations} but the code shown in Section~\ref{section:1d_code} was preferable simply due to the time taken to perform equivalent simulations.
 
 \subsection{ElectronLens.py}
 \lstinputlisting[language=Python,basicstyle=\tiny\ttfamily]{appendices/code/ElectronLens.py}
 
-\subsection{EmittanceSim.py}
-\lstinputlisting[language=Python,basicstyle=\tiny\ttfamily]{appendices/code/EmittanceSim.py}
-
 \subsection{MagneticFields.py}
 \lstinputlisting[language=Python,basicstyle=\tiny\ttfamily]{appendices/code/MagneticFields.py}
 
+\subsection{EmittanceSim.py}
+\lstinputlisting[language=Python,basicstyle=\tiny\ttfamily]{appendices/code/EmittanceSim.py}
+
+
+\newpage
 \section{Image Registration}
+
+This code was used to perform the image processing and registration for the diffraction measurements in Chapter~\ref{chapter:diffraction} and the brightness measurements in Chapter~\ref{chapter:brightness}.
+
 \subsection{ImageSet.py}
 \lstinputlisting[language=Python,basicstyle=\tiny\ttfamily]{appendices/code/ImageSet.py}
 
+\newpage
 \section{Utility Code}
+
+Emittance.py was used for both the brightness measurements and simulations for Chapter~\ref{chapter:brightness}.
+Fitting.py was used by a number of the codes in this appendix to fit functions to data.
 
 \subsection{Emittance.py}
 \lstinputlisting[language=Python,basicstyle=\tiny\ttfamily]{appendices/code/Emittance.py}
