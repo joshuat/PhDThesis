@@ -1,47 +1,50 @@
 \chapter{Heterodyne Beatnote of Two Lasers}\label{appendix:heterodyne}
 
-This is a proof showing, in excruciating detail, that the \gls{fwhm} of a heterodyne beatnote generated from two identical idenpendent Gaussian-lineshape lasers has  a specral width that is $2\sqrt{2\log_e(2)}$ larger than the spectral width of the individual lasers.
+In Chapter~\ref{chapter:polspec}, the heterodyne beatnote between two independent lasers was used to determine the laser linewidth as a diagnostic of frequency stabilisation using polarisation spectroscopy.
+Although the technique is commonly used for similar applications, a detailed analysis has been missing.
+This appendix analyses the heterodyne beatnote spectrum in detail and shows how the spectral width is related to the individual laser linewidths.
 
-Consider two independent lasers with Gaussian spectral widths such that the Fourier transform of the electric field is
+Consider two independent lasers with Gaussian spectral distributions such that the Fourier transform of the electric field is
 \begin{align}
-\mathcal{F}\{E_i\} = \exp\left(-\frac{(f-f_0)^2}{2\sigma_i^2}\right),
+\mathcal{F}\{E_i\} = \exp\left(-\frac{(f_i-f_0)^2}{2\sigma_i^2}\right),
 \end{align}
-where the lasers have a spectral width of $\sigma_i$ centred at frequency $f$.
+where the lasers have a spectral width of $\sigma_i$ centred at frequency $f_i$.
 
 Ignoring the centre frequency $f_0$ for now,
 \begin{align}
-E_i &= \int_{-\infty}^{\infty} \exp\left(-\frac{f^2}{2\sigma_i^2}\right) \exp(2\pi i f t) \,df\notag\\
-&= \int_{-\infty}^{\infty} \exp\left(-\frac{f^2}{2\sigma_i^2}\right) \big(\cos(2\pi f t) + i\sin(2\pi f t)\big) \,df
+E_i &= \int_{-\infty}^{\infty} \exp\left(-\frac{f_i^2}{2\sigma_i^2}\right) \exp(2\pi i f_i t) \,df_i\notag\\
+&= \int_{-\infty}^{\infty} \exp\left(-\frac{f_i^2}{2\sigma_i^2}\right) \big(\cos(2\pi f_i t) + i\sin(2\pi f_i t)\big) \,df_i
 \end{align}
-The integrand with the sine is odd and will evaluate to zero.
+The integrand with the sine is odd and will evaluate to zero, so we can write
 \begin{align}
-E_i &= \int_{-\infty}^{\infty} \exp\left(-\frac{f^2}{2\sigma_i^2}\right) \big(\cos(2\pi f t) + 0\big) \,df \notag\\
-&= \int_{-\infty}^{\infty} \exp\left(-\frac{f^2}{2\sigma_i^2}\right)\cos(2\pi f t) \,df
+E_i &= \int_{-\infty}^{\infty} \exp\left(-\frac{f^2}{2\sigma_i^2}\right)\cos(2\pi f t) \,df\notag\\
+&= \sigma_i\sqrt{2 \pi} e^{-2 \pi^2t^2 \sigma_i^2}\notag\\
+&= \sigma_i\sqrt{2 \pi} e^{-2 \pi^2t^2 \sigma_i^2}\,e^{-2\pi i t f_0},
 \end{align}
+using the Fourier transform shift property.
+%According to Reference~\cite{abramowitz_handbook_2012} (page 302, equation 7.4.6),
+%\begin{align}
+%\int_{-\infty}^{\infty}e^{-ax^2}\cos(2\pi k x)\,dx = \sqrt{\frac{\pi}{a}} e^{-\pi^2k^2/a}
+%\end{align}
 
-According to Reference~\cite{abramowitz_handbook_2012} (page 302, equation 7.4.6),
-\begin{align}
-\int_{-\infty}^{\infty}e^{-ax^2}\cos(2\pi k x)\,dx = \sqrt{\frac{\pi}{a}} e^{-\pi^2k^2/a}
-\end{align}
+%So we get,
+%\begin{align}
+%E_i &= \sigma_i\sqrt{2 \pi} e^{-2 \pi^2t^2 \sigma_i^2}
+%\end{align}
 
-So we get,
-\begin{align}
-E_i &= \sigma_i\sqrt{2 \pi} e^{-2 \pi^2t^2 \sigma_i^2}
-\end{align}
-
-Using the Fourier transform shift property we can put $f_0$ back in.
-\begin{align}
-E_i &= \sigma_i\sqrt{2 \pi} e^{-2 \pi^2t^2 \sigma_i^2}\,e^{-2\pi i t f_0}
-\end{align}
+%Using the Fourier transform shift property we can put $f_0$ back in.
+%\begin{align}
+%E_i &= \sigma_i\sqrt{2 \pi} e^{-2 \pi^2t^2 \sigma_i^2}\,e^{-2\pi i t f_0}
+%\end{align}
 
 The detector measures the power of the lasers which is given by
 \begin{align}
-P_{detector}(t) &= I(t) * A\notag\\
-&= \frac{cA\epsilon_0}{2}|E|^2
+P_{detector}(t) &= I(t) \, A = \frac{cA\epsilon_0}{2}|E|^2
 \end{align}
 where $A$ is the area of the detector.
 
-The signal shown on the spectrum analyser should be
+The photodetector is a square-law detector; that is the output signal is proportional to the square of the input signal.
+Hence the power spectral density (PSD) displayed on a conventional RF spectrum analyser will be
 \begin{align}
 \mathcal{F}\{P_{elec}\} &\propto \mathcal{F}\{\left[P_{detector}\right]^2\}\notag\\
 &= \mathcal{F}\left\{\left[\frac{cA\epsilon_0}{2}|E|^2\right]^2\right\}\notag\\
@@ -49,25 +52,15 @@ The signal shown on the spectrum analyser should be
 \end{align}
 \begin{align}
 |\vec{E_1}+\vec{E_2}|^2 &= (\vec{E_1}+\vec{E_2})(\vec{E_1}+\vec{E_2})^*\notag\\
-&= \sqrt{2\pi} \Bigg(\sigma_1 e^{-2\pi^2t^2\sigma_1^2-2\pi i t f_1} + \sigma_2 e^{-2\pi^2t^2\sigma_2^2-2\pi i t f_2}\Big)\Big(\sigma_1 e^{-2\pi^2t^2\sigma_1^2+2\pi i t f_1} + \sigma_2 e^{-2\pi^2t^2\sigma_2^2+2\pi i t f_2}\Bigg)\notag\\
-&= \sqrt{2\pi}\Bigg(\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + \sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)-2\pi i t (f_1-f_2)} + \sigma_2\sigma_1 e^{-2\pi^2t^2(\sigma_2^2+\sigma_1^2)+2\pi i t (f_1-f_2)} \Bigg)\notag\\
+&= \sqrt{2\pi} \Bigg(\sigma_1 e^{-2\pi^2t^2\sigma_1^2-2\pi i t f_1} + \sigma_2 e^{-2\pi^2t^2\sigma_2^2-2\pi i t f_2}\Bigg)\Bigg(\sigma_1 e^{-2\pi^2t^2\sigma_1^2+2\pi i t f_1} + \sigma_2 e^{-2\pi^2t^2\sigma_2^2+2\pi i t f_2}\Bigg)\notag\\
 &= \sqrt{2\pi}\Bigg(\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + \sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)}\left\{e^{-2\pi i t (f_1-f_2)} + e^{+2\pi i t (f_1-f_2)} \right\}\Bigg)\notag\\
-&= \sqrt{2\pi}\Bigg(\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + \notag\\&\quad\quad\quad\quad\sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)}\Big\{\cos\big[2\pi t (f_1-f_2)\big]-i\sin\big[2\pi t (f_1-f_2)\big] + \cos\big[2\pi t (f_1-f_2)\big]\notag\\
-& \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad+i\sin\big[2\pi t (f_1-f_2)\big]\Big\} \Bigg)\notag\\
 &= \sqrt{2\pi}\Bigg(\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + 2\sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)}\cos\big[2\pi t (f_1-f_2)\big] \Bigg)
 \end{align}
 \begin{align}
 \mathcal{F}\{\left[P_{detector}\right]^2\} &= \frac{c^2A^2\epsilon_0^2 \pi}{2}\mathcal{F}\left\{\left[\sigma_1^2 e^{-4\pi^2t^2\sigma_1^2} + \sigma_2^2 e^{-4\pi^2t^2\sigma_2^2} + 2\sigma_1\sigma_2 e^{-2\pi^2t^2(\sigma_1^2+\sigma_2^2)}\cos\big[2\pi t (f_1-f_2)\big] \right]^2\right\}\notag\\
-&= \frac{c^2A^2\epsilon_0^2 \pi}{2}\mathcal{F}\Bigg\{\sigma_1^4 e^{-8\pi^2t^2\sigma_1^2} + \sigma_2^4 e^{-8\pi^2t^2\sigma_2^2} + 4\sigma_1^2\sigma_2^2 e^{-4\pi^2t^2(\sigma_1^2+\sigma_2^2)}\cos^2\big[2\pi t (f_1-f_2)\big] + \notag\\
-& \quad\quad\quad\quad\quad\quad 2\sigma_1^2\sigma_2^2 e^{-4\pi^2t^2(\sigma_1^2+\sigma_2^2)} + 4\sigma_1^3\sigma_2 e^{-2\pi^2t^2(3\sigma_1^2+\sigma_2^2)}\cos\big[2\pi t (f_1-f_2)\big] + \notag\\
-& \quad\quad\quad\quad\quad\quad 4\sigma_1\sigma_2^3e^{-2\pi^2t^2(\sigma_1^2+3\sigma_2^2)}\cos\big[2\pi t (f_1-f_2)\big] \Bigg\}\notag\\
 &= \frac{c^2A^2\epsilon_0^2 \pi}{2}\mathcal{F}\Bigg\{\sigma_1^4 e^{-8\pi^2t^2\sigma_1^2} + \sigma_2^4 e^{-8\pi^2t^2\sigma_2^2} + 2\sigma_1^2\sigma_2^2 e^{-4\pi^2t^2(\sigma_1^2+\sigma_2^2)}\left(\cos\big[4\pi t (f_1-f_2)\big]+1\right)\notag\\
 &\quad\quad\quad\quad\quad\quad + 2\sigma_1^2\sigma_2^2 e^{-4\pi^2t^2(\sigma_1^2+\sigma_2^2)} + 4\sigma_1^3\sigma_2 e^{-2\pi^2t^2(3\sigma_1^2+\sigma_2^2)}\cos\big[2\pi t (f_1-f_2)\big] \notag\\
 &\quad\quad\quad\quad\quad\quad + 4\sigma_1\sigma_2^3e^{-2\pi^2t^2(\sigma_1^2+3\sigma_2^2)}\cos\big[2\pi t (f_1-f_2)\big] \Bigg\}\notag\\
-&= \frac{c^2A^2\epsilon_0^2 \pi}{2}\mathcal{F}\Bigg\{\sigma_1^4 e^{-8\pi^2t^2\sigma_1^2} + \sigma_2^4 e^{-8\pi^2t^2\sigma_2^2} + \sigma_1^2\sigma_2^2 e^{-4\pi^2t^2(\sigma_1^2+\sigma_2^2)+i4\pi t (f_1-f_2)} +\notag\\
-&\quad\quad\quad\quad\quad\quad \sigma_1^2\sigma_2^2 e^{-4\pi^2t^2(\sigma_1^2+\sigma_2^2)-i4\pi t (f_1-f_2)} + 4\sigma_1^2\sigma_2^2 e^{-4\pi^2t^2(\sigma_1^2+\sigma_2^2)} +\notag\\
-&\quad\quad\quad\quad\quad\quad  2\sigma_1^3\sigma_2 e^{-2\pi^2t^2(3\sigma_1^2+\sigma_2^2)+i2\pi t (f_1-f_2)} + 2\sigma_1^3\sigma_2 e^{-2\pi^2t^2(3\sigma_1^2+\sigma_2^2)-i2\pi t (f_1-f_2)}\notag\\
-&\quad\quad\quad\quad\quad\quad 2\sigma_1\sigma_2^3e^{-2\pi^2t^2(\sigma_1^2+3\sigma_2^2)+i2\pi t (f_1-f_2)} + 2\sigma_1\sigma_2^3e^{-2\pi^2t^2(\sigma_1^2+3\sigma_2^2)-i2\pi t (f_1-f_2)}\Bigg\}\notag\\
 &= \frac{c^2A^2\epsilon_0^2 \pi}{2}\Bigg[\frac{\sigma_1^3}{\sqrt{8\pi}} e^{-f^2/8\sigma_1^2} + \frac{\sigma_2^3}{\sqrt{8\pi}} e^{-f^2/8\sigma_2^2} + \notag\\
 &\quad\quad\quad\quad\quad\quad \frac{\sigma_1^2\sigma_2^2}{\sqrt{4\pi(\sigma_1^2+\sigma_2^2)}}\Bigg(e^{-(f-2(f_1-f_2))^2/4(\sigma_1^2+\sigma_2^2)} + e^{-(f+2(f_1-f_2))^2/4(\sigma_1^2+\sigma_2^2)}+\notag\\
 &\quad\quad\quad\quad\quad\quad  \quad\quad\quad\quad\quad\quad\quad\quad\quad 4e^{-f^2/4(\sigma_1^2+\sigma_2^2)} \Bigg) +\notag\\
@@ -75,9 +68,7 @@ The signal shown on the spectrum analyser should be
 &\quad\quad\quad\quad\quad\quad  \frac{2\sigma_1\sigma_2^3}{\sqrt{2\pi(\sigma_1^2+3\sigma_2^2)}}\left(e^{-(f-(f_1-f_2))^2/2(\sigma_1^2+3\sigma_2^2)}+e^{-(f+(f_1-f_2))^2/2(\sigma_1^2+3\sigma_2^2)}\right)\Bigg]
 \end{align}
 
-This uses the shift property of Fourier transforms. $f(t-t_0) <=> F(k)\exp{-i2\pi t_0 k}$ and $f(t)\exp{i2\pi t k_0} = F(k-k_0)$.
-
-Now if we let $\Delta=f1-f2$ and since the spectrum analyser doesn't know the difference between $\pm f$;
+Now if we let $\Delta=f_1-f_2$ and since the spectrum analyser doesn't know the difference between $\pm f$;
 \begin{align}
 \mathcal{F}\{P_{elec}\} &= \frac{c^2A^2\epsilon_0^2 \pi}{2}\Bigg[\frac{\sigma_1^3}{\sqrt{8\pi}} e^{-f^2/8\sigma_1^2} + \frac{\sigma_2^3}{\sqrt{8\pi}} e^{-f^2/8\sigma_2^2} + \notag\\
 &\quad\quad\quad\quad\quad\quad \frac{\sigma_1^2\sigma_2^2}{\sqrt{\pi(\sigma_1^2+\sigma_2^2)}}\left(e^{-(f-2\Delta)^2/4(\sigma_1^2+\sigma_2^2)} + 2e^{-f^2/4(\sigma_1^2+\sigma_2^2)} \right) +\notag\\
@@ -91,4 +82,4 @@ If we have two identical but uncorrelated lasers then $\sigma=\sigma_1=\sigma_2$
 &= \frac{c^2A^2\epsilon_0^2 \pi}{2}\frac{\sigma^3}{\sqrt{2\pi}}\Bigg[3e^{-f^2/2(2\sigma)^2} + e^{-(f-2\Delta)^2/2(2\sigma)^2} + 4e^{-(f-\Delta)^2/2(2\sigma)^2}\Bigg]
 \end{align}
 
-So we have the beatnote located at $f=\Delta$ with a RMS width $2\sigma$ and FWHM of $4\sigma\sqrt{2\log_e{2}}$ thus the beatnote has a spectral \gls{fwhm} $2\sqrt{2\log_e{2}}$ larger than that of the component lasers.
+Thus the spectrum analyser displays a beatnote located at $f=\Delta$ with a RMS width $2\sigma$ and FWHM of $2\sigma2\sqrt{2\log_e{2}}=2\sigma\times2.35$.
