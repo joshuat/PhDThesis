@@ -29,20 +29,20 @@ Laser frequency stabilisation can range from weak stabilisation keeping the cent
 These techniques use a frequency reference such as an optical cavity or atomic transition and provide negative feedback to the laser, using a servo system, to keep the laser at the reference frequency.
 
 A frequency discrimination method is used to generate an error signal and a servo system drives various feedback actuators to minimise that error.
-A servo system, or servomechanism or just servo, is a system that uses error sensing negative feedback to control a device via an actuator.
+A servo system is a system that uses error sensing negative feedback to control a device via an actuator.
 A simple example of a servo is the cruise control in a car where the difference between the desired speed and the actual speed (the error signal) is used to modulate the throttle to get closer to the desired speed.
 Laser stabilisation systems use servo systems to appropriately apply gain to the error signal and apply the result to the various feedback actuators available.
 
 The efficacy of stabilisation techniques can be described by the width of the frequency distribution of the laser, called the linewidth.
 Linewidth usually refers to either the \gls{fwhm} or \gls{rms} spectral width about the central frequency and is used to describe measurements made over various timescales.
-Short duration measurements, usually less than a second, are used to describe the linewidth of laser whereas long timescale measurement, hours or days in duration, is used to describe the drift of the laser central frequency over time.
+Short duration measurements, usually less than a second, are used to describe the linewidth of lasers whereas long timescale measurement, hours or days in duration, are used to describe the drift of laser central frequency over time.
 
 A number of traits are desirable in a laser frequency stabilisation scheme including:
 \begin{itemize}
     \item \emph{Absolute frequency reference}: Frequency stabilisation techniques that rely on optical cavities are vulnerable to changes in the cavity resonant frequency, due to changes in cavity length with temperature or pressure for example, whereas other techniques such as \gls{sa} or \gls{ps} are relative to atomic energy levels and thus not subject to drift in the same way.
     \item \emph{High-bandwidth}: All else being equal, high-bandwidth techniques provide greater potential for linewidth reduction than low-bandwidth techniques.
     \item \emph{Modulation-free}: A number of stabilisation techniques require frequency- or phase-modulation which limits the bandwidth of the technique to half the modulation frequency due to the Nyquist limit; thus modulation-free, or high-frequency modulation techniques are often preferable. Modulation-free techniques are often more susceptible to low frequency noise than modulated techniques.
-    \item \emph{Low drift}: Drift can occur with slow changes to the lock point of the stabilisation scheme, potentially due to ambient changes in lab temperature or pressure, or the electrical environment causing subsequent changes to laser beam power, polarisation or locking electronics voltages levels all of which can result in drift in the laser frequency. This can even occur with techniques that use an absolute frequency reference although non-absolute techniques tend to be more susceptible to drift.
+    \item \emph{Low drift}: Drift can occur with slow changes to the lock point of the stabilisation scheme, potentially due to ambient changes in lab temperature or pressure, or the electrical environment causing subsequent changes to laser beam power, polarisation or locking electronics voltage levels all of which can result in drift in the laser frequency. This can even occur with techniques that use an absolute frequency reference although non-absolute techniques tend to be more susceptible to drift.
     \item \emph{Stable}: Some techniques are more susceptible than others to unlocking, where perturbations such as ambient temperature or pressure changes, or percussive events (doors closing, dropped tools) cause large sudden changes in laser frequency which the servo system is unable to compensate for. Techniques with large capture ranges tend to have greater stability due to being able recover from larger frequency perturbations, see Section~\ref{section:capture_range} for an example.
 \end{itemize}
 
@@ -74,7 +74,7 @@ The design of the electronics involved in the modulation of the injection curren
 The lasers used in the experiments described in this thesis all had two modes of current feedback, `slow' current feedback, with bandwidth from DC to approximately \unit[100]{kHz}, and `fast' current feedback, with bandwidth from about \unit[100]{kHz} to \unit[50]{MHz}.
 
 The investigations of laser spectral behaviour, discussed later in this chapter, were instrumental in identifying potential improvements to the design of the electronics involved in the fast current channel of MOGLabs diode lasers.
-The measurements presented where made with the final prototype of the enhanced laser headboard, now standard with lasers made by MOGLabs.
+The measurements presented were made with the final prototype of the enhanced laser headboard, now standard with lasers made by MOGLabs.
 
 \subsubsection{Grating Angle and Position}
 In external cavity diode lasers, for example the Littrow configuration \gls{ecdl} shown in Figure~\ref{figure:littrow}, the angle and position of the external grating can be used to control the output frequency.
@@ -88,13 +88,13 @@ The grating position is used to control the length of the external cavity which 
 \end{figure}
 
 Wavelength control via the grating angle is limited by the response rate of the piezo actuator which tend to respond in microseconds.
-Thus the grating angle can be used to deal with relatively low frequency noise, up to approximately \unit[1]{kHz} or so, such as changes to ambient temperature, pressure, or acoustic vibrations.
+Thus the grating angle can be used to deal with relatively low frequency noise, up to approximately \unit[1]{kHz} or so, such as changes to ambient temperature, pressure, or some acoustic vibrations.
 
 \subsection{Noise}
 In this context noise refers to effects that change the frequency of a laser in undesirable ways.
 Some sources of noise are thermal changes, ambient vibrations, atmospheric pressure, or the electrical power supply.
 
-Thermal noise can be caused by a number of effects such as changes in weather, and unreliable building climate control.
+Thermal noise can be caused by a number of effects such as changes in weather or unreliable building climate control.
 Thermal noise can directly affect the length of the laser cavity and the refractive index of air within the cavity but also affects the alignment of optics, the efficiency and polarisation of light transmitted through fibres, and atomic vapour cell opacity which can erroneously be interpreted by some frequency stabilisation systems as frequency changes and `corrected'.
 
 Electrical noise can occur with changes to the wider electrical grid as well as when devices in the lab are turned on or off, fast switching high-voltage/-current supplies, such as those used to switch the \gls{mot} coils, can cause noticeable effects on other electrical equipment in close proximity.
@@ -265,7 +265,7 @@ The steep antisymmetric slope about the resonance is ideal for frequency stabili
 \begin{figure}
 \centering
 \input{part1/Figs/pdh_transmission_error.pgf}
-\caption[Simulated cavity transmission and reflection, and \gls{pdh} error spectra.]{Simulated plots of cavity transmission function (Equation~\ref{equation:cavity_transmission2}), reflection coefficient (Equation~\ref{equation:reflection_coefficient}) and \gls{pdh} error signal (Equation~\ref{equation:pdh_error}) from left to right all, as a function of $\Delta\omega$, the angular frequency difference between the cavity resonance and the laser frequency. $\Omega$ is the modulation frequency.}
+\caption[Simulated cavity transmission and reflection, and \gls{pdh} error spectra.]{Simulated plots of cavity transmission function (Equation~\ref{equation:cavity_transmission2}), reflection coefficient (Equation~\ref{equation:reflection_coefficient}) and \gls{pdh} error signal (Equation~\ref{equation:pdh_error}) from left to right, as a function of $\Delta\omega$, the angular frequency difference between the cavity resonance and the laser frequency. $\Omega$ is the modulation frequency.}
 \label{figure:pdh_plots}
 % Code in Code/Figure/pdh.py
 \end{figure}
