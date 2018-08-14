@@ -40,7 +40,6 @@ The technique can be used to examine the spectral properties of lasers as the ne
 Laser frequency spectrum measurements using heterodyne technique are simple to implement with the correct equipment.
 The two laser beams are combined such that they co-propagate, requiring some mirrors and a beamsplitter/combiner, and then directed onto a high-bandwidth photodetector.
 The signal from the detector can then be fed into a spectrum analyser which will display the power spectral density of the light on the detector.
-Laser heterodyne measurements have the added advantage that they are insensitive to laser amplitude noise.
 
 Heterodyne measurements can also be performed with sound waves, in fact this method is used to tune musical instruments as the new frequency produced can be heard as a `beat' or `beatnote'.
 The term `beatnote' is also used in general to refer to the signal resulting from a heterodyne measurement.
@@ -75,7 +74,7 @@ The difference in frequency ideally should be fairly small, less than a few GHz,
 
 The equations presented above provide an obviously na\"ive approach as the frequency spread of the lasers is non-zero but gives a sufficient demonstration of the basis of the heterodyne method.
 The spectral profile of the heterodyne signal is formed by the convolution of the spectral profiles of the component lasers, thus strategies are required in order to resolve the lineshape of a single laser.
-For two near identical lasers with Gaussian lineshape the beatnote \gls{fwhm} is $\sqrt{2}$ larger than the individual laser \gls{fwhm} linewidth and $\sqrt{2}\times2\sqrt{2\log_e2}=\sqrt{2}\times2.35$ larger than the individual lasers \gls{rms} linewidth.
+For two near identical lasers with Gaussian lineshape the beatnote \gls{fwhm} is $\sqrt{2}$ larger than the individual laser \gls{fwhm} linewidth and $\sqrt{2}\times2\sqrt{2\log_e2}=\sqrt{2}\times2.35$ larger than the individual laser \gls{rms} linewidth.
 
 \subsubsection{Frequency Reference}
 One method of resolving the lineshape of a single laser is to use a second laser known to have a frequency lineshape much narrower than the laser of interest so that the convolved lineshape is the same as the lineshape of the laser of interest.
@@ -128,7 +127,7 @@ Self-heterodyne was used to measure the performance of \gls{ps}.
 Figure~\ref{figure:self-heterodyne_example} shows measurements of a self-heterodyne beatnote from a laser locked with \gls{ps} without high-bandwidth feedback.
 The figure shows the beatnote at various ranges and resolutions with the full beatnote, the central portion of the beatnote, and a close up of the central peak.
 The centre of the beatnote consists of a central portion with a frequency \gls{fwhm} of \unit[33]{kHz}, an extremely narrow peak with a \gls{fwhm} of \unit[240]{Hz} and an even narrower small peak with a width under \unit[100]{Hz}.
-The central portion has a width comparable to the \gls{ps} linewidth reported in Reference~\cite{torii_laser-phase_2012}, \unit[20]{kHz}, and it was unclear whether the central peaks were due to the laser frequency spread or due to the correlated portions of the laser.
+The central portion has a width comparable to the \gls{ps} linewidth reported in Reference~\cite{torii_laser-phase_2012}, \unit[20]{kHz}, and it was unclear which of the peaks might correspond to the laser frequency spread, residual correlation between the two beams or laser intensity modulation from the \gls{aom}.
 Due to this uncertainty it was necessary to perform additional measurements to determine the true linewidth achievable with \gls{ps}.
 
 \begin{figure}
@@ -180,7 +179,7 @@ These measurements indicate that \gls{ps} with high-bandwidth feedback is able t
 \begin{figure}
 \center
 \input{part1/Figs/InsetBeatnote.pgf}
-\caption[Heterodyne beatnote for two external cavity diode lasers locked with high-bandwidth polarisation spectroscopy.]{Heterodyne beatnote for two lasers locked with \gls{ps} and inset is a higher resolution measurement of the centre peak which has a \unit[-3]{dB} width (\gls{fwhm}) of \unit[2.0$\pm$0.36]{kHz} which corresponds to a laser \gls{rms} width of \unit[0.6$\pm$0.1]{kHz}.
+\caption[Heterodyne beatnote for two external cavity diode lasers locked with high-bandwidth polarisation spectroscopy.]{Heterodyne beatnote for two lasers locked with \gls{ps} and inset is a higher resolution measurement of the centre peak which has a \unit[$-3$]{dB} width (\gls{fwhm}) of \unit[2.0$\pm$0.36]{kHz} which corresponds to a laser \gls{rms} width of \unit[0.6$\pm$0.1]{kHz}.
 Both figures are 50-shot averages captured with resolution bandwidths of \unit[30]{kHz} and \unit[100]{Hz} and total measurement times of \unit[0.5]{s} and \unit[2]{s} respectively.}
 \label{figure:two_laser_beatnote}
 % Code and data located at Code/PolSpec Code/Laser/Beatnote/Beatnote Inset.py
@@ -188,6 +187,7 @@ Both figures are 50-shot averages captured with resolution bandwidths of \unit[3
 
 The measurement shown in Figure~\ref{figure:two_laser_beatnote} is a 50-shot average with a total measurement time of approximately \unit[2]{seconds}.
 Individual measurements, with measurement times around \unit[40]{ms}, had \unit[-3]{dB} widths as low as \unit[880$\pm$280]{Hz}, corresponding to an \gls{rms} laser linewidth of \unit[270$\pm$90]{Hz}.
+
 These measurements show, for the first time, \gls{ps} achieving sub-kilohertz linewidth narrowing, a regime previously relegated to the more complex \gls{pdh}.
 \Gls{ps} is able to achieve this low linewidth without the need for modulation or a high-finesse cavity while providing an absolute reference.
 
@@ -231,6 +231,7 @@ The variation of the signal measured by the detector can be mapped to the associ
 \center
 \input{part1/Figs/SideOfPeak.pgf}
 \caption[Laser linewidth measured by examining cavity transmission on one side of the cavity transmission peak.]{Laser linewidth measured by measuring the transmission through the cavity. On the left figure the blue line shows the cavity transmission as the frequency of the beam into the cavity is scanned with an \gls{aom} and the green points show the cavity transmission when the \gls{aom} is used to centre the laser frequency part way up the transmission peak.
+The green points are independent of the $x$ axis of that figure.
 The known transmission function (blue line) can be used to map the transmission distribution to a frequency distribution, shown as the green line in the right figure.
 The dashed red line is a Gaussian fit to the frequency distribution with an \gls{rms} width of \unit[2.4$\pm$0.3]{kHz}.
 The laser used with this measurement was locked with \gls{ps} and high-bandwidth feedback.}
@@ -304,7 +305,7 @@ Integrating the \gls{psd} of the fully locked laser, measured with the optical c
 The noise floor can also be integrated to provide an indication of the noise contribution to the linewidth measurement.
 For the data shown in Figure~\ref{figure:psd} the noise contributes \unit[0.11$\pm$0.05]{kHz} which is negligible.
 The measurements shown have a low frequency cutoff of \unit[24]{Hz} as the spectrum analysers were unable to measure below this point.
-The discrepancy between this small noise contribution and the \unit[1.4$\pm$0.2]{kHz} amplitude noise contribution in Section~\ref{section:one_sided_peak} implies that the majority of the noise occurs below \unit[24]{Hz}.
+The discrepancy between this small noise contribution and the \unit[1.4$\pm$0.2]{kHz} amplitude noise contribution in Section~\ref{section:one_sided_peak} implies that the majority of the amplitude noise occurs below \unit[24]{Hz}.
 
 \subsection{Long Term Stability}
 
