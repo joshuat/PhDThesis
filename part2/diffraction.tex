@@ -13,10 +13,11 @@ This chapter describes extensions to those results, namely demonstrating ultrafa
 
 Crystallography refers to the science of diffractive imaging from crystals and has been studied for over \unit[100]{years}, being the subject of the 1915 Nobel prize in physics~\cite{bragg_structure_1913}.
 Crystallographic techniques have been under constant development and refinement since their inception.
-The majority of crystallography to date has been performed using X-rays however relatively recent developments have utilised electrons, cryo-electron microscopy has provided another avenue for imaging membrane proteins and other non-crystallisable molecules~\cite{zeitler_cryo_1982,cowley_electron_1992}.
+The majority of crystallography to date has been performed using X-rays however relatively recent developments have utilised electrons.
+Cryo-electron microscopy has provided another avenue for imaging membrane proteins and other non-crystallisable molecules~\cite{zeitler_cryo_1982,cowley_electron_1992}.
 
 Due to the mature understanding of crystallographic techniques, crystallography is ideal for the first steps in demonstrating the capabilities of the \gls{caes}.
-While the \gls{caes} is able to operate in \gls{cw} mode the performance with this apparatus has been optimised for pulse mode (see Section~\ref{section:pulse_vs_continuous}) and thus the results described in this chapter have been taken with pulsed bunches of electrons.
+While the \gls{caes} is able to operate in \gls{cw} mode the performance with this apparatus has been optimised for pulse mode (see Section~\ref{section:pulse_vs_continuous}) and thus the results described in this chapter were taken with pulsed bunches of electrons.
 
 \subsection{Theory}
 
@@ -126,7 +127,7 @@ W^2 \ll \Delta z\,\lambda,
 \end{equation}
 where $W$ is the transverse size of the initial beam, $\Delta z$ is the propagation distance and $\lambda$ is the electron wavelength.
 The Fraunhofer condition requires either the beam size to be very small or the propagation distance to be very large.
-Propagation to the far field effectively converts angle to transverse displacement which can also be achieved with a lens with a much shorter propagation distance.
+Propagation to the far field effectively converts angle to transverse displacement which can also be achieved with a lens and a shorter propagation distance.
 Lenses are the usual method used in electron microscopy and the lenses are often combined with other sophisticated beam optics allowing for diffraction and imaging of a variety of samples and geometries.
 The downside is the obvious complexity and cost associated with sophisticated beam optics.
 
@@ -145,7 +146,7 @@ A schematic of the experimental setup is shown in Figure~\ref{figure:diffraction
 
 \section{Experimental Setup}
 
-A typical commercial \gls{tem} has an accelerator that operates somewhere in the range between \unit[50-300]{kV} and is able to image samples with thickness up to around \unit[200]{nm}.
+A typical commercial \gls{tem} has an accelerator that operates somewhere in the range between \unit[50--300]{kV} and is able to image samples with thickness up to around \unit[200]{nm}.
 This implementation of the \gls{caes} is limited in the energy is can provide to the electrons by electrical breakdown, the substantial engineering required to provide greater beam energies is beyond the scope of the \gls{caes} project at this time.
 Future iterations of the \gls{caes} will be able to use the accelerator technology of electron microscopes and particle accelerators to achieve higher beam energy.
 For the results presented in this chapter the apparatus described in Chapter~\ref{chapter:setup} was used to produce pulsed bunches of electrons.
@@ -177,7 +178,7 @@ With \unit[11.7]{keV} source energy and \unit[8.5]{keV} on the sample the effect
 \section{Results}
 
 Presented in this section are a number of results demonstrating the capabilities of the \gls{caes} with crystalline samples.
-This work presents the capstone to the diffraction studies conducted with this iteration of the \gls{caes} demonstrating diffraction from a number of samples and single-shot ultrafast diffraction from gold~\cite{speirs_single-shot_2015}.
+This work presents the capstone to the diffraction studies conducted with this iteration of the \gls{caes} demonstrating diffraction from gold and aluminium samples and ultrafast diffraction.
 
 \subsection{Transmission Diffraction from Gold}
 
@@ -188,14 +189,12 @@ Example diffraction patterns from the gold sample are shown in Figure~\ref{figur
 \begin{figure}
     \center
     \input{part2/Figs/gold_diffractions.pgf}
-    \caption[Diffraction patterns from gold.]{Log-scaled false-colour diffraction patterns from monocrystalline gold foil. (a) 100-shot average diffraction pattern generated with nanosecond-duration electron bunches. (b) Single-shot from the set that forms (a). (c) Radial average of (a). (d) 1000-shot registered-average diffraction pattern generated with ultrafast electron bunches. The red lines indicate the lattice spacings for gold. The colour scale for each image is individually scaled to optimise visibility. The colour bar indicates the log-scaled colour mapping from the normalised data.}
+    \caption[Diffraction patterns from gold.]{Log-scaled false-colour diffraction patterns from monocrystalline gold foil. (a) 100-shot average diffraction pattern generated with nanosecond-duration electron bunches. (b) Single-shot from the set that forms (a). (c) Radial average of (a). (d) 1000-shot registered-average diffraction pattern generated with ultrafast electron bunches. The red lines indicate the lattice spacings for gold. The colour scale for each image is individually scaled to optimise visibility. The colour bar indicates the log-scaled colour mapping for the normalised data.}
     \label{figure:au_diffraction}
     % Code and data located at 2016.04.12
 \end{figure}
 
 \subsubsection{Ultrafast Diffraction from Gold}
-
-Significant increases in beam current will permit single-shot diffraction and future iterations of the \gls{caes} should be able to provide ultrafast bunches with higher beam charge.
 
 The ultrafast bunches were produced using two-colour multiphoton excitation, see Section~\ref{section:two_stage_ionisation}, which was able to generate a few hundred electrons per shot.
 Due to the lower current of the of the ultrafast bunches the Bragg spots are only visible with multi-shot averages.
@@ -205,7 +204,7 @@ A halo is visible about the central spot, generated from poorly focused electron
 
 The electron bunches used to produce the data shown in Figure~\ref{figure:au_diffraction} were not themselves verified to be ultrafast via streaking but equivalent bunches were verified, as shown in Reference~\cite{speirs_identification_2017}, and it is reasonable to assume that these bunches also had durations of tens of picoseconds.
 
-This demonstration of ultrafast diffraction is an important milestone in the development of cold atom electron sources but significant improvements to ultrafast beam current are required before the \gls{caes} can be useful for single-shot ultrafast diffraction.
+This demonstration of ultrafast diffraction is an important milestone in the development of cold atom electron sources but significant improvements to ultrafast beam current are required before the \gls{caes} can perform diffraction that is both single-shot and ultrafast.
 
 \subsection{Aluminium}\label{section:aluminium_diffraction}
 
@@ -244,7 +243,7 @@ The \gls{caes} has previously been used to demonstrate single-shot diffraction a
 Here it has been shown, for the first time, that a \gls{caes} can be used for ultrafast diffraction, using a simple test case target of crystalline gold.
 These demonstrations of transmission electron microscopy are important steps along the road towards the many potential applications of the \gls{caes}.
 
-The limitations are the current accelerator design have been highlighted with the use of a bias voltage applied to the sample holder that allows for significant improvements to the visibility of the diffraction pattern from polycrystalline aluminium.
+The limitations in the current accelerator design have been highlighted and circumvented with the use of a bias voltage applied to the sample holder that allows for significant improvements to the visibility of the diffraction pattern from polycrystalline aluminium.
 Greater investments into the sophisticated accelerator technology already available to modern electron microscopes would allow future generations of cold-atom sources to access a much wider range of beam energies and for significantly more samples to be imaged.
 The next step is to demonstrate diffraction that is both single-shot and ultrafast which will require the next generation of \gls{caes} and the higher beam current it will be able to produce.
 
