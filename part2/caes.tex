@@ -151,7 +151,7 @@ Ionisation by \gls{tcmpe} could result in ultrashort duration bunches, \unit[10]
 \subsubsection{Beam Shaping}
 
 The \gls{caeis} was able to shape the profile of the electron and ion bunches produced by manipulating the red and blue ionisation laser beams~\cite{mcculloch_arbitrarily_2011}.
-The lasers imparted their profiles onto the ionised atoms which, for cold low-emittance bunches, could be maintained to the detector.
+The lasers imparted their spatial profiles onto the ionised atoms which, for cold low-emittance bunches, could be maintained to the detector.
 The transverse bunch profile was determined by the red excitation laser profile combined with the density profile of the atomic cloud.
 Similarly the longitudinal profile depended on the ionisation laser profile and atomic cloud density.
 
@@ -279,12 +279,12 @@ When operating in pulsed mode the \gls{mot} was given more than enough time to s
 In continuous mode the beam current was dependent on the density of atoms in the ionisation region which could be increased by increasing the atomic flux from the rubidium oven.
 
 The atomic flux from the oven could be increased by running the oven at a higher temperature.
-During normal operation the oven was set to a temperature of approximately \unit[80]{$^\circ$C} (rubidium has a melting point of \unit[39.30]{$^\circ$C}) however the oven is able to operate at up to \unit[200]{$^\circ$C}.
+During normal operation the oven was set to a temperature of approximately \unit[80]{$^\circ$C} (rubidium has a melting point of \unit[39.30]{$^\circ$C}) however the oven was able to operate at up to \unit[200]{$^\circ$C}.
 Previous measurements indicate that the atomic flux from the oven was \unit[$5\times10^9$]{cm$^{-2}$s$^{-1}$} at \unit[80]{$^\circ$C} and increased approximately linearly to \unit[$2\times10^{10}$]{cm$^{-2}$s$^{-1}$} at \unit[200]{$^\circ$C}~\cite{bell_slow_2010}.
 
 The effects of the oven temperature on the beam current are shown in Figure~\ref{figure:oven_counts}.
 There was a significant increase in the electron beam current as the oven temperature was increased.
-With high temperature the beam current was greater than that of the pulsed mode bunches.
+With the oven at a high temperature the beam current was greater than that of the pulsed mode bunches.
 An unfortunate side effect of running the oven at high temperatures is that the lifetime of the \unit[5]{g} rubidium ampule in the oven will be reduced.
 Given the atomic flux measurements in Reference~\cite{bell_slow_2010}, running the rubidium oven at \unit[200]{$^\circ$C} will reduce the ampule lifetime by approximately a factor of four.
 This data indicates that the \gls{cw} beam current could be improved with the use of transverse compression of the atom beam which would provide a similar improvement to beam current as more atoms would be present in the ionisation region~\cite{tielen_development_2015}.
@@ -322,7 +322,7 @@ Using the maximum laser power available with an oven temperature of \unit[200]{$
 \subsection{Stability}\label{section:stability}
 
 The instability in the electron beam path observed in pulsed mode was still obvious with \gls{cw} mode, indicating that the primary source of the instability was not the fast switching of the magnetic coils as had been previously suspected.
-The next most likely culprit for noise is something involving the mains power supply which operates at \unit[50]{Hz} and thus, according to the Nyquist-Shannon sampling theorem, requires a sampling rate of at least \unit[100]{Hz} to observe.
+The next most likely culprit for noise was something involving the mains power supply which operates at \unit[50]{Hz} and thus, according to the Nyquist-Shannon sampling theorem, requires a sampling rate of at least \unit[100]{Hz} to observe.
 The repetition rate of pulse mode, \unit[10]{Hz}, made it impossible to observe \unit[50]{Hz} behaviour but \gls{cw} mode with a high framerate camera, in this case \unit[240]{Hz}, allows for a much greater frequency range to be observed.
 Focusing the \gls{cw} electron beam onto the detector gives high enough intensity to resolve the beam centre with only \unit[4]{ms} camera exposure.
 
@@ -331,7 +331,7 @@ To operate the camera at the desired framerate it was necessary to reduce the si
 Data was collected with the \gls{caes} operating in continuous mode and in pulsed mode.
 
 To assign accurate timestamps to each image it was necessary to use a feature of the camera that adds an accurate truncated timestamp directly to the image combined with the inaccurate timestamp on the image file created by the computer the camera was running on.
-The combination of the fine and accurate timestamp from the camera (which only counted to \unit[128]{seconds} before resetting) with the coarse, inaccurate timestamp on the image file allowed for long duration data sets to be accurately analysed.
+The combination of the fine and accurate timestamp from the camera (which only counted to \unit[128]{seconds} before resetting) with the coarse inaccurate timestamp on the image file allowed for long duration data sets to be accurately analysed.
 
 To examine the temporal behaviour of the source stability the beam position coordinates were deduced from the images and then Fourier transformed.
 With the source operating in continuous mode the analysis was limited by the framerate of the camera (\unit[240]{Hz}) and in pulsed mode it was limited by the repetition rate of the experiment (\unit[10]{Hz}).
@@ -375,9 +375,9 @@ The next generation of the \gls{caeis} now under construction will operate as a 
 
 \section{Registration}\label{section:registration}
 
-Instability in the beam path (see Section~\ref{section:stability}) results in the electron beam trajectory drifting from shot-to-shot.
-When multi-shot averages are required the beam drift results in the beam being `smeared' when averaged.
-It is necessary to `register' the images to prevent this smearing and this is demonstrated with in Figures~\ref{figure:registration_examples} and \ref{figure:real_registration_examples}.
+Instability in the beam path (see Section~\ref{section:stability}) resulted in the electron beam trajectory drifting from shot-to-shot.
+When multi-shot averages were required the beam drift resulted in the beam being `smeared' when averaged.
+It was necessary to `register' the images to prevent this smearing and this is demonstrated in Figures~\ref{figure:registration_examples} and \ref{figure:real_registration_examples}.
 
 \begin{figure}
     \center
@@ -396,20 +396,20 @@ It is necessary to `register' the images to prevent this smearing and this is de
 \end{figure}
 
 Registration consisted of convolving each image with a reference image, recording the location of the maximum value of the convolution and then using that location to align all the images.
-The reference image usually consists of either just the first image in the set or the average image of the entire set, depending on the amount of signal in a single image.
-The registration process can also be performed iteratively where the reference image becomes the aligned output of the previous iteration.
+The reference image usually consisted of either just the first image in the set or the average image of the entire set, depending on the amount of signal in a single image.
+The registration process could also be performed iteratively where the reference image became the aligned output of the previous iteration.
 
-Registration functions very well for low noise, structured data such as diffraction patterns (see Chapter~\ref{chapter:diffraction}) or pepperpot beam masks (see Chapter~\ref{chapter:brightness}).
-Low signal data can be registered as long as there is enough signal in a single shot for the convolution to correctly identify the features in the image.
-Unstructured data or continuous data, such as large flat beam profiles, will not register well as the convolution will not be able to identify common features well.
+Registration functioned very well for low noise, structured data such as diffraction patterns (see Chapter~\ref{chapter:diffraction}) or pepperpot beam masks (see Chapter~\ref{chapter:brightness}).
+Low signal data could be registered as long as there was sufficient signal in a single shot for the convolution to correctly identify the features of the image.
+Unstructured data or continuous data, such as large flat beam profiles, did not register well as the convolution was not able to identify common features well.
 
-Noisier data requires more care than clean data and in some cases cannot be registered.
+Noisier data required more care than clean data and in some cases could not be registered.
 One of the registration errors that has occurred with pepperpot data is `slipping' where the convolution maxima correspond to neighbouring beamlets rather than the same beamlet and thus the images are incorrectly aligned.
-This error can be evaded by applying a limit to how far the convolution maxima of an image can change from shot to shot, generally the limit should be less than the distance between beamlets.
-This allows slow drift of the beam path to be dealt with while preventing slipping.
+This error could be evaded by applying a limit to how far the convolution maxima of an image could change from shot to shot, generally the limit should be less than the distance between beamlets.
+This allowed slow drift of the beam path to be accounted for while preventing slipping.
 
 Slipped, and therefore failed, pepperpot registrations were usually easy to identify since the number of beamlets was known and slipped errors results in extra beamlets appearing in the registered image.
-While registering the pepperpots the best results were provided with around 3 iterations and limits on the shot-to-shot drift less than distance between the pepperpots.
+While registering the pepperpots the best results were provided with around 3 iterations and limits on the shot-to-shot drift less than distance between the pepperpots beamlets.
 An contrived example of a slipped registration is shown in Figure~\ref{figure:registration_examples} and a real, albeit subtle, example can be seen in Figure~\ref{figure:real_registration_examples} using data from Chapter~\ref{chapter:brightness}.
 
 \section{Astigmatism}\label{section:quadrupole}
@@ -433,9 +433,8 @@ A quadrupole magnetic field can be described as
 B_x &= K y \notag\\
 B_y &= K x,
 \end{align}
-where the constant $K$ indicates the strength of the field, and $x$ and $y$ refer to the transverse distance from the central axis.
+where the constant $K$ indicates the strength of the field, and $x$ and $y$ refer to the transverse displacement from the central axis.
 The force on particles in a charged beam, such as that in the \gls{caeis}, passing through a quadrupole field is shown in Figure~\ref{figure:quadrupole_example} where there is an inwards force along one axis and an outwards force along the other, which is ideal for correcting astigmatism.
-The fields in Figure~\ref{figure:quadrupole_example} were generated with the same code used to generate the magnetic fields for the simulation described below.
 
 \begin{figure}
     \centering
@@ -457,7 +456,7 @@ The fields in Figure~\ref{figure:quadrupole_example} were generated with the sam
     % Code for figures located in Code/Electrons/Simulation/Older Simulator Code/MagneticFields.py
 \end{figure}
 
-To correct for the astigmatism in the \gls{caes} a simple solenoid magnetic quadrupole lens was designed and built consisting of four solenoid magnets, orientated radially, and spaced around the beamline with alternating current directions as shown in Figures~\ref{figure:quadrupole_example} and \ref{figure:quadrupole}.
+To correct the astigmatism in the \gls{caes} a simple solenoid magnetic quadrupole lens was designed and built consisting of four solenoid magnets, orientated radially, and spaced around the beamline with alternating current directions as shown in Figures~\ref{figure:quadrupole_example} and \ref{figure:quadrupole}.
 The design was constrained as it had to be external to the vacuum system with an inner diameter of \unit[70]{mm} and have a longitudinal length less than \unit[20]{mm} due to the crowded beamline.
 Simulations were performed to determine the approximate number of current turns required for the solenoids forming the quadrupole lens as well as the ideal transverse solenoid length.
 
@@ -471,7 +470,7 @@ Simulations were performed to determine the approximate number of current turns 
 \subsection{Quadrupole Simulations}
 
 A simple charged particle simulator was created with the ability to propagate charged particles through arbitrary magnetic fields which in this case were formed by a parameterised quadrupole lens.
-The code for this simulations is given in Appendix~\ref{appendix:code}.
+The code for these simulations is given in Appendix~\ref{appendix:code}.
 The electrons used in the simulations had a beam energy of \unit[8.5]{keV} and an initial \gls{rms} beam radius of \unit[5]{mm}, similar to electron bunches produced by the \gls{caes}.
 The electrons were given normally distributed randomly determined initial transverse velocities with the $x$ velocity distribution given an \gls{rms} width of \unit[10]{km\,s$^{-1}$} and the $y$ velocity distribution given an \gls{rms} width of \unit[20]{km\,s$^{-1}$} which produced an astigmatism similar to that observed experimentally.
 The electrons bunches were propagated \unit[250]{mm} to the virtual quadrupole lens, through the lens, for another \unit[250]{mm} to a focusing lens, and finally for another \unit[500]{mm} to observe the beam foci.
@@ -483,7 +482,7 @@ The results indicate that negligible waist separation requires a transverse sole
 \begin{figure}
     \centering
     \input{part2/Figs/quad_sims.pgf}
-    \caption[Quadrupole simulation results.]{Particle simulation results from propagating \unit[8.5]{keV} electrons through a quadrupole lens while varying the quadrupole parameters. The electrons had an initial \gls{rms} bunch radius of \unit[5]{mm} and were given initial velocities to replicate the astigmatism observed in the \gls{caes}. The left figure shows the minimum separation of the beams waists in the $x$ and $y$ direction as the transverse radius of the solenoids forming the quadrupole is varied. The right figure shows the current turns required to achieve the minimum waist separation as the transverse solenoid radius is varied.}
+    \caption[Quadrupole simulation results.]{Particle simulation results from propagating \unit[8.5]{keV} electrons through a quadrupole lens while varying the quadrupole parameters. The electrons had an initial \gls{rms} bunch radius of \unit[5]{mm} and were given initial velocities to replicate the astigmatism observed in the \gls{caes}. The left figure shows the minimum separation of the beams waists in the $x$ and $y$ direction as the transverse radius of the solenoids forming the quadrupole was varied. The right figure shows the current turns required to achieve the minimum waist separation as the transverse solenoid radius was varied.}
     \label{figure:quad_sims}
     % Code located at Code/Electrons/Simulation/Older Simulator Code/ElectronLens.py
 \end{figure}
@@ -498,7 +497,7 @@ Each of the solenoid coils had approximately 100 turns.
 
 \subsection{Quadrupole Correction}
 
-The quadrupole lens functioned as desired and was able to correct the astigmatism as shown in Figure~\ref{figure:quadrupole_scans}.
+The quadrupole lens functioned as desired and was able to correct the astigmatism as demonstrated in Figure~\ref{figure:quadrupole_scans}.
 The lens required a current of approximately \unit[1]{A} running through the solenoids in order to correct the astigmatism.
 The lens was used during a number of measurements to improve the bunch quality; an example of this is shown in Figure~\ref{figure:astigmatic_pepperpot}. 
 
@@ -524,14 +523,14 @@ The lens was used during a number of measurements to improve the bunch quality; 
 \section{Summary}
 
 The University of Melbourne \gls{caeis} has undergone many changes and improvements since its inception, the most recent of which have been detailed in this chapter.
-The apparatus is able to produce low temperature electron and ion bunches with arbitrary transverse profiles which already have sufficient coherence for imaging of small biomolecules.
+The apparatus was able to produce low temperature electron and ion bunches with arbitrary transverse profiles which had sufficient coherence for the imaging of small biomolecules.
 
-Careful manipulation of the ionisation mechanisms of \gls{caeis} allows for the production of electron and ion bunches with duration that ranges from 10s of picoseconds to nanoseconds to 10s of microseconds.
+Careful manipulation of the ionisation mechanisms of \gls{caeis} allowed for the production of electron and ion bunches with duration that ranged from 10s of picoseconds to nanoseconds to 10s of microseconds.
 Picosecond duration bunches have the potential to be used with bunch compression to produce femtosecond duration bunches for \gls{ued}.
 The remaining obstacles to swift progress towards the production of molecular movies are the low beam current, particularly for ultrafast bunches, and the unstable electron trajectories.
 
 A comparison of the usual pulsed \gls{caeis} operation with continuous beam production was undertaken in the hopes that beam current and electron trajectory stability could be improved.
-This investigation did not result in an improvement to beam stability but did prove useful in eliminating the \gls{mot} coils as a potential source and identifying the \unit[50]{Hz} frequency of the primary  noise source.
+This investigation did not result in an improvement to beam stability but did prove useful in eliminating the \gls{mot} coils as a potential cause and identifying the \unit[50]{Hz} frequency of the primary noise source.
 Continuous operation was able to produce higher current beams than pulsed operation.
 
 The registration algorithm is an essential component of the \gls{caeis} that deals with electron beam path instability by aligning images from multiple shots as the beam drifts.
