@@ -3,18 +3,18 @@
 \begin{figure}
 \center
 \input{part1/Figs/CateyeInsetBeatnote.pgf}
-\caption[Heterodyne beatnote for two cat-eye lasers locked with high-bandwidth polarisation spectroscopy.]{Heterodyne beatnote for two lasers locked with \gls{ps} and inset is a higher resolution measurement of the centre peak which has a \unit[-3]{dB} width (\gls{fwhm}) of \unit[1.2]{kHz} which corresponds to a laser \gls{rms} width of \unit[0.36]{kHz}.
+\caption[Heterodyne beatnote for two cat-eye lasers locked with high-bandwidth polarisation spectroscopy.]{Heterodyne beatnote for two cat-eye lasers locked with \gls{ps} and inset is a higher resolution measurement of the centre peak which has a \unit[$-3$]{dB} width (\gls{fwhm}) of \unit[1.2]{kHz} which corresponds to a laser \gls{rms} width of \unit[0.36]{kHz}.
 Both figures are 50-shot averages captured with resolution bandwidths of \unit[30]{kHz} and \unit[100]{Hz} and total measurement times of \unit[0.5]{s} and \unit[2]{s} respectively.}
 \label{figure:cateye_beatnote}
 % Code and data located at 2016.09.22/BeatnoteInset2.py
 \end{figure}
 
 Sometime after the work described in this chapter was summarised and published in Reference~\cite{torrance_sub-kilohertz_2016} MOGLabs was able to supply two identical new cat-eye configuration lasers\footnote{MOGLabs CEL} that use high-bandwidth low-phase-delay in-laser modulation electronics~\cite{thompson_narrow_2012}.
-These two lasers were inserted into the experimental setup described in Section~\ref{section:ps_experimental_setup} in place of the \glspl{ecdl}.
+These two lasers were inserted into the experimental setup described in Section~\ref{section:ps_experimental_setup} in place of the previously used \glspl{ecdl}.
 These lasers were able to achieve an individual laser \gls{rms} linewidth of \unit[0.36]{kHz} as shown in Figure~\ref{figure:cateye_beatnote}.
-An interesting feature of this beatnote is the smaller peak to the left of the main peak which is due to residual amplitude modulation caused by the \gls{aom} that is usually hidden under the main peak.
- the two lasers not having exactly the same lock-point and the amplitude modulation  that frequency shifts one of the laser beams for the heterodyne measurement.
-This feature is not visible in other beatnote measurements as the lasers were locked to the same point and the equivalent peak was drowned out by the central peak of the beatnote.
+An interesting feature of this beatnote is the smaller peak to the left of the main peak which is due to residual amplitude modulation caused by the \gls{aom}.
+The modulation from the \gls{aom} is usually hidden under the main peak but the lasers used in this measurement had slightly different lock-points and thus had a small frequency offset.
+
 
 \section{Conclusion}
 
@@ -44,12 +44,11 @@ The discrepancy between the two-laser heterodyne measurement and the cavity meas
 \label{table:linewidths}
 \end{table}
 
-The high-bandwidth feedback system indicates that \gls{ps} is capable of achieving spectral linewidth previously only reachable with expensive high-finesse optical cavities.
-The long-term frequency stability is easily sufficient for many laser cooling experiments and is significantly lower that previously demonstrated long term drifts with other laser systems and stabilisation techniques while at the same time providing substantial linewidth narrowing.
+These measurements indicate that \gls{ps} is capable of achieving spectral linewidth previously only reachable with expensive high-finesse optical cavities.
+The long-term frequency stability is easily sufficient for many laser cooling experiments and is significantly lower that previously demonstrated with other laser systems and stabilisation techniques.
 
-Further improvements to spectral linewidth could be improved if the noise in the \gls{ps} measurement can be decreased and the signal strength improved allowing for lower shot-noise and greater noise suppression.
+Further improvements to spectral linewidth could be made if the noise in the \gls{ps} measurement can be decreased and the signal strength increased allowing for lower shot-noise and greater noise suppression.
 Drift can be expected to improve with active temperature stabilisation of the atomic gas cells, active laser-power stabilisation into the \gls{ps} setup, and free space propagation rather than the use of optical fibres.
 
 The investigations described in this chapter have advanced the understanding of high-bandwidth absolute laser frequency stabilisation which may prove useful in the complex ionisation processes utilised by the \gls{caeis}, laser spectroscopy and laser cooling applications.
 This research was also instrumental in learning how to utilise high-bandwidth for linewidth narrowing which aided MOGLabs in developing new laser electronics for direct modulation of the diode injection current, and a new fast servo controller\footnote{MOGLabs Fast Servo Controller, \unit[40]{MHz} bandwidth.}.
-The use of high-finesse cavities for laser stabilisation, with application for interacting with Rydberg state with a \gls{caeis}, and as a powerful diagnostic tool have been explored.
