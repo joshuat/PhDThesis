@@ -382,7 +382,7 @@ It was necessary to `register' the images to prevent this smearing and this is d
 \begin{figure}
     \center
     \input{part2/Figs/registration_examples.pgf}
-    \caption[Contrived image registration example.]{A demonstration of the importance of the image registration technique using a contrived example of slipping. \emph{Single-Shot} is a single image from a prototype-pepperpot data set of 1000 images. \emph{Average} is the simple average of all 1000 images. \emph{Slipped} is a contrived demonstration of slipping; there is an additional set of beamlets visible at the top of the image. \emph{Registration} is a successful registration where a shot-to-shot limit to drift was enforced. All the images are independently log scaled.}
+    \caption[Contrived image registration example.]{A demonstration of the importance of the image registration technique using a contrived example of slipping. \emph{Single-Shot} is a single image from a prototype-pepperpot data set of 1000 images. \emph{Average} is the simple average of all 1000 images. \emph{Slipped} is a contrived demonstration of slipping; there is an additional set of beamlets visible at the top of the image. \emph{Registration} is a successful registration where a shot-to-shot limit to drift was enforced. All the images are linearly scaled as indicated by the colour bar.}
     \label{figure:registration_examples}
     % Data and code in 2016.10.27
 \end{figure}
@@ -390,9 +390,9 @@ It was necessary to `register' the images to prevent this smearing and this is d
 \begin{figure}
     \center
     \input{part2/Figs/streak_registration_examples.pgf}
-    \caption[Realistic image registration example.]{A demonstration of the image registration technique using a real example. \emph{Single-Shot} is a single image from a streaked pepperpot data set of 1000 images. \emph{Average} is the simple average of all 1000 images. \emph{Slipped} is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation; there is an additional faint beamlet visible at the top of the image. \emph{Registration} is a successful registration where a shot-to-shot limit to drift was enforced. Below each image is the row sum of that image. All the images are independently log scaled.}
+    \caption[Realistic image registration example.]{A demonstration of the image registration technique using a real example. \emph{Single-Shot} is a single image from a streaked pepperpot data set of 1000 images. \emph{Average} is the simple average of all 1000 images. \emph{Slipped} is an attempt at registration that only looks for the maximum value of the convolution with no limit on shot-to-shot variation; there is an additional faint beamlet visible at the top of the image. \emph{Registration} is a successful registration where a shot-to-shot limit to drift was enforced. Below each image is the row sum of that image. All the images are log scaled as indicated by the colour bar.}
     \label{figure:real_registration_examples}
-    % Data and code in 2016.10.27
+    % Data and code in 2017.07.24
 \end{figure}
 
 Registration consisted of convolving each image with a reference image, recording the location of the maximum value of the convolution and then using that location to align all the images.
@@ -515,7 +515,7 @@ The lens was used during a number of measurements to improve the bunch quality; 
     \caption{Quadrupole On}
     \label{figure:quadrupole_scans_on}
     \end{subfigure}
-    \caption[Astigmatism correction.]{The size of the electron beam on the detector as the Einzel lens voltage is varied with the quadrupole lens off (a) and on (b). The blue lines indicate the horizontal, $x$, \gls{rms} beam size and the green lines the vertical, $y$, \gls{rms} beam size. Inset in each figure are linearly scaled images of the beam profiles for minimum spot size for each axis. The quadrupole is able to correct the astigmatism present in the beam.}
+    \caption[Astigmatism correction.]{The size of the electron beam on the detector as the Einzel lens voltage is varied with the quadrupole lens off (a) and on (b). The blue lines indicate the horizontal, $x$, \gls{rms} beam size and the green lines the vertical, $y$, \gls{rms} beam size. Inset in each figure are linearly scaled images of the beam profiles for minimum spot size for each axis with colour scales as indicated in Figure~\ref{figure:registration_examples}. The quadrupole is able to correct the astigmatism present in the beam.}
     \label{figure:quadrupole_scans}
     % Code and data at 2016.11.02
 \end{figure}
