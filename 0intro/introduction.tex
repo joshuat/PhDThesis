@@ -4,9 +4,8 @@
 \setcounter{page}{1}
 
 Molecular imaging has provided science with great advances, such as the determination of the helical structure of DNA in 1953~\cite{watson_molecular_1953}, and the discovery of the structure of myoglobin and haemoglobin in 1962~\cite{kendrew_x-ray_1957}.
-The \gls{caeis} at the University of Melbourne is an ongoing project that aims to develop a source capable of achieving the `holy grail' of scientific imaging, the \emph{molecular movie}~\cite{dwyer_femtosecond_2006,sciaini_femtosecond_2011}.
-A \gls{caeis} also has enormous potential for ion beam technologies such \glspl{fib}~\cite{mcclelland_bright_2016}, ion microscopes~\cite{knuffman_cold_2013}, and as a source for accelerators such as synchrotrons and \glspl{xfel}~\cite{van_oudheusden_electron_2007,zhu_future_2015,mcculloch_cold_2016}.
-Depending on the context a \gls{caeis} is also sometimes referred to as a \gls{caes} or \gls{cais}.
+The \gls{caeis} at the University of Melbourne is an ongoing project that aims to develop a source capable of achieving the `holy grail' of scientific imaging, the \emph{molecular movie}~\cite{dwyer_femtosecond_2006,sciaini_femtosecond_2011}: that is, a sequence of images with atomic spatial and temporal resolution.
+A \gls{caeis} also has enormous potential for ion beam technologies such as focused ion beam milling machines (FIBs)\glsunset{fib}~\cite{mcclelland_bright_2016}, ion microscopes~\cite{knuffman_cold_2013}, and as a source for accelerators such as synchrotrons and \glspl{xfel}~\cite{van_oudheusden_electron_2007,zhu_future_2015,mcculloch_cold_2016}.
 
 The research described in this thesis has contributed to the development of the \gls{caes} towards future \gls{ued}.
 This chapter provides the context to facilitate understanding of what is needed from a cold electron source and how the work in later chapters contributes to those requirements.
@@ -14,10 +13,10 @@ This chapter provides the context to facilitate understanding of what is needed 
 \section{Making the `Molecular Movie'}
 
 The ability to observe molecular dynamics at an atomic spatial and temporal scale could provide great insight into some of the basic processes of biology and chemistry.
-The fabled `molecular movie' refers to capturing the atomic motions of molecular systems with atomic-scale spatial resolution as they undergo some transition such as a chemical reaction, protein folding, melting, or even just atomic vibrations.
+The fabled `molecular movie' refers to capturing the atomic dynamics of molecular systems with atomic-scale spatial and temporal resolution as they undergo some transition such as a chemical reaction, protein folding, melting, or even just atomic vibrations.
 Molecular movies could provide greater understanding of important biological reactions such as photosynthesis or oxygen transport by haemoglobin.
 
-One of the stepping stones towards molecular movies is single-shot imaging of non-crystalline molecules which would allow structural determination of membrane proteins, an essential step in rational drug design~\cite{hardy_atomic_1987, barrett_discovering_1999, pinto_influenza_1992}.
+One of the stepping stones towards molecular movies is single-shot imaging of non-crystalline molecules which would allow structural determination of membrane proteins, an essential component in rational drug design~\cite{hardy_atomic_1987, barrett_discovering_1999, pinto_influenza_1992}.
 The majority of imaging performed to date has been on crystalline targets and the related imaging techniques are much better developed than those for non-crystalline targets.
 One of the main techniques in structural determination of crystalline targets is electron diffraction which, along with X-ray and neutron methods~\cite{cullity_elements_2001,bacon_x-ray_2013}, has been utilised in structural determination of many materials with atomic resolution.
 Continuing research into real-space and diffraction imaging techniques is aiding in the understanding of a growing range of samples as well as providing new types of information on the samples under investigation.
@@ -33,49 +32,50 @@ The techniques using X-rays and electrons each have different advantages and dis
 One proposed method for generating molecular movies involves using a high-brightness ultrashort duration beam source, such as an \gls{xfel} or future \gls{caes}, to perform \gls{cdi} on individual molecules~\cite{chapman_femtosecond_2006,dwyer_femtosecond_2006,gaffney_imaging_2007}.
 The individual molecules would be dropped one-by-one in front of the illuminating bunches which would be short enough that imaging is completed before damage from the illumination affects the diffraction pattern (see Figure~\ref{figure:molecule_cdi}).
 Dynamic processes, such as phase transitions, melting, and pumped vibrational modes, can be studied with this technique if the process can be triggered, say with a precisely timed laser pulse.
-By varying the delay between triggering the process and imaging a `movie' can be constructed.
+By varying the delay between triggering the process and imaging, a `movie' can be constructed.
 The random orientation of molecules as they are imaged can be managed algorithmically as long as there is sufficient brightness with each shot~\cite{yefanov_orientation_2013}.
 
 \begin{figure}
     \center
     \includegraphics[width=0.65\linewidth]{0intro/Figs/single_molecule_cdi.jpg}
-    \caption[Structural determination of single molecules.]{Structural determination of single molecules should be possible if a sufficiently bright and short pulse of X-rays is used to image the molecule before damage affects the diffraction pattern produced. Electrons could be used in place of X-rays if a suitable source can be developed. Image adapted from Reference~\cite{gaffney_imaging_2007}}
+    \caption[Structural determination of single molecules.]{Structural determination of single molecules may be possible if a sufficiently bright and short pulse of X-rays is used to image the molecule before damage affects the diffraction pattern produced. Electrons could be used in place of X-rays if a suitable source can be developed. Image adapted from Reference~\cite{gaffney_imaging_2007}.}
     \label{figure:molecule_cdi}
 \end{figure}
 
 \Glspl{xfel} have been able to produce molecular movies~\cite{kupitz_structural_2016,pande_femtosecond_2016,nango_three-dimensional_2016} but there is still motivation for attempting to develop electron source alternatives.
-Electrons interact much more strongly with matter than X-rays, with interactions having cross-sections $10^5$ to $10^6$ larger~\cite{sciaini_femtosecond_2011}, and thus much fewer electrons are required per bunch than X-ray photons.
+Electrons interact much more strongly with matter than X-rays, with interactions having cross-sections $10^4$ to $10^6$ larger~\cite{sciaini_femtosecond_2011}, and thus much fewer electrons are required per bunch than X-ray photons.
 While an \gls{xfel} requires a several kilometre long facility with a billion dollar price tag a hypothetical electron source with similar capabilities would likely fit in a room with a much lower cost: current \gls{caes} implementations easily fit on a single optical bench.
 
 \subsection{Ultrafast Coherent Diffractive Imaging}
 
 Resolving the structure of single molecules requires sufficient signal such that the orientation problem can be solved and averaging performed, and the imaging needs to be completed before the molecule is substantially damaged by the beam~\cite{huldt_diffraction_2003}.
-Thus a single pulse must be extremely intense, in one scenario requiring $10^{12}$ \unit[8]{kV} X-ray photons or $10^6$ \unit[3]{MeV} electrons, and extremely short in duration, 10s of femtoseconds~\cite{chapman_femtosecond_2006,spence_outrunning_2017}.
-Damage to molecules can occur via numerous mechanisms and are different for X-rays and electrons but in both cases occur in approximately 10s of femtosecond timescales~\cite{spence_outrunning_2017}.
+Thus a single pulse must be extremely intense, in one scenario requiring $10^{12}$ \unit[8]{keV} X-ray photons or $10^6$ \unit[3]{MeV} electrons, and extremely short in duration, tens of femtoseconds~\cite{chapman_femtosecond_2006,spence_outrunning_2017}.
+Damage to molecules can occur via numerous mechanisms and are different for X-rays and electrons but in both cases occur in approximately tens of femtosecond timescales~\cite{spence_outrunning_2017}.
 
 The coherence of the source is also an important consideration for diffraction imaging as the beam must have a coherence length as large as that of the molecule under consideration so that portions of the illuminating wave diffracted from different positions on the molecule interfere coherently.
-When performing \gls{cdi} the diffraction pattern detected is the square of the Fourier coefficients that represents the molecule under examination.
-Due to the loss of the complex phase components when the Fourier coefficients are squared it is not possible to directly invert to recover the structure of the molecules, this is known as the \emph{phase problem}~\cite{rodenburg_phase_1989}.
+When performing \glsreset{cdi}\gls{cdi} the diffraction pattern detected is the square of the Fourier coefficients that represents the molecule under examination.
+Due to the loss of the complex phase components when the Fourier coefficients are squared it is not possible to directly invert to recover the structure of the molecules; this is known as the \emph{phase problem}~\cite{rodenburg_phase_1989}.
 The most common solution to the phase problem is iterative computational phase-retrieval~\cite{chapman_coherent_2010}.
 
-Ultrafast \gls{cdi} has been demonstrated previously on micron-scale objects using an \gls{xfel}~\cite{chapman_femtosecond_2006}.
+Ultrafast \gls{cdi} has been demonstrated previously on micron-scale objects using an \gls{xfel}~\cite{chapman_femtosecond_2006} and atomic scale \gls{cdi} using electrons has also been demonstrated~\cite{putkunz_atom-scale_2012}.
+Conventional electron sources have insufficient brightness for ultrafast \gls{cdi} with electrons and hence there is a great interest in novel sources such as the \gls{caeis}.
 
 \subsection{Imaging Targets}
 
-Crystallography has been of enormous benefit to biology as the structure of biological molecules plays a vital role in their function, with proteins interacting with sub-structures of other proteins to mediate biological processes, somewhat analogous to a lock and key or jigsaw pieces.
+Crystallography has been of enormous benefit to biology as the structure of biological molecules plays a vital role in their function, with proteins interacting with sub-structures of other proteins to mediate biological processes, somewhat analogous to a lock and key, or jigsaw pieces.
 Knowing the structure of biological proteins is essential to fully understanding how the mechanisms that a protein is involved in functions and can provide vital information to researchers on how to produce drugs to manipulate those mechanisms~\cite{aloy_structural_2006,almen_mapping_2009}.
 The design and creation of drugs based on knowledge of the structure of the proteins involved in a mechanism is sometimes referred to as \emph{direct drug design} and has had some success to date~\cite{klebe_recent_2000,jhoti_structure-based_2007,mauser_recent_2008}.
 The first example of structurally informed direct drug design was the drug dorzolamide which was released to the market in 1995 to reduce intraocular pressure in certain circumstances~\cite{greer_application_1994}.
 
-One of the obvious restrictions on crystallography is that the target sample must be crystallisable in order for it to be imaged and unfortunately there are large numbers of important biological proteins that scientists have been unable to crystallise, notably a large portion of membrane proteins which mediate interactions on the surfaces of cells~\cite{geerlof_impact_2006}.
+One of the obvious restrictions on crystallography is that the target sample must be crystallisable in order for it to be imaged and unfortunately there are large numbers of important biological proteins that scientists have been unable to crystallise, notably a large fraction of membrane proteins which mediate interactions on the surfaces of cells~\cite{geerlof_impact_2006}.
 Alternative structure determination techniques such as ultrafast \gls{cdi} with an \gls{xfel} or \gls{caes} would be able to bypass the crystallisation requirement and thus provide researchers with a wealth of useful information.
 
 Knowledge of the changes in molecular structures during many complex and interesting dynamics (such as melting, photosynthesis, molecular phase transitions, or chemical reactions) would prove invaluable to understanding the physics, chemistry and biology of many areas.
 
 \section{Cold-atom electron and ion sources}
 
-The research described by this thesis is part of an ongoing effort to develop an alternative source of electrons and ions that extracts the charged particles from a laser cooled atomic cloud.
-Initially the aim of the project was to create ultrafast coherent electron bunches for use in diffraction imaging in a similar way to ultrafast X-ray pulses however it was later realised that \gls{caes} could also serve as an injection source for particle accelerators or \gls{fib} devices.
+The research described by this thesis is part of an ongoing effort to develop an alternative source of electrons and ions that extracts the charged particles from laser-cooled atoms.
+Initially the aim of the project was to create ultrafast coherent electron bunches for use in diffraction imaging in a similar way to ultrafast X-ray pulses, but it was later realised that a \gls{caes} could also serve as an injection source for particle accelerators or \gls{fib} devices.
 It has also become apparent that by simply reversing the polarity of the accelerator the source can generate high quality ion bunches with similar properties to the electron bunches thus providing a new source for use in ion microscopy and nano-fabrication.
 
 Cold-atom sources operate by carefully ionising atoms in a \gls{mot} such that the resulting ions and electrons are cold and thus the bunches accelerated from those clouds have low emittance and high coherence.
@@ -92,68 +92,73 @@ These techniques are applicable to any of the many atomic species that can be la
 \end{figure}
 
 A \gls{caes} can be thought of as a photocathode electron source with the normally solid cathode replaced with an ultracold gas which provides the \gls{caes} with a few advantages such as high quantum efficiency, and near-threshold ionisation producing colder electrons than those from other photocathode sources~\cite{engelen_effective_2014}.
-The simplicity of the interactions between photons and atoms allows for the high quantum efficiency to be achieved~\cite{baranov_field_1994}.
+The simplicity of the interactions between photons and atoms allows for high quantum efficiency~\cite{baranov_field_1994}.
 Another advantage of gas photocathodes is the lack of optically induced damage from high-intensity laser-fields.
 Solid cathodes undergo constant degradation and require regular replacement~\cite{dowell_results_1995} whereas the gaseous target in a \gls{caes} is renewed with every bunch produced.
 
-A major advantage of a \gls{caeis} as a electron or ion source is the low temperature of the source.
-The low source temperature is due to the careful ionisation of the atoms trapped within the \gls{mot}.
+A major advantage of a \gls{caeis} as an electron or ion source is the low temperature.
+Due to the careful ionisation of the atoms trapped within the \gls{mot}.
 The ultracold atoms trapped in the \gls{mot} have temperatures around \unit[100]{$\muup$K} but after ionisation the electrons have temperatures determined by the excess energy from the ionisation process~\cite{engelen_high-coherence_2013,engelen_analytical_2014,sparkes_high-coherence_2014,speirs_identification_2017}.
-Precise control over the ionisation allows the excess energy from the ionisation process to be minimised and the electrons produced can have transverse temperature as low as \unit[$\sim$10]{K}~\cite{saliba_spatial_2012}.
-Unlike electrons, ions produced by the source have their initial temperature determined predominantly by the temperature of the trapped atoms before ionisation, \unit[100]{$\muup$K}, with an ion temperature around \unit[1]{mK}~\cite{debernardi_measurement_2011,murphy_detailed_2014}.
+Precise control over the photoionisation is possible by wavelength tuning the narrowband ionisation lasers, allowing the excess energy from the ionisation process to be minimised.
+The electrons produced by the source can have transverse temperature as low as \unit[$\sim$10]{K}~\cite{saliba_spatial_2012}.
+Ions produced by the source have their initial temperature determined predominantly by the temperature of the trapped atoms before ionisation with an ion temperature around \unit[1]{mK}~\cite{debernardi_measurement_2011,murphy_detailed_2014}.
 
 The ionisation methods used in a \gls{caeis} involve a two-step ionisation process that first excites the atoms to an intermediate state with one laser followed by near-threshold ionisation of the excited atoms with a second laser frequency-tuned to minimise the excess ionisation energy.
 Generally the second stage in the excitation process involves exciting the atom from the intermediary excited state to a high-lying Rydberg state from which the atom can be field ionised in the presence of the accelerating electric field~\cite{mcculloch_field_2017}.
-Due to the small energy difference between high-lying Rydberg states narrow linewidth lasers are required to precisely interact with them.
-In order to provide such lasers the limits of polarisation spectroscopy~\cite{wieman_doppler-free_1976} as a laser frequency stabilisation technique have been explored in Chapter~\ref{chapter:polspec}~\cite{torrance_sub-kilohertz_2016}.
-Polarisation spectroscopy with high-bandwidth feedback is able to provide laser frequency linewidths two orders of magnitude smaller than previously reported and this will prove useful for precision interaction with the high-lying Rydberg levels used in \gls{caeis} ionisation as well as in other fields such as spectroscopy or metrology where low laser linewidth is important.
+Due to the small energy difference between high-lying Rydberg states narrow linewidth lasers are required.
+To create lasers with sufficient precision, polarisation spectroscopy frequency feedback control has been explored (Chapter~\ref{chapter:polspec})~\cite{wieman_doppler-free_1976,torrance_sub-kilohertz_2016}.
+Polarisation spectroscopy with high-bandwidth feedback is able to provide laser frequency linewidths two orders of magnitude smaller than previously reported.
+Polarisation spectroscopy will prove useful for precision interaction with the high-lying Rydberg levels used in \gls{caeis} ionisation, when combined with techniques such as \gls{pdh} frequency stabilisation, as well as in other fields such as spectroscopy or metrology where low laser linewidth is important.
 
 The sophisticated ionisation scheme used in a \gls{caeis} allows for the production of ultrashort duration bunches and arbitrary shaping of the bunches.
-The \gls{caeis} has been shown to be able to produce electron bunches with duration less than \unit[130]{ps} (with expected bunch duration of a few tens of picoseconds)~\cite{speirs_identification_2017} and should be able to provide bunches suitable for compression to bunch duration of order \unit[100]{fs}, suitable for ultrafast imaging~\cite{van_oudheusden_compression_2010}.
+The \gls{caeis} has been shown to produce electron bunches with duration less than \unit[130]{ps}~\cite{speirs_identification_2017} and should be able to provide bunches suitable for compression to bunch duration of order \unit[100]{fs}, suitable for ultrafast imaging~\cite{van_oudheusden_compression_2010}.
 
 The \gls{caeis} also has the ability to produce arbitrarily shaped electron or ion bunches by manipulating the profiles of the laser beams used to ionise the atoms~\cite{mcculloch_arbitrarily_2011}.
 This capability is useful in a large number of ways but has particular potential as an avenue for the production of uniform ellipsoidal bunches to allow for reversal of beam-quality degradation by space-charge expansion~\cite{luiten_how_2004,thompson_bunch_2015}.
 
 One of the most important figures of merit for charged particle beams is beam emittance which can be directly correlated with the temperature of the particle source.
-Emittance describes the angular spread of particles within a beam or bunch and can be thought of as the ``focusability of the beam'' with low-emittance being preferable to high-emittance.
+Emittance describes the angular spread of particles within a beam or bunch and can be thought of as the ``focusability of the beam'' with low emittance being preferable.
 Due to the extremely low temperature, the \gls{caeis} has enormous potential as a source for low-emittance electron and ion bunches.
-Low-emittance is also related to high-coherence which is a vital consideration for imaging.
+Low emittance is also related to high coherence which is a vital consideration for imaging.
 The coherence length of a source must be at least as large as that of the sample under consideration for techniques such as \gls{cdi} or at least as large as the unit cell length for crystallographic diffraction techniques.
 The \gls{caeis} has already demonstrated impressive coherence lengths as large as those of some small biomolecules with further improvements expected~\cite{saliba_spatial_2012}.
 
-A new technique for measuring beam brightness (a metric that combines beam emittance and current) with time-resolution was developed which operates by streaking one-dimensional pepperpot measurements across the detector~\cite{torrance_time-resolved_2018}, see Chapter~\ref{chapter:brightness}.
-This method was developed to allow for examination of the efficacy of space-charge reversal techniques when they are implemented with a \gls{caeis} and to learn more about the ionisation processes involved in a \gls{caeis}.
+A new technique for measuring beam brightness (a metric that combines beam emittance and current) with time resolution was developed.
+The new method operates by streaking one-dimensional pepperpot measurements across the detector~\cite{torrance_time-resolved_2018}, see Chapter~\ref{chapter:brightness}.
+This approach was developed to allow for examination of the efficacy of space-charge reversal techniques when they are implemented with a \gls{caeis} and to learn more about the ionisation processes involved in a \gls{caeis}.
 This technique is generally applicable to charged particle beams, not just the \gls{caeis}, and could prove useful in numerous applications.
 
+
 The \gls{caes} has been used to demonstrate single-shot diffraction~\cite{speirs_single-shot_2015} and ultrafast diffraction (see Chapter~\ref{chapter:diffraction}) from a gold nanofilm.
-To-date diffraction that is both single-shot and ultrafast has not been achieved due to the low beam current of this \gls{caes} implementation but there are a number of strategies that may be able to improve on this, some of which are explored in Chapter~\ref{chapter:setup}.
-If the beam current of the \gls{caes} can be improved then there is enormous potential for the source as it will produce high-brightness, ultrashort-duration electron bunches with strategies available to counter the effects of space-charge expansion.
+To date diffraction that is both single-shot and ultrafast has not been achieved due to the low beam current of this \gls{caes} implementation but there are a number of strategies for improvement, some of which are explored in Chapter~\ref{chapter:setup}.
+If the beam current of the \gls{caes} can be improved then there is enormous potential for the source as it will produce high-brightness, ultrashort-duration electron bunches with a direct method to counter the effects of space-charge expansion.
 The \gls{caes} shows great promise as a source for \gls{cdi} and the production of molecular movies.
 
 \subsection{Ion Source}
 
 By reversing the polarity of the acceleration stage of beam production in a \gls{caeis} a beam of ions can be produced instead of an electron beam.
-Ion beams share the same advantages as the electron beams with bunches being shapeable, coherent and low-emittance~\cite{knuffman_cold_2013}.
+Ion beams share the same advantages as the electron beams with bunches being shapeable, coherent and low emittance~\cite{knuffman_cold_2013}.
 
 \glsreset{fib}
 \Glspl{fib} have a wide variety of applications such as high-resolution imaging~\cite{scipioni_helium_2008}, sample analysis and nanofabrication~\cite{khizroev_focused-ion-beam-based_2004}.
 Liquid metal ion sources are the most commonly used \gls{fib} sources, usually using gallium ions for simplicity and robustness despite gallium having a tendency to contaminate or destroy samples.
-A \gls{cais} promises to provide an attractive alternative to conventional sources as it would have high-brightness, low-emittance and would be able to operate with a large range of ions, which could be selected to avoid sample contamination.
+A \gls{cais} promises to provide an attractive alternative to conventional sources as it would have high brightness and low emittance, and would be able to operate with a large range of ions, which could be selected to avoid sample contamination.
 
 \Glspl{cais} have been used to demonstrate microscopy with lithium ions~\cite{knuffman_nanoscale_2011} and chromium ions~\cite{steele_focused_2010}.
 Rubidium \gls{cais} ion beams have been characterised and used to demonstrate the suppression of space-charge expansion~\cite{murphy_detailed_2014,thompson_suppression_2016}.
+A caesium \gls{cais} has been use to demonstrate resolution better than commercial sources, with measured brightness more than 24 times greater than the highest brightness observed in a gallium liquid metal ion source~\ref{steele_high-brightness_2017}.
 
 \section{Summary}
 
 Molecular structural determination of biological proteins is an essential component of modern developments in medicine and new tools are constantly required to extend the boundaries of the field.
-The \gls{caes} has great potential as an alternative source for molecular imaging and may one day be able to challenge existing sources such as \gls{xfel}, photocathode electron sources, and cryoelectron microscopes.
-Current iterations of the \gls{caes} are able to produce high-brightness, ultrashort-duration bunches with coherence lengths equal to that of small biomolecules and if the beam current can be improved on in the next generation of \gls{caes} then they will be well on the way to becoming a competitive source for the production of molecular movies.
+The \gls{caes} has great potential as an alternative source for molecular imaging and may one day challenge existing sources such as \glspl{xfel}, photocathode electron sources, and cryoelectron microscopes.
+Current iterations of the \gls{caes} are able to produce high-brightness, ultrashort-duration bunches with coherence lengths equal to that of small biomolecules and if the beam current can be improved in the next generation of \gls{caes} then they will be well on the way to becoming a competitive source for the production of molecular movies.
 
 The \gls{caeis} operating in ion mode also shows much promise in \gls{fib} applications.
 \Gls{cais} technology may well be applicable to any atom that can be optically trapped which will provide significantly more scope to the application of \glspl{fib}.
 
 This thesis discusses a number of pieces of research conducted with the iteration of the \gls{caeis} located at the University of Melbourne that operated until 2018.
 Chapter~\ref{chapter:setup} explains the \gls{caeis} apparatus and details some characterisation of and improvements to the apparatus with the aim of improving the quality of beams produced by the source.
-Research that improved the performance of polarisation spectroscopy as a frequency stabilisation technique, demonstrating sub-kilohertz linewidth, is detailed in Chapter~\ref{chapter:polspec} and should prove useful in the ionisation portion of \gls{caeis} operation (published as Reference~\cite{torrance_sub-kilohertz_2016}).
+Research that improved the performance of polarisation spectroscopy as a frequency stabilisation technique, demonstrating sub-kilohertz linewidth, is detailed in Chapter~\ref{chapter:polspec} (published as Reference~\cite{torrance_sub-kilohertz_2016}) and should prove useful in the ionisation portion of \gls{caeis} operation.
 Chapter~\ref{chapter:diffraction} presents diffraction results from the \gls{caes} which are the first demonstration of ultrafast diffraction from gold foil with a \gls{caes}, reaching an important milestone on the route towards \gls{ued} and the molecular movie.
 A new method for measuring time-resolved emittance by streaking one-dimensional pepperpots is presented in Chapter~\ref{chapter:brightness} and published in Reference~\cite{torrance_time-resolved_2018} providing a useful technique for investigating the ionisation processes involved in a \gls{caeis} and characterising the performance of techniques to counter space-charge degradation of bunches produced by a \gls{caeis}.
