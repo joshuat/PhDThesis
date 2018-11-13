@@ -175,12 +175,15 @@ The frequency difference between one cavity transmission and the next is called 
 \begin{equation}
 \Delta \nu_{FSR} = \frac{c}{2L}
 \end{equation}
-The quality of an optical cavity is described by the cavity finesse, $\mathscr{F}$, which effectively describes the number of traversals a beam makes before leaking out or being absorbed and it is determined by the intensity reflectivity of the mirrors, $R$,
-\begin{align}
-\mathscr{F} &= \frac{2\pi}{-\log_e\left(R^2\right)} \notag\\
- &= \frac{\Delta \nu_{FSR}}{\delta},
-\end{align}
-where $\delta$ is the \gls{fwhm} linewidth of the cavity.
+The quality of an optical cavity is described by the cavity finesse, $\mathscr{F}$, which effectively describes the number of traversals a beam makes before leaking out or being absorbed and it is determined by the intensity reflectivity of the mirrors, $R$,~\cite{hecht_optics_1987}
+%\begin{align}
+%\mathscr{F} &= \frac{2\pi}{-\log_e\left(R^2\right)} \notag\\
+% &= \frac{\Delta \nu_{FSR}}{\delta},
+%\end{align}
+\begin{equation}
+\mathscr{F} = \pi\frac{\sqrt{R}}{1-R}.
+\end{equation}
+%where $\delta$ is the \gls{fwhm} linewidth of the cavity.
 
 The light transmitted through an optical cavity can be described by~\cite{pedrotti_introduction_2007}
 \begin{equation}\label{equation:cavity_transmission}
