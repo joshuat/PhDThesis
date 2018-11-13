@@ -33,10 +33,10 @@ A primitive unit cell may contain one or more atoms and symmetry is sometimes mo
 When a wave interacting with the crystal lattice interacts with a specific atom in every unit cell then the reflected waves will be in phase which creates a maxima in the diffraction pattern.
 These planes in the crystal that these atoms line up on can be described by points in the reciprocal lattice.
 The reciprocal lattice is described by the reciprocal lattice basis vectors, $\mathbf{\hat{a}^*}$, $\mathbf{\hat{b}^*}$, and $\mathbf{\hat{c}^*}$, where
-\begin{align}
+\begin{align}\label{equation:recip_basis}
 \mathbf{\hat{a}^*}&=\frac{2\pi\:\mathbf{\hat{b}}\times\mathbf{\hat{c}}}{\mathbf{\hat{a}}\cdot (\mathbf{\hat{b}} \times \mathbf{\hat{c}})},  &  \mathbf{\hat{b}^*}&=\frac{2\pi\:\mathbf{\hat{c}}\times\mathbf{\hat{a}}}{\mathbf{\hat{a}}\cdot (\mathbf{\hat{b}} \times \mathbf{\hat{c}})},  &  \mathbf{\hat{c}^*}&=\frac{2\pi\:\mathbf{\hat{a}}\times\mathbf{\hat{b}}}{\mathbf{\hat{a}}\cdot (\mathbf{\hat{b}} \times \mathbf{\hat{c}})}.
 \end{align}
-The $2\pi$ originates from the convention chosen for the wave-vector, $|\mathbf{k}|=2\pi/\lambda$. The reciprocal lattice vector is thus
+In Equation~\ref{equation:recip_basis}, the $2\pi$ originates from the convention chosen for the wave-vector, $|\mathbf{k}|=2\pi/\lambda$. The reciprocal lattice vector is thus
 \begin{equation}
 \mathbf{g} = h\mathbf{\hat{a}^*} + k\mathbf{\hat{b}^*} + l\mathbf{\hat{c}^*},
 \end{equation}
@@ -160,7 +160,7 @@ Instead, the red excitation laser was adjusted to ensure saturation of the trans
 The excitation laser beam profile was Gaussian in beamshape with a \gls{fwhm} of \unit[80]{$\muup$m} at the \gls{mot}.
 Saturation of the excitation resulted in the electron bunches taking on the shape of the atomic cloud, which was approximately Gaussian.
 The transverse bunch profile was not of particular concern because it was focused to a point at the detector.
-Under similar conditions, the shape of the electron bunches was determined to have a Gaussian shape with a \gls{fwhm} of \unit[1.4]{mm} with a divergence of $\sigma_{\theta_x}=0.3\,\muup$\,rad and thus a source emittance of $\epsilon_x=50$\,nm\,rad~\cite{mcculloch_high-coherence_2013}.
+Under similar conditions, the shape of the electron bunches was determined to have a Gaussian shape with a \gls{fwhm} of \unit[1.4]{mm} with a divergence of $\sigma_{\theta_x}=0.3\,\muup$rad and thus a source emittance of $\epsilon_x=50$\,nm\,rad~\cite{speirs_single-shot_2015}.
 
 The number of electrons per pulse when producing ns-duration bunches with this setup was measured with a Faraday cup to be $5\times10^5$ which corresponds to a bunch charge of \unit[80]{fC}.
 
@@ -189,7 +189,7 @@ Example diffraction patterns from the gold sample are shown in Figure~\ref{figur
 \begin{figure}
     \center
     \input{part2/Figs/gold_diffractions.pgf}
-    \caption[Diffraction patterns from gold.]{Log-scaled false-colour diffraction patterns from monocrystalline gold foil. (a) 100-shot average diffraction pattern generated with nanosecond-duration electron bunches. (b) Single-shot from the set that forms (a). (c) Radial average of (a). (d) 1000-shot registered-average diffraction pattern generated with ultrafast electron bunches. The white rings and red lines indicate the lattice spacings for gold. The colour scale for each image is individually scaled to optimise visibility. The colour bar indicates the log-scaled colour mapping for the normalised data.}
+    \caption[Diffraction patterns from gold.]{Log-scaled false-colour diffraction patterns from monocrystalline gold foil. (a) 100-shot average diffraction pattern generated with nanosecond-duration electron bunches. (b) Single-shot from the set that forms (a). (c) Radial average of (a). (d) 1000-shot registered-average diffraction pattern generated with ultrafast electron bunches. The lattice spacings for gold are indicated by white rings (a) and red lines (c). The colour scale for each image is individually scaled to optimise visibility. The colour bar indicates the log-scaled colour mapping for the normalised data.}
     \label{figure:au_diffraction}
     % Code and data located at 2016.04.12
 \end{figure}
